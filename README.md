@@ -21,7 +21,7 @@ Options:
   -h, --help                   output usage information
   ```
 
-  Requires a file called `config.json` at the root level, structured like:
+  **Note:** _Requires a file called `config.json` at the root level, structured like:_
 
   ```
   {
