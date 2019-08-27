@@ -1,0 +1,2276 @@
+{
+    "id": 130,
+    "name": "Freshdesk",
+    "hookName": "Freshdesk",
+    "key": "freshdesk",
+    "description": "Add a Freshdesk Instance to connect your existing Freshdesk account to the Help Desk Hub, allowing you to manage your incidents, priorities, statuses, users, etc. across multiple Help Desk Elements. You will need your Freshdesk account information to add an instance.",
+    "image": "elements/provider_freshdesk.png",
+    "logo": "freshdesk",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 1103,
+            "name": "Subdomain",
+            "key": "subdomain",
+            "description": "The subdomain of your Freshdesk instance (i.e. https://[SUBDOMAIN].freshdesk.com)",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1106,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Freshdesk Beta Max Page Size (or limit)",
+            "defaultValue": "50",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254043,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8301,
+            "name": "A holder for the notification subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "A holder for the notification subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1349,
+            "name": "Bulk Query Modified Time",
+            "key": "bulk.attribute.modified_time",
+            "description": "Freshdesk Bulk Query Modified Time",
+            "defaultValue": "updated_at",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1102,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Freshdesk Beta Base URL",
+            "defaultValue": "https://{subdomain}.freshdesk.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1365,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Pagination Type",
+            "defaultValue": "page",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1348,
+            "name": "Bulk Query Created Time",
+            "key": "bulk.attribute.created_time",
+            "description": "Freshdesk Bulk Query Created Time",
+            "defaultValue": "created_at",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1104,
+            "name": "Username",
+            "key": "username",
+            "description": "Freshdesk Beta Username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1105,
+            "name": "Password",
+            "key": "password",
+            "description": "Freshdesk Beta Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52575,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159943,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256173,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256424,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8304,
+            "name": "Event Notification Enabled/Disabled",
+            "key": "event.notification.enabled",
+            "description": "Event Notification Enabled/Disabled Flag",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8306,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used to determine how often to poll the service endpoints (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8302,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. If the \"event.poller.urls\" configuration is defined, this field's value is ignored. The configuration is defined via JSON, an example of which is as follows - {     \"contacts\": {         \"url\": \"/hubs/helpdesk/contacts\",         \"updatedDateField\": \"user.updated_at\",         \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\",         \"pageSize\": 10000     } }",
+            "defaultValue": " ",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 303,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8303,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9687,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8307,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 2703,
+            "createdDate": "2015-07-27T16:11:29Z",
+            "description": "Basic Auth Validation",
+            "path": "/auth_validation",
+            "vendorPath": "/customers.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "provisionAuthValidation",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 413,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Search for accounts",
+            "path": "/hubs/helpdesk/accounts",
+            "vendorPath": "/customers.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 563,
+                    "resourceId": 413,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 564,
+                    "resourceId": 413,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 565,
+                    "resourceId": 413,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression.  The only support search field is 'letter', which represents the account name.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "accountsList",
+                "transform": false,
+                "swagger": {
+                    "accountsList": {
+                        "id": "accountsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "accountsListObject"
+                        }
+                    },
+                    "custom_field": {
+                        "id": "custom_field",
+                        "properties": {}
+                    },
+                    "accountsListObject": {
+                        "id": "accountsListObject",
+                        "properties": {
+                            "customer": {
+                                "type": "customer"
+                            }
+                        }
+                    },
+                    "customer": {
+                        "id": "customer",
+                        "properties": {
+                            "note": {
+                                "type": "unknown"
+                            },
+                            "custom_field": {
+                                "type": "custom_field"
+                            },
+                            "sla_policy_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "domains": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "cust_identifier": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 409,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Create an account",
+            "path": "/hubs/helpdesk/accounts",
+            "vendorPath": "/customers.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 552,
+                    "resourceId": 409,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "account",
+                    "vendorName": "account",
+                    "description": "The account object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accounts",
+                    "vendorDataType": "accounts",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 412,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Delete an account",
+            "path": "/hubs/helpdesk/accounts/{id}",
+            "vendorPath": "/customers/{id}.json",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 542,
+                    "resourceId": 412,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 410,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Retrieve an account",
+            "path": "/hubs/helpdesk/accounts/{id}",
+            "vendorPath": "/customers/{id}.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 540,
+                    "resourceId": 410,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accounts",
+                "transform": false,
+                "swagger": {
+                    "custom_field": {
+                        "id": "custom_field",
+                        "properties": {}
+                    },
+                    "accounts": {
+                        "id": "accounts",
+                        "properties": {
+                            "customer": {
+                                "type": "customer"
+                            }
+                        }
+                    },
+                    "customer": {
+                        "id": "customer",
+                        "properties": {
+                            "note": {
+                                "type": "unknown"
+                            },
+                            "custom_field": {
+                                "type": "custom_field"
+                            },
+                            "sla_policy_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "domains": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "cust_identifier": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 411,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Update an account",
+            "path": "/hubs/helpdesk/accounts/{id}",
+            "vendorPath": "/customers/{id}.json",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 541,
+                    "resourceId": 411,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 553,
+                    "resourceId": 411,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "account",
+                    "vendorName": "account",
+                    "description": "The account object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accounts",
+                    "vendorDataType": "accounts",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 415,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Search for agents",
+            "path": "/hubs/helpdesk/agents",
+            "vendorPath": "/agents.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 566,
+                    "resourceId": 415,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "where",
+                    "vendorName": "converter:toFreshdesk",
+                    "description": "The CEQL search expression.  The supported search fields are 'email', 'mobile', 'phone'.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toFreshdesk",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "agentsList",
+                "transform": false,
+                "swagger": {
+                    "agent": {
+                        "id": "agent",
+                        "properties": {
+                            "signature": {
+                                "type": "unknown"
+                            },
+                            "scoreboard_level_id": {
+                                "type": "unknown"
+                            },
+                            "available": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "occasional": {
+                                "type": "boolean"
+                            },
+                            "ticket_permission": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "points": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "active_since": {
+                                "type": "unknown"
+                            },
+                            "signature_html": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "user": {
+                                "type": "user"
+                            }
+                        }
+                    },
+                    "agentsList": {
+                        "id": "agentsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "agentsListObject"
+                        }
+                    },
+                    "user": {
+                        "id": "user",
+                        "properties": {
+                            "helpdesk_agent": {
+                                "type": "boolean"
+                            },
+                            "address": {
+                                "type": "unknown"
+                            },
+                            "mobile": {
+                                "type": "unknown"
+                            },
+                            "active": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "external_id": {
+                                "type": "unknown"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "time_zone": {
+                                "type": "string"
+                            },
+                            "fb_profile_id": {
+                                "type": "unknown"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "twitter_id": {
+                                "type": "unknown"
+                            },
+                            "job_title": {
+                                "type": "unknown"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "agentsListObject": {
+                        "id": "agentsListObject",
+                        "properties": {
+                            "agent": {
+                                "type": "agent"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 414,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Retrieve an agent",
+            "path": "/hubs/helpdesk/agents/{id}",
+            "vendorPath": "/agents/{id}.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 543,
+                    "resourceId": 414,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The agent ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "agents",
+                "transform": false,
+                "swagger": {
+                    "agent": {
+                        "id": "agent",
+                        "properties": {
+                            "signature": {
+                                "type": "unknown"
+                            },
+                            "scoreboard_level_id": {
+                                "type": "unknown"
+                            },
+                            "available": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "occasional": {
+                                "type": "boolean"
+                            },
+                            "ticket_permission": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "points": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "active_since": {
+                                "type": "unknown"
+                            },
+                            "signature_html": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "user": {
+                                "type": "user"
+                            }
+                        }
+                    },
+                    "user": {
+                        "id": "user",
+                        "properties": {
+                            "helpdesk_agent": {
+                                "type": "boolean"
+                            },
+                            "address": {
+                                "type": "unknown"
+                            },
+                            "mobile": {
+                                "type": "unknown"
+                            },
+                            "active": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "external_id": {
+                                "type": "unknown"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "time_zone": {
+                                "type": "string"
+                            },
+                            "fb_profile_id": {
+                                "type": "unknown"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "twitter_id": {
+                                "type": "unknown"
+                            },
+                            "job_title": {
+                                "type": "unknown"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "agents": {
+                        "id": "agents",
+                        "properties": {
+                            "agent": {
+                                "type": "agent"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 420,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Search for contacts",
+            "path": "/hubs/helpdesk/contacts",
+            "vendorPath": "/contacts.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 567,
+                    "resourceId": 420,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "where",
+                    "vendorName": "converter:toFreshdesk",
+                    "description": "The CEQL search expression.  The supported search fields are 'email', 'mobile', 'phone' and 'state'.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toFreshdesk",
+                    "required": false
+                },
+                {
+                    "id": 5285,
+                    "resourceId": 420,
+                    "createdDate": "2015-11-25T18:10:29Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The\n                                       page number",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "contactsList",
+                "transform": false,
+                "swagger": {
+                    "custom_field": {
+                        "id": "custom_field",
+                        "properties": {}
+                    },
+                    "contactsList": {
+                        "id": "contactsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "contactsListObject"
+                        }
+                    },
+                    "contactsListObject": {
+                        "id": "contactsListObject",
+                        "properties": {
+                            "user": {
+                                "type": "user"
+                            }
+                        }
+                    },
+                    "user": {
+                        "id": "user",
+                        "properties": {
+                            "helpdesk_agent": {
+                                "type": "boolean"
+                            },
+                            "custom_field": {
+                                "type": "custom_field"
+                            },
+                            "address": {
+                                "type": "unknown"
+                            },
+                            "company_id": {
+                                "type": "unknown"
+                            },
+                            "mobile": {
+                                "type": "unknown"
+                            },
+                            "active": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "external_id": {
+                                "type": "unknown"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "time_zone": {
+                                "type": "string"
+                            },
+                            "fb_profile_id": {
+                                "type": "unknown"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "unknown"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "customer_id": {
+                                "type": "unknown"
+                            },
+                            "twitter_id": {
+                                "type": "unknown"
+                            },
+                            "job_title": {
+                                "type": "unknown"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 416,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Create a contact",
+            "path": "/hubs/helpdesk/contacts",
+            "vendorPath": "/contacts.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 554,
+                    "resourceId": 416,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "contact",
+                    "vendorName": "contact",
+                    "description": "The contact object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "contacts",
+                    "vendorDataType": "contacts",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 419,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Delete a contact",
+            "path": "/hubs/helpdesk/contacts/{id}",
+            "vendorPath": "/contacts/{id}.json",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 546,
+                    "resourceId": 419,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The contact ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 417,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Retrieve a contact",
+            "path": "/hubs/helpdesk/contacts/{id}",
+            "vendorPath": "/contacts/{id}.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 544,
+                    "resourceId": 417,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The contact ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "contacts",
+                "transform": false,
+                "swagger": {
+                    "custom_field": {
+                        "id": "custom_field",
+                        "properties": {}
+                    },
+                    "user": {
+                        "id": "user",
+                        "properties": {
+                            "helpdesk_agent": {
+                                "type": "boolean"
+                            },
+                            "custom_field": {
+                                "type": "custom_field"
+                            },
+                            "address": {
+                                "type": "unknown"
+                            },
+                            "company_id": {
+                                "type": "unknown"
+                            },
+                            "mobile": {
+                                "type": "unknown"
+                            },
+                            "active": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "external_id": {
+                                "type": "unknown"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "time_zone": {
+                                "type": "string"
+                            },
+                            "fb_profile_id": {
+                                "type": "unknown"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "unknown"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "customer_id": {
+                                "type": "unknown"
+                            },
+                            "twitter_id": {
+                                "type": "unknown"
+                            },
+                            "job_title": {
+                                "type": "unknown"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "contacts": {
+                        "id": "contacts",
+                        "properties": {
+                            "user": {
+                                "type": "user"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 418,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Update a contact",
+            "path": "/hubs/helpdesk/contacts/{id}",
+            "vendorPath": "/contacts/{id}.json",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 545,
+                    "resourceId": 418,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The contact ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 555,
+                    "resourceId": 418,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "contact",
+                    "vendorName": "contact",
+                    "description": "The contact object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "contacts",
+                    "vendorDataType": "contacts",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 408,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Search for incidents",
+            "path": "/hubs/helpdesk/incidents",
+            "vendorPath": "/helpdesk/tickets.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 551,
+                    "resourceId": 408,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "all_tickets",
+                    "vendorName": "filter_name",
+                    "description": "The default filter should be to retrieve all tickets",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 560,
+                    "resourceId": 408,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 561,
+                    "resourceId": 408,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 562,
+                    "resourceId": 408,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression.  Search fields supported are 'company_name', 'company_id' and 'email'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "incidentsList",
+                "transform": false,
+                "swagger": {
+                    "custom_field": {
+                        "id": "custom_field",
+                        "properties": {}
+                    },
+                    "incidentsList": {
+                        "id": "incidentsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "incidentsListObject"
+                        }
+                    },
+                    "cc_email": {
+                        "id": "cc_email",
+                        "properties": {}
+                    },
+                    "incidentsListObject": {
+                        "id": "incidentsListObject",
+                        "properties": {
+                            "ticket_type": {
+                                "type": "unknown"
+                            },
+                            "to_emails": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "requester_status_name": {
+                                "type": "string"
+                            },
+                            "trained": {
+                                "type": "boolean"
+                            },
+                            "display_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "responder_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "cc_email": {
+                                "type": "cc_email"
+                            },
+                            "due_by": {
+                                "type": "string"
+                            },
+                            "frDueBy": {
+                                "type": "string"
+                            },
+                            "owner_id": {
+                                "type": "unknown"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "delta": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "fr_escalated": {
+                                "type": "boolean"
+                            },
+                            "source": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "product_id": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "urgent": {
+                                "type": "boolean"
+                            },
+                            "email_config_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "source_name": {
+                                "type": "string"
+                            },
+                            "requester_name": {
+                                "type": "string"
+                            },
+                            "custom_field": {
+                                "type": "custom_field"
+                            },
+                            "to_email": {
+                                "type": "string"
+                            },
+                            "priority_name": {
+                                "type": "string"
+                            },
+                            "status_name": {
+                                "type": "string"
+                            },
+                            "isescalated": {
+                                "type": "boolean"
+                            },
+                            "priority": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "group_id": {
+                                "type": "unknown"
+                            },
+                            "responder_name": {
+                                "type": "string"
+                            },
+                            "description_html": {
+                                "type": "string"
+                            },
+                            "spam": {
+                                "type": "boolean"
+                            },
+                            "requester_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "status": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 404,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Create an incident",
+            "path": "/hubs/helpdesk/incidents",
+            "vendorPath": "/helpdesk/tickets.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 549,
+                    "resourceId": 404,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "incident",
+                    "vendorName": "incident",
+                    "description": "The incident object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "incidents",
+                    "vendorDataType": "incidents",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 407,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Delete an incident",
+            "path": "/hubs/helpdesk/incidents/{id}",
+            "vendorPath": "/helpdesk/tickets/{id}.json",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 539,
+                    "resourceId": 407,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The incident ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 405,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Retrieve an incident",
+            "path": "/hubs/helpdesk/incidents/{id}",
+            "vendorPath": "/helpdesk/tickets/{id}.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 537,
+                    "resourceId": 405,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The incident ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "incidents",
+                "transform": false,
+                "swagger": {
+                    "note": {
+                        "id": "note",
+                        "properties": {
+                            "incoming": {
+                                "type": "boolean"
+                            },
+                            "body_html": {
+                                "type": "string"
+                            },
+                            "private": {
+                                "type": "boolean"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "support_email": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "body": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "custom_field": {
+                        "id": "custom_field",
+                        "properties": {}
+                    },
+                    "notes": {
+                        "id": "notes",
+                        "properties": {
+                            "note": {
+                                "type": "note"
+                            }
+                        }
+                    },
+                    "cc_email": {
+                        "id": "cc_email",
+                        "properties": {}
+                    },
+                    "incidents": {
+                        "id": "incidents",
+                        "properties": {
+                            "ticket_type": {
+                                "type": "unknown"
+                            },
+                            "to_emails": {
+                                "type": "unknown"
+                            },
+                            "requester_status_name": {
+                                "type": "string"
+                            },
+                            "notes": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "notes"
+                                }
+                            },
+                            "trained": {
+                                "type": "boolean"
+                            },
+                            "display_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "responder_id": {
+                                "type": "unknown"
+                            },
+                            "cc_email": {
+                                "type": "cc_email"
+                            },
+                            "due_by": {
+                                "type": "string"
+                            },
+                            "frDueBy": {
+                                "type": "string"
+                            },
+                            "owner_id": {
+                                "type": "unknown"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "delta": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "fr_escalated": {
+                                "type": "boolean"
+                            },
+                            "source": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "product_id": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "urgent": {
+                                "type": "boolean"
+                            },
+                            "email_config_id": {
+                                "type": "unknown"
+                            },
+                            "source_name": {
+                                "type": "string"
+                            },
+                            "requester_name": {
+                                "type": "string"
+                            },
+                            "custom_field": {
+                                "type": "custom_field"
+                            },
+                            "to_email": {
+                                "type": "unknown"
+                            },
+                            "priority_name": {
+                                "type": "string"
+                            },
+                            "status_name": {
+                                "type": "string"
+                            },
+                            "isescalated": {
+                                "type": "boolean"
+                            },
+                            "priority": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "group_id": {
+                                "type": "unknown"
+                            },
+                            "responder_name": {
+                                "type": "string"
+                            },
+                            "description_html": {
+                                "type": "string"
+                            },
+                            "spam": {
+                                "type": "boolean"
+                            },
+                            "requester_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "status": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "helpdesk_ticket",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 406,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Update an incident",
+            "path": "/hubs/helpdesk/incidents/{id}",
+            "vendorPath": "/helpdesk/tickets/{id}.json",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 538,
+                    "resourceId": 406,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The incident ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 550,
+                    "resourceId": 406,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "incident",
+                    "vendorName": "incident",
+                    "description": "The incident object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "incidents",
+                    "vendorDataType": "incidents",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 421,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Add an attachment to an incident",
+            "path": "/hubs/helpdesk/incidents/{id}/attachments",
+            "vendorPath": "/helpdesk/tickets/{id}/conversations/note.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 547,
+                    "resourceId": 421,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The incident ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 556,
+                    "resourceId": 421,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "description",
+                    "vendorName": "helpdesk_note[body]",
+                    "description": "The description of the attachment",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 557,
+                    "resourceId": 421,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "file",
+                    "vendorName": "helpdesk_note[attachments][][resource]",
+                    "description": "The file to attach",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "file",
+                    "vendorDataType": "file",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 558,
+                    "resourceId": 421,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "multipart/form-data",
+                    "vendorName": "Content-Type",
+                    "description": "The content type for file upload",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "incidentsAttachments",
+                "transform": false,
+                "swagger": {
+                    "incidentsAttachments": {
+                        "id": "incidentsAttachments",
+                        "properties": {
+                            "note": {
+                                "type": "note"
+                            }
+                        }
+                    },
+                    "note": {
+                        "id": "note",
+                        "properties": {
+                            "incoming": {
+                                "type": "boolean"
+                            },
+                            "body_html": {
+                                "type": "string"
+                            },
+                            "private": {
+                                "type": "boolean"
+                            },
+                            "attachments": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "attachments"
+                                }
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "support_email": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "body": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "attachments": {
+                        "id": "attachments",
+                        "properties": {
+                            "content_content_type": {
+                                "type": "string"
+                            },
+                            "content_file_size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "attachment_url": {
+                                "type": "string"
+                            },
+                            "content_file_name": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 422,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "description": "Add a comment to an incident",
+            "path": "/hubs/helpdesk/incidents/{id}/comments",
+            "vendorPath": "/helpdesk/tickets/{id}/conversations/note.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 548,
+                    "resourceId": 422,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The incident ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 559,
+                    "resourceId": 422,
+                    "createdDate": "2015-04-08T19:53:48Z",
+                    "name": "comment",
+                    "vendorName": "comment",
+                    "description": "The comment object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "incidentsComments",
+                    "vendorDataType": "incidentsComments",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "incidentsComments",
+                "transform": false,
+                "swagger": {
+                    "note": {
+                        "id": "note",
+                        "properties": {
+                            "incoming": {
+                                "type": "boolean"
+                            },
+                            "body_html": {
+                                "type": "string"
+                            },
+                            "private": {
+                                "type": "boolean"
+                            },
+                            "deleted": {
+                                "type": "boolean"
+                            },
+                            "support_email": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "body": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "incidentsComments": {
+                        "id": "incidentsComments",
+                        "properties": {
+                            "note": {
+                                "type": "note"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5462,
+            "createdDate": "2016-01-14T14:24:48Z",
+            "description": "Get Object metadata",
+            "path": "/hubs/helpdesk/objects/{objectName}/metadata",
+            "vendorPath": "/api/v2/{objectName}_fields",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5580,
+                    "resourceId": 5462,
+                    "createdDate": "2016-01-14T14:24:48Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "objectName",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "objectsMetadata",
+                "transform": false,
+                "swagger": {
+                    "objectsMetadata": {
+                        "id": "objectsMetadata",
+                        "properties": {
+                            "fields": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "fields"
+                                }
+                            }
+                        }
+                    },
+                    "fields": {
+                        "id": "fields",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "vendorPath": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "basic"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "helpdesk",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 38,
+            "createdDate": "2015-04-08T19:53:48Z",
+            "name": "subdomain",
+            "vendorName": "subdomain",
+            "type": "configuration",
+            "vendorType": "path",
+            "source": "request",
+            "elementId": 130,
+            "required": false
+        }
+    ],
+    "private": false
+}

@@ -1,0 +1,652 @@
+{
+    "id": 38,
+    "name": "Infobip",
+    "hookName": "Infobip",
+    "key": "infobip",
+    "description": "Add an Infobip Instance to connect your existing Infobip account to the Messaging Hub, allowing you to send, receive and manage email and SMS messages etc. across multiple Messaging Elements. You will need your Infobip account information, or use our trial account to add an instance.",
+    "image": "elements/provider_infobip.png",
+    "logo": "infobip",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": true,
+    "configDescription": "If you do not have an Infobip account, you can create one at <a href=\"http://www.infobip.com/sign_up/\" target=\"_blank\">Infobip Signup</a>",
+    "signupURL": "http://www.infobip.com/sign_up/",
+    "configuration": [
+        {
+            "id": 254069,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 249,
+            "name": "User Name",
+            "key": "messaging.sms.infobip.username",
+            "description": "Your Infobip Username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 250,
+            "name": "Password",
+            "key": "messaging.sms.infobip.password",
+            "description": "Your Infobip password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 251,
+            "name": "Phone Number",
+            "key": "messaging.sms.infobip.sender",
+            "description": "Your Infobip sender number",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 252,
+            "name": "Event Notification URL",
+            "key": "messaging.sms.infobip.callback.url",
+            "description": "URL to invoke when a Infobip event occurs",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 52473,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159936,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256201,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256452,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 286630,
+            "createdDate": "2019-06-24T05:40:59Z",
+            "description": "Send a new outgoing message using the messaging service provider.  A valid User Secret and Element Token are required in the HTTP request.",
+            "path": "/hubs/messaging/messages",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 706818,
+                    "resourceId": 286630,
+                    "createdDate": "2019-06-24T05:40:59Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Information about the message to be sent",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "messagingPostReq",
+                    "vendorDataType": "messagingPostReq",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "messagingPostRes",
+                "transform": false,
+                "swagger": {
+                    "messagingPostRes": {
+                        "properties": {
+                            "bcc": {
+                                "type": "string"
+                            },
+                            "cc": {
+                                "type": "string"
+                            },
+                            "clickTrack": {
+                                "type": "boolean"
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "direction": {
+                                "type": "string"
+                            },
+                            "externalMessageId": {
+                                "type": "string"
+                            },
+                            "from": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "mimeType": {
+                                "type": "string"
+                            },
+                            "openTrack": {
+                                "type": "boolean"
+                            },
+                            "priority": {
+                                "type": "string"
+                            },
+                            "providerName": {
+                                "type": "string"
+                            },
+                            "received": {
+                                "type": "boolean"
+                            },
+                            "receivedDate": {
+                                "type": "string"
+                            },
+                            "refId": {
+                                "type": "string"
+                            },
+                            "sent": {
+                                "type": "boolean"
+                            },
+                            "sentTime": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "to": {
+                                "type": "string"
+                            },
+                            "updateDate": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                },
+                "requestSwagger": {
+                    "messagingPostReq": {
+                        "properties": {
+                            "bcc": {
+                                "type": "string"
+                            },
+                            "cc": {
+                                "type": "string"
+                            },
+                            "clickTrack": {
+                                "type": "boolean"
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "direction": {
+                                "type": "string"
+                            },
+                            "externalMessageId": {
+                                "type": "string"
+                            },
+                            "from": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "mimeType": {
+                                "type": "string"
+                            },
+                            "openTrack": {
+                                "type": "boolean"
+                            },
+                            "priority": {
+                                "type": "string"
+                            },
+                            "providerName": {
+                                "type": "string"
+                            },
+                            "received": {
+                                "type": "boolean"
+                            },
+                            "receivedDate": {
+                                "type": "string"
+                            },
+                            "refId": {
+                                "type": "string"
+                            },
+                            "sent": {
+                                "type": "boolean"
+                            },
+                            "sentTime": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "to": {
+                                "type": "string"
+                            },
+                            "updateDate": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "message",
+                            "to"
+                        ]
+                    }
+                },
+                "requestName": "messagingPostReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 286631,
+            "createdDate": "2019-06-24T05:40:59Z",
+            "description": "Send a new outgoing message using the messaging service provider.  A valid User Secret and Element Token are required in the HTTP request.",
+            "path": "/hubs/messaging/messages/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 706819,
+                    "resourceId": 286631,
+                    "createdDate": "2019-06-24T05:40:59Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The id of the message.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "messagingGetByIdRes",
+                "transform": false,
+                "swagger": {
+                    "messagingGetByIdRes": {
+                        "properties": {
+                            "bcc": {
+                                "type": "string"
+                            },
+                            "cc": {
+                                "type": "string"
+                            },
+                            "clickTrack": {
+                                "type": "boolean"
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "direction": {
+                                "type": "string"
+                            },
+                            "externalMessageId": {
+                                "type": "string"
+                            },
+                            "from": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "mimeType": {
+                                "type": "string"
+                            },
+                            "openTrack": {
+                                "type": "boolean"
+                            },
+                            "priority": {
+                                "type": "string"
+                            },
+                            "providerName": {
+                                "type": "string"
+                            },
+                            "received": {
+                                "type": "boolean"
+                            },
+                            "receivedDate": {
+                                "type": "string"
+                            },
+                            "refId": {
+                                "type": "string"
+                            },
+                            "sent": {
+                                "type": "boolean"
+                            },
+                            "sentTime": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "to": {
+                                "type": "string"
+                            },
+                            "updateDate": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 286632,
+            "createdDate": "2019-06-24T05:40:59Z",
+            "description": "Ping the Element to confirm that the Hub element has a heartbeat.  If the Element does not have a heartbeat, an error message will be returned.",
+            "path": "/hubs/messaging/ping",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "Pong",
+                "transform": false,
+                "swagger": {
+                    "Pong": {
+                        "properties": {
+                            "dateTime": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "endpoint": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 286633,
+            "createdDate": "2019-06-24T05:40:59Z",
+            "description": "Retrieve the usage data for this element.  Results can be returned using a variety of parameters such as, number of usage days.  A valid User Secret and Element Token are required in the HTTP request.",
+            "path": "/hubs/messaging/usage",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 706823,
+                    "resourceId": 286633,
+                    "createdDate": "2019-06-24T05:40:59Z",
+                    "name": "days",
+                    "vendorName": "days",
+                    "description": "Number of days to get usage data for.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 706822,
+                    "resourceId": 286633,
+                    "createdDate": "2019-06-24T05:40:59Z",
+                    "name": "startTime",
+                    "vendorName": "startTime",
+                    "description": "Retrieve usage data by the given start time for a range/window.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 706821,
+                    "resourceId": 286633,
+                    "createdDate": "2019-06-24T05:40:59Z",
+                    "name": "endTime",
+                    "vendorName": "endTime",
+                    "description": "Retrieve usage data by the given end time for a range/window.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 706820,
+                    "resourceId": 286633,
+                    "createdDate": "2019-06-24T05:40:59Z",
+                    "name": "aggregate",
+                    "vendorName": "aggregate",
+                    "description": "aggregate",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "MessagingUsage",
+                "transform": false,
+                "swagger": {
+                    "MessagingUsage": {
+                        "properties": {
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "endDate": {
+                                "type": "string"
+                            },
+                            "startDate": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [
+        {
+            "elementId": 38,
+            "id": 7562,
+            "name": "messages",
+            "primaryKeyName": "id",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": false,
+            "bulkUploadEnabled": false,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 38,
+            "id": 7560,
+            "name": "ping",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": false,
+            "bulkUploadEnabled": false,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 38,
+            "id": 7561,
+            "name": "usage",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": false,
+            "bulkUploadEnabled": false,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        }
+    ],
+    "models": [],
+    "transformationsEnabled": false,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": false,
+    "extendable": false,
+    "beta": false,
+    "authentication": {},
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "messaging",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

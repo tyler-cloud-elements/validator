@@ -1,0 +1,1133 @@
+{
+    "id": 17315,
+    "name": "HimssPostgreSQL",
+    "key": "himsspostgresql",
+    "description": "PostgreSQL instance designed to remove and update duplicates.",
+    "image": "http://developers.cloud-elements.com/assets/img/default-ce-logo-element-builder.png",
+    "logo": "himsspostgresql",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 131488,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "MyPostgreSQL Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 131487,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "MyPostgreSQL Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254065,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 131490,
+            "name": "Database Host",
+            "key": "db.host",
+            "description": "MyPostgreSQL Database Host",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 131489,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "MyPostgreSQL Base URL",
+            "defaultValue": "jdbc:postgresql://{db.host}/{db.name}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 131491,
+            "name": "Username",
+            "key": "username",
+            "description": "MyPostgreSQL Username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 131492,
+            "name": "Password",
+            "key": "password",
+            "description": "MyPostgreSQL Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 131493,
+            "name": "Database Name",
+            "key": "db.name",
+            "description": "MyPostgreSQL Database Name",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 131494,
+            "name": "Database Driver Classname",
+            "key": "jdbc.driver.classname",
+            "description": "Driver Classname ex: Postgres:'org.postgresql.Driver' , MySql:'com.mysql.jdbc.Driver' SqlServer: 'com.microsoft.sqlserver.jdbc.SQLServerDriver'",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 159930,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 131486,
+            "name": "Time of Getting Token or Performing Authentication",
+            "key": "authentication.time",
+            "description": "MyPostgreSQL Time of Getting Token or Performing Authentication",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256195,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256446,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 135835,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "This method removes all contacts in the db. ",
+            "path": "/hubs/db/clearDb",
+            "vendorPath": "delete from _tableName;",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 308259,
+                    "resourceId": 135835,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "clearDb",
+                "transform": false,
+                "swagger": {
+                    "clearDb": {
+                        "id": "clearDb",
+                        "properties": {
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19407,
+                    "resourceId": 135835,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(/_tableName/g, request_parameters[\"tableName\"]),\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135831,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "This collapses duplicate rows into a single row. ",
+            "path": "/hubs/db/contacts",
+            "vendorPath": "SELECT contact_id, array_to_string(array_agg(distinct \"user_role\"),',') AS roles FROM   contacts GROUP  BY contact_id;",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 308253,
+                    "resourceId": 135831,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "quot,#39",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "uniqueContactsList",
+                "transform": false,
+                "swagger": {
+                    "uniqueContactsListObject": {
+                        "id": "uniqueContactsListObject",
+                        "properties": {
+                            "contact_id": {
+                                "type": "string"
+                            },
+                            "roles": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "uniqueContactsList": {
+                        "id": "uniqueContactsList",
+                        "items": {
+                            "$ref": "uniqueContactsListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135840,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "Deletes duplicates",
+            "path": "/hubs/db/duplicates/accounts",
+            "vendorPath": "DELETE FROM _tableName WHERE ctid NOT IN (   SELECT max(ctid)    FROM   _tableName s   GROUP  BY s.crm_account);",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 308269,
+                    "resourceId": 135840,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "The table name for the specific contact. ",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "removeDuplicateAccounts",
+                "transform": false,
+                "swagger": {
+                    "removeDuplicateAccounts": {
+                        "id": "removeDuplicateAccounts",
+                        "properties": {
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19412,
+                    "resourceId": 135840,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(/_tableName/g, request_parameters[\"tableName\"]),\n\t\t\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135841,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "Deletes duplicates",
+            "path": "/hubs/db/duplicates/contacts",
+            "vendorPath": "DELETE FROM _tableName WHERE ctid NOT IN (   SELECT max(ctid)   FROM   _tableName s   GROUP  BY s.contact_id);",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 308270,
+                    "resourceId": 135841,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "The table name for the specific contact. ",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19413,
+                    "resourceId": 135841,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(/_tableName/g, request_parameters[\"tableName\"]),\n\t\t\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135834,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "This returns contacts that appear multiple times",
+            "path": "/hubs/db/items",
+            "vendorPath": "select * from _tableName;",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 308258,
+                    "resourceId": 135834,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "allItemsList",
+                "transform": false,
+                "swagger": {
+                    "allItemsListObject": {
+                        "id": "allItemsListObject",
+                        "properties": {
+                            "crm_account": {
+                                "type": "string"
+                            },
+                            "group_purchasing_organization": {
+                                "type": "string"
+                            },
+                            "ha_unique_id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "allItemsList": {
+                        "id": "allItemsList",
+                        "items": {
+                            "$ref": "allItemsListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19406,
+                    "resourceId": 135834,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(\"_tableName\", request_parameters[\"tableName\"]),\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135839,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "This returns contacts that appear multiple times",
+            "path": "/hubs/db/keepByRoles",
+            "vendorPath": "UPDATE _tableName SET user_role = replace(user_role, '\\/', '/'); delete from _tableName where user_role not in (_roles);",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 308267,
+                    "resourceId": 135839,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "roles",
+                    "vendorName": "roles",
+                    "description": "roles",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308266,
+                    "resourceId": 135839,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308268,
+                    "resourceId": 135839,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "#39",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "keepByRole",
+                "transform": false,
+                "swagger": {
+                    "keepByRole": {
+                        "id": "keepByRole",
+                        "properties": {
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19411,
+                    "resourceId": 135839,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(/_tableName/g, request_parameters[\"tableName\"]).replace(/_roles/g, request_parameters[\"roles\"]),\n\t\t    \"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135830,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "This collapses duplicate rows into a single row. ",
+            "path": "/hubs/db/roles",
+            "vendorPath": "UPDATE _tableName SET user_role = replace(user_role, '\\/', '/'); UPDATE _tableName SET user_role=subquery.roles FROM (SELECT contact_id, array_to_string(array_agg(distinct \"user_role\"),',') AS roles FROM   _tableName GROUP  BY contact_id) AS subquery WHERE _tableName.contact_id= subquery.contact_id;",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 308251,
+                    "resourceId": 135830,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308252,
+                    "resourceId": 135830,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "#39,quot",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "updateRoles",
+                "transform": false,
+                "swagger": {
+                    "updateRoles": {
+                        "id": "updateRoles",
+                        "properties": {
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "updateRoles": {
+                        "id": "updateRoles",
+                        "properties": {}
+                    }
+                },
+                "requestName": "updateRoles"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19403,
+                    "resourceId": 135830,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(/_tableName/g, request_parameters[\"tableName\"]),\n \"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135836,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "Creates a table",
+            "path": "/hubs/db/tables/customer",
+            "vendorPath": "select create_table_contacts('_tableName');",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 308260,
+                    "resourceId": 135836,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "STRING",
+                    "vendorDataType": "STRING",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308261,
+                    "resourceId": 135836,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "#39",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "createCustomerTableList",
+                "transform": false,
+                "swagger": {
+                    "createCustomerTableList": {
+                        "id": "createCustomerTableList",
+                        "items": {
+                            "$ref": "createCustomerTableListObject"
+                        },
+                        "type": "array"
+                    },
+                    "create_table_contacts": {
+                        "id": "create_table_contacts",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "createCustomerTableListObject": {
+                        "id": "createCustomerTableListObject",
+                        "properties": {
+                            "create_table_contacts": {
+                                "type": "create_table_contacts"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "createCustomerTableList": {
+                        "id": "createCustomerTableList",
+                        "properties": {}
+                    }
+                },
+                "requestName": "createCustomerTableList"
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19408,
+                    "resourceId": 135836,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(\"_tableName\", request_parameters[\"tableName\"]),\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135832,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "This collapses duplicate rows into a single row. ",
+            "path": "/hubs/db/tables/gpo",
+            "vendorPath": "UPDATE _tableName SET ha_unique_id=subquery.ha_unique_id FROM (SELECT crm_account, array_to_string(array_agg(distinct \"ha_unique_id\"),',') AS ha_unique_id FROM   _tableName GROUP  BY crm_account) AS subquery WHERE _tableName.crm_account= subquery.crm_account;  UPDATE _tableName SET group_purchasing_organization=subquery.group_purchasing_organization FROM (SELECT crm_account, array_to_string(array_agg(distinct \"group_purchasing_organization\"),',') AS group_purchasing_organization FROM   _tableName GROUP  BY crm_account) AS subquery WHERE _tableName.crm_account= subquery.crm_account;",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 308255,
+                    "resourceId": 135832,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308254,
+                    "resourceId": 135832,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "quot,#39",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "updateGPO",
+                "transform": false,
+                "swagger": {
+                    "updateGPO": {
+                        "id": "updateGPO",
+                        "properties": {
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "updateGPO": {
+                        "id": "updateGPO",
+                        "properties": {}
+                    }
+                },
+                "requestName": "updateGPO"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19404,
+                    "resourceId": 135832,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(/_tableName/g, request_parameters[\"tableName\"]),\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135837,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "Creates a table",
+            "path": "/hubs/db/tables/gpo",
+            "vendorPath": "select create_table_gpo('_tableName');",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 308262,
+                    "resourceId": 135837,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "STRING",
+                    "vendorDataType": "STRING",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308263,
+                    "resourceId": 135837,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "#39",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19409,
+                    "resourceId": 135837,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(\"_tableName\", request_parameters[\"tableName\"]),\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135833,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "This collapses duplicate rows into a single row. ",
+            "path": "/hubs/db/tables/npi",
+            "vendorPath": "UPDATE _tableName SET ha_unique_id=subquery.ha_unique_id FROM (SELECT crm_account, array_to_string(array_agg(distinct \"ha_unique_id\"),',') AS ha_unique_id FROM   _tableName GROUP  BY crm_account) AS subquery WHERE _tableName.crm_account= subquery.crm_account;  UPDATE _tableName SET npi_number=subquery.npi_number FROM (SELECT crm_account, array_to_string(array_agg(distinct \"npi_number\"),',') AS npi_number FROM   _tableName GROUP  BY crm_account) AS subquery WHERE _tableName.crm_account= subquery.crm_account;",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 308257,
+                    "resourceId": 135833,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308256,
+                    "resourceId": 135833,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "quot,#39",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "updateNpi",
+                "transform": false,
+                "swagger": {
+                    "updateNpi": {
+                        "id": "updateNpi",
+                        "properties": {
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "updateNpi": {
+                        "id": "updateNpi",
+                        "properties": {}
+                    }
+                },
+                "requestName": "updateNpi"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19405,
+                    "resourceId": 135833,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(/_tableName/g, request_parameters[\"tableName\"]),\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135838,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "Creates a table",
+            "path": "/hubs/db/tables/npi",
+            "vendorPath": "select create_table_npi('_tableName');",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 308264,
+                    "resourceId": 135838,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "tableName",
+                    "vendorName": "tableName",
+                    "description": "tableName",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "STRING",
+                    "vendorDataType": "STRING",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 308265,
+                    "resourceId": 135838,
+                    "createdDate": "2018-02-14T03:10:58Z",
+                    "name": "#39",
+                    "vendorName": "namedParameters",
+                    "description": "Comma separated named parameters",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19410,
+                    "resourceId": 135838,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n \"request_vendor_path\":request_vendor_path.replace(\"_tableName\", request_parameters[\"tableName\"]),\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 135842,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "description": "Validate Database Connection",
+            "path": "/hubs/db/validate-connection",
+            "vendorPath": "select count(*) from pg_stat_activity;",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "validateConnection",
+                "transform": false,
+                "swagger": {}
+            },
+            "type": "onProvision",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 19414,
+                    "resourceId": 135842,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "done({\"response_body\":[]});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "NO_PAGINATION",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "db",
+    "protocolType": "jdbc",
+    "parameters": [
+        {
+            "id": 7890,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "name": "db.host",
+            "vendorName": "db.host",
+            "type": "configuration",
+            "vendorType": "path",
+            "source": "request",
+            "elementId": 17315,
+            "required": false
+        },
+        {
+            "id": 7891,
+            "createdDate": "2018-02-14T03:10:58Z",
+            "name": "db.name",
+            "vendorName": "db.name",
+            "type": "configuration",
+            "vendorType": "path",
+            "source": "request",
+            "elementId": 17315,
+            "required": false
+        }
+    ],
+    "private": false
+}

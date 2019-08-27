@@ -1,0 +1,1462 @@
+{
+    "id": 408,
+    "name": "Bazaarvoice",
+    "hookName": "Bazaarvoice",
+    "key": "bazaarvoice",
+    "description": "The Bazaarvoice element",
+    "image": "elements/provider_bazaarvoice.png",
+    "logo": "bazaarvoice",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 4166,
+            "name": "Bazaarvoice API Version",
+            "key": "api.version",
+            "description": "Bazaarvoice API version",
+            "defaultValue": "5.4",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 4172,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Bazaarvoice Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 253985,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4168,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Bazaarvoice Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4167,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Bazaarvoice Base URL",
+            "defaultValue": "http://[stg.]api.bazaarvoice.com/data",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 4165,
+            "name": "Bazaarvoice API Key",
+            "key": "api.key",
+            "description": "Bazaarvoice API key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52485,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159928,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256111,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256362,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 4169,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "Bazaarvoice Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4170,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Bazaarvoice Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9713,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4171,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Bazaarvoice Vendor Event Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 4236,
+            "createdDate": "2015-10-16T00:38:47Z",
+            "description": "Upload a photo. See additional documentation here: https://developer.bazaarvoice.com/apis/conversations/tutorials/photo_upload#image-url",
+            "path": "/hubs/inspirato/photos",
+            "vendorPath": "/uploadphoto.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 4048,
+                    "resourceId": 4236,
+                    "createdDate": "2015-10-16T00:38:47Z",
+                    "name": "contentType",
+                    "vendorName": "contenttype",
+                    "description": "The Content type of the photo being uploaded. Can be 'Review', 'Question', or 'Answer'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 4049,
+                    "resourceId": 4236,
+                    "createdDate": "2015-10-16T00:38:47Z",
+                    "name": "file",
+                    "vendorName": "photo",
+                    "description": "The photo to be uploaded. Can support .png .bmp .gif .jpg",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "File",
+                    "vendorDataType": "File",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 4050,
+                    "resourceId": 4236,
+                    "createdDate": "2015-10-16T00:38:47Z",
+                    "name": "multipart/form-data",
+                    "vendorName": "Content-Type",
+                    "description": "The content type for file upload",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 4051,
+                    "resourceId": 4236,
+                    "createdDate": "2015-10-16T00:38:47Z",
+                    "name": "photoUrl",
+                    "vendorName": "photourl",
+                    "description": "The URL of the photo to be uploaded",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "photos",
+                "transform": false,
+                "swagger": {
+                    "Sizes": {
+                        "id": "Sizes",
+                        "properties": {
+                            "normal": {
+                                "type": "normal"
+                            },
+                            "thumbnail": {
+                                "type": "thumbnail"
+                            }
+                        }
+                    },
+                    "normal": {
+                        "id": "normal",
+                        "properties": {
+                            "Id": {
+                                "type": "string"
+                            },
+                            "Url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "thumbnail": {
+                        "id": "thumbnail",
+                        "properties": {
+                            "Id": {
+                                "type": "string"
+                            },
+                            "Url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Fields": {
+                        "id": "Fields",
+                        "properties": {
+                            "photo": {
+                                "type": "photo"
+                            }
+                        }
+                    },
+                    "Form": {
+                        "id": "Form",
+                        "properties": {
+                            "Type": {
+                                "type": "string"
+                            },
+                            "Id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Groups": {
+                        "id": "Groups",
+                        "properties": {}
+                    },
+                    "FormErrors": {
+                        "id": "FormErrors",
+                        "properties": {}
+                    },
+                    "photo": {
+                        "id": "photo",
+                        "properties": {
+                            "Type": {
+                                "type": "string"
+                            },
+                            "Required": {
+                                "type": "unknown"
+                            },
+                            "Value": {
+                                "type": "unknown"
+                            },
+                            "Label": {
+                                "type": "unknown"
+                            },
+                            "MinLength": {
+                                "type": "unknown"
+                            },
+                            "Id": {
+                                "type": "string"
+                            },
+                            "MaxLength": {
+                                "type": "unknown"
+                            },
+                            "Default": {
+                                "type": "unknown"
+                            }
+                        }
+                    },
+                    "Data": {
+                        "id": "Data",
+                        "properties": {
+                            "Fields": {
+                                "type": "Fields"
+                            },
+                            "Groups": {
+                                "type": "Groups"
+                            },
+                            "FieldsOrder": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "Photo": {
+                        "id": "Photo",
+                        "properties": {
+                            "Sizes": {
+                                "type": "Sizes"
+                            },
+                            "Id": {
+                                "type": "string"
+                            },
+                            "SizesOrder": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "Caption": {
+                                "type": "unknown"
+                            }
+                        }
+                    },
+                    "photos": {
+                        "id": "photos",
+                        "properties": {
+                            "Locale": {
+                                "type": "string"
+                            },
+                            "Form": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "Form"
+                                }
+                            },
+                            "FormErrors": {
+                                "type": "FormErrors"
+                            },
+                            "SubmissionId": {
+                                "type": "unknown"
+                            },
+                            "Data": {
+                                "type": "Data"
+                            },
+                            "TypicalHoursToPost": {
+                                "type": "unknown"
+                            },
+                            "Photo": {
+                                "type": "Photo"
+                            },
+                            "AuthorSubmissionToken": {
+                                "type": "unknown"
+                            },
+                            "HasErrors": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2410,
+            "createdDate": "2015-07-15T22:13:58Z",
+            "description": "Create a review",
+            "path": "/hubs/inspirato/products/{id}/reviews",
+            "vendorPath": "/submitreview.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2494,
+                    "resourceId": 2410,
+                    "createdDate": "2015-07-15T22:13:58Z",
+                    "name": "action",
+                    "vendorName": "action",
+                    "description": "The action: preview or submit",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2495,
+                    "resourceId": 2410,
+                    "createdDate": "2015-07-15T22:13:58Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The review",
+                    "type": "body",
+                    "vendorType": "query",
+                    "dataType": "Review",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2496,
+                    "resourceId": 2410,
+                    "createdDate": "2015-07-15T22:13:58Z",
+                    "name": "id",
+                    "vendorName": "productId",
+                    "description": "The product ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "productsReviews",
+                "transform": false,
+                "swagger": {
+                    "productsReviews": {
+                        "id": "productsReviews",
+                        "properties": {
+                            "Locale": {
+                                "type": "string"
+                            },
+                            "FormErrors": {
+                                "type": "FormErrors"
+                            },
+                            "SubmissionId": {
+                                "type": "string"
+                            },
+                            "Data": {
+                                "type": "Data"
+                            },
+                            "TypicalHoursToPost": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "Review": {
+                                "type": "Review"
+                            },
+                            "AuthorSubmissionToken": {
+                                "type": "string"
+                            },
+                            "HasErrors": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "FormErrors": {
+                        "id": "FormErrors",
+                        "properties": {}
+                    },
+                    "Data": {
+                        "id": "Data",
+                        "properties": {}
+                    },
+                    "Review": {
+                        "id": "Review",
+                        "properties": {
+                            "SendEmailAlertWhenCommented": {
+                                "type": "boolean"
+                            },
+                            "SubmissionTime": {
+                                "type": "string"
+                            },
+                            "Rating": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "ReviewText": {
+                                "type": "string"
+                            },
+                            "SubmissionId": {
+                                "type": "unknown"
+                            },
+                            "IsRecommended": {
+                                "type": "boolean"
+                            },
+                            "Title": {
+                                "type": "string"
+                            },
+                            "TypicalHoursToPost": {
+                                "type": "unknown"
+                            },
+                            "Id": {
+                                "type": "unknown"
+                            },
+                            "SendEmailAlertWhenPublished": {
+                                "type": "boolean"
+                            },
+                            "UserId": {
+                                "type": "string"
+                            },
+                            "UserNickname": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2409,
+            "createdDate": "2015-07-15T22:13:58Z",
+            "description": "Search for reviews",
+            "path": "/hubs/inspirato/reviews",
+            "vendorPath": "/reviews.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 2490,
+                    "resourceId": 2409,
+                    "createdDate": "2015-07-15T22:13:58Z",
+                    "name": "filter",
+                    "vendorName": "filter",
+                    "description": "The Bazaarvoice filter. For example: rating:gt:3",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2491,
+                    "resourceId": 2409,
+                    "createdDate": "2015-07-15T22:13:58Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2492,
+                    "resourceId": 2409,
+                    "createdDate": "2015-07-15T22:13:58Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2493,
+                    "resourceId": 2409,
+                    "createdDate": "2015-07-15T22:13:58Z",
+                    "name": "where",
+                    "vendorName": "converter:toBazaarvoice",
+                    "description": "The CEQL search expression. For example: rating > 3",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toBazaarvoice",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reviewsList",
+                "transform": false,
+                "swagger": {
+                    "TagDimensions": {
+                        "id": "TagDimensions",
+                        "properties": {}
+                    },
+                    "SecondaryRatings": {
+                        "id": "SecondaryRatings",
+                        "properties": {}
+                    },
+                    "reviewsListObject": {
+                        "id": "reviewsListObject",
+                        "properties": {
+                            "UserNickname": {
+                                "type": "string"
+                            },
+                            "Rating": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "ReviewText": {
+                                "type": "unknown"
+                            },
+                            "ContextDataValues": {
+                                "type": "ContextDataValues"
+                            },
+                            "ProductId": {
+                                "type": "string"
+                            },
+                            "TotalNegativeFeedbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "RatingRange": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "UserLocation": {
+                                "type": "unknown"
+                            },
+                            "CampaignId": {
+                                "type": "string"
+                            },
+                            "TotalCommentCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "TotalPositiveFeedbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "IsRatingsOnly": {
+                                "type": "boolean"
+                            },
+                            "Pros": {
+                                "type": "unknown"
+                            },
+                            "LastModificationTime": {
+                                "type": "string"
+                            },
+                            "AuthorId": {
+                                "type": "string"
+                            },
+                            "Helpfulness": {
+                                "type": "unknown"
+                            },
+                            "SubmissionTime": {
+                                "type": "string"
+                            },
+                            "AdditionalFields": {
+                                "type": "AdditionalFields"
+                            },
+                            "TotalFeedbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "Title": {
+                                "type": "unknown"
+                            },
+                            "ModerationStatus": {
+                                "type": "string"
+                            },
+                            "IsFeatured": {
+                                "type": "boolean"
+                            },
+                            "Cons": {
+                                "type": "unknown"
+                            },
+                            "TagDimensions": {
+                                "type": "TagDimensions"
+                            },
+                            "SecondaryRatings": {
+                                "type": "SecondaryRatings"
+                            },
+                            "Badges": {
+                                "type": "Badges"
+                            },
+                            "SubmissionId": {
+                                "type": "string"
+                            },
+                            "IsSyndicated": {
+                                "type": "boolean"
+                            },
+                            "IsRecommended": {
+                                "type": "boolean"
+                            },
+                            "LastModeratedTime": {
+                                "type": "string"
+                            },
+                            "Id": {
+                                "type": "string"
+                            },
+                            "ContentLocale": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Badges": {
+                        "id": "Badges",
+                        "properties": {}
+                    },
+                    "AdditionalFields": {
+                        "id": "AdditionalFields",
+                        "properties": {}
+                    },
+                    "ContextDataValues": {
+                        "id": "ContextDataValues",
+                        "properties": {}
+                    },
+                    "reviewsList": {
+                        "id": "reviewsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "reviewsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Results",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2609,
+            "createdDate": "2015-07-23T16:09:41Z",
+            "description": "Search for reviews",
+            "path": "/hubs/inspirato/reviews/comments",
+            "vendorPath": "/reviewcomments.json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 2659,
+                    "resourceId": 2609,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "filter",
+                    "vendorName": "filter",
+                    "description": "The Bazaarvoice filter. For example: rating:gt:3",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2660,
+                    "resourceId": 2609,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2661,
+                    "resourceId": 2609,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2662,
+                    "resourceId": 2609,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "where",
+                    "vendorName": "converter:toBazaarvoice",
+                    "description": "The CEQL search expression. For example: rating > 3",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toBazaarvoice",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reviewsCommentsList",
+                "transform": false,
+                "swagger": {
+                    "Badges": {
+                        "id": "Badges",
+                        "properties": {}
+                    },
+                    "reviewsCommentsListObject": {
+                        "id": "reviewsCommentsListObject",
+                        "properties": {
+                            "LastModificationTime": {
+                                "type": "string"
+                            },
+                            "AuthorId": {
+                                "type": "string"
+                            },
+                            "UserNickname": {
+                                "type": "string"
+                            },
+                            "CommentText": {
+                                "type": "string"
+                            },
+                            "SubmissionTime": {
+                                "type": "string"
+                            },
+                            "TotalFeedbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "Title": {
+                                "type": "string"
+                            },
+                            "ModerationStatus": {
+                                "type": "string"
+                            },
+                            "TotalNegativeFeedbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "UserLocation": {
+                                "type": "string"
+                            },
+                            "CampaignId": {
+                                "type": "unknown"
+                            },
+                            "Badges": {
+                                "type": "Badges"
+                            },
+                            "IsSyndicated": {
+                                "type": "unknown"
+                            },
+                            "SubmissionId": {
+                                "type": "string"
+                            },
+                            "StoryId": {
+                                "type": "unknown"
+                            },
+                            "LastModeratedTime": {
+                                "type": "string"
+                            },
+                            "ReviewId": {
+                                "type": "string"
+                            },
+                            "Id": {
+                                "type": "string"
+                            },
+                            "TotalPositiveFeedbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "ContentLocale": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "reviewsCommentsList": {
+                        "id": "reviewsCommentsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "reviewsCommentsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Results",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2611,
+            "createdDate": "2015-07-23T16:09:41Z",
+            "description": "Create comment feedback",
+            "path": "/hubs/inspirato/reviews/comments/{commentId}/feedback",
+            "vendorPath": "/submitfeedback.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2666,
+                    "resourceId": 2611,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The feedback",
+                    "type": "body",
+                    "vendorType": "query",
+                    "dataType": "FeedbackCreate",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2667,
+                    "resourceId": 2611,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "commentId",
+                    "vendorName": "contentId",
+                    "description": "The comment ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2668,
+                    "resourceId": 2611,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "review_comment",
+                    "vendorName": "contentType",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reviewsCommentsFeedback",
+                "transform": false,
+                "swagger": {
+                    "Feedback": {
+                        "id": "Feedback",
+                        "properties": {
+                            "Helpfulness": {
+                                "type": "Helpfulness"
+                            }
+                        }
+                    },
+                    "Helpfulness": {
+                        "id": "Helpfulness",
+                        "properties": {
+                            "Vote": {
+                                "type": "string"
+                            },
+                            "AuthorId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "FeedbackCreate": {
+                        "id": "FeedbackCreate",
+                        "properties": {
+                            "FeedbackType": {
+                                "type": "string"
+                            },
+                            "UserId": {
+                                "type": "string"
+                            },
+                            "Vote": {
+                                "type": "string"
+                            },
+                            "ReasonText": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "FormErrors": {
+                        "id": "FormErrors",
+                        "properties": {}
+                    },
+                    "Data": {
+                        "id": "Data",
+                        "properties": {}
+                    },
+                    "reviewsCommentsFeedback": {
+                        "id": "reviewsCommentsFeedback",
+                        "properties": {
+                            "Locale": {
+                                "type": "string"
+                            },
+                            "Feedback": {
+                                "type": "Feedback"
+                            },
+                            "FormErrors": {
+                                "type": "FormErrors"
+                            },
+                            "SubmissionId": {
+                                "type": "unknown"
+                            },
+                            "Data": {
+                                "type": "Data"
+                            },
+                            "TypicalHoursToPost": {
+                                "type": "unknown"
+                            },
+                            "AuthorSubmissionToken": {
+                                "type": "unknown"
+                            },
+                            "HasErrors": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2610,
+            "createdDate": "2015-07-23T16:09:41Z",
+            "description": "Create a review",
+            "path": "/hubs/inspirato/reviews/{reviewId}/comments",
+            "vendorPath": "/submitreviewcomment.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2663,
+                    "resourceId": 2610,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "action",
+                    "vendorName": "action",
+                    "description": "The action: preview or submit",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2664,
+                    "resourceId": 2610,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The comment",
+                    "type": "body",
+                    "vendorType": "query",
+                    "dataType": "Comment",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2665,
+                    "resourceId": 2610,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "reviewId",
+                    "vendorName": "reviewId",
+                    "description": "The review ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reviewsComments",
+                "transform": false,
+                "swagger": {
+                    "Comment": {
+                        "id": "Comment",
+                        "properties": {
+                            "SubmissionTime": {
+                                "type": "string"
+                            },
+                            "CommentText": {
+                                "type": "string"
+                            },
+                            "SubmissionId": {
+                                "type": "unknown"
+                            },
+                            "Title": {
+                                "type": "string"
+                            },
+                            "TypicalHoursToPost": {
+                                "type": "unknown"
+                            },
+                            "Id": {
+                                "type": "unknown"
+                            },
+                            "SendEmailAlertWhenPublished": {
+                                "type": "boolean"
+                            },
+                            "UserNickname": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "FormErrors": {
+                        "id": "FormErrors",
+                        "properties": {}
+                    },
+                    "reviewsComments": {
+                        "id": "reviewsComments",
+                        "properties": {
+                            "Locale": {
+                                "type": "string"
+                            },
+                            "Comment": {
+                                "type": "Comment"
+                            },
+                            "FormErrors": {
+                                "type": "FormErrors"
+                            },
+                            "SubmissionId": {
+                                "type": "string"
+                            },
+                            "Data": {
+                                "type": "Data"
+                            },
+                            "TypicalHoursToPost": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "AuthorSubmissionToken": {
+                                "type": "string"
+                            },
+                            "HasErrors": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "Data": {
+                        "id": "Data",
+                        "properties": {}
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2612,
+            "createdDate": "2015-07-23T16:09:41Z",
+            "description": "Create review feedback",
+            "path": "/hubs/inspirato/reviews/{reviewId}/feedback",
+            "vendorPath": "/submitfeedback.json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2669,
+                    "resourceId": 2612,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The feedback",
+                    "type": "body",
+                    "vendorType": "query",
+                    "dataType": "FeedbackCreate",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2670,
+                    "resourceId": 2612,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "review",
+                    "vendorName": "contentType",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 2671,
+                    "resourceId": 2612,
+                    "createdDate": "2015-07-23T16:09:41Z",
+                    "name": "reviewId",
+                    "vendorName": "contentId",
+                    "description": "The review ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reviewsFeedback",
+                "transform": false,
+                "swagger": {
+                    "reviewsFeedback": {
+                        "id": "reviewsFeedback",
+                        "properties": {
+                            "Locale": {
+                                "type": "string"
+                            },
+                            "Feedback": {
+                                "type": "Feedback"
+                            },
+                            "FormErrors": {
+                                "type": "FormErrors"
+                            },
+                            "SubmissionId": {
+                                "type": "unknown"
+                            },
+                            "Data": {
+                                "type": "Data"
+                            },
+                            "TypicalHoursToPost": {
+                                "type": "unknown"
+                            },
+                            "AuthorSubmissionToken": {
+                                "type": "unknown"
+                            },
+                            "HasErrors": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "Feedback": {
+                        "id": "Feedback",
+                        "properties": {
+                            "Helpfulness": {
+                                "type": "Helpfulness"
+                            }
+                        }
+                    },
+                    "Helpfulness": {
+                        "id": "Helpfulness",
+                        "properties": {
+                            "Vote": {
+                                "type": "string"
+                            },
+                            "AuthorId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "FeedbackCreate": {
+                        "id": "FeedbackCreate",
+                        "properties": {
+                            "FeedbackType": {
+                                "type": "string"
+                            },
+                            "UserId": {
+                                "type": "string"
+                            },
+                            "Vote": {
+                                "type": "string"
+                            },
+                            "ReasonText": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "FormErrors": {
+                        "id": "FormErrors",
+                        "properties": {}
+                    },
+                    "Data": {
+                        "id": "Data",
+                        "properties": {}
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "inspirato",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 436,
+            "createdDate": "2015-07-15T22:13:58Z",
+            "name": "api.version",
+            "vendorName": "apiversion",
+            "type": "configuration",
+            "vendorType": "query",
+            "source": "request",
+            "elementId": 408,
+            "required": false
+        },
+        {
+            "id": 435,
+            "createdDate": "2015-07-15T22:13:58Z",
+            "name": "api.key",
+            "vendorName": "passkey",
+            "type": "configuration",
+            "vendorType": "query",
+            "source": "request",
+            "elementId": 408,
+            "required": false
+        }
+    ],
+    "private": false
+}

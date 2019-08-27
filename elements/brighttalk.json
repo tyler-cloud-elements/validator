@@ -1,0 +1,3496 @@
+{
+    "id": 338,
+    "name": "BrightTALK",
+    "hookName": "BrightTALK",
+    "key": "brighttalk",
+    "description": "Add an BrightTALK Instance to connect your existing BrightTALK account to the Marketing Hub, allowing you to manage your channels, subscribers, activities, etc. You will need your BrightTALK account information to add an instance.",
+    "image": "elements/provider_brighttalk.png",
+    "logo": "brighttalk",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "signupURL": "http://www.brighttalk.com",
+    "configuration": [
+        {
+            "id": 253990,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3363,
+            "name": "API Key",
+            "key": "brighttalk.api.key",
+            "description": "BrightTALK API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 3364,
+            "name": "API Secret",
+            "key": "brighttalk.api.secret",
+            "description": "BrightTALK API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 3365,
+            "name": "Staging",
+            "key": "brighttalk.isstaging",
+            "description": "Connect to BrightTALK Staging Environment",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 4494,
+            "name": "Bulk ignore if email not present",
+            "key": "brighttalk.bulkignore.emailnotpresent",
+            "description": "Bulk ignore if email not present",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 52544,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159807,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256116,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256367,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "channels",
+            "vendorName": "channels"
+        },
+        {
+            "name": "activities",
+            "vendorName": "subscribersWebcastActivity"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "subscribers"
+        },
+        {
+            "name": "surveys",
+            "vendorName": "surveys"
+        },
+        {
+            "name": "campaign-activities",
+            "vendorName": "campaignActivities"
+        },
+        {
+            "name": "campaigns",
+            "vendorName": "campaigns"
+        },
+        {
+            "name": "accounts",
+            "vendorName": "accounts"
+        },
+        {
+            "name": "responses",
+            "vendorName": "surveyResponses"
+        },
+        {
+            "name": "subscriberWebcastAttachmentAccessSummaries",
+            "vendorName": "subscriberWebcastAttachmentAccessSummaries"
+        },
+        {
+            "name": "questions",
+            "vendorName": "channelQuestions"
+        }
+    ],
+    "objectMetadata": {
+        "subscribersWebcastActivity": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "liveViewingDuration"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "liveViewingDurationMinutes"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "webcast.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcast.title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcast.presenter"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "webcast.duration"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "webcast.durationMinutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcast.clientBookingRef"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcast.url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcast.status"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "vendorPath": "webcast.start"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "totalViewingDuration"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "totalViewingDurationMinutes"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "liveViewings"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcastHistory"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityMessage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityUrl.url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityUrl.utm_term"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityUrl.utm_campaign"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityUrl.utm_medium"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityUrl.utm_content"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityUrl.utm_source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "activityUrl.mkt_tok"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedTrack"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedUrl.url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedUrl.utm_term"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedUrl.utm_campaign"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedUrl.utm_medium"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedUrl.utm_content"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedUrl.utm_source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "preregistrationEmbedUrl.mkt_tok"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedTrack"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedUrl.url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedUrl.utm_term"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedUrl.utm_campaign"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedUrl.utm_medium"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedUrl.utm_content"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedUrl.utm_source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastViewingEmbedUrl.mkt_tok"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "vendorPath": "created"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recordedViewings"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "preregistered"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "vendorPath": "lastUpdated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "user.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.firstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.lastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.timeZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.jobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companySize"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.industry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.level"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.countryISOCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateAbbreviation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.hubspotCountryValue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recordedViewingDuration"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recordedViewingDurationMinutes"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "totalViewings"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.organisation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "channel.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.url"
+                }
+            ]
+        },
+        "campaigns": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "displayName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "id"
+                }
+            ]
+        },
+        "channels": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organisation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "url"
+                }
+            ]
+        },
+        "subscribers": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "referral"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "embed.url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "embed.utm_campaign"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "embed.utm_content"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "embed.utm_source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "embed.utm_medium"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "embed.utm_term"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "embed.mkt_tok"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "user.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.firstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.lastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.timeZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.jobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.level"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companySize"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.industry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.countryISOCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateAbbreviation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.hubspotCountryValue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "context.leadType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "context.leadContext"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "context.engagementScore"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.organisation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "channel.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.url"
+                }
+            ]
+        },
+        "surveys": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "channel.name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.organisation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "channel.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.url"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "active"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "question[*].id"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "question[*].reportingId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "question[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "question[*].required"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "question[*].text"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "question[*].options.option"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "question[*].deleted"
+                }
+            ]
+        },
+        "campaignActivities": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "account.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "account.name"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "vendorPath": "account.created"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "campaign.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "campaign.name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "campaign.displayName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "campaign.leadType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "campaign.campaignReference"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "user.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.firstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.lastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.level"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.jobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.timeZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.countryISOCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateAbbreviation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.hubspotCountryValue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.industry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companySize"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.email"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "engagement.channelId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "engagement.contextId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "engagement.context"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "engagement.type"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "engagement.count"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "engagement.leadScore"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "engagement.leadType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "engagement.totalViewingDuration"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "vendorPath": "engagement.created"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "vendorPath": "engagement.delivered"
+                }
+            ]
+        },
+        "subscriberWebcastAttachmentAccessSummaries": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "firstAccessed"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "webcast.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedUrl.url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedUrl.utm_term"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedUrl.utm_campaign"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedUrl.utm_medium"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedUrl.utm_content"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedUrl.utm_source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedUrl.mkt_tok"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessEmbedTrack"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "webcastAttachment.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcastAttachment.title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcastAttachment.type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "webcastAttachment.url"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "totalAccesses"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.organisation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "channel.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.url"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "liveViewingAccessCount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastAccessed"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "user.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.firstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.lastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.timeZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.jobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.level"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companySize"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.industry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.countryISOCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateAbbreviation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.hubspotCountryValue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recordedViewingAccessCount"
+                }
+            ]
+        },
+        "accounts": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "vendorPath": "created"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                }
+            ]
+        },
+        "channelQuestions": {
+            "fields": [
+                {
+                    "type": "number",
+                    "path": "channel.id",
+                    "vendorPath": "channel.id"
+                },
+                {
+                    "type": "string",
+                    "path": "channel.name",
+                    "vendorPath": "channel.name"
+                },
+                {
+                    "type": "string",
+                    "path": "channel.organisation",
+                    "vendorPath": "channel.organisation"
+                },
+                {
+                    "type": "string",
+                    "path": "channel.url",
+                    "vendorPath": "channel.url"
+                },
+                {
+                    "type": "string",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "path": "created",
+                    "vendorPath": "created"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedTrack",
+                    "vendorPath": "questionEmbedTrack"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedUrl.mkt_tok",
+                    "vendorPath": "questionEmbedUrl.mkt_tok"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedUrl.url",
+                    "vendorPath": "questionEmbedUrl.url"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedUrl.utm_campaign",
+                    "vendorPath": "questionEmbedUrl.utm_campaign"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedUrl.utm_content",
+                    "vendorPath": "questionEmbedUrl.utm_content"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedUrl.utm_medium",
+                    "vendorPath": "questionEmbedUrl.utm_medium"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedUrl.utm_source",
+                    "vendorPath": "questionEmbedUrl.utm_source"
+                },
+                {
+                    "type": "string",
+                    "path": "questionEmbedUrl.utm_term",
+                    "vendorPath": "questionEmbedUrl.utm_term"
+                },
+                {
+                    "type": "string",
+                    "mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                    "path": "lastUpdated",
+                    "vendorPath": "lastUpdated"
+                },
+                {
+                    "type": "string",
+                    "path": "user.companyName",
+                    "vendorPath": "user.companyName"
+                },
+                {
+                    "type": "string",
+                    "path": "user.companySize",
+                    "vendorPath": "user.companySize"
+                },
+                {
+                    "type": "string",
+                    "path": "user.country",
+                    "vendorPath": "user.country"
+                },
+                {
+                    "type": "string",
+                    "path": "user.countryISOCode",
+                    "vendorPath": "user.countryISOCode"
+                },
+                {
+                    "type": "string",
+                    "path": "user.stateAbbreviation",
+                    "vendorPath": "user.stateAbbreviation"
+                },
+                {
+                    "type": "string",
+                    "path": "user.hubspotCountryValue",
+                    "vendorPath": "user.hubspotCountryValue"
+                },
+                {
+                    "type": "string",
+                    "path": "user.email",
+                    "vendorPath": "user.email"
+                },
+                {
+                    "type": "string",
+                    "path": "user.firstName",
+                    "vendorPath": "user.firstName"
+                },
+                {
+                    "type": "number",
+                    "path": "user.id",
+                    "vendorPath": "user.id"
+                },
+                {
+                    "type": "string",
+                    "path": "user.industry",
+                    "vendorPath": "user.industry"
+                },
+                {
+                    "type": "string",
+                    "path": "user.jobTitle",
+                    "vendorPath": "user.jobTitle"
+                },
+                {
+                    "type": "string",
+                    "path": "user.lastName",
+                    "vendorPath": "user.lastName"
+                },
+                {
+                    "type": "string",
+                    "path": "user.level",
+                    "vendorPath": "user.level"
+                },
+                {
+                    "type": "string",
+                    "path": "user.phone",
+                    "vendorPath": "user.phone"
+                },
+                {
+                    "type": "string",
+                    "path": "user.stateProvince",
+                    "vendorPath": "user.stateProvince"
+                },
+                {
+                    "type": "string",
+                    "path": "user.timeZone",
+                    "vendorPath": "user.timeZone"
+                },
+                {
+                    "type": "number",
+                    "path": "webcast.id",
+                    "vendorPath": "webcast.id"
+                },
+                {
+                    "type": "string",
+                    "path": "webcast.title",
+                    "vendorPath": "webcast.title"
+                },
+                {
+                    "type": "number",
+                    "path": "id",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "string",
+                    "path": "text",
+                    "vendorPath": "text"
+                },
+                {
+                    "type": "boolean",
+                    "path": "answered",
+                    "vendorPath": "answered"
+                }
+            ]
+        },
+        "surveyResponses": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "channel.name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.organisation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "channel.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "channel.url"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "survey.id"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "user.id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.firstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.lastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.timeZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.jobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.level"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.companySize"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.industry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.countryISOCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.stateAbbreviation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "user.hubspotCountryValue"
+                }
+            ]
+        }
+    },
+    "resources": [
+        {
+            "id": 264721,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find accounts in the Marketing Automation system.",
+            "path": "/hubs/marketing/accounts",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "AccountList",
+                "transform": false,
+                "swagger": {
+                    "Account": {
+                        "properties": {
+                            "created": {
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "AccountList": {
+                        "items": {
+                            "$ref": "#/definitions/Account"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264723,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find campaign activities in the Marketing Automation system.",
+            "path": "/hubs/marketing/accounts/{id}/campaign-activities",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652198,
+                    "resourceId": 264723,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the account to find campaign activities from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652197,
+                    "resourceId": 264723,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652196,
+                    "resourceId": 264723,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652195,
+                    "resourceId": 264723,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CampaignActivityList",
+                "transform": false,
+                "swagger": {
+                    "CampaignActivity": {
+                        "properties": {
+                            "account": {
+                                "properties": {
+                                    "created": {
+                                        "type": "string",
+                                        "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "campaign": {
+                                "properties": {
+                                    "campaignReference": {
+                                        "type": "string"
+                                    },
+                                    "displayName": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "leadType": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "engagement": {
+                                "properties": {
+                                    "channelId": {
+                                        "type": "string"
+                                    },
+                                    "context": {
+                                        "type": "string"
+                                    },
+                                    "contextId": {
+                                        "type": "string"
+                                    },
+                                    "count": {
+                                        "type": "string"
+                                    },
+                                    "created": {
+                                        "type": "string",
+                                        "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX"
+                                    },
+                                    "delivered": {
+                                        "type": "string",
+                                        "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX"
+                                    },
+                                    "leadScore": {
+                                        "type": "string"
+                                    },
+                                    "leadType": {
+                                        "type": "string"
+                                    },
+                                    "totalViewingDuration": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "user": {
+                                "properties": {
+                                    "companyName": {
+                                        "type": "string"
+                                    },
+                                    "companySize": {
+                                        "type": "string"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "firstName": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "industry": {
+                                        "type": "string"
+                                    },
+                                    "jobTitle": {
+                                        "type": "string"
+                                    },
+                                    "lastName": {
+                                        "type": "string"
+                                    },
+                                    "level": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "stateProvince": {
+                                        "type": "string"
+                                    },
+                                    "timeZone": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "CampaignActivityList": {
+                        "items": {
+                            "$ref": "#/definitions/CampaignActivity"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264722,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find campaigns in the Marketing Automation system.",
+            "path": "/hubs/marketing/accounts/{id}/campaigns",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652194,
+                    "resourceId": 264722,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the account to find campaigns from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652193,
+                    "resourceId": 264722,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652192,
+                    "resourceId": 264722,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CampaignList",
+                "transform": false,
+                "swagger": {
+                    "Campaign": {
+                        "properties": {
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "CampaignList": {
+                        "items": {
+                            "$ref": "#/definitions/Campaign"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264724,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find channels in the Marketing Automation system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all channels for a user 386, the search expression parameter will be <i>where=userId = 386</i>.",
+            "path": "/hubs/marketing/channels",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652201,
+                    "resourceId": 264724,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for channels for userId 24, the search expression will be <i>where=userId>=24</i>. When this parameter is omitted, all channels for the current user are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652200,
+                    "resourceId": 264724,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652199,
+                    "resourceId": 264724,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "nextPage",
+                    "vendorName": "nextPage",
+                    "description": "Next Page link. You can get this from the Header of the previous search",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "ChannelList",
+                "transform": false,
+                "swagger": {
+                    "Channel": {
+                        "properties": {
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "keywords": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisation": {
+                                "type": "string"
+                            },
+                            "strapline": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "link": {
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            },
+                            "rel": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "ChannelList": {
+                        "items": {
+                            "$ref": "#/definitions/Channel"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264725,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find activities for a channel in the Marketing Automation system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all contacts whose name contains the word 'data', the search expression parameter will be <i>where=name like '%data%'</i>. If a search expression is not provided, then the first 200 records will be returned.",
+            "path": "/hubs/marketing/channels/{channelId}/activities",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652205,
+                    "resourceId": 264725,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "channelId",
+                    "vendorName": "channelId",
+                    "description": "The ID of the channel to find activities from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652204,
+                    "resourceId": 264725,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for activities for id 24, the search expression will be <i>where=id>=24</i>. When this parameter is omitted, all activities for the current channel are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652203,
+                    "resourceId": 264725,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652202,
+                    "resourceId": 264725,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "nextPage",
+                    "vendorName": "nextPage",
+                    "description": "Next Page link. You can get this from the Header of the previous search",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "ActivityList",
+                "transform": false,
+                "swagger": {
+                    "ActivityList": {
+                        "items": {
+                            "$ref": "#/definitions/Activity"
+                        },
+                        "type": "array"
+                    },
+                    "webcast": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "activityUrl": {
+                        "properties": {
+                            "forcecall": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "utm_campaign": {
+                                "type": "string"
+                            },
+                            "utm_content": {
+                                "type": "string"
+                            },
+                            "utm_medium": {
+                                "type": "string"
+                            },
+                            "utm_source": {
+                                "type": "string"
+                            },
+                            "utm_term": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Channel": {
+                        "properties": {
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "keywords": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisation": {
+                                "type": "string"
+                            },
+                            "strapline": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "link": {
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            },
+                            "rel": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "preregistrationEmbedUrl": {
+                        "properties": {
+                            "forcecall": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "utm_campaign": {
+                                "type": "string"
+                            },
+                            "utm_content": {
+                                "type": "string"
+                            },
+                            "utm_medium": {
+                                "type": "string"
+                            },
+                            "utm_source": {
+                                "type": "string"
+                            },
+                            "utm_term": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Activity": {
+                        "properties": {
+                            "activityType": {
+                                "type": "string"
+                            },
+                            "activityUrl": {
+                                "$ref": "#/definitions/activityUrl"
+                            },
+                            "channel": {
+                                "$ref": "#/definitions/Channel"
+                            },
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "lastViewingEmbedTrack": {
+                                "type": "string"
+                            },
+                            "lastViewingEmbedUrl": {
+                                "$ref": "#/definitions/lastViewingEmbedUrl"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "liveViewingDuration": {
+                                "type": "number"
+                            },
+                            "liveViewingDurationMinutes": {
+                                "type": "string"
+                            },
+                            "liveViewings": {
+                                "type": "number"
+                            },
+                            "preregistered": {
+                                "type": "boolean"
+                            },
+                            "preregistrationEmbedTrack": {
+                                "type": "string"
+                            },
+                            "preregistrationEmbedUrl": {
+                                "$ref": "#/definitions/preregistrationEmbedUrl"
+                            },
+                            "recordedViewingDuration": {
+                                "type": "number"
+                            },
+                            "recordedViewingDurationMinutes": {
+                                "type": "number"
+                            },
+                            "recordedViewings": {
+                                "type": "number"
+                            },
+                            "totalViewingDuration": {
+                                "type": "number"
+                            },
+                            "totalViewingDurationMinutes": {
+                                "type": "number"
+                            },
+                            "totalViewings": {
+                                "type": "number"
+                            },
+                            "user": {
+                                "$ref": "#/definitions/user"
+                            },
+                            "webcast": {
+                                "$ref": "#/definitions/webcast"
+                            }
+                        }
+                    },
+                    "lastViewingEmbedUrl": {
+                        "properties": {
+                            "forcecall": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "utm_campaign": {
+                                "type": "string"
+                            },
+                            "utm_content": {
+                                "type": "string"
+                            },
+                            "utm_medium": {
+                                "type": "string"
+                            },
+                            "utm_source": {
+                                "type": "string"
+                            },
+                            "utm_term": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "user": {
+                        "properties": {
+                            "companyName": {
+                                "type": "string"
+                            },
+                            "companySize": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "jobTitle": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "stateProvince": {
+                                "type": "string"
+                            },
+                            "timeZone": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264726,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find contacts for a channel in the Marketing Automation system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all contacts whose name contains the word 'data', the search expression parameter will be <i>where=name like '%data%'</i>. If a search expression is not provided, then the first 200 records will be returned.",
+            "path": "/hubs/marketing/channels/{channelId}/contacts",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652209,
+                    "resourceId": 264726,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "channelId",
+                    "vendorName": "channelId",
+                    "description": "The ID of the channel to find contacts from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652208,
+                    "resourceId": 264726,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for contacts for id 24, the search expression will be <i>where=id>=24</i>. When this parameter is omitted, all contacts for the current channel are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652207,
+                    "resourceId": 264726,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652206,
+                    "resourceId": 264726,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "nextPage",
+                    "vendorName": "nextPage",
+                    "description": "Next Page link. You can get this from the Header of the previous search",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "ContactList",
+                "transform": false,
+                "swagger": {
+                    "Channel": {
+                        "properties": {
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "keywords": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisation": {
+                                "type": "string"
+                            },
+                            "strapline": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "context": {
+                        "properties": {
+                            "engagementScore": {
+                                "type": "string"
+                            },
+                            "leadContext": {
+                                "type": "string"
+                            },
+                            "leadType": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "link": {
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            },
+                            "rel": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "ContactList": {
+                        "items": {
+                            "$ref": "#/definitions/Contact"
+                        },
+                        "type": "array"
+                    },
+                    "embed": {
+                        "properties": {
+                            "forcecall": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "utm_campaign": {
+                                "type": "string"
+                            },
+                            "utm_content": {
+                                "type": "string"
+                            },
+                            "utm_medium": {
+                                "type": "string"
+                            },
+                            "utm_source": {
+                                "type": "string"
+                            },
+                            "utm_term": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "user": {
+                        "properties": {
+                            "companyName": {
+                                "type": "string"
+                            },
+                            "companySize": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "jobTitle": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "stateProvince": {
+                                "type": "string"
+                            },
+                            "timeZone": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Contact": {
+                        "properties": {
+                            "channel": {
+                                "$ref": "#/definitions/Channel"
+                            },
+                            "context": {
+                                "$ref": "#/definitions/context"
+                            },
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "embed": {
+                                "$ref": "#/definitions/embed"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastSubscribed": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "link": {
+                                "$ref": "#/definitions/link"
+                            },
+                            "referral": {
+                                "type": "string"
+                            },
+                            "user": {
+                                "$ref": "#/definitions/user"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264729,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find questions for a channel in the Marketing Automation system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all contacts whose name contains the word 'data', the search expression parameter will be <i>where=name like '%data%'</i>. If a search expression is not provided, then the first 200 records will be returned.",
+            "path": "/hubs/marketing/channels/{channelId}/questions",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652221,
+                    "resourceId": 264729,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "channelId",
+                    "vendorName": "channelId",
+                    "description": "The ID of the channel to find surveys from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652220,
+                    "resourceId": 264729,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for surveys for id 24, the search expression will be <i>where=id>=24</i>. When this parameter is omitted, all surveys for the current channel are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652219,
+                    "resourceId": 264729,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652218,
+                    "resourceId": 264729,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "nextPage",
+                    "vendorName": "nextPage",
+                    "description": "Next Page link. You can get this from the Header of the previous search",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "channelQuestionsList",
+                "transform": false,
+                "swagger": {
+                    "channelQuestionsList": {
+                        "items": {
+                            "$ref": "#/definitions/channelQuestions"
+                        },
+                        "type": "array"
+                    },
+                    "channelQuestions": {
+                        "properties": {
+                            "answered": {
+                                "type": "string",
+                                "x-samplevalue": "false"
+                            },
+                            "channel": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "organisation": {
+                                        "type": "string"
+                                    },
+                                    "url": {
+                                        "type": "string"
+                                    }
+                                },
+                                "title": "channel",
+                                "type": "object"
+                            },
+                            "created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ"
+                            },
+                            "questionEmbedUrl": {
+                                "properties": {
+                                    "url": {
+                                        "type": "string"
+                                    },
+                                    "utm_campaign": {
+                                        "type": "string"
+                                    },
+                                    "utm_content": {
+                                        "type": "string"
+                                    },
+                                    "utm_medium": {
+                                        "type": "string"
+                                    },
+                                    "utm_source": {
+                                        "type": "string"
+                                    },
+                                    "utm_term": {
+                                        "type": "string"
+                                    }
+                                },
+                                "title": "questionEmbedUrl",
+                                "type": "object"
+                            },
+                            "text": {
+                                "type": "string"
+                            },
+                            "user": {
+                                "properties": {
+                                    "companyName": {
+                                        "type": "string"
+                                    },
+                                    "companySize": {
+                                        "type": "string"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "firstName": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "industry": {
+                                        "type": "string"
+                                    },
+                                    "jobTitle": {
+                                        "type": "string"
+                                    },
+                                    "lastName": {
+                                        "type": "string"
+                                    },
+                                    "level": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "stateProvince": {
+                                        "type": "string"
+                                    },
+                                    "timeZone": {
+                                        "type": "string"
+                                    }
+                                },
+                                "title": "user",
+                                "type": "object"
+                            },
+                            "webcast": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "title": "webcast",
+                                "type": "object"
+                            }
+                        },
+                        "title": "question",
+                        "type": "object"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264727,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find subscriberWebcastAttachmentAccessSummaries for a channel in the Marketing Automation system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all contacts whose name contains the word 'data', the search expression parameter will be <i>where=name like '%data%'</i>. If a search expression is not provided, then the first 200 records will be returned.",
+            "path": "/hubs/marketing/channels/{channelId}/subscriberWebcastAttachmentAccessSummaries",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652213,
+                    "resourceId": 264727,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "channelId",
+                    "vendorName": "channelId",
+                    "description": "The ID of the channel to find subscriberWebcastAttachmentAccessSummaries from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652212,
+                    "resourceId": 264727,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for subscriberWebcastAttachmentAccessSummaries for id 24, the search expression will be <i>where=id>=24</i>. When this parameter is omitted, all subscriberWebcastAttachmentAccessSummaries for the current channel are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652211,
+                    "resourceId": 264727,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652210,
+                    "resourceId": 264727,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "nextPage",
+                    "vendorName": "nextPage",
+                    "description": "Next Page link. You can get this from the Header of the previous search",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "subscriberWebcastAttachmentAccessSummariesList",
+                "transform": false,
+                "swagger": {
+                    "lastAccessEmbedUrl": {
+                        "properties": {
+                            "forcecall": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "utm_campaign": {
+                                "type": "string"
+                            },
+                            "utm_content": {
+                                "type": "string"
+                            },
+                            "utm_medium": {
+                                "type": "string"
+                            },
+                            "utm_source": {
+                                "type": "string"
+                            },
+                            "utm_term": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "webcast": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "webcastAttachment": {
+                        "properties": {
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Channel": {
+                        "properties": {
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "keywords": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisation": {
+                                "type": "string"
+                            },
+                            "strapline": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "link": {
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            },
+                            "rel": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "subscriberWebcastAttachmentAccessSummariesList": {
+                        "items": {
+                            "$ref": "#/definitions/subscriberWebcastAttachmentAccessSummaries"
+                        },
+                        "type": "array"
+                    },
+                    "subscriberWebcastAttachmentAccessSummaries": {
+                        "properties": {
+                            "channel": {
+                                "$ref": "#/definitions/Channel"
+                            },
+                            "firstAccessed": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastAccessEmbedTrack": {
+                                "type": "string"
+                            },
+                            "lastAccessEmbedUrl": {
+                                "$ref": "#/definitions/lastAccessEmbedUrl"
+                            },
+                            "lastAccessed": {
+                                "type": "string"
+                            },
+                            "link": {
+                                "$ref": "#/definitions/link"
+                            },
+                            "liveViewingAccessCount": {
+                                "type": "number"
+                            },
+                            "recordedViewingAccessCount": {
+                                "type": "number"
+                            },
+                            "totalAccesses": {
+                                "type": "number"
+                            },
+                            "user": {
+                                "$ref": "#/definitions/user"
+                            },
+                            "webcast": {
+                                "$ref": "#/definitions/webcast"
+                            },
+                            "webcastAttachment": {
+                                "$ref": "#/definitions/webcastAttachment"
+                            }
+                        }
+                    },
+                    "user": {
+                        "properties": {
+                            "companyName": {
+                                "type": "string"
+                            },
+                            "companySize": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "jobTitle": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "stateProvince": {
+                                "type": "string"
+                            },
+                            "timeZone": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264728,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find surveys for a channel in the Marketing Automation system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all contacts whose name contains the word 'data', the search expression parameter will be <i>where=name like '%data%'</i>. If a search expression is not provided, then the first 200 records will be returned.",
+            "path": "/hubs/marketing/channels/{channelId}/surveys",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652217,
+                    "resourceId": 264728,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "channelId",
+                    "vendorName": "channelId",
+                    "description": "The ID of the channel to find surveys from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652216,
+                    "resourceId": 264728,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for surveys for id 24, the search expression will be <i>where=id>=24</i>. When this parameter is omitted, all surveys for the current channel are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652215,
+                    "resourceId": 264728,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652214,
+                    "resourceId": 264728,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "nextPage",
+                    "vendorName": "nextPage",
+                    "description": "Next Page link. You can get this from the Header of the previous search",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "surveysList",
+                "transform": false,
+                "swagger": {
+                    "question": {
+                        "properties": {
+                            "answers": {
+                                "$ref": "#/definitions/answers"
+                            },
+                            "deleted": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "options": {
+                                "$ref": "#/definitions/options"
+                            },
+                            "reportingId": {
+                                "type": "string"
+                            },
+                            "required": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Channel": {
+                        "properties": {
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "keywords": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisation": {
+                                "type": "string"
+                            },
+                            "strapline": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "answers": {
+                        "properties": {
+                            "answer": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "link": {
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            },
+                            "rel": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "options": {
+                        "properties": {
+                            "option": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "surveys": {
+                        "properties": {
+                            "active": {
+                                "type": "boolean"
+                            },
+                            "channel": {
+                                "$ref": "#/definitions/Channel"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "question": {
+                                "items": {
+                                    "$ref": "#/definitions/question"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "surveysList": {
+                        "items": {
+                            "$ref": "#/definitions/surveys"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        },
+        {
+            "id": 264730,
+            "createdDate": "2019-05-07T07:15:50Z",
+            "description": "Find survey responses for a survey in the Marketing Automation system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all contacts whose name contains the word 'data', the search expression parameter will be <i>where=name like '%data%'</i>. If a search expression is not provided, then the first 200 records will be returned.",
+            "path": "/hubs/marketing/surveys/{surveyId}/responses",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 652225,
+                    "resourceId": 264730,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "surveyId",
+                    "vendorName": "surveyId",
+                    "description": "The ID of the survey to find responses from.",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 652224,
+                    "resourceId": 264730,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for surveyResponses for id 24, the search expression will be <i>where=id>=24</i>. When this parameter is omitted, all surveyResponses for the current channel are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652223,
+                    "resourceId": 264730,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 652222,
+                    "resourceId": 264730,
+                    "createdDate": "2019-05-07T07:15:50Z",
+                    "name": "nextPage",
+                    "vendorName": "nextPage",
+                    "description": "Next Page link. You can get this from the Header of the previous search",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "surveyResponsesList",
+                "transform": false,
+                "swagger": {
+                    "surveyResponsesList": {
+                        "items": {
+                            "$ref": "#/definitions/surveyResponses"
+                        },
+                        "type": "array"
+                    },
+                    "question": {
+                        "properties": {
+                            "answers": {
+                                "$ref": "#/definitions/answers"
+                            },
+                            "deleted": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "options": {
+                                "$ref": "#/definitions/options"
+                            },
+                            "reportingId": {
+                                "type": "string"
+                            },
+                            "required": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Channel": {
+                        "properties": {
+                            "created": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "keywords": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organisation": {
+                                "type": "string"
+                            },
+                            "strapline": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "answers": {
+                        "properties": {
+                            "answer": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "link": {
+                        "properties": {
+                            "href": {
+                                "type": "string"
+                            },
+                            "rel": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "options": {
+                        "properties": {
+                            "option": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "questions": {
+                        "properties": {
+                            "question": {
+                                "items": {
+                                    "$ref": "#/definitions/question"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "survey": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "user": {
+                        "properties": {
+                            "companyName": {
+                                "type": "string"
+                            },
+                            "companySize": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "jobTitle": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "stateProvince": {
+                                "type": "string"
+                            },
+                            "timeZone": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "surveyResponses": {
+                        "properties": {
+                            "channel": {
+                                "$ref": "#/definitions/Channel"
+                            },
+                            "created": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastUpdated": {
+                                "type": "string"
+                            },
+                            "link": {
+                                "items": {
+                                    "$ref": "#/definitions/link"
+                                },
+                                "type": "array"
+                            },
+                            "questions": {
+                                "$ref": "#/definitions/questions"
+                            },
+                            "survey": {
+                                "$ref": "#/definitions/survey"
+                            },
+                            "user": {
+                                "$ref": "#/definitions/user"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "java",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [
+        {
+            "elementId": 338,
+            "id": 6363,
+            "name": "accounts",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "bulkUploadEnabled": false,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true,
+            "vendorEventTypes": "polling"
+        },
+        {
+            "elementId": 338,
+            "id": 6356,
+            "name": "accountsCampaignActivities",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 338,
+            "id": 6355,
+            "name": "accountsCampaigns",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 338,
+            "id": 6364,
+            "name": "channels",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "bulkUploadEnabled": false,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true,
+            "vendorEventTypes": "polling"
+        },
+        {
+            "elementId": 338,
+            "id": 6357,
+            "name": "channelsActivities",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 338,
+            "id": 6358,
+            "name": "channelsContacts",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 338,
+            "id": 6361,
+            "name": "channelsQuestions",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 338,
+            "id": 6359,
+            "name": "channelsSubscriberWebcastAttachmentAccessSummaries",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 338,
+            "id": 6360,
+            "name": "channelsSurveys",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        },
+        {
+            "elementId": 338,
+            "id": 6362,
+            "name": "surveysResponses",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": true
+        }
+    ],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": false,
+    "cloneable": false,
+    "extendable": false,
+    "beta": false,
+    "authentication": {},
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

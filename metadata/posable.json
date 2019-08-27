@@ -1,0 +1,363 @@
+{
+    "id": 460,
+    "name": "POSable",
+    "hookName": "POSable",
+    "key": "posable",
+    "description": "The POSable element",
+    "image": "elements/provider_posable.png",
+    "logo": "posable",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 4495,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "POSable Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4496,
+            "name": "Authorization Token",
+            "key": "authorization.token",
+            "description": "The Authorization Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254115,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4501,
+            "name": "Event Instance Finder",
+            "key": "event.notification.instance.finder",
+            "description": "Event Notification Instance Finder",
+            "defaultValue": "authorization.token|token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4497,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "POSable Base URL",
+            "defaultValue": "https://banctek-app.herokuapp.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52444,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159937,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256252,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256503,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 4498,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "POSable Enabled/Disable Event Notifications",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 4499,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "POSable Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9730,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 4500,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "POSable Vendor Event Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 2613,
+            "createdDate": "2015-07-23T18:56:29Z",
+            "description": "Invoices",
+            "path": "/hubs/pointofsale/invoices/{id}",
+            "vendorPath": "/invoices/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 2672,
+                    "resourceId": 2613,
+                    "createdDate": "2015-07-23T18:56:29Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The invoice ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "invoices",
+                "transform": false,
+                "swagger": {
+                    "1": {
+                        "id": "1",
+                        "properties": {
+                            "quantity": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "item_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "unit_price": {
+                                "format": "double",
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "invoices": {
+                        "id": "invoices",
+                        "properties": {
+                            "netsuite_id": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "quickbooks_id": {
+                                "type": "string"
+                            },
+                            "posable_invoice_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "card_last4_digits": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "card_type": {
+                                "type": "string"
+                            },
+                            "transactions": {
+                                "type": "transactions"
+                            },
+                            "xero_id": {
+                                "type": "string"
+                            },
+                            "greatplains_id": {
+                                "type": "string"
+                            },
+                            "total": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "pos_name": {
+                                "type": "string"
+                            },
+                            "authorization_code": {
+                                "type": "string"
+                            },
+                            "time": {
+                                "type": "string"
+                            },
+                            "customer_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "freshbooks_id": {
+                                "type": "string"
+                            },
+                            "customer": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "transactions": {
+                        "id": "transactions",
+                        "properties": {
+                            "1": {
+                                "type": "1"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "pointofsale",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

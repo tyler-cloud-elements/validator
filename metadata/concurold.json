@@ -1,0 +1,1965 @@
+{
+    "id": 831,
+    "name": "Concur old",
+    "hookName": "Concur",
+    "key": "concurold",
+    "description": "Concur offers services for optimizing business travel, expense and invoice management. These cloud-based services integrate with each other and connect to spending wherever it happens to give organizations total visibility into their spend.",
+    "image": "http://assets.concur.com/logos/Concur_Logo_VT_Color_500px.png ",
+    "logo": "concurold",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 9022,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "Concur Oauth OAuth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 9027,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Concur Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9028,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "Concur OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9029,
+            "name": "Bulk Relations",
+            "key": "bulk.relations",
+            "description": "Bulk Relations",
+            "defaultValue": "{}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9030,
+            "name": "Bulk query FieldName",
+            "key": "bulk.query.field_name",
+            "description": "Bulk query FieldName",
+            "defaultValue": "modifiedDateAfter",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9031,
+            "name": "Bulk Add Metadata",
+            "key": "bulk.add_metadata",
+            "description": "Bulk Add Metadata",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9032,
+            "name": "OAuth Refresh Interval (s)",
+            "key": "oauth.user.refresh_interval",
+            "description": "Concur OAuth Refresh Interval (s)",
+            "defaultValue": "3600",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9033,
+            "name": "OAuth basic header",
+            "key": "oauth.basic.header",
+            "description": "Concur OAuth basic header",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9038,
+            "name": "Oauth Response Transformation",
+            "key": "oauth.response.transformation",
+            "description": "REsponse Transformation to Transform to a OAuth Response",
+            "defaultValue": "{\"oauth_response\":{\"vendorName\":\"oauth_response\",\"configuration\":[{\"type\":\"passThrough\",\"properties\":{\"fromVendor\":true,\"toVendor\":false}}],\"fields\":[{\"path\":\"access_token\",\"vendorPath\":\"Access_Token.Token\",\"type\":\"string\"},{\"path\":\"refresh_token\",\"vendorPath\":\"Access_Token.Refresh_Token\",\"type\":\"string\"},{\"path\":\"expires_in\",\"vendorPath\":\"Access_Token.Expiration_date\",\"configuration\":[{\"type\":\"transformDate\",\"properties\":{\"vendorPattern\":\"MM/dd/yyyy hh:mm:ss\",\"pattern\":\"milliseconds\"}}]}]}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 9018,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "Concur Oauth OAuth API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 9019,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "Concur Oauth OAuth Callback URL",
+            "defaultValue": "https://snapshot.cloud-elements.com/elements/jsp/home.jsp",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 254004,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9014,
+            "name": "OAuth Scope",
+            "key": "oauth.scope",
+            "description": "Concur Oauth OAuth Scope",
+            "defaultValue": "LIST,EXPRPT",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9015,
+            "name": "Bulk query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk query Operator",
+            "defaultValue": "=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9016,
+            "name": "OAuth Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "Concur OAuth Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9017,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Concur Oauth Base URL",
+            "defaultValue": "https://www.concursolutions.com/api/v3.0",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9020,
+            "name": "Bulk Download Format",
+            "key": "bulk.query.download_format",
+            "description": "Bulk Download Format",
+            "defaultValue": "json",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9021,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "defaultValue": "yyyy-MM-dd'T'HH:mm:ssXXX",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9023,
+            "name": "OAuth Token URL",
+            "key": "oauth.token.url",
+            "description": "Concur Oauth OAuth Token URL",
+            "defaultValue": "https://www.concursolutions.com/net2/oauth2/GetAccessToken.ashx",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 9024,
+            "name": "OAuth Authorization URL",
+            "key": "oauth.authorization.url",
+            "description": "Concur Oauth OAuth Authorization URL",
+            "defaultValue": "https://www.concursolutions.com/net2/oauth2/Login.aspx",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 9025,
+            "name": "OAuth Refresh Token",
+            "key": "oauth.user.refresh_token",
+            "description": "Concur OAuth Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9026,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Concur Max Page Size (or limit)",
+            "defaultValue": "25",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52513,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159923,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9034,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9035,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9036,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9037,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9039,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/helpdesk/contacts\", “idField”: “user.id”, “datesConfiguration”: { \"updatedDateField\": \"user.updated_at\", \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\", “createdDateField”: “user.created_at”, “createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\" }, \"pageSize\": 10000 } }",
+            "defaultValue": "{\"reports\":{\"url\":\"/hubs/expense/reports?where=modifiedDateAfter='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'\",\"idField\":\"ID\"}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9691,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256131,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256382,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 5596,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Get or Search for Expense Reports.",
+            "path": "/hubs/expense/items",
+            "vendorPath": "/common/listitems",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5758,
+                    "resourceId": 5596,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "limit",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5759,
+                    "resourceId": 5596,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "Where clause in CEQL for you filter",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "itemsList",
+                "transform": false,
+                "swagger": {
+                    "itemsListObject": {
+                        "id": "itemsListObject",
+                        "properties": {
+                            "ParentID": {
+                                "type": "unknown"
+                            },
+                            "Level7Code": {
+                                "type": "unknown"
+                            },
+                            "Level2Code": {
+                                "type": "unknown"
+                            },
+                            "Level4Code": {
+                                "type": "unknown"
+                            },
+                            "URI": {
+                                "type": "string"
+                            },
+                            "Level6Code": {
+                                "type": "unknown"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "Level8Code": {
+                                "type": "unknown"
+                            },
+                            "Level1Code": {
+                                "type": "string"
+                            },
+                            "Level10Code": {
+                                "type": "unknown"
+                            },
+                            "ListID": {
+                                "type": "string"
+                            },
+                            "Level3Code": {
+                                "type": "unknown"
+                            },
+                            "ID": {
+                                "type": "string"
+                            },
+                            "Level5Code": {
+                                "type": "unknown"
+                            },
+                            "Level9Code": {
+                                "type": "unknown"
+                            }
+                        }
+                    },
+                    "itemsList": {
+                        "id": "itemsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "itemsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5599,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Create a Item ",
+            "path": "/hubs/expense/items",
+            "vendorPath": "/common/listitems",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 5763,
+                    "resourceId": 5599,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Post Body for Creating a List Item in Concur",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "items",
+                    "vendorDataType": "items",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5591,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Delete an Item",
+            "path": "/hubs/expense/items/{id}",
+            "vendorPath": "/common/listitems/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 5750,
+                    "resourceId": 5591,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "Id of the Item to retreive",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5751,
+                    "resourceId": 5591,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "listId",
+                    "vendorName": "listId",
+                    "description": "ListID of the Item",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5589,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Get or Search for Expense Reports.",
+            "path": "/hubs/expense/items/{id}",
+            "vendorPath": "/common/listitems/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5747,
+                    "resourceId": 5589,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "Id of the Item to retreive",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "items",
+                "transform": false,
+                "swagger": {
+                    "items": {
+                        "id": "items",
+                        "properties": {
+                            "ParentID": {
+                                "type": "unknown"
+                            },
+                            "Level7Code": {
+                                "type": "unknown"
+                            },
+                            "Level2Code": {
+                                "type": "unknown"
+                            },
+                            "Level4Code": {
+                                "type": "unknown"
+                            },
+                            "URI": {
+                                "type": "string"
+                            },
+                            "Level6Code": {
+                                "type": "unknown"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "Level8Code": {
+                                "type": "unknown"
+                            },
+                            "Level1Code": {
+                                "type": "string"
+                            },
+                            "Level10Code": {
+                                "type": "unknown"
+                            },
+                            "ListID": {
+                                "type": "string"
+                            },
+                            "Level3Code": {
+                                "type": "unknown"
+                            },
+                            "ID": {
+                                "type": "string"
+                            },
+                            "Level5Code": {
+                                "type": "unknown"
+                            },
+                            "Level9Code": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5590,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Get or Search for Expense Reports.",
+            "path": "/hubs/expense/items/{id}",
+            "vendorPath": "/common/listitems/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 5748,
+                    "resourceId": 5590,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Item to be updated. Only supplied attributes will be updated",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "itemsPatch",
+                    "vendorDataType": "itemsPatch",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5749,
+                    "resourceId": 5590,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "Id of the Item to retreive",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5594,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Get Lists",
+            "path": "/hubs/expense/lists",
+            "vendorPath": "/common/lists",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5755,
+                    "resourceId": 5594,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "limit",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5756,
+                    "resourceId": 5594,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "Where clause in CEQL for you filter",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "listsList",
+                "transform": false,
+                "swagger": {
+                    "listsList": {
+                        "id": "listsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "listsListObject"
+                        }
+                    },
+                    "listsListObject": {
+                        "id": "listsListObject",
+                        "properties": {
+                            "DisplayCodeFirst": {
+                                "type": "boolean"
+                            },
+                            "IsVendorList": {
+                                "type": "boolean"
+                            },
+                            "SearchCriteriaCode": {
+                                "type": "string"
+                            },
+                            "ExternalThreshold": {
+                                "type": "unknown"
+                            },
+                            "ID": {
+                                "type": "string"
+                            },
+                            "URI": {
+                                "type": "string"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "ConnectorID": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5592,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Create a new List",
+            "path": "/hubs/expense/lists",
+            "vendorPath": "/common/lists",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 5752,
+                    "resourceId": 5592,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "JSON of the list to create",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "listPost",
+                    "vendorDataType": "listPost",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5595,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Get Lists",
+            "path": "/hubs/expense/lists/{id}",
+            "vendorPath": "/common/lists/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5757,
+                    "resourceId": 5595,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "Id of the list to retreive",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "lists",
+                "transform": false,
+                "swagger": {
+                    "lists": {
+                        "id": "lists",
+                        "properties": {
+                            "DisplayCodeFirst": {
+                                "type": "boolean"
+                            },
+                            "IsVendorList": {
+                                "type": "boolean"
+                            },
+                            "SearchCriteriaCode": {
+                                "type": "string"
+                            },
+                            "ExternalThreshold": {
+                                "type": "unknown"
+                            },
+                            "ID": {
+                                "type": "string"
+                            },
+                            "URI": {
+                                "type": "string"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "ConnectorID": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5593,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Create a new List",
+            "path": "/hubs/expense/lists/{id}",
+            "vendorPath": "/common/lists/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 5753,
+                    "resourceId": 5593,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "JSON of the list to create",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "listPost",
+                    "vendorDataType": "listPost",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5754,
+                    "resourceId": 5593,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "List object with updated attributes",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "listPatch",
+                    "vendorDataType": "listPatch",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5597,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Get or Search for Expense Reports.",
+            "path": "/hubs/expense/reports",
+            "vendorPath": "/expense/reports",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5760,
+                    "resourceId": 5597,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "limit",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5761,
+                    "resourceId": 5597,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "Where clause in CEQL for you filter",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reportsList",
+                "transform": false,
+                "swagger": {
+                    "reportsListObject": {
+                        "id": "reportsListObject",
+                        "properties": {
+                            "LastModifiedDate": {
+                                "type": "string"
+                            },
+                            "Custom19": {
+                                "type": "unknown"
+                            },
+                            "Custom18": {
+                                "type": "unknown"
+                            },
+                            "SubmitDate": {
+                                "type": "unknown"
+                            },
+                            "Custom13": {
+                                "type": "unknown"
+                            },
+                            "ApproverLoginID": {
+                                "type": "unknown"
+                            },
+                            "Custom12": {
+                                "type": "unknown"
+                            },
+                            "ReceiptsReceived": {
+                                "type": "boolean"
+                            },
+                            "Custom11": {
+                                "type": "unknown"
+                            },
+                            "Custom10": {
+                                "type": "unknown"
+                            },
+                            "ApprovalStatusCode": {
+                                "type": "string"
+                            },
+                            "Custom17": {
+                                "type": "unknown"
+                            },
+                            "CreateDate": {
+                                "type": "string"
+                            },
+                            "Custom16": {
+                                "type": "unknown"
+                            },
+                            "Custom15": {
+                                "type": "Custom15"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "Custom14": {
+                                "type": "unknown"
+                            },
+                            "CurrencyCode": {
+                                "type": "string"
+                            },
+                            "TotalClaimedAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "LastComment": {
+                                "type": "string"
+                            },
+                            "ID": {
+                                "type": "string"
+                            },
+                            "LedgerName": {
+                                "type": "string"
+                            },
+                            "PaymentStatusName": {
+                                "type": "string"
+                            },
+                            "PolicyID": {
+                                "type": "string"
+                            },
+                            "WorkflowActionUrl": {
+                                "type": "string"
+                            },
+                            "OwnerLoginID": {
+                                "type": "string"
+                            },
+                            "AmountDueCompanyCard": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "HasException": {
+                                "type": "boolean"
+                            },
+                            "CountrySubdivision": {
+                                "type": "unknown"
+                            },
+                            "EverSentBack": {
+                                "type": "boolean"
+                            },
+                            "Custom4": {
+                                "type": "unknown"
+                            },
+                            "Custom3": {
+                                "type": "unknown"
+                            },
+                            "Custom2": {
+                                "type": "unknown"
+                            },
+                            "ApprovalStatusName": {
+                                "type": "string"
+                            },
+                            "Custom1": {
+                                "type": "unknown"
+                            },
+                            "Custom8": {
+                                "type": "unknown"
+                            },
+                            "ProcessingPaymentDate": {
+                                "type": "unknown"
+                            },
+                            "Custom7": {
+                                "type": "unknown"
+                            },
+                            "Custom6": {
+                                "type": "unknown"
+                            },
+                            "Custom5": {
+                                "type": "unknown"
+                            },
+                            "Country": {
+                                "type": "string"
+                            },
+                            "Custom9": {
+                                "type": "unknown"
+                            },
+                            "PaymentStatusCode": {
+                                "type": "string"
+                            },
+                            "TotalApprovedAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "OwnerName": {
+                                "type": "string"
+                            },
+                            "URI": {
+                                "type": "string"
+                            },
+                            "PaidDate": {
+                                "type": "unknown"
+                            },
+                            "ApproverName": {
+                                "type": "unknown"
+                            },
+                            "UserDefinedDate": {
+                                "type": "string"
+                            },
+                            "OrgUnit6": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit5": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit4": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit3": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit2": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit1": {
+                                "type": "unknown"
+                            },
+                            "PersonalAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "Custom20": {
+                                "type": "unknown"
+                            },
+                            "Total": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "AmountDueEmployee": {
+                                "format": "double",
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "reportsList": {
+                        "id": "reportsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "reportsListObject"
+                        }
+                    },
+                    "Custom15": {
+                        "id": "Custom15",
+                        "properties": {
+                            "ListItemID": {
+                                "type": "string"
+                            },
+                            "Type": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            },
+                            "Code": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5598,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Retrieve a report by ID",
+            "path": "/hubs/expense/reports/{id}",
+            "vendorPath": "/expense/reports/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5762,
+                    "resourceId": 5598,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "Id of the Expense Report",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "reports",
+                "transform": false,
+                "swagger": {
+                    "reports": {
+                        "id": "reports",
+                        "properties": {
+                            "LastModifiedDate": {
+                                "type": "string"
+                            },
+                            "Custom19": {
+                                "type": "unknown"
+                            },
+                            "Custom18": {
+                                "type": "unknown"
+                            },
+                            "SubmitDate": {
+                                "type": "unknown"
+                            },
+                            "Custom13": {
+                                "type": "unknown"
+                            },
+                            "ApproverLoginID": {
+                                "type": "unknown"
+                            },
+                            "Custom12": {
+                                "type": "unknown"
+                            },
+                            "ReceiptsReceived": {
+                                "type": "boolean"
+                            },
+                            "Custom11": {
+                                "type": "unknown"
+                            },
+                            "Custom10": {
+                                "type": "unknown"
+                            },
+                            "ApprovalStatusCode": {
+                                "type": "string"
+                            },
+                            "Custom17": {
+                                "type": "unknown"
+                            },
+                            "CreateDate": {
+                                "type": "string"
+                            },
+                            "Custom16": {
+                                "type": "unknown"
+                            },
+                            "Custom15": {
+                                "type": "Custom15"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "Custom14": {
+                                "type": "unknown"
+                            },
+                            "CurrencyCode": {
+                                "type": "string"
+                            },
+                            "TotalClaimedAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "LastComment": {
+                                "type": "string"
+                            },
+                            "ID": {
+                                "type": "string"
+                            },
+                            "LedgerName": {
+                                "type": "string"
+                            },
+                            "PaymentStatusName": {
+                                "type": "string"
+                            },
+                            "PolicyID": {
+                                "type": "string"
+                            },
+                            "WorkflowActionUrl": {
+                                "type": "string"
+                            },
+                            "OwnerLoginID": {
+                                "type": "string"
+                            },
+                            "AmountDueCompanyCard": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "HasException": {
+                                "type": "boolean"
+                            },
+                            "CountrySubdivision": {
+                                "type": "unknown"
+                            },
+                            "EverSentBack": {
+                                "type": "boolean"
+                            },
+                            "Custom4": {
+                                "type": "unknown"
+                            },
+                            "Custom3": {
+                                "type": "unknown"
+                            },
+                            "Custom2": {
+                                "type": "unknown"
+                            },
+                            "ApprovalStatusName": {
+                                "type": "string"
+                            },
+                            "Custom1": {
+                                "type": "unknown"
+                            },
+                            "Custom8": {
+                                "type": "unknown"
+                            },
+                            "ProcessingPaymentDate": {
+                                "type": "unknown"
+                            },
+                            "Custom7": {
+                                "type": "unknown"
+                            },
+                            "Custom6": {
+                                "type": "unknown"
+                            },
+                            "Custom5": {
+                                "type": "unknown"
+                            },
+                            "Country": {
+                                "type": "string"
+                            },
+                            "Custom9": {
+                                "type": "unknown"
+                            },
+                            "PaymentStatusCode": {
+                                "type": "string"
+                            },
+                            "TotalApprovedAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "OwnerName": {
+                                "type": "string"
+                            },
+                            "URI": {
+                                "type": "string"
+                            },
+                            "PaidDate": {
+                                "type": "unknown"
+                            },
+                            "ApproverName": {
+                                "type": "unknown"
+                            },
+                            "UserDefinedDate": {
+                                "type": "string"
+                            },
+                            "OrgUnit6": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit5": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit4": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit3": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit2": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit1": {
+                                "type": "unknown"
+                            },
+                            "PersonalAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "Custom20": {
+                                "type": "unknown"
+                            },
+                            "Total": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "AmountDueEmployee": {
+                                "format": "double",
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "Custom15": {
+                        "id": "Custom15",
+                        "properties": {
+                            "ListItemID": {
+                                "type": "string"
+                            },
+                            "Type": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            },
+                            "Code": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5600,
+            "createdDate": "2016-01-19T17:23:44Z",
+            "description": "Retrieve a report by ID",
+            "path": "/hubs/expense/reports/{id}/entries",
+            "vendorPath": "/expense/entries",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5764,
+                    "resourceId": 5600,
+                    "createdDate": "2016-01-19T17:23:44Z",
+                    "name": "id",
+                    "vendorName": "reportID",
+                    "description": "Id of the Expense Report",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "reportsEntriesList",
+                "transform": false,
+                "swagger": {
+                    "reportsEntriesListObject": {
+                        "id": "reportsEntriesListObject",
+                        "properties": {
+                            "Custom19": {
+                                "type": "unknown"
+                            },
+                            "EmployeeBankAccountID": {
+                                "type": "unknown"
+                            },
+                            "Custom18": {
+                                "type": "unknown"
+                            },
+                            "IsPersonalCardCharge": {
+                                "type": "boolean"
+                            },
+                            "PostedAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "HasImage": {
+                                "type": "boolean"
+                            },
+                            "LocationID": {
+                                "type": "unknown"
+                            },
+                            "Custom13": {
+                                "type": "unknown"
+                            },
+                            "ReportID": {
+                                "type": "string"
+                            },
+                            "Custom12": {
+                                "type": "unknown"
+                            },
+                            "Custom11": {
+                                "type": "unknown"
+                            },
+                            "Custom10": {
+                                "type": "unknown"
+                            },
+                            "Custom17": {
+                                "type": "unknown"
+                            },
+                            "Custom16": {
+                                "type": "unknown"
+                            },
+                            "Custom15": {
+                                "type": "unknown"
+                            },
+                            "Custom14": {
+                                "type": "unknown"
+                            },
+                            "LastModified": {
+                                "type": "string"
+                            },
+                            "HasItemizations": {
+                                "type": "boolean"
+                            },
+                            "PaymentTypeName": {
+                                "type": "string"
+                            },
+                            "ElectronicReceiptID": {
+                                "type": "unknown"
+                            },
+                            "ID": {
+                                "type": "string"
+                            },
+                            "IsPaidByExpensePay": {
+                                "type": "boolean"
+                            },
+                            "IsImageRequired": {
+                                "type": "boolean"
+                            },
+                            "LocationSubdivision": {
+                                "type": "unknown"
+                            },
+                            "HasVAT": {
+                                "type": "boolean"
+                            },
+                            "SpendCategoryName": {
+                                "type": "string"
+                            },
+                            "Custom4": {
+                                "type": "unknown"
+                            },
+                            "Custom3": {
+                                "type": "unknown"
+                            },
+                            "Custom2": {
+                                "type": "unknown"
+                            },
+                            "Custom1": {
+                                "type": "unknown"
+                            },
+                            "Custom8": {
+                                "type": "unknown"
+                            },
+                            "Custom7": {
+                                "type": "unknown"
+                            },
+                            "Custom6": {
+                                "type": "unknown"
+                            },
+                            "Custom40": {
+                                "type": "unknown"
+                            },
+                            "Custom5": {
+                                "type": "unknown"
+                            },
+                            "ReceiptReceived": {
+                                "type": "boolean"
+                            },
+                            "FormID": {
+                                "type": "string"
+                            },
+                            "Custom9": {
+                                "type": "unknown"
+                            },
+                            "PaymentTypeID": {
+                                "type": "string"
+                            },
+                            "Journey": {
+                                "type": "unknown"
+                            },
+                            "ExchangeRate": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "Description": {
+                                "type": "string"
+                            },
+                            "CompanyCardTransactionID": {
+                                "type": "unknown"
+                            },
+                            "LocationCountry": {
+                                "type": "unknown"
+                            },
+                            "AllocationType": {
+                                "type": "string"
+                            },
+                            "Custom35": {
+                                "type": "unknown"
+                            },
+                            "Custom34": {
+                                "type": "unknown"
+                            },
+                            "Custom33": {
+                                "type": "unknown"
+                            },
+                            "ReportOwnerID": {
+                                "type": "string"
+                            },
+                            "Custom32": {
+                                "type": "unknown"
+                            },
+                            "Custom39": {
+                                "type": "unknown"
+                            },
+                            "Custom38": {
+                                "type": "unknown"
+                            },
+                            "URI": {
+                                "type": "string"
+                            },
+                            "Custom37": {
+                                "type": "unknown"
+                            },
+                            "LocationName": {
+                                "type": "string"
+                            },
+                            "Custom36": {
+                                "type": "unknown"
+                            },
+                            "Custom31": {
+                                "type": "unknown"
+                            },
+                            "Custom30": {
+                                "type": "unknown"
+                            },
+                            "TaxReceiptType": {
+                                "type": "string"
+                            },
+                            "ExpenseTypeCode": {
+                                "type": "string"
+                            },
+                            "HasComments": {
+                                "type": "boolean"
+                            },
+                            "IsPersonal": {
+                                "type": "boolean"
+                            },
+                            "VendorListItemID": {
+                                "type": "unknown"
+                            },
+                            "IsBillable": {
+                                "type": "boolean"
+                            },
+                            "TransactionDate": {
+                                "type": "string"
+                            },
+                            "Custom29": {
+                                "type": "unknown"
+                            },
+                            "VendorDescription": {
+                                "type": "unknown"
+                            },
+                            "Custom24": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit6": {
+                                "type": "unknown"
+                            },
+                            "Custom23": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit5": {
+                                "type": "unknown"
+                            },
+                            "Custom22": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit4": {
+                                "type": "unknown"
+                            },
+                            "Custom21": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit3": {
+                                "type": "unknown"
+                            },
+                            "Custom28": {
+                                "type": "unknown"
+                            },
+                            "TransactionCurrencyCode": {
+                                "type": "string"
+                            },
+                            "OrgUnit2": {
+                                "type": "unknown"
+                            },
+                            "Custom27": {
+                                "type": "unknown"
+                            },
+                            "TripID": {
+                                "type": "unknown"
+                            },
+                            "OrgUnit1": {
+                                "type": "unknown"
+                            },
+                            "Custom26": {
+                                "type": "unknown"
+                            },
+                            "Custom25": {
+                                "type": "unknown"
+                            },
+                            "ExpenseTypeName": {
+                                "type": "string"
+                            },
+                            "TransactionAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "SpendCategoryCode": {
+                                "type": "string"
+                            },
+                            "HasAttendees": {
+                                "type": "boolean"
+                            },
+                            "ApprovedAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "Custom20": {
+                                "type": "unknown"
+                            },
+                            "HasAppliedCashAdvance": {
+                                "type": "boolean"
+                            },
+                            "VendorListItemName": {
+                                "type": "unknown"
+                            },
+                            "HasExceptions": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "reportsEntriesList": {
+                        "id": "reportsEntriesList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "reportsEntriesListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "Items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [
+        {
+            "id": 26,
+            "elementId": 831,
+            "mimeType": "application/javascript",
+            "type": "preRequest",
+            "body": "var auth = request_vendor_headers[\"Authorization\"];request_vendor_headers[\"Authorization\"] = auth.replace('Bearer', 'OAuth');return {\"request_vendor_headers\": request_vendor_headers }",
+            "isLegacy": true
+        }
+    ],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "expense",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

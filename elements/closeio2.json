@@ -1,0 +1,546 @@
+{
+    "id": 15545,
+    "name": "Close.io",
+    "hookName": "Closeio",
+    "key": "closeio2",
+    "description": "Add a Close.io CRM Instance to connect your existing Close.io account to the CRM Hub, allowing you to manage contacts, accounts, opportunities, etc. across multiple CRM Elements. You will need your Close.io CRM account information to add an instance.",
+    "image": "https://pbs.twimg.com/profile_images/497905627948015616/vNCOkr1Z.png",
+    "logo": "closeio2",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 115449,
+            "name": "Bulk Query Modified Time",
+            "key": "bulk.attribute.modified_time",
+            "description": "Close.io Bulk Query Modified Time",
+            "defaultValue": "date_updated",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115452,
+            "name": "Bulk Query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Close.io Bulk Query Date Mask",
+            "defaultValue": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254000,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115451,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Close.io Beta Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115450,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Close.io Beta Base URL",
+            "defaultValue": "https://app.close.io/api/v1",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115445,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115446,
+            "name": "Bulk Query Field Name",
+            "key": "bulk.query.field_name",
+            "description": "Close.io Bulk Query Field Name",
+            "defaultValue": "date_updated",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115447,
+            "name": "Bulk Query Operator",
+            "key": "bulk.query.operator",
+            "description": "Close.io Bulk Query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115448,
+            "name": "Bulk Query Created Time",
+            "key": "bulk.attribute.created_time",
+            "description": "Close.io Bulk Query Created Time",
+            "defaultValue": "date_created",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115453,
+            "name": "API Key",
+            "key": "username",
+            "description": "The API key, needed to make API requests to Close.io",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 115454,
+            "name": "Password",
+            "key": "password",
+            "description": "This should always be blank for Close.io",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115455,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159869,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115456,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 115457,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 115458,
+            "name": "Event Notification Instance Finder",
+            "key": "event.notification.instance.finder",
+            "description": "Event Notification Instance Finder",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 115459,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256127,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256378,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 115460,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 200,
+            "options": [
+                {
+                    "value": "polling",
+                    "description": "Polling Event Type"
+                },
+                {
+                    "value": "webhook",
+                    "description": "Webhook Trigger Event Type"
+                }
+            ],
+            "type": "COMBO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 115461,
+            "name": "Event Poller Resource Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resource Configuration",
+            "defaultValue": "{\"contacts\":{\"url\":\"/hubs/crm/contacts?where=date_updated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX}'\",\"idField\":\"id\",\"datesConfiguration\":{\"updatedDateField\":\"date_updated\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX\",\"createdDateField\":\"date_created\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 201,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 115462,
+            "name": "Event Poller Refresh Interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Event Poller Refresh Interval",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 202,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 101466,
+            "createdDate": "2017-10-23T20:55:55Z",
+            "description": "Retrieve an account",
+            "path": "/hubs/crm/accounts/{id}",
+            "vendorPath": "/lead/{id}/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 207603,
+                    "resourceId": 101466,
+                    "createdDate": "2017-10-23T20:55:55Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accounts",
+                "transform": false,
+                "swagger": {
+                    "emails": {
+                        "id": "emails",
+                        "properties": {
+                            "email": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "accountContacts": {
+                        "id": "accountContacts",
+                        "properties": {
+                            "emails": {
+                                "items": {
+                                    "$ref": "emails"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "accounts": {
+                        "id": "accounts",
+                        "properties": {
+                            "accountContacts": {
+                                "items": {
+                                    "$ref": "accountContacts"
+                                },
+                                "type": "array"
+                            },
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "html_url": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "opportunities": {
+                                "items": {
+                                    "$ref": "opportunities"
+                                },
+                                "type": "array"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string"
+                            },
+                            "status_label": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "opportunities": {
+                        "id": "opportunities",
+                        "properties": {
+                            "confidence": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "lead_name": {
+                                "type": "string"
+                            },
+                            "note": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string"
+                            },
+                            "status_label": {
+                                "type": "string"
+                            },
+                            "status_type": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "value_period": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "basic"
+    },
+    "hooks": [
+        {
+            "id": 4975,
+            "elementId": 15545,
+            "mimeType": "application/javascript",
+            "type": "event",
+            "body": "var isPolling = false;\nif (events.eventId && events.objectType) {\n\tvar isPolling = true;\n}\n\nif (isPolling) {\n\tvar providerEvents = [];\n\tvar objectType = events.objectType;\n\tvar objects = Java.from(events[objectType]);\n\tobjects.forEach(function(object) {\n\t\tvar providerEvent = {};\n\t\tvar ISODateTimeFormat = Java.type('org.joda.time.format.ISODateTimeFormat');\n\t\tvar addTime = new Date(ISODateTimeFormat.dateTime().parseDateTime(object.date_created).toString());\n\t\tvar updateTime = new Date(ISODateTimeFormat.dateTime().parseDateTime(object.date_updated).toString());\n\t\tproviderEvent.event_object_type = objectType;\n\t\tproviderEvent.event_date = updateTime.toISOString();\n\t\tproviderEvent.event_object_id = object.id;\n\t\tproviderEvent.event_type = addTime - updateTime < 0 ? 'UPDATED' : 'CREATED';\n\t\tproviderEvents.push(providerEvent);\n\t});\n\treturn {\n\t\t\"events\": providerEvents\n\t};\n}\n\nvar eventObject = {};\nvar type = events.event;\neventObject.event_date = events.data.date_updated;\neventObject.event_object_id = events.data.id;\neventObject.event_object_type = 'leads';\neventObject.event_type = determineEventType(type);\n\nif (events.data.source_id) {\n\teventObject.event_old_path = events.data.source_id;\n\teventObject.event_object_id = events.data.source_id;\n}\n\nif (events.data.destination_id) {\n\teventObject.event_new_path = events.data.destination_id;\n}\n\nfunction determineEventType(eventTypeString) {\n\tswitch (eventTypeString) {\n\t\tcase 'update':\n\t\t\treturn 'UPDATED';\n\t\tcase 'create':\n\t\t\treturn 'CREATED';\n\t\tcase 'delete':\n\t\t\treturn 'DELETED';\n\t\tcase 'merge':\n\t\t\treturn 'UPDATED';\n\t\tdefault:\n\t\t\treturn 'UNKNOWN';\n\t}\n}\n\nreturn {\n\t\"events\": [eventObject]\n}",
+            "isLegacy": true
+        }
+    ],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

@@ -1,0 +1,822 @@
+{
+    "id": 20023,
+    "name": "Terminus",
+    "hookName": "Terminus",
+    "key": "terminus",
+    "description": "Terminus is the account-based platform for marketing and sales. Add a Terminus Instance to connect your existing Terminus account to the Marketing Hub, allowing you to manage campaigns, advertisements across multiple Marketing Elements. You will need your Terminus account information to add an instance.",
+    "image": "elements/custom-element-default-logo.png",
+    "logo": "terminus",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 158084,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "Terminus OAuth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 158077,
+            "name": "OAuth Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "Terminus OAuth Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158076,
+            "name": "OAuth Refresh Token",
+            "key": "oauth.user.refresh_token",
+            "description": "Terminus OAuth Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158075,
+            "name": "OAuth Refresh Interval (s)",
+            "key": "oauth.user.refresh_interval",
+            "description": "Terminus OAuth Refresh Interval (s)",
+            "defaultValue": "3600",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158074,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "Terminus OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254172,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158087,
+            "name": "OAuth Scope",
+            "key": "oauth.scope",
+            "description": "Terminus OAuth Scope",
+            "defaultValue": "triggered_ads",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 158083,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "Terminus OAuth API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 158082,
+            "name": "OAuth Authorization URL",
+            "key": "oauth.authorization.url",
+            "description": "Terminus OAuth Authorization URL",
+            "defaultValue": "https://oauth.terminus.{domain}/v1/authorize",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 158081,
+            "name": "Base Url",
+            "key": "base.url",
+            "description": "Terminus Base Url",
+            "defaultValue": "https://triggered-ads.terminus.{domain}/v1",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 197410,
+            "name": "Terminus Partner Id",
+            "key": "terminus.partner.id",
+            "description": "The Terminus Partner Id",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 197409,
+            "name": "Sandbox Domain",
+            "key": "sandbox.domain",
+            "description": "The Terminus sandbox domain",
+            "defaultValue": "ninja",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 197408,
+            "name": "Production Domain",
+            "key": "production.domain",
+            "description": "The Terminus Production Domain",
+            "defaultValue": "services",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 197407,
+            "name": "Connect To Sandbox",
+            "key": "connect.to.sandbox",
+            "description": "Pick true to connect to Terminus sandbox services. ",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 158089,
+            "name": "OAuth Token Revoke URL",
+            "key": "oauth.token.revoke_url",
+            "description": "Terminus OAuth Token Revoke URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158088,
+            "name": "OAuth Token Refresh URL",
+            "key": "oauth.token.refresh_url",
+            "description": "Terminus OAuth Token Refresh URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158086,
+            "name": "OAuth Token URL",
+            "key": "oauth.token.url",
+            "description": "Terminus OAuth Token URL",
+            "defaultValue": "https://oauth.terminus.{domain}/v1/token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 158085,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "Terminus OAuth Callback URL",
+            "defaultValue": "auth.cloudelements.io/oauth",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 158080,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Terminus Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158079,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Terminus Max Page Size (or limit)",
+            "defaultValue": "200",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158078,
+            "name": "OAuth basic header",
+            "key": "oauth.basic.header",
+            "description": "Terminus OAuth basic header",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158073,
+            "name": "Event Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "Terminus Event Notification Signature Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 11,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 159816,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256315,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256566,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 191372,
+            "createdDate": "2018-09-27T00:12:52Z",
+            "description": "Search for campaigns (tactics)",
+            "path": "/hubs/marketing/campaigns",
+            "vendorPath": "/partner_tactics",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 460814,
+                    "resourceId": 191372,
+                    "createdDate": "2018-09-27T00:12:52Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. The `partner_id` is a mandatory field - eg `partner_id='<<partnerId>>'`",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": true
+                },
+                {
+                    "id": 460813,
+                    "resourceId": 191372,
+                    "createdDate": "2018-09-27T00:12:52Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve. Defaults to 1",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 460812,
+                    "resourceId": 191372,
+                    "createdDate": "2018-09-27T00:12:52Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page. Defaults to 200",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "campaigns",
+                "transform": false,
+                "swagger": {
+                    "campaigns": {
+                        "items": {
+                            "$ref": "campaignsObject"
+                        },
+                        "type": "array"
+                    },
+                    "campaignsObject": {
+                        "properties": {
+                            "campaign_grouping_handle": {
+                                "type": "string",
+                                "x-samplevalue": "7bffc23391ea1d2e176f892012a8b2e9"
+                            },
+                            "campaign_name": {
+                                "type": "string",
+                                "x-samplevalue": "Terminus Test Campaign B"
+                            },
+                            "tactic_created_moment_utc": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-05-07T17:04:38Z"
+                            },
+                            "tactic_name": {
+                                "type": "string",
+                                "x-samplevalue": "Test Tactic B2"
+                            },
+                            "tactic_uuid": {
+                                "type": "string",
+                                "x-samplevalue": "1180409f-b50e-42a2-9d16-be3ff1d8f5e3"
+                            }
+                        },
+                        "title": "campaignsObject",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "tactic_uuid"
+                        ],
+                        "x-vendor-objectname": "partner_tactics"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 191373,
+            "createdDate": "2018-09-27T00:12:52Z",
+            "description": "Start displaying advertisements by adding accounts to a campaign (tactic)",
+            "path": "/hubs/marketing/campaigns/{id}/start-ads",
+            "vendorPath": "/startdisplayads",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 460816,
+                    "resourceId": 191373,
+                    "createdDate": "2018-09-27T00:12:52Z",
+                    "name": "id",
+                    "vendorName": "tactic",
+                    "description": "The tactic ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 460815,
+                    "resourceId": 191373,
+                    "createdDate": "2018-09-27T00:12:52Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Companies",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "campaignsStartAdsReq",
+                    "vendorDataType": "campaignsStartAdsReq",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "campaignsStartAdsRes",
+                "transform": false,
+                "swagger": {
+                    "campaignsStartAdsRes": {
+                        "properties": {
+                            "receipt_uuid": {
+                                "type": "string",
+                                "x-samplevalue": "12d6eaf2-827d-4a07-94c3-14a93322f77a"
+                            }
+                        },
+                        "title": "campaignsStartAdsRes",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "receipt_uuid"
+                        ],
+                        "x-vendor-objectname": "startdisplayads"
+                    }
+                },
+                "requestSwagger": {
+                    "companies": {
+                        "properties": {
+                            "address": {
+                                "type": "string",
+                                "x-samplevalue": "123 East "
+                            },
+                            "city": {
+                                "type": "string",
+                                "x-samplevalue": "Atlanta"
+                            },
+                            "company_id": {
+                                "type": "string",
+                                "x-samplevalue": "1002"
+                            },
+                            "company_name": {
+                                "type": "string",
+                                "x-samplevalue": "abc"
+                            },
+                            "country": {
+                                "type": "string",
+                                "x-samplevalue": "US"
+                            },
+                            "domain": {
+                                "type": "string",
+                                "x-samplevalue": "abc.com"
+                            },
+                            "employee": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "naics_code": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "test1",
+                                    "test2"
+                                ]
+                            },
+                            "phone": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1234567890
+                            },
+                            "revenue": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1000
+                            },
+                            "sic_code": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "sic1",
+                                    "sic2"
+                                ]
+                            },
+                            "state": {
+                                "type": "string",
+                                "x-samplevalue": "state"
+                            },
+                            "year_founded": {
+                                "type": "string",
+                                "x-samplevalue": "2010"
+                            },
+                            "zip": {
+                                "type": "string",
+                                "x-samplevalue": "123456"
+                            }
+                        },
+                        "required": [
+                            "company_id",
+                            "company_name"
+                        ],
+                        "title": "companies",
+                        "x-has-customfields": false
+                    },
+                    "campaignsStartAdsReq": {
+                        "properties": {
+                            "companies": {
+                                "items": {
+                                    "$ref": "companies"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "campaignsStartAdsReq",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "startdisplayads"
+                    }
+                },
+                "requestName": "campaignsStartAdsReq"
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 28444,
+                    "resourceId": 191373,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "if (request_body) {\n\tvar req_body_map = request_body_map[\"companies\"];\n  done({\n    \"request_vendor_body\" : JSON.stringify(req_body_map)\n  });\n}\ndone();",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 191374,
+            "createdDate": "2018-09-27T00:12:52Z",
+            "description": "Stop displaying advertisements for a campaign (tactic) account",
+            "path": "/hubs/marketing/campaigns/{id}/stop-ads",
+            "vendorPath": "/stopdisplayads",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 460818,
+                    "resourceId": 191374,
+                    "createdDate": "2018-09-27T00:12:52Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Company IDs",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "campaignsStopAdsReq",
+                    "vendorDataType": "campaignsStopAdsReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 460817,
+                    "resourceId": 191374,
+                    "createdDate": "2018-09-27T00:12:52Z",
+                    "name": "id",
+                    "vendorName": "tactic",
+                    "description": "The tactic ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "campaignsStopAdsRes",
+                "transform": false,
+                "swagger": {
+                    "campaignsStopAdsRes": {
+                        "properties": {
+                            "receipt_uuid": {
+                                "type": "string",
+                                "x-samplevalue": "12d6eaf2-827d-4a07-94c3-14a93322f77a"
+                            }
+                        },
+                        "title": "campaignsStopAdsRes",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "receipt_uuid"
+                        ],
+                        "x-vendor-objectname": "stopdisplayads"
+                    }
+                },
+                "requestSwagger": {
+                    "campaignsStopAdsReq": {
+                        "properties": {
+                            "companyIDs": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "1001",
+                                    "1002"
+                                ]
+                            }
+                        },
+                        "title": "campaignsStopAdsReq"
+                    }
+                },
+                "requestName": "campaignsStopAdsReq"
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 28445,
+                    "resourceId": 191374,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "if (request_body) {\n\tvar req_body_map = request_body_map[\"companyIDs\"];\n  done({\n    \"request_vendor_body\" : JSON.stringify(req_body_map)\n  });\n}\ndone();",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 9641,
+            "createdDate": "2018-09-27T00:12:52Z",
+            "name": "application/json",
+            "vendorName": "Accept",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 20023,
+            "required": false
+        },
+        {
+            "id": 9642,
+            "createdDate": "2018-09-27T00:12:52Z",
+            "name": "application/json",
+            "vendorName": "Content-Type",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 20023,
+            "required": false
+        }
+    ],
+    "private": false
+}

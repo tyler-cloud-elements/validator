@@ -1,0 +1,1211 @@
+{
+    "id": 14,
+    "name": "Dropbox",
+    "hookName": "Dropbox",
+    "key": "dropbox",
+    "description": "Add a Dropbox Instance to connect your existing Dropbox account to the Cloud Storage and Documents Hub, allowing you to manage files and folders. You will need your Dropbox account information to add an instance.",
+    "image": "elements/provider_dropbox.png",
+    "logo": "dropbox",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "If you do not have an Dropbox account, you can create one at <a href=\"http://www.dropbox.com\" target=\"_blank\">Dropbox Signup</a>",
+    "signupURL": "http://www.dropbox.com",
+    "configuration": [
+        {
+            "id": 402,
+            "name": "Last Event Cursor",
+            "key": "dropbox.last.event.cursor",
+            "description": "The last event cursor retrieved",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 76,
+            "name": "User Token",
+            "key": "oauth.user.token",
+            "description": "Dropbox OAuth User Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 120,
+            "name": "User Id",
+            "key": "oauth.user.id",
+            "description": "Dropbox OAuth User ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 114210,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Base URL",
+            "defaultValue": "https://api.dropbox.com/2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254013,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 149,
+            "name": "API Key",
+            "key": "oauth.api.key",
+            "description": "Dropbox Oauth Api Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 9321,
+            "name": "Event Metadata",
+            "key": "event.metadata",
+            "description": "Event Metadata",
+            "defaultValue": "{\"webhook\": {\"file\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]},\n        \"folder\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 150,
+            "name": "API Secret",
+            "key": "oauth.api.secret",
+            "description": "Dropbox Oauth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "PASSWORD",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 229,
+            "name": "Document Hub Tagging",
+            "key": "document.tagging",
+            "description": "Enable Tagging of Documents. Paths and Tags will be stored in CE database in Clear Text",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 151,
+            "name": "OAuth Callback",
+            "key": "oauth.callback.url",
+            "description": "Dropbox Oauth Callback",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 1085,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "The subscription ID for the webhook events subscription",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52474,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159970,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256141,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256392,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 403,
+            "name": "Enable/Disable Event Notification",
+            "key": "event.notification.enabled",
+            "description": "Used to enable/disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 404,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "An application callback URL used for event notifications from Dropbox and Cloud Elements, e.g., Uploaded Files, etc.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9697,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 231687,
+            "name": "Include Ref Id of File/Folder in Event",
+            "key": "include.refid.in.events",
+            "description": "Send File Ref Id from DropBox in the Event Body",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 400,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 138014,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Retrive all the custom-fields template",
+            "path": "/hubs/documents/custom-fields-templates",
+            "vendorPath": "/file_properties/templates/list_for_user",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314552,
+                    "resourceId": 138014,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 314551,
+                    "resourceId": 138014,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "customFieldsTemplatesList",
+                "transform": false,
+                "swagger": {
+                    "customFieldsTemplatesList": {
+                        "items": {
+                            "$ref": "customFieldsTemplatesObject"
+                        },
+                        "title": "customFieldsTemplatesList",
+                        "type": "array"
+                    },
+                    "customFieldsTemplatesObject": {
+                        "properties": {
+                            "template_id": {
+                                "type": "string",
+                                "x-samplevalue": "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+                            }
+                        },
+                        "title": "customFieldsTemplatesObject",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "template_id"
+                        ],
+                        "x-vendor-objectname": "metadata_templates"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "template_ids",
+            "hooks": [
+                {
+                    "id": 19758,
+                    "resourceId": 138014,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var body = response_body;\nif (!response_iserror) {\n    body = body.template_ids;\n    var response = {};\n    var resp_body = [];\n    for (var i in body) {\n        var emp = {};\n        emp.template_id = body[i];\n        resp_body.push(emp);\n    }\n    response.template_ids = resp_body\n    done({\n        \"response_body\": response\n    });\n}\ndone({\n    \"response_body\": body\n});",
+                    "isLegacy": false
+                },
+                {
+                    "id": 19759,
+                    "resourceId": 138014,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "let headers = {\n     \"Content-Type\": null\n};\ndone({\n     \"request_vendor_headers\": headers\n});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 138010,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Create a custom-fields template",
+            "path": "/hubs/documents/custom-fields-templates",
+            "vendorPath": "/file_properties/templates/add_for_user",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314543,
+                    "resourceId": 138010,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Custom Field Template Body ",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "customFieldsTemplatesPost",
+                    "vendorDataType": "customFieldsTemplatesPost",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "customFieldsTemplatesPostResp",
+                "transform": false,
+                "swagger": {
+                    "customFieldsTemplatesPostResp": {
+                        "properties": {
+                            "template_id": {
+                                "type": "string",
+                                "x-samplevalue": "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+                            }
+                        },
+                        "title": "customFieldsTemplatesPostResp",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "template_id"
+                        ]
+                    }
+                },
+                "requestSwagger": {
+                    "customFieldsTemplatesPost": {
+                        "properties": {
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "These properties describe how confidential this file or folder is."
+                            },
+                            "fields": {
+                                "items": {
+                                    "$ref": "fields_"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "description",
+                            "fields"
+                        ],
+                        "title": "customFieldsTemplatesPost",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "name"
+                        ]
+                    },
+                    "fields_": {
+                        "properties": {
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "This is the security policy of the file or folder described.\nPolicies can be Confidential, Public or Internal."
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security Policy"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "fields",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "customFieldsTemplatesPost"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 138011,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Delete a custom-field Template",
+            "path": "/hubs/documents/custom-fields-templates/{templateKeyId}",
+            "vendorPath": "/file_properties/templates/remove_for_user",
+            "method": "DELETE",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314545,
+                    "resourceId": 138011,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "{}",
+                    "vendorName": "body",
+                    "description": "The delete body",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314544,
+                    "resourceId": 138011,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "templateKeyId",
+                    "vendorName": "template_id",
+                    "description": "The template id",
+                    "type": "path",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 138012,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Retrive the custom-field template",
+            "path": "/hubs/documents/custom-fields-templates/{templateKeyId}",
+            "vendorPath": "/file_properties/templates/get_for_user",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314547,
+                    "resourceId": 138012,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "{}",
+                    "vendorName": "body",
+                    "description": "The template body",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314546,
+                    "resourceId": 138012,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "templateKeyId",
+                    "vendorName": "template_id",
+                    "description": "The template id ",
+                    "type": "path",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "customFieldsTemplatesResponse",
+                "transform": false,
+                "swagger": {
+                    "typeResp": {
+                        "properties": {
+                            ".tag": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "typeResp",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "fieldsResponse": {
+                        "properties": {
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "This is the security policy of the file or folder described.\nPolicies can be Confidential, Public or Internal."
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security Policy"
+                            },
+                            "type": {
+                                "type": "typeResp"
+                            }
+                        },
+                        "title": "fieldsResponse",
+                        "x-has-customfields": false
+                    },
+                    "customFieldsTemplatesResponse": {
+                        "properties": {
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "These properties describe how confidential this file or folder is."
+                            },
+                            "fields": {
+                                "items": {
+                                    "$ref": "fieldsResponse"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security"
+                            },
+                            "template_id": {
+                                "type": "string",
+                                "x-samplevalue": "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+                            }
+                        },
+                        "title": "customFieldsTemplatesResponse",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "template_id"
+                        ],
+                        "x-vendor-objectname": "metadata_templates"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 19755,
+                    "resourceId": 138012,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var body = response_body;\nif (!response_iserror) {\n  var template_id= request_path.split('/')[4];\n   //var  id =req.template_id ;\n  body.template_id=template_id;  \n}\ndone({\n    \"response_body\": body\n});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 138009,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Update the custom field template ",
+            "path": "/hubs/documents/custom-fields-templates/{templateKeyId}",
+            "vendorPath": "/file_properties/templates/update_for_user",
+            "method": "PUT",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314542,
+                    "resourceId": 138009,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The object body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "customFieldsTemplatesPutReq",
+                    "vendorDataType": "customFieldsTemplatesPutReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314541,
+                    "resourceId": 138009,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "templateKeyId",
+                    "vendorName": "template_id",
+                    "description": "The Template id",
+                    "type": "path",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "customFieldsTemplatesPostResp",
+                "transform": false,
+                "swagger": {
+                    "customFieldsTemplatesPostResp": {
+                        "properties": {
+                            "template_id": {
+                                "type": "string",
+                                "x-samplevalue": "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+                            }
+                        },
+                        "title": "customFieldsTemplatesPostResp",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "template_id"
+                        ]
+                    }
+                },
+                "requestSwagger": {
+                    "customFieldsTemplatesPutReq": {
+                        "properties": {
+                            "add_fields": {
+                                "items": {
+                                    "$ref": "add_fields"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "These properties will describe how confidential this file or folder is."
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "New Security Template Name"
+                            },
+                            "template_id": {
+                                "type": "string",
+                                "x-samplevalue": "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+                            }
+                        },
+                        "required": [
+                            "add_fields"
+                        ],
+                        "title": "customFieldsTemplatesPutReq",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "name"
+                        ]
+                    },
+                    "add_fields": {
+                        "properties": {
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "This is the security policy of the file or folder described.\nPolicies can be Confidential, Public or Internal."
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security Policy"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "add_fields",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "customFieldsTemplatesPutReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 138015,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Delete the custom field template instance for a file",
+            "path": "/hubs/documents/files/{id}/custom-fields-templates/{templateKeyId}/custom-fields",
+            "vendorPath": "/file_properties/properties/remove",
+            "method": "DELETE",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314555,
+                    "resourceId": 138015,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "id",
+                    "vendorName": "path",
+                    "description": "The file id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314554,
+                    "resourceId": 138015,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "templateKeyId",
+                    "vendorName": "template_id",
+                    "description": "The template id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314553,
+                    "resourceId": 138015,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "{ \"property_template_ids\": [   ] }",
+                    "vendorName": "body",
+                    "description": "The delete custom field body ",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 19760,
+                    "resourceId": 138015,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var body = {};\nif (request_vendor_body) {\n    body = JSON.parse(request_vendor_body);\n    var template_id = request_path_variables['templateKeyId'];\n    var id = decodeURIComponent(decodeURIComponent(request_path_variables['id']));\n\n    body.path = {};\n    body.path = id;\n\n    if (body.property_template_ids) {\n        body.property_template_ids[0]=template_id;\n    }\n  \n  done({\n    \"request_vendor_body\": JSON.stringify(body)\n});\n\n}",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 138013,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Create a custom fields for a file",
+            "path": "/hubs/documents/files/{id}/custom-fields-templates/{templateKeyId}/custom-fields",
+            "vendorPath": "/file_properties/properties/add",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314550,
+                    "resourceId": 138013,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "id",
+                    "vendorName": "path",
+                    "description": "The file Id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314549,
+                    "resourceId": 138013,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The custom field body ",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "filesCustomFieldsTemplatesCustomFieldsPost",
+                    "vendorDataType": "filesCustomFieldsTemplatesCustomFieldsPost",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314548,
+                    "resourceId": 138013,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "templateKeyId",
+                    "vendorName": "templateKeyId",
+                    "description": "The template id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "filesCustomFieldsTemplatesCustomFieldsResp",
+                "transform": false,
+                "swagger": {
+                    "filesCustomFieldsTemplatesCustomFieldsResp": {
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "x-samplevalue": "/my_awesome/word.docx"
+                            },
+                            "property_groups": {
+                                "items": {
+                                    "$ref": "property_groups"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "filesCustomFieldsTemplatesCustomFieldsResp",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "path"
+                        ]
+                    },
+                    "property_groups": {
+                        "properties": {
+                            "fields": {
+                                "items": {
+                                    "$ref": "fields"
+                                },
+                                "type": "array"
+                            },
+                            "template_id": {
+                                "type": "string",
+                                "x-samplevalue": "ptid:1a5n2i6d3OYEAAAAAAAAAYa"
+                            }
+                        },
+                        "title": "property_groups",
+                        "x-has-customfields": false
+                    },
+                    "fields": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security Policy"
+                            },
+                            "value": {
+                                "type": "string",
+                                "x-samplevalue": "Confidential"
+                            }
+                        },
+                        "title": "fields",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestSwagger": {
+                    "filesCustomFieldsTemplatesCustomFieldsPost": {
+                        "properties": {
+                            "fields": {
+                                "items": {
+                                    "$ref": "fieldsCustomPost"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "fields"
+                        ],
+                        "title": "filesCustomFieldsTemplatesCustomFieldsPost",
+                        "x-has-customfields": false
+                    },
+                    "fieldsCustomPost": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security Policy"
+                            },
+                            "value": {
+                                "type": "string",
+                                "x-samplevalue": "Confidential"
+                            }
+                        },
+                        "title": "fieldsCustomPost",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "name"
+                        ]
+                    }
+                },
+                "requestName": "filesCustomFieldsTemplatesCustomFieldsPost"
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 19756,
+                    "resourceId": 138013,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if(!response_iserror ){\n  done({\"response_body\":JSON.parse(request_vendor_body)})\n}else{\n  done();\n}\n  \n   ",
+                    "isLegacy": false
+                },
+                {
+                    "id": 19757,
+                    "resourceId": 138013,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var requestBody ={};\nif (request_body) {\n  \n    var template_id = request_path_variables['templateKeyId'];\n    var id = decodeURIComponent(decodeURIComponent(request_path_variables['id']));\n\n    requestBody.path = {};\n    requestBody.path = id;\n\n    requestBody.property_groups = [];\n    requestBody.property_groups.push(JSON.parse(request_body));\n    requestBody.property_groups[0].template_id = {};\n    requestBody.property_groups[0].template_id = template_id;\n    \n  \n  done({\n    \"request_vendor_body\": JSON.stringify(requestBody)\n});\n\n}\n\n\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 138016,
+            "createdDate": "2018-02-21T02:14:22Z",
+            "description": "Update custom fields value associated with a given file",
+            "path": "/hubs/documents/files/{id}/custom-fields-templates/{templateKeyId}/custom-fields",
+            "vendorPath": "/file_properties/properties/update",
+            "method": "PUT",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 314558,
+                    "resourceId": 138016,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "id",
+                    "vendorName": "path",
+                    "description": "The file id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314557,
+                    "resourceId": 138016,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The custom field object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "filesCustomFieldsTemplatesCustomFieldsPut",
+                    "vendorDataType": "filesCustomFieldsTemplatesCustomFieldsPut",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 314556,
+                    "resourceId": 138016,
+                    "createdDate": "2018-02-21T02:14:22Z",
+                    "name": "templateKeyId",
+                    "vendorName": "template_id",
+                    "description": "The template id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "filesCustomFieldsTemplatesCustomFieldsPutResp",
+                "transform": false,
+                "swagger": {
+                    "update_property_groups": {
+                        "properties": {
+                            "add_or_update_fields": {
+                                "items": {
+                                    "$ref": "add_or_update_fieldsResp"
+                                },
+                                "type": "array"
+                            },
+                            "template_id": {
+                                "type": "string",
+                                "x-samplevalue": "ptid:I5TRr3sRZHMAAAAAAAB3FQ"
+                            }
+                        },
+                        "title": "update_property_groups",
+                        "x-has-customfields": false
+                    },
+                    "add_or_update_fieldsResp": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security Policy"
+                            },
+                            "value": {
+                                "type": "string",
+                                "x-samplevalue": "Confidential"
+                            }
+                        },
+                        "title": "add_or_update_fieldsResp",
+                        "x-has-customfields": false
+                    },
+                    "filesCustomFieldsTemplatesCustomFieldsPutResp": {
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "x-samplevalue": "id:5AY69EmPMc0AAAAAAAB8iQ"
+                            },
+                            "update_property_groups": {
+                                "items": {
+                                    "$ref": "update_property_groups"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "filesCustomFieldsTemplatesCustomFieldsPutResp",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "path"
+                        ]
+                    }
+                },
+                "requestSwagger": {
+                    "filesCustomFieldsTemplatesCustomFieldsPut": {
+                        "properties": {
+                            "add_or_update_fields": {
+                                "items": {
+                                    "$ref": "add_or_update_fields"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "add_or_update_fields"
+                        ],
+                        "title": "filesCustomFieldsTemplatesCustomFieldsPut",
+                        "x-has-customfields": false
+                    },
+                    "add_or_update_fields": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Security Policy"
+                            },
+                            "value": {
+                                "type": "string",
+                                "x-samplevalue": "Confidential"
+                            }
+                        },
+                        "title": "add_or_update_fields",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "name"
+                        ]
+                    }
+                },
+                "requestName": "filesCustomFieldsTemplatesCustomFieldsPut"
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 19761,
+                    "resourceId": 138016,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if(!response_iserror ){\n  done({\"response_body\":JSON.parse(request_vendor_body)})\n}else{\n  done();\n}\n  \n   ",
+                    "isLegacy": false
+                },
+                {
+                    "id": 19762,
+                    "resourceId": 138016,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var requestBody ={};\nif (request_body) {\n  \n    var template_id = request_path_variables['templateKeyId'];\n    var id = decodeURIComponent(decodeURIComponent(request_path_variables['id']));\n\n    requestBody.path = {};\n    requestBody.path = id;\n\n    requestBody.update_property_groups = [];\n    requestBody.update_property_groups.push(JSON.parse(request_body));\n    requestBody.update_property_groups[0].template_id = {};\n    requestBody.update_property_groups[0].template_id = template_id;\n    \n  \n  done({\n    \"request_vendor_body\": JSON.stringify(requestBody)\n});\n\n}\n\n\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": false,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": false,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "documents",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

@@ -1,0 +1,3219 @@
+{
+    "id": 802,
+    "name": "flickr",
+    "hookName": "flickr",
+    "key": "flickr",
+    "description": "Add a Flickr Instance to connect your existing Flickr account to the Cloud Storage and Documents Hub, allowing you to manage photos and albums. You will need your Flickr account information to add an instance.",
+    "image": "http://images.en.yibada.com/data/images/full/44764/yahoo-flickr-logo.jpg",
+    "logo": "flickr",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 8597,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "flickr OAuth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 8603,
+            "name": "Bulk query FieldName",
+            "key": "bulk.query.field_name",
+            "description": "Bulk query FieldName",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8604,
+            "name": "Event Notification Instance Finder",
+            "key": "event.notification.instance.finder",
+            "description": "Event Notification Instance Finder",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8605,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8607,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "flickr OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8608,
+            "name": "OAuth User Secret",
+            "key": "oauth.user.token.secret",
+            "description": "flickr OAuth User Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 8612,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "flickr Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8613,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "flickr Pagination Type",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8606,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254039,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8595,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "flickr OAuth Callback URL",
+            "defaultValue": "https://snapshot.cloud-elements.com/elements/jsp/home.jsp",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 8596,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "flickr OAuth API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 8598,
+            "name": "OAuth Authorization URL",
+            "key": "oauth.authorization.url",
+            "description": "flickr OAuth Authorization URL",
+            "defaultValue": "https://www.flickr.com/services/oauth/authorize?perms=write",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 8599,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "flickr Base URL",
+            "defaultValue": "https://api.flickr.com/services",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8600,
+            "name": "OAuth Token URL",
+            "key": "oauth.token.url",
+            "description": "flickr OAuth Token URL",
+            "defaultValue": "https://www.flickr.com/services/oauth/access_token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 8601,
+            "name": "OAuth Request URL",
+            "key": "oauth.request.url",
+            "description": "flickr OAuth Request URL",
+            "defaultValue": "https://www.flickr.com/services/oauth/request_token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 8602,
+            "name": "Bulk query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52508,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159899,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256169,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256420,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8609,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "flickr Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8610,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "flickr Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9694,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8611,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "flickr Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 5298,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a album",
+            "path": "/hubs/social/albums",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5340,
+                    "resourceId": 5298,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photosets.getList",
+                    "vendorName": "method",
+                    "description": "Return the list of galleries created by a user. Sorted from newest to oldest.",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5341,
+                    "resourceId": 5298,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_m, url_o",
+                    "vendorName": "primary_photo_extras",
+                    "description": "where clause",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5342,
+                    "resourceId": 5298,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5343,
+                    "resourceId": 5298,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "albumsList",
+                "transform": false,
+                "swagger": {
+                    "primary_photo_extras": {
+                        "id": "primary_photo_extras",
+                        "properties": {
+                            "@url_sq": {
+                                "type": "string"
+                            },
+                            "@media": {
+                                "type": "string"
+                            },
+                            "@url_m": {
+                                "type": "string"
+                            },
+                            "@width_m": {
+                                "type": "string"
+                            },
+                            "@machine_tags": {
+                                "type": "string"
+                            },
+                            "@dateupload": {
+                                "type": "string"
+                            },
+                            "@url_o": {
+                                "type": "string"
+                            },
+                            "@width_o": {
+                                "type": "string"
+                            },
+                            "@datetakengranularity": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@views": {
+                                "type": "string"
+                            },
+                            "@ownername": {
+                                "type": "string"
+                            },
+                            "@width_t": {
+                                "type": "string"
+                            },
+                            "@lastupdate": {
+                                "type": "string"
+                            },
+                            "@width_s": {
+                                "type": "string"
+                            },
+                            "@originalformat": {
+                                "type": "string"
+                            },
+                            "@height_sq": {
+                                "type": "string"
+                            },
+                            "@width_sq": {
+                                "type": "string"
+                            },
+                            "@media_status": {
+                                "type": "string"
+                            },
+                            "@height_m": {
+                                "type": "string"
+                            },
+                            "@longitude": {
+                                "type": "string"
+                            },
+                            "@height_o": {
+                                "type": "string"
+                            },
+                            "@tags": {
+                                "type": "string"
+                            },
+                            "@height_t": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@latitude": {
+                                "type": "string"
+                            },
+                            "@context": {
+                                "type": "string"
+                            },
+                            "@height_s": {
+                                "type": "string"
+                            },
+                            "@originalsecret": {
+                                "type": "string"
+                            },
+                            "@accuracy": {
+                                "type": "string"
+                            },
+                            "@datetakenunknown": {
+                                "type": "string"
+                            },
+                            "@url_t": {
+                                "type": "string"
+                            },
+                            "@pathalias": {
+                                "type": "string"
+                            },
+                            "@license": {
+                                "type": "string"
+                            },
+                            "@datetaken": {
+                                "type": "string"
+                            },
+                            "@url_s": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "albumsList": {
+                        "id": "albumsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "albumsListObject"
+                        }
+                    },
+                    "albumsListObject": {
+                        "id": "albumsListObject",
+                        "properties": {
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@date_update": {
+                                "type": "string"
+                            },
+                            "@count_views": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@primary": {
+                                "type": "string"
+                            },
+                            "@date_create": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@count_comments": {
+                                "type": "string"
+                            },
+                            "primary_photo_extras": {
+                                "type": "primary_photo_extras"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "@needs_interstitial": {
+                                "type": "string"
+                            },
+                            "@videos": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@photos": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@visibility_can_see_set": {
+                                "type": "string"
+                            },
+                            "@can_comment": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photosets.photoset",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5291,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a photo for a user",
+            "path": "/hubs/social/albums/{albumId}",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5313,
+                    "resourceId": 5291,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "albumId",
+                    "vendorName": "photoset_id",
+                    "description": "The album ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5314,
+                    "resourceId": 5291,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photosets.getInfo",
+                    "vendorName": "method",
+                    "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. ",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "albums",
+                "transform": false,
+                "swagger": {
+                    "albums": {
+                        "id": "albums",
+                        "properties": {
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@date_update": {
+                                "type": "string"
+                            },
+                            "@count_views": {
+                                "type": "string"
+                            },
+                            "@count_videos": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@primary": {
+                                "type": "string"
+                            },
+                            "@count_photos": {
+                                "type": "string"
+                            },
+                            "@date_create": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@count_comments": {
+                                "type": "string"
+                            },
+                            "@username": {
+                                "type": "string"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "@coverphoto_server": {
+                                "type": "string"
+                            },
+                            "@owner": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@photos": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@can_comment": {
+                                "type": "string"
+                            },
+                            "@coverphoto_farm": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photoset",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5290,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a photo for a user",
+            "path": "/hubs/social/albums/{albumId}/photos",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5310,
+                    "resourceId": 5290,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_m, url_o",
+                    "vendorName": "primary_photo_extras",
+                    "description": "primary_photo_extras",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5308,
+                    "resourceId": 5290,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "albumId",
+                    "vendorName": "photoset_id",
+                    "description": "The album ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5309,
+                    "resourceId": 5290,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photosets.getList",
+                    "vendorName": "method",
+                    "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. ",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5311,
+                    "resourceId": 5290,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5312,
+                    "resourceId": 5290,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "albumsPhotosList",
+                "transform": false,
+                "swagger": {
+                    "primary_photo_extras": {
+                        "id": "primary_photo_extras",
+                        "properties": {
+                            "@url_sq": {
+                                "type": "string"
+                            },
+                            "@media": {
+                                "type": "string"
+                            },
+                            "@url_m": {
+                                "type": "string"
+                            },
+                            "@width_m": {
+                                "type": "string"
+                            },
+                            "@machine_tags": {
+                                "type": "string"
+                            },
+                            "@dateupload": {
+                                "type": "string"
+                            },
+                            "@url_o": {
+                                "type": "string"
+                            },
+                            "@width_o": {
+                                "type": "string"
+                            },
+                            "@datetakengranularity": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@views": {
+                                "type": "string"
+                            },
+                            "@ownername": {
+                                "type": "string"
+                            },
+                            "@width_t": {
+                                "type": "string"
+                            },
+                            "@lastupdate": {
+                                "type": "string"
+                            },
+                            "@width_s": {
+                                "type": "string"
+                            },
+                            "@originalformat": {
+                                "type": "string"
+                            },
+                            "@height_sq": {
+                                "type": "string"
+                            },
+                            "@width_sq": {
+                                "type": "string"
+                            },
+                            "@media_status": {
+                                "type": "string"
+                            },
+                            "@height_m": {
+                                "type": "string"
+                            },
+                            "@longitude": {
+                                "type": "string"
+                            },
+                            "@height_o": {
+                                "type": "string"
+                            },
+                            "@tags": {
+                                "type": "string"
+                            },
+                            "@height_t": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@latitude": {
+                                "type": "string"
+                            },
+                            "@context": {
+                                "type": "string"
+                            },
+                            "@height_s": {
+                                "type": "string"
+                            },
+                            "@originalsecret": {
+                                "type": "string"
+                            },
+                            "@accuracy": {
+                                "type": "string"
+                            },
+                            "@datetakenunknown": {
+                                "type": "string"
+                            },
+                            "@url_t": {
+                                "type": "string"
+                            },
+                            "@pathalias": {
+                                "type": "string"
+                            },
+                            "@license": {
+                                "type": "string"
+                            },
+                            "@datetaken": {
+                                "type": "string"
+                            },
+                            "@url_s": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "albumsPhotosList": {
+                        "id": "albumsPhotosList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "albumsPhotosListObject"
+                        }
+                    },
+                    "albumsPhotosListObject": {
+                        "id": "albumsPhotosListObject",
+                        "properties": {
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@date_update": {
+                                "type": "string"
+                            },
+                            "@count_views": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@primary": {
+                                "type": "string"
+                            },
+                            "@date_create": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@count_comments": {
+                                "type": "string"
+                            },
+                            "primary_photo_extras": {
+                                "type": "primary_photo_extras"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "@needs_interstitial": {
+                                "type": "string"
+                            },
+                            "@videos": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@photos": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@visibility_can_see_set": {
+                                "type": "string"
+                            },
+                            "@can_comment": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photosets.photoset",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5292,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a photo for a user",
+            "path": "/hubs/social/albums/{albumId}/photos/{photoId}",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5315,
+                    "resourceId": 5292,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "albumId",
+                    "vendorName": "photoset_id",
+                    "description": "The album ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5316,
+                    "resourceId": 5292,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photos.getInfo",
+                    "vendorName": "method",
+                    "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. ",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5317,
+                    "resourceId": 5292,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5318,
+                    "resourceId": 5292,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5319,
+                    "resourceId": 5292,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "photoId",
+                    "vendorName": "photo_id",
+                    "description": "The photo ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "albumsPhotosList",
+                "transform": false,
+                "swagger": {
+                    "owner": {
+                        "id": "owner",
+                        "properties": {
+                            "@username": {
+                                "type": "string"
+                            },
+                            "@path_alias": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@nsid": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@realname": {
+                                "type": "string"
+                            },
+                            "@location": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "@isfriend": {
+                                "type": "string"
+                            },
+                            "@ispublic": {
+                                "type": "string"
+                            },
+                            "@isfamily": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "publiceditability": {
+                        "id": "publiceditability",
+                        "properties": {
+                            "@cancomment": {
+                                "type": "string"
+                            },
+                            "@canaddmeta": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usage": {
+                        "id": "usage",
+                        "properties": {
+                            "@canblog": {
+                                "type": "string"
+                            },
+                            "@candownload": {
+                                "type": "string"
+                            },
+                            "@canshare": {
+                                "type": "string"
+                            },
+                            "@canprint": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "dates": {
+                        "id": "dates",
+                        "properties": {
+                            "@posted": {
+                                "type": "string"
+                            },
+                            "@taken": {
+                                "type": "string"
+                            },
+                            "@takengranularity": {
+                                "type": "string"
+                            },
+                            "@takenunknown": {
+                                "type": "string"
+                            },
+                            "@lastupdate": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "people": {
+                        "id": "people",
+                        "properties": {
+                            "@haspeople": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "url": {
+                        "id": "url",
+                        "properties": {
+                            "$": {
+                                "type": "string"
+                            },
+                            "@type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "id": "tags",
+                        "properties": {
+                            "tag": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "tag"
+                                }
+                            }
+                        }
+                    },
+                    "urls": {
+                        "id": "urls",
+                        "properties": {
+                            "url": {
+                                "type": "url"
+                            }
+                        }
+                    },
+                    "albumsPhotosList": {
+                        "id": "albumsPhotosList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "albumsPhotosListObject"
+                        }
+                    },
+                    "permissions": {
+                        "id": "permissions",
+                        "properties": {
+                            "@permaddmeta": {
+                                "type": "string"
+                            },
+                            "@permcomment": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "editability": {
+                        "id": "editability",
+                        "properties": {
+                            "@cancomment": {
+                                "type": "string"
+                            },
+                            "@canaddmeta": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "albumsPhotosListObject": {
+                        "id": "albumsPhotosListObject",
+                        "properties": {
+                            "@media": {
+                                "type": "string"
+                            },
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@dateuploaded": {
+                                "type": "string"
+                            },
+                            "notes": {
+                                "type": "unknown"
+                            },
+                            "@safety_level": {
+                                "type": "string"
+                            },
+                            "usage": {
+                                "type": "usage"
+                            },
+                            "@views": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@rotation": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@originalformat": {
+                                "type": "string"
+                            },
+                            "urls": {
+                                "type": "urls"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "permissions": {
+                                "type": "permissions"
+                            },
+                            "editability": {
+                                "type": "editability"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "owner": {
+                                "type": "owner"
+                            },
+                            "comments": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            },
+                            "publiceditability": {
+                                "type": "publiceditability"
+                            },
+                            "dates": {
+                                "type": "dates"
+                            },
+                            "@isfavorite": {
+                                "type": "string"
+                            },
+                            "people": {
+                                "type": "people"
+                            },
+                            "tags": {
+                                "type": "tags"
+                            },
+                            "@originalsecret": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@license": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tag": {
+                        "id": "tag",
+                        "properties": {
+                            "@author": {
+                                "type": "string"
+                            },
+                            "$": {
+                                "type": "string"
+                            },
+                            "@raw": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@machine_tag": {
+                                "type": "string"
+                            },
+                            "@authorname": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photo",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5295,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve all community photos",
+            "path": "/hubs/social/community/photos",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5332,
+                    "resourceId": 5295,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photos.search",
+                    "vendorName": "method",
+                    "description": "Return a list of photos matching some criteria.",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5333,
+                    "resourceId": 5295,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5334,
+                    "resourceId": 5295,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5335,
+                    "resourceId": 5295,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "CEQL Search for photos by keyword. Standard usage is q=searchTerm",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "communityPhotosList",
+                "transform": false,
+                "swagger": {
+                    "communityPhotosListObject": {
+                        "id": "communityPhotosListObject",
+                        "properties": {
+                            "@isfriend": {
+                                "type": "string"
+                            },
+                            "@title": {
+                                "type": "string"
+                            },
+                            "@ispublic": {
+                                "type": "string"
+                            },
+                            "@isfamily": {
+                                "type": "string"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@owner": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "communityPhotosList": {
+                        "id": "communityPhotosList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "communityPhotosListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photos.photo",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5297,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a url for a photoId",
+            "path": "/hubs/social/photos/{photoId}",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5338,
+                    "resourceId": 5297,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photos.getInfo",
+                    "vendorName": "method",
+                    "description": "Get photo details for a given photoid",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5339,
+                    "resourceId": 5297,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "photoId",
+                    "vendorName": "photo_id",
+                    "description": "The photo ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "photos",
+                "transform": false,
+                "swagger": {
+                    "owner": {
+                        "id": "owner",
+                        "properties": {
+                            "@username": {
+                                "type": "string"
+                            },
+                            "@path_alias": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@nsid": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@realname": {
+                                "type": "string"
+                            },
+                            "@location": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "@isfriend": {
+                                "type": "string"
+                            },
+                            "@ispublic": {
+                                "type": "string"
+                            },
+                            "@isfamily": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "publiceditability": {
+                        "id": "publiceditability",
+                        "properties": {
+                            "@cancomment": {
+                                "type": "string"
+                            },
+                            "@canaddmeta": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usage": {
+                        "id": "usage",
+                        "properties": {
+                            "@canblog": {
+                                "type": "string"
+                            },
+                            "@candownload": {
+                                "type": "string"
+                            },
+                            "@canshare": {
+                                "type": "string"
+                            },
+                            "@canprint": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "dates": {
+                        "id": "dates",
+                        "properties": {
+                            "@posted": {
+                                "type": "string"
+                            },
+                            "@taken": {
+                                "type": "string"
+                            },
+                            "@takengranularity": {
+                                "type": "string"
+                            },
+                            "@takenunknown": {
+                                "type": "string"
+                            },
+                            "@lastupdate": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "photos": {
+                        "id": "photos",
+                        "properties": {
+                            "@media": {
+                                "type": "string"
+                            },
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@dateuploaded": {
+                                "type": "string"
+                            },
+                            "notes": {
+                                "type": "unknown"
+                            },
+                            "@safety_level": {
+                                "type": "string"
+                            },
+                            "usage": {
+                                "type": "usage"
+                            },
+                            "@views": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@rotation": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@originalformat": {
+                                "type": "string"
+                            },
+                            "urls": {
+                                "type": "urls"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "permissions": {
+                                "type": "permissions"
+                            },
+                            "editability": {
+                                "type": "editability"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "owner": {
+                                "type": "owner"
+                            },
+                            "comments": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            },
+                            "publiceditability": {
+                                "type": "publiceditability"
+                            },
+                            "dates": {
+                                "type": "dates"
+                            },
+                            "@isfavorite": {
+                                "type": "string"
+                            },
+                            "people": {
+                                "type": "people"
+                            },
+                            "tags": {
+                                "type": "tags"
+                            },
+                            "@originalsecret": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@license": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "people": {
+                        "id": "people",
+                        "properties": {
+                            "@haspeople": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "url": {
+                        "id": "url",
+                        "properties": {
+                            "$": {
+                                "type": "string"
+                            },
+                            "@type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "id": "tags",
+                        "properties": {
+                            "tag": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "tag"
+                                }
+                            }
+                        }
+                    },
+                    "urls": {
+                        "id": "urls",
+                        "properties": {
+                            "url": {
+                                "type": "url"
+                            }
+                        }
+                    },
+                    "permissions": {
+                        "id": "permissions",
+                        "properties": {
+                            "@permaddmeta": {
+                                "type": "string"
+                            },
+                            "@permcomment": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "editability": {
+                        "id": "editability",
+                        "properties": {
+                            "@cancomment": {
+                                "type": "string"
+                            },
+                            "@canaddmeta": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tag": {
+                        "id": "tag",
+                        "properties": {
+                            "@author": {
+                                "type": "string"
+                            },
+                            "$": {
+                                "type": "string"
+                            },
+                            "@raw": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@machine_tag": {
+                                "type": "string"
+                            },
+                            "@authorname": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photo",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5296,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a tag for a photoId",
+            "path": "/hubs/social/photos/{photoId}/tags",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5336,
+                    "resourceId": 5296,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.tags.getListPhoto",
+                    "vendorName": "method",
+                    "description": "Get the tag list for a given photo.",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5337,
+                    "resourceId": 5296,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "photoId",
+                    "vendorName": "photo_id",
+                    "description": "The photo ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "photosTagsList",
+                "transform": false,
+                "swagger": {
+                    "photosTagsList": {
+                        "id": "photosTagsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "photosTagsListObject"
+                        }
+                    },
+                    "photosTagsListObject": {
+                        "id": "photosTagsListObject",
+                        "properties": {
+                            "@author": {
+                                "type": "string"
+                            },
+                            "$": {
+                                "type": "string"
+                            },
+                            "@raw": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@machine_tag": {
+                                "type": "string"
+                            },
+                            "@authorname": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photo.tags.tag",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5287,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve all  recent for a user",
+            "path": "/hubs/social/recent",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5298,
+                    "resourceId": 5287,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.activity.userPhotos",
+                    "vendorName": "method",
+                    "description": "Return a list of photos matching some criteria.",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5299,
+                    "resourceId": 5287,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5300,
+                    "resourceId": 5287,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "recentList",
+                "transform": false,
+                "swagger": {
+                    "recentList": {
+                        "id": "recentList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "recentListObject"
+                        }
+                    },
+                    "activity": {
+                        "id": "activity",
+                        "properties": {
+                            "event": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "event"
+                                }
+                            }
+                        }
+                    },
+                    "recentListObject": {
+                        "id": "recentListObject",
+                        "properties": {
+                            "@media": {
+                                "type": "string"
+                            },
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "activity": {
+                                "type": "activity"
+                            },
+                            "@type": {
+                                "type": "string"
+                            },
+                            "@comments": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@views": {
+                                "type": "string"
+                            },
+                            "@faves": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@ownername": {
+                                "type": "string"
+                            },
+                            "@realname": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "@owner": {
+                                "type": "string"
+                            },
+                            "@notes": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "event": {
+                        "id": "event",
+                        "properties": {
+                            "@username": {
+                                "type": "string"
+                            },
+                            "$": {
+                                "type": "string"
+                            },
+                            "@type": {
+                                "type": "string"
+                            },
+                            "@user": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@dateadded": {
+                                "type": "string"
+                            },
+                            "@commentid": {
+                                "type": "string"
+                            },
+                            "@realname": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5289,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a photo for a user",
+            "path": "/hubs/social/users/{userId}/albums/{albumId}",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5303,
+                    "resourceId": 5289,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "albumId",
+                    "vendorName": "photoset_id",
+                    "description": "The album ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5304,
+                    "resourceId": 5289,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photosets.getInfo",
+                    "vendorName": "method",
+                    "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. ",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5305,
+                    "resourceId": 5289,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5306,
+                    "resourceId": 5289,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5307,
+                    "resourceId": 5289,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "userId",
+                    "vendorName": "user_id",
+                    "description": "The user ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "usersAlbumsList",
+                "transform": false,
+                "swagger": {
+                    "usersAlbumsListObject": {
+                        "id": "usersAlbumsListObject",
+                        "properties": {
+                            "photoset": {
+                                "type": "photoset"
+                            },
+                            "@stat": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usersAlbumsList": {
+                        "id": "usersAlbumsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "usersAlbumsListObject"
+                        }
+                    },
+                    "photoset": {
+                        "id": "photoset",
+                        "properties": {
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@date_update": {
+                                "type": "string"
+                            },
+                            "@count_views": {
+                                "type": "string"
+                            },
+                            "@count_videos": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@primary": {
+                                "type": "string"
+                            },
+                            "@count_photos": {
+                                "type": "string"
+                            },
+                            "@date_create": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@count_comments": {
+                                "type": "string"
+                            },
+                            "@username": {
+                                "type": "string"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "@coverphoto_server": {
+                                "type": "string"
+                            },
+                            "@owner": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@photos": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@can_comment": {
+                                "type": "string"
+                            },
+                            "@coverphoto_farm": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5293,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a photo for a user",
+            "path": "/hubs/social/users/{userId}/albums/{albumId}/photos",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5322,
+                    "resourceId": 5293,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_m, url_o",
+                    "vendorName": "primary_photo_extras",
+                    "description": "primary_photo_extras",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5320,
+                    "resourceId": 5293,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "albumId",
+                    "vendorName": "photoset_id",
+                    "description": "The album ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5321,
+                    "resourceId": 5293,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photosets.getList",
+                    "vendorName": "method",
+                    "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. ",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5323,
+                    "resourceId": 5293,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5324,
+                    "resourceId": 5293,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5325,
+                    "resourceId": 5293,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "userId",
+                    "vendorName": "user_id",
+                    "description": "The user ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "usersAlbumsPhotosList",
+                "transform": false,
+                "swagger": {
+                    "primary_photo_extras": {
+                        "id": "primary_photo_extras",
+                        "properties": {
+                            "@url_sq": {
+                                "type": "string"
+                            },
+                            "@media": {
+                                "type": "string"
+                            },
+                            "@url_m": {
+                                "type": "string"
+                            },
+                            "@width_m": {
+                                "type": "string"
+                            },
+                            "@machine_tags": {
+                                "type": "string"
+                            },
+                            "@dateupload": {
+                                "type": "string"
+                            },
+                            "@url_o": {
+                                "type": "string"
+                            },
+                            "@width_o": {
+                                "type": "string"
+                            },
+                            "@datetakengranularity": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@views": {
+                                "type": "string"
+                            },
+                            "@ownername": {
+                                "type": "string"
+                            },
+                            "@width_t": {
+                                "type": "string"
+                            },
+                            "@lastupdate": {
+                                "type": "string"
+                            },
+                            "@width_s": {
+                                "type": "string"
+                            },
+                            "@originalformat": {
+                                "type": "string"
+                            },
+                            "@height_sq": {
+                                "type": "string"
+                            },
+                            "@width_sq": {
+                                "type": "string"
+                            },
+                            "@media_status": {
+                                "type": "string"
+                            },
+                            "@height_m": {
+                                "type": "string"
+                            },
+                            "@longitude": {
+                                "type": "string"
+                            },
+                            "@height_o": {
+                                "type": "string"
+                            },
+                            "@tags": {
+                                "type": "string"
+                            },
+                            "@height_t": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@latitude": {
+                                "type": "string"
+                            },
+                            "@context": {
+                                "type": "string"
+                            },
+                            "@height_s": {
+                                "type": "string"
+                            },
+                            "@originalsecret": {
+                                "type": "string"
+                            },
+                            "@accuracy": {
+                                "type": "string"
+                            },
+                            "@datetakenunknown": {
+                                "type": "string"
+                            },
+                            "@url_t": {
+                                "type": "string"
+                            },
+                            "@pathalias": {
+                                "type": "string"
+                            },
+                            "@license": {
+                                "type": "string"
+                            },
+                            "@datetaken": {
+                                "type": "string"
+                            },
+                            "@url_s": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usersAlbumsPhotosListObject": {
+                        "id": "usersAlbumsPhotosListObject",
+                        "properties": {
+                            "@cancreate": {
+                                "type": "string"
+                            },
+                            "@page": {
+                                "type": "string"
+                            },
+                            "@perpage": {
+                                "type": "string"
+                            },
+                            "@total": {
+                                "type": "string"
+                            },
+                            "@pages": {
+                                "type": "string"
+                            },
+                            "photoset": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "photoset"
+                                }
+                            }
+                        }
+                    },
+                    "photoset": {
+                        "id": "photoset",
+                        "properties": {
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@date_update": {
+                                "type": "string"
+                            },
+                            "@count_views": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@primary": {
+                                "type": "string"
+                            },
+                            "@date_create": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@count_comments": {
+                                "type": "string"
+                            },
+                            "primary_photo_extras": {
+                                "type": "primary_photo_extras"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "@needs_interstitial": {
+                                "type": "string"
+                            },
+                            "@videos": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@photos": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@visibility_can_see_set": {
+                                "type": "string"
+                            },
+                            "@can_comment": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usersAlbumsPhotosList": {
+                        "id": "usersAlbumsPhotosList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "usersAlbumsPhotosListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photosets",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5299,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a photo for a user",
+            "path": "/hubs/social/users/{userId}/albums/{albumId}/photos/{photoId}",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5344,
+                    "resourceId": 5299,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "albumId",
+                    "vendorName": "photoset_id",
+                    "description": "photo Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5345,
+                    "resourceId": 5299,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photos.getInfo",
+                    "vendorName": "method",
+                    "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. ",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5346,
+                    "resourceId": 5299,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5347,
+                    "resourceId": 5299,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5348,
+                    "resourceId": 5299,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "photoId",
+                    "vendorName": "photo_id",
+                    "description": "PhotoId",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5349,
+                    "resourceId": 5299,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "userId",
+                    "vendorName": "user_id",
+                    "description": "The NSID of the user who's photos to return. A value of \"me\" will return the calling user's photos.",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5350,
+                    "resourceId": 5299,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "CEQL Search by keyword. Standard usage is q=searchTerm",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "usersAlbumsPhotosList",
+                "transform": false,
+                "swagger": {
+                    "owner": {
+                        "id": "owner",
+                        "properties": {
+                            "@username": {
+                                "type": "string"
+                            },
+                            "@path_alias": {
+                                "type": "string"
+                            },
+                            "@iconfarm": {
+                                "type": "string"
+                            },
+                            "@nsid": {
+                                "type": "string"
+                            },
+                            "@iconserver": {
+                                "type": "string"
+                            },
+                            "@realname": {
+                                "type": "string"
+                            },
+                            "@location": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "@isfriend": {
+                                "type": "string"
+                            },
+                            "@ispublic": {
+                                "type": "string"
+                            },
+                            "@isfamily": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "publiceditability": {
+                        "id": "publiceditability",
+                        "properties": {
+                            "@cancomment": {
+                                "type": "string"
+                            },
+                            "@canaddmeta": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usage": {
+                        "id": "usage",
+                        "properties": {
+                            "@canblog": {
+                                "type": "string"
+                            },
+                            "@candownload": {
+                                "type": "string"
+                            },
+                            "@canshare": {
+                                "type": "string"
+                            },
+                            "@canprint": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "dates": {
+                        "id": "dates",
+                        "properties": {
+                            "@posted": {
+                                "type": "string"
+                            },
+                            "@taken": {
+                                "type": "string"
+                            },
+                            "@takengranularity": {
+                                "type": "string"
+                            },
+                            "@takenunknown": {
+                                "type": "string"
+                            },
+                            "@lastupdate": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "people": {
+                        "id": "people",
+                        "properties": {
+                            "@haspeople": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "url": {
+                        "id": "url",
+                        "properties": {
+                            "$": {
+                                "type": "string"
+                            },
+                            "@type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "id": "tags",
+                        "properties": {
+                            "tag": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "tag"
+                                }
+                            }
+                        }
+                    },
+                    "urls": {
+                        "id": "urls",
+                        "properties": {
+                            "url": {
+                                "type": "url"
+                            }
+                        }
+                    },
+                    "permissions": {
+                        "id": "permissions",
+                        "properties": {
+                            "@permaddmeta": {
+                                "type": "string"
+                            },
+                            "@permcomment": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "editability": {
+                        "id": "editability",
+                        "properties": {
+                            "@cancomment": {
+                                "type": "string"
+                            },
+                            "@canaddmeta": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usersAlbumsPhotosListObject": {
+                        "id": "usersAlbumsPhotosListObject",
+                        "properties": {
+                            "@media": {
+                                "type": "string"
+                            },
+                            "@farm": {
+                                "type": "string"
+                            },
+                            "@dateuploaded": {
+                                "type": "string"
+                            },
+                            "notes": {
+                                "type": "unknown"
+                            },
+                            "@safety_level": {
+                                "type": "string"
+                            },
+                            "usage": {
+                                "type": "usage"
+                            },
+                            "@views": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "@rotation": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "@originalformat": {
+                                "type": "string"
+                            },
+                            "urls": {
+                                "type": "urls"
+                            },
+                            "@server": {
+                                "type": "string"
+                            },
+                            "permissions": {
+                                "type": "permissions"
+                            },
+                            "editability": {
+                                "type": "editability"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "owner": {
+                                "type": "owner"
+                            },
+                            "comments": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            },
+                            "publiceditability": {
+                                "type": "publiceditability"
+                            },
+                            "dates": {
+                                "type": "dates"
+                            },
+                            "@isfavorite": {
+                                "type": "string"
+                            },
+                            "people": {
+                                "type": "people"
+                            },
+                            "tags": {
+                                "type": "tags"
+                            },
+                            "@originalsecret": {
+                                "type": "string"
+                            },
+                            "@secret": {
+                                "type": "string"
+                            },
+                            "@license": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tag": {
+                        "id": "tag",
+                        "properties": {
+                            "@author": {
+                                "type": "string"
+                            },
+                            "$": {
+                                "type": "string"
+                            },
+                            "@raw": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@machine_tag": {
+                                "type": "string"
+                            },
+                            "@authorname": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usersAlbumsPhotosList": {
+                        "id": "usersAlbumsPhotosList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "usersAlbumsPhotosListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photo",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5294,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a photo for a user",
+            "path": "/hubs/social/users/{userId}/albums/{albumId}/photos/{photoId}/tags",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5326,
+                    "resourceId": 5294,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "albumId",
+                    "vendorName": "photoset_id",
+                    "description": "The album ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5327,
+                    "resourceId": 5294,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.photos.getInfo",
+                    "vendorName": "method",
+                    "description": "Return photos from the given user's photostream. Only photos visible to the calling user will be returned. ",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5328,
+                    "resourceId": 5294,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5329,
+                    "resourceId": 5294,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5330,
+                    "resourceId": 5294,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "photoId",
+                    "vendorName": "photo_id",
+                    "description": "PhotoId",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5331,
+                    "resourceId": 5294,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "userId",
+                    "vendorName": "user_id",
+                    "description": "The user ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "usersAlbumsPhotosTagsList",
+                "transform": false,
+                "swagger": {
+                    "usersAlbumsPhotosTagsListObject": {
+                        "id": "usersAlbumsPhotosTagsListObject",
+                        "properties": {
+                            "@author": {
+                                "type": "string"
+                            },
+                            "$": {
+                                "type": "string"
+                            },
+                            "@raw": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@machine_tag": {
+                                "type": "string"
+                            },
+                            "@authorname": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "usersAlbumsPhotosTagsList": {
+                        "id": "usersAlbumsPhotosTagsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "usersAlbumsPhotosTagsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.photo.tags.tag",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5288,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "description": "Retrieve a tag for a user",
+            "path": "/hubs/social/users/{userId}/tags",
+            "vendorPath": "/rest",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5301,
+                    "resourceId": 5288,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "flickr.tags.getListUser",
+                    "vendorName": "method",
+                    "description": "Get the tag list for a given user (or the currently logged in user).",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5302,
+                    "resourceId": 5288,
+                    "createdDate": "2015-12-03T20:09:31Z",
+                    "name": "userId",
+                    "vendorName": "user_id",
+                    "description": "The user ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "usersTags",
+                "transform": false,
+                "swagger": {
+                    "usersTags": {
+                        "id": "usersTags",
+                        "properties": {
+                            "tag": {
+                                "type": "array",
+                                "items": {
+                                    "format": "int32",
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "rsp.who.tags",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth1"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "social",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 1043,
+            "createdDate": "2015-12-03T20:09:31Z",
+            "name": "application/xml",
+            "vendorName": "Content-Type",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 802,
+            "required": false
+        }
+    ],
+    "private": false
+}

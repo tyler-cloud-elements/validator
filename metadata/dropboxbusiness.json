@@ -1,0 +1,1094 @@
+{
+    "id": 1274,
+    "name": "Dropbox Business",
+    "hookName": "DropboxForBusiness",
+    "key": "dropboxbusiness",
+    "description": "Dropbox for Business Connector.",
+    "image": "elements/provider_dropbox.png",
+    "logo": "dropbox",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "If you do not have an Dropbox account, you can create one at <a href=\"http://www.dropbox.com\" target=\"_blank\">Dropbox Signup</a>",
+    "signupURL": "http://www.dropbox.com",
+    "configuration": [
+        {
+            "id": 12447,
+            "name": "User Id",
+            "key": "oauth.team.id",
+            "description": "Dropbox OAuth User ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 12445,
+            "name": "User Token",
+            "key": "oauth.user.token",
+            "description": "Dropbox OAuth User Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 12451,
+            "name": "Last Event Cursor",
+            "key": "dropbox.last.event.cursor",
+            "description": "The last event cursor retrieved",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 12455,
+            "name": "Event Metadata",
+            "key": "event.metadata",
+            "description": "Event Metadata",
+            "defaultValue": "{\"webhook\": {\"file\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]},\n        \"folder\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254014,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 12453,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "The Base URL to make API requests to this endpoint",
+            "defaultValue": "https://api.dropbox.com/1",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 12449,
+            "name": "API Key",
+            "key": "oauth.api.key",
+            "description": "Dropbox Oauth Api Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 12450,
+            "name": "API Secret",
+            "key": "oauth.api.secret",
+            "description": "Dropbox Oauth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 12448,
+            "name": "Document Hub Tagging",
+            "key": "document.tagging",
+            "description": "Enable Tagging of Documents. Paths and Tags will be stored in CE database in Clear Text",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 12446,
+            "name": "OAuth Callback",
+            "key": "oauth.callback.url",
+            "description": "Dropbox Oauth Callback",
+            "defaultValue": "https://snapshot.cloud-elements.com/elements/jsp/home.jsp",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 12454,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "The subscription ID for the webhook events subscription",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52491,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159994,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256142,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256393,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 12452,
+            "name": "Enable/Disable Event Notification",
+            "key": "event.notification.enabled",
+            "description": "Used to enable/disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 12456,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "An application callback URL used for event notifications from Dropbox and Cloud Elements, e.g., Uploaded Files, etc.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 12457,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 231688,
+            "name": "Include Ref Id of File/Folder in Event",
+            "key": "include.refid.in.events",
+            "description": "Send File Ref Id from DropBox in the Event Body",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 400,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 7498,
+            "createdDate": "2016-03-22T17:04:40Z",
+            "description": "Lists members of a team",
+            "path": "/hubs/documents/members",
+            "vendorPath": "https://api.dropboxapi.com/2/team/members/list",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 8776,
+                    "resourceId": 7498,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "nextPage",
+                    "vendorName": "cursor",
+                    "description": "Cursor name",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 8777,
+                    "resourceId": 7498,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "Page size",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "STRING",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 32038,
+                    "resourceId": 7498,
+                    "createdDate": "2016-06-02T04:17:11Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. Search team members by 'team_member_id' or 'email' or 'external_id'. For e.g. team_member_id = 'dbmid:AADAADAADAADAADAADAADAADAAD' or email = 'xyz@xyz.com' or external_id = 'company_id:1234'",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "membersList",
+                "transform": false,
+                "swagger": {
+                    "membersList": {
+                        "id": "membersList",
+                        "items": {
+                            "$ref": "membersListObject"
+                        },
+                        "type": "array"
+                    },
+                    "membershipType": {
+                        "id": "membershipType",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "role": {
+                        "id": "role",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "profile": {
+                        "id": "profile",
+                        "properties": {
+                            "account_id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "email_verified": {
+                                "type": "boolean"
+                            },
+                            "external_id": {
+                                "type": "string"
+                            },
+                            "groups": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "joined_on": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "type": "string"
+                            },
+                            "member_folder_id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "membership_type": {
+                                "type": "membershipType"
+                            },
+                            "name": {
+                                "type": "name"
+                            },
+                            "status": {
+                                "type": "status"
+                            },
+                            "team_member_id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "team_member_id"
+                        ]
+                    },
+                    "name": {
+                        "id": "name",
+                        "properties": {
+                            "abbreviated_name": {
+                                "type": "string"
+                            },
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "familiar_name": {
+                                "type": "string"
+                            },
+                            "given_name": {
+                                "type": "string"
+                            },
+                            "surname": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "membersListObject": {
+                        "id": "membersListObject",
+                        "properties": {
+                            "profile": {
+                                "type": "profile"
+                            },
+                            "role": {
+                                "type": "role"
+                            }
+                        },
+                        "x-displayName ": "members",
+                        "x-has-customfields": false
+                    },
+                    "status": {
+                        "id": "status",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|members",
+            "nextPageKey": "body.cursor",
+            "hooks": [
+                {
+                    "id": 865,
+                    "resourceId": 7498,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "if (request_vendor_parameters === null) {\n  return;\n}\n\nif (request_expression !== null) {\n  var new_vendor_path = request_vendor_url.replace('/list', '/get_info');\n\n  var members_array = getArray();\n  var member = {};\n  var new_vendor_body = {};\n  for (var i = 0; i < request_expression.length; i++) {\n    var item = request_expression[i];\n    member[\".tag\"] = item.attribute;\n    member[item.attribute] = item.value;\n  }\n  members_array.add(member);\n  new_vendor_body[\"members\"] = members_array;\n\n  request_vendor_parameters.limit = null;\n  request_vendor_parameters.pageSize = null;\n  return {\n    \"request_vendor_method\": 'POST',\n    \"request_vendor_path\": new_vendor_path,\n    \"request_vendor_body\": new_vendor_body,\n    \"request_vendor_parameters\": request_vendor_parameters\n  }\n} else {\n\n  var body = {};\n  var path = null;\n  if (request_parameters.nextPage !== null) {\n    body.cursor = request_parameters.nextPage;\n    path = request_vendor_url + '/continue';\n  } else if (request_parameters.pageSize !== null) {\n    body.limit = Number(request_parameters.pageSize);\n  }\n\n  request_vendor_parameters.limit = null;\n  request_vendor_parameters.cursor = null;\n  request_vendor_parameters.nextPage = null;\n  request_vendor_parameters.pageSize = null;\n\n  if (path === null) {\n    return {\n      \"request_vendor_body\": JSON.stringify(body),\n      \"request_vendor_parameters\": request_vendor_parameters\n    }\n  } else {\n    return {\n      \"request_vendor_body\": JSON.stringify(body),\n      \"request_vendor_parameters\": request_vendor_parameters,\n      \"request_vendor_path\": path\n    }\n  }\n}",
+                    "isLegacy": true
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 7496,
+            "createdDate": "2016-03-22T17:04:40Z",
+            "description": "Adds member to a team",
+            "path": "/hubs/documents/members",
+            "vendorPath": "https://api.dropboxapi.com/2/team/members/add",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 8773,
+                    "resourceId": 7496,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "member",
+                    "vendorName": "member",
+                    "description": "New member body required",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "membersPost",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CreateMembers",
+                "transform": false,
+                "swagger": {
+                    "CreateMembers": {
+                        "id": "CreateMembers",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            },
+                            "complete": {
+                                "items": {
+                                    "$ref": "complete"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-displayName ": "members",
+                        "x-has-customfields": false
+                    },
+                    "complete": {
+                        "id": "complete",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            },
+                            "team_license_limit": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "membersPost": {
+                        "id": "membersPost",
+                        "properties": {
+                            "force_async": {
+                                "type": "boolean"
+                            },
+                            "new_members": {
+                                "items": {
+                                    "$ref": "new_members"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "new_members"
+                        ],
+                        "x-displayName ": "memebers",
+                        "x-has-customfields": false
+                    },
+                    "new_members": {
+                        "id": "new_members",
+                        "properties": {
+                            "member_email": {
+                                "type": "string"
+                            },
+                            "member_external_id": {
+                                "type": "string"
+                            },
+                            "member_given_name": {
+                                "type": "string"
+                            },
+                            "member_surname": {
+                                "type": "string"
+                            },
+                            "send_welcome_email": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "member_email"
+                        ]
+                    }
+                },
+                "requestName": "membersPost"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 7499,
+            "createdDate": "2016-03-22T17:04:40Z",
+            "description": "Removes a member from a team",
+            "path": "/hubs/documents/members/{id}",
+            "vendorPath": "https://api.dropboxapi.com/2/team/members/remove",
+            "method": "DELETE",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 8778,
+                    "resourceId": 7499,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "ID of the member",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 8779,
+                    "resourceId": 7499,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "{   \"user\": {     \".tag\": \"team_member_id\",     \"team_member_id\": \"{id}\"   } }",
+                    "vendorName": "body",
+                    "description": "Body of the member to be deleted.",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "membersDelete",
+                "transform": false,
+                "swagger": {}
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 28609,
+                    "resourceId": 7499,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if(!response_iserror) {\n  done({\n     \"response_body\": null,\n     \"response_body_raw\": null\n  });\n} else {\n  done();\n}",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 7497,
+            "createdDate": "2016-03-22T17:04:40Z",
+            "description": "Returns information about a team member",
+            "path": "/hubs/documents/members/{id}",
+            "vendorPath": "https://api.dropboxapi.com/2/team/members/get_info",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 8775,
+                    "resourceId": 7497,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "{   \"members\": [     {       \".tag\": \"team_member_id\",       \"team_member_id\": \"{id}\"     }   ] }",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "members",
+                    "vendorDataType": "members",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 8774,
+                    "resourceId": 7497,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "ID of the member",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "members",
+                "transform": false,
+                "swagger": {
+                    "membershipType": {
+                        "id": "membershipType",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "role": {
+                        "id": "role",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "profileById": {
+                        "id": "profileById",
+                        "properties": {
+                            "account_id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "email_verified": {
+                                "type": "boolean"
+                            },
+                            "groups": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "joined_on": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "type": "string"
+                            },
+                            "member_folder_id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "membership_type": {
+                                "type": "membershipType"
+                            },
+                            "name": {
+                                "type": "name"
+                            },
+                            "status": {
+                                "type": "status"
+                            },
+                            "team_member_id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "team_member_id"
+                        ]
+                    },
+                    "members": {
+                        "id": "members",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            },
+                            "profile": {
+                                "type": "profileById"
+                            },
+                            "role": {
+                                "type": "role"
+                            }
+                        },
+                        "x-displayName ": "members",
+                        "x-has-customfields": false
+                    },
+                    "name": {
+                        "id": "name",
+                        "properties": {
+                            "abbreviated_name": {
+                                "type": "string"
+                            },
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "familiar_name": {
+                                "type": "string"
+                            },
+                            "given_name": {
+                                "type": "string"
+                            },
+                            "surname": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "status": {
+                        "id": "status",
+                        "properties": {
+                            ".tag": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|[0]",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 7495,
+            "createdDate": "2016-03-22T17:04:40Z",
+            "description": "Suspend a member from a team",
+            "path": "/hubs/documents/members/{id}/suspend/{wipe_data}",
+            "vendorPath": "https://api.dropboxapi.com/2/team/members/suspend",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 8770,
+                    "resourceId": 7495,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "ID of the member",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 8771,
+                    "resourceId": 7495,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "wipe_data",
+                    "vendorName": "wipe_data",
+                    "description": "Controls if the user's data will be deleted on their linked devices. Default value is 'true'",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 8772,
+                    "resourceId": 7495,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "{\"user\":{\".tag\":\"team_member_id\",\"team_member_id\":\"{id}\"},\"wipe_data\":{wipe_data}}",
+                    "vendorName": "body",
+                    "description": "Update wipe_data in member body. User, team_member_id, wipe_data required",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "suspendPatch",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "suspendPatch",
+                "transform": false,
+                "swagger": {
+                    "suspendPatch": {
+                        "id": "suspendPatch",
+                        "properties": {}
+                    }
+                },
+                "requestName": ""
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 7494,
+            "createdDate": "2016-03-22T17:04:40Z",
+            "description": "Unsuspend a member from a team",
+            "path": "/hubs/documents/members/{id}/unsuspend",
+            "vendorPath": "https://api.dropboxapi.com/2/team/members/unsuspend",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 8768,
+                    "resourceId": 7494,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "ID of the member",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 8769,
+                    "resourceId": 7494,
+                    "createdDate": "2016-03-22T17:04:40Z",
+                    "name": "{\"user\":{\".tag\":\"team_member_id\",\"team_member_id\":\"{id}\"}}",
+                    "vendorName": "body",
+                    "description": "Update wipe_data in member body. User, team_member_id required",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "unsuspendPatch",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "unsuspendPatch",
+                "transform": false,
+                "swagger": {
+                    "unsuspendPatch": {
+                        "id": "unsuspendPatch",
+                        "properties": {}
+                    }
+                },
+                "requestName": ""
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 190497,
+            "createdDate": "2018-09-18T00:12:51Z",
+            "description": "Get namespaces",
+            "path": "/hubs/documents/namespaces",
+            "vendorPath": "https://api.dropboxapi.com/2/team/namespaces/list",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 458537,
+                    "resourceId": 190497,
+                    "createdDate": "2018-09-18T00:12:51Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 458536,
+                    "resourceId": 190497,
+                    "createdDate": "2018-09-18T00:12:51Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "\"The page size. Defaults to 200 if not provided",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 458535,
+                    "resourceId": 190497,
+                    "createdDate": "2018-09-18T00:12:51Z",
+                    "name": "{\"limit\": 1000}",
+                    "vendorName": "limit",
+                    "description": "limit",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "namespacesList",
+                "transform": false,
+                "swagger": {
+                    "namespacesListObject": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Your team's shared workspace"
+                            },
+                            "namespace_id": {
+                                "type": "string",
+                                "x-samplevalue": "3682562768"
+                            },
+                            "namespace_type": {
+                                "type": "namespace_type"
+                            },
+                            "team_member_id": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "namespacesListObject",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "namespace_id"
+                        ],
+                        "x-vendor-objectname": "namespaces"
+                    },
+                    "namespace_type": {
+                        "properties": {
+                            ".tag": {
+                                "type": "string",
+                                "x-samplevalue": "team_folder"
+                            }
+                        },
+                        "title": "namespace_type",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "namespacesList": {
+                        "items": {
+                            "$ref": "namespacesListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "namespaces",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": false,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "documents",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

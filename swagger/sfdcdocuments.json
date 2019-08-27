@@ -1,0 +1,2897 @@
+{
+    "basePath": "/elements/api-v2",
+    "paths": {
+        "/files": {
+            "delete": {
+                "operationId": "deleteFiles",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Whether or not the trash should be emptied",
+                        "in": "query",
+                        "name": "emptyTrash",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Deletes a file from your cloud service by its specified path.",
+                "tags": [
+                    "files"
+                ]
+            },
+            "get": {
+                "operationId": "getFiles",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/getFile"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieves a single file from your cloud service from a specified path. The file is directly streamed from the cloud storage provider through Cloud Elements, and is not buffered to disk.",
+                "tags": [
+                    "files"
+                ]
+            },
+            "post": {
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "operationId": "createFile",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The file to be uploaded",
+                        "in": "formData",
+                        "name": "file",
+                        "required": true,
+                        "type": "file"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The size of the file in bytes (required only for SharePoint)",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "size",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "Tags associated with the file",
+                        "in": "query",
+                        "items": {
+                            "type": "string"
+                        },
+                        "name": "tags[]",
+                        "required": false,
+                        "type": "array"
+                    },
+                    {
+                        "description": "Description of the file",
+                        "in": "query",
+                        "name": "description",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Overwrite the file if the file exists",
+                        "in": "query",
+                        "name": "overwrite",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFile"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Uploads a file to your endpoint cloud service. If the destination path includes directories that do not exist, they will be created.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/comments": {
+            "get": {
+                "operationId": "getFilesComments",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The page size for pagination, which defaults to 200 if not supplied",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The fields to return on the response. Can be a single field or a comma-separated list of fields",
+                        "in": "query",
+                        "name": "fields",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/CloudFileComment"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Search for comments for a file",
+                "tags": [
+                    "files"
+                ]
+            },
+            "post": {
+                "operationId": "createFileComment",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "A CloudFileComment object with the fields to create. A valid field is comment.",
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CloudFileCommentRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFileComment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Create a comment for a file",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/comments/{commentId}": {
+            "get": {
+                "operationId": "getFilesCommentByCommentId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The comment ID",
+                        "in": "path",
+                        "name": "commentId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFileComment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieve a comment for a file",
+                "tags": [
+                    "files"
+                ]
+            },
+            "delete": {
+                "operationId": "deleteFilesCommentByCommentId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The comment ID",
+                        "in": "path",
+                        "name": "commentId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Create a comment for a file",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/metadata": {
+            "get": {
+                "operationId": "getFilesMetadata",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFile"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieves the metadata from a single file on your cloud service from a specified path.",
+                "tags": [
+                    "files"
+                ]
+            },
+            "patch": {
+                "operationId": "updateFilesMetadata",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "A Metadata object with the fields to update. Valid values include path and tags",
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Metadata"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFile"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Update a file's metadata (tags and path) associated with a path.  For example, if you had a document that was tagged as operations but needed to be tagged as legal, then you would perform a PATCH to update the tag using the tags JSON array field. The PATCH method can update the name or directory of a file as well as move a file by using the path JSON field. You cannot update the size of a file.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/revisions": {
+            "get": {
+                "operationId": "getFilesRevisions",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The page size for pagination, which defaults to 200 if not supplied",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The fields to return on the response. Can be a single field or a comma-separated list of fields",
+                        "in": "query",
+                        "name": "fields",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/fileRevisionObject"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Returns all revisons of a file on the cloud service from a specified path.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/revisions/{revisionId}": {
+            "get": {
+                "operationId": "getFilesRevisionByRevisionId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The revision ID.",
+                        "in": "path",
+                        "name": "revisionId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/fileRevisionObject"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieves the revision details of a file on the cloud service from a specified path.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/{id}": {
+            "delete": {
+                "operationId": "deleteFileById",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The file id. For SharePoint and Dropbox you can double encode the path and pass it as an id",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Whether or not the trash should be emptied",
+                        "in": "query",
+                        "name": "emptyTrash",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Deletes a specific file associated with an ID from your cloud service using its specified path.",
+                "tags": [
+                    "files"
+                ]
+            },
+            "get": {
+                "operationId": "getFileById",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The file id. For SharePoint and Dropbox you can double encode the path and pass it as an id",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/getFile"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieves a specific file associated with an ID from your cloud service from a specified path.  The file is directly streamed from the cloud storage provider through Cloud Elements, and is not buffered to disk.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/{id}/comments": {
+            "get": {
+                "operationId": "getFilesComments2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The Feed Item ID",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The page size for pagination, which defaults to 200 if not supplied",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "format": "header",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The fields to return on the response. Can be a single field or a comma-separated list of fields",
+                        "in": "query",
+                        "name": "fields",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/CloudFileComment"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "List comments for a file",
+                "tags": [
+                    "files"
+                ]
+            },
+            "post": {
+                "operationId": "createFileComment2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The Feed Item ID",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "A CloudFileComment object with the fields to create. A valid field is comment.",
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CloudFileCommentRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFileComment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Create a comment for a file",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/{id}/comments/{commentId}": {
+            "get": {
+                "operationId": "getFilesCommentByCommentId2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The Feed Item ID",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The comment ID",
+                        "in": "path",
+                        "name": "commentId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFileComment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieve a comment for a file",
+                "tags": [
+                    "files"
+                ]
+            },
+            "delete": {
+                "operationId": "deleteFilesCommentByCommentId2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The Feed Item ID",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The comment ID",
+                        "in": "path",
+                        "name": "commentId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Delete a comment for a file",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/{id}/metadata": {
+            "get": {
+                "operationId": "getFilesMetadata2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The file id. For SharePoint and Dropbox you can double encode the path and pass it as an id",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFile"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieves specific metadata on a file associated with an ID from your cloud service using its specified path.",
+                "tags": [
+                    "files"
+                ]
+            },
+            "patch": {
+                "operationId": "updateFilesMetadata2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The file id. For SharePoint and Dropbox you can double encode the path and pass it as an id",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "A Metadata object with the fields to update. Valid values include path and tags",
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Metadata"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/CloudFile"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Update a file's metadata (tags and path) associated with an ID.  For example, if you had a document that was tagged as operations but needed to be tagged as legal, then you would perform a PATCH to update the tag using the tags JSON array field. The PATCH method can update the name or directory of a file as well as move a file by using the path JSON field. You cannot update the size of a file.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/{id}/revisions": {
+            "get": {
+                "operationId": "getFilesRevisions2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The file ID.",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The page size for pagination, which defaults to 200 if not supplied",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The fields to return on the response. Can be a single field or a comma-separated list of fields",
+                        "in": "query",
+                        "name": "fields",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/fileRevisionObject"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Find the revisions of a file associated with a given ID.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/files/{id}/revisions/{revisionId}": {
+            "get": {
+                "operationId": "getFilesRevisionByRevisionId2",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The file ID.",
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The revision ID.",
+                        "in": "path",
+                        "name": "revisionId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/fileRevisionObject"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieves the revision details of a file associated with a revision ID.",
+                "tags": [
+                    "files"
+                ]
+            }
+        },
+        "/folders/contents": {
+            "get": {
+                "operationId": "getFoldersContents",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the folder (e.g. /myDirectory)",
+                        "in": "query",
+                        "name": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Whether or not to return the tags for the files in the folder",
+                        "in": "query",
+                        "name": "fetchTags",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "The page size for pagination, which defaults to 200 if not supplied",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The fields to return on the response. Can be a single field or a comma-separated list of fields",
+                        "in": "query",
+                        "name": "fields",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/CloudFile"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get a list of CloudFiles that are contained in a specified folder on your cloud service specified by a path. Only '/' is supported",
+                "tags": [
+                    "folders"
+                ]
+            }
+        },
+        "/objects": {
+            "get": {
+                "operationId": "getObjects",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get a list of all the available objects.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/objects/{objectName}/docs": {
+            "get": {
+                "operationId": "getObjectsObjectNameDocs",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Include discovery metadata in definitions",
+                        "in": "query",
+                        "name": "discovery",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "Optionally resolve swagger references for an inline object definition",
+                        "in": "query",
+                        "name": "resolveReferences",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "Include only OpenAPI / Swagger properties in definitions",
+                        "in": "query",
+                        "name": "basic",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "The element swagger version to get the corresponding element swagger, Passing in \"-1\" gives latest element swagger",
+                        "in": "query",
+                        "name": "version",
+                        "required": false,
+                        "default": "-1",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/swaggerDocs"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get swagger docs for an object.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/objects/{objectName}/metadata": {
+            "get": {
+                "operationId": "getObjectsObjectNameMetadata",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/objectsMetadata"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get a list of all the field for an object.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/ping": {
+            "get": {
+                "operationId": "getPing",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Pong"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Ping the Element to confirm that the Hub element has a heartbeat.  If the Element does not have a heartbeat, an error message will be returned.",
+                "tags": [
+                    "ping"
+                ]
+            }
+        },
+        "/search": {
+            "get": {
+                "operationId": "getSearch",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The full path to the folder to start searching from (e.g. /myDirectory)",
+                        "in": "query",
+                        "name": "path",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Text in the file or folder name",
+                        "in": "query",
+                        "name": "text",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The start date (based on the created date of the file or folder)",
+                        "format": "date-time",
+                        "in": "query",
+                        "name": "startDate",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The end date (based on the created date of the file or folder)",
+                        "format": "date-time",
+                        "in": "query",
+                        "name": "endDate",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Any tags associated with the files (not applicable to folders)",
+                        "in": "query",
+                        "items": {
+                            "type": "string"
+                        },
+                        "name": "tags[]",
+                        "required": false,
+                        "type": "array"
+                    },
+                    {
+                        "description": "The page size for pagination, which defaults to 200 if not supplied",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The fields to return on the response. Can be a single field or a comma-separated list of fields",
+                        "in": "query",
+                        "name": "fields",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/CloudFile"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Performs a text search of file names and directory names.  The content of files is not searched.  The search uses substring matching so searching for \"exam\" will match on \"example.txt\".  Subdirectories are also searched.  The search returns a list of CloudFiles that match search parameters.",
+                "tags": [
+                    "search"
+                ]
+            }
+        }
+    },
+    "host": "snapshot.cloud-elements.com",
+    "schemes": [
+        "https"
+    ],
+    "definitions": {
+        "fileRevisionObject": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-readOnly": true
+                },
+                "fileName": {
+                    "type": "string"
+                },
+                "filePath": {
+                    "type": "string"
+                },
+                "fileId": {
+                    "type": "string"
+                },
+                "fileSize": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-readOnly": true
+                },
+                "modifiedDate": {
+                    "format": "date-time",
+                    "x-readOnly": true,
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                }
+            },
+            "x-vendor-objectname": "Revisions",
+            "x-has-customfields": true,
+            "x-primary-key": [
+                "id"
+            ],
+            "type": "object"
+        },
+        "CloudFileComment": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "184738506",
+                    "x-readOnly": true
+                },
+                "comment": {
+                    "type": "string",
+                    "x-samplevalue": "Test comment"
+                },
+                "fileName": {
+                    "type": "string",
+                    "x-samplevalue": "my-file",
+                    "x-readOnly": true
+                },
+                "fileId": {
+                    "type": "string",
+                    "x-samplevalue": "263802980565",
+                    "x-readOnly": true
+                },
+                "filePath": {
+                    "type": "string",
+                    "x-samplevalue": "/my-file",
+                    "x-readOnly": true
+                },
+                "createdDate": {
+                    "format": "date-time",
+                    "x-samplevalue": "2018-01-09T20:36:28Z",
+                    "x-readOnly": true,
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                },
+                "modifiedDate": {
+                    "format": "date-time",
+                    "x-samplevalue": "2018-01-09T20:36:28Z",
+                    "x-readOnly": true,
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                }
+            },
+            "x-vendor-objectname": "Comment",
+            "x-has-customfields": false,
+            "x-primary-key": [
+                "id"
+            ],
+            "type": "object"
+        },
+        "CloudFileCommentRequest": {
+            "properties": {
+                "comment": {
+                    "type": "string",
+                    "x-samplevalue": "Test comment"
+                }
+            },
+            "x-vendor-objectname": "Comment",
+            "x-has-customfields": false,
+            "required": [
+                "comment"
+            ],
+            "type": "object"
+        },
+        "getFile": {
+            "properties": {}
+        },
+        "CloudFile": {
+            "x-primary-key": [
+                "id"
+            ],
+            "properties": {
+                "createdDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "x-readOnly": true,
+                    "x-samplevalue": "2017-11-28T09:13:10Z",
+                    "x-length": "20",
+                    "x-sub-format": "Date Time - ISO 8601 UTC",
+                    "description": "Date and time when this record was created. CreatedDate fields have Defaulted on create (When created, a default value is supplied if no other value is specified) and Filter (Can be used as filter criteria in a SOQL query FROM or WHERE clause) access.",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text description of the Document.",
+                    "x-samplevalue": "trying to create  directory"
+                },
+                "directory": {
+                    "type": "boolean",
+                    "x-samplevalue": true
+                },
+                "extension": {
+                    "type": "string",
+                    "description": "File type of the Document. In general, the values match the file extension for the type of Document (such as pdf or jpg).",
+                    "x-samplevalue": "Image - jpg",
+                    "x-sub-format": "MIME Type"
+                },
+                "id": {
+                    "type": "string",
+                    "x-readOnly": true,
+                    "description": "Globally unique string that identifies a record.  Id fields have Defaulted on create (When created, a default value is supplied if no other value is specified) and Filter (Can be used as filter criteria in a SOQL query FROM or WHERE clause) access.",
+                    "x-samplevalue": "0690H000003zwRTQAY",
+                    "x-length": "18"
+                },
+                "modifiedDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "x-sub-format": "Date Time - ISO 8601 UTC",
+                    "x-readOnly": true,
+                    "x-samplevalue": "2017-11-28T09:13:10Z",
+                    "description": "Date and time when a user last modified this record.  LastModifiedDate fields have Defaulted on create (When created, a default value is supplied if no other value is specified) and Filter (Can be used as filter criteria in a SOQL query FROM or WHERE clause) access.",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the document.",
+                    "x-samplevalue": "Desert.jpg",
+                    "x-name": true
+                },
+                "path": {
+                    "type": "string",
+                    "x-samplevalue": "/Desert.jpg",
+                    "x-sub-format": "Path"
+                },
+                "size": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 845941
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "x-samplevalue": [
+                        "tag1",
+                        "tag2"
+                    ]
+                }
+            },
+            "required": [
+                "path"
+            ],
+            "x-vendor-objectname": "Document",
+            "type": "object"
+        },
+        "CloudLink": {
+            "properties": {
+                "cloudElementsLink": {
+                    "type": "string"
+                },
+                "expires": {
+                    "type": "string"
+                },
+                "providerLink": {
+                    "type": "string"
+                },
+                "providerViewLink": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "CloudStorage": {
+            "properties": {
+                "shared": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "total": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "used": {
+                    "format": "int64",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "Metadata": {
+            "x-primary-key": [
+                "id"
+            ],
+            "properties": {
+                "path": {
+                    "type": "string",
+                    "x-samplevalue": "/Desert.jpg",
+                    "x-sub-format": "Path"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "x-samplevalue": [
+                        "tag1",
+                        "tag2"
+                    ]
+                }
+            },
+            "required": [
+                "path"
+            ],
+            "x-vendor-objectname": "Document",
+            "type": "object"
+        },
+        "Pong": {
+            "properties": {
+                "dateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "endpoint": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "enterprise": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "group": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "user": {
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "avatar_url": {
+                    "type": "string"
+                },
+                "can_see_managed_users": {
+                    "type": "boolean"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "enterprise": {
+                    "$ref": "#/definitions/enterprise"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "is_exempt_from_device_limits": {
+                    "type": "boolean"
+                },
+                "is_exempt_from_login_verification": {
+                    "type": "boolean"
+                },
+                "is_sync_enabled": {
+                    "type": "boolean"
+                },
+                "job_title": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "login": {
+                    "type": "string"
+                },
+                "max_upload_size": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "modified_at": {
+                    "type": "string"
+                },
+                "my_tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "space_amount": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "space_used": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "timezone": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "swagger200": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "200",
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/swaggerschema"
+                },
+                "description": {
+                    "x-samplevalue": "OK - Everything worked as expected",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger400": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "400",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Bad Request - Often due to a missing request parameter",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger401": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "401",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Unauthorized - An invalid element token, user secret and/or org secret provided",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger403": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "403",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Forbidden - Access to the resource by the provider is forbidden",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger404": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "404",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Not found - The requested resource is not found",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger405": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "405",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger406": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "406",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Not acceptable - The response content type does not match the 'Accept' header value",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger409": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "409",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Conflict - If a resource being created already exists",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger415": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "415",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Unsupported media type - The server cannot handle the requested Content-Type",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger500": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "500",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Server error - Something went wrong on the Cloud Elements server",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger502": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "502",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Provider server error - Something went wrong on the Provider or Endpoint's server",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerschema": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "schema",
+            "properties": {
+                "$ref": {
+                    "x-samplevalue": "#/definitions/Contact-POST-Response",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerpost": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "post",
+            "properties": {
+                "summary": {
+                    "x-samplevalue": "Create a new contact in the CRM service. Contact creation will flow through Cloud Elements to your CRM service. With the exception of the 'id' field, the required fields indicated in the 'Contact' model are those required to create a new contact.",
+                    "type": "string"
+                },
+                "operationId": {
+                    "x-samplevalue": "createContact",
+                    "type": "string"
+                },
+                "responses": {
+                    "$ref": "#/definitions/swaggerresponses"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/swaggerparameters"
+                    }
+                },
+                "tags": {
+                    "x-samplevalue": [
+                        "contacts"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "swaggercontact": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "contact",
+            "properties": {
+                "email": {
+                    "x-samplevalue": "support@cloud-elements.com",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerparametersschema": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "schema",
+            "properties": {
+                "$ref": {
+                    "x-samplevalue": "#/definitions/Contact",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerdefinitions": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "definitions",
+            "properties": {
+                "definition-name": {
+                    "$ref": "#/definitions/swaggerdefinition-name"
+                }
+            }
+        },
+        "swaggerinfo": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "info",
+            "properties": {
+                "contact": {
+                    "$ref": "#/definitions/swaggercontact"
+                },
+                "title": {
+                    "x-samplevalue": "hubspotcrm",
+                    "type": "string"
+                },
+                "version": {
+                    "x-samplevalue": "api-v2",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerdefinition-property": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "#/definitions/definition-property",
+            "properties": {
+                "type": {
+                    "x-samplevalue": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerDocs": {
+            "x-has-customfields": false,
+            "title": "swaggerDocs",
+            "properties": {
+                "basePath": {
+                    "x-samplevalue": "/elements/api-v2/hubs/crm",
+                    "type": "string"
+                },
+                "paths": {
+                    "$ref": "#/definitions/swaggerpaths"
+                },
+                "host": {
+                    "x-samplevalue": "localhost:5050",
+                    "type": "string"
+                },
+                "schemes": {
+                    "x-samplevalue": [
+                        "http"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "definitions": {
+                    "$ref": "#/definitions/swaggerdefinitions"
+                },
+                "swagger": {
+                    "x-samplevalue": "2.0",
+                    "type": "string"
+                },
+                "info": {
+                    "$ref": "#/definitions/swaggerinfo"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/swaggertags"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "swaggertags": {
+            "x-has-customfields": false,
+            "title": "tags",
+            "properties": {
+                "name": {
+                    "x-samplevalue": "contacts",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "swaggerpaths": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "paths",
+            "properties": {
+                "/contacts": {
+                    "$ref": "#/definitions/swagger-contacts-path"
+                }
+            }
+        },
+        "swaggerresponses": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "responses",
+            "properties": {
+                "200": {
+                    "$ref": "#/definitions/swagger200"
+                },
+                "400": {
+                    "$ref": "#/definitions/swagger400"
+                },
+                "401": {
+                    "$ref": "#/definitions/swagger401"
+                },
+                "403": {
+                    "$ref": "#/definitions/swagger403"
+                },
+                "404": {
+                    "$ref": "#/definitions/swagger404"
+                },
+                "405": {
+                    "$ref": "#/definitions/swagger405"
+                },
+                "406": {
+                    "$ref": "#/definitions/swagger406"
+                },
+                "409": {
+                    "$ref": "#/definitions/swagger409"
+                },
+                "415": {
+                    "$ref": "#/definitions/swagger415"
+                },
+                "500": {
+                    "$ref": "#/definitions/swagger500"
+                },
+                "502": {
+                    "$ref": "#/definitions/swagger502"
+                }
+            }
+        },
+        "swaggerdefinition-name": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "definition-name",
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/swaggerproperties"
+                }
+            }
+        },
+        "swaggerparameters": {
+            "x-has-customfields": false,
+            "title": "parameters",
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/swaggerparametersschema"
+                },
+                "in": {
+                    "x-samplevalue": "header",
+                    "type": "string"
+                },
+                "name": {
+                    "x-samplevalue": "Authorization",
+                    "type": "string"
+                },
+                "description": {
+                    "x-samplevalue": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                    "type": "string"
+                },
+                "type": {
+                    "x-samplevalue": "string",
+                    "type": "string"
+                },
+                "required": {
+                    "x-samplevalue": true,
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "swaggerproperties": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "properties",
+            "properties": {
+                "definition-property": {
+                    "$ref": "#/definitions/swaggerdefinition-property"
+                }
+            }
+        },
+        "swagger-contacts-path": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "/contacts",
+            "properties": {
+                "post": {
+                    "$ref": "#/definitions/swaggerpost"
+                }
+            }
+        },
+        "objectsMetadata": {
+            "properties": {
+                "fields": {
+                    "items": {
+                        "$ref": "#/definitions/objectsMetadataFields"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "objectsMetadataFields": {
+            "properties": {
+                "mask": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "vendorDisplayName": {
+                    "type": "string"
+                },
+                "vendorPath": {
+                    "type": "string"
+                },
+                "vendorReadOnly": {
+                    "type": "boolean"
+                },
+                "vendorRequired": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "BulkStatus": {
+            "description": "Status of the bulk upload.",
+            "properties": {
+                "batchId": {
+                    "description": "Contact/Leads loaded",
+                    "type": "number"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "numOfLeadsProcessed": {
+                    "description": "Contact/Leads loaded",
+                    "type": "number"
+                },
+                "numOfRowsFailed": {
+                    "description": "Failed count",
+                    "type": "number"
+                },
+                "numOfRowsWithWarning": {
+                    "description": "Contact/Leads that had warnings",
+                    "type": "number"
+                },
+                "status": {
+                    "description": "Status of the bulk job",
+                    "type": "string"
+                }
+            }
+        },
+        "BulkLoad": {
+            "description": "BulkLoad response of bulk upload.",
+            "properties": {
+                "id": {
+                    "description": "Id of the bulk job",
+                    "type": "number"
+                },
+                "status": {
+                    "description": "Status of the bulk job",
+                    "type": "string"
+                }
+            }
+        },
+        "BulkQuery": {
+            "description": "BulkLoad response of bulk download.",
+            "properties": {
+                "id": {
+                    "description": "Id of the bulk job",
+                    "type": "number"
+                },
+                "status": {
+                    "description": "Status of the bulk job",
+                    "type": "string"
+                }
+            }
+        },
+        "ModelDate": {
+            "properties": {
+                "value": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "swagger": "2.0",
+    "info": {
+        "contact": {
+            "email": "support@cloud-elements.com"
+        },
+        "title": "sfdcdocuments",
+        "version": "api-v2"
+    },
+    "tags": [
+        {
+            "name": "search"
+        },
+        {
+            "name": "folders"
+        },
+        {
+            "name": "ping"
+        },
+        {
+            "name": "objects"
+        },
+        {
+            "name": "files"
+        }
+    ]
+}

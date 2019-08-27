@@ -1,0 +1,2516 @@
+{
+    "id": 21385,
+    "name": "Facebook Workplace",
+    "hookName": "FacebookWorkplace",
+    "key": "facebookworkplace",
+    "description": "Workplace by Facebook",
+    "image": "elements/custom-element-default-logo.png",
+    "logo": "facebook",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 171442,
+            "name": "Facebook Default select fields",
+            "key": "facebook.workplace.default.select.fields",
+            "description": "Default select fields for Facebook Workplace",
+            "defaultValue": "{\"community\":\"id,cover,description,icon,is_workplace_default,name,owner,privacy,updated_time,archived,post_requires_admin_approval,purpose,post_permissions\",\"groups\":\"id,cover,description,icon,is_workplace_default,name,owner,privacy,updated_time,archived,post_requires_admin_approval,purpose,post_permissions\",\"groupsfeed\":\"id,created_time,formatting,from,icon,link,message,name,object_id,permalink_url,picture,place,properties,status_type,story,to,type,updated_time,with_tags\",\"groupsmembers\":\"id,first_name,last_name,email,title,department,employee_number,primary_address,picture,link,locale,name,name_format,updated_time,account_invite_time,account_claim_time,start_date,impersonate_token\",\"groupsevents\":\"id,attending_count,cover,declined_count,description,end_time,event_times,guest_list_enabled,interested_count,is_canceled,maybe_count,name,owner,parent_group,place,start_time,timezone,type,updated_time\"}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171443,
+            "name": "Access Token",
+            "key": "access.token",
+            "description": "Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254197,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171439,
+            "name": "App Secret",
+            "key": "app.secret",
+            "description": "The App Secret used to make API requests to Facebook Workplace",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 171440,
+            "name": "Web hook fields ",
+            "key": "webhook.fields",
+            "description": "This property helps to provide list of multiple fields of an object/topic separated by COMMA, make use of PIPE to provide fields for multiple topics/objects",
+            "defaultValue": "mention,message_deliveries,messages,messaging_postbacks,message_reads|comments,posts,membership|status,events,message_sends|preview,collection",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 171441,
+            "name": "Web hook objects ",
+            "key": "webhook.objects",
+            "description": "This property enables to get notifications, make use of PIPE to configure multiple topics/objects",
+            "defaultValue": "page|group|user|link",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 171456,
+            "name": "Base Url",
+            "key": "base.url",
+            "description": "Facebook Workplace Base Url",
+            "defaultValue": "https://graph.facebook.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 171455,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Facebook Workplace Max Page Size (or limit)",
+            "defaultValue": "1000",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171454,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Facebook Workplace Pagination Type",
+            "defaultValue": "cursor",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171438,
+            "name": "App Key",
+            "key": "app.id",
+            "description": "The App key used to make API requests to Facebook Workplace",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 171449,
+            "name": "Community Id",
+            "key": "community.id",
+            "description": "Community Id for Facebook Market Place captured during provision by invoking /community API",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171453,
+            "name": "Event Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "Facebook Workplace Event Notification Signature Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 11,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171451,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171452,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 99,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 171448,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "webhooks",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171450,
+            "name": "Time of Getting Token or Performing Authentication",
+            "key": "authentication.time",
+            "description": "Facebook Workplace Time of Getting Token or Performing Authentication",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171447,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 171446,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 171445,
+            "name": "Event Notification Instance Finder",
+            "key": "event.notification.instance.finder",
+            "description": "Event Notification Instance Finder",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 171444,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256164,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256415,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 210958,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Get a Root Group / community",
+            "path": "/hubs/collaboration/community",
+            "vendorPath": "/community",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515180,
+                    "resourceId": 210958,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "community.id",
+                    "vendorName": "id",
+                    "description": "Capture community id from response payload",
+                    "type": "configuration",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "response",
+                    "required": false
+                },
+                {
+                    "id": 515179,
+                    "resourceId": 210958,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "community",
+                "transform": false
+            },
+            "type": "onProvision",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210959,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "List all Groups",
+            "path": "/hubs/collaboration/groups",
+            "vendorPath": "/{communityId}/groups",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515184,
+                    "resourceId": 210959,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "community.id",
+                    "vendorName": "communityId",
+                    "description": "Add root group id or community id to vendor request path which got captured during provision",
+                    "type": "configuration",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515183,
+                    "resourceId": 210959,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515182,
+                    "resourceId": 210959,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515181,
+                    "resourceId": 210959,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "nextPage",
+                    "vendorName": "after",
+                    "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupList",
+                "transform": false,
+                "swagger": {
+                    "groupList": {
+                        "items": {
+                            "type": "groupGet"
+                        },
+                        "title": "groupList",
+                        "type": "array",
+                        "x-vendor-objectname": "groups"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "nextPageKey": "body.paging.next?after",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210960,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Create a Group",
+            "path": "/hubs/collaboration/groups",
+            "vendorPath": "/{communityId}/groups",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 515186,
+                    "resourceId": 210960,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "community.id",
+                    "vendorName": "communityId",
+                    "description": "Add root group id or community id to vendor request path which got captured during provision",
+                    "type": "configuration",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515185,
+                    "resourceId": 210960,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Group JSON Object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "groupCreate",
+                    "vendorDataType": "groupCreate",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupGet",
+                "transform": false,
+                "requestSwagger": {
+                    "groupCreate": {
+                        "properties": {
+                            "archived": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "cover": {
+                                "type": "cover"
+                            },
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "SampleDescriptionThree"
+                            },
+                            "icon": {
+                                "type": "string",
+                                "x-samplevalue": "https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/MzwrKZOhtIS.png"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "510514446079113"
+                            },
+                            "is_workplace_default": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "sampleGroupThree"
+                            },
+                            "owner": {
+                                "type": "owner"
+                            },
+                            "post_permissions": {
+                                "type": "string",
+                                "x-samplevalue": "NONE"
+                            },
+                            "post_requires_admin_approval": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "privacy": {
+                                "default": "OPEN",
+                                "description": "The privacy setting of the group",
+                                "enum": [
+                                    "CLOSED",
+                                    "OPEN",
+                                    "SECRET"
+                                ],
+                                "type": "string",
+                                "x-samplevalue": "OPEN"
+                            },
+                            "purpose": {
+                                "default": "WORK_ANNOUNCEMENT",
+                                "description": "Indicates the purpose of the group.",
+                                "enum": [
+                                    "WORK_TEAM",
+                                    "WORK_ANNOUNCEMENT",
+                                    "WORK_MULTI_COMPANY",
+                                    "WORK_SOCIAL"
+                                ],
+                                "type": "string",
+                                "x-samplevalue": "WORK_ANNOUNCEMENT"
+                            },
+                            "updated_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-17T22:29:02+0000"
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ],
+                        "title": "groupGet",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "groups"
+                    }
+                },
+                "requestName": "groupCreate"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210961,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Retrieve a Group",
+            "path": "/hubs/collaboration/groups/{id}",
+            "vendorPath": "/{groupId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515188,
+                    "resourceId": 210961,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515187,
+                    "resourceId": 210961,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupGet",
+                "transform": false,
+                "swagger": {
+                    "cover": {
+                        "properties": {
+                            "cover_id": {
+                                "type": "string",
+                                "x-samplevalue": "135947974020462"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "135947974020462"
+                            },
+                            "offset_x": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 50
+                            },
+                            "offset_y": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 48
+                            },
+                            "source": {
+                                "type": "string",
+                                "x-samplevalue": "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/41940934_135947980687128_3794761132531515392_o.jpg?_nc_cat=107&oh=1cedff8711768af98c0ad6727edfc26f&oe=5C53C3A6"
+                            }
+                        },
+                        "title": "cover",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "owner": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "100028157800378"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Hussain Chinoy"
+                            }
+                        },
+                        "title": "owner",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "groupGet": {
+                        "properties": {
+                            "archived": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "cover": {
+                                "type": "cover"
+                            },
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "SampleDescriptionThree"
+                            },
+                            "icon": {
+                                "type": "string",
+                                "x-samplevalue": "https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/MzwrKZOhtIS.png"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "510514446079113"
+                            },
+                            "is_workplace_default": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "sampleGroupThree"
+                            },
+                            "owner": {
+                                "type": "owner"
+                            },
+                            "post_permissions": {
+                                "type": "string",
+                                "x-samplevalue": "NONE"
+                            },
+                            "post_requires_admin_approval": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "privacy": {
+                                "default": "OPEN",
+                                "description": "The privacy setting of the group",
+                                "enum": [
+                                    "CLOSED",
+                                    "OPEN",
+                                    "SECRET"
+                                ],
+                                "type": "string",
+                                "x-samplevalue": "OPEN"
+                            },
+                            "purpose": {
+                                "default": "WORK_ANNOUNCEMENT",
+                                "description": "Indicates the purpose of the group.",
+                                "enum": [
+                                    "WORK_TEAM",
+                                    "WORK_ANNOUNCEMENT",
+                                    "WORK_MULTI_COMPANY",
+                                    "WORK_SOCIAL"
+                                ],
+                                "type": "string",
+                                "x-samplevalue": "WORK_ANNOUNCEMENT"
+                            },
+                            "updated_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-17T22:29:02+0000"
+                            }
+                        },
+                        "title": "groupGet",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "groups"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210962,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Update a Group",
+            "path": "/hubs/collaboration/groups/{id}",
+            "vendorPath": "/{groupId}",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 515190,
+                    "resourceId": 210962,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Group JSON Object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "groupGet",
+                    "vendorDataType": "groupGet",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515189,
+                    "resourceId": 210962,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupGet",
+                "transform": false,
+                "requestName": "groupGet"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210975,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "List all Events for a Group",
+            "path": "/hubs/collaboration/groups/{id}/events",
+            "vendorPath": "/{groupId}/events",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515226,
+                    "resourceId": 210975,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "nextPage",
+                    "vendorName": "after",
+                    "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515225,
+                    "resourceId": 210975,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515224,
+                    "resourceId": 210975,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515223,
+                    "resourceId": 210975,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupsEventsGetList",
+                "transform": false,
+                "swagger": {
+                    "groupsEventsGetList": {
+                        "items": {
+                            "type": "groupsEventsGet"
+                        },
+                        "title": "groupsEventsGetList",
+                        "type": "array",
+                        "x-vendor-objectname": "events"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "nextPageKey": "body.paging.next?after",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210967,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Create an Event for a Group ",
+            "path": "/hubs/collaboration/groups/{id}/events",
+            "vendorPath": "/{groupId}/events",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 515202,
+                    "resourceId": 210967,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Event JSON Object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "groupsEventsCreate",
+                    "vendorDataType": "groupsEventsCreate",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515201,
+                    "resourceId": 210967,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "groupsEventsGet",
+                "transform": false,
+                "requestSwagger": {
+                    "groupsEventsCreate": {
+                        "properties": {
+                            "attending_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "declined_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "end_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-23T03:48:12+0000"
+                            },
+                            "guest_list_enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "1192619697585994"
+                            },
+                            "interested_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "is_canceled": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "maybe_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "SampleCreateEventTestFour"
+                            },
+                            "owner": {
+                                "type": "ownergroupsEventsGet"
+                            },
+                            "parent_group": {
+                                "type": "parent_groupgroupsEventsGet"
+                            },
+                            "start_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-23T02:48:12+0000"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "group"
+                            },
+                            "updated_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-22T17:11:34+0000"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "start_time",
+                            "end_time"
+                        ],
+                        "title": "groupsEventsGet",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "events"
+                    }
+                },
+                "requestName": "groupsEventsCreate"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210970,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Delete an Event for a Group",
+            "path": "/hubs/collaboration/groups/{id}/events/{eventId}",
+            "vendorPath": "/{eventId}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 515210,
+                    "resourceId": 210970,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515209,
+                    "resourceId": 210970,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "eventId",
+                    "vendorName": "eventId",
+                    "description": "The Event Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "groupsEventsDelete",
+                "transform": false
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210969,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Retrieve an Event for a Group",
+            "path": "/hubs/collaboration/groups/{id}/events/{eventId}",
+            "vendorPath": "/{eventId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515208,
+                    "resourceId": 210969,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515207,
+                    "resourceId": 210969,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "eventId",
+                    "vendorName": "eventId",
+                    "description": "The Event Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515206,
+                    "resourceId": 210969,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupsEventsGet",
+                "transform": false,
+                "swagger": {
+                    "ownergroupsEventsGet": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "737657966593601"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "skeletorapp"
+                            }
+                        },
+                        "title": "ownergroupsEventsGet",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "parent_groupgroupsEventsGet": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "305993336684552"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Coordinator"
+                            },
+                            "privacy": {
+                                "type": "string",
+                                "x-samplevalue": "CLOSED"
+                            }
+                        },
+                        "title": "parent_groupgroupsEventsGet",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "groupsEventsGet": {
+                        "properties": {
+                            "attending_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "declined_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "end_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-23T03:48:12+0000"
+                            },
+                            "guest_list_enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "1192619697585994"
+                            },
+                            "interested_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "is_canceled": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "maybe_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "SampleCreateEventTestFour"
+                            },
+                            "owner": {
+                                "type": "ownergroupsEventsGet"
+                            },
+                            "parent_group": {
+                                "type": "parent_groupgroupsEventsGet"
+                            },
+                            "start_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-23T02:48:12+0000"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "group"
+                            },
+                            "updated_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-22T17:11:34+0000"
+                            }
+                        },
+                        "title": "groupsEventsGet",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "events"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210963,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "List all Feed in a Group",
+            "path": "/hubs/collaboration/groups/{id}/feed",
+            "vendorPath": "/{groupId}/feed",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515194,
+                    "resourceId": 210963,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515193,
+                    "resourceId": 210963,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515192,
+                    "resourceId": 210963,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "nextPage",
+                    "vendorName": "after",
+                    "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515191,
+                    "resourceId": 210963,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupsFeedGetList",
+                "transform": false,
+                "swagger": {
+                    "groupsFeedGetList": {
+                        "items": {
+                            "type": "groupsFeedGet"
+                        },
+                        "title": "groupsFeedGetList",
+                        "type": "array",
+                        "x-vendor-objectname": "feed"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210964,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Create a Feed for a Group",
+            "path": "/hubs/collaboration/groups/{id}/feed",
+            "vendorPath": "/{groupId}/feed",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 515196,
+                    "resourceId": 210964,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Feed JSON Object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "groupsFeedCreate",
+                    "vendorDataType": "groupsFeedCreate",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515195,
+                    "resourceId": 210964,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "groupsFeedGet",
+                "transform": false,
+                "requestSwagger": {
+                    "groupsFeedCreate": {
+                        "properties": {
+                            "created_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-19T02:48:12+0000"
+                            },
+                            "formatting": {
+                                "type": "string",
+                                "x-samplevalue": "PLAINTEXT"
+                            },
+                            "from": {
+                                "type": "from"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "740668579634336_740679219633272"
+                            },
+                            "message": {
+                                "type": "string",
+                                "x-samplevalue": "descriptionGroupFeedCreateForPaginationD274"
+                            },
+                            "permalink_url": {
+                                "type": "string",
+                                "x-samplevalue": "https://work-87268534.facebook.com/groups/740668579634336/permalink/740679219633272/"
+                            },
+                            "to": {
+                                "type": "to"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "status"
+                            },
+                            "updated_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-19T02:48:13+0000"
+                            }
+                        },
+                        "required": [
+                            "message"
+                        ],
+                        "title": "groupsFeedCreate",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "feed"
+                    }
+                },
+                "requestName": "groupsFeedCreate"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210972,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Delete a Feed for a Group",
+            "path": "/hubs/collaboration/groups/{id}/feed/{feedId}",
+            "vendorPath": "/{feedId}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 515215,
+                    "resourceId": 210972,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515214,
+                    "resourceId": 210972,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "feedId",
+                    "vendorName": "feedId",
+                    "description": "The Feed Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "groupsFeedDelete",
+                "transform": false
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210968,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Retrieve a Feed for a Group",
+            "path": "/hubs/collaboration/groups/{id}/feed/{feedId}",
+            "vendorPath": "/{feedId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515205,
+                    "resourceId": 210968,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "feedId",
+                    "vendorName": "feedId",
+                    "description": "The Feed Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515204,
+                    "resourceId": 210968,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515203,
+                    "resourceId": 210968,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupsFeedGet",
+                "transform": false,
+                "swagger": {
+                    "data": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "740668579634336"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "SSL"
+                            }
+                        },
+                        "title": "data",
+                        "x-has-customfields": false
+                    },
+                    "groupsFeedGet": {
+                        "properties": {
+                            "created_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-19T02:48:12+0000"
+                            },
+                            "formatting": {
+                                "type": "string",
+                                "x-samplevalue": "PLAINTEXT"
+                            },
+                            "from": {
+                                "type": "from"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "740668579634336_740679219633272"
+                            },
+                            "message": {
+                                "type": "string",
+                                "x-samplevalue": "descriptionGroupFeedCreateForPaginationD274"
+                            },
+                            "permalink_url": {
+                                "type": "string",
+                                "x-samplevalue": "https://work-87268534.facebook.com/groups/740668579634336/permalink/740679219633272/"
+                            },
+                            "to": {
+                                "type": "to"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "status"
+                            },
+                            "updated_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-19T02:48:13+0000"
+                            }
+                        },
+                        "title": "groupsFeedGet",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "feed"
+                    },
+                    "from": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "737657966593601"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "skeletorapp"
+                            }
+                        },
+                        "title": "from",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "to": {
+                        "properties": {
+                            "data": {
+                                "items": {
+                                    "type": "data"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "to",
+                        "type": "object",
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210971,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Update a Feed for a Group",
+            "path": "/hubs/collaboration/groups/{id}/feed/{feedId}",
+            "vendorPath": "/{feedId}",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 515213,
+                    "resourceId": 210971,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515212,
+                    "resourceId": 210971,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "feedId",
+                    "vendorName": "feedId",
+                    "description": "The Feed Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515211,
+                    "resourceId": 210971,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Feed JSON Object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "groupsFeedCreate",
+                    "vendorDataType": "groupsFeedCreate",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupsFeedGet",
+                "transform": false,
+                "requestName": "groupsFeedCreate"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210973,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "List all Members from a Group",
+            "path": "/hubs/collaboration/groups/{id}/members",
+            "vendorPath": "/{groupId}/members",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515219,
+                    "resourceId": 210973,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515218,
+                    "resourceId": 210973,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515217,
+                    "resourceId": 210973,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515216,
+                    "resourceId": 210973,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "nextPage",
+                    "vendorName": "after",
+                    "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupsMembersGetList",
+                "transform": false,
+                "swagger": {
+                    "groupsMembersGetList": {
+                        "items": {
+                            "type": "groupsMembersGet"
+                        },
+                        "title": "groupsMembersGetList",
+                        "type": "array",
+                        "x-vendor-objectname": "members"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "nextPageKey": "body.paging.next?after",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210965,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Add a Member to a Group. <b> Note : Adding members to work communities are not allowed via API </b>",
+            "path": "/hubs/collaboration/groups/{id}/members",
+            "vendorPath": "/{groupId}/members",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 515198,
+                    "resourceId": 210965,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515197,
+                    "resourceId": 210965,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Member JSON Object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "groupsMembersCreate",
+                    "vendorDataType": "groupsMembersCreate",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "groupsMembersCreateResponse",
+                "transform": false,
+                "swagger": {
+                    "groupsMembersCreateResponse": {
+                        "properties": {
+                            "success": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            }
+                        },
+                        "title": "groupsMembersCreateResponse",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "groupsMembers"
+                    }
+                },
+                "requestSwagger": {
+                    "groupsMembersCreate": {
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "naga@cloud-elements.com"
+                            }
+                        },
+                        "required": [
+                            "email"
+                        ],
+                        "title": "groupsMembersCreate",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "groupsMembers"
+                    }
+                },
+                "requestName": "groupsMembersCreate"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210966,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Delete a Member from a Group. <b> Note : Deleting a member from the work community is not allowed via API </b>",
+            "path": "/hubs/collaboration/groups/{id}/members/{memberId}",
+            "vendorPath": "/{groupId}/members/{memberId}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 515200,
+                    "resourceId": 210966,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "memberId",
+                    "vendorName": "memberId",
+                    "description": "The Member Id. ` Note : Deleting last` <b>memeber</b> `of the` <b>group</b> `will delete` <b>group</b> `as well`",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 515199,
+                    "resourceId": 210966,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "groupsMembersDelete",
+                "transform": false
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210974,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Retrieve a Member from a Group",
+            "path": "/hubs/collaboration/groups/{id}/members/{memberId}",
+            "vendorPath": "/{memberId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 515222,
+                    "resourceId": 210974,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "fields",
+                    "vendorName": "fields",
+                    "description": "Specify the comma separated fields to return in the response payload",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515221,
+                    "resourceId": 210974,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Group Id",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515220,
+                    "resourceId": 210974,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "memberId",
+                    "vendorName": "memberId",
+                    "description": "The Member Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "groupsMembersGet",
+                "transform": false,
+                "swagger": {
+                    "groupsMembersGet": {
+                        "properties": {
+                            "account_claim_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-16T16:02:15+0000"
+                            },
+                            "account_invite_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-16T16:02:15+0000"
+                            },
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "naga@cloud-elements.com"
+                            },
+                            "first_name": {
+                                "type": "string",
+                                "x-samplevalue": "Naga"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "100029199532026"
+                            },
+                            "impersonate_token": {
+                                "type": "string",
+                                "x-samplevalue": "EAAdvpZBEi2A8BAPg1k4MCs6WzlRZB8C4esuHpvEDckyjctTmofkCzPnbs4FHu3FCHj33U1WghOBL2CZBoi18MywfKPRPVoGizZCZCDoDqh1yaQmZAwTimEFfqR28e4UzlPIFTgcrXDv1mL2sDCbRdYue8Pr39u9ZBl3HHkJDYm5FYLNZCBJgrk5X2kUZCE8ZCH5FSRObCGN85sZCjyjIVT0yEEcgY3nMJehsNB8qRC6UwevsoEcUqmw9lHl2yzbYxVCVIzUoFjZCSoJOMFR6UbZARGSUNZBGXkUZAnDtpHFvbZCLkBDjMQ1SrQsyZCv6F"
+                            },
+                            "last_name": {
+                                "type": "string",
+                                "x-samplevalue": "Ede"
+                            },
+                            "link": {
+                                "type": "string",
+                                "x-samplevalue": "https://work-87268534.facebook.com/app_scoped_user_id/YXNpZADpBWEhVQUFzMFdab0dyeXR1Ykh6X2ktaHdKSjBib3YtS2UwekdFbHc4bEtYNHBYWFpNZATBoaFRkUUdVZAEhxdDB1MU5Jd0pyUzFob2xObUpONlpEdVFtWHY5SlhtaWhIMmtKZAkNxVUNJaFlHVDZA5c2JPQ0EZD/"
+                            },
+                            "locale": {
+                                "type": "string",
+                                "x-samplevalue": "en_US"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Naga Seshu Babu Ede"
+                            },
+                            "name_format": {
+                                "type": "string",
+                                "x-samplevalue": "{first} {last}"
+                            },
+                            "picture": {
+                                "type": "picturegroupsMembersGet"
+                            },
+                            "updated_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-10-16T16:02:21+0000"
+                            }
+                        },
+                        "title": "groupsMembersGet",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "members"
+                    },
+                    "picturegroupsMembersGet": {
+                        "properties": {
+                            "data": {
+                                "type": "datagroupsMembersGet"
+                            }
+                        },
+                        "title": "picturegroupsMembersGet",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "datagroupsMembersGet": {
+                        "properties": {
+                            "height": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 50
+                            },
+                            "is_silhouette": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/21751752_10150009420699633_490848426807113967_n.png?_nc_cat=100&_nc_ht=scontent.xx&oh=4c66235ca31178ce8fd32a588dc90ad4&oe=5C56C0F7"
+                            },
+                            "width": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 50
+                            }
+                        },
+                        "title": "datagroupsMembersGet",
+                        "type": "object",
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 249877,
+            "createdDate": "2019-03-27T15:32:05Z",
+            "description": "Post an image to a group along with a message",
+            "path": "/hubs/collaboration/groups/{id}/photos",
+            "vendorPath": "/{groupId}/photos",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 615799,
+                    "resourceId": 249877,
+                    "createdDate": "2019-03-27T15:32:05Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The object body",
+                    "type": "body",
+                    "vendorType": "query",
+                    "dataType": "GroupsPhotosPostRequest",
+                    "vendorDataType": "GroupsPhotosPostRequest",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 615798,
+                    "resourceId": 249877,
+                    "createdDate": "2019-03-27T15:32:05Z",
+                    "name": "id",
+                    "vendorName": "groupId",
+                    "description": "The group Id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 615797,
+                    "resourceId": 249877,
+                    "createdDate": "2019-03-27T15:32:05Z",
+                    "name": "none",
+                    "vendorName": "fields",
+                    "description": "This informs the Javahook not to add the fields parameter",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "GroupsPhotosPostResponse",
+                "transform": false,
+                "swagger": {
+                    "GroupsPhotosPostResponse": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "832328820459848"
+                            },
+                            "post_id": {
+                                "type": "string",
+                                "x-samplevalue": "737657966593601_1007567952785599"
+                            }
+                        },
+                        "title": "GroupsPhotosPostResponse"
+                    }
+                },
+                "requestSwagger": {
+                    "GroupsPhotosPostRequest": {
+                        "properties": {
+                            "caption": {
+                                "description": "The description of the photo,used as the accompanying status message in any feed story",
+                                "type": "string",
+                                "x-samplevalue": "caption"
+                            },
+                            "message": {
+                                "description": "The description of the photo",
+                                "type": "string",
+                                "x-samplevalue": "Photo Message"
+                            },
+                            "published": {
+                                "description": "Set to false if you don't want the photo to be published immediately",
+                                "type": "string",
+                                "x-samplevalue": "published"
+                            },
+                            "url": {
+                                "description": "The URL of a photo",
+                                "type": "string",
+                                "x-samplevalue": "https://cloud-elements.com/wp-content/uploads/2017/06/ce_full_color-menu.png"
+                            }
+                        },
+                        "required": [
+                            "url"
+                        ],
+                        "title": "GroupsPhotosPostRequest"
+                    }
+                },
+                "requestName": "GroupsPhotosPostRequest"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 249297,
+            "createdDate": "2019-03-25T07:18:44Z",
+            "description": "Retrieves member id using email address.",
+            "path": "/hubs/collaboration/members/{id}",
+            "vendorPath": "/{emailId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 614381,
+                    "resourceId": 249297,
+                    "createdDate": "2019-03-25T07:18:44Z",
+                    "name": "id",
+                    "vendorName": "emailId",
+                    "description": "The emailId of the member that is used to login",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "MemberIdbyEmailGetResponse",
+                "transform": false,
+                "swagger": {
+                    "MemberIdbyEmailGetResponse": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "123456789"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            }
+                        },
+                        "title": "MemberIdbyEmailGetResponse"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210976,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Delete a Webhook",
+            "path": "/hubs/collaboration/webhooks",
+            "vendorPath": "/subscriptions",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 515228,
+                    "resourceId": 210976,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "${configuration.oauth.api.key}|${configuration.oauth.api.secret}",
+                    "vendorName": "access_token",
+                    "description": "APP access token",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515227,
+                    "resourceId": 210976,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "${configuration.oauth.api.key}",
+                    "vendorName": "id",
+                    "description": "App Id of Facebook Workplace",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "onDeleteWebhook",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 210977,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "description": "Create a Webhook",
+            "path": "/hubs/collaboration/webhooks",
+            "vendorPath": "/subscriptions",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 515232,
+                    "resourceId": 210977,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "CloudElements@123",
+                    "vendorName": "verify_token",
+                    "description": "Cloud Elements Verify Token",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515231,
+                    "resourceId": 210977,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "${elementWebhookCallbackUrl}",
+                    "vendorName": "callback_url",
+                    "description": "Web hook Callback url",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515230,
+                    "resourceId": 210977,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "${configuration.app.id}|${configuration.app.secret}",
+                    "vendorName": "access_token",
+                    "description": "APP access token",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 515229,
+                    "resourceId": 210977,
+                    "createdDate": "2018-11-16T05:17:24Z",
+                    "name": "${configuration.app.id}",
+                    "vendorName": "id",
+                    "description": "App Id of Facebook Workplace",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "webhooks",
+                "transform": false,
+                "requestSwagger": {
+                    "createWebhooksCreate": {
+                        "properties": {
+                            "fields": {
+                                "description": "To list multiple fields of different webhook objects, make use of PIPE",
+                                "type": "string",
+                                "x-samplevalue": "mention,message_deliveries,messages,messaging_postbacks,message_reads|comments,posts,membership|status,events,message_sends|preview,collection"
+                            },
+                            "object": {
+                                "description": "To create or delete webhooks on multiple objects, make use of PIPE",
+                                "type": "string",
+                                "x-samplevalue": "page|group|user|link"
+                            }
+                        },
+                        "required": [
+                            "fields",
+                            "object"
+                        ],
+                        "title": "createWebhooksCreate",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "createWebhooksCreate"
+            },
+            "type": "onProvisionWebhook",
+            "rootKey": "|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "collaboration",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 10189,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "name": "application/json",
+            "vendorName": "Accept",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 21385,
+            "required": false
+        },
+        {
+            "id": 10190,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "name": "application/json",
+            "vendorName": "Content-Type",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 21385,
+            "required": false
+        }
+    ],
+    "private": false
+}

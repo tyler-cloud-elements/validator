@@ -1,0 +1,649 @@
+{
+    "id": 851,
+    "name": "Taxify",
+    "hookName": "Taxify",
+    "key": "taxify",
+    "description": "Put your monthly tax compliance on autopilot. Taxify prepares, submits, and pays your U.S. sales tax filings automatically.",
+    "image": "https://pbs.twimg.com/profile_images/621714602074619904/w2K5p8C3.png",
+    "logo": "taxify",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 9304,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Taxify Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9305,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Taxify Pagination Type",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254171,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9306,
+            "name": "PartnerKey",
+            "key": "partner.key",
+            "description": "Partner Key",
+            "defaultValue": "4E5D23E569454174A7899878E9D10052",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9302,
+            "name": "API Key",
+            "key": "api.key",
+            "description": "Your Taxify API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 9303,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Taxify Base URL",
+            "defaultValue": "https://ws.taxify.co/taxify/1.0/core/JSONService.asmx",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52439,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159847,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256314,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256565,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 84402,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9299,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "Taxify 2 Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9300,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Taxify 2 Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9684,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9301,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Taxify 2 Vendor Event Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 5796,
+            "createdDate": "2016-02-02T17:53:18Z",
+            "description": "Calculate Tax",
+            "path": "/hubs/finance/taxes",
+            "vendorPath": "/CalculateTax",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6105,
+                    "resourceId": 5796,
+                    "createdDate": "2016-02-02T17:53:18Z",
+                    "name": "{ \"CalculateTax\": { \"Security\": { \"PartnerKey\": \"{partner.key}\", \"Password\": \"{api.key}\" }, \"requestBody\": {body} }}}",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 6104,
+                    "resourceId": 5796,
+                    "createdDate": "2016-02-02T17:53:18Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "body",
+                    "vendorType": "bodyToken",
+                    "dataType": "taxes",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "calculateTax",
+                "transform": false,
+                "swagger": {
+                    "TaxLineDetails": {
+                        "id": "TaxLineDetails",
+                        "properties": {
+                            "ExemptAmount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "ItemTaxabilityCode": {
+                                "type": "string"
+                            },
+                            "ItemKey": {
+                                "type": "string"
+                            },
+                            "Amount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "TaxRate": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "LineNumber": {
+                                "type": "string"
+                            },
+                            "SalesTaxAmount": {
+                                "format": "double",
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "OriginAddress": {
+                        "id": "OriginAddress",
+                        "properties": {
+                            "Company": {
+                                "type": "string"
+                            },
+                            "Street2": {
+                                "type": "string"
+                            },
+                            "Street1": {
+                                "type": "string"
+                            },
+                            "Email": {
+                                "type": "string"
+                            },
+                            "FirstName": {
+                                "type": "string"
+                            },
+                            "PostalCode": {
+                                "type": "string"
+                            },
+                            "City": {
+                                "type": "string"
+                            },
+                            "County": {
+                                "type": "string"
+                            },
+                            "ExtendedProperties": {
+                                "type": "unknown"
+                            },
+                            "ValidationStatus": {
+                                "type": "string"
+                            },
+                            "Phone": {
+                                "type": "string"
+                            },
+                            "Region": {
+                                "type": "string"
+                            },
+                            "Country": {
+                                "type": "string"
+                            },
+                            "LastName": {
+                                "type": "string"
+                            },
+                            "ResidentialOrBusinessType": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "calculateTax": {
+                        "id": "calculateTax",
+                        "properties": {
+                            "TaxLineDetails": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "TaxLineDetails"
+                                }
+                            },
+                            "EffectiveTaxAddressType": {
+                                "type": "string"
+                            },
+                            "OriginAddress": {
+                                "type": "OriginAddress"
+                            },
+                            "TaxJurisdictionDetails": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "TaxJurisdictionDetails"
+                                }
+                            },
+                            "DestinationAddress": {
+                                "type": "DestinationAddress"
+                            },
+                            "EffectiveTaxAddress": {
+                                "type": "EffectiveTaxAddress"
+                            },
+                            "Errors": {
+                                "type": "unknown"
+                            },
+                            "TaxJurisdictionSummary": {
+                                "type": "string"
+                            },
+                            "ResponseStatus": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "IsCommitted": {
+                                "type": "boolean"
+                            },
+                            "DocumentKey": {
+                                "type": "string"
+                            },
+                            "CustomerTaxabilityCode": {
+                                "type": "string"
+                            },
+                            "EffectiveTaxDate": {
+                                "type": "string"
+                            },
+                            "SalesTaxAmount": {
+                                "format": "double",
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "TaxJurisdictionDetails": {
+                        "id": "TaxJurisdictionDetails",
+                        "properties": {
+                            "JurisdictionTaxRate": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "JurisdictionTaxAmount": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "AppliedTo": {
+                                "type": "string"
+                            },
+                            "JurisdictionType": {
+                                "type": "string"
+                            },
+                            "JurisdictionName": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "DestinationAddress": {
+                        "id": "DestinationAddress",
+                        "properties": {
+                            "Company": {
+                                "type": "string"
+                            },
+                            "Street2": {
+                                "type": "string"
+                            },
+                            "Street1": {
+                                "type": "string"
+                            },
+                            "Email": {
+                                "type": "string"
+                            },
+                            "FirstName": {
+                                "type": "string"
+                            },
+                            "PostalCode": {
+                                "type": "string"
+                            },
+                            "City": {
+                                "type": "string"
+                            },
+                            "County": {
+                                "type": "string"
+                            },
+                            "ExtendedProperties": {
+                                "type": "unknown"
+                            },
+                            "ValidationStatus": {
+                                "type": "string"
+                            },
+                            "Phone": {
+                                "type": "string"
+                            },
+                            "Region": {
+                                "type": "string"
+                            },
+                            "Country": {
+                                "type": "string"
+                            },
+                            "LastName": {
+                                "type": "string"
+                            },
+                            "ResidentialOrBusinessType": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "EffectiveTaxAddress": {
+                        "id": "EffectiveTaxAddress",
+                        "properties": {
+                            "Company": {
+                                "type": "string"
+                            },
+                            "Street2": {
+                                "type": "string"
+                            },
+                            "Street1": {
+                                "type": "string"
+                            },
+                            "Email": {
+                                "type": "string"
+                            },
+                            "FirstName": {
+                                "type": "string"
+                            },
+                            "PostalCode": {
+                                "type": "string"
+                            },
+                            "City": {
+                                "type": "string"
+                            },
+                            "County": {
+                                "type": "string"
+                            },
+                            "ExtendedProperties": {
+                                "type": "unknown"
+                            },
+                            "ValidationStatus": {
+                                "type": "string"
+                            },
+                            "Phone": {
+                                "type": "string"
+                            },
+                            "Region": {
+                                "type": "string"
+                            },
+                            "Country": {
+                                "type": "string"
+                            },
+                            "LastName": {
+                                "type": "string"
+                            },
+                            "ResidentialOrBusinessType": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6130,
+            "createdDate": "2016-03-02T21:39:01Z",
+            "description": "Cancel Tax",
+            "path": "/hubs/finance/taxes/{taxId}",
+            "vendorPath": "/CancelTax",
+            "method": "DELETE",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6703,
+                    "resourceId": 6130,
+                    "createdDate": "2016-03-02T21:39:01Z",
+                    "name": "{ \"CancelTax\": { \"Security\": { \"PartnerKey\": \"{partner.key}\", \"Password\": \"{api.key}\" }, \"DocumentKey\": \"{taxId}\"  }}",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "value",
+                    "vendorType": "body",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 6702,
+                    "resourceId": 6130,
+                    "createdDate": "2016-03-02T21:39:01Z",
+                    "name": "taxId",
+                    "vendorName": "taxId",
+                    "description": "The tax DocumentKey",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "finance",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 1084,
+            "createdDate": "2016-02-02T17:53:18Z",
+            "name": "api.key",
+            "vendorName": "api.key",
+            "type": "configuration",
+            "vendorType": "bodyToken",
+            "source": "request",
+            "elementId": 851,
+            "required": false
+        },
+        {
+            "id": 1085,
+            "createdDate": "2016-02-02T17:53:18Z",
+            "name": "partner.key",
+            "vendorName": "partner.key",
+            "type": "configuration",
+            "vendorType": "bodyToken",
+            "source": "request",
+            "elementId": 851,
+            "required": false
+        }
+    ],
+    "private": false
+}

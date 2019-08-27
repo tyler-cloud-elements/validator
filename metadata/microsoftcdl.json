@@ -1,0 +1,1165 @@
+{
+    "id": 12188,
+    "name": "Microsoft CDL",
+    "key": "microsoftcdl",
+    "description": "Entity Ingestion API exposes the capabilities of Common Data Layer (CDL) which is the Single Point of Entry for Leads, Custom Object and Custom Activity ingestion into Microsoft's One Global Demand Center Marketo instance. It provides rich Telemetry, Tracking, Proactive Alerting and Monitoring, etc. out of the box by leveraging the MIP platform's capabilities.\\n\\nFor onboarding details contact: abhima@microsoft.com ",
+    "image": "elements/provider_microsoftcdl.png",
+    "logo": "microsoftcdl",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 95004,
+            "name": "defaultValues",
+            "key": "defaultValues",
+            "description": "Default Values",
+            "defaultValue": "{\"ce_MicrosoftPromotionalPhonePreference\":\"OK to Contact\",\"ce_MsWidePromotionalUse\":\"OK to Contact\",\"originSystemName\":\"BrightTalk\",\"sourceSystemName\":\"BrightTalk\",\"ce_LeadSourceDetail\":\"BrightTalk\",\"leadSource\":\"BrightTalk\"}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 88480,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Base Url",
+            "defaultValue": "https://entityingestionppe.azure-api.net/api",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88481,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "EntityIngestion Pagination Type",
+            "defaultValue": "page",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88482,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "EntityIngestion Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88483,
+            "name": "Bulk query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88484,
+            "name": "Bulk Download Format",
+            "key": "bulk.query.download_format",
+            "description": "Bulk Download Format",
+            "defaultValue": "JSON",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88485,
+            "name": "Bulk Add Metadata",
+            "key": "bulk.add_metadata",
+            "description": "Bulk Add Metadata",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88486,
+            "name": "Bulk Relations",
+            "key": "bulk.relations",
+            "description": "Bulk Relations",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88487,
+            "name": "Bulk query Created Field Name",
+            "key": "bulk.attribute.created_time",
+            "description": "Bulk Query Created Field Name",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88488,
+            "name": "Bulk query FieldName",
+            "key": "bulk.query.field_name",
+            "description": "Bulk query FieldName",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88489,
+            "name": "Resource URL",
+            "key": "resource_url",
+            "description": "Resource URL",
+            "defaultValue": "http://cneentityingestionserviceppe.azurewebsites.net",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 88490,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254092,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88478,
+            "name": "Pagination Start Index",
+            "key": "pagination.page.startindex",
+            "description": "EntityIngestion Pagination Start Index",
+            "defaultValue": "1",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88479,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "EntityIngestion OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88477,
+            "name": "Client Id",
+            "key": "client_id",
+            "description": "Client Id",
+            "defaultValue": "99eba744-4156-404a-8f81-73b103788634",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 88476,
+            "name": "Client Secret",
+            "key": "client_secret",
+            "description": "Client Secret",
+            "defaultValue": "yUmGNraJFgYa0q1FbbogoDn62SJqGsng9MWTJO6nSNQ=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 88475,
+            "name": "Ocp Apim Subscription-Key",
+            "key": "ocp_subscription_key",
+            "description": "Ocp Apim Subscription Key",
+            "defaultValue": "4fce5cec17a44de592662bfbfcf267fa",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 88474,
+            "name": "Tennant Id",
+            "key": "tennantId",
+            "description": "Tennant Id",
+            "defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 6,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 131475,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159947,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88473,
+            "name": "Access Token",
+            "key": "access_token",
+            "description": "Access Token",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88472,
+            "name": "Expires In",
+            "key": "expires_in",
+            "description": "Expires In Value in Secs",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 88471,
+            "name": "Authentication Time",
+            "key": "authentication.time",
+            "description": "Time when we got Credentialed",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 105,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256225,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256476,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 79411,
+            "createdDate": "2017-06-24T03:29:37Z",
+            "description": "Sample API Description",
+            "path": "/hubs/marketing/activities",
+            "vendorPath": "/customactivity",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 162139,
+                    "resourceId": 79411,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "Bearer ${configuration.access_token}",
+                    "vendorName": "Authorization ",
+                    "description": "Auth Header",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162140,
+                    "resourceId": 79411,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Custom Activity",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "activitiesRequestModel",
+                    "vendorDataType": "activities",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "activities",
+                "transform": false,
+                "swagger": {
+                    "activities": {
+                        "id": "activities",
+                        "properties": {}
+                    }
+                },
+                "requestSwagger": {
+                    "activitiesRequestModel": {
+                        "id": "activitiesRequestModel",
+                        "properties": {
+                            "CDLProgramName": {
+                                "type": "string"
+                            },
+                            "activityDate": {
+                                "type": "string"
+                            },
+                            "activityType": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "emailId": {
+                                "type": "string"
+                            },
+                            "originSystemName": {
+                                "type": "string"
+                            },
+                            "primaryAttributeValue": {
+                                "type": "string"
+                            },
+                            "sourceSystemName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "activitiesRequestModel"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 8564,
+                    "resourceId": 79411,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "function guid()\n{\n   var chars = '0123456789abcdef'.split('');\n\n   var uuid = [], rnd = Math.random, r;\n   uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';\n   uuid[14] = '4'; // version 4\n\n   for (var i = 0; i < 36; i++)\n   {\n      if (!uuid[i])\n      {\n         r = 0 | rnd()*16;\n\n         uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r & 0xf];\n      }\n   }\n\n   return uuid.join('');\n}\n\n\nvar origBody = request_vendor_body_map;\nvar newBody = {};\nvar item = {};\n\nnewBody.input = [];\nitem['data'] = origBody;\nitem['requestItemId'] = guid();\nitem['isAckRequired'] = true;\nnewBody.input.push(item);\nnewBody['batchRequestId'] = guid();\n\nnewBody['ce_MicrosoftPromotionalPhonePreference'] = \"OK to Contact\";\nnewBody['ce_MsWidePromotionalUse'] = \"OK to Contact\"\nnewBody['originSystemName'] = \"BrightTalk\"\nnewBody['sourceSystemName'] = \"BrightTalk\"\n\ndone ({\n\trequest_vendor_body : newBody\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 79412,
+            "createdDate": "2017-06-24T03:29:37Z",
+            "description": "Sample API Description",
+            "path": "/hubs/marketing/activitiesNative",
+            "vendorPath": "/customactivity",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 162141,
+                    "resourceId": 79412,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Custom Activity",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "customActivitiesRequestModel",
+                    "vendorDataType": "customActivities",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162142,
+                    "resourceId": 79412,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "Bearer ${configuration.access_token}",
+                    "vendorName": "Authorization ",
+                    "description": "Auth Header",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "customActivitiesMultiple",
+                "transform": false,
+                "swagger": {
+                    "customActivitiesMultiple": {
+                        "id": "customActivitiesMultiple",
+                        "properties": {}
+                    }
+                },
+                "requestSwagger": {
+                    "input": {
+                        "id": "input",
+                        "properties": {
+                            "data": {
+                                "type": "data"
+                            },
+                            "isAckRequired": {
+                                "type": "boolean"
+                            },
+                            "requestItemId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "customActivitiesRequestModel": {
+                        "id": "customActivitiesRequestModel",
+                        "properties": {
+                            "batchRequestId": {
+                                "type": "string"
+                            },
+                            "input": {
+                                "items": {
+                                    "$ref": "input"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "data": {
+                        "id": "data",
+                        "properties": {
+                            "CDLProgramName": {
+                                "type": "string"
+                            },
+                            "activityDate": {
+                                "type": "string"
+                            },
+                            "activityType": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "emailId": {
+                                "type": "string"
+                            },
+                            "originSystemName": {
+                                "type": "string"
+                            },
+                            "primaryAttributeValue": {
+                                "type": "string"
+                            },
+                            "sourceSystemName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "customActivitiesRequestModel"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 79413,
+            "createdDate": "2017-06-24T03:29:37Z",
+            "description": "Sample API Description",
+            "path": "/hubs/marketing/leads",
+            "vendorPath": "/lead",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 162143,
+                    "resourceId": 79413,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "Bearer ${configuration.access_token}",
+                    "vendorName": "Authorization",
+                    "description": "Authorization Header",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162144,
+                    "resourceId": 79413,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Below is a sample input for leads for successful lead ingestion to Marketo",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "createLeads",
+                    "vendorDataType": "leads",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "leads",
+                "transform": false,
+                "swagger": {
+                    "leadStatus": {
+                        "id": "leadStatus",
+                        "properties": {
+                            "requestId": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "leads": {
+                        "id": "leads",
+                        "properties": {
+                            "batchId": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "items": {
+                                    "$ref": "leadStatus"
+                                },
+                                "type": "array"
+                            },
+                            "success": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "createLeads": {
+                        "id": "createLeads",
+                        "properties": {
+                            "address": {
+                                "type": "string"
+                            },
+                            "cDLProgramName": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "company": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "dateOfBirth": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "fax": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "mobilePhone": {
+                                "type": "string"
+                            },
+                            "originSystemName": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "sourceSystemName": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "updatedAt": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "createLeads"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 8565,
+                    "resourceId": 79413,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "function guid()\n{\n   var chars = '0123456789abcdef'.split('');\n\n   var uuid = [], rnd = Math.random, r;\n   uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';\n   uuid[14] = '4'; // version 4\n\n   for (var i = 0; i < 36; i++)\n   {\n      if (!uuid[i])\n      {\n         r = 0 | rnd()*16;\n\n         uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r & 0xf];\n      }\n   }\n\n   return uuid.join('');\n}\n\n\nvar origBody = request_vendor_body_map;\nvar newBody = {};\nvar item = {};\n\nnewBody.input = [];\nitem['data'] = origBody;\nitem['requestItemId'] = guid();\nitem['isAckRequired'] = true;\nnewBody.input.push(item);\nnewBody['batchRequestId'] = guid();\n\nnewBody['ce_MicrosoftPromotionalPhonePreference'] = \"OK to Contact\";\nnewBody['ce_MsWidePromotionalUse'] = \"OK to Contact\"\nnewBody['originSystemName'] = \"BrightTalk\"\nnewBody['sourceSystemName'] = \"BrightTalk\"\n\ndone ({\n\trequest_vendor_body : newBody\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 79414,
+            "createdDate": "2017-06-24T03:29:37Z",
+            "description": "Sample API Description",
+            "path": "/hubs/marketing/leadsNative",
+            "vendorPath": "/lead",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 162145,
+                    "resourceId": 79414,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Below is a sample input for leads for successful lead ingestion to Marketo",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "createLeads",
+                    "vendorDataType": "leads",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162146,
+                    "resourceId": 79414,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "Bearer ${configuration.access_token}",
+                    "vendorName": "Authorization",
+                    "description": "Authorization Header",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "leadsMultiple",
+                "transform": false,
+                "swagger": {
+                    "leadsMultiple": {
+                        "id": "leadsMultiple",
+                        "properties": {
+                            "batchId": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "items": {
+                                    "$ref": "status"
+                                },
+                                "type": "array"
+                            },
+                            "success": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "status": {
+                        "id": "status",
+                        "properties": {
+                            "requestId": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "input": {
+                        "id": "input",
+                        "properties": {
+                            "data": {
+                                "type": "data"
+                            },
+                            "isAckRequired": {
+                                "type": "boolean"
+                            },
+                            "requestItemId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "data": {
+                        "id": "data",
+                        "properties": {
+                            "address": {
+                                "type": "string"
+                            },
+                            "cDLProgramName": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "company": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "dateOfBirth": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "fax": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "mobilePhone": {
+                                "type": "string"
+                            },
+                            "originSystemName": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "sourceSystemName": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "updatedAt": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "createLeads": {
+                        "id": "createLeads",
+                        "properties": {
+                            "batchRequestId": {
+                                "type": "string"
+                            },
+                            "input": {
+                                "items": {
+                                    "$ref": "input"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    }
+                },
+                "requestName": "createLeads"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 79415,
+            "createdDate": "2017-06-24T03:29:37Z",
+            "description": "Get The Access Token",
+            "path": "/hubs/marketing/token",
+            "vendorPath": "https://login.microsoftonline.com/{tennantId}/oauth2/token",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 162150,
+                    "resourceId": 79415,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "access_token",
+                    "vendorName": "access_token",
+                    "description": "access_token",
+                    "type": "configuration",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "response",
+                    "required": false
+                },
+                {
+                    "id": 162147,
+                    "resourceId": 79415,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "client_secret",
+                    "vendorName": "client_secret",
+                    "description": "Client Secret",
+                    "type": "configuration",
+                    "vendorType": "form",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162148,
+                    "resourceId": 79415,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "client_id",
+                    "vendorName": "client_id",
+                    "description": "Client Id",
+                    "type": "configuration",
+                    "vendorType": "form",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162149,
+                    "resourceId": 79415,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "client_credentials",
+                    "vendorName": "grant_type",
+                    "description": "Grant Type",
+                    "type": "value",
+                    "vendorType": "form",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162151,
+                    "resourceId": 79415,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "resource_url",
+                    "vendorName": "resource",
+                    "description": "Resource URL",
+                    "type": "configuration",
+                    "vendorType": "form",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 162152,
+                    "resourceId": 79415,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "tennantId",
+                    "vendorName": "tennantId",
+                    "description": "Tennant Id",
+                    "type": "configuration",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 162153,
+                    "resourceId": 79415,
+                    "createdDate": "2017-06-24T03:29:37Z",
+                    "name": "expires_in",
+                    "vendorName": "expires_in",
+                    "description": "Expires In",
+                    "type": "configuration",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "response",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "token",
+                "transform": false,
+                "swagger": {
+                    "token": {
+                        "id": "token",
+                        "properties": {
+                            "access_token": {
+                                "type": "string"
+                            },
+                            "expires_in": {
+                                "type": "string"
+                            },
+                            "expires_on": {
+                                "type": "string"
+                            },
+                            "ext_expires_in": {
+                                "type": "string"
+                            },
+                            "not_before": {
+                                "type": "string"
+                            },
+                            "resource": {
+                                "type": "string"
+                            },
+                            "token_type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "token": {
+                        "id": "token",
+                        "properties": {}
+                    }
+                },
+                "requestName": "token"
+            },
+            "type": "provisionAuthValidation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 5441,
+            "createdDate": "2017-06-24T03:29:37Z",
+            "name": "ocp_subscription_key",
+            "vendorName": "Ocp-Apim-Subscription-Key",
+            "type": "configuration",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 12188,
+            "required": false
+        }
+    ],
+    "private": false
+}

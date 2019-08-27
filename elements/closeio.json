@@ -1,0 +1,4368 @@
+{
+    "id": 146,
+    "name": "Close.io",
+    "hookName": "Closeio",
+    "key": "closeio",
+    "description": "Add a Close.io CRM Instance to connect your existing Close.io account to the CRM Hub, allowing you to manage contacts, accounts, opportunities, etc. across multiple CRM Elements. You will need your Close.io CRM account information to add an instance.",
+    "image": "https://pbs.twimg.com/profile_images/497905627948015616/vNCOkr1Z.png",
+    "logo": "closeio",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 1298,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Close.io Beta Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1345,
+            "name": "Bulk Query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Close.io Bulk Query Date Mask",
+            "defaultValue": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 253998,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1347,
+            "name": "Bulk Query Modified Time",
+            "key": "bulk.attribute.modified_time",
+            "description": "Close.io Bulk Query Modified Time",
+            "defaultValue": "date_updated",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1296,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Close.io Beta Base URL",
+            "defaultValue": "https://app.close.io/api/v1",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1357,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1343,
+            "name": "Bulk Query Field Name",
+            "key": "bulk.query.field_name",
+            "description": "Close.io Bulk Query Field Name",
+            "defaultValue": "date_updated",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1344,
+            "name": "Bulk Query Operator",
+            "key": "bulk.query.operator",
+            "description": "Close.io Bulk Query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1346,
+            "name": "Bulk Query Created Time",
+            "key": "bulk.attribute.created_time",
+            "description": "Close.io Bulk Query Created Time",
+            "defaultValue": "date_created",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1300,
+            "name": "API Key",
+            "key": "username",
+            "description": "The API key, needed to make API requests to Close.io",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1299,
+            "name": "Password",
+            "key": "password",
+            "description": "This should always be blank for Close.io",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52567,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159845,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 30004,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 30003,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 30002,
+            "name": "Event Notification Instance Finder",
+            "key": "event.notification.instance.finder",
+            "description": "Event Notification Instance Finder",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 30001,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256125,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256376,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 30005,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 200,
+            "options": [
+                {
+                    "value": "polling",
+                    "description": "Polling Event Type"
+                },
+                {
+                    "value": "webhook",
+                    "description": "Webhook Trigger Event Type"
+                }
+            ],
+            "type": "COMBO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 38034,
+            "name": "Event Poller Resource Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resource Configuration",
+            "defaultValue": "{\"contacts\":{\"url\":\"/hubs/crm/contacts?where=date_updated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX}'\",\"idField\":\"id\",\"datesConfiguration\":{\"updatedDateField\":\"date_updated\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX\",\"createdDateField\":\"date_created\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 201,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 38035,
+            "name": "Event Poller Refresh Interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Event Poller Refresh Interval",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 202,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 2704,
+            "createdDate": "2015-07-27T16:11:29Z",
+            "description": "Basic Auth Validation",
+            "path": "/auth_validation",
+            "vendorPath": "/contact/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "provisionAuthValidation",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 541,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Search for accounts",
+            "path": "/hubs/crm/accounts",
+            "vendorPath": "/lead/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 751,
+                    "resourceId": 541,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "page",
+                    "vendorName": "_skip",
+                    "description": "The page number. When this parameter is omitted, 1 is implied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 752,
+                    "resourceId": 541,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "pageSize",
+                    "vendorName": "_limit",
+                    "description": "The number of results to fetch in a given page with a maximum of 2000. When this parameter is omitted, 200 results are returned.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 753,
+                    "resourceId": 541,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "where",
+                    "vendorName": "query",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for objects where name equals foo, the search expression will be name='foo'. When this parameter is omitted, all objects are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "accountsList",
+                "transform": false,
+                "swagger": {
+                    "accountsList": {
+                        "items": {
+                            "type": "accountsListObject"
+                        },
+                        "type": "array"
+                    },
+                    "accountsListObject": {
+                        "properties": {
+                            "addresses": {
+                                "items": {
+                                    "type": "addressesGetAllAccount"
+                                },
+                                "type": "array"
+                            },
+                            "contacts": {
+                                "items": {
+                                    "type": "contactsGetAllAccount"
+                                },
+                                "type": "array"
+                            },
+                            "created_by": {
+                                "type": "string"
+                            },
+                            "created_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.333000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-06T20:53:01.977000+00:00"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "display_name": {
+                                "type": "string",
+                                "x-samplevalue": "Wayne Enterprises (Sample Lead)"
+                            },
+                            "html_url": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true,
+                                "x-samplevalue": "lead_IIDHIStmFcFQZZP0BRe99V1MCoXWz2PGCm6EDmR9v2O"
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "type": "integrationLinksGetAllAccounts"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "opportunities": {
+                                "items": {
+                                    "type": "opportunitiesGetAllAccount"
+                                },
+                                "type": "array"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string",
+                                "x-samplevalue": "stat_1ZdiZqcSIkoGVnNOyxiEY58eTGQmFNG3LPlEVQ4V7Nk"
+                            },
+                            "status_label": {
+                                "type": "string",
+                                "x-samplevalue": "Potential"
+                            },
+                            "tasks": {
+                                "items": {
+                                    "type": "tasksGetAllAccount"
+                                },
+                                "type": "array"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_04EJPREurd0b3KDozVFqXSRbt2uBjw3QfeYa7ZaGTwI"
+                            },
+                            "updated_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://app.close.io/lead/lead_CAOrFtzTTFAvqU6PdyRiNhsIXALcWINKeG4gkTx5ly5/"
+                            }
+                        },
+                        "title": "accountsListObject",
+                        "type": "object",
+                        "x-has-customfields": true,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Leads"
+                    },
+                    "urlsGetAllAccountContact": {
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "url"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "http://cloud-elements.com"
+                            }
+                        },
+                        "title": "urlsGetAllAccountContact",
+                        "x-has-customfields": false
+                    },
+                    "addressesGetAllAccount": {
+                        "properties": {
+                            "address_1": {
+                                "type": "string",
+                                "x-samplevalue": "747 Howard St"
+                            },
+                            "address_2": {
+                                "type": "string",
+                                "x-samplevalue": "Room 3"
+                            },
+                            "city": {
+                                "type": "string",
+                                "x-samplevalue": "San Francisco"
+                            },
+                            "country": {
+                                "type": "string",
+                                "x-samplevalue": "US"
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "business"
+                            },
+                            "state": {
+                                "type": "string",
+                                "x-samplevalue": "CA"
+                            },
+                            "zipcode": {
+                                "type": "string",
+                                "x-samplevalue": "94103"
+                            }
+                        },
+                        "title": "addressesGetAllAccount",
+                        "x-has-customfields": true
+                    },
+                    "tasksGetAllAccount": {
+                        "properties": {
+                            "_type": {
+                                "type": "string",
+                                "x-samplevalue": "lead"
+                            },
+                            "assigned_to": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "assigned_to_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "created_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "date": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-10-29"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-10-29T06:24:38.815000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-10-29T06:24:43.191000+00:00"
+                            },
+                            "due_date": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "task_QskBZwObb7S2oGVvX4x2LJTsAQweuBr0kcLsen0SI65"
+                            },
+                            "is_complete": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "is_dateless": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_WIdmn2r5JbpM9VVLkdxTTSuUdzlmUKjEZ2EkTdO2iXv"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-samplevalue": "TestIt"
+                            },
+                            "object_id": {
+                                "type": "string",
+                                "x-samplevalue": "acti_0VyJU8FBW1z4UcD9Sp4w3kYkZd066at4zqN7ks8tICd"
+                            },
+                            "object_type": {
+                                "type": "string",
+                                "x-samplevalue": "taskcompleted"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_QP6fMXakVzyRCt8SqduUqN9LYZC9ZYk45Z1Gn1yY0nL"
+                            },
+                            "text": {
+                                "type": "string",
+                                "x-samplevalue": "Follow up Description"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "updated_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "view": {
+                                "type": "string",
+                                "x-samplevalue": "archive"
+                            }
+                        },
+                        "title": "tasksGetAllAccount"
+                    },
+                    "integrationLinksGetAllAccountsOpportunities": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integrationLinksGetAllAccountsOpportunities"
+                    },
+                    "opportunitiesGetAllAccount": {
+                        "properties": {
+                            "confidence": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 75
+                            },
+                            "contact_id": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoFn"
+                            },
+                            "contact_name": {
+                                "type": "string"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoF"
+                            },
+                            "created_by_name": {
+                                "type": "string"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.337000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.337000+00:00"
+                            },
+                            "date_won": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-03-30"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "oppo_8eB77gAdf8FMy6GsNHEy84f7uoeEWv55slvUjKQZpJt"
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "type": "integrationLinksGetAllAccountsOpportunities"
+                                },
+                                "type": "array"
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_IIDHIStmFcFQZZP0BRe99V1MCoXWz2PGCm6EDmR9v2O"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-samplevalue": "Wayne Enterprises (Sample Lead)"
+                            },
+                            "note": {
+                                "type": "string",
+                                "x-samplevalue": "Bruce needs new software for the Bat Cave."
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_bwwWG475zqWiQGur0thQshwVXo8rIYecQHDWFanqhen"
+                            },
+                            "status_id": {
+                                "type": "string",
+                                "x-samplevalue": "stat_4ZdiZqcSIkoGVnNOyxiEY58eTGQmFNG3LPlEVQ4V7Nk"
+                            },
+                            "status_label": {
+                                "type": "string",
+                                "x-samplevalue": "Active"
+                            },
+                            "status_type": {
+                                "type": "string",
+                                "x-samplevalue": "active"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoF"
+                            },
+                            "updated_by_name": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoFn"
+                            },
+                            "user_name": {
+                                "type": "string",
+                                "x-samplevalue": "P F"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 50000
+                            },
+                            "value_currency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "value_formatted": {
+                                "type": "string",
+                                "x-samplevalue": "$500"
+                            },
+                            "value_period": {
+                                "type": "string",
+                                "x-samplevalue": "one_time"
+                            }
+                        },
+                        "title": "opportunitiesGetAllAccount",
+                        "x-has-customfields": false
+                    },
+                    "contactsGetAllAccount": {
+                        "properties": {
+                            "created_by": {
+                                "type": "string"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.331000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-06T20:53:01.954000+00:00"
+                            },
+                            "display_name": {
+                                "type": "string",
+                                "x-samplevalue": "Wayne Enterprises (Sample Lead)"
+                            },
+                            "emails": {
+                                "items": {
+                                    "type": "emailsGetAllAccount"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "cont_o0kP3Nqyq0wxr5DLWIEm8mVr6ZpI0AhonKLDG0V5Qjh"
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "type": "integrationLinksGetAllAccountsContacts"
+                                },
+                                "type": "array"
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_IIDHIStmFcFQZZP0BRe99V1MCoXWz2PGCm6EDmR9v2O"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Bruce Wayne"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_bwwWG475zqWiQGur0thQshwVXo8rIYecQHDWFanqhen"
+                            },
+                            "phones": {
+                                "items": {
+                                    "type": "phonesGetAllAccount"
+                                },
+                                "type": "array"
+                            },
+                            "title": {
+                                "type": "string",
+                                "x-samplevalue": "The Dark Knight"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_04EJPREurd0b3KDozVFqXSRbt2uBjw3QfeYa7ZaGTwI"
+                            },
+                            "urls": {
+                                "items": {
+                                    "type": "urlsGetAllAccountContact"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "contactsGetAllAccount",
+                        "x-has-customfields": false
+                    },
+                    "emailsGetAllAccount": {
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "thedarkknight@close.io",
+                                "x-sub-format": "email"
+                            },
+                            "email_lower": {
+                                "type": "string",
+                                "x-samplevalue": "thedarkknight@close.io",
+                                "x-sub-format": "email"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "emailsGetAllAccount",
+                        "x-has-customfields": false
+                    },
+                    "integrationLinksGetAllAccounts": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integrationLinksGetAllAccounts"
+                    },
+                    "integrationLinksGetAllAccountsContacts": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integrationLinksGetAllAccountsContacts"
+                    },
+                    "phonesGetAllAccount": {
+                        "properties": {
+                            "phone": {
+                                "type": "string",
+                                "x-samplevalue": "+16503334444"
+                            },
+                            "phone_formatted": {
+                                "type": "string",
+                                "x-samplevalue": "+1 650-333-4444"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "phonesGetAllAccount",
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 537,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Create a new account",
+            "path": "/hubs/crm/accounts",
+            "vendorPath": "/lead/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 746,
+                    "resourceId": 537,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "account",
+                    "vendorName": "lead",
+                    "description": "The account object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accounts",
+                    "vendorDataType": "accounts",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accounts",
+                "transform": false,
+                "swagger": {
+                    "emails": {
+                        "id": "emails",
+                        "properties": {
+                            "email": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "opportunities_accounts": {
+                        "id": "opportunities_accounts",
+                        "properties": {
+                            "confidence": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "lead_name": {
+                                "type": "string"
+                            },
+                            "note": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string"
+                            },
+                            "status_label": {
+                                "type": "string"
+                            },
+                            "status_type": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "value_period": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "accountContacts": {
+                        "id": "accountContacts",
+                        "properties": {
+                            "emails": {
+                                "items": {
+                                    "$ref": "emails"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "accounts": {
+                        "id": "accounts",
+                        "properties": {
+                            "accountContacts": {
+                                "items": {
+                                    "$ref": "accountContacts"
+                                },
+                                "type": "array"
+                            },
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "html_url": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "opportunities": {
+                                "items": {
+                                    "$ref": "opportunities_accounts"
+                                },
+                                "type": "array"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string"
+                            },
+                            "status_label": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "accounts"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 555,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Delete an activity for an account",
+            "path": "/hubs/crm/accounts/{accountId}/activities/{id}",
+            "vendorPath": "/activity/{activityType}/{id}/",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 779,
+                    "resourceId": 555,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "accountId",
+                    "vendorName": "accountId",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 780,
+                    "resourceId": 555,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "activityType",
+                    "vendorName": "activityType",
+                    "description": "The activity type. Can be email, call or note and will default to note. Any other value will result in an error.",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 781,
+                    "resourceId": 555,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The activity ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 554,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Update an activity for an account",
+            "path": "/hubs/crm/accounts/{accountId}/activities/{id}",
+            "vendorPath": "/activity/{activityType}/{id}/",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 775,
+                    "resourceId": 554,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "accountId",
+                    "vendorName": "accountId",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 776,
+                    "resourceId": 554,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "activity",
+                    "vendorName": "activity",
+                    "description": "The activity object The following fields are specific to email type: attachments, bcc, body_html, body_html_quoted, body_preview, body_text, body_text_quoted, cc, envelope, need_smtp_credentials, subject, thread_id. The following fields are specific to call type: duration, phone, remote_phone, source, status, voicemail_duration. The following fields are specific to email and call types: direction. The following fields are specific to call and note types: note.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accountsActivities",
+                    "vendorDataType": "accountsActivities",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 777,
+                    "resourceId": 554,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "activityType",
+                    "vendorName": "activityType",
+                    "description": "The activity type. Can be email, call or note and will default to note. Any other value will result in an error.",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 778,
+                    "resourceId": 554,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The activity ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 551,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Delete a note for an account",
+            "path": "/hubs/crm/accounts/{accountId}/notes/{id}",
+            "vendorPath": "/activity/note/{id}/",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 769,
+                    "resourceId": 551,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "accountId",
+                    "vendorName": "accountId",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 770,
+                    "resourceId": 551,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The note ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 550,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Update a note for an account",
+            "path": "/hubs/crm/accounts/{accountId}/notes/{id}",
+            "vendorPath": "/activity/note/{id}/",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 766,
+                    "resourceId": 550,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "accountId",
+                    "vendorName": "accountId",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 767,
+                    "resourceId": 550,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The note ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 768,
+                    "resourceId": 550,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "note",
+                    "vendorName": "note",
+                    "description": "The note object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accountsNotes",
+                    "vendorDataType": "accountsNotes",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 540,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Delete an account",
+            "path": "/hubs/crm/accounts/{id}",
+            "vendorPath": "/lead/{id}/",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 750,
+                    "resourceId": 540,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 538,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Retrieve an account",
+            "path": "/hubs/crm/accounts/{id}",
+            "vendorPath": "/lead/{id}/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 747,
+                    "resourceId": 538,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accountsGetById",
+                "transform": false,
+                "swagger": {
+                    "integrationLinksGetByIdAccountsOpportunities": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integrationLinksGetByIdAccountsOpportunities"
+                    },
+                    "opportunitiesGetByIdAccount": {
+                        "properties": {
+                            "confidence": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 75
+                            },
+                            "contact_id": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoFn"
+                            },
+                            "contact_name": {
+                                "type": "string"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoF"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.337000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.337000+00:00"
+                            },
+                            "date_won": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-03-30"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "oppo_8eB77gAdf8FMy6GsNHEy84f7uoeEWv55slvUjKQZpJt"
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_IIDHIStmFcFQZZP0BRe99V1MCoXWz2PGCm6EDmR9v2O"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-samplevalue": "Wayne Enterprises (Sample Lead)"
+                            },
+                            "note": {
+                                "type": "string",
+                                "x-samplevalue": "Bruce needs new software for the Bat Cave."
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_bwwWG475zqWiQGur0thQshwVXo8rIYecQHDWFanqhen"
+                            },
+                            "status_id": {
+                                "type": "string",
+                                "x-samplevalue": "stat_4ZdiZqcSIkoGVnNOyxiEY58eTGQmFNG3LPlEVQ4V7Nk"
+                            },
+                            "status_label": {
+                                "type": "string",
+                                "x-samplevalue": "Active"
+                            },
+                            "status_type": {
+                                "type": "string",
+                                "x-samplevalue": "active"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoF"
+                            },
+                            "user_id": {
+                                "type": "string",
+                                "x-samplevalue": "user_scOgjLAQD6aBSJYBVhIeNr6FJDp8iDTug8Mv6VqYoFn"
+                            },
+                            "user_name": {
+                                "type": "string",
+                                "x-samplevalue": "P F"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 50000
+                            },
+                            "value_currency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "value_formatted": {
+                                "type": "string",
+                                "x-samplevalue": "$500"
+                            },
+                            "value_period": {
+                                "type": "string",
+                                "x-samplevalue": "one_time"
+                            }
+                        },
+                        "title": "opportunitiesGetByIdAccount",
+                        "x-has-customfields": false
+                    },
+                    "tasksGetByIdAccount": {
+                        "properties": {
+                            "_type": {
+                                "type": "string",
+                                "x-samplevalue": "lead"
+                            },
+                            "assigned_to": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "assigned_to_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "created_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "date": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-10-29"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-10-29T06:24:38.815000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-10-29T06:24:43.191000+00:00"
+                            },
+                            "due_date": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2018-10-29"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "task_QskBZwObb7S2oGVvX4x2LJTsAQweuBr0kcLsen0SI65"
+                            },
+                            "is_complete": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "is_dateless": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_WIdmn2r5JbpM9VVLkdxTTSuUdzlmUKjEZ2EkTdO2iXv"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-samplevalue": "TestIt"
+                            },
+                            "object_id": {
+                                "type": "string",
+                                "x-samplevalue": "acti_0VyJU8FBW1z4UcD9Sp4w3kYkZd066at4zqN7ks8tICd"
+                            },
+                            "object_type": {
+                                "type": "string",
+                                "x-samplevalue": "taskcompleted"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_QP6fMXakVzyRCt8SqduUqN9LYZC9ZYk45Z1Gn1yY0nL"
+                            },
+                            "text": {
+                                "type": "string",
+                                "x-samplevalue": "Follow up Description"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "updated_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "view": {
+                                "type": "string",
+                                "x-samplevalue": "archive"
+                            }
+                        },
+                        "title": "tasksGetByIdAccount"
+                    },
+                    "contactsGetByIdAccount": {
+                        "properties": {
+                            "created_by": {
+                                "type": "string"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.331000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-06T20:53:01.954000+00:00"
+                            },
+                            "display_name": {
+                                "type": "string",
+                                "x-samplevalue": "Wayne Enterprises (Sample Lead)"
+                            },
+                            "emails": {
+                                "items": {
+                                    "type": "emailsGetByIdAccount"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "cont_o0kP3Nqyq0wxr5DLWIEm8mVr6ZpI0AhonKLDG0V5Qjh"
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "type": "integrationLinksGetByIdAccountsContacts"
+                                },
+                                "type": "array"
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_IIDHIStmFcFQZZP0BRe99V1MCoXWz2PGCm6EDmR9v2O"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Bruce Wayne"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_bwwWG475zqWiQGur0thQshwVXo8rIYecQHDWFanqhen"
+                            },
+                            "phones": {
+                                "items": {
+                                    "type": "phonesGetByIdAccount"
+                                },
+                                "type": "array"
+                            },
+                            "title": {
+                                "type": "string",
+                                "x-samplevalue": "The Dark Knight"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_04EJPREurd0b3KDozVFqXSRbt2uBjw3QfeYa7ZaGTwI"
+                            },
+                            "urls": {
+                                "items": {
+                                    "type": "urlsGetByIdAccountContact"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "contactsGetByIdAccount",
+                        "x-has-customfields": false
+                    },
+                    "integrationLinksGetByIdAccountsContacts": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integrationLinksGetByIdAccountsContacts"
+                    },
+                    "emailsGetByIdAccount": {
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "thedarkknight@close.io",
+                                "x-sub-format": "email"
+                            },
+                            "email_lower": {
+                                "type": "string",
+                                "x-samplevalue": "thedarkknight@close.io",
+                                "x-sub-format": "email"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "emailsGetByIdAccount",
+                        "x-has-customfields": false
+                    },
+                    "integrationLinksGetByIdAccounts": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integrationLinksGetByIdAccounts"
+                    },
+                    "accountsGetById": {
+                        "properties": {
+                            "addresses": {
+                                "items": {
+                                    "type": "addressesGetByIdAccount"
+                                },
+                                "type": "array"
+                            },
+                            "contacts": {
+                                "items": {
+                                    "type": "contactsGetByIdAccount"
+                                },
+                                "type": "array"
+                            },
+                            "created_by": {
+                                "type": "string"
+                            },
+                            "created_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-01T00:54:51.333000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "x-samplevalue": "2013-02-06T20:53:01.977000+00:00"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "display_name": {
+                                "type": "string",
+                                "x-samplevalue": "Wayne Enterprises (Sample Lead)"
+                            },
+                            "html_url": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true,
+                                "x-samplevalue": "lead_IIDHIStmFcFQZZP0BRe99V1MCoXWz2PGCm6EDmR9v2O"
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "type": "integrationLinksGetByIdAccounts"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "opportunities": {
+                                "items": {
+                                    "type": "opportunitiesGetByIdAccount"
+                                },
+                                "type": "array"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string",
+                                "x-samplevalue": "stat_1ZdiZqcSIkoGVnNOyxiEY58eTGQmFNG3LPlEVQ4V7Nk"
+                            },
+                            "status_label": {
+                                "type": "string",
+                                "x-samplevalue": "Potential"
+                            },
+                            "tasks": {
+                                "items": {
+                                    "type": "tasksGetByIdAccount"
+                                },
+                                "type": "array"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_04EJPREurd0b3KDozVFqXSRbt2uBjw3QfeYa7ZaGTwI"
+                            },
+                            "updated_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://app.close.io/lead/lead_CAOrFtzTTFAvqU6PdyRiNhsIXALcWINKeG4gkTx5ly5/"
+                            }
+                        },
+                        "title": "accountsGetById",
+                        "type": "object",
+                        "x-has-customfields": true,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Leads"
+                    },
+                    "addressesGetByIdAccount": {
+                        "properties": {
+                            "address_1": {
+                                "type": "string",
+                                "x-samplevalue": "747 Howard St"
+                            },
+                            "address_2": {
+                                "type": "string",
+                                "x-samplevalue": "Room 3"
+                            },
+                            "city": {
+                                "type": "string",
+                                "x-samplevalue": "San Francisco"
+                            },
+                            "country": {
+                                "type": "string",
+                                "x-samplevalue": "US"
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "business"
+                            },
+                            "state": {
+                                "type": "string",
+                                "x-samplevalue": "CA"
+                            },
+                            "zipcode": {
+                                "type": "string",
+                                "x-samplevalue": "94103"
+                            }
+                        },
+                        "title": "addressesGetByIdAccount",
+                        "x-has-customfields": true
+                    },
+                    "phonesGetByIdAccount": {
+                        "properties": {
+                            "phone": {
+                                "type": "string",
+                                "x-samplevalue": "+16503334444"
+                            },
+                            "phone_formatted": {
+                                "type": "string",
+                                "x-samplevalue": "+1 650-333-4444"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "phonesGetByIdAccount",
+                        "x-has-customfields": false
+                    },
+                    "urlsGetByIdAccountContact": {
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "url"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "http://cloud-elements.com"
+                            }
+                        },
+                        "title": "urlsGetByIdAccountContact",
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 539,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Update an account",
+            "path": "/hubs/crm/accounts/{id}",
+            "vendorPath": "/lead/{id}/",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 749,
+                    "resourceId": 539,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "account",
+                    "vendorName": "lead",
+                    "description": "The account object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accounts",
+                    "vendorDataType": "accounts",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 748,
+                    "resourceId": 539,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accounts",
+                "transform": false,
+                "requestName": "accounts"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 553,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Search activities for an account",
+            "path": "/hubs/crm/accounts/{id}/activities",
+            "vendorPath": "/activity/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 774,
+                    "resourceId": 553,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "lead_id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accountsActivitiesList",
+                "transform": false,
+                "swagger": {
+                    "attachmentsObject": {
+                        "id": "attachmentsObject",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            },
+                            "filename": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "type": "number"
+                            },
+                            "content_type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "emailObject": {
+                        "id": "emailObject",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "bodyHtmlQuotedObject": {
+                        "id": "bodyHtmlQuotedObject",
+                        "properties": {
+                            "expand": {
+                                "type": "string"
+                            },
+                            "html": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "bodyTextQuotedObject": {
+                        "id": "bodyTextQuotedObject",
+                        "properties": {
+                            "expand": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "accountsActivitiesList": {
+                        "id": "accountsActivitiesList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "accountsActivitiesListObject"
+                        }
+                    },
+                    "accountsActivitiesListObject": {
+                        "id": "accountsActivitiesListObject",
+                        "properties": {
+                            "attachments": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "attachmentsObject"
+                                }
+                            },
+                            "bcc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "body_html": {
+                                "type": "string"
+                            },
+                            "body_html_quoted": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "bodyHtmlQuotedObject"
+                                }
+                            },
+                            "body_preview": {
+                                "type": "string"
+                            },
+                            "body_text": {
+                                "type": "string"
+                            },
+                            "body_text_quoted": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "bodyTextQuotedObject"
+                                }
+                            },
+                            "cc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "direction": {
+                                "type": "string"
+                            },
+                            "duration": {
+                                "type": "number"
+                            },
+                            "envelope": {
+                                "type": "envelopeObject"
+                            },
+                            "lead_id": {
+                                "type": "string"
+                            },
+                            "need_smtp_credentials": {
+                                "type": "boolean"
+                            },
+                            "note": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "remote_phone": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "thread_id": {
+                                "type": "string"
+                            },
+                            "voicemail_duration": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "envelopeObject": {
+                        "id": "envelopeObject",
+                        "properties": {
+                            "cc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "bcc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "reply_to": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "sender": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "from": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "message_id": {
+                                "type": "string"
+                            },
+                            "to": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 552,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Create a new activity for an account",
+            "path": "/hubs/crm/accounts/{id}/activities",
+            "vendorPath": "/activity/{activityType}/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 771,
+                    "resourceId": 552,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "activity",
+                    "vendorName": "activity",
+                    "description": "The activity object The following fields are specific to email type: attachments, bcc, body_html, body_html_quoted, body_preview, body_text, body_text_quoted, cc, envelope, need_smtp_credentials, subject, thread_id. The following fields are specific to call type: duration, phone, remote_phone, source, status, voicemail_duration. The following fields are specific to email and call types: direction. The following fields are specific to call and note types: note.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accountsActivities",
+                    "vendorDataType": "accountsActivities",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 772,
+                    "resourceId": 552,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "activityType",
+                    "vendorName": "activityType",
+                    "description": "The activity type. Can be email, call or note and will default to note. Any other value will result in an error.",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 773,
+                    "resourceId": 552,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "lead_id",
+                    "description": "The account id for which to create an activity.",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accountsActivities",
+                "transform": false,
+                "swagger": {
+                    "attachmentsObject": {
+                        "id": "attachmentsObject",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            },
+                            "filename": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "type": "number"
+                            },
+                            "content_type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "emailObject": {
+                        "id": "emailObject",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "accountsActivities": {
+                        "id": "accountsActivities",
+                        "properties": {
+                            "attachments": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "attachmentsObject"
+                                }
+                            },
+                            "bcc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "body_html": {
+                                "type": "string"
+                            },
+                            "body_html_quoted": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "bodyHtmlQuotedObject"
+                                }
+                            },
+                            "body_preview": {
+                                "type": "string"
+                            },
+                            "body_text": {
+                                "type": "string"
+                            },
+                            "body_text_quoted": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "bodyTextQuotedObject"
+                                }
+                            },
+                            "cc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "direction": {
+                                "type": "string"
+                            },
+                            "duration": {
+                                "type": "number"
+                            },
+                            "envelope": {
+                                "type": "envelopeObject"
+                            },
+                            "lead_id": {
+                                "type": "string"
+                            },
+                            "need_smtp_credentials": {
+                                "type": "boolean"
+                            },
+                            "note": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "remote_phone": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "thread_id": {
+                                "type": "string"
+                            },
+                            "voicemail_duration": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "bodyHtmlQuotedObject": {
+                        "id": "bodyHtmlQuotedObject",
+                        "properties": {
+                            "expand": {
+                                "type": "string"
+                            },
+                            "html": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "bodyTextQuotedObject": {
+                        "id": "bodyTextQuotedObject",
+                        "properties": {
+                            "expand": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "envelopeObject": {
+                        "id": "envelopeObject",
+                        "properties": {
+                            "cc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "bcc": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "reply_to": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "sender": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "from": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            },
+                            "message_id": {
+                                "type": "string"
+                            },
+                            "to": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "emailObject"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 549,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Search notes for an account",
+            "path": "/hubs/crm/accounts/{id}/notes",
+            "vendorPath": "/activity/note/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 765,
+                    "resourceId": 549,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "lead_id",
+                    "description": "The account ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accountsNotesList",
+                "transform": false,
+                "swagger": {
+                    "accountsNotesList": {
+                        "id": "accountsNotesList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "accountsNotesListObject"
+                        }
+                    },
+                    "accountsNotesListObject": {
+                        "id": "accountsNotesListObject",
+                        "properties": {
+                            "note": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "_type": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "lead_id": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 548,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Create a new note for an account",
+            "path": "/hubs/crm/accounts/{id}/notes",
+            "vendorPath": "/activity/note/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 763,
+                    "resourceId": 548,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "lead_id",
+                    "description": "The account id for which to create a note.",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 764,
+                    "resourceId": 548,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "note",
+                    "vendorName": "note",
+                    "description": "The note object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accountsNotes",
+                    "vendorDataType": "accountsNotes",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accountsNotes",
+                "transform": false,
+                "swagger": {
+                    "accountsNotes": {
+                        "id": "accountsNotes",
+                        "properties": {
+                            "note": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "_type": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "lead_id": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 536,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Search for contacts. For searching any particular contact, use where clause supported in accounts object",
+            "path": "/hubs/crm/contacts",
+            "vendorPath": "/contact/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 744,
+                    "resourceId": 536,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "page",
+                    "vendorName": "_skip",
+                    "description": "The page number. When this parameter is omitted, 1 is implied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 745,
+                    "resourceId": 536,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "pageSize",
+                    "vendorName": "_limit",
+                    "description": "The number of results to fetch in a given page with a maximum of 2000. When this parameter is omitted, 200 results are returned.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "contactsList",
+                "transform": false,
+                "swagger": {
+                    "integration_linksGetAllContacts": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integration_linksGetAllContacts",
+                        "x-has-customfields": false
+                    },
+                    "contactsList": {
+                        "items": {
+                            "type": "contactsListObject"
+                        },
+                        "type": "array"
+                    },
+                    "emailsGetAllContact": {
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "bassamanda@yahoo.com",
+                                "x-sub-format": "email"
+                            },
+                            "email_lower": {
+                                "type": "string",
+                                "x-samplevalue": "gob@example.com",
+                                "x-sub-format": "email"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "emailsGetAllContact",
+                        "x-has-customfields": false
+                    },
+                    "contactsListObject": {
+                        "properties": {
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2017-09-22T12:11:14.750000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2017-09-22T12:11:14.750000+00:00"
+                            },
+                            "display_name": {
+                                "type": "string",
+                                "x-samplevalue": "b@c.com"
+                            },
+                            "emails": {
+                                "items": {
+                                    "type": "emailsGetAllContact"
+                                },
+                                "type": "array"
+                            },
+                            "homeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "b@c.com"
+                            },
+                            "homeEmail2": {
+                                "type": "string",
+                                "x-samplevalue": "d@e.com"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true,
+                                "x-samplevalue": "cont_aBck9nkaVnoL4LdIW4YVPe7ex5zSt7Pam5RdNot90Nz"
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "type": "integration_linksGetAllContacts"
+                                },
+                                "type": "array"
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_R4NYiCKOthMSS80xvSGSTpyVFUG8NrHOJRjmL1mRIqE"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "officeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "a@b.com"
+                            },
+                            "officePhone": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_QP6fMXakVzyRCt8SqduUqN9LYZC9ZYk45Z1Gn1yY0nL"
+                            },
+                            "phones": {
+                                "items": {
+                                    "type": "phonesGetAllContacts"
+                                },
+                                "type": "array"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "urls": {
+                                "items": {
+                                    "type": "urlsGetAllContact"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "contactsListObject",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "phonesGetAllContacts": {
+                        "properties": {
+                            "phone": {
+                                "type": "string",
+                                "x-samplevalue": "+16503334444"
+                            },
+                            "phone_formatted": {
+                                "type": "string",
+                                "x-samplevalue": "+1 650-333-4444"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "phonesGetAllContacts",
+                        "x-has-customfields": false
+                    },
+                    "urlsGetAllContact": {
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "url"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "http://cloud-elements.com"
+                            }
+                        },
+                        "title": "urlsGetAllContact",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "Contacts"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 532,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Create a new contact",
+            "path": "/hubs/crm/contacts",
+            "vendorPath": "/contact/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 739,
+                    "resourceId": 532,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "contact",
+                    "vendorName": "contact",
+                    "description": "The contact object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "contacts",
+                    "vendorDataType": "contacts",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "contacts",
+                "transform": false,
+                "swagger": {
+                    "urlsObject": {
+                        "id": "urlsObject",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "emailsObject": {
+                        "id": "emailsObject",
+                        "properties": {
+                            "email": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "phonesObject": {
+                        "id": "phonesObject",
+                        "properties": {
+                            "phone": {
+                                "type": "string"
+                            },
+                            "phone_formatted": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "contacts": {
+                        "id": "contacts",
+                        "properties": {
+                            "created_by": {
+                                "type": "string"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "emails": {
+                                "items": {
+                                    "$ref": "emailsObject"
+                                },
+                                "type": "array"
+                            },
+                            "homeEmail": {
+                                "type": "string"
+                            },
+                            "homePhone": {
+                                "type": "string"
+                            },
+                            "homeUrl": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lead_id": {
+                                "required": true,
+                                "type": "string"
+                            },
+                            "mobilePhone": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "officeEmail": {
+                                "type": "string"
+                            },
+                            "officePhone": {
+                                "type": "string"
+                            },
+                            "officeUrl": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "phones": {
+                                "items": {
+                                    "$ref": "phonesObject"
+                                },
+                                "type": "array"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "updated_by": {
+                                "type": "string"
+                            },
+                            "urls": {
+                                "items": {
+                                    "$ref": "urlsObject"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    }
+                },
+                "requestName": "contacts"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 535,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Delete a contact",
+            "path": "/hubs/crm/contacts/{id}",
+            "vendorPath": "/contact/{id}/",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 743,
+                    "resourceId": 535,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The contact ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 533,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Retrieve a contact",
+            "path": "/hubs/crm/contacts/{id}",
+            "vendorPath": "/contact/{id}/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 740,
+                    "resourceId": 533,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The contact ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "contactsGetById",
+                "transform": false,
+                "swagger": {
+                    "emailsGetByIdContact": {
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "bassamanda@yahoo.com",
+                                "x-sub-format": "email"
+                            },
+                            "email_lower": {
+                                "type": "string",
+                                "x-samplevalue": "gob@example.com",
+                                "x-sub-format": "email"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "emailsGetByIdContact",
+                        "x-has-customfields": false
+                    },
+                    "urlsGetByIdContact": {
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "url"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "http://cloud-elements.com"
+                            }
+                        },
+                        "title": "urlsGetByIdContact",
+                        "x-has-customfields": false
+                    },
+                    "contactsGetById": {
+                        "properties": {
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2017-09-22T12:11:14.750000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2017-09-22T12:11:14.750000+00:00"
+                            },
+                            "display_name": {
+                                "type": "string",
+                                "x-samplevalue": "b@c.com"
+                            },
+                            "emails": {
+                                "items": {
+                                    "type": "emailsGetByIdContact"
+                                },
+                                "type": "array"
+                            },
+                            "homeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "b@c.com"
+                            },
+                            "homeEmail2": {
+                                "type": "string",
+                                "x-samplevalue": "d@e.com"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true,
+                                "x-samplevalue": "cont_aBck9nkaVnoL4LdIW4YVPe7ex5zSt7Pam5RdNot90Nz"
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "type": "integration_linksGetByIdContacts"
+                                },
+                                "type": "array"
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_R4NYiCKOthMSS80xvSGSTpyVFUG8NrHOJRjmL1mRIqE"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "officeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "a@b.com"
+                            },
+                            "officePhone": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_QP6fMXakVzyRCt8SqduUqN9LYZC9ZYk45Z1Gn1yY0nL"
+                            },
+                            "phones": {
+                                "items": {
+                                    "type": "phonesGetByIdContacts"
+                                },
+                                "type": "array"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "urls": {
+                                "items": {
+                                    "type": "urlsGetByIdContact"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "contactsGetById",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Contacts"
+                    },
+                    "integration_linksGetByIdContacts": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "LinkedIn"
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "https://www.linkedin.com/vsearch/p?keywords=Marie%20Williams"
+                            }
+                        },
+                        "title": "integration_linksGetByIdContacts",
+                        "x-has-customfields": false
+                    },
+                    "phonesGetByIdContacts": {
+                        "properties": {
+                            "phone": {
+                                "type": "string",
+                                "x-samplevalue": "+16503334444"
+                            },
+                            "phone_formatted": {
+                                "type": "string",
+                                "x-samplevalue": "+1 650-333-4444"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "office"
+                            }
+                        },
+                        "title": "phonesGetByIdContacts",
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 534,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Update a contact",
+            "path": "/hubs/crm/contacts/{id}",
+            "vendorPath": "/contact/{id}/",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 741,
+                    "resourceId": 534,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "contact",
+                    "vendorName": "contact",
+                    "description": "The contact object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "contacts",
+                    "vendorDataType": "contacts",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 742,
+                    "resourceId": 534,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The contact ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "contacts",
+                "transform": false,
+                "requestName": "contacts"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 546,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Search for opportunities",
+            "path": "/hubs/crm/opportunities",
+            "vendorPath": "/opportunity/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 759,
+                    "resourceId": 546,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "page",
+                    "vendorName": "_skip",
+                    "description": "The page number. When this parameter is omitted, 1 is implied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 760,
+                    "resourceId": 546,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "pageSize",
+                    "vendorName": "_limit",
+                    "description": "The number of results to fetch in a given page with a maximum of 2000. When this parameter is omitted, 200 results are returned.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 761,
+                    "resourceId": 546,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "where",
+                    "vendorName": "query",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for objects where name equals foo, the search expression will be name='foo'. When this parameter is omitted, all objects are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "opportunitiesList",
+                "transform": false,
+                "swagger": {
+                    "Integration_LinksGetOpportunities": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "opportunitiesList": {
+                        "items": {
+                            "$ref": "opportunitiesListObject"
+                        },
+                        "type": "array"
+                    },
+                    "opportunitiesListObject": {
+                        "properties": {
+                            "confidence": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "contact_id": {
+                                "type": "string"
+                            },
+                            "contact_name": {
+                                "type": "string"
+                            },
+                            "created_by": {
+                                "type": "string"
+                            },
+                            "created_by_name": {
+                                "type": "string"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                            },
+                            "date_won": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "$ref": "Integration_LinksGetOpportunities"
+                                },
+                                "type": "array"
+                            },
+                            "lead_id": {
+                                "type": "string"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "note": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string"
+                            },
+                            "status_label": {
+                                "type": "string",
+                                "x-samplevalue": "Active"
+                            },
+                            "status_type": {
+                                "type": "string",
+                                "x-samplevalue": "active"
+                            },
+                            "updated_by": {
+                                "type": "string"
+                            },
+                            "updated_by_name": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "value_currency": {
+                                "type": "string"
+                            },
+                            "value_formatted": {
+                                "type": "string"
+                            },
+                            "value_period": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "opportunitiesList",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Opportunities"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 542,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Create a new opportunity",
+            "path": "/hubs/crm/opportunities",
+            "vendorPath": "/opportunity/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 754,
+                    "resourceId": 542,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "opportunity",
+                    "vendorName": "opportunity",
+                    "description": "The opportunity object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "opportunities",
+                    "vendorDataType": "opportunities",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "opportunities",
+                "transform": false,
+                "swagger": {
+                    "opportunities": {
+                        "id": "opportunities",
+                        "properties": {
+                            "confidence": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "lead_id": {
+                                "required": true,
+                                "type": "string"
+                            },
+                            "lead_name": {
+                                "type": "string"
+                            },
+                            "note": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string"
+                            },
+                            "status_label": {
+                                "type": "string"
+                            },
+                            "status_type": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "value_period": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "opportunities"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 545,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Delete an opportunity",
+            "path": "/hubs/crm/opportunities/{id}",
+            "vendorPath": "/opportunity/{id}/",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 758,
+                    "resourceId": 545,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The opportunity ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 543,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Retrieve an opportunity",
+            "path": "/hubs/crm/opportunities/{id}",
+            "vendorPath": "/opportunity/{id}/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 755,
+                    "resourceId": 543,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The opportunity ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "opportunitiesGetById",
+                "transform": false,
+                "swagger": {
+                    "opportunitiesGetById": {
+                        "properties": {
+                            "confidence": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "contact_id": {
+                                "type": "string"
+                            },
+                            "contact_name": {
+                                "type": "string"
+                            },
+                            "created_by": {
+                                "type": "string"
+                            },
+                            "created_by_name": {
+                                "type": "string"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                            },
+                            "date_won": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "integration_links": {
+                                "items": {
+                                    "$ref": "Integration_LinksGetByIdOpportunities"
+                                },
+                                "type": "array"
+                            },
+                            "lead_id": {
+                                "type": "string"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "note": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "status_id": {
+                                "type": "string"
+                            },
+                            "status_label": {
+                                "type": "string",
+                                "x-samplevalue": "Active"
+                            },
+                            "status_type": {
+                                "type": "string",
+                                "x-samplevalue": "active"
+                            },
+                            "updated_by": {
+                                "type": "string"
+                            },
+                            "updated_by_name": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "value_currency": {
+                                "type": "string"
+                            },
+                            "value_formatted": {
+                                "type": "string"
+                            },
+                            "value_period": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "opportunitiesGetById",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Opportunities"
+                    },
+                    "Integration_LinksGetByIdOpportunities": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 544,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Update an opportunity",
+            "path": "/hubs/crm/opportunities/{id}",
+            "vendorPath": "/opportunity/{id}/",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 756,
+                    "resourceId": 544,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The opportunity ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 757,
+                    "resourceId": 544,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "opportunity",
+                    "vendorName": "opportunity",
+                    "description": "The opportunity object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "opportunities",
+                    "vendorDataType": "opportunities",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "opportunities",
+                "transform": false,
+                "requestName": "opportunities"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 560,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Search for tasks",
+            "path": "/hubs/crm/tasks",
+            "vendorPath": "/task/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 787,
+                    "resourceId": 560,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "page",
+                    "vendorName": "_skip",
+                    "description": "The page number. When this parameter is omitted, 1 is implied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 788,
+                    "resourceId": 560,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "pageSize",
+                    "vendorName": "_limit",
+                    "description": "The number of results to fetch in a given page with a maximum of 2000. When this parameter is omitted, 200 results are returned.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "tasksList",
+                "transform": false,
+                "swagger": {
+                    "tasksListObject": {
+                        "properties": {
+                            "_type": {
+                                "type": "string",
+                                "x-samplevalue": "lead"
+                            },
+                            "assigned_to": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "assigned_to_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "contact_id": {
+                                "type": "string"
+                            },
+                            "contact_name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "created_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "date": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2013-02-06"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2018-05-29T18:53:38.067000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2018-05-29T18:53:39.607000+00:00"
+                            },
+                            "due_date": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2013-02-06"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true,
+                                "x-samplevalue": "task_pf6e4Y42UKoJm7zwIzsn7QcdVemejyQ1LmepcL8acUY"
+                            },
+                            "is_complete": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "is_dateless": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_dXeb6ZAQ5VKrWltxiiEFxRjrsRMaXHQtNNjM8qKq4Vp"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-samplevalue": "mr. churros"
+                            },
+                            "object_id": {
+                                "type": "string"
+                            },
+                            "object_type": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_QP6fMXakVzyRCt8SqduUqN9LYZC9ZYk45Z1Gn1yY0nL"
+                            },
+                            "text": {
+                                "type": "string",
+                                "x-samplevalue": "Connect with Account Manager"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "updated_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "view": {
+                                "type": "string",
+                                "x-samplevalue": "inbox"
+                            }
+                        },
+                        "title": "tasksListObject",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Tasks"
+                    },
+                    "tasksList": {
+                        "items": {
+                            "type": "tasksListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 556,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Create a new task",
+            "path": "/hubs/crm/tasks",
+            "vendorPath": "/task/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 782,
+                    "resourceId": 556,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "task",
+                    "vendorName": "task",
+                    "description": "The task object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "tasks",
+                    "vendorDataType": "tasks",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "tasks",
+                "transform": false,
+                "swagger": {
+                    "tasks": {
+                        "id": "tasks",
+                        "properties": {
+                            "_type": {
+                                "type": "string"
+                            },
+                            "assigned_to": {
+                                "type": "string"
+                            },
+                            "assigned_to_name": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "due_date": {
+                                "type": "string"
+                            },
+                            "is_complete": {
+                                "type": "boolean"
+                            },
+                            "lead_id": {
+                                "required": true,
+                                "type": "string"
+                            },
+                            "lead_name": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "tasks"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 559,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Delete a task",
+            "path": "/hubs/crm/tasks/{id}",
+            "vendorPath": "/task/{id}/",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 786,
+                    "resourceId": 559,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The task ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 557,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Retrieve a task",
+            "path": "/hubs/crm/tasks/{id}",
+            "vendorPath": "/task/{id}/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 783,
+                    "resourceId": 557,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The task ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "tasksGetById",
+                "transform": false,
+                "swagger": {
+                    "tasksGetById": {
+                        "properties": {
+                            "_type": {
+                                "type": "string",
+                                "x-samplevalue": "lead"
+                            },
+                            "assigned_to": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "assigned_to_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "contact_id": {
+                                "type": "string"
+                            },
+                            "contact_name": {
+                                "type": "string",
+                                "x-name": true
+                            },
+                            "created_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "created_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "date": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2013-02-06"
+                            },
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2018-05-29T18:53:38.067000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2018-05-29T18:53:39.607000+00:00"
+                            },
+                            "due_date": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2013-02-06"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true,
+                                "x-samplevalue": "task_pf6e4Y42UKoJm7zwIzsn7QcdVemejyQ1LmepcL8acUY"
+                            },
+                            "is_complete": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "is_dateless": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "lead_id": {
+                                "type": "string",
+                                "x-samplevalue": "lead_dXeb6ZAQ5VKrWltxiiEFxRjrsRMaXHQtNNjM8qKq4Vp"
+                            },
+                            "lead_name": {
+                                "type": "string",
+                                "x-samplevalue": "mr. churros"
+                            },
+                            "object_id": {
+                                "type": "string"
+                            },
+                            "object_type": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "type": "string",
+                                "x-samplevalue": "orga_QP6fMXakVzyRCt8SqduUqN9LYZC9ZYk45Z1Gn1yY0nL"
+                            },
+                            "text": {
+                                "type": "string",
+                                "x-samplevalue": "Connect with Account Manager"
+                            },
+                            "updated_by": {
+                                "type": "string",
+                                "x-samplevalue": "user_IbunStQswBBqnfZZ3gI3875VuWwwkFuk3cjQ69jb5vj"
+                            },
+                            "updated_by_name": {
+                                "type": "string",
+                                "x-samplevalue": "Cloud Elements"
+                            },
+                            "view": {
+                                "type": "string",
+                                "x-samplevalue": "inbox"
+                            }
+                        },
+                        "title": "tasksGetById",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Tasks"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 558,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Update a task",
+            "path": "/hubs/crm/tasks/{id}",
+            "vendorPath": "/task/{id}/",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 784,
+                    "resourceId": 558,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "task",
+                    "vendorName": "task",
+                    "description": "The task object",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "tasks",
+                    "vendorDataType": "tasks",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 785,
+                    "resourceId": 558,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The task ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "tasks",
+                "transform": false,
+                "requestName": "tasks"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 547,
+            "createdDate": "2015-05-01T20:21:32Z",
+            "description": "Retrieve a user",
+            "path": "/hubs/crm/users/{id}",
+            "vendorPath": "/user/{id}/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 762,
+                    "resourceId": 547,
+                    "createdDate": "2015-05-01T20:21:32Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The user ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "usersGetById",
+                "transform": false,
+                "swagger": {
+                    "usersGetById": {
+                        "properties": {
+                            "date_created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2012-08-29T00:33:22.720000+00:00"
+                            },
+                            "date_updated": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-samplevalue": "2013-05-08T01:57:15.204000+00:00"
+                            },
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "stefan@close.io",
+                                "x-sub-format": "email"
+                            },
+                            "first_name": {
+                                "type": "string",
+                                "x-name": true,
+                                "x-samplevalue": "Stefan"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true,
+                                "x-samplevalue": "user_912jAIAEWR0b3KDozVFqXSRbt2uBjw3QfeYa7ZaGTwI"
+                            },
+                            "image": {
+                                "type": "string",
+                                "x-samplevalue": "https://secure.gravatar.com/avatar/a4bec4594864f1896c4750328b1d7470"
+                            },
+                            "last_name": {
+                                "type": "string",
+                                "x-samplevalue": "Wojcik"
+                            },
+                            "organizations": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "orga_aksjdflkjkoGVnNOyxiEY58eTGQmFNG3LPlEVQ4V7Nk",
+                                    "orga_QH587V0alskjdomnIWUEfaslsalkjfT7U5XGYRtTrLq"
+                                ]
+                            }
+                        },
+                        "title": "usersGetById",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Users"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "basic"
+    },
+    "hooks": [
+        {
+            "id": 462,
+            "elementId": 146,
+            "mimeType": "application/javascript",
+            "type": "event",
+            "body": "var isPolling = false;\nif (events.eventId && events.objectType) {\n\tvar isPolling = true;\n}\n\nif (isPolling) {\n\tvar providerEvents = [];\n\tvar objectType = events.objectType;\n\tvar objects = Java.from(events[objectType]);\n\tobjects.forEach(function(object) {\n\t\tvar providerEvent = {};\n\t\tvar ISODateTimeFormat = Java.type('org.joda.time.format.ISODateTimeFormat');\n\t\tvar addTime = new Date(ISODateTimeFormat.dateTime().parseDateTime(object.date_created).toString());\n\t\tvar updateTime = new Date(ISODateTimeFormat.dateTime().parseDateTime(object.date_updated).toString());\n\t\tproviderEvent.event_object_type = objectType;\n\t\tproviderEvent.event_date = updateTime.toISOString();\n\t\tproviderEvent.event_object_id = object.id;\n\t\tproviderEvent.event_type = addTime - updateTime < 0 ? 'UPDATED' : 'CREATED';\n\t\tproviderEvents.push(providerEvent);\n\t});\n\treturn {\n\t\t\"events\": providerEvents\n\t};\n}\n\nvar eventObject = {};\nvar type = events.event;\neventObject.event_date = events.data.date_updated;\neventObject.event_object_id = events.data.id;\neventObject.event_object_type = 'leads';\neventObject.event_type = determineEventType(type);\n\nif (events.data.source_id) {\n\teventObject.event_old_path = events.data.source_id;\n\teventObject.event_object_id = events.data.source_id;\n}\n\nif (events.data.destination_id) {\n\teventObject.event_new_path = events.data.destination_id;\n}\n\nfunction determineEventType(eventTypeString) {\n\tswitch (eventTypeString) {\n\t\tcase 'update':\n\t\t\treturn 'UPDATED';\n\t\tcase 'create':\n\t\t\treturn 'CREATED';\n\t\tcase 'delete':\n\t\t\treturn 'DELETED';\n\t\tcase 'merge':\n\t\t\treturn 'UPDATED';\n\t\tdefault:\n\t\t\treturn 'UNKNOWN';\n\t}\n}\n\nreturn {\n\t\"events\": [eventObject]\n}",
+            "isLegacy": true
+        }
+    ],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

@@ -1,0 +1,2901 @@
+{
+    "id": 600,
+    "name": "Zendesk Sell",
+    "hookName": "Base",
+    "key": "base",
+    "description": "Add a Zendesk Sell CRM Instance to connect your existing Zendesk Sell account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements. You will need your Zendesk Sell account information to add an instance.",
+    "image": "elements/provider_zendesksell.png",
+    "logo": "zendesksell",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 6149,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "Base OAuth API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 253984,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 57824,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6159,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Base Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6160,
+            "name": "OAuth Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "Base OAuth Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6161,
+            "name": "OAuth basic header",
+            "key": "oauth.basic.header",
+            "description": "Base OAuth basic header",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6163,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Base Pagination Type",
+            "defaultValue": "page",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 57818,
+            "name": "Bulk Download Format",
+            "key": "bulk.query.download_format",
+            "description": "Bulk Download Format",
+            "defaultValue": "JSON",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 57819,
+            "name": "Bulk Add Metadata",
+            "key": "bulk.add_metadata",
+            "description": "Bulk Add Metadata",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 57820,
+            "name": "Bulk Relations",
+            "key": "bulk.relations",
+            "description": "Bulk Relations",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 57822,
+            "name": "Bulk query FieldName",
+            "key": "bulk.query.field_name",
+            "description": "Bulk query FieldName",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 57821,
+            "name": "Bulk query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 57823,
+            "name": "Bulk query Created Field Name",
+            "key": "bulk.attribute.created_time",
+            "description": "Bulk Query Created Field Name",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6153,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "Base OAuth Secret Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 6150,
+            "name": "OAuth Token URL",
+            "key": "oauth.token.url",
+            "description": "Base OAuth Token URL",
+            "defaultValue": "https://api.getbase.com/oauth2/token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 6151,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Base Base URL",
+            "defaultValue": "https://api.getbase.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6152,
+            "name": "OAuth Authorization URL",
+            "key": "oauth.authorization.url",
+            "description": "Base OAuth Authorization URL",
+            "defaultValue": "https://api.getbase.com/oauth2/authorize",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 6154,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "Base OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6155,
+            "name": "OAuth Refresh Interval (s)",
+            "key": "oauth.user.refresh_interval",
+            "description": "Base OAuth Refresh Interval (s)",
+            "defaultValue": "3600",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6156,
+            "name": "OAuth Refresh Token",
+            "key": "oauth.user.refresh_token",
+            "description": "Base OAuth Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6148,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "Base OAuth Callback URL",
+            "defaultValue": "https://snapshot.cloud-elements.com/elements/jsp/home.jsp",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 52539,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159906,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256110,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256361,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6157,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "Base Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 84424,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6158,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Base Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9740,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6162,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Base Vendor Event Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 3727,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find accounts in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all accounts whose name contains the word smith, the search expression parameter will be where=name=smith. If a search expression is not provided, then the first 200 records will be returned. Only returns details about your account.",
+            "path": "/hubs/crm/accounts",
+            "vendorPath": "/v2/accounts/self",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "accounts",
+                "transform": false,
+                "swagger": {
+                    "accounts": {
+                        "id": "accounts",
+                        "properties": {
+                            "time_format": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "timezone": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3728,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find activities in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all activities whose name contains the word the search expression parameter will be where=name=jones. If a search expression is not provided, then the first 200 records will be returned. ",
+            "path": "/hubs/crm/activities",
+            "vendorPath": "/v2/tasks",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3654,
+                    "resourceId": 3728,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3655,
+                    "resourceId": 3728,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3656,
+                    "resourceId": 3728,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for activities last modified on or after Jan 15, 2014, the search expression will be where: [lastModifiedDate=2014-01-15T00:00:00.000Z]. When this parameter is omitted, all activities are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "activitiesList",
+                "transform": false,
+                "swagger": {
+                    "activitiesList": {
+                        "id": "activitiesList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "activitiesListObject"
+                        }
+                    },
+                    "activitiesListObject": {
+                        "id": "activitiesListObject",
+                        "properties": {
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "due_date": {
+                                "type": "unknown"
+                            },
+                            "resource_type": {
+                                "type": "unknown"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "completed": {
+                                "type": "boolean"
+                            },
+                            "remind_at": {
+                                "type": "unknown"
+                            },
+                            "content": {
+                                "type": "string"
+                            },
+                            "completed_at": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "overdue": {
+                                "type": "boolean"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "resource_id": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3721,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Create a new activity in the CRM system. Activity creation will flow through Cloud Elements to your CRM service. With the exception of the [id] field, the required fields indicated in the activity model are those required to create a new activity. Required fields are the strings, [due_date] and [content].",
+            "path": "/hubs/crm/activities",
+            "vendorPath": "/v2/tasks",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 3647,
+                    "resourceId": 3721,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The activity object to be created. With the exception of the [id] field, the required fields indicated in the activity model are those required to create a new activity. Required fields are the strings, [due_date] and [content].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "activities",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3724,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Delete an activity associated with a given ID from the CRM system.  Specifying an activity associated with a given ID that does not exist will result in an error message.",
+            "path": "/hubs/crm/activities/{id}",
+            "vendorPath": "/v2/tasks/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 3651,
+                    "resourceId": 3724,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the activity to delete from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3730,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve an activity associated with a given ID from the CRM system. Specifying an activity with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/activities/{id}",
+            "vendorPath": "/v2/tasks/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3658,
+                    "resourceId": 3730,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the activity to retrieve from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "activities",
+                "transform": false,
+                "swagger": {
+                    "activities": {
+                        "id": "activities",
+                        "properties": {
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "due_date": {
+                                "type": "string"
+                            },
+                            "resource_type": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "completed": {
+                                "type": "boolean"
+                            },
+                            "remind_at": {
+                                "type": "unknown"
+                            },
+                            "content": {
+                                "type": "string"
+                            },
+                            "completed_at": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "overdue": {
+                                "type": "boolean"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "resource_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3734,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Update the activity associated with the given ID in the CRM system. The update API uses the PATCH HTTP verb, so only those fields provided in the activity object will be updated, and those fields not provided will be left alone. Updating an activity with a specified ID that does not exist will result in an error response. Reads as a PUT",
+            "path": "/hubs/crm/activities/{id}",
+            "vendorPath": "/v2/tasks/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 3665,
+                    "resourceId": 3734,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the activity to update in the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3664,
+                    "resourceId": 3734,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The activity object, with those fields that are to be updated. Required fields are the strings, [due_date] and [content].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "activities",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3735,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find contacts in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all contacts whose name contains the word the search expression parameter will be where=name=jones. If a search expression is not provided, then the first 200 records will be returned. ",
+            "path": "/hubs/crm/contacts",
+            "vendorPath": "/v2/contacts",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3666,
+                    "resourceId": 3735,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3667,
+                    "resourceId": 3735,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3668,
+                    "resourceId": 3735,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for accounts last modified on or after Jan 15, 2014, the search expression will be where: [lastModifiedDate=2014-01-15T00:00:00.000Z]. When this parameter is omitted, all accounts are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "contactsList",
+                "transform": false,
+                "swagger": {
+                    "contactsList": {
+                        "id": "contactsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "contactsListObject"
+                        }
+                    },
+                    "address": {
+                        "id": "address",
+                        "properties": {
+                            "country": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "postal_code": {
+                                "type": "unknown"
+                            },
+                            "line1": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "custom_fields": {
+                        "id": "custom_fields",
+                        "properties": {}
+                    },
+                    "contactsListObject": {
+                        "id": "contactsListObject",
+                        "properties": {
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "industry": {
+                                "type": "unknown"
+                            },
+                            "linkedin": {
+                                "type": "unknown"
+                            },
+                            "contact_id": {
+                                "type": "unknown"
+                            },
+                            "title": {
+                                "type": "unknown"
+                            },
+                            "skype": {
+                                "type": "unknown"
+                            },
+                            "twitter": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "fax": {
+                                "type": "unknown"
+                            },
+                            "first_name": {
+                                "type": "unknown"
+                            },
+                            "email": {
+                                "type": "unknown"
+                            },
+                            "prospect_status": {
+                                "type": "string"
+                            },
+                            "website": {
+                                "type": "unknown"
+                            },
+                            "address": {
+                                "type": "address"
+                            },
+                            "custom_fields": {
+                                "type": "custom_fields"
+                            },
+                            "facebook": {
+                                "type": "unknown"
+                            },
+                            "mobile": {
+                                "type": "unknown"
+                            },
+                            "last_name": {
+                                "type": "unknown"
+                            },
+                            "is_organization": {
+                                "type": "boolean"
+                            },
+                            "phone": {
+                                "type": "unknown"
+                            },
+                            "customer_status": {
+                                "type": "string"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3736,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Create a new contact in the CRM system. Contact creation will flow through Cloud Elements to your CRM service. With the exception of the [id] field, the required fields indicated in the contact model are those required to create a new contact. Required fields are the strings, [name, first_name, and last_name].",
+            "path": "/hubs/crm/contacts",
+            "vendorPath": "/v2/contacts",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 3669,
+                    "resourceId": 3736,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Contact object to be created. With the exception of the [id] field, the required fields indicated in the contact model are those required to create a new contact. Required fields are the strings, [name, first_name, and last_name].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "contacts",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3737,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Delete a contact associated with a given ID from your CRM system. Specifying a contact associated with a given ID that does not exist will result in an error message. .",
+            "path": "/hubs/crm/contacts/{id}",
+            "vendorPath": "/v2/contacts/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 3670,
+                    "resourceId": 3737,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the contact to delete from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3738,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve a contact associated with a given ID from the CRM system. Specifying a contact with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/contacts/{id}",
+            "vendorPath": "/v2/contacts/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3671,
+                    "resourceId": 3738,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the contact to retrieve from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "contacts",
+                "transform": false,
+                "swagger": {
+                    "address": {
+                        "id": "address",
+                        "properties": {
+                            "country": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "postal_code": {
+                                "type": "unknown"
+                            },
+                            "line1": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "custom_fields": {
+                        "id": "custom_fields",
+                        "properties": {}
+                    },
+                    "contacts": {
+                        "id": "contacts",
+                        "properties": {
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "industry": {
+                                "type": "unknown"
+                            },
+                            "linkedin": {
+                                "type": "unknown"
+                            },
+                            "contact_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "title": {
+                                "type": "unknown"
+                            },
+                            "skype": {
+                                "type": "unknown"
+                            },
+                            "twitter": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "fax": {
+                                "type": "unknown"
+                            },
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "unknown"
+                            },
+                            "prospect_status": {
+                                "type": "string"
+                            },
+                            "website": {
+                                "type": "unknown"
+                            },
+                            "address": {
+                                "type": "address"
+                            },
+                            "custom_fields": {
+                                "type": "custom_fields"
+                            },
+                            "facebook": {
+                                "type": "unknown"
+                            },
+                            "mobile": {
+                                "type": "unknown"
+                            },
+                            "last_name": {
+                                "type": "string"
+                            },
+                            "is_organization": {
+                                "type": "boolean"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "customer_status": {
+                                "type": "string"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3739,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Update the contact associated with the given ID in the CRM system. The update API uses the PATCH HTTP verb, so only those fields provided in the contact object will be updated, and those fields not provided will be left alone. Updating a contact with a specified ID that does not exist will result in an error response. Reads as a PUT",
+            "path": "/hubs/crm/contacts/{id}",
+            "vendorPath": "/v2/contacts/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 3672,
+                    "resourceId": 3739,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The contact object, with those fields that are to be updated. Required fields are the strings, [name, first_name, and last_name].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "contacts",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3673,
+                    "resourceId": 3739,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the contact to update in the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3740,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve a note associated with a given contact ID from the CRM system. Specifying a note with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/contacts/{id}/notes",
+            "vendorPath": "/v2/notes",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3674,
+                    "resourceId": 3740,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "resource_id",
+                    "description": "ID of the contact.",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3719,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find leads in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all leads whose name contains the word the search expression parameter will be where=name=jones. If a search expression is not provided, then the first 200 records will be returned. ",
+            "path": "/hubs/crm/leads",
+            "vendorPath": "/v2/leads",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3641,
+                    "resourceId": 3719,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3642,
+                    "resourceId": 3719,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3643,
+                    "resourceId": 3719,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for accounts last modified on or after Jan 15, 2014, the search expression will be where: [lastModifiedDate=2014-01-15T00:00:00.000Z]. When this parameter is omitted, all accounts are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "leadsList",
+                "transform": false,
+                "swagger": {
+                    "leadsListObject": {
+                        "id": "leadsListObject",
+                        "properties": {
+                            "website": {
+                                "type": "unknown"
+                            },
+                            "address": {
+                                "type": "address"
+                            },
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "custom_fields": {
+                                "type": "custom_fields"
+                            },
+                            "facebook": {
+                                "type": "unknown"
+                            },
+                            "mobile": {
+                                "type": "unknown"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "unknown"
+                            },
+                            "last_name": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "unknown"
+                            },
+                            "linkedin": {
+                                "type": "unknown"
+                            },
+                            "organization_name": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "unknown"
+                            },
+                            "skype": {
+                                "type": "unknown"
+                            },
+                            "twitter": {
+                                "type": "unknown"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "unknown"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "source_id": {
+                                "type": "unknown"
+                            },
+                            "fax": {
+                                "type": "unknown"
+                            },
+                            "first_name": {
+                                "type": "unknown"
+                            },
+                            "email": {
+                                "type": "unknown"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "address": {
+                        "id": "address",
+                        "properties": {
+                            "country": {
+                                "type": "unknown"
+                            },
+                            "city": {
+                                "type": "unknown"
+                            },
+                            "state": {
+                                "type": "unknown"
+                            },
+                            "postal_code": {
+                                "type": "unknown"
+                            },
+                            "line1": {
+                                "type": "unknown"
+                            }
+                        }
+                    },
+                    "custom_fields": {
+                        "id": "custom_fields",
+                        "properties": {}
+                    },
+                    "leadsList": {
+                        "id": "leadsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "leadsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3732,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Create a new lead in the CRM system. Lead creation will flow through Cloud Elements to your CRM service. With the exception of the [id] field, the required fields indicated in the lead model are those required to create a new lead. Required fields are the strings, [last_name] and [organization_name].",
+            "path": "/hubs/crm/leads",
+            "vendorPath": "/v2/leads",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 3662,
+                    "resourceId": 3732,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The lead object to be created. With the exception of the [id] field, the required fields indicated in the lead model are those required to create a new lead. Required fields are the strings, [last_name] and [organization_name].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "leads",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3722,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Delete a lead associated with a given ID from the CRM system.  Specifying a lead associated with a given ID that does not exist will result in an error message.",
+            "path": "/hubs/crm/leads/{id}",
+            "vendorPath": "/v2/leads/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 3648,
+                    "resourceId": 3722,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the lead to delete from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3714,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve a lead associated with a given ID from the CRM system. Specifying a lead with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/leads/{id}",
+            "vendorPath": "/v2/leads/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3631,
+                    "resourceId": 3714,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the lead to retrieve from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "leads",
+                "transform": false,
+                "swagger": {
+                    "address": {
+                        "id": "address",
+                        "properties": {
+                            "country": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "postal_code": {
+                                "type": "string"
+                            },
+                            "line1": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "leads": {
+                        "id": "leads",
+                        "properties": {
+                            "website": {
+                                "type": "string"
+                            },
+                            "address": {
+                                "type": "address"
+                            },
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "custom_fields": {
+                                "type": "custom_fields"
+                            },
+                            "facebook": {
+                                "type": "string"
+                            },
+                            "mobile": {
+                                "type": "string"
+                            },
+                            "last_name": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "linkedin": {
+                                "type": "string"
+                            },
+                            "organization_name": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "skype": {
+                                "type": "string"
+                            },
+                            "twitter": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "source_id": {
+                                "type": "unknown"
+                            },
+                            "fax": {
+                                "type": "string"
+                            },
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "custom_fields": {
+                        "id": "custom_fields",
+                        "properties": {}
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3710,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Update a lead associated with the given ID in the CRM system. The update API uses the PATCH HTTP verb, so only those fields provided in the lead object will be updated, and those fields not provided will be left alone. Updating a lead with a specified ID that does not exist will result in an error response. Reads as a PUT",
+            "path": "/hubs/crm/leads/{id}",
+            "vendorPath": "/v2/leads/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 3626,
+                    "resourceId": 3710,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The lead object, with those fields that are to be updated. Required fields are the strings, [last_name] and [organization_name].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "leads",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3627,
+                    "resourceId": 3710,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the lead to update in the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3715,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve a note associated with a given lead ID from the CRM system. Specifying a note with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/leads/{id}/notes",
+            "vendorPath": "/v2/notes",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3632,
+                    "resourceId": 3715,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "resource_id",
+                    "description": "ID of the lead in the CRM system.",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3633,
+                    "resourceId": 3715,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "lead",
+                    "vendorName": "resource_type",
+                    "description": "Static value declaring lead to be the resource_type.",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3720,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find notes in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all notes whose name contains the word the search expression parameter will be where=name=jones. If a search expression is not provided, then the first 200 records will be returned. ",
+            "path": "/hubs/crm/notes",
+            "vendorPath": "/v2/notes",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3644,
+                    "resourceId": 3720,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3645,
+                    "resourceId": 3720,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3646,
+                    "resourceId": 3720,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for notes last modified on or after Jan 15, 2014, the search expression will be where: [lastModifiedDate=2014-01-15T00:00:00.000Z]. When this parameter is omitted, all notes are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "notesList",
+                "transform": false,
+                "swagger": {
+                    "notesList": {
+                        "id": "notesList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "notesListObject"
+                        }
+                    },
+                    "notesListObject": {
+                        "id": "notesListObject",
+                        "properties": {
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "resource_type": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "resource_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "content": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3711,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Create a new note in the CRM system. Note creation will flow through Cloud Elements to your CRM service. With the exception of the [id] field, the required fields indicated in the note model are those required to create a new note. Required fields are the strings, [resource_type], [content], and the number, [resource_id].",
+            "path": "/hubs/crm/notes",
+            "vendorPath": "/v2/notes",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 3628,
+                    "resourceId": 3711,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The note object to be created. With the exception of the [id] field, the required fields indicated in the note model are those required to create a new note. Required fields are the strings, [resource_type], [content], and the number, [resource_id].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "notes",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3726,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Delete a note associated with a given ID from the CRM system.  Specifying a note associated with a given ID that does not exist will result in an error message.",
+            "path": "/hubs/crm/notes/{id}",
+            "vendorPath": "/v2/notes/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 3653,
+                    "resourceId": 3726,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the note in the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3713,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve a note associated with a given ID from the CRM system. Specifying a note with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/notes/{id}",
+            "vendorPath": "/v2/notes/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3630,
+                    "resourceId": 3713,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "ID of note in the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "notes",
+                "transform": false,
+                "swagger": {
+                    "notes": {
+                        "id": "notes",
+                        "properties": {
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "resource_type": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "resource_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "content": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3723,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Update the note associated with the given ID in the CRM system. The update API uses the PATCH HTTP verb, so only those fields provided in the note object will be updated, and those fields not provided will be left alone. Updating an note with a specified ID that does not exist will result in an error response. Reads as a PUT",
+            "path": "/hubs/crm/notes/{id}",
+            "vendorPath": "/v2/notes/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 3650,
+                    "resourceId": 3723,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "ID of note in the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3649,
+                    "resourceId": 3723,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The note object, with those fields that are to be updated. Required fields are the strings, [resource_type], [content], and the number, [resource_id].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "notes",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3709,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find opportunities in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all opportunities whose name contains the the search expression parameter will be where=name=smith. If a search expression is not provided, then the first 200 records will be returned. ",
+            "path": "/hubs/crm/opportunities",
+            "vendorPath": "/v2/deals",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3623,
+                    "resourceId": 3709,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3624,
+                    "resourceId": 3709,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3625,
+                    "resourceId": 3709,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for opportunities last modified on or after Jan 15, 2014, the search expression will be where: [lastModifiedDate=2014-01-15T00:00:00.000Z]. When this parameter is omitted, all opportunities are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "opportunitiesList",
+                "transform": false,
+                "swagger": {
+                    "custom_fields": {
+                        "id": "custom_fields",
+                        "properties": {}
+                    },
+                    "opportunitiesList": {
+                        "id": "opportunitiesList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "opportunitiesListObject"
+                        }
+                    },
+                    "opportunitiesListObject": {
+                        "id": "opportunitiesListObject",
+                        "properties": {
+                            "custom_fields": {
+                                "type": "custom_fields"
+                            },
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "stage_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "hot": {
+                                "type": "boolean"
+                            },
+                            "contact_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "estimated_close_date": {
+                                "type": "unknown"
+                            },
+                            "dropbox_email": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "last_stage_change_by_id": {
+                                "type": "unknown"
+                            },
+                            "last_activity_at": {
+                                "type": "string"
+                            },
+                            "organization_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "last_stage_change_at": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "source_id": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "loss_reason_id": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3712,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Create a new opportunity in the CRM system. Opportunity creation will flow through Cloud Elements to your CRM service. With the exception of the [id] field, the required fields indicated in the opportunity model are those required to create a new opportunity. Required fields is the string, [name] and the number, [contact_id].",
+            "path": "/hubs/crm/opportunities",
+            "vendorPath": "/v2/deals",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 3629,
+                    "resourceId": 3712,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The opportunity object to be created. With the exception of the [id] field, the required fields indicated in the opportunity model are those required to create a new opportunity. Required fields is the string, [name] and the number, [contact_id].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "opportunities",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3725,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Delete an opportunity associated with a given ID from the CRM system.  Specifying an opportunity associated with a given ID that does not exist will result in an error message.",
+            "path": "/hubs/crm/opportunities/{id}",
+            "vendorPath": "/v2/deals/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 3652,
+                    "resourceId": 3725,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the opportunity to delete from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3708,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve an opportunity associated with a given ID from the CRM system. Specifying an opportunity with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/opportunities/{id}",
+            "vendorPath": "/v2/deals/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3622,
+                    "resourceId": 3708,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the opportunity to retrieve from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "opportunities",
+                "transform": false,
+                "swagger": {
+                    "custom_fields": {
+                        "id": "custom_fields",
+                        "properties": {}
+                    },
+                    "opportunities": {
+                        "id": "opportunities",
+                        "properties": {
+                            "stage_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "owner_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "custom_fields": {
+                                "type": "custom_fields"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "contact_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "hot": {
+                                "type": "boolean"
+                            },
+                            "estimated_close_date": {
+                                "type": "unknown"
+                            },
+                            "dropbox_email": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "last_stage_change_by_id": {
+                                "type": "unknown"
+                            },
+                            "organization_id": {
+                                "type": "unknown"
+                            },
+                            "last_activity_at": {
+                                "type": "string"
+                            },
+                            "last_stage_change_at": {
+                                "type": "string"
+                            },
+                            "creator_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "source_id": {
+                                "type": "unknown"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "loss_reason_id": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3716,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Update the opportunity associated with the given ID in the CRM system. The update API uses the PATCH HTTP verb, so only those fields provided in the opportunity object will be updated, and those fields not provided will be left alone. Updating an opportunity with a specified ID that does not exist will result in an error response. Reads as a PUT",
+            "path": "/hubs/crm/opportunities/{id}",
+            "vendorPath": "/v2/deals/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 3634,
+                    "resourceId": 3716,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The opportunity object, with those fields that are to be updated. Required fields is the string, [name] and the number, [contact_id].",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "opportunities",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3635,
+                    "resourceId": 3716,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the opportunity to update in the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "data|data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3718,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve a note associated with a given opportunity/deal ID from the CRM system. Specifying a note with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/opportunities/{id}/notes",
+            "vendorPath": "/v2/notes",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3639,
+                    "resourceId": 3718,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "deal",
+                    "vendorName": "resource_type",
+                    "description": "Static value to be declared for the resource_type.",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3640,
+                    "resourceId": 3718,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "resource_id",
+                    "description": "ID of the opportunity/deal. ",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "number",
+                    "vendorDataType": "number",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3733,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve an opportunity associated with a stage that has been name=Won in the CRM system. ",
+            "path": "/hubs/crm/opportunities/stages",
+            "vendorPath": "/v2/stages",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3663,
+                    "resourceId": 3733,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "won",
+                    "vendorName": "name",
+                    "description": "Static value for name in the stage.",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3731,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find stages in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all stages whose name contains the word the search expression parameter will be where=name=jones. If a search expression is not provided, then the first 200 records will be returned. ",
+            "path": "/hubs/crm/stages",
+            "vendorPath": "/v2/stages",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3659,
+                    "resourceId": 3731,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3660,
+                    "resourceId": 3731,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3661,
+                    "resourceId": 3731,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for stages last modified on or after Jan 15, 2014, the search expression will be where: [lastModifiedDate=2014-01-15T00:00:00.000Z]. When this parameter is omitted, all stages are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stagesList",
+                "transform": false,
+                "swagger": {
+                    "stagesList": {
+                        "id": "stagesList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "stagesListObject"
+                        }
+                    },
+                    "stagesListObject": {
+                        "id": "stagesListObject",
+                        "properties": {
+                            "likelihood": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "pipeline_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "active": {
+                                "type": "boolean"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "position": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "category": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3717,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Find users in the CRM system, using the provided CEQL search expression. The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. For example, to search for all users whose name contains the word smith, the search expression parameter will be where=name=smith. If a search expression is not provided, then the first 200 records will be returned. ",
+            "path": "/hubs/crm/users",
+            "vendorPath": "/v2/users",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3636,
+                    "resourceId": 3717,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3637,
+                    "resourceId": 3717,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "pageSize",
+                    "vendorName": "per_page",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "long",
+                    "vendorDataType": "long",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3638,
+                    "resourceId": 3717,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for users last modified on or after Jan 15, 2014, the search expression will be where: [lastModifiedDate=2014-01-15T00:00:00.000Z]. When this parameter is omitted, all users are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "usersList",
+                "transform": false,
+                "swagger": {
+                    "usersList": {
+                        "id": "usersList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "usersListObject"
+                        }
+                    },
+                    "usersListObject": {
+                        "id": "usersListObject",
+                        "properties": {
+                            "role": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "confirmed": {
+                                "type": "boolean"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3729,
+            "createdDate": "2015-09-25T17:40:10Z",
+            "description": "Retrieve a user associated with a given ID from the CRM system. Specifying a user with a specified ID that does not exist will result in an error response.",
+            "path": "/hubs/crm/users/{id}",
+            "vendorPath": "/v2/users/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3657,
+                    "resourceId": 3729,
+                    "createdDate": "2015-09-25T17:40:10Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the user to retrieve from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "users",
+                "transform": false,
+                "swagger": {
+                    "users": {
+                        "id": "users",
+                        "properties": {
+                            "role": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "confirmed": {
+                                "type": "boolean"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "data",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

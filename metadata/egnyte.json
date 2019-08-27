@@ -1,0 +1,3995 @@
+{
+    "id": 13062,
+    "name": "Egnyte",
+    "hookName": "Egnyte",
+    "key": "egnyte",
+    "description": "Add an Egnyte Instance to connect your existing Egnyte account to the Cloud Storage and Documents Hub, allowing you to manage files and folders. You will need your Egnyte account information to add an instance.",
+    "image": "elements/provider_egnyte.png",
+    "logo": "egnyte",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 94980,
+            "name": "Last Event Id",
+            "key": "last_event_id",
+            "description": "The last event id retrieved",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94994,
+            "name": "The Egnyte Subdomain",
+            "key": "subdomain",
+            "description": "Subdomain of your company, ex: https://abc.egnyte.com, the subdomain will be abc",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 94982,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Egnyte Max Page Size (or limit)",
+            "defaultValue": "200",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94984,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Egnyte Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254026,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94985,
+            "name": "Pagination Start Index",
+            "key": "pagination.page.startindex",
+            "description": "Egnyte Pagination Start Index",
+            "defaultValue": "0",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94986,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Egnyte Base URL",
+            "defaultValue": "https://{subdomain}.egnyte.com/",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94987,
+            "name": "OAuth Refresh Token",
+            "key": "oauth.user.refresh_token",
+            "description": "Egnyte OAuth Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94988,
+            "name": "OAuth Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "Egnyte OAuth Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94989,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "Egnyte OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94990,
+            "name": "OAuth Authorization URL",
+            "key": "oauth.authorization.url",
+            "description": "Egnyte OAuth Authorization URL",
+            "defaultValue": "https://{subdomain}.egnyte.com/puboauth/token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 94992,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "Egnyte OAuth API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 94993,
+            "name": "OAuth Token URL",
+            "key": "oauth.token.url",
+            "description": "Egnyte OAuth Token URL",
+            "defaultValue": "https://{subdomain}.egnyte.com/puboauth/token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 94995,
+            "name": "OAuth Refresh Interval (s)",
+            "key": "oauth.user.refresh_interval",
+            "description": "Egnyte OAuth Refresh Interval (s)",
+            "defaultValue": "3600",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94996,
+            "name": "OAuth basic header",
+            "key": "oauth.basic.header",
+            "description": "Egnyte OAuth basic header",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94983,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "Egnyte OAuth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "PASSWORD",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 94991,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "Egnyte OAuth Callback URL",
+            "defaultValue": "https://snapshot.cloud-elements.com/elements/jsp/home.jsp",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 94981,
+            "name": "OAuth Scope",
+            "key": "oauth.scope",
+            "description": "Egnyte OAuth Scope",
+            "defaultValue": "Egnyte.filesystem Egnyte.link",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 95003,
+            "name": "Document Hub Tagging",
+            "key": "document.tagging",
+            "description": "Enable Tagging of Documents. Paths and Tags will be stored in CE database in Clear Text",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 5,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 94997,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159962,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94998,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 94999,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Set time interval for polling application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 95000,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 95001,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 95002,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/helpdesk/contacts\", “idField”: “user.id”, “datesConfiguration”: { \"updatedDateField\": \"user.updated_at\", \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\", “createdDateField”: “user.created_at”, “createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\" }, \"pageSize\": 10000 } }",
+            "defaultValue": "{\"events\":{\"url\":\"/hubs/documents/events\",\"idField\":\"event_object_id\",\"datesConfiguration\":{\"updatedDateField\":\"event_date\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSX\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"event_date\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSX\",\"createdDateTimezone\":\"GMT\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256154,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256405,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 84622,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Get the current event cursor position",
+            "path": "/hubs/documents/cursor",
+            "vendorPath": "/pubapi/v1/events/cursor",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "cursors",
+                "transform": false,
+                "swagger": {
+                    "cursors": {
+                        "id": "cursors",
+                        "properties": {
+                            "latest_event_id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "oldest_event_id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "timestamp": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-vendor-objectname": "cursor"
+                    }
+                }
+            },
+            "type": "onProvision",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9360,
+                    "resourceId": 84622,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "configuration.last_event_id = parseInt(response_body.latest_event_id + \"\");\n\ndone({\n  \"configuration\": configuration\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84623,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Get the events of the instance",
+            "path": "/hubs/documents/events",
+            "vendorPath": "/pubapi/v1/events",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172137,
+                    "resourceId": 84623,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "file_system",
+                    "vendorName": "type",
+                    "description": "The type of events we want to capture",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 172138,
+                    "resourceId": 84623,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "last_event_id",
+                    "vendorName": "id",
+                    "description": "The current cursor value",
+                    "type": "configuration",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "eventsList",
+                "transform": false,
+                "swagger": {
+                    "eventsList": {
+                        "id": "eventsList",
+                        "items": {
+                            "$ref": "events"
+                        },
+                        "type": "array"
+                    },
+                    "events": {
+                        "id": "events",
+                        "properties": {
+                            "event_date": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "event_new_path": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "event_object_id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "event_object_type": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "event_old_path": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "event_type": {
+                                "type": "string",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-vendor-objectname": "event"
+                    }
+                }
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9361,
+                    "resourceId": 84623,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  if ((response_status_code + \"\").trim() === \"400\") {\n    done({\n      \"response_status_code\": 200,\n      \"response_body\": []\n    });\n  } else {\n    done({\n      \"response_body\": response_body,\n      \"response_headers\": response_headers,\n      \"response_status_code\": response_status_code,\n      \"continue\": false\n    });\n  }\n} else if (!response_body || !response_body.latest_id) {\n  done({\n    \"response_status_code\": 200,\n    \"response_body\": []\n  });\n} else {\n  configuration.last_event_id = parseInt(response_body.latest_id);\n\n  var events = [];\n\n  for (var i = 0; i < parseInt(response_body.count + \"\"); i++) {\n    var eve = {\n      \"event_date\": response_body.events[i].timestamp + \"\", //ISO date time format\n      \"event_type\": null, //can be INIT,CREATED,RETRIEVED,UPDATED,MOVED, DELETED, UNKNOWN\n      \"event_object_id\": null, //Id value of the resource\n      \"event_object_type\": \"files\", //resource name\n      \"event_new_path\": response_body.events[i].data.target_path, //new path of the file, mainly used for documents hub\n      \"event_old_path\": null //old path of the file, mainly used for documents hub\n    };\n\n    if (response_body.events[i].action + \"\" === \"create\") {\n      eve.event_type = \"CREATED\";\n\n      if (response_body.events[i].data.is_folder + \"\" === \"false\") {\n        eve.event_object_id = response_body.events[i].data.target_group_id;\n      } else {\n        eve.event_object_type = \"folders\";\n        eve.event_object_id = response_body.events[i].data.target_path;\n      }\n    } else if (response_body.events[i].action + \"\" === \"copy\") {\n      eve.event_type = \"CREATED\";\n\n      if (response_body.events[i].data.is_folder + \"\" === \"false\") {\n        eve.event_object_id = response_body.events[i].data.target_group_id;\n        eve.event_old_path = response_body.events[i].data.source_path;\n      } else {\n        eve.event_object_type = \"folders\";\n        eve.event_object_id = response_body.events[i].data.target_path;\n        eve.event_old_path = response_body.events[i].data.source_path;\n      }\n    } else if (response_body.events[i].action + \"\" === \"delete\") {\n      eve.event_type = \"DELETED\";\n\n      if (response_body.events[i].data.is_folder + \"\" === \"false\") {\n        eve.event_object_id = response_body.events[i].data.target_group_id;\n      } else {\n        eve.event_object_type = \"folders\";\n        eve.event_object_id = response_body.events[i].data.target_path;\n      }\n    } else if (response_body.events[i].action + \"\" === \"move\") {\n      eve.event_type = \"MOVED\";\n\n      if (response_body.events[i].data.is_folder + \"\" === \"false\") {\n        eve.event_object_id = response_body.events[i].data.target_group_id;\n        eve.event_old_path = response_body.events[i].data.source_path;\n      } else {\n        eve.event_object_type = \"folders\";\n        eve.event_object_id = response_body.events[i].data.target_path;\n        eve.event_old_path = response_body.events[i].data.source_path;\n      }\n    } else if (response_body.events[i].action + \"\" === \"restore\") {\n      eve.event_type = \"RETRIEVED\";\n\n      if (response_body.events[i].data.is_folder + \"\" === \"false\") {\n        eve.event_object_id = response_body.events[i].data.target_group_id;\n      } else {\n        eve.event_object_type = \"folders\";\n        eve.event_object_id = response_body.events[i].data.target_path;\n      }\n    } else {\n      eve = null;\n    }\n\n    if (eve) {\n      events.push(eve);\n    }\n  }\n\n  done({\n    \"configuration\": configuration,\n    \"response_body\": events\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84624,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Deletes a file from your cloud service by its specified path.",
+            "path": "/hubs/documents/files",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 172139,
+                    "resourceId": 84624,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172140,
+                    "resourceId": 84624,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "emptyTrash",
+                    "vendorName": "emptyTrash",
+                    "description": "Whether or not the file should also be deleted from trash",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9362,
+                    "resourceId": 84624,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else if (request_parameters.emptyTrash && (request_parameters.emptyTrash + \"\").trim().toLowerCase() === \"true\") {\n  done({\n    \"response_body\": {\n      \"path\": request_parameters.path,\n      \"emptyTrash\": true\n    }\n  });\n} else {\n  done({\n    \"response_body\": {\n      \"emptyTrash\": false\n    },\n    \"continue\": false\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/trash",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84625,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves a single file from your cloud service from a specified path. The file is directly streamed from the cloud storage provider through Cloud Elements, and is not buffered to disk.",
+            "path": "/hubs/documents/files",
+            "vendorPath": "/pubapi/v1/fs-content/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172141,
+                    "resourceId": 84625,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9363,
+                    "resourceId": 84625,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var headers = {};\n\ntry {\n  headers = JSON.parse(JSON.stringify(request_vendor_headers));\n} catch (e) {\n  done();\n}\n\nheaders.Accept = \"\";\n\ndone({\n  \"request_vendor_headers\": headers\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/octet-stream"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84626,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Uploads a file to your endpoint cloud service.",
+            "path": "/hubs/documents/files",
+            "vendorPath": "/pubapi/v1/fs-content/{path}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172142,
+                    "resourceId": 84626,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172143,
+                    "resourceId": 84626,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "file",
+                    "vendorName": "file",
+                    "description": "The file to be uploaded",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "file",
+                    "vendorDataType": "file",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172144,
+                    "resourceId": 84626,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "multipart/form-data",
+                    "vendorName": "Content-Type",
+                    "description": "The content type for file upload",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestName": ""
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9364,
+                    "resourceId": 84626,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var resp = {};\n\n  resp.path = request_parameters.path;\n\n  if (!resp.path) {\n    const req = JSON.parse(request_parameters);\n    resp.path = req.path;\n  }\n\n  done({\n    \"response_body\": resp\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/files/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84627,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Copies a file specified by a file path to another file path, leaving the original intact. If the source file path does not exist an error response is returned. If the destination path includes directories that do not exist, they will be created. Copying a file that already exists overwrites the file.",
+            "path": "/hubs/documents/files/copy",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172146,
+                    "resourceId": 84627,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The path of the new file",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172147,
+                    "resourceId": 84627,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "copy",
+                    "vendorName": "action",
+                    "description": "The copy action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172148,
+                    "resourceId": 84627,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172145,
+                    "resourceId": 84627,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object representing the destination file. Path is required",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFiles",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFiles": {
+                        "id": "CloudFiles",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestName": "CloudFiles"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9365,
+                    "resourceId": 84627,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var resp = {};\n\n  resp.path = request_body.path;\n\n  if (!resp.path) {\n    const req = JSON.parse(request_body);\n    resp.path = req.path;\n  }\n\n  done({\n    \"response_body\": resp\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/files/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84628,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Deletes a file from your cloud service by its specified path.",
+            "path": "/hubs/documents/files/delete-by-path",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 172149,
+                    "resourceId": 84628,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "prevBodyField",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9366,
+                    "resourceId": 84628,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else if (request_parameters.emptyTrash && (request_parameters.emptyTrash + \"\").trim().toLowerCase() === \"true\") {\n  done({\n    \"response_body\": {\n      \"path\": request_previous_response.path\n    }\n  });\n} else {\n  done({\n    \"continue\": false\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/trash",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84634,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Deletes a specific file associated with an ID from your cloud service using its specified path.",
+            "path": "/hubs/documents/files/{id}",
+            "vendorPath": "/pubapi/v1/fs/ids/file/{id}",
+            "method": "DELETE",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172158,
+                    "resourceId": 84634,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "emptyTrash",
+                    "vendorName": "emptyTrash",
+                    "description": "Whether or not the file should also be deleted from trash",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 172159,
+                    "resourceId": 84634,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file's group_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9371,
+                    "resourceId": 84634,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var response = JSON.parse(JSON.stringify(response_body));\n\n  if (!response) {\n    response = JSON.parse(response_body);\n  }\n\n  done({\n    \"response_body\": {\n      \"path\": response.path,\n      \"emptyTrash\": request_parameters.emptyTrash\n    }\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "DELETE:/files/delete-by-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84635,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves a specific file associated with an ID from your cloud service from a specified path.  The file is directly streamed from the cloud storage provider through Cloud Elements, and is not buffered to disk.",
+            "path": "/hubs/documents/files/{id}",
+            "vendorPath": "/pubapi/v1/fs-content/ids/file/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172160,
+                    "resourceId": 84635,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file's group_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9372,
+                    "resourceId": 84635,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var headers = {};\n\ntry {\n  headers = JSON.parse(JSON.stringify(request_vendor_headers));\n} catch (e) {\n  done();\n}\n\nheaders.Accept = \"\";\n\ndone({\n  \"request_vendor_headers\": headers\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/octet-stream"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84636,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Copies a file associated with an ID from a specified file path to another file path, leaving the original intact. If the source file associated with an ID does not exist an error response is returned. If the destination path includes directories that do not exist they will be created. Copying a file that already exists overwrites the file.",
+            "path": "/hubs/documents/files/{id}/copy",
+            "vendorPath": "/pubapi/v1/fs/ids/file/{id}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172161,
+                    "resourceId": 84636,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file's group_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172163,
+                    "resourceId": 84636,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The path of the new file",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172164,
+                    "resourceId": 84636,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "copy",
+                    "vendorName": "action",
+                    "description": "The copy action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172162,
+                    "resourceId": 84636,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object representing the destination file. Path is required",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFiles",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFiles": {
+                        "id": "CloudFiles",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestName": "CloudFiles"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9373,
+                    "resourceId": 84636,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var resp = {};\n\n  resp.path = request_body.path;\n\n  if (!resp.path) {\n    const req = JSON.parse(request_body);\n    resp.path = req.path;\n  }\n\n  done({\n    \"response_body\": resp\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/files/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84637,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Returns a link associated with an ID that can be used to download the specified file through Cloud Elements. The link can be used to download the file without providing credentials.",
+            "path": "/hubs/documents/files/{id}/links",
+            "vendorPath": "/pubapi/v1/fs/ids/file/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172165,
+                    "resourceId": 84637,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file's group_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "fileLinks",
+                "transform": false,
+                "swagger": {
+                    "fileLinks": {
+                        "id": "fileLinks",
+                        "properties": {
+                            "cloudElementsLink": {
+                                "type": "string"
+                            },
+                            "providerLink": {
+                                "type": "string"
+                            },
+                            "providerLinkExpires": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string"
+                            },
+                            "providerViewLink": {
+                                "type": "string"
+                            },
+                            "providerViewLinkExpires": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/files/links-info",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84638,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves specific metadata on a file associated with an ID from your cloud service using its specified path.",
+            "path": "/hubs/documents/files/{id}/metadata",
+            "vendorPath": "/pubapi/v1/fs/ids/file/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172166,
+                    "resourceId": 84638,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file's group_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9374,
+                    "resourceId": 84638,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var response = {\n        \"path\": null,\n        \"size\": null,\n        \"name\": null,\n        \"modifiedDate\": null,\n        \"id\": null,\n        \"directory\": false,\n        \"properties\": {}\n      };\n\n      response.path = resp.path + \"\";\n      response.size = parseInt(resp.size + \"\");\n      response.name = resp.name + \"\";\n      response.modifiedDate = (new Date(resp.last_modified + \"\")).toJSON().substr(0, 19) + \"Z\";\n      response.id = resp.group_id + \"\";\n      response.directory = (resp.is_folder + \"\").trim().toLowerCase() === \"true\" ? true : false;\n\n      done({\n        \"response_body\": response\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84639,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Update a file's metadata (path) associated with an ID. The PATCH method can update the name or directory of a file as well as move a file by using the path JSON field. You cannot update the size of a file.",
+            "path": "/hubs/documents/files/{id}/metadata",
+            "vendorPath": "/pubapi/v1/fs/ids/file/{id}",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172168,
+                    "resourceId": 84639,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "move",
+                    "vendorName": "action",
+                    "description": "The move action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172169,
+                    "resourceId": 84639,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The new path of the file.",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172170,
+                    "resourceId": 84639,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file's group_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172167,
+                    "resourceId": 84639,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A Metadata object with the fields to update. Valid values include path.",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFiles",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFiles": {
+                        "id": "CloudFiles",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestName": "CloudFiles"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9375,
+                    "resourceId": 84639,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  done({\n    response_body: {\n      id: request_parameters.id,\n      path: (JSON.parse(request_body)).path\n    }\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/files/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 159872,
+            "createdDate": "2018-04-21T00:12:23Z",
+            "description": "Find the revisions of a file associated with a given ID",
+            "path": "/hubs/documents/files/{id}/revisions",
+            "vendorPath": "/pubapi/v1/fs/ids/file/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 375349,
+                    "resourceId": 159872,
+                    "createdDate": "2018-04-21T00:12:23Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Group ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "fileRevisions",
+                "transform": false,
+                "swagger": {
+                    "fileRevisions": {
+                        "items": {
+                            "type": "fileRevisionsObject"
+                        },
+                        "type": "array"
+                    },
+                    "fileRevisionsObject": {
+                        "properties": {
+                            "fileName": {
+                                "type": "string",
+                                "x-samplevalue": "testsonali"
+                            },
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 8
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "44286f82-8400-4dc0-a1e2-0a6eec09b77a"
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-04-04T14:20:42+05:30"
+                            }
+                        },
+                        "title": "fileRevisions",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 159874,
+            "createdDate": "2018-04-21T00:12:23Z",
+            "description": "Retrieves the revision details of a file associated with a revision ID",
+            "path": "/hubs/documents/files/{id}/revisions/{revisionId}",
+            "vendorPath": "/pubapi/v1/fs/ids/file/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 375352,
+                    "resourceId": 159874,
+                    "createdDate": "2018-04-21T00:12:23Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Group ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 375351,
+                    "resourceId": 159874,
+                    "createdDate": "2018-04-21T00:12:23Z",
+                    "name": "revisionId",
+                    "vendorName": "revisionId",
+                    "description": "The Entry ID",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "fileRevisions",
+                "transform": false,
+                "swagger": {
+                    "fileRevisions": {
+                        "items": {
+                            "type": "fileRevisionsObject"
+                        },
+                        "type": "array"
+                    },
+                    "fileRevisionsObject": {
+                        "properties": {
+                            "fileName": {
+                                "type": "string",
+                                "x-samplevalue": "testsonali"
+                            },
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 15
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "bd1713ac-0713-47db-8165-3aacc1b80ef4"
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-04-04T14:48:29+05:30"
+                            }
+                        },
+                        "title": "fileRevisions",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84629,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Returns a link that can be used to download the specified file through Cloud Elements. The link can be used to download the file without providing credentials.",
+            "path": "/hubs/documents/files/links",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172150,
+                    "resourceId": 84629,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "fileLinks",
+                "transform": false,
+                "swagger": {
+                    "fileLinks": {
+                        "id": "fileLinks",
+                        "properties": {
+                            "cloudElementsLink": {
+                                "type": "string"
+                            },
+                            "providerLink": {
+                                "type": "string"
+                            },
+                            "providerLinkExpires": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string"
+                            },
+                            "providerViewLink": {
+                                "type": "string"
+                            },
+                            "providerViewLinkExpires": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/files/links-info",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84630,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Returns a link that can be used to download the specified file through Cloud Elements. The link can be used to download the file without providing credentials.",
+            "path": "/hubs/documents/files/links-info",
+            "vendorPath": "/pubapi/v2/links",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172151,
+                    "resourceId": 84630,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "prevBodyField",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "fileLinks",
+                "transform": false,
+                "swagger": {
+                    "fileLinks": {
+                        "id": "fileLinks",
+                        "properties": {
+                            "cloudElementsLink": {
+                                "type": "string"
+                            },
+                            "providerLink": {
+                                "type": "string"
+                            },
+                            "providerLinkExpires": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string"
+                            },
+                            "providerViewLink": {
+                                "type": "string"
+                            },
+                            "providerViewLinkExpires": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9367,
+                    "resourceId": 84630,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  if (request_previous_response.is_folder + \"\" === \"true\") {\n    done({\n      \"response_body\": {\n        \"errorMessage\": \"You cannot retrieve links for a folder\"\n      },\n      \"response_status_code\": 400,\n      \"continue\": false\n    });\n  } else {\n    var d = new Date();\n\n    d.setTime(d.getTime() - (60 * 60 * 1000)); // 1 hour worth of miliseconds\n\n    var response = {\n      \"cloudElementsLink\": null,\n      \"providerLink\": null,\n      \"providerLinkExpires\": null,\n      \"providerViewLink\": null,\n      \"providerViewLinkExpires\": null\n    };\n\n    try {\n      var resp = JSON.parse(JSON.stringify(response_body));\n\n      if (resp.cloudElementsLink) {\n        response.cloudElementsLink = resp.cloudElementsLink;\n      } else {\n        response.raw = request_previous_response;\n        response.raw.links = resp;\n      }\n\n      const hostName = configuration.subdomain + \".egnyte.com\";\n      const providerLink = \"https://\" + hostName + \"/navigate/file/\" + (request_previous_response.group_id + \"\").trim();\n      const count = resp.count + \"\";\n\n      var providerViewLinkDate;\n      var providerLinkDate;\n\n      if (count !== \"0\") {\n        for (var i = 0; i < parseInt(count); i++) {\n          if (resp.links[i].protection + \"\" === 'PREVIEW') {\n            var creation_date = \"\" + resp.links[i].creation_date;\n            if (creation_date.length === 24) {\n              creation_date = creation_date.substr(0, 22) + \":\" + creation_date.substr(22);\n            }\n            if (!providerViewLinkDate || providerViewLinkDate < new Date(creation_date)) {\n              response.providerViewLink = resp.links[i].url + \"\";\n              response.providerViewLinkExpires = d;\n              providerViewLinkDate = new Date(creation_date);\n            }\n          } else if (resp.links[i].protection + \"\" === 'NONE') {\n            var creation_date = \"\" + resp.links[i].creation_date;\n            if (creation_date.length === 24) {\n              creation_date = creation_date.substr(0, 22) + \":\" + creation_date.substr(22);\n            }\n            if (!providerLinkDate || providerLinkDate < new Date(creation_date)) {\n              response.providerLink = resp.links[i].url + \"\";\n              response.providerLinkExpires = d;\n              providerLinkDate = new Date(creation_date);\n            }\n          }\n        }\n\n        if (response.providerViewLink && !response.providerLink) {\n          response.providerLink = response.providerViewLink + \"\";\n          response.providerLinkExpires = d;\n        } else if (response.providerLink && !response.providerViewLink) {\n          response.providerViewLink = response.providerLink + \"\";\n          response.providerViewLinkExpires = d;\n        } else if (!response.providerViewLink && !response.providerLink) {\n          response.providerLink = providerLink;\n          response.providerLinkExpires = d;\n        }\n      } else {\n        response.providerLink = providerLink;\n        response.providerLinkExpires = d;\n      }\n\n      done({\n        \"response_body\": response,\n        \"continue\": false\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"response_body\": {\n          \"message\": e.message\n        },\n        \"continue\": false\n      });\n    }\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84631,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves the metadata from a single file on your cloud service from a specified path.",
+            "path": "/hubs/documents/files/metadata",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172152,
+                    "resourceId": 84631,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9368,
+                    "resourceId": 84631,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var response = {\n        \"path\": null,\n        \"size\": null,\n        \"name\": null,\n        \"modifiedDate\": null,\n        \"id\": null,\n        \"directory\": false,\n        \"properties\": {}\n      };\n\n      response.path = resp.path + \"\";\n      response.size = parseInt(resp.size + \"\");\n      response.name = resp.name + \"\";\n      response.modifiedDate = (new Date(resp.last_modified + \"\")).toJSON().substr(0, 19) + \"Z\";\n      response.id = resp.group_id + \"\";\n      response.directory = (resp.is_folder + \"\").trim().toLowerCase() === \"true\" ? true : false;\n\n      done({\n        \"response_body\": response\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84632,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Update a file's metadata (path) associated with a path.  The PATCH method can update the name or directory of a file as well as move a file by using the path JSON field. You cannot update the size of a file.",
+            "path": "/hubs/documents/files/metadata",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172153,
+                    "resourceId": 84632,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "move",
+                    "vendorName": "action",
+                    "description": "The move action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172154,
+                    "resourceId": 84632,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The new path of the file",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172156,
+                    "resourceId": 84632,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172155,
+                    "resourceId": 84632,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A Metadata object with the fields to update. Valid values include path.",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFiles",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFiles": {
+                        "id": "CloudFiles",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                },
+                "requestName": "CloudFiles"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9369,
+                    "resourceId": 84632,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  done({\n    response_body: {\n      path: (JSON.parse(request_body)).path\n    }\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/files/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84633,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves the metadata from a single file on your cloud service from a specified path.",
+            "path": "/hubs/documents/files/metadata-path",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172157,
+                    "resourceId": 84633,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "prevBodyField",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "files",
+                "transform": false,
+                "swagger": {
+                    "files": {
+                        "id": "files",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "file"
+                    }
+                }
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9370,
+                    "resourceId": 84633,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var response = {\n        \"path\": null,\n        \"size\": null,\n        \"name\": null,\n        \"modifiedDate\": null,\n        \"id\": null,\n        \"directory\": false,\n        \"properties\": {}\n      };\n\n      response.path = resp.path + \"\";\n      response.size = parseInt(resp.size + \"\");\n      response.name = resp.name + \"\";\n      response.modifiedDate = (new Date(resp.last_modified + \"\")).toJSON().substr(0, 19) + \"Z\";\n      response.id = resp.group_id + \"\";\n      response.directory = (resp.is_folder + \"\").trim().toLowerCase() === \"true\" ? true : false;\n\n      done({\n        \"response_body\": response\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 159873,
+            "createdDate": "2018-04-21T00:12:23Z",
+            "description": "Find the revisions of a file associated with a given path",
+            "path": "/hubs/documents/files/revisions",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 375350,
+                    "resourceId": 159873,
+                    "createdDate": "2018-04-21T00:12:23Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "fileRevisions",
+                "transform": false,
+                "swagger": {
+                    "fileRevisions": {
+                        "items": {
+                            "type": "fileRevisionsObject"
+                        },
+                        "type": "array"
+                    },
+                    "fileRevisionsObject": {
+                        "properties": {
+                            "fileName": {
+                                "type": "string",
+                                "x-samplevalue": "testsonali"
+                            },
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 8
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "44286f82-8400-4dc0-a1e2-0a6eec09b77a"
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-04-04T14:20:42+05:30"
+                            }
+                        },
+                        "title": "fileRevisions",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 159871,
+            "createdDate": "2018-04-21T00:12:23Z",
+            "description": "Retrieves the revision details of a file from a specified path",
+            "path": "/hubs/documents/files/revisions/{revisionId}",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 375348,
+                    "resourceId": 159871,
+                    "createdDate": "2018-04-21T00:12:23Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 375347,
+                    "resourceId": 159871,
+                    "createdDate": "2018-04-21T00:12:23Z",
+                    "name": "revisionId",
+                    "vendorName": "revisionId",
+                    "description": "The Entry ID",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "fileRevisions",
+                "transform": false,
+                "swagger": {
+                    "fileRevisions": {
+                        "items": {
+                            "type": "fileRevisionsObject"
+                        },
+                        "type": "array"
+                    },
+                    "fileRevisionsObject": {
+                        "properties": {
+                            "fileName": {
+                                "type": "string",
+                                "x-samplevalue": "testsonali"
+                            },
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 8
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "44286f82-8400-4dc0-a1e2-0a6eec09b77a"
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2018-04-04T14:20:42+05:30"
+                            }
+                        },
+                        "title": "fileRevisions",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84640,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Deletes an entire folder from your cloud service by its specified path. The folder specified is deleted from your cloud service.",
+            "path": "/hubs/documents/folders",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 172171,
+                    "resourceId": 84640,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172172,
+                    "resourceId": 84640,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "emptyTrash",
+                    "vendorName": "emptyTrash",
+                    "description": "Whether or not the folder should also be deleted from trash",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9376,
+                    "resourceId": 84640,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else if (request_parameters.emptyTrash && (request_parameters.emptyTrash + \"\").trim().toLowerCase() === \"true\") {\n  done({\n    \"response_body\": {\n      \"path\": request_parameters.path,\n      \"emptyTrash\": true\n    }\n  });\n} else {\n  done({\n    \"response_body\": {\n      \"emptyTrash\": false\n    },\n    \"continue\": false\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/trash",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84641,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Creates a new folder on your cloud service using its specified path. Creation of the new folder goes through Cloud Elements. If the destination path includes directories that do not exist they will be created. Creating a folder that already exists results in an error response.",
+            "path": "/hubs/documents/folders",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172174,
+                    "resourceId": 84641,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "add_folder",
+                    "vendorName": "action",
+                    "description": "Action for create folder",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 172175,
+                    "resourceId": 84641,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The path of the new folder",
+                    "type": "bodyField",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172173,
+                    "resourceId": 84641,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object with the fields to create. Valid values include path",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFolders",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFolders": {
+                        "id": "CloudFolders",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestName": "CloudFolders"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9377,
+                    "resourceId": 84641,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var resp = {};\n\n  resp.path = request_body.path;\n\n  if (!resp.path) {\n    const req = JSON.parse(request_body);\n    resp.path = req.path;\n  }\n\n  done({\n    \"response_body\": resp\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/folders/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84642,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Get a list of CloudFiles that are contained in a specified folder on your cloud service specified by a path.",
+            "path": "/hubs/documents/folders/contents",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172176,
+                    "resourceId": 84642,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 172177,
+                    "resourceId": 84642,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172178,
+                    "resourceId": 84642,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "pageSize",
+                    "vendorName": "count",
+                    "description": "The page size for pagination, which defaults to 50 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "folderContentsList",
+                "transform": false,
+                "swagger": {
+                    "folderContentsList": {
+                        "id": "folderContentsList",
+                        "items": {
+                            "$ref": "folderContents"
+                        },
+                        "type": "array"
+                    },
+                    "folderContents": {
+                        "id": "folderContents",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folderContents"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9378,
+                    "resourceId": 84642,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var arr = [];\n      var response;\n\n      if (typeof resp.folders === 'undefined')\n        resp.folders = [];\n\n      for (var i = 0; i < resp.folders.length; i++) {\n        response = {\n          \"path\": null,\n          \"name\": null,\n          \"modifiedDate\": null,\n          \"id\": null,\n          \"directory\": true\n        };\n\n        response.path = resp.folders[i].path + \"\",\n        response.name = resp.folders[i].name + \"\";\n        response.modifiedDate = new Date();\n        response.modifiedDate.setTime(parseInt(resp.folders[i].lastModified + \"\"));\n        response.id = resp.folders[i].folder_id + \"\";\n\n        arr.push(response);\n      }\n\n      if (typeof resp.files === 'undefined')\n        resp.files = [];\n\n      for (i = 0; i < resp.files.length; i++) {\n        response = {\n          \"path\": null,\n          \"name\": null,\n          \"modifiedDate\": null,\n          \"id\": null,\n          \"size\": null,\n          \"directory\": false\n        };\n\n        response.path = resp.files[i].path + \"\",\n        response.name = resp.files[i].name + \"\";\n        response.modifiedDate = new Date(resp.files[i].last_modified + \"\");\n        response.id = resp.files[i].group_id + \"\";\n        response.size = parseInt(resp.files[i].size + \"\");\n\n        arr.push(response);\n      }\n\n      done({\n        \"response_body\": arr\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84643,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Copies a folder specified by a file path to another file path, leaving the original intact. If the source path does not exist an error response is returned. If the destination path includes directories that do not exist, they will be created. Copying a folder that already exists results in the folder being overwritten.",
+            "path": "/hubs/documents/folders/copy",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172179,
+                    "resourceId": 84643,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The path of the new folder",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172180,
+                    "resourceId": 84643,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "copy",
+                    "vendorName": "action",
+                    "description": "The copy action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172182,
+                    "resourceId": 84643,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the existing folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172181,
+                    "resourceId": 84643,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object representing the destination folder. Path is required",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFolders",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFolders": {
+                        "id": "CloudFolders",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestName": "CloudFolders"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9379,
+                    "resourceId": 84643,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var resp = {};\n\n  resp.path = request_body.path;\n\n  if (!resp.path) {\n    const req = JSON.parse(request_body);\n    resp.path = req.path;\n  }\n\n  done({\n    \"response_body\": resp\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/folders/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84644,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Deletes a file from your cloud service by its specified path.",
+            "path": "/hubs/documents/folders/delete-by-path",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 172183,
+                    "resourceId": 84644,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "prevBodyField",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9380,
+                    "resourceId": 84644,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else if (request_parameters.emptyTrash && (request_parameters.emptyTrash + \"\").trim().toLowerCase() === \"true\") {\n  done({\n    \"response_body\": {\n      \"path\": request_previous_response.path\n    }\n  });\n} else {\n  done({\n    \"continue\": false\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/trash",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84648,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Deletes an entire folder associated with an ID from your cloud service.",
+            "path": "/hubs/documents/folders/{id}",
+            "vendorPath": "/pubapi/v1/fs/ids/folder/{id}",
+            "method": "DELETE",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172190,
+                    "resourceId": 84648,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder's folder_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172191,
+                    "resourceId": 84648,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "emptyTrash",
+                    "vendorName": "emptyTrash",
+                    "description": "Whether or not the folder should also be deleted from trash",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9384,
+                    "resourceId": 84648,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var response = JSON.parse(JSON.stringify(response_body));\n\n  if (!response) {\n    response = JSON.parse(response_body);\n  }\n\n  done({\n    \"response_body\": {\n      \"path\": response.path,\n      \"emptyTrash\": request_parameters.emptyTrash\n    }\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "DELETE:/folders/delete-by-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84649,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves a list of CloudFiles that are contained in a specified folder associated with an ID on your cloud service via a specified path.",
+            "path": "/hubs/documents/folders/{id}/contents",
+            "vendorPath": "/pubapi/v1/fs/ids/folder/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172192,
+                    "resourceId": 84649,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 172193,
+                    "resourceId": 84649,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder's folder_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172194,
+                    "resourceId": 84649,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "pageSize",
+                    "vendorName": "count",
+                    "description": "The page size for pagination, which defaults to 100 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "folderContentsList",
+                "transform": false,
+                "swagger": {
+                    "folderContentsList": {
+                        "id": "folderContentsList",
+                        "items": {
+                            "$ref": "folderContents"
+                        },
+                        "type": "array"
+                    },
+                    "folderContents": {
+                        "id": "folderContents",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "size": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folderContents"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9385,
+                    "resourceId": 84649,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var arr = [];\n      var response;\n\n      if (typeof resp.folders === 'undefined')\n        resp.folders = [];\n\n      for (var i = 0; i < resp.folders.length; i++) {\n        response = {\n          \"path\": null,\n          \"name\": null,\n          \"modifiedDate\": null,\n          \"id\": null,\n          \"directory\": true\n        };\n\n        response.path = resp.folders[i].path + \"\",\n        response.name = resp.folders[i].name + \"\";\n        response.modifiedDate = new Date();\n        response.modifiedDate.setTime(parseInt(resp.folders[i].lastModified + \"\"));\n        response.id = resp.folders[i].folder_id + \"\";\n\n        arr.push(response);\n      }\n\n      if (typeof resp.files === 'undefined')\n        resp.files = [];\n\n      for (i = 0; i < resp.files.length; i++) {\n        response = {\n          \"path\": null,\n          \"name\": null,\n          \"modifiedDate\": null,\n          \"id\": null,\n          \"size\": null,\n          \"directory\": false\n        };\n\n        response.path = resp.files[i].path + \"\",\n        response.name = resp.files[i].name + \"\";\n        response.modifiedDate = new Date(resp.files[i].last_modified + \"\");\n        response.id = resp.files[i].group_id + \"\";\n        response.size = parseInt(resp.files[i].size + \"\");\n\n        arr.push(response);\n      }\n\n      done({\n        \"response_body\": arr\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84650,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Copies a folder associated with an ID specified by a file path to another file path, leaving the original intact. If the source path does not exist an error response is returned. If the destination path includes directories that do not exist, they will be created. Copying a folder that already exists results in the folder being overwritten.",
+            "path": "/hubs/documents/folders/{id}/copy",
+            "vendorPath": "/pubapi/v1/fs/ids/folder/{id}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172195,
+                    "resourceId": 84650,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "copy",
+                    "vendorName": "action",
+                    "description": "The copy action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172196,
+                    "resourceId": 84650,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The path of the new folder",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172197,
+                    "resourceId": 84650,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder's folder_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172198,
+                    "resourceId": 84650,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object representing the destination folder. Path is required",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFolders",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFolders": {
+                        "id": "CloudFolders",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestName": "CloudFolders"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9386,
+                    "resourceId": 84650,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var resp = {};\n\n  resp.path = request_body.path;\n\n  if (!resp.path) {\n    const req = JSON.parse(request_body);\n    resp.path = req.path;\n  }\n\n  done({\n    \"response_body\": resp\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/folders/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84651,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves specific metadata on a folder associated with an ID from your cloud service using its specified path.",
+            "path": "/hubs/documents/folders/{id}/metadata",
+            "vendorPath": "/pubapi/v1/fs/ids/folder/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172199,
+                    "resourceId": 84651,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder's folder_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9387,
+                    "resourceId": 84651,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var response = {\n        \"path\": null,\n        \"name\": null,\n        \"modifiedDate\": null,\n        \"id\": null,\n        \"directory\": false,\n        \"properties\": {}\n      };\n\n      response.path = resp.path + \"\";\n      response.name = resp.name + \"\";\n      response.modifiedDate = new Date();\n      response.modifiedDate.setTime(parseInt(resp.lastModified + \"\"));\n      response.id = resp.folder_id + \"\";\n      response.directory = (resp.is_folder + \"\").trim().toLowerCase() === \"true\" ? true : false;\n\n      done({\n        \"response_body\": response\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84652,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Update a folder's metadata (path) associated with an ID.  For example, if you had the ID of a folder that was located in the operations directory, but needed to be moved into the legal directory, then you would perform a PATCH using the path JSON field to update the path.  The PATCH method can update the name or directory of a folder also by using the path JSON field. You cannot update the size of a folder.",
+            "path": "/hubs/documents/folders/{id}/metadata",
+            "vendorPath": "/pubapi/v1/fs/ids/folder/{id}",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172200,
+                    "resourceId": 84652,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder's folder_id in Egnyte.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172202,
+                    "resourceId": 84652,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The new path of the folder.",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172203,
+                    "resourceId": 84652,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "move",
+                    "vendorName": "action",
+                    "description": "The move action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172201,
+                    "resourceId": 84652,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A Metadata object with the field to update. Valid values include path.",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFolders",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFolders": {
+                        "id": "CloudFolders",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestName": "CloudFolders"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9388,
+                    "resourceId": 84652,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  done({\n    response_body: {\n      id: request_parameters.id,\n      path: (JSON.parse(request_body)).path\n    }\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/folders/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84645,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves specific metadata on a folder from your cloud service using its specified path.",
+            "path": "/hubs/documents/folders/metadata",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172184,
+                    "resourceId": 84645,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9381,
+                    "resourceId": 84645,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var response = {\n        \"path\": null,\n        \"name\": null,\n        \"modifiedDate\": null,\n        \"id\": null,\n        \"directory\": false,\n        \"properties\": {}\n      };\n\n      response.path = resp.path + \"\";\n      response.name = resp.name + \"\";\n      response.modifiedDate = new Date();\n      response.modifiedDate.setTime(parseInt(resp.lastModified + \"\"));\n      response.id = resp.folder_id + \"\";\n      response.directory = (resp.is_folder + \"\").trim().toLowerCase() === \"true\" ? true : false;\n\n      done({\n        \"response_body\": response\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84646,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Update a folder's metadata (path) associated with its path.  For example, if you had a folder that was located in the operations directory, but needed to be moved into the legal directory, then you would perform a PATCH using the path JSON field to update the path. The PATCH method can update the name or directory path of a folder also by using the path JSON field. You cannot update the size of a folder.",
+            "path": "/hubs/documents/folders/metadata",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172185,
+                    "resourceId": 84646,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the existing folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172186,
+                    "resourceId": 84646,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "move",
+                    "vendorName": "action",
+                    "description": "The move action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172188,
+                    "resourceId": 84646,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "destination",
+                    "description": "The new path of the folder.",
+                    "type": "bodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 172187,
+                    "resourceId": 84646,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A Metadata object with the field to update. Valid values include path.",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "CloudFolders",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestSwagger": {
+                    "CloudFolders": {
+                        "id": "CloudFolders",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestName": "CloudFolders"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9382,
+                    "resourceId": 84646,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  var resp = {};\n\n  resp.path = request_body.path;\n\n  if (!resp.path) {\n    const req = JSON.parse(request_body);\n    resp.path = req.path;\n  }\n\n  done({\n    \"response_body\": resp\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "GET:/folders/metadata-path",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84647,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves specific metadata on a folder from your cloud service using its specified path.",
+            "path": "/hubs/documents/folders/metadata-path",
+            "vendorPath": "/pubapi/v1/fs/{path}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 172189,
+                    "resourceId": 84647,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the folder (e.g. /myDirectory)",
+                    "type": "prevBodyField",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "folders",
+                "transform": false,
+                "swagger": {
+                    "folders": {
+                        "id": "folders",
+                        "properties": {
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                }
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9383,
+                    "resourceId": 84647,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    const resp = JSON.parse(JSON.stringify(response_body));\n\n    try {\n      var response = {\n        \"path\": null,\n        \"name\": null,\n        \"modifiedDate\": null,\n        \"id\": null,\n        \"directory\": false,\n        \"properties\": {}\n      };\n\n      response.path = resp.path + \"\";\n      response.name = resp.name + \"\";\n      response.modifiedDate = new Date();\n      response.modifiedDate.setTime(parseInt(resp.lastModified + \"\"));\n      response.id = resp.folder_id + \"\";\n      response.directory = (resp.is_folder + \"\").trim().toLowerCase() === \"true\" ? true : false;\n\n      done({\n        \"response_body\": response\n      });\n    } catch (e) {\n      done({\n        \"response_error\": e.message,\n        \"response_status_code\": 500,\n        \"continue\": false\n      });\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 90048,
+            "createdDate": "2017-08-22T20:07:53Z",
+            "description": "Performs a text search.  The search uses substring matching so searching for \"exam\" will match on \"example.txt\".  Subdirectories are also searched.  The search returns a list of CloudFiles that match search parameters.",
+            "path": "/hubs/documents/search",
+            "vendorPath": "/pubapi/v1/search",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 183351,
+                    "resourceId": 90048,
+                    "createdDate": "2017-08-22T20:07:53Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 183352,
+                    "resourceId": 90048,
+                    "createdDate": "2017-08-22T20:07:53Z",
+                    "name": "pageSize",
+                    "vendorName": "count",
+                    "description": "The page size for pagination, which defaults to 100 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 183355,
+                    "resourceId": 90048,
+                    "createdDate": "2017-08-22T20:07:53Z",
+                    "name": "text",
+                    "vendorName": "query",
+                    "description": "Text in the file or folder name",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 183354,
+                    "resourceId": 90048,
+                    "createdDate": "2017-08-22T20:07:53Z",
+                    "name": "startDate",
+                    "vendorName": "modified_after",
+                    "description": "The start date (based on the created date of the file or folder) if used, end date is required. Date should be of the format \"yyyy-MM-ddTHH:mm:ssZ\" (ISO-8601), eg. 2015-01-14T22:19:29Z",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "date",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 183353,
+                    "resourceId": 90048,
+                    "createdDate": "2017-08-22T20:07:53Z",
+                    "name": "endDate",
+                    "vendorName": "modified_before",
+                    "description": "The end date (based on the created date of the file or folder) if used, start date is required. Date should be of the format \"yyyy-MM-ddTHH:mm:ssZ\" (ISO-8601), eg. 2015-01-14T22:19:29Z",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "date",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "searchList",
+                "transform": false,
+                "swagger": {
+                    "searchList": {
+                        "id": "searchList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "searchListObjects"
+                        }
+                    },
+                    "searchListObjects": {
+                        "id": "searchListObjects",
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "search",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int64",
+                                "x-readOnly": true,
+                                "type": "integer"
+                            },
+                            "modifiedDate": {
+                                "x-readOnly": true,
+                                "type": "string",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                            },
+                            "name": {
+                                "x-readOnly": true,
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "directory": {
+                                "type": "boolean",
+                                "x-readOnly": true
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 10630,
+                    "resourceId": 90048,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else {\n  try {\n    var resp = JSON.parse(JSON.stringify(response_body));\n\tvar arr = [];\n\t\n    print(\"1: \" + JSON.stringify(resp));\n\n    if (typeof resp.results !== 'undefined') {\n      resp = resp.results;\n      print(\"2: \" + JSON.stringify(resp));\n    } else {\n      resp = [];\n      print(\"3: \" + JSON.stringify(resp));\n    }\n\n    for (var i = 0; i < resp.length; i++) {\n      var response = {\n        \"path\": null,\n        \"size\": null,\n        \"name\": null,\n        \"modifiedDate\": null,\n        \"id\": null,\n        \"directory\": false,\n        \"properties\": {}\n      };\n\n      response.path = resp[i].path + \"\",\n      response.name = resp[i].name + \"\";\n      response.modifiedDate = new Date();\n      if (resp.is_folder) {\n        response.modifiedDate.setTime(parseInt(resp[i].lastModified + \"\"));\n        response.id = resp[i].folder_id + \"\";\n        response.directory = true;\n        print(\"4: \" + JSON.stringify(response));\n      } else {\n        response.modifiedDate = new Date(resp[i].last_modified + \"\");\n        response.id = resp[i].group_id + \"\";\n        response.size = parseInt(resp[i].size + \"\");\n        print(\"5: \" + JSON.stringify(response));\n      }\n\n      arr.push(response);\n    }\n\n    print(\"6: \" + JSON.stringify(arr));\n    done({\n      \"response_body\": arr\n    });\n  } catch (e) {\n    done({\n      \"response_status_code\": 500,\n      \"response_body\": {\n        \"providerMessage\": e.message\n      },\n      \"continue\": false\n    });\n  }\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84653,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Retrieves the amount of storage available on your cloud service account.",
+            "path": "/hubs/documents/storage",
+            "vendorPath": "",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9389,
+                    "resourceId": 84653,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "done({\n  \"response_body\": {\n    \"errorMessage\": \"This API is not currently supported for this element\"\n  },\n  \"response_status_code\": 400,\n  \"continue\": false\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84654,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Delete the file/folder id from trash",
+            "path": "/hubs/documents/trash",
+            "vendorPath": "/pubapi/v1/fs/trash",
+            "method": "DELETE",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 172204,
+                    "resourceId": 84654,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "ids",
+                    "vendorName": "ids",
+                    "description": "ids of the files/folders to purge",
+                    "type": "prevBodyField",
+                    "vendorType": "bodyField",
+                    "dataType": "array",
+                    "vendorDataType": "array",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 172205,
+                    "resourceId": 84654,
+                    "createdDate": "2017-07-26T16:02:46Z",
+                    "name": "PURGE",
+                    "vendorName": "action",
+                    "description": "The PURGE action",
+                    "type": "value",
+                    "vendorType": "bodyField",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9390,
+                    "resourceId": 84654,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "if (!request_parameters.emptyTrash || (request_parameters.emptyTrash && request_parameters.emptyTrash !== \"true\") || !request_previous_response.ids) {\n  done({\n    \"continue\": false\n  });\n} else {\n  done({\n    \"continue\": true\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 84655,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "description": "Find the file/folder id from trash",
+            "path": "/hubs/documents/trash",
+            "vendorPath": "/pubapi/v1/fs/trash",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 9391,
+                    "resourceId": 84655,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "if (!request_parameters.emptyTrash || (request_parameters.emptyTrash && request_parameters.emptyTrash !== \"true\")) {\n  done({\n    \"continue\": false\n  });\n} else {\n  done({\n    \"continue\": true\n  });\n}\n",
+                    "isLegacy": false
+                },
+                {
+                    "id": 9392,
+                    "resourceId": 84655,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_iserror) {\n  done({\n    \"response_body\": response_body,\n    \"response_headers\": response_headers,\n    \"response_status_code\": response_status_code,\n    \"continue\": false\n  });\n} else if (request_parameters.emptyTrash && request_parameters.emptyTrash === \"true\") {\n  var body = {\n    \"ids\": []\n  };\n\n  try {\n    const path = (request_previous_response.path + \"\").trim().toUpperCase();\n    const resp = JSON.parse(JSON.stringify(response_body));\n    const count = resp.count + \"\";\n\n    if (count !== \"0\") {\n      for (var i = 0; i < parseInt(count); i++) {\n        if ((resp.items[i].path + \"\").trim().toUpperCase() === path) {\n          body.ids.push(resp.items[i].id);\n          break;\n        }\n      }\n    }\n  } catch (e) {\n    done({\n      \"response_error\": e.message,\n      \"response_status_code\": 500,\n      \"response_body\": {\n        providerMessage: e.message\n      },\n      \"continue\": false\n    });\n  }\n\n  if (body.ids.length === 0) {\n    done({\n      \"response_status_code\": 500,\n      \"response_body\": {\n        providerMessage: \"Internal Error while deleting from trash.\"\n      },\n      \"continue\": false\n    });\n  } else {\n    done({\n      \"response_body\": body\n    });\n  }\n} else {\n  done({\n    \"response_body\": {},\n    \"continue\": false\n  });\n}\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "nextResource": "DELETE:/trash",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "documents",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 5695,
+            "createdDate": "2017-07-26T16:02:46Z",
+            "name": "subdomain",
+            "vendorName": "subdomain",
+            "type": "configuration",
+            "vendorType": "path",
+            "source": "request",
+            "elementId": 13062,
+            "required": false
+        }
+    ],
+    "private": false
+}

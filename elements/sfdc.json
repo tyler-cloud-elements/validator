@@ -1,0 +1,3395 @@
+{
+    "id": 23,
+    "name": "Salesforce Sales Cloud",
+    "hookName": "Salesforcecom",
+    "key": "sfdc",
+    "description": "Add a Salesforce Instance to connect your existing Salesforce account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements or your other Salesforce services. You will need your Salesforce account information to add an instance.",
+    "image": "elements/provider_sfdc.png",
+    "logo": "sfdc",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "If you do not have a Salesforce.com account, you can create one at <a href=\"http://www.salesforce.com\" target=\"_blank\">Salesforce.com Signup</a>",
+    "signupURL": "https://developer.salesforce.com/en/signup",
+    "configuration": [
+        {
+            "id": 145,
+            "name": "Session API Version URI",
+            "key": "sfdc.session.api.version.uri",
+            "description": "SFDC API Version URI",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 158786,
+            "name": "Authentication Type",
+            "key": "authentication.type",
+            "description": "Select Authentication Type, for Password Oauth2 select 'oauth2Password' and for authentication code grant type oauth2  select 'oauth2'",
+            "defaultValue": "oauth2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": true,
+            "displayOrder": 0,
+            "options": [
+                {
+                    "value": "oauth2Password",
+                    "description": "Authentication using password and User ID"
+                },
+                {
+                    "value": "oauth2",
+                    "description": "Authentication using API Key and Secret"
+                },
+                {
+                    "value": "jwtOauth",
+                    "description": "Authentication using JSON Web Token (JWT)"
+                }
+            ],
+            "type": "COMBO",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 375,
+            "name": "OAuth Refresh token",
+            "key": "oauth.user.refresh_token",
+            "description": "The OAuth Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 374,
+            "name": "OAuth User Token",
+            "key": "oauth.user.token",
+            "description": "The OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 139,
+            "name": "Session Refresh Time",
+            "key": "crm.session.refresh.time",
+            "description": "SFDC Session Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 143,
+            "name": "User ID",
+            "key": "sfdc.user.id",
+            "description": "SFDC User ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 138,
+            "name": "Session ID",
+            "key": "session.id",
+            "description": "SFDC Session ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 137,
+            "name": "User Display Name",
+            "key": "sfdc.user.display.name",
+            "description": "SFDC User Display Name",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 142,
+            "name": "Session Instance URL",
+            "key": "sfdc.session.instance.url",
+            "description": "SFDC Instance URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 376,
+            "name": "OAuth Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "The OAuth Refresh Time",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 140,
+            "name": "Session Refresh Interval",
+            "key": "crm.session.refresh.interval",
+            "description": "SFDC Session Refresh Interval",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 144,
+            "name": "Session Signature",
+            "key": "sfdc.session.signature",
+            "description": "SFDC Session Signature",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6697,
+            "name": "Event Helper Key",
+            "key": "event.helper.key",
+            "description": "SFDC Event Helper Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254148,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 163753,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Salesforce Sales Cloud Max Page Size (or limit)",
+            "defaultValue": "200",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 174,
+            "name": "API Key",
+            "key": "sfdc.api.key",
+            "description": "SFDC API Key. This can be found by going to the Remote Access section on Salesforce.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 371,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "The OAuth API Key (The Client ID or Consumer Key in Salesforce.com)",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9322,
+            "name": "Event Metadata",
+            "key": "event.metadata",
+            "description": "Event Metadata",
+            "defaultValue": "{\"webhook\": {\"Account\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}, \"Lead\": {\"eventTypes\":\n        [\"created\", \"updated\", \"deleted\"]}, \"Contact\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]},\n        \"Opportunity\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}, \"{objectName}\": {\"eventTypes\": [\"created\",\n        \"updated\", \"deleted\"]}}, \"polling\": {\"Account\": {\"eventTypes\":\n        [\"created\", \"updated\"]}, \"Lead\": {\"eventTypes\": [\"created\", \"updated\"]}, \"Contact\": {\"eventTypes\":\n        [\"created\", \"updated\"]}, \"Opportunity\": {\"eventTypes\": [\"created\", \"updated\"]}, \"{objectName}\": {\"eventTypes\":\n        [\"created\", \"updated\", \"deleted\"]}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 59566,
+            "name": "Bulk Query Create Time Attribute",
+            "key": "bulk.attribute.created_time",
+            "description": "The field or attribute for the created time for use by the bulk APIs",
+            "defaultValue": "CreatedDate",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 59569,
+            "name": "Bulk Query Modified Time Attribute",
+            "key": "bulk.attribute.modified_time",
+            "description": "The field or attribute for the last modified time for use by the bulk APIs",
+            "defaultValue": "LastModifiedDate",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 59572,
+            "name": "Bulk Date Format",
+            "key": "bulk.query.date_mask",
+            "description": "The date format for use by the bulk APIs",
+            "defaultValue": "yyyy-MM-dd'T'HH:mm:ss.S'Z'",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 372,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "The OAuth API Secret (The Client Secret or Consumer Secret in Salesforce.com)",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "PASSWORD",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 175,
+            "name": "API Secret",
+            "key": "sfdc.api.secret",
+            "description": "SFDC API Secret. This can be found by going to the Remote Access section on Salesforce.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 373,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "The OAuth Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 134,
+            "name": "Username",
+            "key": "sfdc.username",
+            "description": "SFDC Username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "oauth2Password",
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 176,
+            "name": "Login/Token URL",
+            "key": "sfdc.token.url",
+            "description": "Use https://test.salesforce.com/services/oauth2/token for the SFDC sandbox environment",
+            "defaultValue": "https://login.salesforce.com/services/oauth2/token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 377,
+            "name": "OAuth Scope",
+            "key": "oauth.scope",
+            "description": "The OAuth Scope",
+            "defaultValue": "full refresh_token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 4,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 135,
+            "name": "Password",
+            "key": "sfdc.password",
+            "description": "The SFDC password. If Salesforce has provided a security token, then it must be appended to the end user's password.  For example, if a user's password is mypassword, and their security token is XXXXXXXXXX, then the value provided for this parmeter must be mypasswordXXXXXXXXXX",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "oauth2Password",
+            "displayOrder": 4,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 378,
+            "name": "Endpoint Address",
+            "key": "base.url",
+            "description": "Salesforce.com Endpoint Address (environment). If you're unsure, the default should be fine.",
+            "defaultValue": "https://login.salesforce.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 5,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 136,
+            "name": "Security Token",
+            "key": "sfdc.security.token",
+            "description": "The security token can be found by going to the Settings section for the user.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 6,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 177,
+            "name": "Revoke URL",
+            "key": "sfdc.revoke.url",
+            "description": "Use https://test.salesforce.com/services/oauth2/revoke for the SFDC sandbox environment",
+            "defaultValue": "https://login.salesforce.com/services/oauth2/revoke",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": false,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 7,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1070,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "The subscription ID for the webhook events subscription",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 263800,
+            "name": "Nullify empty bulk fields",
+            "key": "bulk.nullify.empty",
+            "description": "If set to true, empty values will be set to null in the downloaded JSON file during bulk export",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8679,
+            "name": "Profile Url",
+            "key": "sfdc.user.id.url",
+            "description": "Used For Retrieving User Profile Information Auto Set.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 11,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52554,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159955,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256289,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256540,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 424,
+            "name": "Enable/Disable Event Notification",
+            "key": "event.notification.enabled",
+            "description": "Used to enable/disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6699,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "5",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 502,
+            "name": "Objects to Monitor for Changes",
+            "key": "event.objects",
+            "description": "A comma-delimited list of objects in SalesForce to monitor for changes to push into the Events system",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 302,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 280170,
+            "name": "Audience",
+            "key": "jwt.claim.aud",
+            "description": "The SFDC Audience",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "jwtOauth",
+            "displayOrder": 303,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 280167,
+            "name": "JWT Base64 Encoded Key",
+            "key": "jwt.base64.encoded.key",
+            "description": "JWT Base64 Encoded Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "jwtOauth",
+            "displayOrder": 303,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 280171,
+            "name": "OAUTH Token URL",
+            "key": "oauth.token.url",
+            "description": "OAuth Token Url",
+            "defaultValue": "https://login.salesforce.com/services/oauth2/token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 303,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 280169,
+            "name": "Subject",
+            "key": "jwt.claim.sub",
+            "description": "JWt Subject - The SFDC Account User Name",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "jwtOauth",
+            "displayOrder": 303,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 280168,
+            "name": "Issuer",
+            "key": "jwt.claim.iss",
+            "description": "JWt Issuer - The Issuer of JWT Base64 Encoded Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "jwtOauth",
+            "displayOrder": 303,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 152199,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. If the \"event.poller.urls\" configuration is defined, this field's value is ignored. The configuration is defined via JSON, an example of which is as follows - {     \"contacts\": {         \"url\": \"/hubs/helpdesk/contacts\",         \"updatedDateField\": \"user.updated_at\",         \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\",         \"pageSize\": 10000     } }",
+            "defaultValue": "{\"accounts\":{\"url\":\"/hubs/crm/accounts?where=LastModifiedDate>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'\",\"idField\":\"Id\",\"datesConfiguration\":{\"updatedDateField\":\"LastModifiedDate\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"createdDateField\":\"CreatedDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"updatedDateTimezone\":\"GMT\",\"createdDateTimezone\":\"GMT\"}},\"contacts\":{\"url\":\"/hubs/crm/contacts?where=LastModifiedDate>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'\",\"idField\":\"Id\",\"datesConfiguration\":{\"updatedDateField\":\"LastModifiedDate\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"CreatedDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"createdDateTimezone\":\"GMT\"}},\"files\":{\"url\":\"/hubs/crm/files?where=LastModifiedDate>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'\",\"idField\":\"Id\",\"datesConfiguration\":{\"updatedDateField\":\"LastModifiedDate\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"CreatedDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"createdDateTimezone\":\"GMT\"}},\"leads\":{\"url\":\"/hubs/crm/leads?where=LastModifiedDate>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'\",\"idField\":\"Id\",\"datesConfiguration\":{\"updatedDateField\":\"LastModifiedDate\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"CreatedDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"createdDateTimezone\":\"GMT\"}},\"opportunities\":{\"url\":\"/hubs/crm/opportunities?where=LastModifiedDate>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'\",\"idField\":\"Id\",\"datesConfiguration\":{\"updatedDateField\":\"LastModifiedDate\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"CreatedDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"createdDateTimezone\":\"GMT\"}},\"users\":{\"url\":\"/hubs/crm/users?where=LastModifiedDate>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'\",\"idField\":\"Id\",\"datesConfiguration\":{\"updatedDateField\":\"LastModifiedDate\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"CreatedDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"createdDateTimezone\":\"GMT\"}},\"campaigns\":{\"url\":\"/hubs/crm/campaigns?where=LastModifiedDate>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'\",\"idField\":\"Id\",\"datesConfiguration\":{\"updatedDateField\":\"LastModifiedDate\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"CreatedDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\",\"createdDateTimezone\":\"GMT\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 303,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6698,
+            "name": "Event Poller URLs",
+            "key": "event.poller.urls",
+            "description": "SFDC Event Poller URLs",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 304,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 425,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "An application callback URL used for event notifications from SFDC and Cloud Elements",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9700,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6696,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "The Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 309,
+            "options": [
+                {
+                    "value": "polling",
+                    "description": "Polling Event Type"
+                },
+                {
+                    "value": "webhook",
+                    "description": "Apex Trigger Event Type"
+                }
+            ],
+            "type": "COMBO",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "accounts",
+            "vendorName": "Account"
+        },
+        {
+            "name": "activities",
+            "vendorName": "Event"
+        },
+        {
+            "name": "agents",
+            "vendorName": "Contact"
+        },
+        {
+            "name": "incidents",
+            "vendorName": "Case"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "Contact"
+        },
+        {
+            "name": "campaigns",
+            "vendorName": "Campaign"
+        },
+        {
+            "name": "opportunities",
+            "vendorName": "Opportunity"
+        },
+        {
+            "name": "leads",
+            "vendorName": "Lead"
+        },
+        {
+            "name": "notes",
+            "vendorName": "Note"
+        },
+        {
+            "name": "products",
+            "vendorName": "Product"
+        },
+        {
+            "name": "tasks",
+            "vendorName": "Task"
+        },
+        {
+            "name": "users",
+            "vendorName": "User"
+        },
+        {
+            "name": "reports",
+            "vendorName": "Report"
+        }
+    ],
+    "resources": [
+        {
+            "id": 6134,
+            "createdDate": "2016-03-04T09:58:48Z",
+            "description": "Delete an attachment by ID",
+            "path": "/hubs/crm/attachments/{id}",
+            "vendorPath": "/services/data/v20.0/sobjects/Attachment/{objectId}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 6713,
+                    "resourceId": 6134,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "id",
+                    "vendorName": "objectId",
+                    "description": "ID of the attachment",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6136,
+            "createdDate": "2016-03-04T09:58:48Z",
+            "description": "Retrieve an attachment by ID",
+            "path": "/hubs/crm/attachments/{id}",
+            "vendorPath": "/services/data/v20.0/sobjects/Attachment/{objectId}/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6716,
+                    "resourceId": 6136,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "id",
+                    "vendorName": "objectId",
+                    "description": "The ID of the object to retrieve from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "attachments",
+                "transform": false,
+                "swagger": {
+                    "attachments": {
+                        "properties": {
+                            "Body": {
+                                "type": "string",
+                                "x-displayName": "Body"
+                            },
+                            "BodyLength": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-displayName": "Body Length",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "ContentType": {
+                                "type": "string",
+                                "x-displayName": "Content Type",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "CreatedById": {
+                                "type": "string",
+                                "x-displayName": "Created By ID",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "CreatedDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-displayName": "Created Date",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "Description": {
+                                "type": "string",
+                                "x-displayName": "Description",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "Id": {
+                                "type": "string",
+                                "x-displayName": "Attachment ID",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "IsDeleted": {
+                                "type": "boolean",
+                                "x-displayName": "Deleted",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "IsPrivate": {
+                                "type": "boolean",
+                                "x-displayName": "Private",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "LastModifiedById": {
+                                "type": "string",
+                                "x-displayName": "Last Modified By ID",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "LastModifiedDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-displayName": "Last Modified Date",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "Name": {
+                                "type": "string",
+                                "x-displayName": "File Name",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "OwnerId": {
+                                "type": "string",
+                                "x-displayName": "Owner ID",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "ParentId": {
+                                "type": "string",
+                                "x-displayName": "Parent ID",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "SystemModstamp": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-displayName": "System Modstamp",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "attributes": {
+                                "type": "attributes"
+                            }
+                        },
+                        "title": "Attachment",
+                        "type": "object",
+                        "x-has-customfields": true,
+                        "x-primary-key": [
+                            "Id"
+                        ],
+                        "x-searchable": true
+                    },
+                    "attributes": {
+                        "id": "attributes",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6135,
+            "createdDate": "2016-03-04T09:58:48Z",
+            "description": "Update an attachment by ID",
+            "path": "/hubs/crm/attachments/{id}",
+            "vendorPath": "/services/data/v29.0/sobjects/Attachment/{objectId}",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 6714,
+                    "resourceId": 6135,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "file",
+                    "vendorName": "file",
+                    "description": "File to be uploaded",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "file",
+                    "vendorDataType": "file",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6715,
+                    "resourceId": 6135,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "id",
+                    "vendorName": "objectId",
+                    "description": "The ID of the attachment",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6132,
+            "createdDate": "2016-03-04T09:58:48Z",
+            "description": "Retrieve the binary attachment data",
+            "path": "/hubs/crm/attachments/{id}/data",
+            "vendorPath": "/services/data/v20.0/sobjects/Attachment/{objectId}/body",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6707,
+                    "resourceId": 6132,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "id",
+                    "vendorName": "objectId",
+                    "description": "The ID of the attachment",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "attachmentData",
+                "transform": false,
+                "swagger": {
+                    "attachmentData": {
+                        "id": "attachmentData",
+                        "properties": {
+                            "body": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6133,
+            "createdDate": "2016-03-04T09:58:48Z",
+            "description": "Retrieve an attachment for an object",
+            "path": "/hubs/crm/{objectName}/{objectId}/attachments",
+            "vendorPath": "/services/data/v36.0/sobjects/{objectName}/{objectId}/Attachments",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6708,
+                    "resourceId": 6133,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "objectId",
+                    "vendorName": "objectId",
+                    "description": "The ID of the object",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6709,
+                    "resourceId": 6133,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "The object name of the object to be retrieved. Supported attachment objects are Account, Asset, Campaign, Case, Contact, Contract, Custom objects, EmailMessage, EmailTemplate, Event, Lead, Opportunity, Product2, Solution and Task.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6710,
+                    "resourceId": 6133,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The start page for pagination, which defaults to 1 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 6711,
+                    "resourceId": 6133,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size for pagination, which defaults to 200 if not supplied",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 6712,
+                    "resourceId": 6133,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "where",
+                    "vendorName": "q",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for accounts last modified on or after 'Jan 15, 2014', the search expression will be <i>where=lastModifiedDate>='2014-01-15T00:00:00.000Z'</i>. When this parameter is omitted, all accounts are returned in a paginated fashion.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "attachmentsList",
+                "transform": false,
+                "swagger": {
+                    "attachmentsList": {
+                        "id": "attachmentsList",
+                        "items": {
+                            "$ref": "attachmentsListObject"
+                        },
+                        "type": "array"
+                    },
+                    "attachmentsListObject": {
+                        "id": "attachmentsListObject",
+                        "properties": {
+                            "Body": {
+                                "type": "string"
+                            },
+                            "BodyLength": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "ContentType": {
+                                "type": "string"
+                            },
+                            "CreatedById": {
+                                "type": "string"
+                            },
+                            "CreatedDate": {
+                                "type": "string"
+                            },
+                            "Description": {
+                                "type": "string"
+                            },
+                            "Id": {
+                                "type": "string"
+                            },
+                            "IsDeleted": {
+                                "type": "boolean"
+                            },
+                            "IsPrivate": {
+                                "type": "boolean"
+                            },
+                            "LastModifiedById": {
+                                "type": "string"
+                            },
+                            "LastModifiedDate": {
+                                "type": "string"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "OwnerId": {
+                                "type": "string"
+                            },
+                            "ParentId": {
+                                "type": "string"
+                            },
+                            "SystemModstamp": {
+                                "type": "string"
+                            },
+                            "attributes": {
+                                "type": "attributes"
+                            }
+                        }
+                    },
+                    "attributes": {
+                        "id": "attributes",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|records",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6131,
+            "createdDate": "2016-03-04T09:58:48Z",
+            "description": "Create an attachment for an object.",
+            "path": "/hubs/crm/{objectName}/{objectId}/attachments",
+            "vendorPath": "/services/data/v29.0/sobjects/Attachment/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6704,
+                    "resourceId": 6131,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "file",
+                    "vendorName": "file",
+                    "description": "The file to attach",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "file",
+                    "vendorDataType": "file",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6705,
+                    "resourceId": 6131,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "objectId",
+                    "vendorName": "ParentId",
+                    "description": "The ID of the parent object from the CRM system.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6706,
+                    "resourceId": 6131,
+                    "createdDate": "2016-03-04T09:58:48Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "The object name of the object to be retrieved. Supported attachment objects are Account, Asset, Campaign, Case, Contact, Contract, Custom objects, EmailMessage, EmailTemplate, Event, Lead, Opportunity, Product2, Solution and Task.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "attachments",
+                "transform": false,
+                "swagger": {
+                    "attachments": {
+                        "id": "attachments",
+                        "properties": {
+                            "Body": {
+                                "type": "string"
+                            },
+                            "BodyLength": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "ContentType": {
+                                "type": "string"
+                            },
+                            "CreatedById": {
+                                "type": "string"
+                            },
+                            "CreatedDate": {
+                                "type": "string"
+                            },
+                            "Description": {
+                                "type": "string"
+                            },
+                            "Id": {
+                                "type": "string"
+                            },
+                            "IsDeleted": {
+                                "type": "boolean"
+                            },
+                            "IsPrivate": {
+                                "type": "boolean"
+                            },
+                            "LastModifiedById": {
+                                "type": "string"
+                            },
+                            "LastModifiedDate": {
+                                "type": "string"
+                            },
+                            "Name": {
+                                "type": "string"
+                            },
+                            "OwnerId": {
+                                "type": "string"
+                            },
+                            "ParentId": {
+                                "type": "string"
+                            },
+                            "SystemModstamp": {
+                                "type": "string"
+                            },
+                            "attributes": {
+                                "type": "attributes"
+                            }
+                        }
+                    },
+                    "attributes": {
+                        "id": "attributes",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": ""
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 82716,
+            "createdDate": "2017-07-18T03:23:07Z",
+            "description": "Retrieve the binary document data",
+            "path": "/hubs/crm/{objectName}/{objectId}/data",
+            "vendorPath": "/services/data/v36.0/sobjects/{objectName}/{objectId}/body",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 168451,
+                    "resourceId": 82716,
+                    "createdDate": "2017-07-18T03:23:07Z",
+                    "name": "objectId",
+                    "vendorName": "objectId",
+                    "description": "The Salesforce object id, i.e. Document id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 168452,
+                    "resourceId": 82716,
+                    "createdDate": "2017-07-18T03:23:07Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "The Salesforce object name, i.e. Document",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "documentsData",
+                "transform": false,
+                "swagger": {
+                    "documentsData": {
+                        "id": "documentsData",
+                        "properties": {
+                            "objectId": {
+                                "type": "string"
+                            },
+                            "objectName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/octet-stream"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 82816,
+            "createdDate": "2017-07-18T19:32:55Z",
+            "description": "Retrieve a list of reports",
+            "path": "/hubs/crm/reports",
+            "vendorPath": "/services/data/v35.0/analytics/reports",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "reportsList",
+                "transform": false,
+                "swagger": {
+                    "reportsListObject": {
+                        "properties": {
+                            "describeUrl": {
+                                "type": "string",
+                                "x-samplevalue": "/services/data/v35.0/analytics/reports/00O0H000006k2tJUAQ/describe"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "00O0H000006k2tJUAQ",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "instancesUrl": {
+                                "type": "string",
+                                "x-samplevalue": "/services/data/v35.0/analytics/reports/00O0H000006k2tJUAQ/instances"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "NewReport",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "=",
+                                    "!="
+                                ]
+                            },
+                            "url": {
+                                "type": "string",
+                                "x-samplevalue": "/services/data/v35.0/analytics/reports/00O0H000006k2tJUAQ"
+                            }
+                        },
+                        "title": "reportsListObject",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "reportsList": {
+                        "items": {
+                            "$ref": "reportsListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 4768,
+            "createdDate": "2015-11-02T14:50:57Z",
+            "description": "Execute a report and retrieve the results",
+            "path": "/hubs/crm/reports/{id}",
+            "vendorPath": "/services/data/v35.0/analytics/reports/{id}",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 4701,
+                    "resourceId": 4768,
+                    "createdDate": "2015-11-02T14:50:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The report ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 4702,
+                    "resourceId": 4768,
+                    "createdDate": "2015-11-02T14:50:57Z",
+                    "name": "includeDetails",
+                    "vendorName": "includeDetails",
+                    "description": "includeDetails",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 4703,
+                    "resourceId": 4768,
+                    "createdDate": "2015-11-02T14:50:57Z",
+                    "name": "where",
+                    "vendorName": "converter:toSFDCReportFilter",
+                    "description": "Filters to be applied on the records in the report. Valid operators: =, !=, <, >, <=, >=, LIKE 'search_string%' (for starts with comparison), LIKE '%search_string%' (for contains comparison)",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toSFDCReportFilter",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reports",
+                "transform": false,
+                "swagger": {
+                    "standardDateFilter": {
+                        "properties": {
+                            "column": {
+                                "type": "string",
+                                "x-samplevalue": "CLOSE_DATE"
+                            },
+                            "durationValue": {
+                                "type": "string",
+                                "x-samplevalue": "THIS_FISCAL_QUARTER"
+                            },
+                            "endDate": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2018-12-31"
+                            },
+                            "startDate": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2018-10-01"
+                            }
+                        },
+                        "title": "standardDateFilter",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "reports": {
+                        "properties": {
+                            "allData": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "attributes": {
+                                "type": "attributes"
+                            },
+                            "factMap": {
+                                "type": "factMap"
+                            },
+                            "groupingsAcross": {
+                                "type": "groupingsAcross"
+                            },
+                            "groupingsDown": {
+                                "type": "groupingsDown"
+                            },
+                            "hasDetailRows": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "reportExtendedMetadata": {
+                                "type": "reportExtendedMetadata"
+                            },
+                            "reportMetadata": {
+                                "type": "reportMetadata"
+                            }
+                        },
+                        "title": "reports",
+                        "x-has-customfields": false
+                    },
+                    "T!T": {
+                        "properties": {
+                            "aggregates": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "rows": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "T!T",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "aggregateColumnInfo": {
+                        "properties": {
+                            "RowCount": {
+                                "type": "RowCount"
+                            }
+                        },
+                        "title": "aggregateColumnInfo",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "groupingsDown": {
+                        "properties": {
+                            "groupings": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "groupingsDown",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "reportType": {
+                        "properties": {
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Opportunities"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "Opportunity"
+                            }
+                        },
+                        "title": "reportType",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "standardFilters": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "open"
+                            },
+                            "value": {
+                                "type": "string",
+                                "x-samplevalue": "all"
+                            }
+                        },
+                        "title": "standardFilters",
+                        "x-has-customfields": false
+                    },
+                    "groupingsAcross": {
+                        "properties": {
+                            "groupings": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "groupingsAcross",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "reportMetadata": {
+                        "properties": {
+                            "aggregates": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "RowCount"
+                                ]
+                            },
+                            "detailColumns": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "developerName": {
+                                "type": "string",
+                                "x-samplevalue": "MyReport_Bb"
+                            },
+                            "folderId": {
+                                "type": "string",
+                                "x-samplevalue": "005i0000001VNdeAAG"
+                            },
+                            "groupingsAcross": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "groupingsDown": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "hasDetailRows": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "hasRecordCount": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "historicalSnapshotDates": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "00O0H000006k2tYUAQ"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "MyReport"
+                            },
+                            "reportFilters": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "reportFormat": {
+                                "type": "string",
+                                "x-samplevalue": "TABULAR"
+                            },
+                            "reportType": {
+                                "type": "reportType"
+                            },
+                            "scope": {
+                                "type": "string",
+                                "x-samplevalue": "organization"
+                            },
+                            "showGrandTotal": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "showSubtotals": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "sortBy": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "standardDateFilter": {
+                                "type": "standardDateFilter"
+                            },
+                            "standardFilters": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "reportMetadata",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "aggregates": {
+                        "properties": {
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "0"
+                            },
+                            "value": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            }
+                        },
+                        "title": "aggregates",
+                        "x-has-customfields": false
+                    },
+                    "attributes": {
+                        "properties": {
+                            "describeUrl": {
+                                "type": "string",
+                                "x-samplevalue": "/services/data/v35.0/analytics/reports/00O0H000006k2tYUAQ/describe"
+                            },
+                            "instancesUrl": {
+                                "type": "string",
+                                "x-samplevalue": "/services/data/v35.0/analytics/reports/00O0H000006k2tYUAQ/instances"
+                            },
+                            "reportId": {
+                                "type": "string",
+                                "x-samplevalue": "00O0H000006k2tYUAQ"
+                            },
+                            "reportName": {
+                                "type": "string",
+                                "x-samplevalue": "MyReport"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "Report"
+                            }
+                        },
+                        "title": "attributes",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "factMap": {
+                        "properties": {
+                            "T!T": {
+                                "type": "T%21T"
+                            }
+                        },
+                        "title": "factMap",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "reportExtendedMetadata": {
+                        "properties": {
+                            "aggregateColumnInfo": {
+                                "type": "aggregateColumnInfo"
+                            },
+                            "detailColumnInfo": {
+                                "$ref": "object"
+                            }
+                        },
+                        "title": "reportExtendedMetadata",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "RowCount": {
+                        "properties": {
+                            "dataType": {
+                                "type": "string",
+                                "x-samplevalue": "int"
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Record Count"
+                            }
+                        },
+                        "title": "RowCount",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "object": {
+                        "properties": {},
+                        "title": "object",
+                        "type": "object"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 4766,
+            "createdDate": "2015-11-02T14:50:57Z",
+            "description": "Retrieve report metadata by ID",
+            "path": "/hubs/crm/reports/{id}/metadata",
+            "vendorPath": "/services/data/v35.0/analytics/reports/{id}/describe",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 4700,
+                    "resourceId": 4766,
+                    "createdDate": "2015-11-02T14:50:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The report ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "reportsMetadata",
+                "transform": false,
+                "swagger": {
+                    "filterValues": {
+                        "id": "filterValues",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "detailColumnInfo": {
+                        "id": "detailColumnInfo",
+                        "properties": {
+                            "COLUMN": {
+                                "type": "COLUMN"
+                            }
+                        }
+                    },
+                    "reportTypeMetadata": {
+                        "id": "reportTypeMetadata",
+                        "properties": {
+                            "categories": {
+                                "items": {
+                                    "$ref": "categories"
+                                },
+                                "type": "array"
+                            },
+                            "dataTypeFilterOperatorMap": {
+                                "type": "dataTypeFilterOperatorMap"
+                            },
+                            "standardDateFilterDurationGroups": {
+                                "items": {
+                                    "$ref": "standardDateFilterDurationGroups"
+                                },
+                                "type": "array"
+                            },
+                            "standardFilterInfos": {
+                                "type": "standardFilterInfos"
+                            }
+                        }
+                    },
+                    "columns": {
+                        "id": "columns",
+                        "properties": {
+                            "COLUMN": {
+                                "type": "COLUMN"
+                            }
+                        }
+                    },
+                    "COLUMN": {
+                        "id": "COLUMN",
+                        "properties": {
+                            "dataType": {
+                                "type": "string"
+                            },
+                            "filterable": {
+                                "type": "boolean"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "picklist": {
+                        "id": "picklist",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "textarea": {
+                        "id": "textarea",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "aggregateColumnInfo": {
+                        "id": "aggregateColumnInfo",
+                        "properties": {
+                            "RowCount": {
+                                "type": "RowCount"
+                            }
+                        }
+                    },
+                    "reportType": {
+                        "id": "reportType",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "datetime": {
+                        "id": "datetime",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "standardDateFilterDurations": {
+                        "id": "standardDateFilterDurations",
+                        "properties": {
+                            "endDate": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "startDate": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "standardFilters": {
+                        "id": "standardFilters",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "reportMetadata": {
+                        "id": "reportMetadata",
+                        "properties": {
+                            "Id": {
+                                "type": "string"
+                            },
+                            "aggregates": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "detailColumns": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "developerName": {
+                                "type": "string"
+                            },
+                            "folderId": {
+                                "type": "string"
+                            },
+                            "hasDetailRows": {
+                                "type": "boolean"
+                            },
+                            "hasRecordCount": {
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "reportFormat": {
+                                "type": "string"
+                            },
+                            "reportType": {
+                                "type": "reportType"
+                            },
+                            "showGrandTotal": {
+                                "type": "boolean"
+                            },
+                            "showSubtotals": {
+                                "type": "boolean"
+                            },
+                            "sortBy": {
+                                "items": {
+                                    "$ref": "sortBy"
+                                },
+                                "type": "array"
+                            },
+                            "standardDateFilter": {
+                                "type": "standardDateFilter"
+                            },
+                            "standardFilters": {
+                                "items": {
+                                    "$ref": "standardFilters"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-primary-key": [
+                            "Id"
+                        ]
+                    },
+                    "currency": {
+                        "id": "currency",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "reportExtendedMetadata": {
+                        "id": "reportExtendedMetadata",
+                        "properties": {
+                            "aggregateColumnInfo": {
+                                "type": "aggregateColumnInfo"
+                            },
+                            "detailColumnInfo": {
+                                "type": "detailColumnInfo"
+                            }
+                        }
+                    },
+                    "sortBy": {
+                        "id": "sortBy",
+                        "properties": {
+                            "sortColumn": {
+                                "type": "string"
+                            },
+                            "sortOrder": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "categories": {
+                        "id": "categories",
+                        "properties": {
+                            "columns": {
+                                "type": "columns"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "id": {
+                        "id": "id",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "RowCount": {
+                        "id": "RowCount",
+                        "properties": {
+                            "dataType": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "dataTypeFilterOperatorMap": {
+                        "id": "dataTypeFilterOperatorMap",
+                        "properties": {
+                            "boolean_": {
+                                "items": {
+                                    "$ref": "boolean_"
+                                },
+                                "type": "array"
+                            },
+                            "currency": {
+                                "items": {
+                                    "$ref": "currency"
+                                },
+                                "type": "array"
+                            },
+                            "date": {
+                                "items": {
+                                    "$ref": "dateReportsMetaData"
+                                },
+                                "type": "array"
+                            },
+                            "datetime": {
+                                "items": {
+                                    "$ref": "datetime"
+                                },
+                                "type": "array"
+                            },
+                            "double": {
+                                "items": {
+                                    "$ref": "double"
+                                },
+                                "type": "array"
+                            },
+                            "email": {
+                                "items": {
+                                    "$ref": "email"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "items": {
+                                    "$ref": "id"
+                                },
+                                "type": "array"
+                            },
+                            "int": {
+                                "items": {
+                                    "$ref": "int"
+                                },
+                                "type": "array"
+                            },
+                            "phone": {
+                                "items": {
+                                    "$ref": "phone"
+                                },
+                                "type": "array"
+                            },
+                            "picklist": {
+                                "items": {
+                                    "$ref": "picklist"
+                                },
+                                "type": "array"
+                            },
+                            "string_": {
+                                "items": {
+                                    "$ref": "string_"
+                                },
+                                "type": "array"
+                            },
+                            "textarea": {
+                                "items": {
+                                    "$ref": "textarea"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "email": {
+                        "id": "email",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "standardDateFilterDurationGroups": {
+                        "id": "standardDateFilterDurationGroups",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "standardDateFilterDurations": {
+                                "items": {
+                                    "$ref": "standardDateFilterDurations"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "standardDateFilter": {
+                        "id": "standardDateFilter",
+                        "properties": {
+                            "column": {
+                                "type": "string"
+                            },
+                            "durationValue": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "standardFilterInfos": {
+                        "id": "standardFilterInfos",
+                        "properties": {
+                            "active": {
+                                "type": "active"
+                            }
+                        }
+                    },
+                    "boolean_": {
+                        "id": "boolean_",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "double": {
+                        "id": "double",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "active": {
+                        "id": "active",
+                        "properties": {
+                            "filterValues": {
+                                "items": {
+                                    "$ref": "filterValues"
+                                },
+                                "type": "array"
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "int": {
+                        "id": "int",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "dateReportsMetaData": {
+                        "id": "dateReportsMetaData",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "phone": {
+                        "id": "phone",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "string_": {
+                        "id": "string_",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "reportsMetadata": {
+                        "id": "reportsMetadata",
+                        "properties": {
+                            "reportExtendedMetadata": {
+                                "type": "reportExtendedMetadata"
+                            },
+                            "reportMetadata": {
+                                "type": "reportMetadata"
+                            },
+                            "reportTypeMetadata": {
+                                "type": "reportTypeMetadata"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 82815,
+            "createdDate": "2017-07-18T19:32:55Z",
+            "description": "Retrieve a list of reports",
+            "path": "/hubs/crm/reports/metadata",
+            "vendorPath": "/services/data/v35.0/analytics/reports",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "reportsMetadataList",
+                "transform": false,
+                "swagger": {
+                    "reportsMetadataList": {
+                        "id": "reportsMetadataList",
+                        "items": {
+                            "$ref": "reportsMetadataListObject"
+                        },
+                        "type": "array"
+                    },
+                    "reportsMetadataListObject": {
+                        "id": "reportsMetadataListObject",
+                        "properties": {
+                            "describeUrl": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "instancesUrl": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "apiNoDocumentation",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 190501,
+            "createdDate": "2018-09-18T00:12:51Z",
+            "description": "Search for list of report-types",
+            "path": "/hubs/crm/report-types",
+            "vendorPath": "/services/data/v39.0/analytics/reportTypes",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 458545,
+                    "resourceId": 190501,
+                    "createdDate": "2018-09-18T00:12:51Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 458544,
+                    "resourceId": 190501,
+                    "createdDate": "2018-09-18T00:12:51Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "reportsTypesList",
+                "transform": false,
+                "swagger": {
+                    "reportTypes": {
+                        "properties": {
+                            "describeUrl": {
+                                "type": "string",
+                                "x-samplevalue": "/services/data/v39.0/analytics/report-types/CustomEntity$Sailthru__Sailthru_Fields__c"
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Sailthru Fields"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "CustomEntity$Sailthru__Sailthru_Fields__c"
+                            }
+                        },
+                        "title": "reportTypes",
+                        "x-has-customfields": false
+                    },
+                    "reportsTypesListObject": {
+                        "properties": {
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Accounts & Contacts"
+                            },
+                            "reportTypes": {
+                                "items": {
+                                    "$ref": "reportTypes"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "reportsTypesList",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "reportsTypesList": {
+                        "items": {
+                            "$ref": "reportsTypesListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 190502,
+            "createdDate": "2018-09-18T00:12:51Z",
+            "description": "Retrive metadata for a report-type.",
+            "path": "/hubs/crm/report-types/{type}",
+            "vendorPath": "/services/data/v39.0/analytics/reportTypes/{type}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 458546,
+                    "resourceId": 190502,
+                    "createdDate": "2018-09-18T00:12:51Z",
+                    "name": "type",
+                    "vendorName": "type",
+                    "description": "The Report type",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "retrieveReportTypes",
+                "transform": false,
+                "swagger": {
+                    "retrieveReportTypes": {
+                        "properties": {},
+                        "title": "retrieveReportTypes"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [
+        {
+            "elementId": 23,
+            "id": 4408,
+            "name": "filesMetadata",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Detailed metadata about a specific ContentVersion",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4406,
+            "name": "files",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a document that has been uploaded to a library in Salesforce CRM Content or Salesforce Files. This object is available in versions 17.0 and later for Salesforce CRM Content. This object is available in API version 21.0 and later for Salesforce Files",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4393,
+            "name": "accounts",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents an individual account, which is an organization or person involved with your business (such as customers, competitors, and partners)",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "polling",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4394,
+            "name": "accountsActivities",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents an event in the calendar for an account. In the user interface, event and task records are collectively referred to as activities",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4395,
+            "name": "accountsNotes",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a note, which is text associated with an account object",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4396,
+            "name": "accountsTasks",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a business activity such as making a phone call or other to-do items. In the user interface, Task and Event records are collectively referred to as activities.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4397,
+            "name": "attachments",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a file that a User has uploaded and attached to a parent object.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4398,
+            "name": "attachmentsData",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The binary data of an attachment",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4399,
+            "name": "campaigns",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents and tracks a marketing campaign, such as a direct mail promotion, webinar, or trade show.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "polling",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4400,
+            "name": "contacts",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a contact, which is a person associated with an account.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "polling",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4401,
+            "name": "contactsActivities",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents an event in the calendar for a contact. In the user interface, event and task records are collectively referred to as activities.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4402,
+            "name": "contactsNotes",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a note, which is text associated with a contact",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4403,
+            "name": "contactsTasks",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a business activity such as making a phone call or other to-do items. In the user interface, Task and Event records are collectively referred to as activities.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4404,
+            "name": "data",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The binary data of an object such as a document or attachment",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4405,
+            "name": "fields",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The fields for a given object",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4407,
+            "name": "filesDetails",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The metadata about a specific ContentVersion",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4409,
+            "name": "filesVersions",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The available versions for a specified contentVersion",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4410,
+            "name": "filesVersionsLatestVersion",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The binary data of the latest version of the Document or Attachment",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4411,
+            "name": "filesVersionsLatestVersionMetadata",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The metadata about the latest version of a Document",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4412,
+            "name": "filesVersionsMetadata",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a specific version of a document in Salesforce CRM Content or Salesforce Files. This object is available in versions 17.0 and later for Salesforce CRM Content documents. This object is available in versions 20.0 and later for Salesforce Files.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4413,
+            "name": "leads",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a prospect or lead",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "polling",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4414,
+            "name": "leadsActivities",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents an event in the calendar for a lead. In the user interface, event and task records are collectively referred to as activities.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4415,
+            "name": "leadsNotes",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a note, which is text associated with a lead",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4416,
+            "name": "leadsTasks",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a business activity such as making a phone call or other to-do items. In the user interface, Task and Event records are collectively referred to as activities.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4417,
+            "name": "notes",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a note, which is text associated with a custom object or a standard object",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4418,
+            "name": "opportunities",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents an opportunity, which is a sale or pending deal",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "polling",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4419,
+            "name": "opportunitiesActivities",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents an event in the calendar for an opportunity. In the user interface, event and task records are collectively referred to as activities.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4420,
+            "name": "opportunitiesNotes",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a note, which is text associated with an opportunity",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4421,
+            "name": "reportTypes",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The available types of reports as configured in the CRM system",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4422,
+            "name": "reports",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "In its simplest form, a report is a list of records (like opportunities or accounts) that meet the criteria you define",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4423,
+            "name": "reportsMetadata",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "View available reports in the CRM system",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4424,
+            "name": "users",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Represents a user in your organization",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": true,
+            "migrated": false,
+            "vendorEventTypes": "polling",
+            "notes": ""
+        },
+        {
+            "elementId": 23,
+            "id": 4425,
+            "name": "usersMe",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Details about the authenticated user",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        }
+    ],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

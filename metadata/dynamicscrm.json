@@ -1,0 +1,3862 @@
+{
+    "id": 105,
+    "name": "Dynamics CRM",
+    "hookName": "DynamicsCRM",
+    "key": "dynamicscrm",
+    "description": "Add a Microsoft Dynamics CRM Instance to connect your existing Microsoft Dynamics CRM account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements. You will need your Microsoft Dynamics CRM account information to add an instance.",
+    "image": "elements/provider_dynamicscrm.png",
+    "logo": "dynamicscrm",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "Microsoft Dynamics CRM",
+    "configuration": [
+        {
+            "id": 814,
+            "name": "User Name",
+            "key": "user.username",
+            "description": "User Name",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254020,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 59575,
+            "name": "Bulk Query Create Time Attribute",
+            "key": "bulk.attribute.created_time",
+            "description": "The field or attribute for the created time for use by the bulk APIs",
+            "defaultValue": "attributes.createdon",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 59581,
+            "name": "Bulk Date Format",
+            "key": "bulk.query.date_mask",
+            "description": "The date format for use by the bulk APIs",
+            "defaultValue": "milliseconds",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 815,
+            "name": "User Password",
+            "key": "user.password",
+            "description": "User Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 59578,
+            "name": "Bulk Query Modified Time Attribute",
+            "key": "bulk.attribute.modified_time",
+            "description": "The field or attribute for the last modified time for use by the bulk APIs",
+            "defaultValue": "attributes.modifiedon",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 816,
+            "name": "Dynamics CRM URL",
+            "key": "dynamics.tenant",
+            "description": "The URL of your online CRM instances in the form companyname.crm.onmicrosoft.com",
+            "defaultValue": "yourcompanyname.crm.dynamics.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 817,
+            "name": "Security Token Details",
+            "key": "dynamics.security.token",
+            "description": "Security Token Details",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52488,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159786,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256148,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256399,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1428,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Dynamics CRM Beta Event Notifications Enabled",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1432,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "10",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1429,
+            "name": "Event Poller URLs",
+            "key": "event.poller.urls",
+            "description": "Dynamics CRM Beta Event Poller URLs",
+            "defaultValue": "accounts|/hubs/crm/accounts?where=modifiedon>'${gmtDate:yyyy-MM-dd}'|id\ncontacts|/hubs/crm/contacts?where=modifiedon>'${gmtDate:yyyy-MM-dd}'|id\nleads|/hubs/crm/leads?where=modifiedon>'${gmtDate:yyyy-MM-dd}'|id\nopportunities|/hubs/crm/opportunities?where=modifiedon>'${gmtDate:yyyy-MM-dd}'|id\nproducts|/hubs/crm/products?where=modifiedon>'${gmtDate:yyyy-MM-dd}'|id",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 304,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1431,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Dynamics CRM Beta Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9717,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1430,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Dynamics CRM Beta Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "accounts",
+            "vendorName": "account"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "contact"
+        },
+        {
+            "name": "opportunities",
+            "vendorName": "opportunity"
+        },
+        {
+            "name": "leads",
+            "vendorName": "lead"
+        },
+        {
+            "name": "users",
+            "vendorName": "systemuser"
+        },
+        {
+            "name": "products",
+            "vendorName": "product"
+        },
+        {
+            "name": "tasks",
+            "vendorName": "task"
+        },
+        {
+            "name": "notes",
+            "vendorName": "annotation"
+        },
+        {
+            "name": "activities",
+            "vendorName": "activitypointer"
+        }
+    ],
+    "objectMetadata": {
+        "annotation": {
+            "fields": [
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.filesize"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.objecttypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.mimetype"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.documentbody"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.filename"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.notetext"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stepid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.annotationid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.langid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isdocument"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.owningbusinessunit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.objectid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                }
+            ]
+        },
+        "product": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.productstructure"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.productnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.subjectid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.vendorname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.quantityonhand"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.validtodate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.validfromdate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.vendorpartnumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.hierarchypath"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.productid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.vendorid"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.quantitydecimal"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.producttypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.producturl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.currentcost"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.price"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentproductid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isstockitem"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.stockweight"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.suppliername"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.price_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.currentcost_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.defaultuomid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.organizationid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.standardcost"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.iskit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.stockvolume"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.size"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.pricelevelid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.defaultuomscheduleid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.standardcost_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                }
+            ]
+        },
+        "task": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.regardingobjectid"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.actualdurationminutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.category"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.scheduleddurationminutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isregularactivity"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.scheduledend",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.prioritycode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.actualend",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.activityid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.percentcomplete"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.activitytypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isbilled"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.subcategory"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.actualstart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.crmtaskassigneduniqueid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isworkflowcreated"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.scheduledstart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.serviceid"
+                }
+            ]
+        },
+        "activitypointer": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.regardingobjectid"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.scheduledstart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isbilled"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.sendermailboxid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.scheduleddurationminutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.scheduledend",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.postponeactivityprocessinguntil",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.deliveryprioritycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ismapiprivate"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.actualend",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.actualdurationminutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.serviceid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.seriesid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.activityid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.leftvoicemail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isworkflowcreated"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.senton",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.community"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.prioritycode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.activitytypecode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.actualstart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.instancetypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.subject"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.deliverylastattemptedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isregularactivity"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                }
+            ]
+        },
+        "contact": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.spousesname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_shippingmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.preferredserviceid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address3_shippingmethodcode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.annualincome"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredappointmentdaycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line1"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.lastusedincampaign",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address3_freighttermscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.pager"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.employeeid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.territorycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentcustomerid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.managername"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.birthdate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.numberofchildren"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.home2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.assistantphone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.masterid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.company"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.mobilephone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.customertypecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address3_addresstypecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_freighttermscode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_longitude"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_addresstypecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomifullname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging90_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.accountid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_primarycontactname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.familystatuscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_addressid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.firstname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.department"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.originatingleadid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging60"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_freighttermscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomimiddlename"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address3_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.gendercode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_addresstypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_composite"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.websiteurl"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging60_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_county"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.jobtitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postofficebox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotpostalmail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_utcoffset"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.managerphone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_addressid"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.childrensnames"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredcontactmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomilastname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging90"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotbulkpostalmail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotbulkemail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.customersizecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.fullname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredappointmenttimecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address3_latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.paymenttermscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging30"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.leadsourcecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.merged"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_shippingmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ftpsiteurl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.preferredsystemuserid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_addressid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_stateorprovince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.nickname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postofficebox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.preferredequipmentid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.assistantname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_country"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.externaluseridentifier"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.creditonhold"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address3_longitude"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.accountrolecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotphone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_county"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.contactid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotfax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging30_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.salutation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.suffix"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_primarycontactname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.business2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.governmentid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_primarycontactname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_stateorprovince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotsendmm"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.annualincome_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.lastname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotemail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_postofficebox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_stateorprovince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomifirstname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_county"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.shippingmethodcode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.creditlimit"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.anniversary",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.educationcode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.haschildrencode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isbackofficecustomer"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.creditlimit_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.defaultpricelevelid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.middlename"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address3_line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.callback"
+                }
+            ]
+        },
+        "opportunity": {
+            "fields": [
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.schedulefollowup_prospect",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totaltax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.identifycustomercontacts"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.actualvalue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.completefinalproposal"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentaccountid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.presentproposal"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.resolvefeedback"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.freightamount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.identifypursuitteam"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totalamountlessfreight"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.captureproposalfeedback"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.freightamount_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.salesstage"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.actualclosedate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.presentfinalproposal"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.actualvalue_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totallineitemamount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.developproposal"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stepname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totaltax_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.quotecomments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totallineitemdiscountamount_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.salesstagecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.discountamount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.opportunityratingcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.pricelevelid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.budgetamount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totallineitemdiscountamount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.closeprobability"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.budgetstatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totaldiscountamount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totalamountlessfreight_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.estimatedvalue_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.estimatedclosedate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.need"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totaldiscountamount_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totallineitemamount_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.customerid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.originatingleadid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.purchaseprocess"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stepid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.discountpercentage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.proposedsolution"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.schedulefollowup_qualify",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.customerneed"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.completeinternalreview"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.finaldecisiondate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.decisionmaker"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.pursuitdecision"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.estimatedvalue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.prioritycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.campaignid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.confirminterest"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totalamount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentcontactid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.discountamount_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.purchasetimeframe"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.budgetamount_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isrevenuesystemcalculated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.totalamount_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.qualificationcomments"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.evaluatefit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.currentsituation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.identifycompetitors"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.sendthankyounote"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.opportunityid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.customerpainpoints"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.filedebrief"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.scheduleproposalmeeting",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.initialcommunication"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.timeline"
+                }
+            ]
+        },
+        "systemuser": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.queueid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredaddresscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.nickname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isemailaddressapprovedbyo365admin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_stateorprovince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_county"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postofficebox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredphonecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yammeruserid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.setupuser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.firstname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.employeeid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.territoryid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.jobtitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.skills"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.internalemailaddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isintegrationuser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_addressid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.windowsliveid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.disabledreason"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.personalemailaddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.userlicensetype"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.businessunitid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.organizationid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomifirstname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_shippingmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomimiddlename"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.defaultfilterspopulated"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.systemuserid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_country"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.caltype"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomilastname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.mobilephone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.lastname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_composite"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.accessmode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomifullname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.photourl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.siteid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isdisabled"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.domainname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.passportlo"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.emailrouteraccessapproval"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentsystemuserid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.fullname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.salutation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yammeremailaddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.middlename"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_addresstypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_county"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_upszone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.positionid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_shippingmethodcode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.passporthi"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.invitestatuscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.islicensed"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.governmentid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.issyncwithdirectory"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.homephone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredemailcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_name"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_addressid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.outgoingemaildeliverymethod"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.mobilealertemail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.calendarid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_addresstypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_fax"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postofficebox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.incomingemaildeliverymethod"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.defaultmailbox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_stateorprovince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.displayinserviceviews"
+                }
+            ]
+        },
+        "incident": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.sentimentvalue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.onholdtime"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.incidentstagecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.casetypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.title"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.numberofchildincidents"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.slainvokedid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.followuptaskcreated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.firstresponseslastatus"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.contactid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.messagetypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.merged"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.customercontacted"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.resolvebykpiid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.existingcase"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.customersatisfactioncode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.responsiblecontactid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.firstresponsebykpiid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.primarycontactid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.kbarticleid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.subjectid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isdecrementing"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.followupby",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.accountid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.actualserviceunits"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.escalatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.checkemail"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.resolveby",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.masterid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.incidentid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.entitlementid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.servicestage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.routecase"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.influencescore"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.responseby",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.productid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.caseorigincode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.firstresponsesent"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.productserialnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.contractid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.contractservicelevelcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.isescalated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.severitycode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.lastonholdtime",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ticketnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.contractdetailid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentcaseid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.blockedprofile"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.billedserviceunits"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.socialprofileid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.activitiescomplete"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.resolvebyslastatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.customerid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.prioritycode"
+                }
+            ]
+        },
+        "account": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.openrevenue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.territorycode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.lastusedincampaign",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone2"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.ownershipcode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.customersizecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.primarycontactid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.creditlimit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_county"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone3"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.openrevenue_date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotbulkpostalmail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_freighttermscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging90"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotpostalmail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.shippingmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_addressid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredcontactmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_city"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postofficebox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging90_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.merged"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredappointmentdaycode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.paymenttermscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_county"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging30"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotbulkemail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.originatingleadid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.websiteurl"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.revenue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_shippingmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.tickersymbol"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.sic"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.marketcap"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentaccountid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_addressid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.creditlimit_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.preferredsystemuserid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.defaultpricelevelid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.openrevenue_state"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_primarycontactname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.accountcategorycode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotfax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postofficebox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.preferredserviceid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotemail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging60"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.customertypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.opendeals_state"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yominame"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotsendmm"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.fax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.numberofemployees"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.opendeals_date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_freighttermscode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.accountratingcode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_longitude"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.revenue_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.creditonhold"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone1"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_addresstypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_stateorprovince"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_shippingmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.accountnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.territoryid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ftpsiteurl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotphone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.accountclassificationcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.preferredequipmentid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_addresstypecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_fax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.businesstypecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging60_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stockexchange"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.marketcap_base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.accountid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.aging30_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.openrevenue_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.sharesoutstanding"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_primarycontactname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_latitude"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.masterid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.opendeals"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_stateorprovince"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredappointmenttimecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.industrycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone3"
+                }
+            ]
+        },
+        "lead": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_county"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.lastname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.processid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postofficebox"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.modifiedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_city"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.budgetamount_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.estimatedvalue"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.lastusedincampaign",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.budgetstatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_addresstypecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotbulkemail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statecode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.estimatedclosedate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_addresstypecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.leadsourcecode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.salesstage"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.initialcommunication"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.estimatedamount_base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.budgetamount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.industrycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.middlename"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.exchangerate"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.overriddencreatedon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.mobilephone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.fax"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.createdon",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomilastname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.accountid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.sic"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_composite"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.need"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdonbehalfby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postalcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentcontactid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomifirstname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_stateorprovince"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.purchaseprocess"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_postofficebox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotfax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.versionnumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_county"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.ownerid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.originatingcaseid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.contactid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.salutation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.numberofemployees"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.companyname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.fullname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.qualifyingopportunityid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.firstname"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_latitude"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.schedulefollowup_qualify",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.decisionmaker"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.masterid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_shippingmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.purchasetimeframe"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.preferredcontactmethodcode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_upszone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.websiteurl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_postalcode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_shippingmethodcode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "attributes.schedulefollowup_prospect",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.leadqualitycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_addressid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.pager"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotsendmm"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.stageid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.prioritycode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.createdby"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_addressid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.campaignid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address1_fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotemail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomimiddlename"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.salesstagecode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.emailaddress3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.leadid"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.statuscode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.relatedobjectid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.modifiedonbehalfby"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.transactioncurrencyid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.qualificationcomments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.revenue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.merged"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.customerid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotphone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_stateorprovince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.evaluatefit"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.estimatedamount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address1_longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomifullname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.donotpostalmail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.address2_utcoffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.yomicompanyname"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.address2_telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.parentaccountid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.jobtitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "attributes.confirminterest"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "attributes.revenue_base"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": false,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

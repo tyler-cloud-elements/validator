@@ -1,0 +1,1212 @@
+{
+    "id": 3313,
+    "name": "EventMobi v1",
+    "hookName": "EventMobiv1",
+    "key": "eventmobiv1",
+    "description": "EventMobi v1 - Mobile apps for events, conferences & tradeshows that enhance the attendee experience.",
+    "image": "elements/provider_eventmobiv1.png",
+    "logo": "eventmobiv1",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 25629,
+            "name": "API Key",
+            "key": "api.key",
+            "description": "EventMobi API Key",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 25625,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "EventMobi v1 Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 25626,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "EventMobi v1 Base URL",
+            "defaultValue": "http://api.eventmobi.com/en/api/v1/",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 25627,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "EventMobi v1 Pagination Type",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254030,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 25634,
+            "name": "Monitored EventMobi Event Name ",
+            "key": "monitored.event.name",
+            "description": "The eventName of the EventMobi event to monitor for new attendees",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 52518,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159921,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 25635,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 25628,
+            "name": "Time of Getting Token or Performing Authentication",
+            "key": "authentication.time",
+            "description": "EventMobi v1 Time of Getting Token or Performing Authentication",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 25631,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Set time interval for polling application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 25632,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 25633,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 25630,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON.",
+            "defaultValue": "{\"attendees\":{\"url\":\" /hubs/event-conferencing/attendees?where=\",\"idField\":\"id\"}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256158,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256409,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 84445,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 14851,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Retrieve an event",
+            "path": "/hubs/event-conferencing/mobi-events/{eventName}",
+            "vendorPath": "/events/{eventName}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 19770,
+                    "resourceId": 14851,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "eventName",
+                    "vendorName": "eventName",
+                    "description": "The event name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "mobiEvents",
+                "transform": false,
+                "swagger": {
+                    "mobiEvents": {
+                        "id": "mobiEvents",
+                        "properties": {
+                            "end_date": {
+                                "type": "string"
+                            },
+                            "force_login_feedback": {
+                                "type": "string"
+                            },
+                            "login_type": {
+                                "type": "string"
+                            },
+                            "pushed_revision": {
+                                "type": "string"
+                            },
+                            "event_description": {
+                                "type": "string"
+                            },
+                            "push_update": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "restrict_account_reg": {
+                                "type": "string"
+                            },
+                            "secure_mode": {
+                                "type": "string"
+                            },
+                            "timezone_offset_secs": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "partner_id": {
+                                "type": "string"
+                            },
+                            "header_images": {
+                                "type": "string"
+                            },
+                            "banner_ad_display": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "timezone_name": {
+                                "type": "string"
+                            },
+                            "Logo50": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "event_website": {
+                                "type": "string"
+                            },
+                            "start_date": {
+                                "type": "string"
+                            },
+                            "location_address": {
+                                "type": "string"
+                            },
+                            "cache_revision": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "support_email_address": {
+                                "type": "string"
+                            },
+                            "time_format": {
+                                "type": "string"
+                            },
+                            "Logo100": {
+                                "type": "unknown"
+                            },
+                            "event_name_full": {
+                                "type": "string"
+                            },
+                            "event_app_name": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "sections": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "sections"
+                                }
+                            },
+                            "location_name": {
+                                "type": "string"
+                            },
+                            "icon_color": {
+                                "type": "string"
+                            },
+                            "event_name": {
+                                "type": "string"
+                            },
+                            "restrict_profile_edit": {
+                                "type": "string"
+                            },
+                            "passcode": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "sections": {
+                        "id": "sections",
+                        "properties": {
+                            "partner_name": {
+                                "type": "unknown"
+                            },
+                            "self_edit_from": {
+                                "type": "unknown"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "color_class": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "event_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "icon_class": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "page": {
+                                "type": "string"
+                            },
+                            "partner_token": {
+                                "type": "unknown"
+                            },
+                            "self_edit_invite": {
+                                "type": "unknown"
+                            },
+                            "self_edit_subject": {
+                                "type": "unknown"
+                            },
+                            "position": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "show_ads": {
+                                "type": "boolean"
+                            },
+                            "status": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|response",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14853,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Update an event",
+            "path": "/hubs/event-conferencing/mobi-events/{eventName}",
+            "vendorPath": "/events/{eventName}",
+            "method": "PUT",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 19773,
+                    "resourceId": 14853,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "eventName",
+                    "vendorName": "event_name_full",
+                    "description": "The event name",
+                    "type": "path",
+                    "vendorType": "form",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19774,
+                    "resourceId": 14853,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "events",
+                    "vendorName": "events",
+                    "description": "The event",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "mobiEventsUpdate",
+                    "vendorDataType": "mobiEventsUpdate",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "mobiEvents",
+                "transform": false,
+                "swagger": {
+                    "mobiEventsUpdate": {
+                        "id": "mobiEvents",
+                        "properties": {
+                            "event_start": {
+                                "type": "string"
+                            },
+                            "event_end": {
+                                "type": "string"
+                            },
+                            "event_about": {
+                                "type": "string"
+                            },
+                            "event_location_name": {
+                                "type": "string"
+                            },
+                            "event_website": {
+                                "type": "string"
+                            },
+                            "event_location_address": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|response",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14856,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Search for sections for an event",
+            "path": "/hubs/event-conferencing/mobi-events/{eventName}/sections",
+            "vendorPath": "/events/{eventName}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 19780,
+                    "resourceId": 14856,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "eventName",
+                    "vendorName": "eventName",
+                    "description": "The event name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "mobiEventsSectionsList",
+                "transform": false,
+                "swagger": {
+                    "mobiEventsSectionsList": {
+                        "id": "mobiEventsSectionsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "mobiEventsSectionsListObject"
+                        }
+                    },
+                    "mobiEventsSectionsListObject": {
+                        "id": "mobiEventsSectionsListObject",
+                        "properties": {
+                            "partner_name": {
+                                "type": "unknown"
+                            },
+                            "self_edit_from": {
+                                "type": "unknown"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "color_class": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "event_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "icon_class": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "page": {
+                                "type": "string"
+                            },
+                            "partner_token": {
+                                "type": "unknown"
+                            },
+                            "self_edit_invite": {
+                                "type": "unknown"
+                            },
+                            "self_edit_subject": {
+                                "type": "unknown"
+                            },
+                            "position": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "show_ads": {
+                                "type": "boolean"
+                            },
+                            "status": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|response.sections",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14852,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Retrieve a section for an event",
+            "path": "/hubs/event-conferencing/mobi-events/{eventName}/sections/{sectionId}",
+            "vendorPath": "/events/{eventName}/sections/{sectionId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 19771,
+                    "resourceId": 14852,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "eventName",
+                    "vendorName": "eventName",
+                    "description": "The event name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19772,
+                    "resourceId": 14852,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "sectionId",
+                    "vendorName": "sectionId",
+                    "description": "The section ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "mobiEventsSections",
+                "transform": false,
+                "swagger": {
+                    "mobiEventsSections": {
+                        "id": "mobiEventsSections",
+                        "properties": {
+                            "partner_name": {
+                                "type": "unknown"
+                            },
+                            "self_edit_from": {
+                                "type": "unknown"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "color_class": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "event_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "icon_class": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "page": {
+                                "type": "string"
+                            },
+                            "partner_token": {
+                                "type": "unknown"
+                            },
+                            "self_edit_invite": {
+                                "type": "unknown"
+                            },
+                            "self_edit_subject": {
+                                "type": "unknown"
+                            },
+                            "position": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "items"
+                                }
+                            },
+                            "config": {
+                                "type": "config"
+                            },
+                            "status": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "items": {
+                        "id": "items",
+                        "properties": {
+                            "website": {
+                                "type": "string"
+                            },
+                            "blockMessaging": {
+                                "type": "string"
+                            },
+                            "image50": {
+                                "type": "string"
+                            },
+                            "facebook": {
+                                "type": "string"
+                            },
+                            "about": {
+                                "type": "string"
+                            },
+                            "external_id": {
+                                "type": "string"
+                            },
+                            "linkedin": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "twitter": {
+                                "type": "string"
+                            },
+                            "image100": {
+                                "type": "string"
+                            },
+                            "company_name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "threetopics": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "config": {
+                        "id": "config",
+                        "properties": {
+                            "hide_regular_fields": {
+                                "type": "boolean"
+                            },
+                            "custom_fields_enabled": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|response",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14854,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Search for items for a section for an event",
+            "path": "/hubs/event-conferencing/mobi-events/{eventName}/sections/{sectionId}/items",
+            "vendorPath": "/events/{eventName}/sections/{sectionId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 19775,
+                    "resourceId": 14854,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "eventName",
+                    "vendorName": "eventName",
+                    "description": "The event name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19776,
+                    "resourceId": 14854,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "sectionId",
+                    "vendorName": "sectionId",
+                    "description": "The section ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "mobiEventsSectionsItemsList",
+                "transform": false,
+                "swagger": {}
+            },
+            "type": "api",
+            "rootKey": "|response.items",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14855,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Create an item for a section for an event",
+            "path": "/hubs/event-conferencing/mobi-events/{eventName}/sections/{sectionId}/items",
+            "vendorPath": "/events/{eventName}/sections/{sectionId}/items",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 19777,
+                    "resourceId": 14855,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "eventName",
+                    "vendorName": "eventName",
+                    "description": "The event name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19778,
+                    "resourceId": 14855,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "items",
+                    "vendorName": "items",
+                    "description": "The item",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "mobiEventsSectionsItemsCreate",
+                    "vendorDataType": "mobiEventsSectionsItemsCreate",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19779,
+                    "resourceId": 14855,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "sectionId",
+                    "vendorName": "sectionId",
+                    "description": "The section ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "mobiEventsSectionsItems",
+                "transform": false,
+                "swagger": {
+                    "mobiEventsSectionsItemsCreate": {
+                        "id": "mobiEventsSectionsItemsCreate",
+                        "properties": {
+                            "website_address": {
+                                "type": "string"
+                            },
+                            "attendee_email": {
+                                "type": "string"
+                            },
+                            "attendee_company": {
+                                "type": "string"
+                            },
+                            "facebook": {
+                                "type": "string"
+                            },
+                            "attendee_name": {
+                                "type": "string"
+                            },
+                            "external_id": {
+                                "type": "string"
+                            },
+                            "attendee_about": {
+                                "type": "string"
+                            },
+                            "linkedin_login": {
+                                "type": "string"
+                            },
+                            "filename": {
+                                "type": "string"
+                            },
+                            "twitter_login": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "attendee_title": {
+                                "type": "string"
+                            },
+                            "attendee_topics": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|response",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14857,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Retrieve an item for a section for an event",
+            "path": "/hubs/event-conferencing/mobi-events/{eventName}/sections/{sectionId}/items/{itemId}",
+            "vendorPath": "/events/{eventName}/sections/{sectionId}/items/{itemId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 19781,
+                    "resourceId": 14857,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "eventName",
+                    "vendorName": "eventName",
+                    "description": "The event name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19782,
+                    "resourceId": 14857,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "itemId",
+                    "vendorName": "itemId",
+                    "description": "The item ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19783,
+                    "resourceId": 14857,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "sectionId",
+                    "vendorName": "sectionId",
+                    "description": "The section ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "mobiEventsSectionsItems",
+                "transform": false,
+                "swagger": {
+                    "custom_fields_values": {
+                        "id": "custom_fields_values",
+                        "properties": {
+                            "field_id": {
+                                "type": "string"
+                            },
+                            "visibility": {
+                                "type": "string"
+                            },
+                            "type_id": {
+                                "type": "string"
+                            },
+                            "owner_id": {
+                                "type": "string"
+                            },
+                            "event_id": {
+                                "type": "string"
+                            },
+                            "deleted": {
+                                "type": "string"
+                            },
+                            "section_id": {
+                                "type": "string"
+                            },
+                            "edit_permissions": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "metadata_id": {
+                                "type": "unknown"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            },
+                            "owner_type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "mobiEventsSectionsItems": {
+                        "id": "mobiEventsSectionsItems",
+                        "properties": {
+                            "website": {
+                                "type": "string"
+                            },
+                            "image50": {
+                                "type": "string"
+                            },
+                            "facebook": {
+                                "type": "string"
+                            },
+                            "about": {
+                                "type": "string"
+                            },
+                            "external_id": {
+                                "type": "string"
+                            },
+                            "linkedin": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "twitter": {
+                                "type": "string"
+                            },
+                            "image100": {
+                                "type": "string"
+                            },
+                            "custom_fields_values": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "custom_fields_values"
+                                }
+                            },
+                            "company_name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "threetopics": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|response",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "event-conferencing",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 1803,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "name": "api.key",
+            "vendorName": "X-API-KEY",
+            "type": "configuration",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 3313,
+            "required": false
+        }
+    ],
+    "private": false
+}

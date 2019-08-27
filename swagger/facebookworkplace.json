@@ -1,0 +1,3813 @@
+{
+    "basePath": "/elements/api-v2",
+    "paths": {
+        "/groups": {
+            "post": {
+                "summary": "Create a Group",
+                "operationId": "createGroup",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/groupCreate"
+                        },
+                        "in": "body",
+                        "name": "body",
+                        "description": "The Group JSON Object",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "get": {
+                "summary": "List all Groups",
+                "operationId": "getGroups",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/groupGet"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "nextPage",
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "pageSize",
+                        "format": "int64",
+                        "description": "The number of resources to return in a given page",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}": {
+            "patch": {
+                "summary": "Update a Group",
+                "operationId": "updateGroupById",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/groupGet"
+                        },
+                        "in": "body",
+                        "name": "body",
+                        "description": "The Group JSON Object",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "get": {
+                "summary": "Retrieve a Group",
+                "operationId": "getGroupById",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/groupGet"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}/events": {
+            "post": {
+                "summary": "Create an Event for a Group ",
+                "operationId": "createGroupEvent",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/groupsEventsCreate"
+                        },
+                        "in": "body",
+                        "name": "body",
+                        "description": "The Event JSON Object",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "get": {
+                "summary": "List all Events for a Group",
+                "operationId": "getGroupsEvents",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/groupsEventsGet"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "pageSize",
+                        "format": "int64",
+                        "description": "The number of resources to return in a given page",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "nextPage",
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}/events/{eventId}": {
+            "get": {
+                "summary": "Retrieve an Event for a Group",
+                "operationId": "getGroupsEventByEventId",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/groupsEventsGet"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "eventId",
+                        "description": "The Event Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "delete": {
+                "summary": "Delete an Event for a Group",
+                "operationId": "deleteGroupsEventByEventId",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "eventId",
+                        "description": "The Event Id",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}/feed": {
+            "post": {
+                "summary": "Create a Feed for a Group",
+                "operationId": "createGroupFeed",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/groupsFeedCreate"
+                        },
+                        "in": "body",
+                        "name": "body",
+                        "description": "The Feed JSON Object",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "get": {
+                "summary": "List all Feed in a Group",
+                "operationId": "getGroupsFeed",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/groupsFeedGet"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "nextPage",
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "pageSize",
+                        "format": "int64",
+                        "description": "The number of resources to return in a given page",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}/feed/{feedId}": {
+            "patch": {
+                "summary": "Update a Feed for a Group",
+                "operationId": "updateGroupsFeedByFeedId",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "feedId",
+                        "description": "The Feed Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/groupsFeedCreate"
+                        },
+                        "in": "body",
+                        "name": "body",
+                        "description": "The Feed JSON Object",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "get": {
+                "summary": "Retrieve a Feed for a Group",
+                "operationId": "getGroupsFeedByFeedId",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/groupsFeedGet"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "feedId",
+                        "description": "The Feed Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "delete": {
+                "summary": "Delete a Feed for a Group",
+                "operationId": "deleteGroupsFeedByFeedId",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "feedId",
+                        "description": "The Feed Id",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}/members": {
+            "post": {
+                "summary": "Add a Member to a Group. <b> Note : Adding members to work communities are not allowed via API </b>",
+                "operationId": "createGroupMember",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/groupsMembersCreateResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/groupsMembersCreate"
+                        },
+                        "in": "body",
+                        "name": "body",
+                        "description": "The Member JSON Object",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "get": {
+                "summary": "List all Members from a Group",
+                "operationId": "getGroupsMembers",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/groupsMembersGet"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "nextPage",
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "in": "query",
+                        "name": "pageSize",
+                        "format": "int64",
+                        "description": "The number of resources to return in a given page",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}/members/{memberId}": {
+            "get": {
+                "summary": "Retrieve a Member from a Group",
+                "operationId": "getGroupsMemberByMemberId",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/groupsMembersGet"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "memberId",
+                        "description": "The Member Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Specify the comma separated fields to return in the response payload",
+                        "type": "string",
+                        "required": false
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            },
+            "delete": {
+                "summary": "Delete a Member from a Group. <b> Note : Deleting a member from the work community is not allowed via API </b>",
+                "operationId": "deleteGroupsMemberByMemberId",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The Group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "memberId",
+                        "description": "The Member Id. ` Note : Deleting last` <b>memeber</b> `of the` <b>group</b> `will delete` <b>group</b> `as well`",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/groups/{id}/photos": {
+            "post": {
+                "summary": "Post an image to a group along with a message",
+                "operationId": "createGroupPhoto",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/GroupsPhotosPostResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The group Id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/GroupsPhotosPostRequest"
+                        },
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object body",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "groups"
+                ]
+            }
+        },
+        "/members/{id}": {
+            "get": {
+                "summary": "Retrieves member id using email address.",
+                "operationId": "getMemberById",
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/MemberIdbyEmailGetResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The emailId of the member that is used to login",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "members"
+                ]
+            }
+        },
+        "/objects": {
+            "get": {
+                "operationId": "getObjects",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get a list of all the available objects.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/objects/{objectName}/docs": {
+            "get": {
+                "operationId": "getObjectsObjectNameDocs",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Include discovery metadata in definitions",
+                        "in": "query",
+                        "name": "discovery",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "Optionally resolve swagger references for an inline object definition",
+                        "in": "query",
+                        "name": "resolveReferences",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "Include only OpenAPI / Swagger properties in definitions",
+                        "in": "query",
+                        "name": "basic",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "The element swagger version to get the corresponding element swagger, Passing in \"-1\" gives latest element swagger",
+                        "in": "query",
+                        "name": "version",
+                        "required": false,
+                        "default": "-1",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/swaggerDocs"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get swagger docs for an object.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/objects/{objectName}/metadata": {
+            "get": {
+                "operationId": "getObjectsObjectNameMetadata",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/objectsMetadata"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get a list of all the field for an object.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/ping": {
+            "get": {
+                "operationId": "getPing",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Pong"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Ping the Element to confirm that the Hub Element has a heartbeat.  If the Element does not have a heartbeat, an error message will be returned.",
+                "tags": [
+                    "ping"
+                ]
+            }
+        },
+        "/{objectName}": {
+            "get": {
+                "operationId": "getByObjectName",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The CEQL search expression.",
+                        "in": "query",
+                        "name": "where",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The page size. Defaults to 200 if not provided. Maximum of 5000.",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/Object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Search for {objectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "post": {
+                "operationId": "createByObjectName",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName}",
+                        "in": "body",
+                        "name": "Body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Create an {objectName}",
+                "tags": [
+                    "objectName"
+                ]
+            }
+        },
+        "/{objectName}/{objectId}": {
+            "delete": {
+                "operationId": "deleteObjectNameByObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Delete an {objectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "get": {
+                "operationId": "getObjectNameByObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json",
+                    "application/pdf"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieve an {objectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "patch": {
+                "operationId": "updateObjectNameByObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName}",
+                        "in": "body",
+                        "name": "Body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Update an {objectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "put": {
+                "operationId": "replaceObjectNameByObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName}",
+                        "in": "body",
+                        "name": "Body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Update an {objectName}",
+                "tags": [
+                    "objectName"
+                ]
+            }
+        },
+        "/{objectName}/{objectId}/{childObjectName}": {
+            "get": {
+                "operationId": "getObjectNameByChildObjectName",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the childObjectName",
+                        "in": "path",
+                        "name": "childObjectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The CEQL search expression.",
+                        "in": "query",
+                        "name": "where",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The page size. Defaults to 200 if not provided. Maximum of 5000.",
+                        "format": "int64",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "description": "The next page cursor, taken from the response header: `elements-next-page-token`",
+                        "in": "query",
+                        "name": "nextPage",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/Object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the &quot;Accept&quot; header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Search for {childObjectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "post": {
+                "operationId": "createObjectNameByChildObjectName",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "childObjectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {childObjectName}",
+                        "in": "body",
+                        "name": "Body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the &quot;Accept&quot; header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Create an {childObjectName}",
+                "tags": [
+                    "objectName"
+                ]
+            }
+        },
+        "/{objectName}/{objectId}/{childObjectName}/{childObjectId}": {
+            "delete": {
+                "operationId": "deleteObjectNameByChildObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the childObjectName",
+                        "in": "path",
+                        "name": "childObjectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {childObjectName} ID",
+                        "in": "path",
+                        "name": "childObjectId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected"
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the &quot;Accept&quot; header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Delete an {childObjectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "get": {
+                "operationId": "getObjectNameByChildObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the childObjectName",
+                        "in": "path",
+                        "name": "childObjectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {childObjectName} ID",
+                        "in": "path",
+                        "name": "childObjectId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the &quot;Accept&quot; header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieve an {childObjectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "patch": {
+                "operationId": "updateObjectNameByChildObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the childObjectName",
+                        "in": "path",
+                        "name": "childObjectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {childObjectName} ID",
+                        "in": "path",
+                        "name": "childObjectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName}",
+                        "in": "body",
+                        "name": "Body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the &quot;Accept&quot; header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Update an {childObjectName}",
+                "tags": [
+                    "objectName"
+                ]
+            },
+            "put": {
+                "operationId": "replaceObjectNameByChildObjectId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the childObjectName",
+                        "in": "path",
+                        "name": "childObjectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName} ID",
+                        "in": "path",
+                        "name": "objectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {childObjectName} ID",
+                        "in": "path",
+                        "name": "childObjectId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The {objectName}",
+                        "in": "body",
+                        "name": "Body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Object"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the &quot;Accept&quot; header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Update an {childObjectName}",
+                "tags": [
+                    "objectName"
+                ]
+            }
+        }
+    },
+    "host": "snapshot.cloud-elements.com",
+    "schemes": [
+        "https"
+    ],
+    "definitions": {
+        "data": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "740668579634336"
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "SSL"
+                }
+            },
+            "title": "data",
+            "x-has-customfields": false,
+            "type": "object"
+        },
+        "swaggerdefinitions": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "definitions",
+            "properties": {
+                "definition-name": {
+                    "$ref": "#/definitions/swaggerdefinition-name"
+                }
+            }
+        },
+        "ownergroupsEventsGet": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "737657966593601"
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "skeletorapp"
+                }
+            },
+            "title": "ownergroupsEventsGet",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "datagroupsMembersGet": {
+            "properties": {
+                "height": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 50
+                },
+                "is_silhouette": {
+                    "type": "boolean",
+                    "x-samplevalue": true
+                },
+                "url": {
+                    "type": "string",
+                    "x-samplevalue": "https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/21751752_10150009420699633_490848426807113967_n.png?_nc_cat=100&_nc_ht=scontent.xx&oh=4c66235ca31178ce8fd32a588dc90ad4&oe=5C56C0F7"
+                },
+                "width": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 50
+                }
+            },
+            "title": "datagroupsMembersGet",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "groupCreate": {
+            "properties": {
+                "archived": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "cover": {
+                    "$ref": "#/definitions/cover"
+                },
+                "description": {
+                    "type": "string",
+                    "x-samplevalue": "SampleDescriptionThree"
+                },
+                "icon": {
+                    "type": "string",
+                    "x-samplevalue": "https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/MzwrKZOhtIS.png"
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "510514446079113"
+                },
+                "is_workplace_default": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "sampleGroupThree"
+                },
+                "owner": {
+                    "$ref": "#/definitions/owner"
+                },
+                "post_permissions": {
+                    "type": "string",
+                    "x-samplevalue": "NONE"
+                },
+                "post_requires_admin_approval": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "privacy": {
+                    "default": "OPEN",
+                    "description": "The privacy setting of the group",
+                    "enum": [
+                        "CLOSED",
+                        "OPEN",
+                        "SECRET"
+                    ],
+                    "type": "string",
+                    "x-samplevalue": "OPEN"
+                },
+                "purpose": {
+                    "default": "WORK_ANNOUNCEMENT",
+                    "description": "Indicates the purpose of the group.",
+                    "enum": [
+                        "WORK_TEAM",
+                        "WORK_ANNOUNCEMENT",
+                        "WORK_MULTI_COMPANY",
+                        "WORK_SOCIAL"
+                    ],
+                    "type": "string",
+                    "x-samplevalue": "WORK_ANNOUNCEMENT"
+                },
+                "updated_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-17T22:29:02+0000"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "title": "groupGet",
+            "type": "object",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "groups"
+        },
+        "swaggerdefinition-name": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "definition-name",
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/swaggerproperties"
+                }
+            }
+        },
+        "swaggerparameters": {
+            "x-has-customfields": false,
+            "title": "parameters",
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/swaggerparametersschema"
+                },
+                "in": {
+                    "x-samplevalue": "header",
+                    "type": "string"
+                },
+                "name": {
+                    "x-samplevalue": "Authorization",
+                    "type": "string"
+                },
+                "description": {
+                    "x-samplevalue": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                    "type": "string"
+                },
+                "type": {
+                    "x-samplevalue": "string",
+                    "type": "string"
+                },
+                "required": {
+                    "x-samplevalue": true,
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "cover": {
+            "properties": {
+                "cover_id": {
+                    "type": "string",
+                    "x-samplevalue": "135947974020462"
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "135947974020462"
+                },
+                "offset_x": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 50
+                },
+                "offset_y": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 48
+                },
+                "source": {
+                    "type": "string",
+                    "x-samplevalue": "https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/41940934_135947980687128_3794761132531515392_o.jpg?_nc_cat=107&oh=1cedff8711768af98c0ad6727edfc26f&oe=5C53C3A6"
+                }
+            },
+            "title": "cover",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "from": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "737657966593601"
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "skeletorapp"
+                }
+            },
+            "title": "from",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "GroupsPhotosPostRequest": {
+            "properties": {
+                "caption": {
+                    "description": "The description of the photo,used as the accompanying status message in any feed story",
+                    "type": "string",
+                    "x-samplevalue": "caption"
+                },
+                "message": {
+                    "description": "The description of the photo",
+                    "type": "string",
+                    "x-samplevalue": "Photo Message"
+                },
+                "published": {
+                    "description": "Set to false if you don't want the photo to be published immediately",
+                    "type": "string",
+                    "x-samplevalue": "published"
+                },
+                "url": {
+                    "description": "The URL of a photo",
+                    "type": "string",
+                    "x-samplevalue": "https://cloud-elements.com/wp-content/uploads/2017/06/ce_full_color-menu.png"
+                }
+            },
+            "required": [
+                "url"
+            ],
+            "title": "GroupsPhotosPostRequest",
+            "type": "object"
+        },
+        "swagger-contacts-path": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "/contacts",
+            "properties": {
+                "post": {
+                    "$ref": "#/definitions/swaggerpost"
+                }
+            }
+        },
+        "MemberIdbyEmailGetResponse": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "123456789"
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "Cloud Elements"
+                }
+            },
+            "title": "MemberIdbyEmailGetResponse",
+            "type": "object"
+        },
+        "swagger200": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "200",
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/swaggerschema"
+                },
+                "description": {
+                    "x-samplevalue": "OK - Everything worked as expected",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger400": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "400",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Bad Request - Often due to a missing request parameter",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger401": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "401",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Unauthorized - An invalid element token, user secret and/or org secret provided",
+                    "type": "string"
+                }
+            }
+        },
+        "groupsMembersGet": {
+            "properties": {
+                "account_claim_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-16T16:02:15+0000"
+                },
+                "account_invite_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-16T16:02:15+0000"
+                },
+                "email": {
+                    "type": "string",
+                    "x-samplevalue": "naga@cloud-elements.com"
+                },
+                "first_name": {
+                    "type": "string",
+                    "x-samplevalue": "Naga"
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "100029199532026"
+                },
+                "impersonate_token": {
+                    "type": "string",
+                    "x-samplevalue": "EAAdvpZBEi2A8BAPg1k4MCs6WzlRZB8C4esuHpvEDckyjctTmofkCzPnbs4FHu3FCHj33U1WghOBL2CZBoi18MywfKPRPVoGizZCZCDoDqh1yaQmZAwTimEFfqR28e4UzlPIFTgcrXDv1mL2sDCbRdYue8Pr39u9ZBl3HHkJDYm5FYLNZCBJgrk5X2kUZCE8ZCH5FSRObCGN85sZCjyjIVT0yEEcgY3nMJehsNB8qRC6UwevsoEcUqmw9lHl2yzbYxVCVIzUoFjZCSoJOMFR6UbZARGSUNZBGXkUZAnDtpHFvbZCLkBDjMQ1SrQsyZCv6F"
+                },
+                "last_name": {
+                    "type": "string",
+                    "x-samplevalue": "Ede"
+                },
+                "link": {
+                    "type": "string",
+                    "x-samplevalue": "https://work-87268534.facebook.com/app_scoped_user_id/YXNpZADpBWEhVQUFzMFdab0dyeXR1Ykh6X2ktaHdKSjBib3YtS2UwekdFbHc4bEtYNHBYWFpNZATBoaFRkUUdVZAEhxdDB1MU5Jd0pyUzFob2xObUpONlpEdVFtWHY5SlhtaWhIMmtKZAkNxVUNJaFlHVDZA5c2JPQ0EZD/"
+                },
+                "locale": {
+                    "type": "string",
+                    "x-samplevalue": "en_US"
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "Naga Seshu Babu Ede"
+                },
+                "name_format": {
+                    "type": "string",
+                    "x-samplevalue": "{first} {last}"
+                },
+                "picture": {
+                    "$ref": "#/definitions/picturegroupsMembersGet"
+                },
+                "updated_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-16T16:02:21+0000"
+                }
+            },
+            "title": "groupsMembersGet",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "members",
+            "type": "object"
+        },
+        "groupsFeedCreate": {
+            "properties": {
+                "created_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-19T02:48:12+0000"
+                },
+                "formatting": {
+                    "type": "string",
+                    "x-samplevalue": "PLAINTEXT"
+                },
+                "from": {
+                    "$ref": "#/definitions/from"
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "740668579634336_740679219633272"
+                },
+                "message": {
+                    "type": "string",
+                    "x-samplevalue": "descriptionGroupFeedCreateForPaginationD274"
+                },
+                "permalink_url": {
+                    "type": "string",
+                    "x-samplevalue": "https://work-87268534.facebook.com/groups/740668579634336/permalink/740679219633272/"
+                },
+                "to": {
+                    "$ref": "#/definitions/to"
+                },
+                "type": {
+                    "type": "string",
+                    "x-samplevalue": "status"
+                },
+                "updated_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-19T02:48:13+0000"
+                }
+            },
+            "required": [
+                "message"
+            ],
+            "title": "groupsFeedCreate",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "feed",
+            "type": "object"
+        },
+        "swagger403": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "403",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Forbidden - Access to the resource by the provider is forbidden",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger404": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "404",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Not found - The requested resource is not found",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger405": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "405",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerDocs": {
+            "x-has-customfields": false,
+            "title": "swaggerDocs",
+            "properties": {
+                "basePath": {
+                    "x-samplevalue": "/elements/api-v2/hubs/crm",
+                    "type": "string"
+                },
+                "paths": {
+                    "$ref": "#/definitions/swaggerpaths"
+                },
+                "host": {
+                    "x-samplevalue": "localhost:5050",
+                    "type": "string"
+                },
+                "schemes": {
+                    "x-samplevalue": [
+                        "http"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "definitions": {
+                    "$ref": "#/definitions/swaggerdefinitions"
+                },
+                "swagger": {
+                    "x-samplevalue": "2.0",
+                    "type": "string"
+                },
+                "info": {
+                    "$ref": "#/definitions/swaggerinfo"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/swaggertags"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "swaggercontact": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "contact",
+            "properties": {
+                "email": {
+                    "x-samplevalue": "support@cloud-elements.com",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger406": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "406",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Not acceptable - The response content type does not match the 'Accept' header value",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerdefinition-property": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "#/definitions/definition-property",
+            "properties": {
+                "type": {
+                    "x-samplevalue": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "Object": {
+            "description": "Fields for the object. There will be fields associated with an Object, which are not all described here.",
+            "properties": {
+                "objectField": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "swagger409": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "409",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Conflict - If a resource being created already exists",
+                    "type": "string"
+                }
+            }
+        },
+        "objectsMetadata": {
+            "properties": {
+                "fields": {
+                    "items": {
+                        "$ref": "#/definitions/objectsMetadataFields"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "Pong": {
+            "properties": {
+                "dateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "endpoint": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "swaggerschema": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "schema",
+            "properties": {
+                "$ref": {
+                    "x-samplevalue": "#/definitions/Contact-POST-Response",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger415": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "415",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Unsupported media type - The server cannot handle the requested Content-Type",
+                    "type": "string"
+                }
+            }
+        },
+        "groupsEventsCreate": {
+            "properties": {
+                "attending_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "declined_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "end_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-23T03:48:12+0000"
+                },
+                "guest_list_enabled": {
+                    "type": "boolean",
+                    "x-samplevalue": true
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "1192619697585994"
+                },
+                "interested_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "is_canceled": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "maybe_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "SampleCreateEventTestFour"
+                },
+                "owner": {
+                    "$ref": "#/definitions/ownergroupsEventsGet"
+                },
+                "parent_group": {
+                    "$ref": "#/definitions/parent_groupgroupsEventsGet"
+                },
+                "start_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-23T02:48:12+0000"
+                },
+                "type": {
+                    "type": "string",
+                    "x-samplevalue": "group"
+                },
+                "updated_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-22T17:11:34+0000"
+                }
+            },
+            "required": [
+                "name",
+                "start_time",
+                "end_time"
+            ],
+            "title": "groupsEventsGet",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "events",
+            "type": "object"
+        },
+        "swaggerparametersschema": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "schema",
+            "properties": {
+                "$ref": {
+                    "x-samplevalue": "#/definitions/Contact",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerresponses": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "responses",
+            "properties": {
+                "200": {
+                    "$ref": "#/definitions/swagger200"
+                },
+                "400": {
+                    "$ref": "#/definitions/swagger400"
+                },
+                "401": {
+                    "$ref": "#/definitions/swagger401"
+                },
+                "403": {
+                    "$ref": "#/definitions/swagger403"
+                },
+                "404": {
+                    "$ref": "#/definitions/swagger404"
+                },
+                "405": {
+                    "$ref": "#/definitions/swagger405"
+                },
+                "406": {
+                    "$ref": "#/definitions/swagger406"
+                },
+                "409": {
+                    "$ref": "#/definitions/swagger409"
+                },
+                "415": {
+                    "$ref": "#/definitions/swagger415"
+                },
+                "500": {
+                    "$ref": "#/definitions/swagger500"
+                },
+                "502": {
+                    "$ref": "#/definitions/swagger502"
+                }
+            }
+        },
+        "swaggerproperties": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "properties",
+            "properties": {
+                "definition-property": {
+                    "$ref": "#/definitions/swaggerdefinition-property"
+                }
+            }
+        },
+        "groupsFeedGet": {
+            "properties": {
+                "created_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-19T02:48:12+0000"
+                },
+                "formatting": {
+                    "type": "string",
+                    "x-samplevalue": "PLAINTEXT"
+                },
+                "from": {
+                    "$ref": "#/definitions/from"
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "740668579634336_740679219633272"
+                },
+                "message": {
+                    "type": "string",
+                    "x-samplevalue": "descriptionGroupFeedCreateForPaginationD274"
+                },
+                "permalink_url": {
+                    "type": "string",
+                    "x-samplevalue": "https://work-87268534.facebook.com/groups/740668579634336/permalink/740679219633272/"
+                },
+                "to": {
+                    "$ref": "#/definitions/to"
+                },
+                "type": {
+                    "type": "string",
+                    "x-samplevalue": "status"
+                },
+                "updated_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-19T02:48:13+0000"
+                }
+            },
+            "title": "groupsFeedGet",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "feed",
+            "type": "object"
+        },
+        "picturegroupsMembersGet": {
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/datagroupsMembersGet"
+                }
+            },
+            "title": "picturegroupsMembersGet",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "parent_groupgroupsEventsGet": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "305993336684552"
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "Coordinator"
+                },
+                "privacy": {
+                    "type": "string",
+                    "x-samplevalue": "CLOSED"
+                }
+            },
+            "title": "parent_groupgroupsEventsGet",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "owner": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "100028157800378"
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "Hussain Chinoy"
+                }
+            },
+            "title": "owner",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "swaggerinfo": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "info",
+            "properties": {
+                "contact": {
+                    "$ref": "#/definitions/swaggercontact"
+                },
+                "title": {
+                    "x-samplevalue": "hubspotcrm",
+                    "type": "string"
+                },
+                "version": {
+                    "x-samplevalue": "api-v2",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger500": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "500",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Server error - Something went wrong on the Cloud Elements server",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerpaths": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "paths",
+            "properties": {
+                "/contacts": {
+                    "$ref": "#/definitions/swagger-contacts-path"
+                }
+            }
+        },
+        "swagger502": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "502",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Provider server error - Something went wrong on the Provider or Endpoint's server",
+                    "type": "string"
+                }
+            }
+        },
+        "objectsMetadataFields": {
+            "properties": {
+                "mask": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "vendorDisplayName": {
+                    "type": "string"
+                },
+                "vendorPath": {
+                    "type": "string"
+                },
+                "vendorReadOnly": {
+                    "type": "boolean"
+                },
+                "vendorRequired": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "groupsMembersCreate": {
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "x-samplevalue": "naga@cloud-elements.com"
+                }
+            },
+            "required": [
+                "email"
+            ],
+            "title": "groupsMembersCreate",
+            "type": "object",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "groupsMembers"
+        },
+        "groupsMembersCreateResponse": {
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "x-samplevalue": true
+                }
+            },
+            "title": "groupsMembersCreateResponse",
+            "type": "object",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "groupsMembers"
+        },
+        "swaggerpost": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "post",
+            "properties": {
+                "summary": {
+                    "x-samplevalue": "Create a new contact in the CRM service. Contact creation will flow through Cloud Elements to your CRM service. With the exception of the 'id' field, the required fields indicated in the 'Contact' model are those required to create a new contact.",
+                    "type": "string"
+                },
+                "operationId": {
+                    "x-samplevalue": "createContact",
+                    "type": "string"
+                },
+                "responses": {
+                    "$ref": "#/definitions/swaggerresponses"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/swaggerparameters"
+                    }
+                },
+                "tags": {
+                    "x-samplevalue": [
+                        "contacts"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "groupGet": {
+            "properties": {
+                "archived": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "cover": {
+                    "$ref": "#/definitions/cover"
+                },
+                "description": {
+                    "type": "string",
+                    "x-samplevalue": "SampleDescriptionThree"
+                },
+                "icon": {
+                    "type": "string",
+                    "x-samplevalue": "https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/MzwrKZOhtIS.png"
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "510514446079113"
+                },
+                "is_workplace_default": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "sampleGroupThree"
+                },
+                "owner": {
+                    "$ref": "#/definitions/owner"
+                },
+                "post_permissions": {
+                    "type": "string",
+                    "x-samplevalue": "NONE"
+                },
+                "post_requires_admin_approval": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "privacy": {
+                    "default": "OPEN",
+                    "description": "The privacy setting of the group",
+                    "enum": [
+                        "CLOSED",
+                        "OPEN",
+                        "SECRET"
+                    ],
+                    "type": "string",
+                    "x-samplevalue": "OPEN"
+                },
+                "purpose": {
+                    "default": "WORK_ANNOUNCEMENT",
+                    "description": "Indicates the purpose of the group.",
+                    "enum": [
+                        "WORK_TEAM",
+                        "WORK_ANNOUNCEMENT",
+                        "WORK_MULTI_COMPANY",
+                        "WORK_SOCIAL"
+                    ],
+                    "type": "string",
+                    "x-samplevalue": "WORK_ANNOUNCEMENT"
+                },
+                "updated_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-17T22:29:02+0000"
+                }
+            },
+            "title": "groupGet",
+            "type": "object",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "groups"
+        },
+        "to": {
+            "properties": {
+                "data": {
+                    "items": {
+                        "$ref": "#/definitions/data"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "to",
+            "type": "object",
+            "x-has-customfields": false
+        },
+        "GroupsPhotosPostResponse": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "832328820459848"
+                },
+                "post_id": {
+                    "type": "string",
+                    "x-samplevalue": "737657966593601_1007567952785599"
+                }
+            },
+            "title": "GroupsPhotosPostResponse",
+            "type": "object"
+        },
+        "swaggertags": {
+            "x-has-customfields": false,
+            "title": "tags",
+            "properties": {
+                "name": {
+                    "x-samplevalue": "contacts",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "groupsEventsGet": {
+            "properties": {
+                "attending_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "declined_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "end_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-23T03:48:12+0000"
+                },
+                "guest_list_enabled": {
+                    "type": "boolean",
+                    "x-samplevalue": true
+                },
+                "id": {
+                    "type": "string",
+                    "x-samplevalue": "1192619697585994"
+                },
+                "interested_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "is_canceled": {
+                    "type": "boolean",
+                    "x-samplevalue": false
+                },
+                "maybe_count": {
+                    "format": "int32",
+                    "type": "integer",
+                    "x-samplevalue": 0
+                },
+                "name": {
+                    "type": "string",
+                    "x-samplevalue": "SampleCreateEventTestFour"
+                },
+                "owner": {
+                    "$ref": "#/definitions/ownergroupsEventsGet"
+                },
+                "parent_group": {
+                    "$ref": "#/definitions/parent_groupgroupsEventsGet"
+                },
+                "start_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-23T02:48:12+0000"
+                },
+                "type": {
+                    "type": "string",
+                    "x-samplevalue": "group"
+                },
+                "updated_time": {
+                    "format": "date-time",
+                    "type": "string",
+                    "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "x-samplevalue": "2018-10-22T17:11:34+0000"
+                }
+            },
+            "title": "groupsEventsGet",
+            "x-has-customfields": false,
+            "x-vendor-objectname": "events",
+            "type": "object"
+        }
+    },
+    "swagger": "2.0",
+    "info": {
+        "contact": {
+            "email": "support@cloud-elements.com"
+        },
+        "title": "facebookworkplace",
+        "version": "api-v2"
+    },
+    "tags": [
+        {
+            "name": "ping"
+        },
+        {
+            "name": "members"
+        },
+        {
+            "name": "objects"
+        },
+        {
+            "name": "groups"
+        },
+        {
+            "name": "objectName"
+        }
+    ]
+}

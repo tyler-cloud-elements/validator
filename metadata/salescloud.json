@@ -1,0 +1,3175 @@
+{
+    "id": 614,
+    "name": "Oracle Sales Cloud",
+    "hookName": "OracleSalesCloud",
+    "key": "salescloud",
+    "description": "Add an Oracle Sales Cloud Instance to connect your existing Oracle Sales Cloud account to the CRM Hub, allowing you to manage your accounts, opportunities, contacts, leads, users, etc. across multiple CRM Elements. You will need your Oracle Sales Cloud account information to add an instance.",
+    "image": "elements/provider_salescloud.jpg",
+    "logo": "salescloud",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configDescription": "If you do not have an Oracle Sales Cloud account, you can find out more about them at <a href=\"https://www.oracle.com/applications/customer-experience/sales/index.html\" target=\"_blank\">Oracle Sales Cloud</a>",
+    "configuration": [
+        {
+            "id": 6306,
+            "name": "Server URL",
+            "key": "crm.salescloud.server.url",
+            "description": "Oracle Sales Cloud Server URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254130,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 6307,
+            "name": "Username",
+            "key": "crm.salescloud.username",
+            "description": "Oracle Sales Cloud Username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 6308,
+            "name": "Password",
+            "key": "crm.salescloud.password",
+            "description": "Oracle Sales Cloud Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52527,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159793,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256269,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256520,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "accounts",
+            "vendorName": "Account"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "Contact"
+        },
+        {
+            "name": "opportunities",
+            "vendorName": "Opportunity"
+        },
+        {
+            "name": "leads",
+            "vendorName": "Lead"
+        }
+    ],
+    "objectMetadata": {
+        "Account": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "startDateActive"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "accountDirectorId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountUniqueName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].salesAccountId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].resourceId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].startDateActive"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].accountDirectorId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].saccountResourceId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].lastUpdateDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].salesAccountPartyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].lastUpdateLogin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].objectVersionNumber2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].resourcePrimaryOrgName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].emailAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].objectVersionNumber1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].accessLevelCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].partyName1"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "salesAccountResource[*].lockAssignmentFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].assignmentTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].resourcePartyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountResource[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].orgTreeStructureCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "salesAccountResource[*].lockAssignmentBooleanFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].orgTreeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountResource[*].roleName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "salesAccountResource[*].reportsToFlag"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "primaryFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].country"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].idenAddrPartySiteId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].city"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].partySiteNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].startDateActive"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].city"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].lastUpdateDate"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].partySite[*].identifyingAddressFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].postalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].country1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].addressStyle"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].partySiteInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].partySiteInformation.partySiteId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].formattedAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].formattedMultilineAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].locationId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].objectVersionNumber1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].state"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].partyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].partySiteId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].address1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].curcyConvRateType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partySite[*].endDateActive"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].partySite[*].validatedFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].corpCurrencyCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].partySite[*].internalFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].currencyCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].partySite[*].contactPreferenceExistFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partySite[*].status"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].partySite[*].overallPrimaryFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].postalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].objectVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].webType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].ownerTableId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].endDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].lastUpdateLogin"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].web[*].primaryFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].contactPointType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].primaryByPurpose"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].url"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].webInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].webInformation.contactPointType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].webInformation.contactPointId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].ownerTableName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].contactPointPurpose"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].contactPointId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].web[*].startDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].web[*].status"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].web[*].overallPrimaryFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].effectiveEndDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].objectVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].partyUsageCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].lastUpdateLogin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].partyUsgAssignmentId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].createdBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].effectiveStartDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].partyId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].partyUsageAssignment[*].statusFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].state"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].partyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].primaryURLContactPointId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].subjectTableName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].objectVersionNumber"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].relationship[*].primaryCustomerFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].role"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].relationshipRecId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].endDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].objectPartyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].subjectType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].subjectId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].objectType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].objectEmailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].partyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].effectiveEndDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].objectVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].ownerTableId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].partyUsageCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].lastUpdateLogin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].partyUsgAssignmentId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].createdBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].effectiveStartDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].ownerTableName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].partyId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].relationship[*].partyUsageAssignment[*].statusFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].objectId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].relationshipType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].relationshipInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].relationshipInformation.relationshipRecId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].relationshipCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].relationshipId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].directionCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].curcyConvRateType"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].relationship[*].preferredContactFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].objectTableName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].corpCurrencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].startDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].status"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.objectVersionNumber"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.primaryCustomerFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.personPreNameAdjunct"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.orgContactId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.emailAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.partyRelationshipId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.contactNumber"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.decisionMakerFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.personLastName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.customerPartyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.customerPartyNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.orgContactInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.orgContactInformation.orgContactId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.contactName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.customerName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.personMiddleName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.referenceUseFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.curcyConvRateType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.contactPartyId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.preferredContactFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.webUrl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.customerUniqueName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.corpCurrencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.personFirstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].relationship[*].organizationContact.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].idenAddrLocationId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].effectiveEndDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].idenAddrPartySiteId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].effectiveLatestChange"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryAddressCity"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].lastUpdateSourceSystem"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].lastSourceUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryAddressCountry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryURL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].preferredContactFormattedPhoneNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryAddressLine1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].orgInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].orgInformation.organizationProfileId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].preferredContactName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].effectiveStartDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].partyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].idenAddrLocationId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryAddressState"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].organizationName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].effectiveSequence"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryAddressPostalCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].organizationProfileId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].curcyConvRateType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].preferredContactPersonId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].preferredContactEmailAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryWebId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].suffixOverriddenFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].corpCurrencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].uniqueNameAlias"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].internalFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].partyNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].currencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].organizationProfile[*].primaryFormattedAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].address1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].createdByModule"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationParty[*].preferredContactPersonId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].partyNumber"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationParty[*].internalFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationParty[*].status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "status1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "sellToPartySiteId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUniqueName1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountStatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].effectiveEndDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].idenAddrPartySiteId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].effectiveLatestChange"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].primaryAddressCity"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].lastUpdateSourceSystem"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].lastSourceUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].primaryAddressCountry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].primaryURL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].preferredContactFormattedPhoneNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].primaryAddressLine1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].orgInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].orgInformation.organizationProfileId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].preferredContactName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].effectiveStartDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].partyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].idenAddrLocationId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].primaryAddressState"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].organizationName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].effectiveSequence"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].primaryAddressPostalCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].organizationProfileId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].curcyConvRateType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].preferredContactPersonId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].preferredContactEmailAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "organizationD[*].primaryWebId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationD[*].suffixOverriddenFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].corpCurrencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].uniqueNameAlias"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "organizationD[*].internalFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].partyNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].currencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "organizationD[*].primaryFormattedAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "curcyConvRateType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "internalStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "corpCurrencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "currencyCode"
+                }
+            ]
+        },
+        "Opportunity": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "objectVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "country"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesAccountId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "phaseCd"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "stgOrder"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "optyCreationDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastUpdateDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "quotaFactor"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "descriptionText"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesMethodEOObjVerNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "rcmndWinProb"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "revenue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "emailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "stageStatusCd"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].targetPartyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].salesCreditTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].effectiveEndDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].salesAccountId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].creditRcptPartOrgPartyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].revnAmountCurcyCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "splitRevenue[*].ownerLockAsgnFlag"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "splitRevenue[*].primaryFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].upsideAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].upsideAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].marginAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].marginAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].objectVersionNumber1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].partyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].effectiveStartDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].prTerritoryUpdatedByPartyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].conflictId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].partyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].expectAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].expectAmount.currencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].resourcePartyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].ownerResourceOrgId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "splitRevenue[*].commitFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].revnAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].revnAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].revnId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].costAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].costAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].optyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].conversionRateType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].conversionRate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].forecastOverrideCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].recurFrequencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].downsideAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].downsideAmount.currencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].splitTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].winProb"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].buorgId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].recurTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "splitRevenue[*].effectiveDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].revnNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "splitRevenue[*].statusCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "objectVersionNumber1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesStage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesChannelCd"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "keyContactId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "primaryContactPartyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].territoryName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].resourceId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].assignmentType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].emailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].personLastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].accessLevelCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].conflictId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].memberFunctionCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "opportunityResource[*].lockAssignmentFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].organizationName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].optyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].creationDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].resourceOrgId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].dealProtected"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].mgrResourceId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].roleName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "opportunityResource[*].ownerFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].optyResourceNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].personFirstName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityResource[*].optyResourceId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityResource[*].partnerPartyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "optyCreatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactFirstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactLastName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "optyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "creationDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesStageEOObjVerNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ownerResourcePartyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "winProb"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "averageDaysAtStage"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesStageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "statusCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "targetPartyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactPartyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "crmConversionRate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "maximumDaysInStage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "optyLastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lookupCategory"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "targetPartyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "salesMethodId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesAccountUniqueName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "primaryRevenueId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesMethod"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "upsideAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "upsideAmount.currencyCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "revnLineSetEnabledFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].targetPartyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].perpartyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].relationshipRecId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].lastUpdateDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].orgContactId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].organizationPartyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].subjectId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].optyConId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].objectVersionNumber1"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "opportunityContact[*].doNotContactFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].contactPointType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].contactedFlg"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].conflictId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].partyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].objectId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].contactPointType1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].optyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].relationshipCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].creationDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].relationshipId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].createdBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "opportunityContact[*].organizationPartyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "opportunityContact[*].primaryFlg"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "budgetedFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "prConRelationshipId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "primaryOrganizationId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "crmRevenue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyName1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "conflictId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "expectAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "expectAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "optyLastUpdateDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "revnId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "championFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "optyNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryOrganizationName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "createdBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "downsideAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "downsideAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].targetPartyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].salesCreditTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].salesAccountId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].revnAmountCurcyCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "recurringRevenue[*].primaryFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].upsideAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].upsideAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].marginAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].marginAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].conflictId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].expectAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].expectAmount.currencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].resourcePartyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].ownerResourceOrgId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "recurringRevenue[*].commitFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].revnAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].revnAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].revnId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].costAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].costAmount.currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].optyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].conversionRateType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].conversionRate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].forecastOverrideCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].recurFrequencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].downsideAmount.value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].downsideAmount.currencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].splitTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].winProb"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].buorgId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].recurTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "recurringRevenue[*].effectiveDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].revnNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recurringRevenue[*].statusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "currencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "effectiveDate"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "phonePreferenceExistsFlag"
+                }
+            ]
+        },
+        "Lead": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactCountry"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "objectVersionNumber"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "toReassignFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesChannelMeaning"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "jobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastUpdateLogin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ownerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "salesChannel"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactPartyType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "productGroupDescription"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "creationDateFormatted"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "customerPartyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "convCurrencyCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "leadId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "currencyConversionDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "businessUnitName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastUpdatedBy"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "primaryContactDoNotContactFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "productGroupName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "creationDate"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "toRescoreFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "statusCdMeaning"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "uniqueName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "registrationType"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "leadAcceptedFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "customerPartyUniqueName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "leadNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "statusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactPartyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactPartyStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactPersonFirstName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "convExchangeRate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "customerPartyType"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "decisionMakerIdentifiedFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "businessUnitId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadTcMembers1[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadTcMembers1[*].lastUpdateDate"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "mklLeadTcMembers1[*].contactDoNotContactFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].contactName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].relationshipStatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadTcMembers1[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].partyType"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "mklLeadTcMembers1[*].primaryFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadTcMembers1[*].personProfileId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "mklLeadTcMembers1[*].contactDoNotEmailFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].partyStatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadTcMembers1[*].leadMemberId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "mklLeadTcMembers1[*].contactDoNotCallFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].personLastName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "mklLeadTcMembers1[*].contactDoNotMailFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadTcMembers1[*].partyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].personFirstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadTcMembers1[*].partyNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadTcMembers1[*].leadId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ownerPartyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].leadResourceId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].resourceId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].startDateActive"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].orgTreeVersionId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].lastUpdateDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].managerName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].managerPartyId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "mklLeadResources[*].primaryFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].orgTreeStructureCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].resourceOrgId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].endDateActive"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].emailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].orgTreeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].roleName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mklLeadResources[*].name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "mklLeadResources[*].leadId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "customerStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "currencyMeaning"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastUpdateDateFormatted"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "customerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactPersonLastName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "leadAging"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "primaryContactPersonMiddleName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "primaryContactPersonProfileId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "primaryContactDoNotEmailFlag"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "primaryContactId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "primaryContactDoNotCallFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "convRateType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "customerRegistryId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "currencyCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "primaryContactDoNotMailFlag"
+                }
+            ]
+        },
+        "Contact": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "userGUID"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastUpdateDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "primaryEmailContactPTId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].origSystem"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].origSystemReferenceId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].startDateActive"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].ownerTableId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].lastUpdateLogin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].createdByModule"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].sourceSystemRefInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].sourceSystemRefInformation.origSystemRefId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].endDateActive"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].ownerTableName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "originalSystemReference[*].partyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "originalSystemReference[*].status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "emailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyUsageAssignment[*].effectiveEndDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyUsageAssignment[*].objectVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUsageAssignment[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyUsageAssignment[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUsageAssignment[*].partyUsageCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUsageAssignment[*].lastUpdateLogin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyUsageAssignment[*].partyUsgAssignmentId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyUsageAssignment[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUsageAssignment[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUsageAssignment[*].createdBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyUsageAssignment[*].effectiveStartDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyUsageAssignment[*].partyId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "partyUsageAssignment[*].statusFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personLastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "partyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].emailInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].emailInformation.contactPointType"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].emailInformation.contactPointId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].ownerTableId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].endDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].origSystem"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].objectVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].origSystemReferenceId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].startDateActive"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].ownerTableId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].lastUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].lastUpdateLogin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].createdByModule"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].sourceSystemRefInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].sourceSystemRefInformation.origSystemRefId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].endDateActive"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].ownerTableName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].originalSystemReference[*].partyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].originalSystemReference[*].status"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "email[*].primaryFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].emailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].contactPointType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].partyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].emailFormat"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].lastUpdatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].primaryByPurpose"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].ownerTableName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].contactPointPurpose"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].contactPointId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "email[*].startDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email[*].status"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "email[*].overallPrimaryFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].effectiveEndDate"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "personProfile[*].deceasedFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].effectiveLatestChange"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].primaryEmailId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].lastUpdateDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].lastSourceUpdateDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].lastUpdateSourceSystem"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].lastUpdateLogin"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].origSystemReference"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].primaryEmailAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].personInformation.flexnumOfSegments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].personInformation.personProfileId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].effectiveStartDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].personLastName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "personProfile[*].favoriteContactFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].partyUniqueName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].partyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].lastUpdatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].effectiveSequence"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].creationDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "personProfile[*].personProfileId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].curcyConvRateType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].personName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "personProfile[*].suffixOverriddenFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].corpCurrencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].primaryCustomerName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].personFirstName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "personProfile[*].internalFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].partyNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].currencyCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personProfile[*].status"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "creationDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "createdByModule"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "createdBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "partyNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "personFirstName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "internalFlag"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "status"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": false,
+    "extendable": false,
+    "beta": true,
+    "authentication": {},
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

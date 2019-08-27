@@ -1,0 +1,904 @@
+{
+    "id": 264,
+    "name": "Cherwell",
+    "hookName": "Cherwell",
+    "key": "cherwell",
+    "description": "Add a Cherwell CRM Instance to connect your existing Cherwell account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements. You will need your Cherwell CRM account information to add an instance.",
+    "image": "https://pbs.twimg.com/profile_images/565205417312006145/hrNsjSHv_400x400.png",
+    "logo": "cherwell",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configDescription": "Cherwell configuration",
+    "configuration": [
+        {
+            "id": 2527,
+            "name": "Cherwell Password",
+            "key": "crm.cherwell.password",
+            "description": "Cherwell Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 9763,
+            "name": "A holder for the notification subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "A holder for the notification subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 253996,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 2526,
+            "name": "Cherwell Username",
+            "key": "crm.cherwell.username",
+            "description": "Cherwell username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 11415,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Cherwell Base URL (i.e. http://demo.cherwell.com)",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52447,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159782,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256123,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256374,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9764,
+            "name": "Event Notification Enabled/Disabled",
+            "key": "event.notification.enabled",
+            "description": "Event Notification Enabled/Disabled Flag",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9765,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used to determine how often to poll the service endpoints (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9766,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. If the \"event.poller.urls\" configuration is defined, this field's value is ignored. The configuration is defined via JSON, an example of which is as follows - {     \"contacts\": {         \"url\": \"/hubs/helpdesk/contacts\",         \"updatedDateField\": \"user.updated_at\",         \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\",         \"pageSize\": 10000     } }",
+            "defaultValue": "{\n\t\"Incident\": {\n\t\t\"url\": \"/hubs/helpdesk/Incident\",\n\t\t\"idField\": \"RecID\",\n\t\t\"filterByUpdatedDate\": true,\n\t\t\"datesConfiguration\": {\n\t\t\t\"updatedDateField\": \"LastModifiedDateTime\",\n\t\t\t\"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ss\",\n\t\t\t\"updatedDateTimezone\": \"US/Eastern\",\n\t\t\t\"createdDateField\": \"CreatedDateTime\",\n\t\t\t\"createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ss\",\n\t\t\t\"createdDateTimezone\": \"US/Eastern\"\n\t\t}\n\t}\n}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 302,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9767,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 303,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9768,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 304,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "accounts",
+            "vendorName": "Account"
+        },
+        {
+            "name": "leads",
+            "vendorName": "Lead"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "Contact"
+        },
+        {
+            "name": "opportunities",
+            "vendorName": "Opportunity"
+        },
+        {
+            "name": "incidents",
+            "vendorName": "Incident"
+        },
+        {
+            "name": "incidentTypes",
+            "vendorName": "IncidentType"
+        }
+    ],
+    "objectMetadata": {
+        "Incident": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "PortalWizardCounter"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Stat_NumberOfEscalations"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhaseRFWStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ConfigItemRecID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ShortDescription"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerDisplayName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_Assigned"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "Stat_DateTimeResponded"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Status"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "RecurringIncident"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhaseResolveStatus"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_SLAResponseGood"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "MultipleConfig"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IncidentType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "InitialITContactEmail"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_SLAResolutionWarning"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "LastModifiedDateTime"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "ShowContactInformation"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "CIDownEndDateTime"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_IncidentReopened"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "SSSection4Complete"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TaskClosedCount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "IncidentDurationInHours"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "ParentTicket"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RecID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnedByEmail"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "CIDownStartDateTime"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_SLAResponseBreached"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_SLAResponseWarning"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ServiceEntitlements"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Stat_NumberOfTouches"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "STCTimeInMinutes"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "WasCIDown"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "MajorIncident"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "PortalRequiredIncidentFields"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StatusDesc"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "SLARespondByDeadline"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Temp_taskTime"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Stat_24x7ElapsedTime"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerRecID"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_Accepted"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "LastModTimeStamp"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "SLAResponseWarning"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhaseInvestigateStatus"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "ServiceCustomerIsEntitled"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "ShowAllServices"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnedByID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LastModifiedByEmail"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "PortalRequestDescription"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RequesterDepartment"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_open"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "TasksOnHold"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_status_set"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "CustomerInformationIsNotCorrect"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnedByTeam"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhaseApprovalsStatus"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "SSSection3Complete"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "PortalUrgencyFields"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "NextStatusText"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ConfigItemDisplayName"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_showSLAInfo"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CloseDescription"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Level2EscalationComplete"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_Active"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_Resolved"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ClosedByID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnedByManagerEmail"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "SLAResolutionWarning"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SLAIDForCustomer"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PendingReason"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "SelfServiceContactInfoCorrect"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LastModBy"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_FirstCallResolution"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SLAID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "NextStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Cause"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "HasNoOpenTasks"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerTypeID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SLA_Key"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Impact"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Priority"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedByEmail"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "ReviewByDeadline"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SelectedStatus"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "OutsourcedService"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MatchingText"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ServiceID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "Stat_DateTimeResolved"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedByID"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_Dependency"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "SSSection2Complete"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Stat_ResponseTime"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SLAName"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "CreatedDateTime"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "PendingEndDateTime"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Category"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "NoOneStep"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedDuring"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "ClosedDateTime"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "IncidentDurationInDays"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_IncidentEscalated"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "Stat_DateTimeAssigned"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhaseCloseStatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Cost"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "IncidentID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Source"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_reopen"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ChangeID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SpecificsTypeId"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_SLAResolutionBreached"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "ClosedOn1stCall"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PendingPreviousStatus"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Temp_pending"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Level3EscalationComplete"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "CICritical"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Stat_SLAResolutionGood"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StatusID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "Stat_DateTimeInProgress"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "TasksClosed"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "NextStatusOneStep"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "InitialITContact"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "PendingStartDateTime"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "SLAResolveByDeadline"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CIDowntimeInMinutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnedByTeamID"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Withdraw"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "ClonedIncident"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalTasks"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "TasksInProgress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Stat_TotalDLHOfIncident"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Service"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "SSSection1Complete"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "SCTFired"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalSTCTimeInMinutes"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "Stat_DateTimeClosed"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd''T''HH:mm:ssXXX",
+                    "vendorPath": "Stat_DateTimeReOpened"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhaseClassifyStatus"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "NeverFixedIncident"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhaseRecordStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subcategory"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalTaskTime"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LastModByID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LinkedSLAs"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Urgency"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnedByManager"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "IsPrivate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ClosedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Location"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": false,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": false,
+    "extendable": false,
+    "beta": false,
+    "authentication": {},
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "helpdesk",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

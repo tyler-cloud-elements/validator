@@ -1,0 +1,3802 @@
+{
+    "id": 13381,
+    "name": "LinkedIn",
+    "key": "linkedin",
+    "description": "Add a LinkedIn Instance to connect your existing LinkedIn account to the Social Hub, allowing you to manage companies, comments, followers and likes across multiple Social Elements. You will need your LinkedIn account information to add an instance.",
+    "image": "elements/provider_linkedin.png",
+    "logo": "linkedin",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 97728,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "LinkedIn OAuth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 97744,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "LinkedIn Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97745,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "LinkedIn Base URL",
+            "defaultValue": "https://api.linkedin.com/v1/",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97747,
+            "name": "Bulk Relations",
+            "key": "bulk.relations",
+            "description": "Bulk Relations",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97733,
+            "name": "OAuth Scope",
+            "key": "oauth.scope",
+            "description": "LinkedIn OAuth Scope",
+            "defaultValue": "rw_company_admin r_basicprofile w_share r_emailaddress",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97723,
+            "name": "OAuth Token Refresh URL",
+            "key": "oauth.token.refresh_url",
+            "description": "LinkedIn OAuth Token Refresh URL",
+            "defaultValue": "https://www.linkedin.com/uas/oauth2/accessToken",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97732,
+            "name": "OAuth Token URL",
+            "key": "oauth.token.url",
+            "description": "LinkedIn OAuth Token URL",
+            "defaultValue": "https://www.linkedin.com/uas/oauth2/accessToken",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 97729,
+            "name": "OAuth Authorization URL",
+            "key": "oauth.authorization.url",
+            "description": "LinkedIn OAuth Authorization URL",
+            "defaultValue": "https://www.linkedin.com/uas/oauth2/authorization",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 97726,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "LinkedIn OAuth Callback URL",
+            "defaultValue": "https://snapshot.cloud-elements.com/elements/jsp/home.jsp",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 97727,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "LinkedIn OAuth API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254080,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97724,
+            "name": "Bulk query Created Field Name",
+            "key": "bulk.attribute.created_time",
+            "description": "Bulk Query Created Field Name",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97725,
+            "name": "OAuth Refresh Interval (s)",
+            "key": "oauth.user.refresh_interval",
+            "description": "LinkedIn OAuth Refresh Interval (s)",
+            "defaultValue": "3600",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97734,
+            "name": "OAuth Refresh Token",
+            "key": "oauth.user.refresh_token",
+            "description": "LinkedIn OAuth Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97735,
+            "name": "OAuth Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "LinkedIn OAuth Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97736,
+            "name": "OAuth basic header",
+            "key": "oauth.basic.header",
+            "description": "LinkedIn OAuth basic header",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97737,
+            "name": "Bulk Download Format",
+            "key": "bulk.query.download_format",
+            "description": "Bulk Download Format",
+            "defaultValue": "JSON",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97738,
+            "name": "Bulk query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97739,
+            "name": "Bulk query FieldName",
+            "key": "bulk.query.field_name",
+            "description": "Bulk query FieldName",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97740,
+            "name": "Bulk Add Metadata",
+            "key": "bulk.add_metadata",
+            "description": "Bulk Add Metadata",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97741,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97742,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "LinkedIn OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97743,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "LinkedIn Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 131458,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159966,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97731,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 97722,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Set time interval for polling application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 97730,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 97746,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 97721,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/helpdesk/contacts\", “idField”: “user.id”, “datesConfiguration”: { \"updatedDateField\": \"user.updated_at\", \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\", “createdDateField”: “user.created_at”, “createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\" }, \"pageSize\": 10000 } }",
+            "defaultValue": "{\"comments\":{\"url\":\"/hubs/social/companies/{id}/updates/comments?where=timestamp>'${milliseconds}'&updateKey={updateKey}\",\"idField\":\"\",\"datesConfiguration\":{\"updatedDateField\":\"timestamp\",\"updatedDateFormat\":\"milliseconds\",\"createdDateField\":\"timestamp\",\"createdDateFormat\":\"milliseconds\"}},\"likes\":{\"url\":\"/hubs/social/companies/{id}/updates/likes?where=timestamp>'${milliseconds}'&updateKey={updateKey}\",\"idField\":\"\",\"datesConfiguration\":{\"updatedDateField\":\"timestamp\",\"updatedDateFormat\":\"milliseconds\",\"createdDateField\":\"timestamp\",\"createdDateFormat\":\"milliseconds\"}},\"updates\":{\"url\":\"/hubs/social/companies/{id}/updates?where=timestamp>'${milliseconds}'\",\"idField\":\"\",\"datesConfiguration\":{\"updatedDateField\":\"timestamp\",\"updatedDateFormat\":\"milliseconds\",\"createdDateField\":\"timestamp\",\"createdDateFormat\":\"milliseconds\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256212,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256463,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 86943,
+            "createdDate": "2017-08-08T14:06:57Z",
+            "description": "List all companies",
+            "path": "/hubs/social/companies",
+            "vendorPath": "/companies?format=json&is-company-admin=true",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 177045,
+                    "resourceId": 86943,
+                    "createdDate": "2017-08-08T14:06:57Z",
+                    "name": "page",
+                    "vendorName": "start",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 177046,
+                    "resourceId": 86943,
+                    "createdDate": "2017-08-08T14:06:57Z",
+                    "name": "pageSize",
+                    "vendorName": "count",
+                    "description": "The page size. Defaults to 100 if not provided. Maximum of 2000",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "companiesList",
+                "transform": false,
+                "swagger": {
+                    "companiesListObject": {
+                        "id": "companiesListObject",
+                        "properties": {
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "companies"
+                    },
+                    "companiesList": {
+                        "id": "companiesList",
+                        "items": {
+                            "$ref": "companiesListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "values|values",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94143,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get the number of followers of a company",
+            "path": "/hubs/social/companies/{id}/followers-count",
+            "vendorPath": "/companies/{id}/num-followers?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190582,
+                    "resourceId": 94143,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesFollowers",
+                "transform": false,
+                "swagger": {
+                    "companiesFollowers": {
+                        "id": "companiesFollowers",
+                        "properties": {
+                            "count": {
+                                "format": "int64",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "followers"
+                    }
+                }
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 11086,
+                    "resourceId": 94143,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var response = {};\nresponse.count = response_body;\ndone({\n\t\"response_body\": response\n});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94129,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get historical follower statistics about a company.",
+            "path": "/hubs/social/companies/{id}/followers-statistics",
+            "vendorPath": "/companies/{id}/historical-follow-statistics?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190548,
+                    "resourceId": 94129,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "time-granularity",
+                    "vendorName": "time-granularity",
+                    "description": "Granularity of statistics. Supported values are: day and month.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190552,
+                    "resourceId": 94129,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190550,
+                    "resourceId": 94129,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "start-timestamp",
+                    "vendorName": "start-timestamp",
+                    "description": "Starting timestamp (in milliseconds) of when the stats search should begin. Start time and end time should be less than 14 months apart.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190547,
+                    "resourceId": 94129,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190551,
+                    "resourceId": 94129,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "end-timestamp",
+                    "vendorName": "end-timestamp",
+                    "description": "Ending timestamp (in milliseconds) of when the stats search should end. Default value is current time if not set. Start time and end time should be less than 14 months apart.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190549,
+                    "resourceId": 94129,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 2000.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "followersStatisticsList",
+                "transform": false,
+                "swagger": {
+                    "followersStatisticsListObject": {
+                        "id": "followersStatisticsListObject",
+                        "properties": {
+                            "organic-follower-count": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "paid-follower-count": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "time": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            },
+                            "total-follower-count": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "historical-follow-statistics"
+                    },
+                    "followersStatisticsList": {
+                        "id": "followersStatisticsList",
+                        "items": {
+                            "$ref": "followersStatisticsListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|values",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94130,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get whether the currently authenticated user is configured to be an administrator of the company specified.",
+            "path": "/hubs/social/companies/{id}/is-administrator",
+            "vendorPath": "/companies/{id}/relation-to-viewer/is-company-share-enabled?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190553,
+                    "resourceId": 94130,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "isAdministrator",
+                "transform": false,
+                "swagger": {
+                    "isAdministrator": {
+                        "id": "isAdministrator",
+                        "properties": {
+                            "isAdministrator": {
+                                "type": "boolean"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "relation-to-viewer-is-company-share-enabled"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 11084,
+                    "resourceId": 94130,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var response = {};\nresponse.isAdministrator = response_body;\ndone({\n\t\"response_body\": response\n});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94131,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get whether the company specified has sharing enabled or disabled.",
+            "path": "/hubs/social/companies/{id}/is-company-share-enabled",
+            "vendorPath": "/companies/{id}/is-company-share-enabled?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190554,
+                    "resourceId": 94131,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "isSharable",
+                "transform": false,
+                "swagger": {
+                    "isSharable": {
+                        "id": "isSharable",
+                        "properties": {
+                            "isSharable": {
+                                "type": "boolean"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "is-company-share-enabled"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 11085,
+                    "resourceId": 94131,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var response = {};\nresponse.isSharable = response_body;\ndone({\n\t\"response_body\": response\n});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94132,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get a company's profile.",
+            "path": "/hubs/social/companies/{id}/profile",
+            "vendorPath": "/companies/{id}?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190555,
+                    "resourceId": 94132,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesProfile",
+                "transform": false,
+                "swagger": {
+                    "companiesProfile": {
+                        "id": "companiesProfile",
+                        "properties": {
+                            "id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "companies"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94133,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get a company's additional profile details.",
+            "path": "/hubs/social/companies/{id}/profile-details",
+            "vendorPath": "/companies/{id}:(id,name,universal-name,email-domains,company-type,website-url,industries,status,logo-url,square-logo-url,blog-rss-url,twitter-id,employee-count-range,specialties,stock-exchange,founded-year,end-year,num-followers,ticker,description,locations:(description,is-headquarters,address:(street1,city,state,postal-code,country-code,region-code,street2),contact-info:(phone1,phone2,fax)))?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190556,
+                    "resourceId": 94133,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesProfileDetails",
+                "transform": false,
+                "swagger": {
+                    "companiesProfileDetails": {
+                        "id": "companiesProfileDetails",
+                        "properties": {
+                            "blogRssUrl": {
+                                "type": "string"
+                            },
+                            "companyType": {
+                                "type": "companyType"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "emailDomains": {
+                                "type": "emailDomains"
+                            },
+                            "employeeCountRange": {
+                                "type": "employeeCountRange"
+                            },
+                            "endYear": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "foundedYear": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "industries": {
+                                "type": "profileIndustries"
+                            },
+                            "locations": {
+                                "type": "locations"
+                            },
+                            "logoUrl": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "numFollowers": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "specialties": {
+                                "type": "specialties"
+                            },
+                            "squareLogoUrl": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "status"
+                            },
+                            "stockExchange": {
+                                "type": "stockExchange"
+                            },
+                            "ticker": {
+                                "type": "string"
+                            },
+                            "twitterId": {
+                                "type": "string"
+                            },
+                            "universalName": {
+                                "type": "string"
+                            },
+                            "websiteUrl": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "companies"
+                    },
+                    "companyValues": {
+                        "id": "companyValues",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "stockExchange": {
+                        "id": "stockExchange",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "address": {
+                        "id": "address",
+                        "properties": {
+                            "city": {
+                                "type": "string"
+                            },
+                            "countryCode": {
+                                "type": "string"
+                            },
+                            "postalCode": {
+                                "type": "string"
+                            },
+                            "regionCode": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "street1": {
+                                "type": "string"
+                            },
+                            "street2": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "contactInfo": {
+                        "id": "contactInfo",
+                        "properties": {
+                            "fax": {
+                                "type": "string"
+                            },
+                            "phone1": {
+                                "type": "string"
+                            },
+                            "phone2": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companyType": {
+                        "id": "companyType",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "emailDomains": {
+                        "id": "emailDomains",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "profileIndustries": {
+                        "id": "profileIndustries",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "companyValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "employeeCountRange": {
+                        "id": "employeeCountRange",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "specialties": {
+                        "id": "specialties",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "locations": {
+                        "id": "locations",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "locationsValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "locationsValues": {
+                        "id": "locationsValues",
+                        "properties": {
+                            "address": {
+                                "type": "address"
+                            },
+                            "contactInfo": {
+                                "type": "contactInfo"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "is-active": {
+                                "type": "boolean"
+                            },
+                            "isHeadquarters": {
+                                "type": "boolean"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "status": {
+                        "id": "status",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94134,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get general statistics for a company. These statistics give insights on both company share and follower metrics.",
+            "path": "/hubs/social/companies/{id}/statistics",
+            "vendorPath": "/companies/{id}/company-statistics?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190557,
+                    "resourceId": 94134,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesStatistics",
+                "transform": false,
+                "swagger": {
+                    "date": {
+                        "id": "date",
+                        "properties": {
+                            "month": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "year": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "regions": {
+                        "id": "regions",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "regionsValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "functions": {
+                        "id": "functions",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "functionsValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "senioritiesValues": {
+                        "id": "senioritiesValues",
+                        "properties": {
+                            "entryKey": {
+                                "type": "string"
+                            },
+                            "entryValue": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companiesStatistics": {
+                        "id": "companiesStatistics",
+                        "properties": {
+                            "followStatistics": {
+                                "type": "followStatistics"
+                            },
+                            "statusUpdateStatistics": {
+                                "type": "statusUpdateStatistics"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "company-statistics"
+                    },
+                    "countriesValues": {
+                        "id": "countriesValues",
+                        "properties": {
+                            "entryKey": {
+                                "type": "string"
+                            },
+                            "entryValue": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "viewsByMonthValues": {
+                        "id": "viewsByMonthValues",
+                        "properties": {
+                            "clicks": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "comments": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "date": {
+                                "type": "viewsByMonthValuesDate"
+                            },
+                            "engagement": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "impressions": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "likes": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "shares": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "followStatistics": {
+                        "id": "followStatistics",
+                        "properties": {
+                            "companySizes": {
+                                "type": "companySizes"
+                            },
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "countries": {
+                                "type": "countries"
+                            },
+                            "countsByMonth": {
+                                "type": "countsByMonth"
+                            },
+                            "employeeCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "functions": {
+                                "type": "functions"
+                            },
+                            "industries": {
+                                "type": "industries"
+                            },
+                            "nonEmployeeCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "regions": {
+                                "type": "regions"
+                            },
+                            "seniorities": {
+                                "type": "seniorities"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "countries": {
+                        "id": "countries",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "countriesValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "seniorities": {
+                        "id": "seniorities",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "senioritiesValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "countsByMonth": {
+                        "id": "countsByMonth",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "valuesStats"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "functionsValues": {
+                        "id": "functionsValues",
+                        "properties": {
+                            "entryKey": {
+                                "type": "string"
+                            },
+                            "entryValue": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "regionsValues": {
+                        "id": "regionsValues",
+                        "properties": {
+                            "entryKey": {
+                                "type": "string"
+                            },
+                            "entryValue": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "industries": {
+                        "id": "industries",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "industriesValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companySizes": {
+                        "id": "companySizes",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "companySizesValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "viewsByMonthValuesDate": {
+                        "id": "viewsByMonthValuesDate",
+                        "properties": {
+                            "month": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "year": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "industriesValues": {
+                        "id": "industriesValues",
+                        "properties": {
+                            "entryKey": {
+                                "type": "string"
+                            },
+                            "entryValue": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "valuesStats": {
+                        "id": "valuesStats",
+                        "properties": {
+                            "date": {
+                                "type": "date"
+                            },
+                            "newCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "totalCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "viewsByMonth": {
+                        "id": "viewsByMonth",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "viewsByMonthValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companySizesValues": {
+                        "id": "companySizesValues",
+                        "properties": {
+                            "entryKey": {
+                                "type": "string"
+                            },
+                            "entryValue": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "statusUpdateStatistics": {
+                        "id": "statusUpdateStatistics",
+                        "properties": {
+                            "viewsByMonth": {
+                                "type": "viewsByMonth"
+                            }
+                        },
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94135,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get company's status statistics.",
+            "path": "/hubs/social/companies/{id}/status-statistics",
+            "vendorPath": "/companies/{id}/historical-status-update-statistics?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190558,
+                    "resourceId": 94135,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190560,
+                    "resourceId": 94135,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "updateId",
+                    "vendorName": "update-key",
+                    "description": "Update key value to return statistics for a specific company update.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190564,
+                    "resourceId": 94135,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "time-granularity",
+                    "vendorName": "time-granularity",
+                    "description": "Granularity of statistics. Supported values are: day and month.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190559,
+                    "resourceId": 94135,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "start-timestamp",
+                    "vendorName": "start-timestamp",
+                    "description": "Starting timestamp (in milliseconds) of when the stats search should begin. Start time and end time should be less than 14 months apart.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190561,
+                    "resourceId": 94135,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number. Defaults to 1 if not provided.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190562,
+                    "resourceId": 94135,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "end-timestamp",
+                    "vendorName": "end-timestamp",
+                    "description": "Ending timestamp (in milliseconds) of when the stats search should end. Default value is current time if not set. Start time and end time should be less than 14 months apart.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190563,
+                    "resourceId": 94135,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 2000.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "comapniesStatusStatisticsList",
+                "transform": false,
+                "swagger": {
+                    "comapniesStatusStatisticsList": {
+                        "id": "comapniesStatusStatisticsList",
+                        "items": {
+                            "$ref": "comapniesStatusStatisticsListObject"
+                        },
+                        "type": "array"
+                    },
+                    "comapniesStatusStatisticsListObject": {
+                        "id": "comapniesStatusStatisticsListObject",
+                        "properties": {
+                            "impressionCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "time": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "historical-status-update-statistics"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|values",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94136,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get update events from company's linkedin page.",
+            "path": "/hubs/social/companies/{id}/updates",
+            "vendorPath": "/companies/{id}/updates?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190565,
+                    "resourceId": 94136,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "pageSize",
+                    "vendorName": "count",
+                    "description": "The page size. Defaults to 100 if not provided. Maximum of 2000.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190567,
+                    "resourceId": 94136,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "page",
+                    "vendorName": "start",
+                    "description": "The page number. Defaults to 1 if not provided.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190568,
+                    "resourceId": 94136,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190566,
+                    "resourceId": 94136,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "event-type",
+                    "vendorName": "event-type",
+                    "description": "The event type. Valid values are: job-posting, new-product, status-update",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "companiesUpdatesList",
+                "transform": false,
+                "swagger": {
+                    "likesValuesPerson": {
+                        "id": "likesValuesPerson",
+                        "properties": {
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companiesUpdateHeaders": {
+                        "id": "companiesUpdateHeaders",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "headersValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "updateLikesValues": {
+                        "id": "updateLikesValues",
+                        "properties": {
+                            "person": {
+                                "type": "likesValuesPerson"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companiesUpdatesList": {
+                        "id": "companiesUpdatesList",
+                        "items": {
+                            "$ref": "companiesUpdatesListObject"
+                        },
+                        "type": "array"
+                    },
+                    "values": {
+                        "id": "values",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "person": {
+                                "type": "personal"
+                            },
+                            "sequenceNumber": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "updateComments": {
+                        "id": "updateComments",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "values"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companyStatusUpdate": {
+                        "id": "companyStatusUpdate",
+                        "properties": {
+                            "share": {
+                                "type": "share"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "personal": {
+                        "id": "personal",
+                        "properties": {
+                            "apiStandardProfileRequest": {
+                                "type": "companiesApiStandardProfileRequest"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "headline": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "pictureUrl": {
+                                "type": "string"
+                            },
+                            "siteStandardProfileRequest": {
+                                "type": "siteStandardProfileRequest"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companiesUpdatesListObject": {
+                        "id": "companiesUpdatesListObject",
+                        "properties": {
+                            "isCommentable": {
+                                "type": "boolean"
+                            },
+                            "isLikable": {
+                                "type": "boolean"
+                            },
+                            "isLiked": {
+                                "type": "boolean"
+                            },
+                            "likes": {
+                                "type": "companyUpdateLikes"
+                            },
+                            "numLikes": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            },
+                            "updateComments": {
+                                "type": "updateComments"
+                            },
+                            "updateContent": {
+                                "type": "updateContent"
+                            },
+                            "updateKey": {
+                                "type": "string"
+                            },
+                            "updateType": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "updateKey"
+                        ],
+                        "x-vendor-objectname": "updates"
+                    },
+                    "source": {
+                        "id": "source",
+                        "properties": {
+                            "serviceProvider": {
+                                "type": "serviceProvider"
+                            },
+                            "serviceProviderShareId": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "headersValues": {
+                        "id": "headersValues",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "content": {
+                        "id": "content",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "eyebrowUrl": {
+                                "type": "string"
+                            },
+                            "shortenedUrl": {
+                                "type": "string"
+                            },
+                            "submittedImageUrl": {
+                                "type": "string"
+                            },
+                            "submittedUrl": {
+                                "type": "string"
+                            },
+                            "thumbnailUrl": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companyUpdateLikes": {
+                        "id": "companyUpdateLikes",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "updateLikesValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companiesApiStandardProfileRequest": {
+                        "id": "companiesApiStandardProfileRequest",
+                        "properties": {
+                            "headers": {
+                                "type": "companiesUpdateHeaders"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "serviceProvider": {
+                        "id": "serviceProvider",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "company": {
+                        "id": "company",
+                        "properties": {
+                            "id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "share": {
+                        "id": "share",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "content": {
+                                "type": "content"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "source"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "updateContent": {
+                        "id": "updateContent",
+                        "properties": {
+                            "company": {
+                                "type": "company"
+                            },
+                            "companyStatusUpdate": {
+                                "type": "companyStatusUpdate"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "siteStandardProfileRequest": {
+                        "id": "siteStandardProfileRequest",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|values",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94137,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Create a company update.",
+            "path": "/hubs/social/companies/{id}/updates",
+            "vendorPath": "/companies/{id}/shares?format=json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 190569,
+                    "resourceId": 94137,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The share object.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "createCompaniesUpdates",
+                    "vendorDataType": "shares",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190570,
+                    "resourceId": 94137,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190571,
+                    "resourceId": 94137,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "json",
+                    "vendorName": "x-li-format",
+                    "description": "Vendor header value to make json request.",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "companiesUpdateShare",
+                "transform": false,
+                "swagger": {
+                    "companiesUpdateShare": {
+                        "id": "companiesUpdateShare",
+                        "properties": {
+                            "updateKey": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "updateUrl": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "updateKey"
+                        ],
+                        "x-vendor-objectname": "shares"
+                    }
+                },
+                "requestSwagger": {
+                    "contentShare": {
+                        "id": "contentShare",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "submitted-url": {
+                                "type": "string"
+                            },
+                            "submitted?image-url": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "shareTargets": {
+                        "id": "shareTargets",
+                        "properties": {
+                            "shareTarget": {
+                                "type": "shareTarget"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "createCompaniesUpdates": {
+                        "id": "createCompaniesUpdates",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "content": {
+                                "type": "contentShare"
+                            },
+                            "shareTargetReach": {
+                                "type": "shareTargetReach"
+                            },
+                            "updateKey": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            }
+                        },
+                        "required": [
+                            "visibility",
+                            "content",
+                            "comment"
+                        ],
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "updateKey"
+                        ],
+                        "x-vendor-objectname": "shares"
+                    },
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "shareTargetReach": {
+                        "id": "shareTargetReach",
+                        "properties": {
+                            "shareTargets": {
+                                "type": "shareTargets"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "tvalues": {
+                        "id": "tvalues",
+                        "properties": {
+                            "tvalue": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "shareTarget": {
+                        "id": "shareTarget",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "tvalues": {
+                                "type": "tvalues"
+                            }
+                        },
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "createCompaniesUpdates"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 86945,
+            "createdDate": "2017-08-08T14:06:57Z",
+            "description": "List all comments on a update of a company",
+            "path": "/hubs/social/companies/{id}/updates/comments",
+            "vendorPath": "/companies/{id}/updates/key={update-key}/update-comments?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 177048,
+                    "resourceId": 86945,
+                    "createdDate": "2017-08-08T14:06:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The id  of the  company",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 177050,
+                    "resourceId": 86945,
+                    "createdDate": "2017-08-08T14:06:57Z",
+                    "name": "updateKey",
+                    "vendorName": "update-key",
+                    "description": "The key of the update",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesUpdatesCommentsList",
+                "transform": false,
+                "swagger": {
+                    "companiesUpdatesCommentsListObject": {
+                        "id": "companiesUpdatesCommentsListObject",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "company": {
+                                "type": "company"
+                            },
+                            "id": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "sequenceNumber": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "update-comments"
+                    },
+                    "company": {
+                        "id": "company",
+                        "properties": {
+                            "id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "companiesUpdatesCommentsList": {
+                        "id": "companiesUpdatesCommentsList",
+                        "items": {
+                            "$ref": "companiesUpdatesCommentsListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "values|values",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 86946,
+            "createdDate": "2017-08-08T14:06:57Z",
+            "description": "List all likes on a update of a company",
+            "path": "/hubs/social/companies/{id}/updates/likes",
+            "vendorPath": "/companies/{id}/updates/key={update-key}/likes?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 177053,
+                    "resourceId": 86946,
+                    "createdDate": "2017-08-08T14:06:57Z",
+                    "name": "updateKey",
+                    "vendorName": "update-key",
+                    "description": "The key of the update ",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 177055,
+                    "resourceId": 86946,
+                    "createdDate": "2017-08-08T14:06:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Id of the company",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesUpdatesLikes",
+                "transform": false,
+                "swagger": {
+                    "companiesUpdatesLikesObject": {
+                        "id": "companiesUpdatesLikesObject",
+                        "properties": {
+                            "person": {
+                                "type": "person"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "likes"
+                    },
+                    "person": {
+                        "id": "person",
+                        "properties": {
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "headline": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "pictureUrl": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "companiesUpdatesLikes": {
+                        "id": "companiesUpdatesLikes",
+                        "items": {
+                            "$ref": "companiesUpdatesLikesObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "values|values",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94138,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get a specific company update.",
+            "path": "/hubs/social/companies/{id}/updates/{updateId}",
+            "vendorPath": "/companies/{id}/updates/key={update-key}?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190572,
+                    "resourceId": 94138,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190573,
+                    "resourceId": 94138,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "updateId",
+                    "vendorName": "update-key",
+                    "description": "The update Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesUpdates",
+                "transform": false,
+                "swagger": {
+                    "headers": {
+                        "id": "headers",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "headersValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companiesUpdates": {
+                        "id": "companiesUpdates",
+                        "properties": {
+                            "isCommentable": {
+                                "type": "boolean"
+                            },
+                            "isLikable": {
+                                "type": "boolean"
+                            },
+                            "isLiked": {
+                                "type": "boolean"
+                            },
+                            "likes": {
+                                "type": "likes"
+                            },
+                            "numLikes": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            },
+                            "updateComments": {
+                                "type": "companyUpdateComments"
+                            },
+                            "updateContent": {
+                                "type": "updateContent"
+                            },
+                            "updateKey": {
+                                "type": "string"
+                            },
+                            "updateType": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "updateKey"
+                        ],
+                        "x-vendor-objectname": "updates"
+                    },
+                    "companyStatusUpdate": {
+                        "id": "companyStatusUpdate",
+                        "properties": {
+                            "share": {
+                                "type": "share"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "source": {
+                        "id": "source",
+                        "properties": {
+                            "serviceProvider": {
+                                "type": "serviceProvider"
+                            },
+                            "serviceProviderShareId": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "headersValues": {
+                        "id": "headersValues",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "content": {
+                        "id": "content",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "eyebrowUrl": {
+                                "type": "string"
+                            },
+                            "shortenedUrl": {
+                                "type": "string"
+                            },
+                            "submittedImageUrl": {
+                                "type": "string"
+                            },
+                            "submittedUrl": {
+                                "type": "string"
+                            },
+                            "thumbnailUrl": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "updateApiStandardProfileRequest": {
+                        "id": "updateApiStandardProfileRequest",
+                        "properties": {
+                            "headers": {
+                                "type": "headers"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companyUpdateValues": {
+                        "id": "companyUpdateValues",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "person": {
+                                "type": "companyUpdatePersonal"
+                            },
+                            "sequenceNumber": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "likesValuesPersonal": {
+                        "id": "likesValuesPersonal",
+                        "properties": {
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "headline": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "pictureUrl": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companyUpdateComments": {
+                        "id": "companyUpdateComments",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "companyUpdateValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "serviceProvider": {
+                        "id": "serviceProvider",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "companyUpdatePersonal": {
+                        "id": "companyUpdatePersonal",
+                        "properties": {
+                            "apiStandardProfileRequest": {
+                                "type": "updateApiStandardProfileRequest"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "headline": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "pictureUrl": {
+                                "type": "string"
+                            },
+                            "siteStandardProfileRequest": {
+                                "type": "siteStandardProfileRequest"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "company": {
+                        "id": "company",
+                        "properties": {
+                            "id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "share": {
+                        "id": "share",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "content": {
+                                "type": "content"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "source"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "updateContent": {
+                        "id": "updateContent",
+                        "properties": {
+                            "company": {
+                                "type": "company"
+                            },
+                            "companyStatusUpdate": {
+                                "type": "companyStatusUpdate"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "likesValues": {
+                        "id": "likesValues",
+                        "properties": {
+                            "person": {
+                                "type": "likesValuesPersonal"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "siteStandardProfileRequest": {
+                        "id": "siteStandardProfileRequest",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "likes": {
+                        "id": "likes",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "likesValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94139,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Create a comment on a company's update on behalf of a company, rather than a member.",
+            "path": "/hubs/social/companies/{id}/updates/{updateId}/comments",
+            "vendorPath": "/companies/{id}/updates/key={update-key}/update-comments-as-company/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 190574,
+                    "resourceId": 94139,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "json",
+                    "vendorName": "x-li-format",
+                    "description": "Vendor header value to make json request.",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190575,
+                    "resourceId": 94139,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "updateId",
+                    "vendorName": "update-key",
+                    "description": "The update key.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190576,
+                    "resourceId": 94139,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The company Id.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 190577,
+                    "resourceId": 94139,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The company's comment object.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "createCompaniesUpdatesComments",
+                    "vendorDataType": "comments",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "companiesUpdatesComments",
+                "transform": false,
+                "swagger": {
+                    "companiesUpdatesComments": {
+                        "id": "companiesUpdatesComments",
+                        "properties": {},
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "update-comments-as-company"
+                    }
+                },
+                "requestSwagger": {
+                    "createCompaniesUpdatesComments": {
+                        "id": "createCompaniesUpdatesComments",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "comment"
+                        ],
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "update-comments-as-company"
+                    }
+                },
+                "requestName": "createCompaniesUpdatesComments"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94140,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get basic profile data.",
+            "path": "/hubs/social/user/me",
+            "vendorPath": "/people/~?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190578,
+                    "resourceId": 94140,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "language",
+                    "vendorName": "Accept-Language",
+                    "description": "Specify the comma separated list of language codes ordered from highest to lowest priority of preference you would prefer to have returned. For example, en_US, fr_FR, de_DE, ja_JP.",
+                    "type": "query",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "userProfile",
+                "transform": false,
+                "swagger": {
+                    "siteStandardProfileRequest": {
+                        "id": "siteStandardProfileRequest",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "userProfile": {
+                        "id": "userProfile",
+                        "properties": {
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "headline": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "siteStandardProfileRequest": {
+                                "type": "siteStandardProfileRequest"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "people"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94141,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Get additional profile data.",
+            "path": "/hubs/social/user/me/detailed",
+            "vendorPath": "/people/~:(id,first-name,last-name,maiden-name,formatted-name,phonetic-first-name,phonetic-last-name,formatted-phonetic-name,headline,location,industry,current-share,num-connections,num-connections-capped,summary,specialties,positions,picture-url,picture-urls::(original),site-standard-profile-request,api-standard-profile-request,public-profile-url,email-address)?format=json",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 190579,
+                    "resourceId": 94141,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "language",
+                    "vendorName": "Accept-Language",
+                    "description": "Specify the comma separated list of language codes ordered from highest to lowest priority of preference you would prefer to have returned. For example, en_US, fr_FR, de_DE, ja_JP.",
+                    "type": "query",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "userProfileDetailed",
+                "transform": false,
+                "swagger": {
+                    "country": {
+                        "id": "country",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "pictureUrls": {
+                        "id": "pictureUrls",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "endDate": {
+                        "id": "endDate",
+                        "properties": {
+                            "month": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "year": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "author": {
+                        "id": "author",
+                        "properties": {
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "userProfileDetailedLocation": {
+                        "id": "userProfileDetailedLocation",
+                        "properties": {
+                            "country": {
+                                "type": "userProfileDetailedLocationCountry"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "userSource": {
+                        "id": "userSource",
+                        "properties": {
+                            "application": {
+                                "type": "application"
+                            },
+                            "serviceProvider": {
+                                "type": "serviceProvider"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "apiStandardProfileRequest": {
+                        "id": "apiStandardProfileRequest",
+                        "properties": {
+                            "headers": {
+                                "type": "userHeaders"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "positions": {
+                        "id": "positions",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "positionsValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "positionsValues": {
+                        "id": "positionsValues",
+                        "properties": {
+                            "company": {
+                                "type": "positionCompany"
+                            },
+                            "endDate": {
+                                "type": "endDate"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "isCurrent": {
+                                "type": "boolean"
+                            },
+                            "location": {
+                                "type": "location"
+                            },
+                            "startDate": {
+                                "type": "startDate"
+                            },
+                            "summary": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "userProfileDetailedLocationCountry": {
+                        "id": "userProfileDetailedLocationCountry",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "specialties": {
+                        "id": "specialties",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "userHeaders": {
+                        "id": "userHeaders",
+                        "properties": {
+                            "_total": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "values": {
+                                "items": {
+                                    "$ref": "userValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "application": {
+                        "id": "application",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "serviceProvider": {
+                        "id": "serviceProvider",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "currentShare": {
+                        "id": "currentShare",
+                        "properties": {
+                            "author": {
+                                "type": "author"
+                            },
+                            "comment": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "userSource"
+                            },
+                            "timestamp": {
+                                "format": "int64",
+                                "mask": "milliseconds",
+                                "type": "integer"
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "location": {
+                        "id": "location",
+                        "properties": {
+                            "country": {
+                                "type": "country"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "positionCompany": {
+                        "id": "positionCompany",
+                        "properties": {
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "type": "string"
+                            },
+                            "ticker": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "userProfileDetailed": {
+                        "id": "userProfileDetailed",
+                        "properties": {
+                            "apiStandardProfileRequest": {
+                                "type": "apiStandardProfileRequest"
+                            },
+                            "currentShare": {
+                                "type": "currentShare"
+                            },
+                            "emailAddress": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "formattedName": {
+                                "type": "string"
+                            },
+                            "formattedPhoneticName": {
+                                "type": "string"
+                            },
+                            "headline": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "location": {
+                                "type": "userProfileDetailedLocation"
+                            },
+                            "maidenName": {
+                                "type": "string"
+                            },
+                            "numConnections": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "numConnectionsCapped": {
+                                "type": "boolean"
+                            },
+                            "phoneticFirstName": {
+                                "type": "string"
+                            },
+                            "phoneticLastName": {
+                                "type": "string"
+                            },
+                            "pictureUrl": {
+                                "type": "string"
+                            },
+                            "pictureUrls": {
+                                "type": "pictureUrls"
+                            },
+                            "positions": {
+                                "type": "positions"
+                            },
+                            "publicProfileUrl": {
+                                "type": "string"
+                            },
+                            "siteStandardProfileRequest": {
+                                "type": "siteStandardProfileRequest"
+                            },
+                            "specialties": {
+                                "type": "specialties"
+                            },
+                            "summary": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "people"
+                    },
+                    "userValues": {
+                        "id": "userValues",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "siteStandardProfileRequest": {
+                        "id": "siteStandardProfileRequest",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "startDate": {
+                        "id": "startDate",
+                        "properties": {
+                            "month": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "year": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 94142,
+            "createdDate": "2017-09-06T14:39:18Z",
+            "description": "Create a new user content.",
+            "path": "/hubs/social/user/me/shares",
+            "vendorPath": "/people/~/shares?format=json",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 190580,
+                    "resourceId": 94142,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "json",
+                    "vendorName": "x-li-format",
+                    "description": "Vendor header value to make json request.",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 190581,
+                    "resourceId": 94142,
+                    "createdDate": "2017-09-06T14:39:18Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The content object.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "createUserShares",
+                    "vendorDataType": "shares",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "userShares",
+                "transform": false,
+                "swagger": {
+                    "userShares": {
+                        "id": "userShares",
+                        "properties": {
+                            "updateKey": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "updateUrl": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "updateKey"
+                        ],
+                        "x-vendor-objectname": "shares"
+                    }
+                },
+                "requestSwagger": {
+                    "visibility": {
+                        "id": "visibility",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "userContent": {
+                        "id": "userContent",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "submitted-image-url": {
+                                "type": "string"
+                            },
+                            "submitted-url": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "x-has-customfields": false
+                    },
+                    "createUserShares": {
+                        "id": "createUserShares",
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "content": {
+                                "type": "userContent"
+                            },
+                            "updateKey": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "visibility": {
+                                "type": "visibility"
+                            }
+                        },
+                        "required": [
+                            "visibility",
+                            "content",
+                            "comment"
+                        ],
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "updateKey"
+                        ],
+                        "x-vendor-objectname": "shares"
+                    }
+                },
+                "requestName": "createUserShares"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": false,
+    "beta": true,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [
+        {
+            "id": 4024,
+            "elementId": 13381,
+            "mimeType": "application/javascript",
+            "type": "preRequest",
+            "body": "let headers = {\n     \"Authorization\": null,\n     \"Accept\" : request_vendor_headers[\"Accept\"],\n    \"Content-Type\" : request_vendor_headers[\"Content-Type\"],\n    \"x-li-src\": \"msdk\"\n};\nprint(headers);\n\ndone({\n continue : true,\n \"request_vendor_headers\" : headers\n});\n\n\n",
+            "isLegacy": false
+        },
+        {
+            "id": 4025,
+            "elementId": 13381,
+            "mimeType": "application/javascript",
+            "type": "event",
+            "body": "var formattedEvents = [];\nvar objType = events['objectType'];\nvar rawData = events[objType];\n\nfor (var i = 0; i < rawData.length; i++) {\n    var eventObj = {};\n    eventObj.event_type = \"CREATED\";\n    eventObj.event_object_type = objType;\n    if (events['objectType'] === \"comments\" \n    \t|| events['objectType'] === \"likes\") {\n        eventObj.event_object_id = rawData[i].id;\n    } else if (events['objectType'] === \"updates\") {\n        eventObj.event_object_id = rawData[i].updateKey;\n    }\n    formattedEvents.push(eventObj);\n}\n\ndone({\n    \"events\": formattedEvents\n});",
+            "isLegacy": false
+        }
+    ],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "social",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 5823,
+            "createdDate": "2017-08-08T14:06:57Z",
+            "name": "oauth.user.token",
+            "vendorName": "oauth2_access_token",
+            "type": "configuration",
+            "vendorType": "query",
+            "source": "request",
+            "elementId": 13381,
+            "required": false
+        }
+    ],
+    "private": false
+}

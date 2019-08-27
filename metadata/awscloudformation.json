@@ -1,0 +1,1080 @@
+{
+    "id": 8867,
+    "name": "AWS CloudFormation",
+    "key": "awscloudformation",
+    "description": "Add a AWS CloudFormation Instance to connect your existing AWS CloudFormation account, allowing you to manage your stacks, executions etc.. You will need your AWS account information to add an instance.\\n",
+    "image": "elements/provider_awscloudformation.png",
+    "logo": "awscloudformation",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 64328,
+            "name": "AWS Service Name",
+            "key": "aws.service.name",
+            "description": "AWS Service Name",
+            "defaultValue": "cloudformation",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 64331,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "AWS Apigateway Base URL",
+            "defaultValue": "https://cloudformation.{awsRegion}.amazonaws.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 253981,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 64330,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "AWS Apigateway Max Page Size (or limit)",
+            "defaultValue": "500",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 64329,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "AWS Apigateway Pagination Type",
+            "defaultValue": "cursor",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 64324,
+            "name": "AWS Account Id",
+            "key": "aws.accountid",
+            "description": "AWS Account Id",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 64327,
+            "name": "AWS Access Key ID",
+            "key": "aws.api.key",
+            "description": "AWS Apigateway AWS Access Key ID",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 64326,
+            "name": "AWS Secret Access Key",
+            "key": "aws.api.secret",
+            "description": "AWS Apigateway AWS Secret Access Key",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 64325,
+            "name": "AWS Region Name, e.g., us-west-2",
+            "key": "aws.region",
+            "description": "AWS Apigateway AWS Region Name, e.g., us-west-2",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 131483,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159888,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256107,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256358,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 43714,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Search for  stacks",
+            "path": "/hubs/general/authvalidation",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 69602,
+                    "resourceId": 43714,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "nextPage",
+                    "vendorName": "NextToken",
+                    "description": "The nextpage of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69603,
+                    "resourceId": 43714,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "1",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69604,
+                    "resourceId": 43714,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                },
+                {
+                    "id": 69605,
+                    "resourceId": 43714,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "ListStacks",
+                    "vendorName": "Action",
+                    "description": "Action for listing stacks",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "provisionAuthValidation",
+            "rootKey": "|ListStacksResponse.ListStacksResult.StackSummaries",
+            "nextPageKey": "body.ListStacksResponse.ListStacksResult.NextToken",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 43715,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Search for  stacks",
+            "path": "/hubs/general/stacks",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 69583,
+                    "resourceId": 43715,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "nextPage",
+                    "vendorName": "NextToken",
+                    "description": "The nextpage of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69584,
+                    "resourceId": 43715,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69585,
+                    "resourceId": 43715,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                },
+                {
+                    "id": 69586,
+                    "resourceId": 43715,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "ListStacks",
+                    "vendorName": "Action",
+                    "description": "Action for listing stacks",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stacksList",
+                "transform": false,
+                "swagger": {
+                    "stacksList": {
+                        "id": "stacksList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "stacksListObject"
+                        }
+                    },
+                    "stacksListObject": {
+                        "id": "stacksListObject",
+                        "properties": {
+                            "DeletionTime": {
+                                "type": "unknown"
+                            },
+                            "StackStatus": {
+                                "type": "string"
+                            },
+                            "CreationTime": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "LastUpdatedTime": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "StackStatusReason": {
+                                "type": "unknown"
+                            },
+                            "TemplateDescription": {
+                                "type": "unknown"
+                            },
+                            "StackName": {
+                                "type": "string"
+                            },
+                            "StackId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|ListStacksResponse.ListStacksResult.StackSummaries",
+            "nextPageKey": "body.ListStacksResponse.ListStacksResult.NextToken",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 43716,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Create a  stack",
+            "path": "/hubs/general/stacks",
+            "vendorPath": "/",
+            "method": "POST",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 69592,
+                    "resourceId": 43716,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "CreateStack",
+                    "vendorName": "Action",
+                    "description": "Action",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69593,
+                    "resourceId": 43716,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "CAPABILITY_IAM",
+                    "vendorName": "Capabilities.member.1",
+                    "description": "capabilities",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69594,
+                    "resourceId": 43716,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "stacks",
+                    "vendorName": "stacks",
+                    "description": "The Stack body",
+                    "type": "body",
+                    "vendorType": "query",
+                    "dataType": "stacksPost",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stacks",
+                "transform": false,
+                "swagger": {
+                    "stacks": {
+                        "id": "stacks",
+                        "properties": {
+                            "StackId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "stacksPost": {
+                        "id": "stacksPost",
+                        "properties": {
+                            "OnFailure": {
+                                "type": "string"
+                            },
+                            "StackName": {
+                                "type": "string"
+                            },
+                            "TemplateBody": {
+                                "type": "string"
+                            },
+                            "TemplateURL": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "stacksPost"
+            },
+            "type": "api",
+            "rootKey": "|CreateStackResponse.CreateStackResult",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 4454,
+                    "resourceId": 43716,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if(response_iserror === false && response_body !== null) {\n\tvar req = JSON.parse(request_body)\n\tvar res = response_body;\n\tres[\"StackName\"] = req[\"StackName\"];\n\tdone({\n\t\tresponse_body: res\n\t})\n}\ndone({});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 43717,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Delete a stack",
+            "path": "/hubs/general/stacks/{stackName}",
+            "vendorPath": "/",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 69587,
+                    "resourceId": 43717,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "stackName",
+                    "vendorName": "StackName",
+                    "description": "The stack name",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 69595,
+                    "resourceId": 43717,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "DeleteStack",
+                    "vendorName": "Action",
+                    "description": "The Action",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stacks",
+                "transform": false,
+                "swagger": {
+                    "stacks": {
+                        "id": "stacks",
+                        "properties": {
+                            "DeleteStackResponse": {
+                                "type": "DeleteStackResponse"
+                            }
+                        }
+                    },
+                    "DeleteStackResponse": {
+                        "id": "DeleteStackResponse",
+                        "properties": {
+                            "ResponseMetadata": {
+                                "type": "ResponseMetadata"
+                            }
+                        }
+                    },
+                    "ResponseMetadata": {
+                        "id": "ResponseMetadata",
+                        "properties": {
+                            "RequestId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 43718,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Retrieve a(n)  stacks",
+            "path": "/hubs/general/stacks/{stackName}",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 69588,
+                    "resourceId": 43718,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "stackName",
+                    "vendorName": "StackName",
+                    "description": "The stacks ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 69589,
+                    "resourceId": 43718,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "DescribeStacks",
+                    "vendorName": "Action",
+                    "description": "Get stack details",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stacks",
+                "transform": false,
+                "swagger": {
+                    "stacks": {
+                        "id": "stacks",
+                        "properties": {
+                            "DescribeStacksResponse": {
+                                "type": "DescribeStacksResponse"
+                            }
+                        }
+                    },
+                    "Stacks": {
+                        "id": "Stacks",
+                        "properties": {
+                            "Description": {
+                                "type": "unknown"
+                            },
+                            "Parameters": {
+                                "type": "unknown"
+                            },
+                            "StackStatus": {
+                                "type": "string"
+                            },
+                            "LastUpdatedTime": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "RoleARN": {
+                                "type": "unknown"
+                            },
+                            "ChangeSetId": {
+                                "type": "unknown"
+                            },
+                            "Capabilities": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "CreationTime": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "Outputs": {
+                                "type": "unknown"
+                            },
+                            "StackStatusReason": {
+                                "type": "unknown"
+                            },
+                            "DisableRollback": {
+                                "type": "boolean"
+                            },
+                            "StackName": {
+                                "type": "string"
+                            },
+                            "StackId": {
+                                "type": "string"
+                            },
+                            "TimeoutInMinutes": {
+                                "type": "unknown"
+                            }
+                        }
+                    },
+                    "DescribeStacksResponse": {
+                        "id": "DescribeStacksResponse",
+                        "properties": {
+                            "DescribeStacksResult": {
+                                "type": "DescribeStacksResult"
+                            },
+                            "ResponseMetadata": {
+                                "type": "ResponseMetadata"
+                            }
+                        }
+                    },
+                    "DescribeStacksResult": {
+                        "id": "DescribeStacksResult",
+                        "properties": {
+                            "NextToken": {
+                                "type": "unknown"
+                            },
+                            "Stacks": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "Stacks"
+                                }
+                            }
+                        }
+                    },
+                    "ResponseMetadata": {
+                        "id": "ResponseMetadata",
+                        "properties": {
+                            "RequestId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 4453,
+                    "resourceId": 43718,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if(response_iserror && response_body_raw !== null && response_body_raw.indexOf('does not exist') > -1) {\n\tdone ({\n\t\t\"response_status_code\": 404\n\t});\n}\n\ndone({});\n\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 43719,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Update a  stack",
+            "path": "/hubs/general/stacks/{stackName}",
+            "vendorPath": "/",
+            "method": "PUT",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 69596,
+                    "resourceId": 43719,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "stackName",
+                    "vendorName": "StackName",
+                    "description": "The Stack name",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 69597,
+                    "resourceId": 43719,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "UpdateStack",
+                    "vendorName": "Action",
+                    "description": "Action",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69598,
+                    "resourceId": 43719,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "CAPABILITY_IAM",
+                    "vendorName": "Capabilities.member.1",
+                    "description": "capabilities",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 69599,
+                    "resourceId": 43719,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "stacks",
+                    "vendorName": "stacks",
+                    "description": "The Stack body",
+                    "type": "body",
+                    "vendorType": "query",
+                    "dataType": "stacksPost",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stacks",
+                "transform": false,
+                "swagger": {
+                    "stacks": {
+                        "id": "stacks",
+                        "properties": {
+                            "StackId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "stacksPost": {
+                        "id": "stacksPost",
+                        "properties": {
+                            "OnFailure": {
+                                "type": "string"
+                            },
+                            "StackName": {
+                                "type": "string"
+                            },
+                            "TemplateBody": {
+                                "type": "string"
+                            },
+                            "TemplateURL": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "stacksPost"
+            },
+            "type": "api",
+            "rootKey": "|UpdateStackResponse.UpdateStackResult",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 43720,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Retrieve a(n)  stacks template",
+            "path": "/hubs/general/stacks/{stackName}/events",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 69600,
+                    "resourceId": 43720,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "stackName",
+                    "vendorName": "StackName",
+                    "description": "The stacks ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 69601,
+                    "resourceId": 43720,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "DescribeStackEvents",
+                    "vendorName": "Action",
+                    "description": "Get stack template",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stacksEventsList",
+                "transform": false,
+                "swagger": {
+                    "stacksEventsListObject": {
+                        "id": "stacksEventsListObject",
+                        "properties": {
+                            "ResourceStatusReason": {
+                                "type": "string"
+                            },
+                            "LogicalResourceId": {
+                                "type": "string"
+                            },
+                            "PhysicalResourceId": {
+                                "type": "string"
+                            },
+                            "EventId": {
+                                "type": "string"
+                            },
+                            "ResourceStatus": {
+                                "type": "string"
+                            },
+                            "ResourceProperties": {
+                                "type": "unknown"
+                            },
+                            "ResourceType": {
+                                "type": "string"
+                            },
+                            "Timestamp": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "StackName": {
+                                "type": "string"
+                            },
+                            "StackId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "stacksEventsList": {
+                        "id": "stacksEventsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "stacksEventsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|DescribeStackEventsResponse.DescribeStackEventsResult.StackEvents",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 43721,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "description": "Retrieve a(n)  stacks template",
+            "path": "/hubs/general/stacks/{stackName}/templates",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 69590,
+                    "resourceId": 43721,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "stackName",
+                    "vendorName": "StackName",
+                    "description": "The stacks ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 69591,
+                    "resourceId": 43721,
+                    "createdDate": "2017-02-03T07:36:04Z",
+                    "name": "GetTemplate",
+                    "vendorName": "Action",
+                    "description": "Get stack template",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "stacksTemplates",
+                "transform": false,
+                "swagger": {
+                    "stacksTemplates": {
+                        "id": "stacksTemplates",
+                        "properties": {
+                            "StagesAvailable": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "TemplateBody": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|GetTemplateResponse.GetTemplateResult",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "awsv4"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "general",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 3862,
+            "createdDate": "2017-02-03T07:36:04Z",
+            "name": "aws.region",
+            "vendorName": "awsRegion",
+            "type": "configuration",
+            "vendorType": "path",
+            "source": "request",
+            "elementId": 8867,
+            "required": false
+        }
+    ],
+    "private": false
+}

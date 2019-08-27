@@ -1,0 +1,2824 @@
+{
+    "basePath": "/elements/api-v2",
+    "paths": {
+        "/incidents": {
+            "get": {
+                "operationId": "getIncidents",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The CEQL search expression. For example, to search for incidents with a SalesforceID of '12345', the search expression will be <i>where=SalesforceID='12345'</i>.",
+                        "in": "query",
+                        "name": "where",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/Incident"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Search for incidents.",
+                "tags": [
+                    "incidents"
+                ]
+            },
+            "post": {
+                "operationId": "createIncident",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The Incident.",
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Incident"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Incident"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Create an incident.",
+                "tags": [
+                    "incidents"
+                ]
+            }
+        },
+        "/incidents/{incidentId}": {
+            "get": {
+                "operationId": "getIncidentByIncidentId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The incident ID.",
+                        "in": "path",
+                        "name": "incidentId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Incident"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Retrieve an incident.",
+                "tags": [
+                    "incidents"
+                ]
+            },
+            "put": {
+                "operationId": "replaceIncidentByIncidentId",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The incident ID.",
+                        "in": "path",
+                        "name": "incidentId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The incident.",
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Incident"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Incident"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Update an incident.",
+                "tags": [
+                    "incidents"
+                ]
+            }
+        },
+        "/objects": {
+            "get": {
+                "operationId": "getObjects",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get a list of all the available objects.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/objects/{objectName}/docs": {
+            "get": {
+                "operationId": "getObjectsObjectNameDocs",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "Include discovery metadata in definitions",
+                        "in": "query",
+                        "name": "discovery",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "Optionally resolve swagger references for an inline object definition",
+                        "in": "query",
+                        "name": "resolveReferences",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "Include only OpenAPI / Swagger properties in definitions",
+                        "in": "query",
+                        "name": "basic",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "description": "The element swagger version to get the corresponding element swagger, Passing in \"-1\" gives latest element swagger",
+                        "in": "query",
+                        "name": "version",
+                        "required": false,
+                        "default": "-1",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/swaggerDocs"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get swagger docs for an object.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/objects/{objectName}/metadata": {
+            "get": {
+                "operationId": "getObjectsObjectNameMetadata",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The name of the object",
+                        "in": "path",
+                        "name": "objectName",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/objectsMetadata"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Get a list of all the field for an object.",
+                "tags": [
+                    "objects"
+                ]
+            }
+        },
+        "/ping": {
+            "get": {
+                "operationId": "getPing",
+                "parameters": [
+                    {
+                        "description": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK - Everything worked as expected",
+                        "schema": {
+                            "$ref": "#/definitions/Pong"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request - Often due to a missing request parameter"
+                    },
+                    "401": {
+                        "description": "Unauthorized - An invalid element token, user secret and/or org secret provided"
+                    },
+                    "403": {
+                        "description": "Forbidden - Access to the resource by the provider is forbidden"
+                    },
+                    "404": {
+                        "description": "Not found - The requested resource is not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected"
+                    },
+                    "406": {
+                        "description": "Not acceptable - The response content type does not match the 'Accept' header value"
+                    },
+                    "409": {
+                        "description": "Conflict - If a resource being created already exists"
+                    },
+                    "415": {
+                        "description": "Unsupported media type - The server cannot handle the requested Content-Type"
+                    },
+                    "500": {
+                        "description": "Server error - Something went wrong on the Cloud Elements server"
+                    },
+                    "502": {
+                        "description": "Provider server error - Something went wrong on the Provider or Endpoint's server"
+                    }
+                },
+                "summary": "Ping the Element to confirm that the Hub Element has a heartbeat.  If the Element does not have a heartbeat, an error message will be returned.",
+                "tags": [
+                    "ping"
+                ]
+            }
+        }
+    },
+    "host": "snapshot.cloud-elements.com",
+    "schemes": [
+        "https"
+    ],
+    "definitions": {
+        "Incident": {
+            "description": "The incident.",
+            "properties": {
+                "CICritical": {
+                    "type": "boolean"
+                },
+                "CIDownEndDateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "CIDownStartDateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "CIDowntimeInMinutes": {
+                    "type": "string"
+                },
+                "Category": {
+                    "type": "string"
+                },
+                "Cause": {
+                    "type": "string"
+                },
+                "ChangeID": {
+                    "type": "string"
+                },
+                "ClonedIncident": {
+                    "type": "boolean"
+                },
+                "CloseDescription": {
+                    "type": "string"
+                },
+                "ClosedBy": {
+                    "type": "string"
+                },
+                "ClosedByID": {
+                    "type": "string"
+                },
+                "ClosedDateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "ClosedOn1stCall": {
+                    "type": "boolean"
+                },
+                "ConfigItemDisplayName": {
+                    "type": "string"
+                },
+                "ConfigItemRecID": {
+                    "type": "string"
+                },
+                "Cost": {
+                    "type": "string"
+                },
+                "CreatedBy": {
+                    "type": "string"
+                },
+                "CreatedByEmail": {
+                    "type": "string"
+                },
+                "CreatedByID": {
+                    "type": "string"
+                },
+                "CreatedDateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "CreatedDuring": {
+                    "type": "string"
+                },
+                "CustomerDisplayName": {
+                    "type": "string"
+                },
+                "CustomerInformationIsNotCorrect": {
+                    "type": "boolean"
+                },
+                "CustomerRecID": {
+                    "type": "string"
+                },
+                "CustomerTypeID": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "HasNoOpenTasks": {
+                    "type": "boolean"
+                },
+                "Impact": {
+                    "type": "string"
+                },
+                "IncidentDurationInDays": {
+                    "type": "string"
+                },
+                "IncidentDurationInHours": {
+                    "type": "string"
+                },
+                "IncidentID": {
+                    "type": "string"
+                },
+                "IncidentType": {
+                    "type": "string"
+                },
+                "InitialITContact": {
+                    "type": "string"
+                },
+                "InitialITContactEmail": {
+                    "type": "string"
+                },
+                "IsPrivate": {
+                    "type": "boolean"
+                },
+                "LastModBy": {
+                    "type": "string"
+                },
+                "LastModByID": {
+                    "type": "string"
+                },
+                "LastModTimeStamp": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "LastModifiedByEmail": {
+                    "type": "string"
+                },
+                "LastModifiedDateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Level2EscalationComplete": {
+                    "type": "boolean"
+                },
+                "Level3EscalationComplete": {
+                    "type": "boolean"
+                },
+                "LinkedSLAs": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "MajorIncident": {
+                    "type": "boolean"
+                },
+                "MatchingText": {
+                    "type": "string"
+                },
+                "MultipleConfig": {
+                    "type": "boolean"
+                },
+                "NeverFixedIncident": {
+                    "type": "boolean"
+                },
+                "NextStatus": {
+                    "type": "string"
+                },
+                "NextStatusOneStep": {
+                    "type": "string"
+                },
+                "NextStatusText": {
+                    "type": "string"
+                },
+                "NoOneStep": {
+                    "type": "boolean"
+                },
+                "OutsourcedService": {
+                    "type": "boolean"
+                },
+                "OwnedBy": {
+                    "type": "string"
+                },
+                "OwnedByEmail": {
+                    "type": "string"
+                },
+                "OwnedByID": {
+                    "type": "string"
+                },
+                "OwnedByManager": {
+                    "type": "string"
+                },
+                "OwnedByManagerEmail": {
+                    "type": "string"
+                },
+                "OwnedByTeam": {
+                    "type": "string"
+                },
+                "OwnedByTeamID": {
+                    "type": "string"
+                },
+                "ParentTicket": {
+                    "type": "boolean"
+                },
+                "PendingEndDateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "PendingPreviousStatus": {
+                    "type": "string"
+                },
+                "PendingReason": {
+                    "type": "string"
+                },
+                "PendingStartDateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "PhaseApprovalsStatus": {
+                    "type": "string"
+                },
+                "PhaseClassifyStatus": {
+                    "type": "string"
+                },
+                "PhaseCloseStatus": {
+                    "type": "string"
+                },
+                "PhaseInvestigateStatus": {
+                    "type": "string"
+                },
+                "PhaseRFWStatus": {
+                    "type": "string"
+                },
+                "PhaseRecordStatus": {
+                    "type": "string"
+                },
+                "PhaseResolveStatus": {
+                    "type": "string"
+                },
+                "PortalRequestDescription": {
+                    "type": "boolean"
+                },
+                "PortalRequiredIncidentFields": {
+                    "type": "boolean"
+                },
+                "PortalUrgencyFields": {
+                    "type": "boolean"
+                },
+                "PortalWizardCounter": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "RecID": {
+                    "type": "string"
+                },
+                "RecurringIncident": {
+                    "type": "boolean"
+                },
+                "RequesterDepartment": {
+                    "type": "string"
+                },
+                "ReviewByDeadline": {
+                    "type": "string"
+                },
+                "SCTFired": {
+                    "type": "boolean"
+                },
+                "SLAID": {
+                    "type": "string"
+                },
+                "SLAIDForCustomer": {
+                    "type": "string"
+                },
+                "SLAName": {
+                    "type": "string"
+                },
+                "SLAResolutionWarning": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "SLAResolveByDeadline": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "SLARespondByDeadline": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "SLAResponseWarning": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "SLA_Key": {
+                    "type": "string"
+                },
+                "SSSection1Complete": {
+                    "type": "boolean"
+                },
+                "SSSection2Complete": {
+                    "type": "boolean"
+                },
+                "SSSection3Complete": {
+                    "type": "boolean"
+                },
+                "SSSection4Complete": {
+                    "type": "boolean"
+                },
+                "STCTimeInMinutes": {
+                    "type": "string"
+                },
+                "SelectedStatus": {
+                    "type": "string"
+                },
+                "SelfServiceContactInfoCorrect": {
+                    "type": "boolean"
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "ServiceCustomerIsEntitled": {
+                    "type": "boolean"
+                },
+                "ServiceEntitlements": {
+                    "type": "string"
+                },
+                "ServiceID": {
+                    "type": "string"
+                },
+                "ShortDescription": {
+                    "type": "string"
+                },
+                "ShowAllServices": {
+                    "type": "boolean"
+                },
+                "ShowContactInformation": {
+                    "type": "boolean"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SpecificsTypeId": {
+                    "type": "string"
+                },
+                "Stat_24x7ElapsedTime": {
+                    "type": "string"
+                },
+                "Stat_DateTimeAssigned": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Stat_DateTimeClosed": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Stat_DateTimeInProgress": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Stat_DateTimeReOpened": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Stat_DateTimeResolved": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Stat_DateTimeResponded": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "Stat_FirstCallResolution": {
+                    "type": "boolean"
+                },
+                "Stat_IncidentEscalated": {
+                    "type": "boolean"
+                },
+                "Stat_IncidentReopened": {
+                    "type": "boolean"
+                },
+                "Stat_NumberOfEscalations": {
+                    "type": "string"
+                },
+                "Stat_NumberOfTouches": {
+                    "type": "string"
+                },
+                "Stat_ResponseTime": {
+                    "type": "string"
+                },
+                "Stat_SLAResolutionBreached": {
+                    "type": "boolean"
+                },
+                "Stat_SLAResolutionGood": {
+                    "type": "boolean"
+                },
+                "Stat_SLAResolutionWarning": {
+                    "type": "boolean"
+                },
+                "Stat_SLAResponseBreached": {
+                    "type": "boolean"
+                },
+                "Stat_SLAResponseGood": {
+                    "type": "boolean"
+                },
+                "Stat_SLAResponseWarning": {
+                    "type": "boolean"
+                },
+                "Stat_TotalDLHOfIncident": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StatusDesc": {
+                    "type": "string"
+                },
+                "StatusID": {
+                    "type": "string"
+                },
+                "Subcategory": {
+                    "type": "string"
+                },
+                "TaskClosedCount": {
+                    "type": "string"
+                },
+                "TasksClosed": {
+                    "type": "boolean"
+                },
+                "TasksInProgress": {
+                    "type": "boolean"
+                },
+                "TasksOnHold": {
+                    "type": "boolean"
+                },
+                "Temp_Accepted": {
+                    "type": "boolean"
+                },
+                "Temp_Active": {
+                    "type": "boolean"
+                },
+                "Temp_Assigned": {
+                    "type": "boolean"
+                },
+                "Temp_Dependency": {
+                    "type": "boolean"
+                },
+                "Temp_Resolved": {
+                    "type": "boolean"
+                },
+                "Temp_open": {
+                    "type": "boolean"
+                },
+                "Temp_pending": {
+                    "type": "boolean"
+                },
+                "Temp_reopen": {
+                    "type": "boolean"
+                },
+                "Temp_showSLAInfo": {
+                    "type": "boolean"
+                },
+                "Temp_status_set": {
+                    "type": "boolean"
+                },
+                "Temp_taskTime": {
+                    "type": "string"
+                },
+                "TotalSTCTimeInMinutes": {
+                    "type": "string"
+                },
+                "TotalTaskTime": {
+                    "type": "string"
+                },
+                "TotalTasks": {
+                    "type": "string"
+                },
+                "Urgency": {
+                    "type": "string"
+                },
+                "WasCIDown": {
+                    "type": "boolean"
+                },
+                "Withdraw": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "IncidentType",
+                "Description",
+                "CustomerTypeID",
+                "CustomerRecID"
+            ],
+            "type": "object"
+        },
+        "IncidentType": {
+            "description": "The incidentType.",
+            "properties": {
+                "Active": {
+                    "type": "string"
+                },
+                "ActualLiveDate": {
+                    "type": "string"
+                },
+                "Address1": {
+                    "type": "string"
+                },
+                "Address2": {
+                    "type": "string"
+                },
+                "AnnualRevenue": {
+                    "type": "string"
+                },
+                "AssignToVAR": {
+                    "type": "string"
+                },
+                "AssistedByVAR": {
+                    "type": "string"
+                },
+                "AssociateID": {
+                    "type": "string"
+                },
+                "AvatarURL": {
+                    "type": "string"
+                },
+                "Billing": {
+                    "type": "string"
+                },
+                "CAIAssets": {
+                    "type": "string"
+                },
+                "CAIMaintEndDate": {
+                    "type": "string"
+                },
+                "CAIMaintStartDate": {
+                    "type": "string"
+                },
+                "CAIVersion": {
+                    "type": "string"
+                },
+                "CaS": {
+                    "type": "string"
+                },
+                "Campaign": {
+                    "type": "string"
+                },
+                "CampaignID": {
+                    "type": "string"
+                },
+                "CellExt": {
+                    "type": "string"
+                },
+                "Channel": {
+                    "type": "string"
+                },
+                "CherwellApplicationServerOSWithServicePack": {
+                    "type": "string"
+                },
+                "CherwellVersion": {
+                    "type": "string"
+                },
+                "City": {
+                    "type": "string"
+                },
+                "ClientArch": {
+                    "type": "string"
+                },
+                "ClientServicePack": {
+                    "type": "string"
+                },
+                "ClosedDate": {
+                    "type": "string"
+                },
+                "CommunicateToPartnersCustomers": {
+                    "type": "string"
+                },
+                "CompanyDecisionMakerID": {
+                    "type": "string"
+                },
+                "CompanyDecisionMakerName": {
+                    "type": "string"
+                },
+                "CompanyFax": {
+                    "type": "string"
+                },
+                "CompanyID": {
+                    "type": "string"
+                },
+                "CompanyName": {
+                    "type": "string"
+                },
+                "CompanyPhone": {
+                    "type": "string"
+                },
+                "Competitor1": {
+                    "type": "string"
+                },
+                "Competitor2": {
+                    "type": "string"
+                },
+                "Competitor3": {
+                    "type": "string"
+                },
+                "ContactAssistant": {
+                    "type": "string"
+                },
+                "ContactAssistantEmail": {
+                    "type": "string"
+                },
+                "ContactAssistantPhone": {
+                    "type": "string"
+                },
+                "ContactRole": {
+                    "type": "string"
+                },
+                "Corporate": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "CountryCode": {
+                    "type": "string"
+                },
+                "CreatedBy": {
+                    "type": "string"
+                },
+                "CreatedByID": {
+                    "type": "string"
+                },
+                "CreatedDateTime": {
+                    "type": "string"
+                },
+                "CustomerConversionDate": {
+                    "type": "string"
+                },
+                "CustomerTypeID": {
+                    "type": "string"
+                },
+                "CustomerTypeName": {
+                    "type": "string"
+                },
+                "DBPW": {
+                    "type": "string"
+                },
+                "DateAddedToCAS": {
+                    "type": "string"
+                },
+                "DateCAIInstalled": {
+                    "type": "string"
+                },
+                "DateReceived": {
+                    "type": "string"
+                },
+                "Demo": {
+                    "type": "string"
+                },
+                "Department": {
+                    "type": "string"
+                },
+                "DepositReceived": {
+                    "type": "string"
+                },
+                "DeskExt": {
+                    "type": "string"
+                },
+                "Disc_AddressDef": {
+                    "type": "string"
+                },
+                "Disc_AssetComp1": {
+                    "type": "string"
+                },
+                "Disc_AssetComp2": {
+                    "type": "string"
+                },
+                "Disc_AssetComp3": {
+                    "type": "string"
+                },
+                "Disc_AssetNum": {
+                    "type": "string"
+                },
+                "Disc_AssetReplace": {
+                    "type": "string"
+                },
+                "Disc_BusReq": {
+                    "type": "string"
+                },
+                "Disc_Comp1": {
+                    "type": "string"
+                },
+                "Disc_Comp2": {
+                    "type": "string"
+                },
+                "Disc_Comp3": {
+                    "type": "string"
+                },
+                "Disc_CurrDeploy": {
+                    "type": "string"
+                },
+                "Disc_NumInc": {
+                    "type": "string"
+                },
+                "Disc_NumRFC": {
+                    "type": "string"
+                },
+                "Disc_NumSites": {
+                    "type": "string"
+                },
+                "Disc_NumSupported": {
+                    "type": "string"
+                },
+                "Disc_Regulatory": {
+                    "type": "string"
+                },
+                "Disc_SpptExternal": {
+                    "type": "string"
+                },
+                "Disc_SpptInternal": {
+                    "type": "string"
+                },
+                "Disc_SpptLocal": {
+                    "type": "string"
+                },
+                "Disc_SpptRemote": {
+                    "type": "string"
+                },
+                "Disc_StrategicAdv": {
+                    "type": "string"
+                },
+                "Disc_other": {
+                    "type": "string"
+                },
+                "DisqualifiedReason": {
+                    "type": "string"
+                },
+                "Dissassociated": {
+                    "type": "string"
+                },
+                "DivisionType": {
+                    "type": "string"
+                },
+                "DoNotSendUpdates": {
+                    "type": "string"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "Download": {
+                    "type": "string"
+                },
+                "DunsNumber": {
+                    "type": "string"
+                },
+                "Duplicate": {
+                    "type": "string"
+                },
+                "DuplicateIncidentTypeCount": {
+                    "type": "string"
+                },
+                "DuplicateWarningInPortal": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "EmailOK": {
+                    "type": "string"
+                },
+                "EmailSystemVersion": {
+                    "type": "string"
+                },
+                "Employees": {
+                    "type": "string"
+                },
+                "EstimatedCloseDate": {
+                    "type": "string"
+                },
+                "EvalExpirationDate": {
+                    "type": "string"
+                },
+                "EvalPassword": {
+                    "type": "string"
+                },
+                "EvalStartDate": {
+                    "type": "string"
+                },
+                "EvalUserName": {
+                    "type": "string"
+                },
+                "EvaluationRequested": {
+                    "type": "string"
+                },
+                "ExpiringIncidentType": {
+                    "type": "string"
+                },
+                "ExtensionReason": {
+                    "type": "string"
+                },
+                "Fax": {
+                    "type": "string"
+                },
+                "FaxNumber": {
+                    "type": "string"
+                },
+                "FirstName": {
+                    "type": "string"
+                },
+                "FullName": {
+                    "type": "string"
+                },
+                "FullStateName": {
+                    "type": "string"
+                },
+                "FullStateOrProvince": {
+                    "type": "string"
+                },
+                "GSAOptional": {
+                    "type": "string"
+                },
+                "GSARequired": {
+                    "type": "string"
+                },
+                "GeneralQuestions": {
+                    "type": "string"
+                },
+                "GlobalRegion": {
+                    "type": "string"
+                },
+                "HasCAIMaintenance": {
+                    "type": "string"
+                },
+                "HasMaintenance": {
+                    "type": "string"
+                },
+                "Headquarters": {
+                    "type": "string"
+                },
+                "HotIncidentTypeDowngradeReason": {
+                    "type": "string"
+                },
+                "HotPriorityTime": {
+                    "type": "string"
+                },
+                "HowDidYouHearAboutUs": {
+                    "type": "string"
+                },
+                "HubSpotIncidentTypeToken": {
+                    "type": "string"
+                },
+                "HubSpotType": {
+                    "type": "string"
+                },
+                "HubSpotWebLink": {
+                    "type": "string"
+                },
+                "InactivityReason": {
+                    "type": "string"
+                },
+                "IncidentManager": {
+                    "type": "string"
+                },
+                "IncidentMgrName": {
+                    "type": "string"
+                },
+                "IncidentTypeCompanyName": {
+                    "type": "string"
+                },
+                "IncidentTypeConversionDate": {
+                    "type": "string"
+                },
+                "IncidentTypeConverted": {
+                    "type": "string"
+                },
+                "IncidentTypeConvertedBy": {
+                    "type": "string"
+                },
+                "IncidentTypeConvertedDate": {
+                    "type": "string"
+                },
+                "IncidentTypeExpiration": {
+                    "type": "string"
+                },
+                "IncidentTypeID": {
+                    "type": "string"
+                },
+                "IncidentTypeLifeCycle": {
+                    "type": "string"
+                },
+                "IncidentTypePriority": {
+                    "type": "string"
+                },
+                "IncidentTypeRegistrationID": {
+                    "type": "string"
+                },
+                "IncidentTypeSource": {
+                    "type": "string"
+                },
+                "IncidentTypeType": {
+                    "type": "string"
+                },
+                "IncludeOnPhoneList": {
+                    "type": "string"
+                },
+                "Industry": {
+                    "type": "string"
+                },
+                "IndustryCode": {
+                    "type": "string"
+                },
+                "IndustryWebsite": {
+                    "type": "string"
+                },
+                "InitialCampaignName": {
+                    "type": "string"
+                },
+                "InsideSalesRep": {
+                    "type": "string"
+                },
+                "International": {
+                    "type": "string"
+                },
+                "InternationalFax": {
+                    "type": "string"
+                },
+                "InternationalPhone": {
+                    "type": "string"
+                },
+                "IsHotIncidentType": {
+                    "type": "string"
+                },
+                "KeyContactID": {
+                    "type": "string"
+                },
+                "KeyContactName": {
+                    "type": "string"
+                },
+                "LastAttemptDate": {
+                    "type": "string"
+                },
+                "LastContactDate": {
+                    "type": "string"
+                },
+                "LastModBy": {
+                    "type": "string"
+                },
+                "LastModByID": {
+                    "type": "string"
+                },
+                "LastModDateTime": {
+                    "type": "string"
+                },
+                "LastModTimeStamp": {
+                    "type": "string"
+                },
+                "LastName": {
+                    "type": "string"
+                },
+                "LastScrubbedBy": {
+                    "type": "string"
+                },
+                "LastScrubbedDate": {
+                    "type": "string"
+                },
+                "LastSurveyDate": {
+                    "type": "string"
+                },
+                "Level": {
+                    "type": "string"
+                },
+                "Link": {
+                    "type": "string"
+                },
+                "LinkCase": {
+                    "type": "string"
+                },
+                "LinkOther": {
+                    "type": "string"
+                },
+                "Live": {
+                    "type": "string"
+                },
+                "LostToCompetitor": {
+                    "type": "string"
+                },
+                "MailingAddress": {
+                    "type": "string"
+                },
+                "MaintenanceEndDate": {
+                    "type": "string"
+                },
+                "MaintenanceStartDate": {
+                    "type": "string"
+                },
+                "Manager": {
+                    "type": "string"
+                },
+                "Marketing": {
+                    "type": "string"
+                },
+                "MasterIncidentTypeID": {
+                    "type": "string"
+                },
+                "MasterIncidentTypeName": {
+                    "type": "string"
+                },
+                "MasterRecord": {
+                    "type": "string"
+                },
+                "MiddleName": {
+                    "type": "string"
+                },
+                "Mobile": {
+                    "type": "string"
+                },
+                "MoreInfo": {
+                    "type": "string"
+                },
+                "NamePrefix": {
+                    "type": "string"
+                },
+                "NameSuffix": {
+                    "type": "string"
+                },
+                "Nickname": {
+                    "type": "string"
+                },
+                "NoEmailEver": {
+                    "type": "string"
+                },
+                "NoMarketingEmail": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "NumberOfSeats": {
+                    "type": "string"
+                },
+                "Offers1stLevelSupport": {
+                    "type": "string"
+                },
+                "Office": {
+                    "type": "string"
+                },
+                "OldOrgInformation": {
+                    "type": "string"
+                },
+                "OldProductInterestData": {
+                    "type": "string"
+                },
+                "OldProposalData": {
+                    "type": "string"
+                },
+                "OldQualificationData": {
+                    "type": "string"
+                },
+                "OldWinLossData": {
+                    "type": "string"
+                },
+                "OppCount": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OwnedBy": {
+                    "type": "string"
+                },
+                "OwnedBy1": {
+                    "type": "string"
+                },
+                "OwnedBy2": {
+                    "type": "string"
+                },
+                "OwnedByTeam": {
+                    "type": "string"
+                },
+                "OwnedbyEmail": {
+                    "type": "string"
+                },
+                "OwnerID": {
+                    "type": "string"
+                },
+                "OwnerID1": {
+                    "type": "string"
+                },
+                "OwnerID2": {
+                    "type": "string"
+                },
+                "OwnerTeamID": {
+                    "type": "string"
+                },
+                "Partner": {
+                    "type": "string"
+                },
+                "PartnerGeneratedIncidentID": {
+                    "type": "string"
+                },
+                "PartnerIncidentTypeID": {
+                    "type": "string"
+                },
+                "PendingReview": {
+                    "type": "string"
+                },
+                "PersonalDemoCompletedBy": {
+                    "type": "string"
+                },
+                "PersonalDemoCompletedByID": {
+                    "type": "string"
+                },
+                "PersonalDemoCompletedDateTime": {
+                    "type": "string"
+                },
+                "PersonalDemoReferredBy": {
+                    "type": "string"
+                },
+                "PersonalDemoReferredByID": {
+                    "type": "string"
+                },
+                "PersonalDemoReferredDateTime": {
+                    "type": "string"
+                },
+                "PersonalDemoScheduledBy": {
+                    "type": "string"
+                },
+                "PersonalDemoScheduledByID": {
+                    "type": "string"
+                },
+                "PersonalDemoScheduledDateTime": {
+                    "type": "string"
+                },
+                "PersonalEMail": {
+                    "type": "string"
+                },
+                "Phone": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "string"
+                },
+                "PreviousSolution": {
+                    "type": "string"
+                },
+                "Pricing": {
+                    "type": "string"
+                },
+                "Proj_Auth": {
+                    "type": "string"
+                },
+                "Proj_BudgetAmt": {
+                    "type": "string"
+                },
+                "Proj_BusCase": {
+                    "type": "string"
+                },
+                "Proj_Buyer": {
+                    "type": "string"
+                },
+                "Proj_HaveABudget": {
+                    "type": "string"
+                },
+                "Proj_Process_Direct": {
+                    "type": "string"
+                },
+                "Proj_Process_Onsite": {
+                    "type": "string"
+                },
+                "Proj_Process_POC": {
+                    "type": "string"
+                },
+                "Proj_Process_RFP": {
+                    "type": "string"
+                },
+                "Proj_Process_ReqList": {
+                    "type": "string"
+                },
+                "Proj_Process_ShortList": {
+                    "type": "string"
+                },
+                "Proj_ROI": {
+                    "type": "string"
+                },
+                "Proj_Signer": {
+                    "type": "string"
+                },
+                "Proj_Spoiler": {
+                    "type": "string"
+                },
+                "Proj_Sponsor": {
+                    "type": "string"
+                },
+                "Proj_Time_Dec": {
+                    "type": "string"
+                },
+                "Proj_Time_GoLive": {
+                    "type": "string"
+                },
+                "Proj_Time_Implement": {
+                    "type": "string"
+                },
+                "Proj_Time_Purch": {
+                    "type": "string"
+                },
+                "Proj_notes": {
+                    "type": "string"
+                },
+                "Proj_owner": {
+                    "type": "string"
+                },
+                "ProposedLiveDate": {
+                    "type": "string"
+                },
+                "Qual_ActivelySeekingSolution": {
+                    "type": "string"
+                },
+                "Qual_CurrAssetDisc": {
+                    "type": "string"
+                },
+                "Qual_CurrentServiceDeskSoftware": {
+                    "type": "string"
+                },
+                "Qual_DirectRequestTo": {
+                    "type": "string"
+                },
+                "Qual_KeyContactEmail": {
+                    "type": "string"
+                },
+                "Qual_KeyContactName": {
+                    "type": "string"
+                },
+                "Qual_KeyContactTelephone": {
+                    "type": "string"
+                },
+                "Qual_LookingToImplementTimeframe": {
+                    "type": "string"
+                },
+                "Qual_NumberCurrentSeats": {
+                    "type": "string"
+                },
+                "Qual_NumberNamedSeats": {
+                    "type": "string"
+                },
+                "Qual_TimeBaseline": {
+                    "type": "string"
+                },
+                "QualificationNotes": {
+                    "type": "string"
+                },
+                "Qualification_Competitors": {
+                    "type": "string"
+                },
+                "Qualification_FiscalYearEnd": {
+                    "type": "string"
+                },
+                "Qualification_Interest": {
+                    "type": "string"
+                },
+                "Qualification_LikesDislikes": {
+                    "type": "string"
+                },
+                "Qualification_PainPoints": {
+                    "type": "string"
+                },
+                "Qualified": {
+                    "type": "string"
+                },
+                "QualifiedBudget": {
+                    "type": "string"
+                },
+                "QualifiedCurrentSystem": {
+                    "type": "string"
+                },
+                "QualifiedForecastDate": {
+                    "type": "string"
+                },
+                "QualifiedTemp": {
+                    "type": "string"
+                },
+                "RecID": {
+                    "type": "string"
+                },
+                "ReferredBy": {
+                    "type": "string"
+                },
+                "ReferredOther": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RegionCode": {
+                    "type": "string"
+                },
+                "Registered": {
+                    "type": "string"
+                },
+                "SAMIncidentName": {
+                    "type": "string"
+                },
+                "SICCode": {
+                    "type": "string"
+                },
+                "SICDescription": {
+                    "type": "string"
+                },
+                "SLAType": {
+                    "type": "string"
+                },
+                "SLATypeID": {
+                    "type": "string"
+                },
+                "SQLArch": {
+                    "type": "string"
+                },
+                "SQLServicePack": {
+                    "type": "string"
+                },
+                "SQLVersion": {
+                    "type": "string"
+                },
+                "SaaS": {
+                    "type": "string"
+                },
+                "SaasServerIP": {
+                    "type": "string"
+                },
+                "Sales": {
+                    "type": "string"
+                },
+                "SalesforceID": {
+                    "type": "string"
+                },
+                "Salesperson": {
+                    "type": "string"
+                },
+                "Scrubbed": {
+                    "type": "string"
+                },
+                "SeatCount": {
+                    "type": "string"
+                },
+                "SendDVD": {
+                    "type": "string"
+                },
+                "SentContactDVD": {
+                    "type": "string"
+                },
+                "ServerArch": {
+                    "type": "string"
+                },
+                "ServerOS": {
+                    "type": "string"
+                },
+                "ServerServicePack": {
+                    "type": "string"
+                },
+                "Site": {
+                    "type": "string"
+                },
+                "Sol_AssetCMDB": {
+                    "type": "string"
+                },
+                "Sol_Avail": {
+                    "type": "string"
+                },
+                "Sol_Bug": {
+                    "type": "string"
+                },
+                "Sol_Cap": {
+                    "type": "string"
+                },
+                "Sol_Chat": {
+                    "type": "string"
+                },
+                "Sol_Chat_note": {
+                    "type": "string"
+                },
+                "Sol_Chg": {
+                    "type": "string"
+                },
+                "Sol_Curr_AssetCMDB": {
+                    "type": "string"
+                },
+                "Sol_Curr_Avail": {
+                    "type": "string"
+                },
+                "Sol_Curr_Bug": {
+                    "type": "string"
+                },
+                "Sol_Curr_Cap": {
+                    "type": "string"
+                },
+                "Sol_Curr_Chat": {
+                    "type": "string"
+                },
+                "Sol_Curr_Chg": {
+                    "type": "string"
+                },
+                "Sol_Curr_DevPlat": {
+                    "type": "string"
+                },
+                "Sol_Curr_Email": {
+                    "type": "string"
+                },
+                "Sol_Curr_Event": {
+                    "type": "string"
+                },
+                "Sol_Curr_Facilities": {
+                    "type": "string"
+                },
+                "Sol_Curr_Fin": {
+                    "type": "string"
+                },
+                "Sol_Curr_HR": {
+                    "type": "string"
+                },
+                "Sol_Curr_ITIL": {
+                    "type": "string"
+                },
+                "Sol_Curr_Imaging": {
+                    "type": "string"
+                },
+                "Sol_Curr_Inc": {
+                    "type": "string"
+                },
+                "Sol_Curr_Inventory": {
+                    "type": "string"
+                },
+                "Sol_Curr_KB": {
+                    "type": "string"
+                },
+                "Sol_Curr_LDAP": {
+                    "type": "string"
+                },
+                "Sol_Curr_MobileDev": {
+                    "type": "string"
+                },
+                "Sol_Curr_Monitor": {
+                    "type": "string"
+                },
+                "Sol_Curr_OtherExtCap": {
+                    "type": "string"
+                },
+                "Sol_Curr_OtherInt": {
+                    "type": "string"
+                },
+                "Sol_Curr_PW": {
+                    "type": "string"
+                },
+                "Sol_Curr_Patch": {
+                    "type": "string"
+                },
+                "Sol_Curr_Prob": {
+                    "type": "string"
+                },
+                "Sol_Curr_Procure": {
+                    "type": "string"
+                },
+                "Sol_Curr_ProjMgmt": {
+                    "type": "string"
+                },
+                "Sol_Curr_RF": {
+                    "type": "string"
+                },
+                "Sol_Curr_Rel": {
+                    "type": "string"
+                },
+                "Sol_Curr_Remote": {
+                    "type": "string"
+                },
+                "Sol_Curr_SC": {
+                    "type": "string"
+                },
+                "Sol_Curr_SFACRM": {
+                    "type": "string"
+                },
+                "Sol_Curr_SLM": {
+                    "type": "string"
+                },
+                "Sol_Curr_SP": {
+                    "type": "string"
+                },
+                "Sol_Curr_SS": {
+                    "type": "string"
+                },
+                "Sol_Curr_Sharepoint": {
+                    "type": "string"
+                },
+                "Sol_Curr_Survey": {
+                    "type": "string"
+                },
+                "Sol_Curr_Tel": {
+                    "type": "string"
+                },
+                "Sol_Curr_Workflow": {
+                    "type": "string"
+                },
+                "Sol_DevPlat": {
+                    "type": "string"
+                },
+                "Sol_Email": {
+                    "type": "string"
+                },
+                "Sol_Event": {
+                    "type": "string"
+                },
+                "Sol_Facilities": {
+                    "type": "string"
+                },
+                "Sol_Fin": {
+                    "type": "string"
+                },
+                "Sol_HR": {
+                    "type": "string"
+                },
+                "Sol_Imaging": {
+                    "type": "string"
+                },
+                "Sol_Imaging_note": {
+                    "type": "string"
+                },
+                "Sol_Inc": {
+                    "type": "string"
+                },
+                "Sol_Inventory": {
+                    "type": "string"
+                },
+                "Sol_KB": {
+                    "type": "string"
+                },
+                "Sol_LDAP": {
+                    "type": "string"
+                },
+                "Sol_MobileDev": {
+                    "type": "string"
+                },
+                "Sol_Monitor": {
+                    "type": "string"
+                },
+                "Sol_Monitor_note": {
+                    "type": "string"
+                },
+                "Sol_NumConcurrentSeats": {
+                    "type": "string"
+                },
+                "Sol_NumNamedSeats": {
+                    "type": "string"
+                },
+                "Sol_OtherExtCap": {
+                    "type": "string"
+                },
+                "Sol_OtherInt": {
+                    "type": "string"
+                },
+                "Sol_OtherInt_note": {
+                    "type": "string"
+                },
+                "Sol_PW": {
+                    "type": "string"
+                },
+                "Sol_Patch": {
+                    "type": "string"
+                },
+                "Sol_Patch_note": {
+                    "type": "string"
+                },
+                "Sol_PrefDeployment": {
+                    "type": "string"
+                },
+                "Sol_Prob": {
+                    "type": "string"
+                },
+                "Sol_Procure": {
+                    "type": "string"
+                },
+                "Sol_ProjMgmt": {
+                    "type": "string"
+                },
+                "Sol_RF": {
+                    "type": "string"
+                },
+                "Sol_Rel": {
+                    "type": "string"
+                },
+                "Sol_Remote": {
+                    "type": "string"
+                },
+                "Sol_Remote_note": {
+                    "type": "string"
+                },
+                "Sol_SC": {
+                    "type": "string"
+                },
+                "Sol_SFACRM": {
+                    "type": "string"
+                },
+                "Sol_SLM": {
+                    "type": "string"
+                },
+                "Sol_SP": {
+                    "type": "string"
+                },
+                "Sol_SS": {
+                    "type": "string"
+                },
+                "Sol_Sharepoint": {
+                    "type": "string"
+                },
+                "Sol_Sharepoint_note": {
+                    "type": "string"
+                },
+                "Sol_Survey": {
+                    "type": "string"
+                },
+                "Sol_Tel": {
+                    "type": "string"
+                },
+                "Sol_Tel_note": {
+                    "type": "string"
+                },
+                "Sol_Workflow": {
+                    "type": "string"
+                },
+                "Sol__ITIL": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SourceCampaign": {
+                    "type": "string"
+                },
+                "SourceNotes": {
+                    "type": "string"
+                },
+                "SourceSubCategory": {
+                    "type": "string"
+                },
+                "SpouseBirthday": {
+                    "type": "string"
+                },
+                "SpouseName": {
+                    "type": "string"
+                },
+                "StateOrProvince": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StockSymbol": {
+                    "type": "string"
+                },
+                "StraightToOpp": {
+                    "type": "string"
+                },
+                "SupportedBy": {
+                    "type": "string"
+                },
+                "Survey_GeneralComments": {
+                    "type": "string"
+                },
+                "Survey_IAttendedBecause": {
+                    "type": "string"
+                },
+                "Survey_LookingToImplementTimeframe": {
+                    "type": "string"
+                },
+                "Survey_QualityOfMaterial": {
+                    "type": "string"
+                },
+                "Survey_QualityOfPresenter": {
+                    "type": "string"
+                },
+                "Sys_temp": {
+                    "type": "string"
+                },
+                "Technical": {
+                    "type": "string"
+                },
+                "TechnicalImplementer": {
+                    "type": "string"
+                },
+                "Temp_catch_all": {
+                    "type": "string"
+                },
+                "Temp_expirySet": {
+                    "type": "string"
+                },
+                "Temp_hold": {
+                    "type": "string"
+                },
+                "Temp_statusSet": {
+                    "type": "string"
+                },
+                "TestWeb": {
+                    "type": "string"
+                },
+                "TimeSinceLastEdit": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Training": {
+                    "type": "string"
+                },
+                "TypicalOS": {
+                    "type": "string"
+                },
+                "VARID": {
+                    "type": "string"
+                },
+                "VARIncident": {
+                    "type": "string"
+                },
+                "VARIncidentType": {
+                    "type": "string"
+                },
+                "VARManager": {
+                    "type": "string"
+                },
+                "VARSalesRep": {
+                    "type": "string"
+                },
+                "VARSalesRepEMail": {
+                    "type": "string"
+                },
+                "VIP": {
+                    "type": "string"
+                },
+                "VirusProtectionSystem": {
+                    "type": "string"
+                },
+                "WebSite": {
+                    "type": "string"
+                },
+                "WebSiteTemp": {
+                    "type": "string"
+                },
+                "Webinar": {
+                    "type": "string"
+                },
+                "WebinarDate": {
+                    "type": "string"
+                },
+                "WebsitePage": {
+                    "type": "string"
+                },
+                "WeddingAnniversary": {
+                    "type": "string"
+                },
+                "WinLossDataID": {
+                    "type": "string"
+                },
+                "WinLossDescription": {
+                    "type": "string"
+                },
+                "YearEstablished": {
+                    "type": "string"
+                },
+                "ZipOrPostalCode": {
+                    "type": "string"
+                },
+                "ZipPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IncidentTypeSource",
+                "FullName"
+            ],
+            "type": "object"
+        },
+        "swagger200": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "200",
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/swaggerschema"
+                },
+                "description": {
+                    "x-samplevalue": "OK - Everything worked as expected",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger400": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "400",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Bad Request - Often due to a missing request parameter",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger401": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "401",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Unauthorized - An invalid element token, user secret and/or org secret provided",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger403": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "403",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Forbidden - Access to the resource by the provider is forbidden",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger404": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "404",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Not found - The requested resource is not found",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger405": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "405",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Method not allowed - Incorrect HTTP verb used, e.g., GET used when POST expected",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger406": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "406",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Not acceptable - The response content type does not match the 'Accept' header value",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger409": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "409",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Conflict - If a resource being created already exists",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger415": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "415",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Unsupported media type - The server cannot handle the requested Content-Type",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger500": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "500",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Server error - Something went wrong on the Cloud Elements server",
+                    "type": "string"
+                }
+            }
+        },
+        "swagger502": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "502",
+            "properties": {
+                "description": {
+                    "x-samplevalue": "Provider server error - Something went wrong on the Provider or Endpoint's server",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerschema": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "schema",
+            "properties": {
+                "$ref": {
+                    "x-samplevalue": "#/definitions/Contact-POST-Response",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerpost": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "post",
+            "properties": {
+                "summary": {
+                    "x-samplevalue": "Create a new contact in the CRM service. Contact creation will flow through Cloud Elements to your CRM service. With the exception of the 'id' field, the required fields indicated in the 'Contact' model are those required to create a new contact.",
+                    "type": "string"
+                },
+                "operationId": {
+                    "x-samplevalue": "createContact",
+                    "type": "string"
+                },
+                "responses": {
+                    "$ref": "#/definitions/swaggerresponses"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/swaggerparameters"
+                    }
+                },
+                "tags": {
+                    "x-samplevalue": [
+                        "contacts"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "swaggercontact": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "contact",
+            "properties": {
+                "email": {
+                    "x-samplevalue": "support@cloud-elements.com",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerparametersschema": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "schema",
+            "properties": {
+                "$ref": {
+                    "x-samplevalue": "#/definitions/Contact",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerdefinitions": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "definitions",
+            "properties": {
+                "definition-name": {
+                    "$ref": "#/definitions/swaggerdefinition-name"
+                }
+            }
+        },
+        "swaggerinfo": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "info",
+            "properties": {
+                "contact": {
+                    "$ref": "#/definitions/swaggercontact"
+                },
+                "title": {
+                    "x-samplevalue": "hubspotcrm",
+                    "type": "string"
+                },
+                "version": {
+                    "x-samplevalue": "api-v2",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerdefinition-property": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "#/definitions/definition-property",
+            "properties": {
+                "type": {
+                    "x-samplevalue": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "swaggerDocs": {
+            "x-has-customfields": false,
+            "title": "swaggerDocs",
+            "properties": {
+                "basePath": {
+                    "x-samplevalue": "/elements/api-v2/hubs/crm",
+                    "type": "string"
+                },
+                "paths": {
+                    "$ref": "#/definitions/swaggerpaths"
+                },
+                "host": {
+                    "x-samplevalue": "localhost:5050",
+                    "type": "string"
+                },
+                "schemes": {
+                    "x-samplevalue": [
+                        "http"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "definitions": {
+                    "$ref": "#/definitions/swaggerdefinitions"
+                },
+                "swagger": {
+                    "x-samplevalue": "2.0",
+                    "type": "string"
+                },
+                "info": {
+                    "$ref": "#/definitions/swaggerinfo"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/swaggertags"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "swaggertags": {
+            "x-has-customfields": false,
+            "title": "tags",
+            "properties": {
+                "name": {
+                    "x-samplevalue": "contacts",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "swaggerpaths": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "paths",
+            "properties": {
+                "/contacts": {
+                    "$ref": "#/definitions/swagger-contacts-path"
+                }
+            }
+        },
+        "swaggerresponses": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "responses",
+            "properties": {
+                "200": {
+                    "$ref": "#/definitions/swagger200"
+                },
+                "400": {
+                    "$ref": "#/definitions/swagger400"
+                },
+                "401": {
+                    "$ref": "#/definitions/swagger401"
+                },
+                "403": {
+                    "$ref": "#/definitions/swagger403"
+                },
+                "404": {
+                    "$ref": "#/definitions/swagger404"
+                },
+                "405": {
+                    "$ref": "#/definitions/swagger405"
+                },
+                "406": {
+                    "$ref": "#/definitions/swagger406"
+                },
+                "409": {
+                    "$ref": "#/definitions/swagger409"
+                },
+                "415": {
+                    "$ref": "#/definitions/swagger415"
+                },
+                "500": {
+                    "$ref": "#/definitions/swagger500"
+                },
+                "502": {
+                    "$ref": "#/definitions/swagger502"
+                }
+            }
+        },
+        "swaggerdefinition-name": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "definition-name",
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/swaggerproperties"
+                }
+            }
+        },
+        "swaggerparameters": {
+            "x-has-customfields": false,
+            "title": "parameters",
+            "properties": {
+                "schema": {
+                    "$ref": "#/definitions/swaggerparametersschema"
+                },
+                "in": {
+                    "x-samplevalue": "header",
+                    "type": "string"
+                },
+                "name": {
+                    "x-samplevalue": "Authorization",
+                    "type": "string"
+                },
+                "description": {
+                    "x-samplevalue": "The authorization tokens. The format for the header value is 'Element &lt;token&gt;, User &lt;user secret&gt;'",
+                    "type": "string"
+                },
+                "type": {
+                    "x-samplevalue": "string",
+                    "type": "string"
+                },
+                "required": {
+                    "x-samplevalue": true,
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "swaggerproperties": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "properties",
+            "properties": {
+                "definition-property": {
+                    "$ref": "#/definitions/swaggerdefinition-property"
+                }
+            }
+        },
+        "swagger-contacts-path": {
+            "x-has-customfields": false,
+            "type": "object",
+            "title": "/contacts",
+            "properties": {
+                "post": {
+                    "$ref": "#/definitions/swaggerpost"
+                }
+            }
+        },
+        "Pong": {
+            "properties": {
+                "dateTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "endpoint": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "objectsMetadata": {
+            "properties": {
+                "fields": {
+                    "items": {
+                        "$ref": "#/definitions/objectsMetadataFields"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "objectsMetadataFields": {
+            "properties": {
+                "mask": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "vendorDisplayName": {
+                    "type": "string"
+                },
+                "vendorPath": {
+                    "type": "string"
+                },
+                "vendorReadOnly": {
+                    "type": "boolean"
+                },
+                "vendorRequired": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "BulkStatus": {
+            "description": "Status of the bulk upload.",
+            "properties": {
+                "batchId": {
+                    "description": "Contact/Leads loaded",
+                    "type": "number"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "numOfLeadsProcessed": {
+                    "description": "Contact/Leads loaded",
+                    "type": "number"
+                },
+                "numOfRowsFailed": {
+                    "description": "Failed count",
+                    "type": "number"
+                },
+                "numOfRowsWithWarning": {
+                    "description": "Contact/Leads that had warnings",
+                    "type": "number"
+                },
+                "status": {
+                    "description": "Status of the bulk job",
+                    "type": "string"
+                }
+            }
+        },
+        "BulkLoad": {
+            "description": "BulkLoad response of bulk upload.",
+            "properties": {
+                "id": {
+                    "description": "Id of the bulk job",
+                    "type": "number"
+                },
+                "status": {
+                    "description": "Status of the bulk job",
+                    "type": "string"
+                }
+            }
+        },
+        "BulkQuery": {
+            "description": "BulkLoad response of bulk download.",
+            "properties": {
+                "id": {
+                    "description": "Id of the bulk job",
+                    "type": "number"
+                },
+                "status": {
+                    "description": "Status of the bulk job",
+                    "type": "string"
+                }
+            }
+        },
+        "ModelDate": {
+            "properties": {
+                "value": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "swagger": "2.0",
+    "info": {
+        "contact": {
+            "email": "support@cloud-elements.com"
+        },
+        "title": "cherwell",
+        "version": "api-v2"
+    },
+    "tags": [
+        {
+            "name": "ping"
+        },
+        {
+            "name": "objects"
+        },
+        {
+            "name": "incidents"
+        }
+    ]
+}

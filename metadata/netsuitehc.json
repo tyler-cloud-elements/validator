@@ -1,0 +1,1250 @@
+{
+    "id": 124,
+    "name": "NetSuite HR",
+    "hookName": "NetsuiteHR",
+    "key": "netsuitehc",
+    "description": "Add a Netsuite Instance to connect your existing Netsuite account to the Human Capital Management Hub, allowing you to manage all of your people-related activities across multiple Human Capital Management Elements. You will need your Netsuite account information to add an instance.",
+    "image": "elements/provider_netsuite.png",
+    "logo": "netsuitecrm",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "Netsuite Human Capital",
+    "configuration": [
+        {
+            "id": 1033,
+            "name": "Email",
+            "key": "user.username",
+            "description": "Email",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1034,
+            "name": "User Password",
+            "key": "user.password",
+            "description": "User Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254099,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1035,
+            "name": "Account ID",
+            "key": "netsuite.accountId",
+            "description": "The Account Id of your application",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 6750,
+            "name": "NetSuite Role ID",
+            "key": "netsuite.sso.roleId",
+            "description": "The Role Id of the User (eg 3,4,etc)",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1927,
+            "name": "Connect to Sandbox",
+            "key": "netsuite.sandbox",
+            "description": "Connect to Sandbox Set Yes to Sandbox and NO to Connect to Production",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6751,
+            "name": "Application ID",
+            "key": "netsuite.appId",
+            "description": "Application ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 11,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6752,
+            "name": "NetSuite User ID",
+            "key": "netsuite.sso.userId",
+            "description": "User Id",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 12,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6753,
+            "name": "NetSuite Partner ID",
+            "key": "netsuite.sso.partnerId",
+            "description": "The Partner ID of the application",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 13,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 6754,
+            "name": "NetSuite Company ID",
+            "key": "netsuite.sso.companyId",
+            "description": "The Company ID of the application",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 15,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 52495,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159831,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256236,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256487,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "employees",
+            "vendorName": "Employee"
+        }
+    ],
+    "objectMetadata": {
+        "Employee": {
+            "fields": [
+                {
+                    "vendorPath": "phone",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "location.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "location.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "location.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "location.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "billPay",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "accruedTimeList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].inactive",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].accruedHours",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].expirationDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].accrualRate",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].resetAccruedHoursAtYearEnd",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].payrollItem.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].payrollItem.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].payrollItem.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].payrollItem.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].maximumAccruedHours",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].accrualMethod.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].effectiveDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "accruedTimeList.employeeAccruedTime[*].monetaryRate",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "employeeStatus.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "employeeStatus.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "employeeStatus.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "employeeStatus.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "giveAccess",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "password",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "homePhone",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "directDeposit",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "customFieldList.customField[*].internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "customFieldList.customField[*].scriptId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "accountNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyContributionList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].limit",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].inactive",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].rate",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].expirationDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].payrollItem.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].payrollItem.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].payrollItem.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].payrollItem.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyContributionList.employeeCompanyContribution[*].effectiveDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "workCalendar.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "workCalendar.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "workCalendar.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "workCalendar.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "isInactive",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "initials",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "directDepositList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].amount",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].accountPrenoted",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].inactive",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].bankRoutingNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].netAccount",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].accountStatus.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].bankName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].bankAccountNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].savingsAccount",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].bankNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "directDepositList.employeeDirectDeposit[*].bankId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "gender.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "birthDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "salesRole.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "salesRole.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "salesRole.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "salesRole.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "adpId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "requirePwdChange",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "template.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "template.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "template.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "template.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "middleName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "employeeType.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "employeeType.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "employeeType.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "employeeType.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "nullFieldList.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "lastName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "fax",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "laborCost",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "socialSecurityNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "lastPaidDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "hireDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].limit",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].inactive",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].rate",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].expirationDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].payrollItem.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].payrollItem.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].payrollItem.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].payrollItem.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "deductionList.employeeDeduction[*].effectiveDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "deductionList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "image.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "image.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "image.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "image.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "globalSubscriptionStatus.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hrEducationList.employeeHrEducation[*].degree",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hrEducationList.employeeHrEducation[*].degreeDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "hrEducationList.employeeHrEducation[*].education.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hrEducationList.employeeHrEducation[*].education.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hrEducationList.employeeHrEducation[*].education.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hrEducationList.employeeHrEducation[*].education.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hrEducationList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "billingClass.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "billingClass.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "billingClass.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "billingClass.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "concurrentWebServicesUser",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "rolesList.roles[*].selectedRole.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "rolesList.roles[*].selectedRole.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "rolesList.roles[*].selectedRole.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "rolesList.roles[*].selectedRole.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "rolesList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "mobilePhone",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "supervisor.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "supervisor.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "supervisor.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "supervisor.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "email",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timeApprover.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timeApprover.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timeApprover.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timeApprover.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "sendEmail",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "payFrequency.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "customForm.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "customForm.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "customForm.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "customForm.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subsidiary.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subsidiary.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subsidiary.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subsidiary.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "expenseLimit",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "purchaseOrderLimit",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "department.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "department.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "department.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "department.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "entityId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "workplace.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "workplace.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "workplace.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "workplace.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "maritalStatus.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "maritalStatus.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "maritalStatus.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "maritalStatus.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "jobDescription",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "currency.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "currency.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "currency.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "currency.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "usePerquest",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "title",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "releaseDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "isJobResource",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.zip",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.nullFieldList.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.state",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.addressee",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.addrText",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.city",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.country.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.customFieldList.customField[*].internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.customFieldList.customField[*].scriptId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.addr1",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.addr2",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.override",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.addr3",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.addrPhone",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].addressbookAddress.attention",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].defaultBilling",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].label",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressbookList.addressbook[*].defaultShipping",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addressbookList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "IPAddressRule",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "purchaseOrderApprover.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "purchaseOrderApprover.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "purchaseOrderApprover.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "purchaseOrderApprover.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "firstName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "lastReviewDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "emergencyContactList.employeeEmergencyContact[*].relationship",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emergencyContactList.employeeEmergencyContact[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "emergencyContactList.employeeEmergencyContact[*].phone",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emergencyContactList.employeeEmergencyContact[*].address",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emergencyContactList.employeeEmergencyContact[*].contact",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emergencyContactList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "purchaseOrderApprovalLimit",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "eligibleForCommission",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "inheritIPRules",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].primaryEarning",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].payRate",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].inactive",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].expirationDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].payrollItem.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].payrollItem.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].payrollItem.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].payrollItem.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].effectiveDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].defaultEarning",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "earningList.employeeEarning[*].defaultHours",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "earningList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "isSupportRep",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "approver.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "approver.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "approver.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "approver.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "commissionPaymentPreference.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "officePhone",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subscriptionsList.subscriptions[*].subscription",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subscriptionsList.subscriptions[*].lastModifiedDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "subscriptionsList.subscriptions[*].subscribed",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subscriptionsList.replaceAll",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "nextReviewDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "password2",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "_class.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "_class.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "_class.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "_class.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "useTimeData.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "altName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phoneticName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "defaultAddress",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "lastModifiedDate",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "isSalesRep",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "dateCreated",
+                    "type": "date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "vendorPath": "approvalLimit",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "salutation",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "ethnicity.internalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "ethnicity.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "ethnicity.type.value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "ethnicity.externalId",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "comments",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hasOfflineAccess",
+                    "type": "boolean"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": false,
+    "extendable": false,
+    "beta": true,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "humancapital",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

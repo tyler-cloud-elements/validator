@@ -1,0 +1,1992 @@
+{
+    "id": 876,
+    "name": "Nimsoft",
+    "hookName": "Nimsoft",
+    "key": "nimsoft",
+    "description": "Nimsoft Element",
+    "image": "elements/provider_nimsoft.png",
+    "logo": "nimsoft",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 9756,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Nimsoft Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9754,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Nimsoft Base URL",
+            "defaultValue": "http://{domain}/rest",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254101,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9755,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Nimsoft Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9757,
+            "name": "domain",
+            "key": "domain",
+            "description": "Domain name for UMP server. Ex: nimsoft.cloud-elements.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 9758,
+            "name": "Username",
+            "key": "username",
+            "description": "Nimsoft Username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 9759,
+            "name": "Password",
+            "key": "password",
+            "description": "Nimsoft Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52438,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159852,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9760,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9761,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9752,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9753,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9762,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/helpdesk/contacts\", “idField”: “user.id”, “datesConfiguration”: { \"updatedDateField\": \"user.updated_at\", \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\", “createdDateField”: “user.created_at”, “createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\" }, \"pageSize\": 10000 } }",
+            "defaultValue": "{\"alarms\":{\"url\":\"/hubs/monitoring/alarms?where=timeLast='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'\",\"idField\":\"id\",\"datesConfiguration\":{\"updatedDateField\":\"timeLast\",\"updatedDateFormat\":\"yyyy-MM-dd'T'HH:mm:ssXXX\",\"createdDateField\":\"timeOrigin\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ssXXX\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256238,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256489,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 84403,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 6044,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve accounts",
+            "path": "/hubs/monitoring/accounts",
+            "vendorPath": "/accounts",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6563,
+                    "resourceId": 6044,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "Page number",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 6564,
+                    "resourceId": 6044,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "pageSize",
+                    "vendorName": "maxrows",
+                    "description": "Number of items per page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "accountsList",
+                "transform": false,
+                "swagger": {
+                    "accountsList": {
+                        "id": "accountsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "accountsListObject"
+                        }
+                    },
+                    "accountsListObject": {
+                        "id": "accountsListObject",
+                        "properties": {
+                            "country": {
+                                "type": "string"
+                            },
+                            "address": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "origin": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "postalCode": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "creationDate": {
+                                "type": "string"
+                            },
+                            "webSite": {
+                                "type": "string"
+                            },
+                            "accountId": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "fax": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "account",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6041,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Create an account",
+            "path": "/hubs/monitoring/accounts",
+            "vendorPath": "/accounts",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6560,
+                    "resourceId": 6041,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Account body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accountsRequest",
+                    "vendorDataType": "accountsRequest",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accountsRes",
+                "transform": false,
+                "swagger": {
+                    "accountsRes": {
+                        "id": "accountsRes",
+                        "properties": {
+                            "accountId": {
+                                "type": "string"
+                            },
+                            "address": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "creationDate": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "fax": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "origin": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "postalCode": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "webSite": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "accountsRequest": {
+                        "properties": {
+                            "accountId": {
+                                "type": "string",
+                                "x-samplevalue": "0"
+                            },
+                            "address": {
+                                "type": "string",
+                                "x-samplevalue": "Teststreet 42"
+                            },
+                            "city": {
+                                "type": "string",
+                                "x-samplevalue": "Testcity"
+                            },
+                            "country": {
+                                "type": "string",
+                                "x-samplevalue": "TestCountry"
+                            },
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "Test Description"
+                            },
+                            "fax": {
+                                "type": "string",
+                                "x-samplevalue": "Test Fax no 4711"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "REST Services Test Account"
+                            },
+                            "origin": {
+                                "type": "string",
+                                "x-samplevalue": "primaryhub"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "x-samplevalue": "Test phone 0815"
+                            },
+                            "postalCode": {
+                                "type": "string",
+                                "x-samplevalue": "123456"
+                            },
+                            "state": {
+                                "type": "string",
+                                "x-samplevalue": "Teststate"
+                            },
+                            "webSite": {
+                                "type": "string",
+                                "x-samplevalue": "www.testrest.com"
+                            }
+                        },
+                        "title": "accountsRequest"
+                    }
+                },
+                "requestName": "accountsRequest"
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6045,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Delete account",
+            "path": "/hubs/monitoring/accounts/{accountId}",
+            "vendorPath": "/accounts/{account_id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 6565,
+                    "resourceId": 6045,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "accountId",
+                    "vendorName": "account_id",
+                    "description": "AccountId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6043,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve an account",
+            "path": "/hubs/monitoring/accounts/{accountId}",
+            "vendorPath": "/accounts/{account_id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6562,
+                    "resourceId": 6043,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "accountId",
+                    "vendorName": "account_id",
+                    "description": "AccountId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accounts",
+                "transform": false,
+                "swagger": {
+                    "accounts": {
+                        "id": "accounts",
+                        "properties": {
+                            "country": {
+                                "type": "string"
+                            },
+                            "address": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "origin": {
+                                "type": "string"
+                            },
+                            "postalCode": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "creationDate": {
+                                "type": "string"
+                            },
+                            "webSite": {
+                                "type": "string"
+                            },
+                            "accountId": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "fax": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6053,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Update an account",
+            "path": "/hubs/monitoring/accounts/{accountId}",
+            "vendorPath": "/accounts/{account_id}",
+            "method": "PUT",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 6573,
+                    "resourceId": 6053,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Account body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "accountsRequest",
+                    "vendorDataType": "accountsRequest",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6572,
+                    "resourceId": 6053,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "accountId",
+                    "vendorName": "account_id",
+                    "description": "AccountId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "accounts",
+                "transform": false,
+                "requestSwagger": {
+                    "accountsRequest": {
+                        "properties": {
+                            "accountId": {
+                                "type": "string",
+                                "x-samplevalue": "8"
+                            },
+                            "address": {
+                                "type": "string",
+                                "x-samplevalue": "Teststreet 42"
+                            },
+                            "city": {
+                                "type": "string",
+                                "x-samplevalue": "Testcity"
+                            },
+                            "country": {
+                                "type": "string",
+                                "x-samplevalue": "TestCountry"
+                            },
+                            "description": {
+                                "type": "string",
+                                "x-samplevalue": "Test Description"
+                            },
+                            "fax": {
+                                "type": "string",
+                                "x-samplevalue": "Test Fax no 4711"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "REST Services Test Account"
+                            },
+                            "origin": {
+                                "type": "string",
+                                "x-samplevalue": "primaryhub"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "x-samplevalue": "Test phone 0815"
+                            },
+                            "postalCode": {
+                                "type": "string",
+                                "x-samplevalue": "123456"
+                            },
+                            "state": {
+                                "type": "string",
+                                "x-samplevalue": "Teststate"
+                            },
+                            "webSite": {
+                                "type": "string",
+                                "x-samplevalue": "www.testrest.com"
+                            }
+                        },
+                        "title": "accountsRequest"
+                    }
+                },
+                "requestName": "accountsRequest"
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6052,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve alarms",
+            "path": "/hubs/monitoring/alarms",
+            "vendorPath": "/alarms",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6571,
+                    "resourceId": 6052,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. id, level, hostname, source,  domain, hub, robot, probe, subsystem_id, origin, message_count (ex: >2), message, userTag1, userTag2, custom1 (1-5), assigned_to, timeArrival, timeLast, and visible are supported. Only 'AND' and '=' are available to construct queries and each field can only be used once. For example level=‘1,2,3' AND timeLast=‘2016-01-13T14:34:23-7:00'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                },
+                {
+                    "id": 6569,
+                    "resourceId": 6052,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "Page Number",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 6570,
+                    "resourceId": 6052,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "pageSize",
+                    "vendorName": "maxrows",
+                    "description": "Number of Items displayed per page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "alarmsList",
+                "transform": false,
+                "swagger": {
+                    "alarmsList": {
+                        "id": "alarmsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "alarmsListObject"
+                        }
+                    },
+                    "alarmsListObject": {
+                        "id": "alarmsListObject",
+                        "properties": {
+                            "timeArrival": {
+                                "type": "string"
+                            },
+                            "origin": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "timeOrigin": {
+                                "type": "string"
+                            },
+                            "subsystem": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "robot": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "hostname": {
+                                "type": "string"
+                            },
+                            "prevLevel": {
+                                "type": "string"
+                            },
+                            "custom3": {
+                                "type": "string"
+                            },
+                            "custom4": {
+                                "type": "string"
+                            },
+                            "custom1": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "custom5": {
+                                "type": "string"
+                            },
+                            "suppressionCount": {
+                                "type": "string"
+                            },
+                            "severity": {
+                                "type": "string"
+                            },
+                            "nas": {
+                                "type": "string"
+                            },
+                            "subsystemId": {
+                                "type": "string"
+                            },
+                            "visible": {
+                                "type": "string"
+                            },
+                            "timeAssigned": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string"
+                            },
+                            "timeLast": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "probe": {
+                                "type": "string"
+                            },
+                            "hub": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "domain": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "alarm",
+            "hooks": [
+                {
+                    "id": 120,
+                    "resourceId": 6052,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_body == \"{}\") {return {\"continue\": true,\"response_body\": []}}",
+                    "isLegacy": true
+                },
+                {
+                    "id": 121,
+                    "resourceId": 6052,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var body = {};var params = request_vendor_parameters;for (var index in params) {body[index] = params[index]}return {\"continue\": true,\"request_vendor_body\": body}",
+                    "isLegacy": true
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6042,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Create an alarm",
+            "path": "/hubs/monitoring/alarms",
+            "vendorPath": "/alarms/createAlarm",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6561,
+                    "resourceId": 6042,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "alarmsRequest",
+                    "vendorDataType": "alarmsRequest",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "alarmRes",
+                "transform": false,
+                "swagger": {
+                    "alarmRes": {
+                        "properties": {
+                            "ciName": {
+                                "type": "string",
+                                "x-samplevalue": "Disk Usage"
+                            },
+                            "ciType": {
+                                "type": "string",
+                                "x-samplevalue": "1.1.2"
+                            },
+                            "custom1": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 1"
+                            },
+                            "custom2": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 2"
+                            },
+                            "custom3": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 3"
+                            },
+                            "custom4": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 4"
+                            },
+                            "custom5": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 5"
+                            },
+                            "level": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "message": {
+                                "type": "string",
+                                "x-samplevalue": "Testmessage"
+                            },
+                            "metId": {
+                                "type": "string",
+                                "x-samplevalue": "MD8110AB685AA9D19C8F7F807FDAC306F"
+                            },
+                            "severity": {
+                                "type": "string",
+                                "x-samplevalue": "Informational"
+                            },
+                            "source": {
+                                "type": "string",
+                                "x-samplevalue": "w2k8r2-x64-lc"
+                            },
+                            "subsystemId": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "suppressionKey": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "alarmsRequest"
+                    }
+                },
+                "requestSwagger": {
+                    "alarmsRequest": {
+                        "properties": {
+                            "ciName": {
+                                "type": "string",
+                                "x-samplevalue": "Disk Usage"
+                            },
+                            "ciType": {
+                                "type": "string",
+                                "x-samplevalue": "1.1.2"
+                            },
+                            "custom1": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 1"
+                            },
+                            "custom2": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 2"
+                            },
+                            "custom3": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 3"
+                            },
+                            "custom4": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 4"
+                            },
+                            "custom5": {
+                                "type": "string",
+                                "x-samplevalue": "A custom property 5"
+                            },
+                            "level": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "message": {
+                                "type": "string",
+                                "x-samplevalue": "Testmessage"
+                            },
+                            "metId": {
+                                "type": "string",
+                                "x-samplevalue": "MD8110AB685AA9D19C8F7F807FDAC306F"
+                            },
+                            "severity": {
+                                "type": "string",
+                                "x-samplevalue": "Informational"
+                            },
+                            "source": {
+                                "type": "string",
+                                "x-samplevalue": "w2k8r2-x64-lc"
+                            },
+                            "subsystemId": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "suppressionKey": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "alarmsRequest"
+                    }
+                },
+                "requestName": "alarmsRequest"
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6055,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve an alarm",
+            "path": "/hubs/monitoring/alarms/{alarmId}",
+            "vendorPath": "/alarms",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6575,
+                    "resourceId": 6055,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "alarmId",
+                    "vendorName": "id",
+                    "description": "alarmId",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "alarms",
+                "transform": false,
+                "swagger": {
+                    "alarms": {
+                        "id": "alarms",
+                        "properties": {
+                            "timeArrival": {
+                                "type": "string"
+                            },
+                            "origin": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "timeOrigin": {
+                                "type": "string"
+                            },
+                            "subsystem": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "assignedTo": {
+                                "type": "string"
+                            },
+                            "robot": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "hostname": {
+                                "type": "string"
+                            },
+                            "prevLevel": {
+                                "type": "string"
+                            },
+                            "custom3": {
+                                "type": "string"
+                            },
+                            "custom4": {
+                                "type": "string"
+                            },
+                            "custom1": {
+                                "type": "string"
+                            },
+                            "custom2": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "custom5": {
+                                "type": "string"
+                            },
+                            "userTag2": {
+                                "type": "string"
+                            },
+                            "suppressionCount": {
+                                "type": "string"
+                            },
+                            "userTag1": {
+                                "type": "string"
+                            },
+                            "devId": {
+                                "type": "string"
+                            },
+                            "severity": {
+                                "type": "string"
+                            },
+                            "nas": {
+                                "type": "string"
+                            },
+                            "assignedBy": {
+                                "type": "string"
+                            },
+                            "subsystemId": {
+                                "type": "string"
+                            },
+                            "suppressionKey": {
+                                "type": "string"
+                            },
+                            "visible": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string"
+                            },
+                            "timeLast": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "probe": {
+                                "type": "string"
+                            },
+                            "hub": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "domain": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "alarm",
+            "hooks": [
+                {
+                    "id": 123,
+                    "resourceId": 6055,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var newBody = {};var query = request_vendor_parameters.id;newBody.id = query;return {\"continue\": true,\"request_vendor_body\": newBody}",
+                    "isLegacy": true
+                },
+                {
+                    "id": 122,
+                    "resourceId": 6055,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var tempResponse = response_body; if (response_status_code != 200){ return; } if (tempResponse.size() == 0) { return { \"response_status_code\": 404, \"response_error\": \"Not Found\" }; } else { return {\"response_body\": tempResponse[0]}; }",
+                    "isLegacy": true
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6056,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Accept an alarm",
+            "path": "/hubs/monitoring/alarms/{alarmId}/accept",
+            "vendorPath": "/alarms/{alarm_id}/accept",
+            "method": "PUT",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 6576,
+                    "resourceId": 6056,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "alarmId",
+                    "vendorName": "alarm_id",
+                    "description": "alarmId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "alarmsAccept",
+                "transform": false
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [
+                {
+                    "id": 33756,
+                    "resourceId": 6056,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "\nif(response_status_code === 204){done({\"response_status_code\": 200});}done();",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6057,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Acknowledge an alarm",
+            "path": "/hubs/monitoring/alarms/{alarmId}/ack",
+            "vendorPath": "/alarms/{alarm_id}/ack",
+            "method": "PUT",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 6577,
+                    "resourceId": 6057,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "alarmId",
+                    "vendorName": "alarm_id",
+                    "description": "alarmId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "alarmsAck",
+                "transform": false
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [
+                {
+                    "id": 33757,
+                    "resourceId": 6057,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "\nif(response_status_code === 204){done({\"response_status_code\": 200});}done();",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6058,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Assign alarm to user",
+            "path": "/hubs/monitoring/alarms/{alarmId}/assign/{username}",
+            "vendorPath": "/alarms/{alarm_id}/assign/{username}",
+            "method": "PUT",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 6579,
+                    "resourceId": 6058,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "username",
+                    "vendorName": "username",
+                    "description": "username",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6578,
+                    "resourceId": 6058,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "alarmId",
+                    "vendorName": "alarm_id",
+                    "description": "alarmId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6059,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Unassign an alarm",
+            "path": "/hubs/monitoring/alarms/{alarmId}/unassign",
+            "vendorPath": "/alarms/{alarm_id}/unassign",
+            "method": "PUT",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 6580,
+                    "resourceId": 6059,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "alarmId",
+                    "vendorName": "alarm_id",
+                    "description": "alarmId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6047,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve severity of most critical alarm",
+            "path": "/hubs/monitoring/alarms/critical",
+            "vendorPath": "/alarms/state",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "alarmsCritical",
+                "transform": false,
+                "swagger": {
+                    "alarmsCritical": {
+                        "id": "alarmsCritical",
+                        "properties": {
+                            "severity": {
+                                "type": "string"
+                            },
+                            "level": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6062,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve the most critical alarm that matches query parameters",
+            "path": "/hubs/monitoring/alarms/state",
+            "vendorPath": "/alarms/state",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6582,
+                    "resourceId": 6062,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. id, level, hostname, source,  domain, hub, robot, probe, subsystem_id, origin, message_count (ex: >2), message, userTag1, userTag2, custom1 (1-5), assigned_to, timeArrival, timeLast, and visible are supported. Only 'AND' and '=' are available to construct queries and each field can only be used once. For example level=‘1,2,3' AND timeLast=‘2016-01-13T14:34:23-7:00'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "alarmsState",
+                "transform": false,
+                "swagger": {
+                    "alarmsState": {
+                        "id": "alarmsState",
+                        "properties": {
+                            "level": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [
+                {
+                    "id": 124,
+                    "resourceId": 6062,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var body = {};var params = request_vendor_parameters;for (var index in params) {body[index] = params[index]}return {\"continue\": true,\"request_vendor_body\": body}",
+                    "isLegacy": true
+                },
+                {
+                    "id": 125,
+                    "resourceId": 6062,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_body == \"{}\") {return {\"continue\": true,\"response_body\": []}}",
+                    "isLegacy": true
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6050,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve a list of all alarms by severity",
+            "path": "/hubs/monitoring/alarms/summary",
+            "vendorPath": "/alarms/summary",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "alarmsSummary",
+                "transform": false,
+                "swagger": {
+                    "alarmsSummary": {
+                        "id": "alarmsSummary",
+                        "properties": {
+                            "critical": {
+                                "type": "string"
+                            },
+                            "major": {
+                                "type": "string"
+                            },
+                            "minor": {
+                                "type": "string"
+                            },
+                            "clear": {
+                                "type": "string"
+                            },
+                            "warning": {
+                                "type": "string"
+                            },
+                            "information": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6051,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve ci definition by ci type",
+            "path": "/hubs/monitoring/ci/definition/{ciType}",
+            "vendorPath": "/ci/definition/{ci_type}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6568,
+                    "resourceId": 6051,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "ciType",
+                    "vendorName": "ci_type",
+                    "description": "CIType",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6048,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve ci definitions",
+            "path": "/hubs/monitoring/ci/definitions",
+            "vendorPath": "/ci/definitions",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "ciDefinitions",
+                "transform": false,
+                "swagger": {
+                    "ciDefinitions": {
+                        "id": "ciDefinitions",
+                        "properties": {}
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "ci_definition",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6049,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve ci metric definitions",
+            "path": "/hubs/monitoring/ci/metricdefinitions",
+            "vendorPath": "/ci/metricdefinitions",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "ciMetricdefinitions",
+                "transform": false,
+                "swagger": {
+                    "ciMetricdefinitions": {
+                        "id": "ciMetricdefinitions",
+                        "properties": {}
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6054,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve ci metric definitions by metric type",
+            "path": "/hubs/monitoring/ci/metricdefintions/{metricType}",
+            "vendorPath": "/ci/metricdefintions/{metric_type}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6574,
+                    "resourceId": 6054,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "metricType",
+                    "vendorName": "metric_type",
+                    "description": "CIMetricType",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6060,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve a ci metric",
+            "path": "/hubs/monitoring/ci/metrics/{metricId}",
+            "vendorPath": "/ci/metrics/{metric_id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6581,
+                    "resourceId": 6060,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "metricId",
+                    "vendorName": "metric_id",
+                    "description": "MetricId",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6046,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve hubs",
+            "path": "/hubs/monitoring/hubs",
+            "vendorPath": "/hubs",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6567,
+                    "resourceId": 6046,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "pageSize",
+                    "vendorName": "maxrows",
+                    "description": "Number of items per page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 6566,
+                    "resourceId": 6046,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "Page number",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "sList",
+                "transform": false,
+                "swagger": {}
+            },
+            "type": "api",
+            "rootKey": "hub",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6061,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Retrieve all origins",
+            "path": "/hubs/monitoring/origins",
+            "vendorPath": "/origins",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "origins",
+                "transform": false,
+                "swagger": {
+                    "origins": {
+                        "id": "origins",
+                        "properties": {
+                            "origin": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 6063,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "description": "Change alarm values",
+            "path": "/hubs/monitoring/probe/{domainName}/{hubName}/{robot}/{probe}/callback2/set_alarm",
+            "vendorPath": "/probe/{domainName}/{hubName}/{robot}/{probe}/callback2/set_alarm",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 6583,
+                    "resourceId": 6063,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Example: { \"nimString\": [{\"@key\":\"token\",\"$\":\"custom_1\"},{\"@key\":\"value\",\"$\":\"Custom Field Test\"},{\"@key\":\"nimid\",\"$\":\"RG56656392-00030\"}] }",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "probeCallback2Set_alarmRequest",
+                    "vendorDataType": "probeCallback2Set_alarmRequest",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6587,
+                    "resourceId": 6063,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "robot",
+                    "vendorName": "robot",
+                    "description": "Robot name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6586,
+                    "resourceId": 6063,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "probe",
+                    "vendorName": "probe",
+                    "description": "Probe name: unless otherwise stated, use 'nas'",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6585,
+                    "resourceId": 6063,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "hubName",
+                    "vendorName": "hubName",
+                    "description": "Hub name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 6584,
+                    "resourceId": 6063,
+                    "createdDate": "2016-02-15T19:12:32Z",
+                    "name": "domainName",
+                    "vendorName": "domainName",
+                    "description": "Domain name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "probeCallback2Set_alarm",
+                "transform": false,
+                "swagger": {
+                    "probeCallback2Set_alarm": {
+                        "id": "probeCallback2Set_alarm",
+                        "properties": {}
+                    }
+                },
+                "requestSwagger": {
+                    "probeCallback2Set_alarmRequest": {
+                        "properties": {
+                            "nimString": {
+                                "items": {
+                                    "type": "probeCallback2Set_alarmRequestNimString"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "probeCallback2Set_alarmRequest"
+                    },
+                    "probeCallback2Set_alarmRequestNimString": {
+                        "properties": {
+                            "$": {
+                                "type": "string",
+                                "x-samplevalue": "custom_1"
+                            },
+                            "@key": {
+                                "type": "string",
+                                "x-samplevalue": "token"
+                            }
+                        },
+                        "title": "nimString"
+                    }
+                },
+                "requestName": "probeCallback2Set_alarmRequest"
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "basic"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "monitoring",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 1109,
+            "createdDate": "2016-02-15T19:12:32Z",
+            "name": "domain",
+            "vendorName": "domain",
+            "type": "configuration",
+            "vendorType": "path",
+            "source": "request",
+            "elementId": 876,
+            "required": false
+        }
+    ],
+    "private": false
+}

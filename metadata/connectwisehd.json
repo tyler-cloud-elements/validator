@@ -1,0 +1,1428 @@
+{
+    "id": 125,
+    "name": "ConnectWise",
+    "hookName": "ConnectWise",
+    "key": "connectwisehd",
+    "description": "Add a ConnectWise Instance to connect your existing ConnectWise account to the Help Desk Hub, allowing you to manage your  incidents, priorities, statuses, users, etc. across multiple Help Desk Elements. You will need your ConnectWise account information to add an instance.",
+    "image": "elements/provider_connectwise.png",
+    "logo": "connectwisecrm",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configDescription": "If you do not have a ConnectWise account, you can find out more about them at <a href=\"http://www.connectwise.com\" target=\"_blank\">ConnectWise</a>",
+    "configuration": [
+        {
+            "id": 1036,
+            "name": "Server URL",
+            "key": "helpdesk.connectwise.server.url",
+            "description": "ConnectWise Server URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254007,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1037,
+            "name": "Company",
+            "key": "helpdesk.connectwise.company",
+            "description": "ConnectWise Company",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1038,
+            "name": "Username",
+            "key": "helpdesk.connectwise.username",
+            "description": "ConnectWise Username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1039,
+            "name": "Password",
+            "key": "helpdesk.connectwise.password",
+            "description": "ConnectWise Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1042,
+            "name": "WSDL path",
+            "key": "helpdesk.connectwise.wsdl.path",
+            "description": "ConnectWise WSDL path",
+            "defaultValue": "/v4_6_release/apis/2.0/",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 7,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1079,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "The subscription ID for the webhook events subscription",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52576,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159837,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 72150,
+            "name": "Bulk Modified Time for Incidents",
+            "key": "bulk.incidents.attribute.modified_time",
+            "description": "Modified Time for Incidents Resource",
+            "defaultValue": "lastUpdatedUTC",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256135,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256386,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1040,
+            "name": "Enable/Disable Event Notification",
+            "key": "event.notification.enabled",
+            "description": "Used to enable/disable Event Notification",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1041,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "An application callback URL used for event notifications from ConnectWise via Cloud Elements",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9706,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 50714,
+            "name": "Bulk Query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk Query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 400,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 50715,
+            "name": "Bulk Created Date",
+            "key": "bulk.attribute.lastUpdated",
+            "description": "Bulk Created Date",
+            "defaultValue": "lastUpdated",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 400,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 50713,
+            "name": "Bulk Query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk Query Date Mask",
+            "defaultValue": "milliseconds",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 400,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 50712,
+            "name": "Bulk Query Field Name",
+            "key": "bulk.query.field_name",
+            "description": "Bulk Query Field Name",
+            "defaultValue": "lastModifiedDate",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 400,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 50711,
+            "name": "Bulk Modified Time",
+            "key": "bulk.attribute.modified_time",
+            "description": "Bulk Modified Time",
+            "defaultValue": "lastUpdated",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 400,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "incidents",
+            "vendorName": "incidents"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "contacts"
+        },
+        {
+            "name": "organizations",
+            "vendorName": "organizations"
+        },
+        {
+            "name": "time-entries",
+            "vendorName": "time-entries"
+        }
+    ],
+    "objectMetadata": {
+        "time-entries": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "hoursBilled"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "hoursInvoiced"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "notes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "updatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "memberName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "billableOption"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "internalNotes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "memberIdentifier"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "hoursDeduct"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastUpdated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "hoursActual"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "workRole"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "workType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "invoiceNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "agreementId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "startTime"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "timeStart"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "endTime"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "timeEnd"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "hourlyRate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "startDate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "dateStart"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ticketId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "chargeCode"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "addNotesToDetailDescription"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "addNotesToResolution"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "addNotesToInternalAnalysis"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "overnight"
+                }
+            ]
+        },
+        "organizations": {
+            "fields": [
+                {
+                    "vendorPath": "id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "companyName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyIdentifier",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "defaultAddress.id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "defaultAddress.defaultFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "defaultAddress.companyId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "defaultAddress.siteName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "defaultAddress.inactiveFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "defaultAddress.defaultBillFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "defaultAddress.defaultShipFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addresses[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "addresses[*].defaultFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addresses[*].companyId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "addresses[*].siteName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addresses[*].inactiveFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addresses[*].defaultBillFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "addresses[*].defaultShipFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "phoneNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "faxNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "webSite",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "territory",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "market",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "type",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "status",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "accountNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "defaultContactId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "defaultBillingContactId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "lastUpdated",
+                    "type": "date"
+                }
+            ]
+        },
+        "incidents": {
+            "fields": [
+                {
+                    "vendorPath": "id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "companyIdentifier",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "dateReq",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "dateReqUtc",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "customerUpdatedFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "contactPhoneNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "contactPhoneExtension",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "contactEmailAddress",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "severity",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "impact",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "externalXRef",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "skipCallback",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "poNumber",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "contactName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressLine1",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "addressLine2",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "city",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "stateIdentifier",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "zip",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "country",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "board",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "ticketStatus",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "closedFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "subBillingAmount",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "subDateAccepted",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "subDateAcceptedUtc",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "opportunityId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "agreementId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "serviceTeamId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "dateResolvedUTC",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "dateRespondedUTC",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "resolveMinutes",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "resPlanMinutes",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "respondMinutes",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "newTicketContactEmailLookup",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "subBillingMethod",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "processNotifications",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "configurations[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "configurations[*].deviceIdentifier",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "detailNotes[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "detailNotes[*].customerUpdatedFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "detailNotes[*].noteText",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "detailNotes[*].isInternalNote",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "detailNotes[*].isExternalNote",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "detailNotes[*].processNotifications",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "detailNotes[*].isPartOfDetailDescription",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "detailNotes[*].isPartOfInternalAnalysis",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "detailNotes[*].isPartOfResolution",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "detailNotes[*].memberId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "detailNotes[*].contactId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "detailNotes[*].dateCreated",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "detailNotes[*].createdBy",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "detailNotes[*].memberFullName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "detailNotes[*].dateCreatedUtc",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].customerUpdatedFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].noteText",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].isInternalNote",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].isExternalNote",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].processNotifications",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].isPartOfDetailDescription",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].isPartOfInternalAnalysis",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].isPartOfResolution",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].memberId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].contactId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].dateCreated",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].createdBy",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].memberFullName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "internalAnalysisNotes[*].dateCreatedUtc",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].customerUpdatedFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].noteText",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].isInternalNote",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].isExternalNote",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].processNotifications",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].isPartOfDetailDescription",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].isPartOfInternalAnalysis",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].isPartOfResolution",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].memberId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].contactId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].dateCreated",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].createdBy",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].memberFullName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "resolutionNotes[*].dateCreatedUtc",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "taskItems[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "taskItems[*].ticketId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "taskItems[*].notes",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "taskItems[*].isClosed",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "taskItems[*].priority",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "taskItems[*].startDate",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "taskItems[*].resolution",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "taskItems[*].childId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "taskItems[*].childDesc",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "taskItems[*].custUpdateFlag",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "documents[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "documents[*].title",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "documents[*].fileName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "documents[*].serverFileName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "documents[*].path",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "documents[*].lastUpdated",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "documents[*].owner",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "documents[*].isLink",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "documents[*].isImage",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "documents[*].isPublic",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "documents[*].childDesc",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "documents[*].content",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "portalTypeId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "isInSla",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "ticketId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "statusName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "serviceType",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "serviceSubType",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "serviceItem",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "priority",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "location",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "source",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "summary",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "detailDescription",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "internalDescription",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "resolutionDescription",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "enteredDate",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "lastUpdated",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "lastUpdatedUTC",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "requiredDate",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "closedDate",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "siteName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "budgetHours",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "actualHours",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "approved",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "boardId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "closedBy",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "contactId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "updatedBy",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emergencyFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "enteredBy",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "recordType",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        "contacts": {
+            "fields": [
+                {
+                    "vendorPath": "id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "id",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "firstName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "lastName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "email",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyIdentifier",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "inactive",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "sid",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "managerId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "assistantId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "relationship",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "type",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phone",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phoneExt",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "fax",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "faxExt",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "title",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "school",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "nickName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "married",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "children",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "significantOther",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "portalPassword",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "portalSecurityLevel",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "disablePortalLogin",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "unsubscribeFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "personalAddressFlag",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "updatedBy",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "lastUpdated",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "gender",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "personalAddress.streetLines",
+                    "type": "array[string]"
+                },
+                {
+                    "vendorPath": "personalAddress.city",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "personalAddress.state",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "personalAddress.zip",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "personalAddress.country",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyAddressInfo.addressLine1",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyAddressInfo.addressLine2",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyAddressInfo.city",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyAddressInfo.state",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyAddressInfo.zip",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "companyAddressInfo.country",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phones[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "phones[*].type",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phones[*].communicationTypeId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "phones[*].description",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phones[*].value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phones[*].valueExtension",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "phones[*].isDefaultForType",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "faxes[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "faxes[*].type",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "faxes[*].communicationTypeId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "faxes[*].description",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "faxes[*].value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "faxes[*].valueExtension",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "faxes[*].isDefaultForType",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "emails[*].id",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "emails[*].type",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emails[*].communicationTypeId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "emails[*].description",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emails[*].value",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emails[*].valueExtension",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "emails[*].isDefaultForType",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "birthDay",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "anniversary",
+                    "type": "date"
+                },
+                {
+                    "vendorPath": "addressId",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "siteName",
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": false,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "helpdesk",
+    "protocolType": "soap",
+    "parameters": [],
+    "private": false
+}

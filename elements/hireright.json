@@ -1,0 +1,1587 @@
+{
+    "id": 819,
+    "name": "HireRight",
+    "hookName": "HireRight",
+    "key": "hireright",
+    "description": "HireRight is a leading provider of on-demand employment background checks, drug testing, Form I-9 and employment and education verifications.",
+    "image": "elements/provider_hireright.png",
+    "logo": "hireright",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 8807,
+            "name": "Event Vendor Type",
+            "key": "event.vendor.type",
+            "description": "HireRight Event Vendor Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8798,
+            "name": "Endpoint URL",
+            "key": "hireright.endpoint.url",
+            "description": "The URL for the HireRight API.",
+            "defaultValue": "https://api.hireright.com:11443/ws_gateway/HireRightAPI/v/1/2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 254066,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8804,
+            "name": "WSDL Location",
+            "key": "hireright.wsdl.location",
+            "description": "The wsdl url for your HireRight environment.",
+            "defaultValue": "https://connect.hireright.com/wsdl/HireRightAPI.wsdl",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8800,
+            "name": "HireRight User Name",
+            "key": "hireright.username",
+            "description": "The user name for your HireRight account.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 8799,
+            "name": "HireRight Password",
+            "key": "hireright.password",
+            "description": "The Password for your HireRight account.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 8801,
+            "name": "HireRight Account Id",
+            "key": "hireright.account.id",
+            "description": "The account id for your HireRight account.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 8802,
+            "name": "HireRight Company Login",
+            "key": "hireright.company.login",
+            "description": "The company login for your HireRight account.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 5,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 8803,
+            "name": "HireRight User Ref Id",
+            "key": "hireright.user.ref.id",
+            "description": "The User Ref Id for your HireRight account.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 6,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 8805,
+            "name": "Enable/Disable Event Notification",
+            "key": "event.notification.enabled",
+            "description": "Used to enable/disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 9,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8806,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "An application callback URL used for event notifications from HireRight and Cloud Elements",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9683,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 11,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 52531,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159790,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256196,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256447,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 84408,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "packages",
+            "vendorName": "packages"
+        },
+        {
+            "name": "backgroundChecks",
+            "vendorName": "backgroundChecks"
+        },
+        {
+            "name": "products",
+            "vendorName": "products"
+        },
+        {
+            "name": "backgroundCheckLinks",
+            "vendorName": "backgroundCheckLinks"
+        },
+        {
+            "name": "backgroundCheckReports",
+            "vendorName": "backgroundCheckReports"
+        },
+        {
+            "name": "backgroundCheckStatuses",
+            "vendorName": "backgroundCheckStatuses"
+        }
+    ],
+    "objectMetadata": {
+        "backgroundCheckStatuses": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].providerReferenceId.idValue[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].providerReferenceId.idValue[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].providerReferenceId.idValue[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].qualifier"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.resultStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.dateOrderReceived"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.additionalItems[*].text[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.additionalItems[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.orderStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].packageId.idValue[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.resultStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.dateOrderReceived"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.additionalItems[*].text[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.additionalItems[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.orderStatus"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].userArea.any[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].userId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].version"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "noOfReports"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "rptType"
+                }
+            ]
+        },
+        "backgroundCheckLinks": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "clientApplicantId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].supportingDocumentation"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].countryCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].qualifier"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].region"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].permissiblePurpose"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].priorPersonalData[*].idSource"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].priorPersonalData[*].idReference"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].priorPersonalData[*].demographicDetail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].priorPersonalData[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].priorPersonalData[*].effectiveDate"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].packageId.idValue[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].packageId.idValue[*].value"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].packageId.validFrom"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].packageId.idOwner"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].packageId.validTo"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].clientContact.organizationName"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].clientContact.type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].clientContact.contactMethod"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].formattedName"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].givenName[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].familyName[*].prefix"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].familyName[*].value"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].familyName[*].primary"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].qualifier"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].middleName"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].validFrom"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].validTo"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].deliveryAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].countryCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].postalCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].qualifier"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].municipality"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].validFrom"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].validTo"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].idSource"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].idReference"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.other"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.race"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.ethnicity"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.weight"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.dateOfBirth"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.religion"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.veteranStatus"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.visaStatus"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.birthPlace"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.genderCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.militaryStatus"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.nationality"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.eyeColor"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.homeOwner"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.hairColor"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.age"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.height"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].effectiveDate"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].internetEmailAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].postalAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].use"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].mobile"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].location"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].telephone"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].fax"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].internetWebAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].action"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].referenceId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.userArea"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.userId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.version"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.account"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "clientRequestId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "packageId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "clientLocale"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "services"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "applicationId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "flexFields"
+                }
+            ]
+        },
+        "backgroundChecks": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "clientApplicantId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].supportingDocumentation"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].countryCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].qualifier"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].region"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].permissiblePurpose"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].locationSummary.countryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].locationSummary.postalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].locationSummary.municipality"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].locationSummary.region[*]"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].postalAddress.deliveryAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].postalAddress.countryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].postalAddress.postalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].postalAddress.municipality"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].postalAddress.region[*]"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].postalAddress.type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].comments"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].school[*].schoolName"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].school[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].datesOfAttendance"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].degreeDate.anyDate"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].degreeDate.yearMonth"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].degreeDate.dateDescription"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].comments"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].studentInGoodStanding"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].endDate.anyDate"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].endDate.yearMonth"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].endDate.dateDescription"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].enrollmentStatus"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].currentlyEnrolled"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].startDate.anyDate"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].startDate.yearMonth"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].datesOfAttendance[*].startDate.dateDescription"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].degreeType"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].examPassed"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].degreeName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].degreeMajor[*].name"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].degreeMeasure"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].degree[*].userArea"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].schoolType"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].schoolName"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].screening[*].searchEducationOrSearchEmploymentOrSearchLicense[*].educationHistory.schoolOrInstitution[*].userArea"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].screenings[*].packageId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].clientContact"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].formattedName"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].givenName[*]"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].familyName[*].prefix"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].familyName[*].value"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].familyName[*].primary"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].qualifier"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].middleName"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].validFrom"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].personName[*].validTo"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].deliveryAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].countryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].postalCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].qualifier"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].municipality"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].validFrom"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].region[*]"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].postalAddress[*].validTo"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].idSource"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].idReference"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.other"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.race"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.ethnicity"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.weight"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.dateOfBirth"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.religion"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.veteranStatus"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.visaStatus"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.birthPlace"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.genderCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.militaryStatus"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.nationality"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.eyeColor"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.homeOwner"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.hairColor"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.age"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].issuingAuthority"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].issuingRegion"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].documentType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].countryCode"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].jurisdiction"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].idSource"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].validFrom"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].value"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.governmentId[*].validTo"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].demographicDetail.height"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].effectiveDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].internetEmailAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].postalAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].use"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].mobile"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].location"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].telephone"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].fax"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].personalData[*].contactMethod[*].internetWebAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].action"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].type"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.backgroundSearchPackage[*].referenceId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.userArea"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.userId"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.version"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "payload.backgroundCheck.account"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "clientRequestId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "fallbackModel"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "duplicateCheckModel"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "services.service[*].postalAddress"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "services.service[*].name"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "services.service[*].count"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "services.service[*].reportURL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "services.service[*].id"
+                }
+            ]
+        },
+        "packages": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "products[*].product[*].id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "products[*].product[*].name"
+                },
+                {
+                    "type": "unknown",
+                    "vendorPath": "products[*].product[*].quantity"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                }
+            ]
+        },
+        "backgroundCheckReports": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].providerReferenceId.idValue[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].providerReferenceId.idValue[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].providerReferenceId.idValue[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].providerReferenceId.idValue[*].value"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].legalText[*].text[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].legalText[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].providerReferenceId.idValue[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].providerReferenceId.idValue[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.locationSummary.countryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.locationSummary.municipality"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.locationSummary.region[*]"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].nil"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].typeSubstituted"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].globalScope"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].scope"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].declaredType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].value.anyDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.degree[*].degreeDate.anyDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.degree[*].degreeName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.degree[*].degreeMajor[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.schoolType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationInput.schoolOrInstitution.schoolName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].contactInformation[*].personName.formattedName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].contactInformation[*].title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].contactInformation[*].contactMethod[*].telephone.formattedNumber"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].comments[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].applicantInformation[*].personName[*].formattedName"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].applicantInformation[*].personName[*].givenName[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].applicantInformation[*].personName[*].familyName[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].applicantInformation[*].personName[*].middleName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.locationSummary.municipality"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.locationSummary.region[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.comments"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].nil"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].typeSubstituted"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].globalScope"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].scope"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].declaredType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.datesOfAttendance.startDateAndEndDate[*].value.anyDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.degree[*].degreeDate.anyDate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.degree[*].degreeName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.degree[*].degreeMajor[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.schoolType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].creditReportOrCriminalReportOrEducationVerificationReport[*].educationResult[*].schoolOrInstitution.schoolName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].qualifier"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.resultStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.dateOrderReceived"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.additionalItems[*].text[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.additionalItems[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screenings.screening[*].screeningStatus.orderStatus"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].personName[*].givenName[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].personName[*].familyName[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].personName[*].middleName"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].postalAddress[*].deliveryAddress.addressLine[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].postalAddress[*].countryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].postalAddress[*].postalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].postalAddress[*].municipality"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].postalAddress[*].region[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].demographicDetail.dateOfBirth"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].demographicDetail.governmentId[*].documentType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].demographicDetail.governmentId[*].countryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].demographicDetail.governmentId[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].contactMethod[*].internetEmailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].contactMethod[*].use"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].contactMethod[*].mobile.formattedNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].contactMethod[*].telephone.formattedNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].contactMethod[*].fax.formattedNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningsSummary.personalData[*].contactMethod[*].internetWebAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].packageId.idValue[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].clientReferenceId.idValue[*].name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].clientReferenceId.idValue[*].value"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.resultStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.dateOrderReceived"
+                },
+                {
+                    "type": "array[string]",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.additionalItems[*].text[*]"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.additionalItems[*].type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].backgroundReportPackage[*].screeningStatus.orderStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].userId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "reports.backgroundReports[*].version"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "noOfReports"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "rptType"
+                }
+            ]
+        },
+        "products": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": false,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "screening",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

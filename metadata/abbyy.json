@@ -1,0 +1,991 @@
+{
+    "id": 804,
+    "name": "ABBYY",
+    "hookName": "ABBYY",
+    "key": "abbyy",
+    "description": "Add ABBYY instance to generate OCR text for your files. You will need your ABBYY account details to create an instance",
+    "image": "elements/provider_abbyy.png",
+    "logo": "abbyy",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 8622,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "ABBYY Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8620,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 253961,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8628,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "ABBYY Pagination Type",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8627,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "ABBYY Base URL",
+            "defaultValue": "http://cloud.ocrsdk.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8630,
+            "name": "Bulk query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk query Operator",
+            "defaultValue": ">=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8618,
+            "name": "Bulk query FieldName",
+            "key": "bulk.query.field_name",
+            "description": "Bulk query FieldName",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8631,
+            "name": "Application name",
+            "key": "username",
+            "description": "ABBYY Application Name",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 8617,
+            "name": "Application Password",
+            "key": "password",
+            "description": "ABBYY Application Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52504,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159926,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8626,
+            "name": "Event Notification Instance Finder",
+            "key": "event.notification.instance.finder",
+            "description": "Event Notification Instance Finder",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8621,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256086,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256337,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8624,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "ABBYY Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8629,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8619,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/helpdesk/contacts\", “idField”: “user.id”, “datesConfiguration”: { \"updatedDateField\": \"user.updated_at\", \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\", “createdDateField”: “user.created_at”, “createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\" }, \"pageSize\": 10000 } }",
+            "defaultValue": "{}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 303,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8625,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "ABBYY Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9745,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8623,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "ABBYY Vendor Event Type",
+            "defaultValue": "webhooks",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 5300,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "description": "Get Application Information details",
+            "path": "/hubs/ocr/info",
+            "vendorPath": "/getApplicationInfo",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "info",
+                "transform": false,
+                "swagger": {
+                    "application": {
+                        "id": "application",
+                        "properties": {
+                            "expires": {
+                                "type": "string"
+                            },
+                            "pages": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "fields": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "info": {
+                        "id": "info",
+                        "properties": {
+                            "@xsi:schemaLocation": {
+                                "type": "string"
+                            },
+                            "application": {
+                                "type": "application"
+                            },
+                            "@xmlns:xsi": {
+                                "type": "string"
+                            },
+                            "@xmlns": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "info",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5301,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "description": "Get all Tasks.",
+            "path": "/hubs/ocr/tasks",
+            "vendorPath": "/listTasks",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5351,
+                    "resourceId": 5301,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The search expression in CEQL is the WHERE clause in a typical SQL query, but without the WHERE keyword. \\nFor example, to search for all tasks ordered by the date , the search expression parameter will be fromDate=’2001-01-01T13:18:22Z' or toDate='2001-01-01T13:18:22Z'.\\nFor example, to search for all tasks  that have already been deleted must be excluded from the listing ,the search expression parameter will be excludeDeleted='true' or excludeDeleted='false'.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "tasksList",
+                "transform": false,
+                "swagger": {
+                    "tasksListObject": {
+                        "id": "tasksListObject",
+                        "properties": {
+                            "@credits": {
+                                "type": "string"
+                            },
+                            "@statusChangeTime": {
+                                "type": "string"
+                            },
+                            "@resultUrl": {
+                                "type": "string"
+                            },
+                            "@registrationTime": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@status": {
+                                "type": "string"
+                            },
+                            "@filesCount": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tasksList": {
+                        "id": "tasksList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "tasksListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "response.task",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5304,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "description": "Post an file to generate OCR",
+            "path": "/hubs/ocr/tasks",
+            "vendorPath": "/processImage",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 5356,
+                    "resourceId": 5304,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "metaData",
+                    "vendorName": "metaData",
+                    "description": "Optional JSON Metadata that contains language, profile, textType, imageSource, correctOrientation, correctSkew, readBarcodes, exportFormat, xml:writeRecognitionVariants, pdf:writeTags, description, pdfPassword",
+                    "type": "multipart",
+                    "vendorType": "query",
+                    "dataType": "TasksPostRequest",
+                    "vendorDataType": "TasksPostRequest",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5357,
+                    "resourceId": 5304,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "multipart/form-data",
+                    "vendorName": "Content-Type",
+                    "description": "Content-Type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5355,
+                    "resourceId": 5304,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "file",
+                    "vendorName": "file",
+                    "description": "The image to be uploaded",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "file",
+                    "vendorDataType": "file",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "TasksPostResponse",
+                "transform": false,
+                "swagger": {
+                    "TasksPostResponse": {
+                        "properties": {
+                            "@credits": {
+                                "type": "string",
+                                "x-samplevalue": "5"
+                            },
+                            "@estimatedProcessingTime": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "milliseconds",
+                                "x-samplevalue": "5"
+                            },
+                            "@filesCount": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "@id": {
+                                "type": "string",
+                                "x-samplevalue": "072ac832-5c5c-4ba6-a2d6-771f5280cc9c"
+                            },
+                            "@registrationTime": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2019-02-26T05:08:56Z"
+                            },
+                            "@status": {
+                                "type": "string",
+                                "x-samplevalue": "Queued"
+                            },
+                            "@statusChangeTime": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2019-02-26T05:08:56Z"
+                            }
+                        },
+                        "title": "TasksPostResponse"
+                    }
+                },
+                "requestSwagger": {
+                    "TasksPostRequest": {
+                        "properties": {
+                            "correctOrientation": {
+                                "type": "string"
+                            },
+                            "correctSkew": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "exportFormat": {
+                                "type": "string"
+                            },
+                            "imageSource": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "pdf:writeTags": {
+                                "type": "string"
+                            },
+                            "pdfPassword": {
+                                "type": "string"
+                            },
+                            "profile": {
+                                "type": "string"
+                            },
+                            "readBarcodes": {
+                                "type": "string"
+                            },
+                            "textType": {
+                                "type": "string"
+                            },
+                            "xml:writeFormatting": {
+                                "type": "string"
+                            },
+                            "xml:writeRecognitionVariants": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "TasksPostRequest"
+            },
+            "type": "api",
+            "rootKey": "response.task",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5303,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "description": "Get All finished tasks",
+            "path": "/hubs/ocr/tasks/finished",
+            "vendorPath": "/listFinishedTasks",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "tasksFinishedList",
+                "transform": false,
+                "swagger": {
+                    "tasksFinishedListObject": {
+                        "id": "tasksFinishedListObject",
+                        "properties": {
+                            "@credits": {
+                                "type": "string"
+                            },
+                            "@statusChangeTime": {
+                                "type": "string"
+                            },
+                            "@resultUrl": {
+                                "type": "string"
+                            },
+                            "@registrationTime": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@status": {
+                                "type": "string"
+                            },
+                            "@filesCount": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "tasksFinishedList": {
+                        "id": "tasksFinishedList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "tasksFinishedListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "response.task",
+            "hooks": [
+                {
+                    "id": 2065,
+                    "resourceId": 5303,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (response_body !== null && response_body !== undefined) {\n\tif (!(response_body instanceof Array)) {\n\t\tvar response = [];\n\t\tresponse.push(response_body);\n\t\tdone({\n\t\t\t\"response_body\": response\n\t\t});\n\t}\n}\n\ndone();",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 29676,
+            "createdDate": "2016-08-26T02:36:26Z",
+            "description": "Delete a task",
+            "path": "/hubs/ocr/tasks/{id}",
+            "vendorPath": "/deleteTask",
+            "method": "DELETE",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 43376,
+                    "resourceId": 29676,
+                    "createdDate": "2016-08-26T02:36:26Z",
+                    "name": "id",
+                    "vendorName": "taskId",
+                    "description": "The task id.",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "|response.task",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5305,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "description": "Get the status of a task",
+            "path": "/hubs/ocr/tasks/{id}",
+            "vendorPath": "/getTaskStatus",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 5358,
+                    "resourceId": 5305,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "id",
+                    "vendorName": "taskId",
+                    "description": "The task id.",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "tasks",
+                "transform": false,
+                "swagger": {
+                    "tasks": {
+                        "id": "tasks",
+                        "properties": {
+                            "@credits": {
+                                "type": "string"
+                            },
+                            "@statusChangeTime": {
+                                "type": "string"
+                            },
+                            "@resultUrl": {
+                                "type": "string"
+                            },
+                            "@registrationTime": {
+                                "type": "string"
+                            },
+                            "@id": {
+                                "type": "string"
+                            },
+                            "@status": {
+                                "type": "string"
+                            },
+                            "@filesCount": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "response.task",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 5302,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "description": "Process TextFields for a file ",
+            "path": "/hubs/ocr/tasks/textfields",
+            "vendorPath": "/processTextField",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 5353,
+                    "resourceId": 5302,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "metaData",
+                    "vendorName": "metaData",
+                    "description": "Optional JSON Metadata that contains region, language, letterSet, regExp, textType, oneTextLine, oneWordPerTextLine, markingType, placeholdersCount, writingStyle, description, pdfPassword",
+                    "type": "multipart",
+                    "vendorType": "query",
+                    "dataType": "TasksTextFieldsPostRequest",
+                    "vendorDataType": "metaData",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 5354,
+                    "resourceId": 5302,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "multipart/form-data",
+                    "vendorName": "Content-Type",
+                    "description": "Content-Type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 5352,
+                    "resourceId": 5302,
+                    "createdDate": "2015-12-11T11:25:31Z",
+                    "name": "file",
+                    "vendorName": "file",
+                    "description": "..",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "file",
+                    "vendorDataType": "file",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "TasksTextFieldsPostResponse",
+                "transform": false,
+                "swagger": {
+                    "TasksTextFieldsPostResponse": {
+                        "properties": {
+                            "@credits": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "@estimatedProcessingTime": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "milliseconds",
+                                "x-samplevalue": "5"
+                            },
+                            "@filesCount": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "@id": {
+                                "type": "string",
+                                "x-samplevalue": "008842a3-ce54-4c1a-a279-258bf2676210"
+                            },
+                            "@registrationTime": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2019-02-26T05:07:00Z"
+                            },
+                            "@status": {
+                                "type": "string",
+                                "x-samplevalue": "Queued"
+                            },
+                            "@statusChangeTime": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-samplevalue": "2019-02-26T05:07:00Z"
+                            }
+                        },
+                        "title": "TasksTextFieldsPostResponse"
+                    }
+                },
+                "requestSwagger": {
+                    "TasksTextFieldsPostRequest": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "letterSet": {
+                                "type": "string"
+                            },
+                            "markingType": {
+                                "type": "string"
+                            },
+                            "oneTextLine": {
+                                "type": "string"
+                            },
+                            "oneWordPerTextLine": {
+                                "type": "string"
+                            },
+                            "pdfPassword": {
+                                "type": "string"
+                            },
+                            "placeholdersCount": {
+                                "type": "string"
+                            },
+                            "regExp": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "textType": {
+                                "type": "string"
+                            },
+                            "writingStyle": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "TasksTextFieldsPostRequest"
+            },
+            "type": "api",
+            "rootKey": "response.task",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "basic"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "ocr",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 1045,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "name": "application/xml",
+            "vendorName": "Accept",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 804,
+            "required": false
+        },
+        {
+            "id": 1044,
+            "createdDate": "2015-12-11T11:25:31Z",
+            "name": "application/xml",
+            "vendorName": "Content-Type",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 804,
+            "required": false
+        }
+    ],
+    "private": false
+}

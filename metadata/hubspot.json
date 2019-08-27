@@ -1,0 +1,4318 @@
+{
+    "id": 42,
+    "name": "HubSpot Marketing",
+    "hookName": "HubSpot",
+    "key": "hubspot",
+    "description": "Add a HubSpot Instance to connect your existing HubSpot account to the Marketing Hub, allowing you to manage accounts, campaigns, contacts, leads etc. across multiple Marketing Elements. You will need your HubSpot account information to add an instance.",
+    "image": "elements/provider_hubspot.png",
+    "logo": "hubspot",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "If you do not have a HubSpot account, you can create one at <a href=\"http://www.hubspot.com\" target=\"_blank\">HubSpot Signup</a>",
+    "configuration": [
+        {
+            "id": 69605,
+            "name": "Hubspot Contacts Property Fields Configuration",
+            "key": "hubspot.contacts.properties",
+            "description": "The Hubspot properties to retrieve with each contact retrieved from Hubspot",
+            "defaultValue": "firstname,lastname,lastmodifieddate,createdate",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 4863,
+            "name": "Authentication Type",
+            "key": "authentication.type",
+            "description": "Type of authentication to be used while connecting to Hubspot",
+            "defaultValue": "oauth2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": true,
+            "displayOrder": 0,
+            "options": [
+                {
+                    "value": "oauth2",
+                    "description": "Oauth2 authentication type"
+                },
+                {
+                    "value": "apiKey",
+                    "description": "Apikey based authentication type"
+                }
+            ],
+            "type": "COMBO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5367,
+            "name": "Event Poller URLs",
+            "key": "event.poller.urls",
+            "description": "Hubspot Event Poller URLs",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "groupName": "polling",
+            "displayOrder": 0,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 75426,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Base URL",
+            "defaultValue": "https://api.hubapi.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 291,
+            "name": "HubSpot Client ID",
+            "key": "oauth.api.key",
+            "description": "OAuth Client ID for the requesting HubSpot app.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 75427,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 143044,
+            "name": "Application Id",
+            "key": "app_id",
+            "description": "App Id when using OAUTH2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4864,
+            "name": "Hubspot API Key",
+            "key": "hubspot.authorization.apikey",
+            "description": "Hubspot API Key to be used for authentication",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "apiKey",
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 75428,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254198,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 292,
+            "name": "HubSpot Portal ID",
+            "key": "oauth.api.secret",
+            "description": "Portal ID for the target HubSpot account. If blank, it uses new OAuth application.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 2,
+            "type": "PASSWORD",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 293,
+            "name": "HubSpot Callback Url",
+            "key": "oauth.callback.url",
+            "description": "HubSpot Callback Url",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 3,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 294,
+            "name": "HubSpot Scopes",
+            "key": "oauth.scope",
+            "description": "Scope(s) of the requesting HubSpot app. In new OAuth2 applications, scopes have to match what\n  was set up in their OAuth application exactly and paid Marketing Hubspotters can request all application scopes.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 4,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 2456,
+            "name": "Create Bulk Properties for Migration",
+            "key": "create.bulk.properties",
+            "description": "Setting this to true will create custom properties in Hubspot which are used during bulk uploads",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 5,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 295,
+            "name": "HubSpot Access Token",
+            "key": "oauth.user.token",
+            "description": "HubSpot Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 5,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 296,
+            "name": "HubSpot Refresh Token",
+            "key": "oauth.user.refresh_token",
+            "description": "HubSpot Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 6,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 297,
+            "name": "HubSpot Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "HubSpot Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 7,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 329,
+            "name": "HubSpot Refresh Interval",
+            "key": "oauth.user.refresh_interval",
+            "description": "HubSpot Refresh Interval",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "groupName": "oauth2",
+            "displayOrder": 8,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 72978,
+            "name": "User Email Address",
+            "key": "user_email_address",
+            "description": "Email Address of Logged In User when Using OAuth2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52564,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 72980,
+            "name": "Users Portal Id",
+            "key": "user_portal_id",
+            "description": "Users PortalId when Using OAuth2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 72982,
+            "name": "Users Id",
+            "key": "user_id",
+            "description": "Users Id when Using OAuth2",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 72984,
+            "name": "Default Companies Properties",
+            "key": "hubspot.companies.properties",
+            "description": "Default Propertes for Companies",
+            "defaultValue": "about_us,facebookfans,first_conversion_date,first_conversion_event_name,first_deal_created_date,founded_year,hs_analytics_first_timestamp,hs_analytics_first_visit_timestamp,hs_analytics_last_timestamp,hs_analytics_last_visit_timestamp,hs_analytics_num_page_views,hs_analytics_num_visits,hs_analytics_source,hs_analytics_source_data_1,hs_analytics_source_data_2,hs_lastmodifieddate,hubspot_owner_assigneddate,is_public,num_associated_contacts,num_associated_deals,num_conversion_events,recent_conversion_date,recent_conversion_event_name,recent_deal_amount,recent_deal_close_date,timezone,total_money_raised,total_revenue,name,twitterhandle,phone,twitterbio,twitterfollowers,address,address2,facebook_company_page,city,linkedin_company_page,linkedinbio,state,googleplus_page,engagements_last_meeting_booked,engagements_last_meeting_booked_campaign,engagements_last_meeting_booked_medium,engagements_last_meeting_booked_source,hubspot_owner_id,notes_last_contacted,notes_last_updated,notes_next_activity_date,num_contacted_notes,num_notes,zip,country,hubspot_team_id,website,domain,numberofemployees,annualrevenue,lifecyclestage,hs_avatar_filemanager_key,hs_lead_status,hs_parent_company_id,type,description,hs_num_child_companies,hubspotscore,createdate,closedate,first_contact_createdate,days_to_close",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 54,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 72986,
+            "name": "Default Deals Properties",
+            "key": "hubspot.deals.properties",
+            "description": "Default Propertes for Deals",
+            "defaultValue": "hs_analytics_source,hs_analytics_source_data_1,hs_analytics_source_data_2,hs_campaign,hs_lastmodifieddate,hubspot_owner_assigneddate,dealname,amount,dealstage,pipeline,closedate,createdate,engagements_last_meeting_booked,engagements_last_meeting_booked_campaign,engagements_last_meeting_booked_medium,engagements_last_meeting_booked_source,hubspot_owner_id,notes_last_contacted,notes_last_updated,notes_next_activity_date,num_contacted_notes,num_notes,hs_createdate,hubspot_team_id,dealtype,description,num_associated_contacts,closed_lost_reason,closed_won_reason",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 55,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 159822,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256198,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256449,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5371,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "The subscription ID for the webhook events subscription",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "groupName": "polling",
+            "displayOrder": 204,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 5370,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "Hubspot Enable/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5368,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Hubspot Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": true,
+            "displayOrder": 300,
+            "options": [
+                {
+                    "value": "polling",
+                    "description": "Polling Event Type"
+                },
+                {
+                    "value": "webhook",
+                    "description": "Workflow Webhook Event Type"
+                }
+            ],
+            "type": "COMBO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5369,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "polling",
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 69604,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - {\"contacts\": { \"url\": \"/hubs/marketing/contacts?where=lastmodifieddate='${date}'\",\"idField\": \"vid\",\"filterByUpdatedDate\": true,\"datesConfiguration\": {\"updatedDateField\": \"properties.lastmodifieddate\",\"updatedDateFormat\": \"milliseconds\",\"createdDateField\": \"properties.createdate\",\"createdDateFormat\": \"milliseconds\"},\"createdCheckTolerance\": 10}}",
+            "defaultValue": "{\"contacts\": {\"url\": \"/hubs/marketing/contacts?where=lastmodifieddate='${date}'\",\"idField\": \"vid\",\"filterByUpdatedDate\": true,\"datesConfiguration\": {\"updatedDateField\": \"properties.lastmodifieddate\",\"updatedDateFormat\": \"milliseconds\",\"createdDateField\": \"properties.createdate\",\"createdDateFormat\": \"milliseconds\"},\"createdCheckTolerance\": 10},\"accounts\": {\"url\": \"/hubs/marketing/accounts?where=lastmodifieddate='${date}'\",\"idField\": \"companyId\",\"filterByUpdatedDate\": true,\"datesConfiguration\": {\"updatedDateField\": \"properties.hs_lastmodifieddate\",\"updatedDateFormat\": \"milliseconds\",\"createdDateField\": \"properties.createdate\",\"createdDateFormat\": \"milliseconds\"},\"createdCheckTolerance\": 10},\"deals\": {\"url\": \"/hubs/marketing/deals?where=lastmodifieddate='${date}'\",\"idField\": \"dealId\",\"filterByUpdatedDate\": true,\"datesConfiguration\": {\"updatedDateField\": \"properties.hs_lastmodifieddate\",\"updatedDateFormat\": \"milliseconds\",\"createdDateField\": \"properties.createdate\",\"createdDateFormat\": \"milliseconds\"},\"createdCheckTolerance\": 10}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 302,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9178,
+            "name": "Workflow Id",
+            "key": "event.webhook.hubspot.workflow.id",
+            "description": "Workflow Id to add WebHook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "groupName": "webhook",
+            "displayOrder": 303,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5372,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Hubspot Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9742,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "contacts",
+            "vendorName": "contacts"
+        },
+        {
+            "name": "accounts",
+            "vendorName": "companies"
+        },
+        {
+            "name": "lists",
+            "vendorName": "lists"
+        },
+        {
+            "name": "campaigns",
+            "vendorName": "campaigns"
+        },
+        {
+            "name": "workflows",
+            "vendorName": "workflows"
+        },
+        {
+            "name": "activities",
+            "vendorName": "events"
+        },
+        {
+            "name": "files",
+            "vendorName": "files"
+        },
+        {
+            "name": "folders",
+            "vendorName": "folders"
+        },
+        {
+            "name": "deals",
+            "vendorName": "deals"
+        },
+        {
+            "name": "timeline-event-types",
+            "vendorName": "timelineEventTypes"
+        },
+        {
+            "name": "events",
+            "vendorName": "timelineEvents"
+        },
+        {
+            "name": "timelineEventTypes",
+            "vendorName": "timelineEventTypes"
+        },
+        {
+            "name": "timelineEventTypesProperties",
+            "vendorName": "timelineEventtypeProperties"
+        },
+        {
+            "name": "timelineEventTypesEvents",
+            "vendorName": "timelineEvents"
+        },
+        {
+            "name": "accountsProperties",
+            "vendorName": "accountsProperties"
+        },
+        {
+            "name": "accountsPropertygroups",
+            "vendorName": "accountsPropertygroups"
+        }
+    ],
+    "objectMetadata": {
+        "folders": {
+            "fields": [
+                {
+                    "type": "boolean",
+                    "vendorPath": "deleted"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "parent_folder_id"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "created"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "portal_id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "full_path"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "category"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "updated"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "deleted_at"
+                }
+            ]
+        },
+        "timelineEventtypeProperties": {
+            "fields": [
+                {
+                    "vendorPath": "name",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "label",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "objectProperty",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "propertyType",
+                    "type": "string",
+                    "vendorRequired": true
+                }
+            ]
+        },
+        "workflows": {
+            "fields": [
+                {
+                    "vendorPath": "enabled",
+                    "type": "boolean",
+                    "vendorDisplayName": "Enabled"
+                },
+                {
+                    "vendorPath": "legacyCampaignId",
+                    "type": "number",
+                    "vendorDisplayName": "Legacy Campaign ID"
+                },
+                {
+                    "vendorPath": "canEnrollFromSalesforce",
+                    "type": "boolean",
+                    "vendorDisplayName": "Can Enroll From Salesforce"
+                },
+                {
+                    "vendorPath": "portalId",
+                    "type": "number",
+                    "vendorDisplayName": "Hub ID"
+                },
+                {
+                    "vendorPath": "eventAnchor.staticDateAnchor",
+                    "type": "string",
+                    "vendorDisplayName": "Static Date Anchor"
+                },
+                {
+                    "vendorPath": "eventAnchor.contactPropertyAnchor",
+                    "type": "string",
+                    "vendorDisplayName": "Contact Property Anchor"
+                },
+                {
+                    "vendorPath": "steps[*].id",
+                    "type": "number",
+                    "vendorDisplayName": "ID"
+                },
+                {
+                    "vendorPath": "steps[*].delayMillis",
+                    "type": "number",
+                    "vendorDisplayName": "Delay Milliseconds"
+                },
+                {
+                    "vendorPath": "steps[*].listId",
+                    "type": "number",
+                    "vendorDisplayName": "List ID"
+                },
+                {
+                    "vendorPath": "steps[*].actions[*].id",
+                    "type": "number",
+                    "vendorDisplayName": "Action ID"
+                },
+                {
+                    "vendorPath": "steps[*].actions[*].emailCampaignId",
+                    "type": "number",
+                    "vendorDisplayName": "Email Campaign ID"
+                },
+                {
+                    "vendorPath": "steps[*].actions[*].name",
+                    "type": "string",
+                    "vendorDisplayName": "Name"
+                },
+                {
+                    "vendorPath": "steps[*].actions[*].emailContentId",
+                    "type": "number",
+                    "vendorDisplayName": "Email Content ID"
+                },
+                {
+                    "vendorPath": "steps[*].actions[*].emailCampaignGroupId",
+                    "type": "number",
+                    "vendorDisplayName": "Email Campaign Group ID"
+                },
+                {
+                    "vendorPath": "steps[*].actions[*].type",
+                    "type": "string",
+                    "vendorDisplayName": "Type"
+                },
+                {
+                    "vendorPath": "listening",
+                    "type": "boolean",
+                    "vendorDisplayName": "Listening"
+                },
+                {
+                    "vendorPath": "type",
+                    "type": "string",
+                    "vendorDisplayName": "Type"
+                },
+                {
+                    "vendorPath": "goalList.listIds[*]",
+                    "type": "array[number]",
+                    "vendorDisplayName": "List IDs"
+                },
+                {
+                    "vendorPath": "allowContactToTriggerMultipleTimes",
+                    "type": "boolean",
+                    "vendorDisplayName": "Allow Contact To Trigger Multiple Times"
+                },
+                {
+                    "vendorPath": "id",
+                    "type": "number",
+                    "vendorDisplayName": "ID"
+                },
+                {
+                    "vendorPath": "updatedAt",
+                    "type": "number",
+                    "vendorDisplayName": "Updated At"
+                },
+                {
+                    "vendorPath": "legacyMigration",
+                    "type": "boolean",
+                    "vendorDisplayName": "Legacy Migration"
+                },
+                {
+                    "vendorPath": "onlyExecOnBizDays",
+                    "type": "boolean",
+                    "vendorDisplayName": "Only Execute on Business Days"
+                },
+                {
+                    "vendorPath": "recurringSetting.type",
+                    "type": "string",
+                    "vendorDisplayName": "Type"
+                },
+                {
+                    "vendorPath": "nurtureTimeRange.enabled",
+                    "type": "boolean",
+                    "vendorDisplayName": "Enabled"
+                },
+                {
+                    "vendorPath": "nurtureTimeRange.stopHour",
+                    "type": "number",
+                    "vendorDisplayName": "Stop Hour"
+                },
+                {
+                    "vendorPath": "nurtureTimeRange.startHour",
+                    "type": "number",
+                    "vendorDisplayName": "Start Hour"
+                },
+                {
+                    "vendorPath": "description",
+                    "type": "string",
+                    "vendorDisplayName": "Description"
+                },
+                {
+                    "vendorPath": "name",
+                    "type": "string",
+                    "vendorDisplayName": "Name"
+                },
+                {
+                    "vendorPath": "unenrollmentSetting.type",
+                    "type": "string",
+                    "vendorDisplayName": "Type"
+                },
+                {
+                    "vendorPath": "insertedAt",
+                    "type": "number",
+                    "vendorDisplayName": "Inserted At"
+                },
+                {
+                    "vendorPath": "internal",
+                    "type": "boolean",
+                    "vendorDisplayName": "Internal"
+                },
+                {
+                    "vendorPath": "metaData.contactListIds.succeeded",
+                    "type": "number",
+                    "vendorDisplayName": "Succeeded"
+                },
+                {
+                    "vendorPath": "metaData.contactListIds.enrolled",
+                    "type": "number",
+                    "vendorDisplayName": "Enrolled"
+                },
+                {
+                    "vendorPath": "metaData.contactListIds.active",
+                    "type": "number",
+                    "vendorDisplayName": "Active"
+                },
+                {
+                    "vendorPath": "metaData.contactListIds.completed",
+                    "type": "number",
+                    "vendorDisplayName": "Completed"
+                }
+            ]
+        },
+        "accountsPropertygroups": {
+            "fields": [
+                {
+                    "vendorPath": "portalId",
+                    "type": "number",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "displayName",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "hubspotDefined",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "displayOrder",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "name",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].createdAt",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].deleted",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].hubspotDefined",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].isCustomizedDefault",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].numberDisplayHint",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].optionsAreMutable",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].referencedObjectType",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].showCurrencySymbol",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].textDisplayHint",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].updatedAt",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].updatedUserId",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "properties[*].calculated",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].description",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].displayMode",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].displayOrder",
+                    "type": "number",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].externalOptions",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].favorited",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].favoritedOrder",
+                    "type": "number",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].fieldType",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].formField",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].groupName",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].hidden",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].label",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].mutableDefinitionNotDeletable",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].name",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].readOnlyDefinition",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].readOnlyValue",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].type",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "options[*].description",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].options[*].displayOrder",
+                    "type": "number",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].options[*].doubleData",
+                    "type": "number",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].options[*].hidden",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].options[*].label",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].options[*].readOnly",
+                    "type": "boolean",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "properties[*].options[*].value",
+                    "type": "string",
+                    "vendorRequired": true
+                }
+            ]
+        },
+        "timelineEvents": {
+            "fields": [
+                {
+                    "vendorPath": "id",
+                    "type": "number",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "eventTypeId",
+                    "type": "number",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "email",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "objectId",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "utk",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "extraData.name",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "extraData.weather",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timelineIFrame.linkLabel",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timelineIFrame.iframeLabel",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timelineIFrame.iframeUri",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "timelineIFrame.width",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "timelineIFrame.height",
+                    "type": "number"
+                }
+            ]
+        },
+        "companies": {
+            "fields": [
+                {
+                    "vendorPath": "raw.companyId",
+                    "type": "string",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Company ID"
+                },
+                {
+                    "vendorPath": "raw.isDeleted",
+                    "type": "boolean",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Is Deleted"
+                },
+                {
+                    "vendorPath": "raw.portalId",
+                    "type": "string",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Hub ID"
+                }
+            ]
+        },
+        "campaigns": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "counters.deferred",
+                    "vendorDisplayName": "Deferred Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.bounce",
+                    "vendorDisplayName": "Bounced Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.forward",
+                    "vendorDisplayName": "Forward Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.dropped",
+                    "vendorDisplayName": "Dropped Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.delivered",
+                    "vendorDisplayName": "Delivered Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.sent",
+                    "vendorDisplayName": "Sent Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.click",
+                    "vendorDisplayName": "Click Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.spamreport",
+                    "vendorDisplayName": "Spam Report Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.processed",
+                    "vendorDisplayName": "Processed Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.unsubscribed",
+                    "vendorDisplayName": "Unsubscribed Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.statuschange",
+                    "vendorDisplayName": "Status Change Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.mta_dropped",
+                    "vendorDisplayName": "MTA Dropped Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "counters.open",
+                    "vendorDisplayName": "Open Counters"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastProcessingFinishedAt",
+                    "vendorDisplayName": "Last Processing Finished At"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "appName",
+                    "vendorDisplayName": "Application Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "subject",
+                    "vendorDisplayName": "Subject"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "numQueued",
+                    "vendorDisplayName": "Numbert Queued"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "contentId",
+                    "vendorDisplayName": "Content ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "type",
+                    "vendorDisplayName": "Type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "processingState",
+                    "vendorDisplayName": "Processing State"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "numIncluded",
+                    "vendorDisplayName": "Number Included"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "appId",
+                    "vendorDisplayName": "Application ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "name",
+                    "vendorDisplayName": "Name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "id",
+                    "vendorDisplayName": "Campaign ID"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastProcessingStartedAt",
+                    "vendorDisplayName": "Last Processing Started At"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "lastProcessingStateChangeAt",
+                    "vendorDisplayName": "Last Processing State Change At"
+                }
+            ]
+        },
+        "lists": {
+            "fields": [
+                {
+                    "vendorPath": "dynamic",
+                    "type": "boolean",
+                    "vendorDisplayName": "Dynamic"
+                },
+                {
+                    "vendorPath": "deleteable",
+                    "type": "boolean",
+                    "vendorDisplayName": "Deleteable"
+                },
+                {
+                    "vendorPath": "portalId",
+                    "type": "number",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Hub ID"
+                },
+                {
+                    "vendorPath": "listId",
+                    "type": "number",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "List ID"
+                },
+                {
+                    "vendorPath": "name",
+                    "type": "string",
+                    "vendorDisplayName": "Name"
+                },
+                {
+                    "vendorPath": "metaData.size",
+                    "type": "number",
+                    "vendorDisplayName": "Metadata Size"
+                },
+                {
+                    "vendorPath": "internalListId",
+                    "type": "string",
+                    "vendorDisplayName": "Internal List ID"
+                },
+                {
+                    "vendorPath": "listType",
+                    "type": "string",
+                    "vendorDisplayName": "List Type"
+                },
+                {
+                    "vendorPath": "metaData.error",
+                    "type": "string",
+                    "vendorDisplayName": "Metadata Error"
+                }
+            ]
+        },
+        "timelineEventTypes": {
+            "fields": [
+                {
+                    "vendorPath": "name",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "applicationId",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "objectType",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "headerTemplate",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "detailTemplate",
+                    "type": "string"
+                }
+            ]
+        },
+        "deals": {
+            "fields": [
+                {
+                    "vendorPath": "dealId",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "associations.associatedVids",
+                    "type": "array"
+                },
+                {
+                    "vendorPath": "associations.associatedCompanyIds",
+                    "type": "array"
+                },
+                {
+                    "vendorPath": "associations.associatedDealIds",
+                    "type": "array"
+                },
+                {
+                    "vendorPath": "isDeleted",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "portalId",
+                    "type": "string",
+                    "vendorReadOnly": true
+                }
+            ]
+        },
+        "files": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "extension"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "hidden"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "last_used"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "cloud_key"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "friendly_url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "alt_url"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "archived"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "alt_key_hash"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "portal_id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "alt_key"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "height"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "synced"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "created"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "rs_uploaded_at"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "s3_url"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "encoding"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "version"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "containing_folder_id"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "deleted_at"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "url"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "deleted"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "size"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "meta.url_scheme"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "width"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "rs_url"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "is_cta_image"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "s3_uploaded_at"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "folder_id"
+                },
+                {
+                    "type": "date",
+                    "mask": "milliseconds",
+                    "vendorPath": "updated"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "cloud_key_hash"
+                }
+            ]
+        },
+        "events": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "deviceType",
+                    "vendorDisplayName": "Device Type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "smtpId",
+                    "vendorDisplayName": "SMTP ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "appName",
+                    "vendorDisplayName": "Application Name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "created",
+                    "vendorDisplayName": "Created"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "response",
+                    "vendorDisplayName": "Response"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ipAddress",
+                    "vendorDisplayName": "IP Address"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "userAgent",
+                    "vendorDisplayName": "User Agent"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "type",
+                    "vendorDisplayName": "Type"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "sentBy.created",
+                    "vendorDisplayName": "Created"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "sentBy.id",
+                    "vendorDisplayName": "ID"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "duration",
+                    "vendorDisplayName": "Duration"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "hmid",
+                    "vendorDisplayName": "Hubspot MID"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "cosEmail",
+                    "vendorDisplayName": "Content Optimization System Email"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "appId",
+                    "vendorDisplayName": "Application ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "browser.name",
+                    "vendorDisplayName": "Browser Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "browser.producer",
+                    "vendorDisplayName": "Browser Producer"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "browser.family",
+                    "vendorDisplayName": "Browser Family"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "browser.producerUrl",
+                    "vendorDisplayName": "Browser Producer URL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "browser.type",
+                    "vendorDisplayName": "Browser Type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "browser.url",
+                    "vendorDisplayName": "Browser URL"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "portalId",
+                    "vendorDisplayName": "Hub ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "recipient",
+                    "vendorDisplayName": "Recipient"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "location.country",
+                    "vendorDisplayName": "Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "location.city",
+                    "vendorDisplayName": "City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "location.state",
+                    "vendorDisplayName": "State"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "emailCampaignId",
+                    "vendorDisplayName": "Email Campaign ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "id",
+                    "vendorDisplayName": "Event ID"
+                }
+            ]
+        },
+        "contacts": {
+            "fields": [
+                {
+                    "vendorPath": "raw.vid",
+                    "type": "string",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Contact ID"
+                },
+                {
+                    "vendorPath": "raw.portal-id",
+                    "type": "string",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Hub ID"
+                },
+                {
+                    "vendorPath": "raw.profile-url",
+                    "type": "string",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Profile URL"
+                },
+                {
+                    "vendorPath": "raw.is-contact",
+                    "type": "boolean",
+                    "vendorReadOnly": true,
+                    "vendorDisplayName": "Is Contact"
+                }
+            ]
+        },
+        "accountsProperties": {
+            "fields": [
+                {
+                    "vendorPath": "createdAt",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "deleted",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "hubspotDefined",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "isCustomizedDefault",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "numberDisplayHint",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "optionsAreMutable",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "referencedObjectType",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "showCurrencySymbol",
+                    "type": "boolean",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "textDisplayHint",
+                    "type": "string",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "updatedAt",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "updatedUserId",
+                    "type": "number",
+                    "vendorReadOnly": true
+                },
+                {
+                    "vendorPath": "calculated",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "description",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "displayMode",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "displayOrder",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "externalOptions",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "favorited",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "favoritedOrder",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "fieldType",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "formField",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "groupName",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "hidden",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "label",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "mutableDefinitionNotDeletable",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "name",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "readOnlyDefinition",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "readOnlyValue",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "type",
+                    "type": "string",
+                    "vendorRequired": true
+                },
+                {
+                    "vendorPath": "options[*].description",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "options[*].displayOrder",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "options[*].doubleData",
+                    "type": "number"
+                },
+                {
+                    "vendorPath": "options[*].hidden",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "options[*].label",
+                    "type": "string"
+                },
+                {
+                    "vendorPath": "options[*].readOnly",
+                    "type": "boolean"
+                },
+                {
+                    "vendorPath": "options[*].value",
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "resources": [
+        {
+            "id": 236780,
+            "createdDate": "2019-02-21T19:15:57Z",
+            "description": "Search for /forms",
+            "path": "/hubs/marketing/forms",
+            "vendorPath": "/forms/v2/forms",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 582262,
+                    "resourceId": 236780,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                },
+                {
+                    "id": 582261,
+                    "resourceId": 236780,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 582260,
+                    "resourceId": 236780,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "page",
+                    "vendorName": "offset",
+                    "description": "The next page cursor, taken from the response header `elements-next-page-token`",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "formsGetRes",
+                "transform": false,
+                "swagger": {
+                    "formsGetResObject": {
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "campaignGuid": {
+                                "type": "string"
+                            },
+                            "captchaEnabled": {
+                                "type": "boolean",
+                                "x-samplevalue": false,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "cloneable": {
+                                "type": "boolean",
+                                "x-samplevalue": true,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "createdAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550475789600,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "cssClass": {
+                                "type": "string"
+                            },
+                            "deletable": {
+                                "type": "boolean",
+                                "x-samplevalue": true,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "deletedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "editable": {
+                                "type": "boolean",
+                                "x-samplevalue": true,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "followUpId": {
+                                "type": "string"
+                            },
+                            "formFieldGroups": {
+                                "items": {
+                                    "type": "formsGetResFormFieldGroups"
+                                },
+                                "type": "array"
+                            },
+                            "formType": {
+                                "type": "string",
+                                "x-samplevalue": "HUBSPOT",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "guid": {
+                                "type": "string",
+                                "x-name": true,
+                                "x-samplevalue": "11715dbe-78f6-483e-b8f3-e50e2e09132d"
+                            },
+                            "ignoreCurrentValues": {
+                                "type": "boolean",
+                                "x-samplevalue": false,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "inlineMessage": {
+                                "type": "string"
+                            },
+                            "isPublished": {
+                                "type": "boolean",
+                                "x-samplevalue": false,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "leadNurturingCampaignId": {
+                                "type": "string"
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "method": {
+                                "type": "string"
+                            },
+                            "migratedFrom": {
+                                "type": "string",
+                                "x-samplevalue": "ld",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "multivariateTest": {
+                                "type": "formsGetResMultivariateTest"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "DemoForm3",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "notifyRecipients": {
+                                "type": "string"
+                            },
+                            "parentId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "performableHtml": {
+                                "type": "string"
+                            },
+                            "portalId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 5229770,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "publishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "publishedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "redirect": {
+                                "type": "string"
+                            },
+                            "style": {
+                                "type": "string"
+                            },
+                            "submitText": {
+                                "type": "string",
+                                "x-samplevalue": "Submit",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "themeName": {
+                                "type": "string",
+                                "x-samplevalue": "canvas",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "tmsId": {
+                                "type": "string"
+                            },
+                            "unpublishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "updatedAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550475789600,
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            }
+                        },
+                        "title": "formsGetRes",
+                        "type": "object",
+                        "x-primary-key": [
+                            "guid"
+                        ]
+                    },
+                    "formsGetRes": {
+                        "items": {
+                            "type": "formsGetResObject"
+                        },
+                        "type": "array"
+                    },
+                    "formsGetResFormFieldGroups": {
+                        "properties": {
+                            "default": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fields": {
+                                "items": {
+                                    "type": "formsGetResFormFieldGroupsFields"
+                                },
+                                "type": "array"
+                            },
+                            "isSmartGroup": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "richText": {
+                                "type": "formsGetResFormFieldGroupsRichText"
+                            }
+                        },
+                        "title": "formFieldGroups"
+                    },
+                    "formsGetResFormFieldGroupsFieldsValidation": {
+                        "properties": {
+                            "blockedEmailAddresses": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "data": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "useDefaultBlockList": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            }
+                        },
+                        "title": "validation",
+                        "type": "object"
+                    },
+                    "formsGetResFormFieldGroupsFields": {
+                        "properties": {
+                            "defaultValue": {
+                                "type": "string"
+                            },
+                            "dependentFieldFilters": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "displayOrder": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fieldType": {
+                                "type": "string",
+                                "x-samplevalue": "text"
+                            },
+                            "groupName": {
+                                "type": "string"
+                            },
+                            "hidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "isSmartField": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Adress 1"
+                            },
+                            "labelHidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "adress_1"
+                            },
+                            "options": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "placeholder": {
+                                "type": "string"
+                            },
+                            "propertyObjectType": {
+                                "type": "string",
+                                "x-samplevalue": "CONTACT"
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "selectedOptions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "unselectedLabel": {
+                                "type": "string"
+                            },
+                            "validation": {
+                                "type": "formsGetResFormFieldGroupsFieldsValidation"
+                            }
+                        },
+                        "title": "fields"
+                    },
+                    "formsGetResFormFieldGroupsRichText": {
+                        "properties": {
+                            "content": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "richText",
+                        "type": "object"
+                    },
+                    "formsGetResMultivariateTest": {
+                        "properties": {
+                            "variants": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "multivariateTest",
+                        "type": "object"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 236781,
+            "createdDate": "2019-02-21T19:15:57Z",
+            "description": "Create a form",
+            "path": "/hubs/marketing/forms",
+            "vendorPath": "/forms/v2/forms",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 582263,
+                    "resourceId": 236781,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The form body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "formsPostReq",
+                    "vendorDataType": "formsPostReq",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "formsPostRes",
+                "transform": false,
+                "swagger": {
+                    "formsPostResFormFieldGroupsRichText": {
+                        "properties": {
+                            "content": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "richText",
+                        "type": "object"
+                    },
+                    "formsPostResFormFieldGroupsFieldsValidation": {
+                        "properties": {
+                            "blockedEmailAddresses": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "data": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "useDefaultBlockList": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            }
+                        },
+                        "title": "validation",
+                        "type": "object"
+                    },
+                    "formsPostResMultivariateTest": {
+                        "properties": {
+                            "variants": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "multivariateTest",
+                        "type": "object"
+                    },
+                    "formsPostRes": {
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "campaignGuid": {
+                                "type": "string"
+                            },
+                            "captchaEnabled": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "cloneable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "createdAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550475789600
+                            },
+                            "cssClass": {
+                                "type": "string"
+                            },
+                            "deletable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "deletedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "editable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "followUpId": {
+                                "type": "string"
+                            },
+                            "formFieldGroups": {
+                                "items": {
+                                    "type": "formsPostResFormFieldGroups"
+                                },
+                                "type": "array"
+                            },
+                            "formType": {
+                                "type": "string",
+                                "x-samplevalue": "HUBSPOT"
+                            },
+                            "guid": {
+                                "type": "string",
+                                "x-samplevalue": "11715dbe-78f6-483e-b8f3-e50e2e09132d"
+                            },
+                            "ignoreCurrentValues": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "inlineMessage": {
+                                "type": "string"
+                            },
+                            "isPublished": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "leadNurturingCampaignId": {
+                                "type": "string"
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "method": {
+                                "type": "string"
+                            },
+                            "migratedFrom": {
+                                "type": "string",
+                                "x-samplevalue": "ld"
+                            },
+                            "multivariateTest": {
+                                "type": "formsPostResMultivariateTest"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "DemoForm3"
+                            },
+                            "notifyRecipients": {
+                                "type": "string"
+                            },
+                            "parentId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "performableHtml": {
+                                "type": "string"
+                            },
+                            "portalId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 5229770
+                            },
+                            "publishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "publishedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "redirect": {
+                                "type": "string"
+                            },
+                            "style": {
+                                "type": "string"
+                            },
+                            "submitText": {
+                                "type": "string",
+                                "x-samplevalue": "Submit"
+                            },
+                            "themeName": {
+                                "type": "string",
+                                "x-samplevalue": "canvas"
+                            },
+                            "tmsId": {
+                                "type": "string"
+                            },
+                            "unpublishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "updatedAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550475789600
+                            }
+                        },
+                        "title": "formsPostRes",
+                        "x-primary-key": [
+                            "guid"
+                        ]
+                    },
+                    "formsPostResFormFieldGroupsFields": {
+                        "properties": {
+                            "defaultValue": {
+                                "type": "string"
+                            },
+                            "dependentFieldFilters": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "displayOrder": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fieldType": {
+                                "type": "string",
+                                "x-samplevalue": "text"
+                            },
+                            "groupName": {
+                                "type": "string"
+                            },
+                            "hidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "isSmartField": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Adress 1"
+                            },
+                            "labelHidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "adress_1"
+                            },
+                            "options": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "placeholder": {
+                                "type": "string"
+                            },
+                            "propertyObjectType": {
+                                "type": "string",
+                                "x-samplevalue": "CONTACT"
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "selectedOptions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "unselectedLabel": {
+                                "type": "string"
+                            },
+                            "validation": {
+                                "type": "formsPostResFormFieldGroupsFieldsValidation"
+                            }
+                        },
+                        "title": "fields"
+                    },
+                    "formsPostResFormFieldGroups": {
+                        "properties": {
+                            "default": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fields": {
+                                "items": {
+                                    "type": "formsPostResFormFieldGroupsFields"
+                                },
+                                "type": "array"
+                            },
+                            "isSmartGroup": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "richText": {
+                                "type": "formsPostResFormFieldGroupsRichText"
+                            }
+                        },
+                        "title": "formFieldGroups"
+                    }
+                },
+                "requestSwagger": {
+                    "formsPostReq": {
+                        "properties": {
+                            "createdAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1318534279910
+                            },
+                            "cssClass": {
+                                "type": "string",
+                                "x-samplevalue": "hs-form stacked"
+                            },
+                            "deletable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "formFieldGroups": {
+                                "items": {
+                                    "type": "formsPostReqFormFieldGroups"
+                                },
+                                "type": "array"
+                            },
+                            "ignoreCurrentValues": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "method": {
+                                "type": "string",
+                                "x-samplevalue": "POST"
+                            },
+                            "migratedFrom": {
+                                "type": "string",
+                                "x-samplevalue": "ld"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "DemoForm14"
+                            },
+                            "notifyRecipients": {
+                                "type": "string",
+                                "x-samplevalue": "a@aaa.aa, b@bbb.bb"
+                            },
+                            "redirect": {
+                                "type": "string",
+                                "x-samplevalue": "www.google.com"
+                            },
+                            "submitText": {
+                                "type": "string",
+                                "x-samplevalue": "Submit"
+                            },
+                            "updatedAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1413919291011
+                            }
+                        },
+                        "title": "formsPostReq"
+                    },
+                    "formsPostReqFormFieldGroups": {
+                        "properties": {
+                            "default": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fields": {
+                                "items": {
+                                    "type": "formsPostReqFormFieldGroupsFields"
+                                },
+                                "type": "array"
+                            },
+                            "isSmartGroup": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            }
+                        },
+                        "title": "formFieldGroups"
+                    },
+                    "formsPostReqFormFieldGroupsFields": {
+                        "properties": {
+                            "defaultValue": {
+                                "type": "string",
+                                "x-samplevalue": "dafault"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "displayOrder": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "fieldType": {
+                                "type": "string",
+                                "x-samplevalue": "text"
+                            },
+                            "hidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "isSmartField": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Adress 1"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "adress_1"
+                            },
+                            "placeholder": {
+                                "type": "string",
+                                "x-samplevalue": "place"
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "fields"
+                    }
+                },
+                "requestName": "formsPostReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 236779,
+            "createdDate": "2019-02-21T19:15:57Z",
+            "description": "Delete a form",
+            "path": "/hubs/marketing/forms/{id}",
+            "vendorPath": "/forms/v2/forms/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 582259,
+                    "resourceId": 236779,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The form id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 236783,
+            "createdDate": "2019-02-21T19:15:57Z",
+            "description": "Retrieve a form",
+            "path": "/hubs/marketing/forms/{id}",
+            "vendorPath": "/forms/v2/forms/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 582266,
+                    "resourceId": 236783,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The form id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "formsGetByIdRes",
+                "transform": false,
+                "swagger": {
+                    "formsGetByIdResFormFieldGroupsFieldsValidation": {
+                        "properties": {
+                            "blockedEmailAddresses": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "data": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "useDefaultBlockList": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            }
+                        },
+                        "title": "validation",
+                        "type": "object"
+                    },
+                    "formsGetByIdResFormFieldGroups": {
+                        "properties": {
+                            "default": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fields": {
+                                "items": {
+                                    "type": "formsGetByIdResFormFieldGroupsFields"
+                                },
+                                "type": "array"
+                            },
+                            "isSmartGroup": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "richText": {
+                                "type": "formsGetByIdResFormFieldGroupsRichText"
+                            }
+                        },
+                        "title": "formFieldGroups"
+                    },
+                    "formsGetByIdResMultivariateTest": {
+                        "properties": {
+                            "variants": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "multivariateTest",
+                        "type": "object"
+                    },
+                    "formsGetByIdResFormFieldGroupsFields": {
+                        "properties": {
+                            "defaultValue": {
+                                "type": "string"
+                            },
+                            "dependentFieldFilters": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "displayOrder": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fieldType": {
+                                "type": "string",
+                                "x-samplevalue": "text"
+                            },
+                            "groupName": {
+                                "type": "string"
+                            },
+                            "hidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "isSmartField": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Adress 1"
+                            },
+                            "labelHidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "adress_1"
+                            },
+                            "options": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "placeholder": {
+                                "type": "string"
+                            },
+                            "propertyObjectType": {
+                                "type": "string",
+                                "x-samplevalue": "CONTACT"
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "selectedOptions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "unselectedLabel": {
+                                "type": "string"
+                            },
+                            "validation": {
+                                "type": "formsGetByIdResFormFieldGroupsFieldsValidation"
+                            }
+                        },
+                        "title": "fields"
+                    },
+                    "formsGetByIdRes": {
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "campaignGuid": {
+                                "type": "string"
+                            },
+                            "captchaEnabled": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "cloneable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "createdAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550475789600
+                            },
+                            "cssClass": {
+                                "type": "string"
+                            },
+                            "deletable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "deletedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "editable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "followUpId": {
+                                "type": "string"
+                            },
+                            "formFieldGroups": {
+                                "items": {
+                                    "type": "formsGetByIdResFormFieldGroups"
+                                },
+                                "type": "array"
+                            },
+                            "formType": {
+                                "type": "string",
+                                "x-samplevalue": "HUBSPOT"
+                            },
+                            "guid": {
+                                "type": "string",
+                                "x-name": true,
+                                "x-samplevalue": "11715dbe-78f6-483e-b8f3-e50e2e09132d"
+                            },
+                            "ignoreCurrentValues": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "inlineMessage": {
+                                "type": "string"
+                            },
+                            "isPublished": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "leadNurturingCampaignId": {
+                                "type": "string"
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "method": {
+                                "type": "string"
+                            },
+                            "migratedFrom": {
+                                "type": "string",
+                                "x-samplevalue": "ld"
+                            },
+                            "multivariateTest": {
+                                "type": "formsGetByIdResMultivariateTest"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "DemoForm3"
+                            },
+                            "notifyRecipients": {
+                                "type": "string"
+                            },
+                            "parentId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "performableHtml": {
+                                "type": "string"
+                            },
+                            "portalId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 5229770
+                            },
+                            "publishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "publishedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "redirect": {
+                                "type": "string"
+                            },
+                            "style": {
+                                "type": "string"
+                            },
+                            "submitText": {
+                                "type": "string",
+                                "x-samplevalue": "Submit"
+                            },
+                            "themeName": {
+                                "type": "string",
+                                "x-samplevalue": "canvas"
+                            },
+                            "tmsId": {
+                                "type": "string"
+                            },
+                            "unpublishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "updatedAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550475789600
+                            }
+                        },
+                        "title": "formsGetByIdRes",
+                        "x-primary-key": [
+                            "guid"
+                        ]
+                    },
+                    "formsGetByIdResFormFieldGroupsRichText": {
+                        "properties": {
+                            "content": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "richText",
+                        "type": "object"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 236782,
+            "createdDate": "2019-02-21T19:15:57Z",
+            "description": "Update a form",
+            "path": "/hubs/marketing/forms/{id}",
+            "vendorPath": "/forms/v2/forms/{id}",
+            "method": "PUT",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 582265,
+                    "resourceId": 236782,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The form body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "formsPutReq",
+                    "vendorDataType": "formsPutReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 582264,
+                    "resourceId": 236782,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The form id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "formsPutRes",
+                "transform": false,
+                "swagger": {
+                    "formsPutRes": {
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "campaignGuid": {
+                                "type": "string"
+                            },
+                            "captchaEnabled": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "cloneable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "createdAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550229421419
+                            },
+                            "cssClass": {
+                                "type": "string"
+                            },
+                            "deletable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "deletedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "editable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "followUpId": {
+                                "type": "string"
+                            },
+                            "formFieldGroups": {
+                                "items": {
+                                    "type": "formsPutResFormFieldGroups"
+                                },
+                                "type": "array"
+                            },
+                            "formType": {
+                                "type": "string",
+                                "x-samplevalue": "HUBSPOT"
+                            },
+                            "guid": {
+                                "type": "string",
+                                "x-samplevalue": "c3aba1c3-8cdb-4640-af7c-5ac990b88eb6"
+                            },
+                            "ignoreCurrentValues": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "inlineMessage": {
+                                "type": "string"
+                            },
+                            "isPublished": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "leadNurturingCampaignId": {
+                                "type": "string"
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "method": {
+                                "type": "string"
+                            },
+                            "migratedFrom": {
+                                "type": "string",
+                                "x-samplevalue": "ld"
+                            },
+                            "multivariateTest": {
+                                "type": "formsPutResMultivariateTest"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "DemoForm1"
+                            },
+                            "notifyRecipients": {
+                                "type": "string"
+                            },
+                            "parentId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "performableHtml": {
+                                "type": "string"
+                            },
+                            "portalId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 5229770
+                            },
+                            "publishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "publishedAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "redirect": {
+                                "type": "string"
+                            },
+                            "style": {
+                                "type": "string"
+                            },
+                            "submitText": {
+                                "type": "string",
+                                "x-samplevalue": "Submit"
+                            },
+                            "themeName": {
+                                "type": "string"
+                            },
+                            "tmsId": {
+                                "type": "string"
+                            },
+                            "unpublishAt": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "updatedAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550552025538
+                            }
+                        },
+                        "title": "formsPutRes",
+                        "x-primary-key": [
+                            "guid"
+                        ]
+                    },
+                    "formsPutResFormFieldGroupsFieldsValidation": {
+                        "properties": {
+                            "blockedEmailAddresses": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "data": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "useDefaultBlockList": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            }
+                        },
+                        "title": "validation",
+                        "type": "object"
+                    },
+                    "formsPutResMultivariateTest": {
+                        "properties": {
+                            "variants": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "multivariateTest",
+                        "type": "object"
+                    },
+                    "formsPutResFormFieldGroupsFields": {
+                        "properties": {
+                            "defaultValue": {
+                                "type": "string"
+                            },
+                            "dependentFieldFilters": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "displayOrder": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fieldType": {
+                                "type": "string",
+                                "x-samplevalue": "text"
+                            },
+                            "groupName": {
+                                "type": "string"
+                            },
+                            "hidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "isSmartField": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Adress 1"
+                            },
+                            "labelHidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "adress_1"
+                            },
+                            "options": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "placeholder": {
+                                "type": "string"
+                            },
+                            "propertyObjectType": {
+                                "type": "string",
+                                "x-samplevalue": "CONTACT"
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "selectedOptions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "unselectedLabel": {
+                                "type": "string"
+                            },
+                            "validation": {
+                                "type": "formsPutResFormFieldGroupsFieldsValidation"
+                            }
+                        },
+                        "title": "fields"
+                    },
+                    "formsPutResFormFieldGroupsRichText": {
+                        "properties": {
+                            "content": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "richText",
+                        "type": "object"
+                    },
+                    "formsPutResFormFieldGroups": {
+                        "properties": {
+                            "default": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fields": {
+                                "items": {
+                                    "type": "formsPutResFormFieldGroupsFields"
+                                },
+                                "type": "array"
+                            },
+                            "isSmartGroup": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "richText": {
+                                "type": "formsPutResFormFieldGroupsRichText"
+                            }
+                        },
+                        "title": "formFieldGroups"
+                    }
+                },
+                "requestSwagger": {
+                    "formsPutReqFormFieldGroupsFields": {
+                        "properties": {
+                            "defaultValue": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "displayOrder": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fieldType": {
+                                "type": "string",
+                                "x-samplevalue": "text"
+                            },
+                            "groupName": {
+                                "type": "string"
+                            },
+                            "hidden": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "isSmartField": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "label": {
+                                "type": "string",
+                                "x-samplevalue": "Adress 1"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "adress_1"
+                            },
+                            "options": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "placeholder": {
+                                "type": "string"
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "selectedOptions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "unselectedLabel": {
+                                "type": "string"
+                            },
+                            "validation": {
+                                "type": "formsPutReqFormFieldGroupsFieldsValidation"
+                            }
+                        },
+                        "title": "fields"
+                    },
+                    "formsPutReq": {
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "createdAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1318534279910
+                            },
+                            "cssClass": {
+                                "type": "string"
+                            },
+                            "deletable": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "followUpId": {
+                                "type": "string"
+                            },
+                            "formFieldGroups": {
+                                "items": {
+                                    "type": "formsPutReqFormFieldGroups"
+                                },
+                                "type": "array"
+                            },
+                            "ignoreCurrentValues": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "leadNurturingCampaignId": {
+                                "type": "string"
+                            },
+                            "metaData": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "method": {
+                                "type": "string"
+                            },
+                            "migratedFrom": {
+                                "type": "string",
+                                "x-samplevalue": "ld"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "DemoForm1"
+                            },
+                            "notifyRecipients": {
+                                "type": "string"
+                            },
+                            "performableHtml": {
+                                "type": "string"
+                            },
+                            "redirect": {
+                                "type": "string"
+                            },
+                            "submitText": {
+                                "type": "string",
+                                "x-samplevalue": "Submit"
+                            },
+                            "updatedAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1413919291011
+                            }
+                        },
+                        "title": "formsPutReq"
+                    },
+                    "formsPutReqFormFieldGroupsFieldsValidation": {
+                        "properties": {
+                            "data": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "useDefaultBlockList": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            }
+                        },
+                        "title": "validation",
+                        "type": "object"
+                    },
+                    "formsPutReqFormFieldGroups": {
+                        "properties": {
+                            "default": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "fields": {
+                                "items": {
+                                    "type": "formsPutReqFormFieldGroupsFields"
+                                },
+                                "type": "array"
+                            },
+                            "isSmartGroup": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            }
+                        },
+                        "title": "formFieldGroups"
+                    }
+                },
+                "requestName": "formsPutReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 236784,
+            "createdDate": "2019-02-21T19:15:57Z",
+            "description": "Retrieve the form submissions",
+            "path": "/hubs/marketing/forms/{id}/submissions",
+            "vendorPath": "/form-integrations/v1/submissions/forms/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 582267,
+                    "resourceId": 236784,
+                    "createdDate": "2019-02-21T19:15:57Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The form id",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "formsSubmissionsGetRes",
+                "transform": false,
+                "swagger": {
+                    "formsSubmissionsGetResPaging": {
+                        "properties": {
+                            "next": {
+                                "type": "formsSubmissionsGetResPagingNext"
+                            }
+                        },
+                        "title": "paging",
+                        "type": "object"
+                    },
+                    "formsSubmissionsGetResResults": {
+                        "properties": {
+                            "submittedAt": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1550466738321
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "formsSubmissionsGetResResultsValues"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "results"
+                    },
+                    "formsSubmissionsGetResPagingNext": {
+                        "properties": {
+                            "after": {
+                                "type": "string",
+                                "x-samplevalue": "ODdlYjM4ODYtOTBlNi00NWVjLWJmYzYtMTM1MzY3ODQ5YTg0XzE1NTAyMjk3Mzk4OTI"
+                            },
+                            "link": {
+                                "type": "string",
+                                "x-samplevalue": "?after=ODdlYjM4ODYtOTBlNi00NWVjLWJmYzYtMTM1MzY3ODQ5YTg0XzE1NTAyMjk3Mzk4OTI&limit=20"
+                            }
+                        },
+                        "title": "next",
+                        "type": "object"
+                    },
+                    "formsSubmissionsGetResResultsValues": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "adress_1_"
+                            },
+                            "value": {
+                                "type": "string",
+                                "x-samplevalue": " adress_1adress_1adress_1adress_1"
+                            }
+                        },
+                        "title": "values"
+                    },
+                    "formsSubmissionsGetRes": {
+                        "properties": {
+                            "paging": {
+                                "type": "formsSubmissionsGetResPaging"
+                            },
+                            "results": {
+                                "items": {
+                                    "type": "formsSubmissionsGetResResults"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "formsSubmissionsGetRes"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [
+        {
+            "elementId": 42,
+            "id": 4207,
+            "name": "accounts",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Accounts in Hubspot Marketing are mapped to Companies. Accounts allows you to manage your company data in HubSpot. Accounts in HubSpot can represent any type of organization.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "both",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4208,
+            "name": "accountsProperties",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "company properties are used to store specific information for your company records.  HubSpot has several default properties, but you can also create custom properties to store any data you need for your company records.  Company properties can also be used to filter companies that show up in your view when viewing your records in HubSpot.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4209,
+            "name": "accountsPropertygroups",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "company property group. Property groups allow you to more easily manage properties in a given portal and make contact records easier to parse for the user.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4210,
+            "name": "activities",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Activities is mapped to Engagements. They used to store data from CRM actions, including notes, tasks, meetings, and calls. Engagements should be associated with at least one contact record, and optionally other contacts, deals, and a company record.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4211,
+            "name": "campaigns",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "For a given portal, return all campaign IDs sorted by recent activity associated with the portal",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4212,
+            "name": "campaignsActivities",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Returns all of the event definitions in a given portal. Events can be created in-app, or dynamically",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4213,
+            "name": "contacts",
+            "customFields": true,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Contacts are the fundamental building block to HubSpot - they store lead-specific data that makes it possible to leverage much of the functionality in HubSpot, from marketing automation, to lead scoring to smart content.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": true,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "both",
+            "notes": "-- Must pass `useBatchUpload=true` parameter to leverage nativeBulkUpload. Native bulk upload does not validate success of upload, this is a limitation of the Hubspot service for leads & contacts"
+        },
+        {
+            "elementId": 42,
+            "id": 4214,
+            "name": "contactsActivities",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Get an engagement (a task or activity) on an contact in HubSpot. This data is often used for per rep productivity reporting or integration with other back-office tools.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4215,
+            "name": "contactsLists",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Return the contact lists for a portal",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4216,
+            "name": "contactsProperties",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Contact properties are used to store specific information for each of your contact records. HubSpot has several default contact properties, but you can also create custom properties to store whatever data you need for your contact records. Properties are used as the criteria for contact lists, to segment your contacts, and also as the starting criteria for workflows",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4217,
+            "name": "contactsPropertygroups",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "contact groups 0of the contact property groups for a portal.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4218,
+            "name": "contactsWorkflows",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Get workflows a contact is currently enrolled in. This is particularly useful for integrations that take contact data and display them in a different interface.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4219,
+            "name": "deals",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "The Deals API, along with the Companies API, has been exposed to allow for easy integration with the HubSpot CRM objects. A couple of use cases the API can support: Creating a client in a project management system when a deal is marked as closed won. Syncing Deal data with a legacy CRM. Executing advanced revenue reporting in a 3rd party reporting platform",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "both",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4220,
+            "name": "files",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "metadata of files in file system",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4221,
+            "name": "filesArchive",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Archive an existing file from a particular HubSpot portal. Archiving will not hard delete a file from a portal, but will remove that file from the HubSpot user interface",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4222,
+            "name": "filesCdnFiles",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Permanently delete a file and all related data and thumbnails from file manager. Once if we did this we cannot restore the file!!",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4223,
+            "name": "folders",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "metadata of Folders in file system",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4224,
+            "name": "lists",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Contact Lists are used to segment contacts into groups. There are two main types of lists, dynamic (usually referred to as smart lists) and static. Dynamic lists automatically add or remove contacts, based on the list criteria. List membership is managed automatically, and is updated whenever data changes for a contact, so it is not possible to manually remove or add contacts to a dynamic list. Static lists can also automatically include contacts, but the criteria is only evaluated when the list is created. After the list is created, the list memebership will not change unless contacts are manually added or removed from the list.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4225,
+            "name": "listsContacts",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Users of HubSpot generally use lists to group like contacts together for marketing automation, but for the purposes of integration, you will likely want to create a list before you get contacts from it.",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4226,
+            "name": "timelineEventTypes",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Gives the timeline events types of the portal",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4227,
+            "name": "timelineEventTypesEvents",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Gives the timeline events types of the portal",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4228,
+            "name": "timelineEventTypesTimelineEventTypesProperties",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Gives the timeline events types of the portal and its properties",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4229,
+            "name": "workflows",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "workflows are one of the most essential pieces to the HubSpot marketing software, because it, along with Contacts and email, is at the heart of marketing automation. Using workflows, users can set up sophisticated marketing automation campaigns that rely on triggering relevant and timely actions (like emails) for contacts in their database.",
+            "isNestedObject": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        },
+        {
+            "elementId": 42,
+            "id": 4230,
+            "name": "workflowsContacts",
+            "customFields": false,
+            "ownerAccountId": 1,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "description": "Workflows of Contacts. In workflowsContacts we implemented only delete API",
+            "isNestedObject": true,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false,
+            "vendorEventTypes": "none",
+            "notes": ""
+        }
+    ],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

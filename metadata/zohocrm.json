@@ -1,0 +1,1720 @@
+{
+    "id": 45,
+    "name": "Zoho CRM",
+    "hookName": "ZohoCRM",
+    "key": "zohocrm",
+    "description": "Add a Zoho CRM Instance to connect your existing Zoho CRM account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements. You will need your Zoho CRM account information to add an instance.",
+    "image": "elements/provider_zohocrm.png",
+    "logo": "zohocrm",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configDescription": "If you do not have a Zoho CRM account, you can create one at <a href=\"https://www.zoho.com/crm/zohocrm-pricing.html\" target=\"_blank\">Zoho Signup</a>",
+    "signupURL": "https://www.zoho.com/crm/lp/signup.html",
+    "configuration": [
+        {
+            "id": 321,
+            "name": "User Name or Email",
+            "key": "crm.zohocrm.username",
+            "description": "Zoho CRM User Name or Email",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 76510,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254189,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 76511,
+            "name": "Pagination Start Index",
+            "key": "pagination.page.startindex",
+            "description": "Pagination Start Index",
+            "defaultValue": "1",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 130189,
+            "name": "Authentication URL",
+            "key": "auth.url",
+            "description": "Zoho CRM authentication URL. The value is domain specific. For \".com\" domain, it is \"https://accounts.zoho.com/apiauthtoken/nb/create\", for \".eu\" domain \"https://accounts.zoho.eu/apiauthtoken/nb/create\"",
+            "defaultValue": "https://accounts.zoho.com/apiauthtoken/nb/create",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 83507,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "defaultValue": "yyyy-MM-dd HH:mm:ss",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 76508,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Base URL",
+            "defaultValue": "https://crm.zoho.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 83505,
+            "name": "Bulk Query Created Field Name",
+            "key": "bulk.attribute.created_time",
+            "description": "Bulk Query Created Field Name",
+            "defaultValue": "Created Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 83506,
+            "name": "Bulk Query Modified Field Name",
+            "key": "bulk.attribute.modified_time",
+            "description": "Bulk Query Modified Field Name",
+            "defaultValue": "Modified Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 76509,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Max Page Size (or limit)",
+            "defaultValue": "200",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 8583,
+            "name": "A holder for the notification subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "A holder for the notification subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 322,
+            "name": "Password",
+            "key": "crm.zohocrm.password",
+            "description": "Zoho CRM Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 320,
+            "name": "Authentication Token",
+            "key": "crm.zohocrm.authentication.token",
+            "description": "Zoho CRM Authentication Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 324,
+            "name": "Login Scope",
+            "key": "crm.zohocrm.scope.login",
+            "description": "Zoho CRM Login Scope",
+            "defaultValue": "ZohoCRM/crmapi",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 323,
+            "name": "API Scope",
+            "key": "crm.zohocrm.scope.api",
+            "description": "Zoho CRM API Scope",
+            "defaultValue": "crmapi",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 52510,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159824,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256333,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256584,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8585,
+            "name": "Event Notification Enabled/Disabled",
+            "key": "event.notification.enabled",
+            "description": "Event Notification Enabled/Disabled Flag",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8586,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used to determine how often to poll the service endpoints (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8587,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. If the \"event.poller.urls\" configuration is defined, this field's value is ignored. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/crm/contacts?where=update_time >= &apos; ${gmtDate:yyyy-MM-dd HH:mm:ss}&apos;\", \t\"idField\": \"id\", \t\" filterByUpdatedDate\": true, \t\"datesConfiguration\": { \"updatedDateField\": \"update_time\", \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\", \"updatedDateTimezone\": \"GMT\", \t    \"createdDateField\": \"add_time\", \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\", \"createdDateTimezone\": \"GMT\" }, \"createdCheckTolerance\": 2 } }",
+            "defaultValue": "{\n  \"products\": {\n    \"url\": \"/hubs/crm/products?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"PRODUCTID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  },\n  \"accounts\": {\n    \"url\": \"/hubs/crm/accounts?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"ACCOUNTID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  },\n  \"activities-calls\": {\n    \"url\": \"/hubs/crm/activities-calls?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"ACTIVITYID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  },\n  \"activities-events\": {\n    \"url\": \"/hubs/crm/activities-events?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"ACTIVITYID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  },\n  \"campaigns\": {\n    \"url\": \"/hubs/crm/campaigns?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"CAMPAIGNID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  },\n  \"contacts\": {\n    \"url\": \"/hubs/crm/contacts?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"CONTACTID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  },\n  \"leads\": {\n    \"url\": \"/hubs/crm/leads?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"LEADID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  },\n  \"opportunities\": {\n    \"url\": \"/hubs/crm/opportunities?where='Modified Time'>'${dateTimeZone:{TimeZone}:yyyy-MM-dd HH:mm:ss}'\",\n    \"idField\": \"POTENTIALID\",\n    \"datesConfiguration\": {\n      \"updatedDateField\": \"['Modified Time']\",\n      \"updatedDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"createdDateField\": \"['Created Time']\",\n      \"createdDateFormat\": \"yyyy-MM-dd HH:mm:ss\",\n      \"updatedDateTimezone\": \"{TimeZone}\"\n    }\n  }\n}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 303,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8588,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9693,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 8584,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "accounts",
+            "vendorName": "Accounts"
+        },
+        {
+            "name": "cases",
+            "vendorName": "Cases"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "Contacts"
+        },
+        {
+            "name": "leads",
+            "vendorName": "Leads"
+        },
+        {
+            "name": "opportunities",
+            "vendorName": "Potentials"
+        },
+        {
+            "name": "tasks",
+            "vendorName": "Tasks"
+        },
+        {
+            "name": "users",
+            "vendorName": "Users"
+        },
+        {
+            "name": "notes",
+            "vendorName": "Notes"
+        },
+        {
+            "name": "events",
+            "vendorName": "Events"
+        },
+        {
+            "name": "campaigns",
+            "vendorName": "Campaigns"
+        },
+        {
+            "name": "calls",
+            "vendorName": "Calls"
+        },
+        {
+            "name": "products",
+            "vendorName": "Products"
+        },
+        {
+            "name": "pricebooks",
+            "vendorName": "PriceBooks"
+        }
+    ],
+    "objectMetadata": {
+        "Products": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Product Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Qty in Stock"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Product Code"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Tax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PRODUCTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Support Expiry Date"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Manufacturer"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Qty in Demand"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Unit Price"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Reorder Level"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Qty Ordered"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Product Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Product Active"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Sales End Date"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Support Start Date"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Commission Rate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Sales Start Date"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Product Category"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Usage Unit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Taxable"
+                }
+            ]
+        },
+        "Campaign": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Num sent"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Campaign Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CAMPAIGNID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Campaign Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Budgeted Cost"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Expected Response"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Start Date"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Actual Cost"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Expected Revenue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Status"
+                }
+            ]
+        },
+        "Tasks": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Related To"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Send Notification Email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Contact Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Priority"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Task Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CONTACTID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ACTIVITYID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Recurring Activity"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd",
+                    "vendorPath": "Due Date"
+                }
+            ]
+        },
+        "Potentials": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "mask": "yyyy-MM-dd",
+                    "vendorPath": "Closing Date"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CONTACTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Lead Conversion Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Account Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ACCOUNTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Stage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Sales Cycle Duration"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Potential Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Lead Source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Next Step"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Contact Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Amount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Probability"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Campaign Source"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Expected Revenue"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Overall Sales Duration"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Potential Name"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Last Activity Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CAMPAIGNID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "POTENTIALID"
+                }
+            ]
+        },
+        "Contacts": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Mailing Zip"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Reports To"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Other Street"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "First Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Twitter"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Skype ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CONTACTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ACCOUNTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Vendor Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Salutation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Other Zip"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Mailing Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Account Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Home Phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Department"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "VENDORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Assistant"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Add to QuickBooks"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ACCOUNTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Secondary Email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Other City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Lead Source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Email Opt Out"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Mailing City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Mailing State"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Other State"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Other Phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Contact Owner"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Mobile"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Mailing Street"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Campaign Source"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Asst Phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Other Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Date of Birth"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Last Activity Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Last Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CAMPAIGNID"
+                }
+            ]
+        },
+        "Events": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Related To"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Call Status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Call Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Contact Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Call Purpose"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Call Duration"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "Billable"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CONTACTID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ACTIVITYID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Call Type"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SEMODULE"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RELATEDTOID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Call Status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Call Duration (in seconds)"
+                }
+            ]
+        },
+        "Calls": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Related To"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Venue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Contact Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CONTACTID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ACTIVITYID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SEMODULE"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "UID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Event Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RELATEDTOID"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd",
+                    "vendorPath": "Start DateTime"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd",
+                    "vendorPath": "End DateTime"
+                }
+            ]
+        },
+        "Leads": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Company"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Rating"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "First Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Website"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Twitter"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Lead Status"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Skype ID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Annual Revenue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Salutation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Industry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Lead Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Zip Code"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Street"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Secondary Email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "No of Employees"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Lead Source"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Email Opt Out"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Designation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LEADID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Mobile"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Campaign Source"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "State"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Country"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Last Activity Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Last Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CAMPAIGNID"
+                }
+            ]
+        },
+        "Users": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "zip"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "website"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "role"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "city"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "timezone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "profile"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "mobile"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "language"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "content"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "zuid"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "confirm"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "street"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "state"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "email"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "status"
+                }
+            ]
+        },
+        "Accounts": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "SIC Code"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Account Number"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Ownership"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Account Owner"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Rating"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Account Site"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Website"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Employees"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PARENTACCOUNTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AnnualRevenue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Industry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Account Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Billing Code"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "BillingCity"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Phone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Shipping Street"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Shipping State"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ACCOUNTID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AccountType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Billing State"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Ticker Symbol"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Shipping City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "BillingCountry"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Shipping Code"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Created Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Shipping Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Billing Street"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Parent Account"
+                },
+                {
+                    "type": "date",
+                    "mask": "yyyy-MM-dd HH:mm:ss",
+                    "vendorPath": "Last Activity Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Fax"
+                }
+            ]
+        },
+        "Notes": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Modified By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MODIFIEDBY"
+                },
+                {
+                    "type": "boolean",
+                    "vendorPath": "ISVOICENOTES"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Owner Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMCREATORID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "id"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created By"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SMOWNERID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Note Content"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Modified Time"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Created Time"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": false,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

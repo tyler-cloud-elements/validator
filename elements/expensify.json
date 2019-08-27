@@ -1,0 +1,3171 @@
+{
+    "id": 7051,
+    "name": "Expensify",
+    "hookName": "Expensify",
+    "key": "expensify",
+    "description": "Add a Expensify Instance to connect your existing Expensify account to the Payments and Billing Hub, allowing you to manage your reports, etc. across multiple  Elements. You will need your Expensify account information to add an instance.",
+    "image": "http://we.are.expensify.com/assets/img/icon-rounded.png",
+    "logo": "expensify",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 48559,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Expensify Max Page Size (or limit)",
+            "defaultValue": "1000000",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48548,
+            "name": "Pagination Start Index",
+            "key": "pagination.page.startindex",
+            "description": "Expensify Pagination Start Index",
+            "defaultValue": "1",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48549,
+            "name": "Bulk Relations",
+            "key": "bulk.relations",
+            "description": "Bulk Relations",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48550,
+            "name": "Bulk query Operator",
+            "key": "bulk.query.operator",
+            "description": "Bulk query Operator",
+            "defaultValue": "=",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48551,
+            "name": "Bulk Download Format",
+            "key": "bulk.query.download_format",
+            "description": "Bulk Download Format",
+            "defaultValue": "JSON",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48552,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Expensify Pagination Type",
+            "defaultValue": "page",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48553,
+            "name": "Partner User ID",
+            "key": "partner.user.id",
+            "description": "User ID",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 48554,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Expensify Test Element Base URL",
+            "defaultValue": "https://integrations.expensify.com/Integration-Server",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48555,
+            "name": "Bulk Add Metadata",
+            "key": "bulk.add_metadata",
+            "description": "Bulk Add Metadata",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48560,
+            "name": "Bulk query FieldName",
+            "key": "bulk.query.field_name",
+            "description": "Bulk query FieldName",
+            "defaultValue": "startDate",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254032,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48561,
+            "name": "Bulk query Date Mask",
+            "key": "bulk.query.date_mask",
+            "description": "Bulk query Date Mask",
+            "defaultValue": "yyyy-MM-dd",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48562,
+            "name": "Partner User Secret",
+            "key": "partner.user.secret",
+            "description": "Partner User Secret",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52532,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159942,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48563,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 48557,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "15",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 48558,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 48564,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 103,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 48556,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/helpdesk/contacts\", “idField”: “user.id”, “datesConfiguration”: { \"updatedDateField\": \"user.updated_at\", \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\", “createdDateField”: “user.created_at”, “createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\" }, \"pageSize\": 10000 } }",
+            "defaultValue": "{\"reports\":{\"url\":\"/hubs/payment/reports?where=startDate ='${date:yyyy-MM-dd}'\",\"idField\":\"reportId\",\"datesConfiguration\":{\"updatedDateField\":\"created\",\"updatedDateFormat\":\"yyyy-MM-dd HH:mm:ss\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"created\",\"createdDateFormat\":\"yyyy-MM-dd HH:mm:ss\",\"createdDateTimezone\":\"GMT\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256160,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256411,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 84447,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 27327,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Get Reports",
+            "path": "/hubs/payment/authentication",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38981,
+                    "resourceId": 27327,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "[]",
+                    "vendorName": "template",
+                    "description": "template",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38982,
+                    "resourceId": 27327,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{   \"type\": \"file\",   \"credentials\": \"{credentials}\",   \"onReceive\": {     \"immediateResponse\": [       \"returnRandomFileName\"     ]   },   \"inputSettings\": {     \"type\": \"combinedReportData\",     \"reportState\": null,     \"limit\": \"1\",     \"filters\": {       \"startDate\": \"2016-01-01\",       \"endDate\": null,       \"markedAsExported\": null,       \"reportIDList\": null,       \"policyIDList\": null     },     \"employeeEmail\": null   },   \"outputSettings\": {     \"fileExtension\": \"txt\"   } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "object",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "authenticationList",
+                "transform": false,
+                "swagger": {
+                    "authenticationList": {
+                        "id": "authenticationList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "authenticationListObject"
+                        }
+                    },
+                    "receiptObject": {
+                        "id": "receiptObject",
+                        "properties": {
+                            "thumbnail": {
+                                "type": "string"
+                            },
+                            "smallThumbnail": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "transactionID": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "authenticationListObject": {
+                        "id": "authenticationListObject",
+                        "properties": {
+                            "reportId": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "managerPayrollID": {
+                                "type": "unknown"
+                            },
+                            "reportName": {
+                                "type": "string"
+                            },
+                            "policyName": {
+                                "type": "string"
+                            },
+                            "created": {
+                                "type": "string"
+                            },
+                            "submitterPayrollID": {
+                                "type": "unknown"
+                            },
+                            "transactions": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "transactions"
+                                }
+                            },
+                            "accountID": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "managerEmail": {
+                                "type": "string"
+                            },
+                            "submitterUserID": {
+                                "type": "unknown"
+                            },
+                            "total": {
+                                "type": "string"
+                            },
+                            "approved": {
+                                "type": "string"
+                            },
+                            "reimbursed": {
+                                "type": "string"
+                            },
+                            "accountEmail": {
+                                "type": "string"
+                            },
+                            "submitted": {
+                                "type": "string"
+                            },
+                            "managerUserID": {
+                                "type": "unknown"
+                            },
+                            "policyID": {
+                                "type": "string"
+                            },
+                            "isACHReimbursed": {
+                                "type": "string"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "units": {
+                        "id": "units",
+                        "properties": {
+                            "unit": {
+                                "type": "string"
+                            },
+                            "rate": {
+                                "type": "string"
+                            },
+                            "count": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "transactions": {
+                        "id": "transactions",
+                        "properties": {
+                            "modifiedCreated": {
+                                "type": "string"
+                            },
+                            "convertedAmount": {
+                                "type": "string"
+                            },
+                            "reportID": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "reimbursable": {
+                                "type": "string"
+                            },
+                            "units": {
+                                "type": "units"
+                            },
+                            "mcc": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "taxName": {
+                                "type": "string"
+                            },
+                            "transactionID": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "ntagXGlCode": {
+                                "type": "string"
+                            },
+                            "bank": {
+                                "type": "string"
+                            },
+                            "inserted": {
+                                "type": "string"
+                            },
+                            "modifiedMerchant": {
+                                "type": "string"
+                            },
+                            "categoryPayrollCode": {
+                                "type": "string"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "taxRateName": {
+                                "type": "string"
+                            },
+                            "tag": {
+                                "type": "string"
+                            },
+                            "tagGlCode": {
+                                "type": "string"
+                            },
+                            "amount": {
+                                "type": "string"
+                            },
+                            "created": {
+                                "type": "string"
+                            },
+                            "ntagX": {
+                                "type": "string"
+                            },
+                            "receiptFilename": {
+                                "type": "string"
+                            },
+                            "merchant": {
+                                "type": "string"
+                            },
+                            "modifiedAmount": {
+                                "type": "string"
+                            },
+                            "billable": {
+                                "type": "string"
+                            },
+                            "receiptObject": {
+                                "type": "receiptObject"
+                            },
+                            "modifiedMCC": {
+                                "type": "string"
+                            },
+                            "taxRate": {
+                                "type": "string"
+                            },
+                            "hasTax": {
+                                "type": "string"
+                            },
+                            "comment": {
+                                "type": "string"
+                            },
+                            "currencyConversionRate": {
+                                "type": "string"
+                            },
+                            "category": {
+                                "type": "string"
+                            },
+                            "taxAmount": {
+                                "type": "string"
+                            },
+                            "receiptID": {
+                                "type": "unknown"
+                            },
+                            "categoryGlCode": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "provisionAuthValidation",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 274480,
+            "createdDate": "2019-05-29T07:14:45Z",
+            "description": "Create a Expense Rules",
+            "path": "/hubs/payment/expense-rules",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 676336,
+                    "resourceId": 274480,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Expense Rules body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "expenseRulesPostReq",
+                    "vendorDataType": "expenseRulesPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 676335,
+                    "resourceId": 274480,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "{     \"type\": \"create\",     \"credentials\": \"{credentials}\"}",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input Expense Rules data to create",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "expenseRulesPostRes",
+                "transform": false,
+                "swagger": {
+                    "expenseRulesPostRes": {
+                        "properties": {
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 200
+                            },
+                            "responseMessage": {
+                                "type": "string",
+                                "x-samplevalue": "OK"
+                            }
+                        },
+                        "title": "expenseRulesPostRes"
+                    }
+                },
+                "requestSwagger": {
+                    "expenseRulesPostReqActions": {
+                        "properties": {
+                            "tag": {
+                                "type": "string",
+                                "x-samplevalue": "Tag Name"
+                            }
+                        },
+                        "title": "actions",
+                        "type": "object"
+                    },
+                    "expenseRulesPostReq": {
+                        "properties": {
+                            "actions": {
+                                "required": true,
+                                "type": "expenseRulesPostReqActions"
+                            },
+                            "employeeEmail": {
+                                "required": true,
+                                "type": "string",
+                                "x-samplevalue": "employee@domain.com",
+                                "x-sub-format": "email"
+                            },
+                            "policyID": {
+                                "required": true,
+                                "type": "string",
+                                "x-samplevalue": "0123456789ABCDEF"
+                            },
+                            "type": {
+                                "required": true,
+                                "type": "string",
+                                "x-samplevalue": "expenseRules"
+                            }
+                        },
+                        "title": "expenseRulesPostReq"
+                    }
+                },
+                "requestName": "expenseRulesPostReq"
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 34648,
+                    "resourceId": 274480,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var vendorQuery={};\nvar body=request_body_map;\n\nbody['type']='expenseRules';\nvar inputSettings={};\nvendorQuery['inputSettings']=body;\nvar credentialsData=JSON.parse(request_parameters.requestJobDescription);\nvendorQuery['credentials']=credentialsData.credentials;\nvendorQuery['type']=credentialsData.type;\n\nvar finalVendorParam={};\nfinalVendorParam['requestJobDescription']=vendorQuery;\n\ndone({\n'request_vendor_parameters':finalVendorParam\n});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 274479,
+            "createdDate": "2019-05-29T07:14:45Z",
+            "description": "Update a Expense Rules",
+            "path": "/hubs/payment/expense-rules/{id}",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 676334,
+                    "resourceId": 274479,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Expense Rule body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "expenseRulesPostReq",
+                    "vendorDataType": "expenseRulesPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 676333,
+                    "resourceId": 274479,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\"}",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input Expense Rule data to create",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 676332,
+                    "resourceId": 274479,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "id",
+                    "vendorName": "ruleID",
+                    "description": "The ruleId of a Policy",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "expenseRulesPatchRes",
+                "transform": false,
+                "swagger": {
+                    "expenseRulesPatchRes": {
+                        "properties": {
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 200
+                            },
+                            "responseMessage": {
+                                "type": "string",
+                                "x-samplevalue": "OK"
+                            }
+                        },
+                        "title": "expenseRulesPatchRes"
+                    }
+                },
+                "requestSwagger": {
+                    "expenseRulesPatchReqActions": {
+                        "properties": {
+                            "tag": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "actions",
+                        "type": "object"
+                    },
+                    "expenseRulesPatchReq": {
+                        "properties": {
+                            "actions": {
+                                "type": "expenseRulesPatchReqActions"
+                            },
+                            "employeeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "policyID": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "expenseRulesPatchReq"
+                    }
+                },
+                "requestName": "expenseRulesPatchReq"
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 34647,
+                    "resourceId": 274479,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var vendorQuery={};\nvar body=request_body_map;\n\nbody['type']='expenseRules';\nbody['ruleID']=request_path_variables.id;\nvar inputSettings={};\nvendorQuery['inputSettings']=body;\nvar credentialsData=JSON.parse(request_parameters.requestJobDescription);\nvendorQuery['credentials']=credentialsData.credentials;\nvendorQuery['type']=credentialsData.type;\n\nvar finalVendorParam={};\nfinalVendorParam['requestJobDescription']=vendorQuery;\n\ndone({\n'request_vendor_parameters':finalVendorParam\n});",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27319,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Create an expense",
+            "path": "/hubs/payment/expenses",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38960,
+                    "resourceId": 27319,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Expense object to create",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "expensesPostReq",
+                    "vendorDataType": "expensesPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38961,
+                    "resourceId": 27319,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"create\",     \"credentials\": \"{credentials}\",     \"inputSettings\": \"{body}\" }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "expensesPostRes",
+                "transform": false,
+                "swagger": {
+                    "expensesPostRes": {
+                        "properties": {
+                            "transactionList": {
+                                "items": {
+                                    "$ref": "expensesPostResTransactionList"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "expensesPostRes",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "expensesPostResTransactionList": {
+                        "properties": {
+                            "amount": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": "1234"
+                            },
+                            "category": {
+                                "type": "string",
+                                "x-samplevalue": "Uncategorized"
+                            },
+                            "comment": {
+                                "type": "string"
+                            },
+                            "created": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2016-01-21"
+                            },
+                            "currency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "mcc": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "merchant": {
+                                "type": "string",
+                                "x-samplevalue": "test merchant"
+                            },
+                            "receiptID": {
+                                "type": "string",
+                                "x-samplevalue": "54637648"
+                            },
+                            "reportID": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": "38405182"
+                            },
+                            "tag": {
+                                "type": "string"
+                            },
+                            "transactionID": {
+                                "type": "string",
+                                "x-samplevalue": "18070864444526489"
+                            }
+                        },
+                        "title": "expensesPostResTransactionList",
+                        "type": "object"
+                    }
+                },
+                "requestSwagger": {
+                    "expensesPostReqTransactionList": {
+                        "id": "expensesPostReqTransactionList",
+                        "properties": {
+                            "amount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "category": {
+                                "enum": [
+                                    "Entertainment",
+                                    "Fuel/Mileage",
+                                    "Lodging",
+                                    "Meals",
+                                    "Other",
+                                    "Phone",
+                                    "Transportation"
+                                ],
+                                "type": "string"
+                            },
+                            "comment": {
+                                "type": "string"
+                            },
+                            "created": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2016-01-21"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "merchant": {
+                                "type": "string"
+                            },
+                            "policyID": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "tag": {
+                                "type": "string"
+                            },
+                            "tax": {
+                                "type": "taxPostExpensesRequest"
+                            }
+                        },
+                        "required": [
+                            "amount",
+                            "created",
+                            "currency",
+                            "merchant"
+                        ],
+                        "title": "transactionList",
+                        "type": "object"
+                    },
+                    "expensesPostReq": {
+                        "properties": {
+                            "employeeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "you@sample.com"
+                            },
+                            "transactionList": {
+                                "items": {
+                                    "type": "expensesPostReqTransactionList"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "employeeEmail",
+                            "transactionList"
+                        ],
+                        "title": "expensesPostReq",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "taxPostExpensesRequest": {
+                        "id": "taxPostExpensesRequest",
+                        "properties": {
+                            "amount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "rateID": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "requestName": "expensesPostReq"
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 50795,
+            "createdDate": "2017-03-15T02:31:40Z",
+            "description": "List all policies",
+            "path": "/hubs/payment/policies",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 82982,
+                    "resourceId": 50795,
+                    "createdDate": "2017-03-15T02:31:40Z",
+                    "name": "{\"type\":\"get\",\"credentials\":\"{credentials}\",\"inputSettings\":{\"type\":\"policyList\",\"adminOnly\":true}}",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 82983,
+                    "resourceId": 50795,
+                    "createdDate": "2017-03-15T02:31:40Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 82984,
+                    "resourceId": 50795,
+                    "createdDate": "2017-03-15T02:31:40Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "policiesListGetRes",
+                "transform": false,
+                "swagger": {
+                    "policiesListGetResObject": {
+                        "properties": {
+                            "created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd HH:mm:ss",
+                                "x-samplevalue": "2018-06-01 06:59:21"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "0006056DF91B7E5B"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "test"
+                            },
+                            "outputCurrency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "owner": {
+                                "type": "string",
+                                "x-samplevalue": "developer@cloud-elements.com"
+                            },
+                            "role": {
+                                "type": "string",
+                                "x-samplevalue": "admin"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "team"
+                            }
+                        },
+                        "title": "policiesListGetRes",
+                        "type": "object"
+                    },
+                    "policiesListGetRes": {
+                        "items": {
+                            "type": "policiesListGetResObject"
+                        },
+                        "type": "array",
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|policyList",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27320,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": " Create a policy ",
+            "path": "/hubs/payment/policies",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38962,
+                    "resourceId": 27320,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Policy object to create",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesPostReq",
+                    "vendorDataType": "policiesPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38963,
+                    "resourceId": 27320,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"create\",     \"credentials\": \"{credentials}\",     \"inputSettings\": \"{body}\" }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesPostRes",
+                "transform": false,
+                "swagger": {
+                    "policiesPostRes": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "3E8AD36E03274CC9"
+                            },
+                            "policyName": {
+                                "type": "string",
+                                "x-samplevalue": "test"
+                            }
+                        },
+                        "title": "policiesPostRes",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "policyID"
+                        ]
+                    }
+                },
+                "requestSwagger": {
+                    "policiesPostReq": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "test"
+                            },
+                            "outputCurrency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "owner": {
+                                "type": "string",
+                                "x-samplevalue": "you@example.com",
+                                "x-sub-format": "email"
+                            },
+                            "policyName": {
+                                "type": "string",
+                                "x-samplevalue": "test"
+                            },
+                            "role": {
+                                "type": "string",
+                                "x-samplevalue": "admin"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "team"
+                            }
+                        },
+                        "required": [
+                            "policyName"
+                        ],
+                        "title": "policiesPostReq",
+                        "type": "object",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "policiesPostReq"
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 50796,
+            "createdDate": "2017-03-15T02:31:40Z",
+            "description": "Retrieve a policy  ",
+            "path": "/hubs/payment/policies/{id}",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 82985,
+                    "resourceId": 50796,
+                    "createdDate": "2017-03-15T02:31:40Z",
+                    "name": "{   \"type\": \"get\",   \"credentials\": \"{credentials}\",   \"inputSettings\": {     \"type\": \"policy\",     \"fields\": [       \"tax\", \"categories\", \"reportFields\", \"tags\"     ],     \"policyIDList\": [       \"{id}\"     ]   } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 82986,
+                    "resourceId": 50796,
+                    "createdDate": "2017-03-15T02:31:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The policy ID",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policyGetRes",
+                "transform": false,
+                "swagger": {
+                    "policyGetResTagsTags": {
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "glCode": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "tags"
+                    },
+                    "policyGetResCategories": {
+                        "properties": {
+                            "areCommentsRequired": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "commentHint": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "glCode": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "maxExpenseAmount": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "payrollCode": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "categories"
+                    },
+                    "policyGetResReportFields": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "string"
+                                ]
+                            }
+                        },
+                        "title": "reportFields"
+                    },
+                    "policyGetResTags": {
+                        "properties": {
+                            "externalID": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "tags": {
+                                "items": {
+                                    "type": "policyGetResTagsTags"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "tags"
+                    },
+                    "policyGetRes": {
+                        "properties": {
+                            "categories": {
+                                "items": {
+                                    "type": "policyGetResCategories"
+                                },
+                                "type": "array"
+                            },
+                            "reportFields": {
+                                "items": {
+                                    "type": "policyGetResReportFields"
+                                },
+                                "type": "array"
+                            },
+                            "tags": {
+                                "items": {
+                                    "type": "policyGetResTags"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "policyGetRes"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 6613,
+                    "resourceId": 50796,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var id = request_path.replace(\"/hubs/payment/policies/\", \"\");\nvar body = response_body['policyInfo'];\n\nif (body[id]) {\n\tbody = body[id];\n}\n\nreturn {\n\t\"response_body\": body\n};",
+                    "isLegacy": true
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 274478,
+            "createdDate": "2019-05-29T07:14:45Z",
+            "description": "Update a policy",
+            "path": "/hubs/payment/policies/{id}",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 676331,
+                    "resourceId": 274478,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "The Policy ID",
+                    "type": "path",
+                    "vendorType": "bodyToken",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 676330,
+                    "resourceId": 274478,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\"}",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input Policy data to update",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 676329,
+                    "resourceId": 274478,
+                    "createdDate": "2019-05-29T07:14:45Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "Policy Object to Update",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesPatchReq",
+                    "vendorDataType": "policiesPatchReq",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesPatchRes",
+                "transform": false,
+                "swagger": {
+                    "policiesPatchRes": {
+                        "properties": {
+                            "policyID": {
+                                "type": "string",
+                                "x-samplevalue": "ABC1234"
+                            }
+                        },
+                        "title": "policiesPatchRes",
+                        "x-primary-key": [
+                            "policyID"
+                        ]
+                    }
+                },
+                "requestSwagger": {
+                    "policiesPatchReqReportFields": {
+                        "properties": {
+                            "action": {
+                                "type": "string",
+                                "x-samplevalue": "merge"
+                            },
+                            "data": {
+                                "items": {
+                                    "type": "policiesPatchReqReportFieldsData"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "reportFields",
+                        "type": "object"
+                    },
+                    "policiesPatchReqCategoriesData": {
+                        "properties": {
+                            "areCommentsRequired": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "commentHint": {
+                                "type": "string",
+                                "x-samplevalue": "Comment hint 1"
+                            },
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "glCode": {
+                                "type": "string",
+                                "x-samplevalue": "GL Code 1"
+                            },
+                            "maxExpenseAmount": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2500
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Category 1"
+                            },
+                            "payrollCode": {
+                                "type": "string",
+                                "x-samplevalue": "Payroll Code 1"
+                            }
+                        },
+                        "title": "data"
+                    },
+                    "policiesPatchReqCategories": {
+                        "properties": {
+                            "action": {
+                                "type": "string",
+                                "x-samplevalue": "merge"
+                            },
+                            "data": {
+                                "items": {
+                                    "type": "policiesPatchReqCategoriesData"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "categories",
+                        "type": "object"
+                    },
+                    "policiesPatchReqTagsDataTags": {
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "glCode": {
+                                "type": "string",
+                                "x-samplevalue": "Tag 1 GL Code"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Tag 1"
+                            }
+                        },
+                        "title": "tags"
+                    },
+                    "policiesPatchReqReportFieldsData": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Report field 1"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "dropdown"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "value 1",
+                                    "value 2",
+                                    "value 3"
+                                ]
+                            }
+                        },
+                        "title": "data"
+                    },
+                    "policiesPatchReqTags": {
+                        "properties": {
+                            "data": {
+                                "items": {
+                                    "type": "policiesPatchReqTagsData"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "tags",
+                        "type": "object"
+                    },
+                    "policiesPatchReqTagsData": {
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Tag"
+                            },
+                            "tags": {
+                                "items": {
+                                    "type": "policiesPatchReqTagsDataTags"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "title": "data"
+                    },
+                    "policiesPatchReq": {
+                        "properties": {
+                            "categories": {
+                                "type": "policiesPatchReqCategories"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "test"
+                            },
+                            "outputCurrency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "owner": {
+                                "type": "string",
+                                "x-samplevalue": "developer@cloud-elements.com"
+                            },
+                            "reportFields": {
+                                "type": "policiesPatchReqReportFields"
+                            },
+                            "role": {
+                                "type": "string",
+                                "x-samplevalue": "admin"
+                            },
+                            "tags": {
+                                "type": "policiesPatchReqTags"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "team"
+                            }
+                        },
+                        "title": "policiesPatchReq"
+                    }
+                },
+                "requestName": "policiesPatchReq"
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 34646,
+                    "resourceId": 274478,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var body=request_body_map;\nvar credentialsData=JSON.parse(request_parameters.requestJobDescription);\nbody['credentials']=credentialsData.credentials;\nbody['type']=credentialsData.type;\nvar inputSettings={};\ninputSettings['type']='policy';\ninputSettings['policyID']=request_path_variables.id;\nbody['inputSettings']=inputSettings;\nbody['type']='update';\nvar finalVendorParam={};\nfinalVendorParam['requestJobDescription']=body;\n\ndone({\n'request_vendor_parameters':finalVendorParam\n});",
+                    "isLegacy": false
+                },
+                {
+                    "id": 34645,
+                    "resourceId": 274478,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if(response_status_code==200)\n{\n  var jsonResponseBody={};\n  jsonResponseBody['policyID']=request_path_variables.id;\n}\n\ndone({\n  'response_body':jsonResponseBody\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27321,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Add categories to policies",
+            "path": "/hubs/payment/policies/{id}/categories",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38964,
+                    "resourceId": 27321,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "categories",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "categoriesPatchReq",
+                    "vendorDataType": "categoriesPatchReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38965,
+                    "resourceId": 27321,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "Policy Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38966,
+                    "resourceId": 27321,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\": {         \"type\": \"policy\",         \"policyID\": \"{policyID}\"     },     \"categories\": {         \"action\": \"merge\",         \"data\": [\"{body}\"         ]     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "categoriesPatchRes",
+                "transform": false,
+                "swagger": {
+                    "categoriesPatchRes": {
+                        "title": "categoriesPatchRes"
+                    }
+                },
+                "requestSwagger": {
+                    "categoriesPatchReq": {
+                        "properties": {
+                            "areCommentsRequired": {
+                                "type": "boolean"
+                            },
+                            "commentHint": {
+                                "type": "string"
+                            },
+                            "enabled": {
+                                "type": "boolean"
+                            },
+                            "glCode": {
+                                "type": "string"
+                            },
+                            "maxExpenseAmount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "payrollCode": {
+                                "type": "string"
+                            }
+                        },
+                        "title": "categoriesPatchReq"
+                    }
+                },
+                "requestName": "categoriesPatchReq"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27322,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Update categories in policy",
+            "path": "/hubs/payment/policies/{id}/categories",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PUT",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38967,
+                    "resourceId": 27322,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "categories",
+                    "vendorName": "categories",
+                    "description": "categories",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesCategories",
+                    "vendorDataType": "policiesCategories",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38968,
+                    "resourceId": 27322,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "Policy Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38969,
+                    "resourceId": 27322,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\": {         \"type\": \"policy\",         \"policyID\": \"{policyID}\"     },     \"categories\": {         \"action\": \"replace\",         \"data\": [\"{body}\"         ]     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesCategories",
+                "transform": false,
+                "swagger": {
+                    "policiesCategories": {
+                        "id": "policiesCategories",
+                        "properties": {
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "policiesCategories": {
+                        "id": "policiesCategories",
+                        "properties": {
+                            "payrollCode": {
+                                "type": "string"
+                            },
+                            "glCode": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "areCommentsRequired": {
+                                "type": "boolean"
+                            },
+                            "maxExpenseAmount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "commentHint": {
+                                "type": "string"
+                            },
+                            "enabled": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                },
+                "requestName": "policiesCategories"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 230089,
+            "createdDate": "2019-01-26T15:26:05Z",
+            "description": "Update an employee",
+            "path": "/hubs/payment/policies/{id}/employees",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 565629,
+                    "resourceId": 230089,
+                    "createdDate": "2019-01-26T15:26:05Z",
+                    "name": "EmployeeEmail,ManagerEmail,Admin,ForwardManagerEmail,EmployeeUserId,EmployeePayrollId",
+                    "vendorName": "employeeHeaders",
+                    "description": "employeeHeaders",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 565628,
+                    "resourceId": 230089,
+                    "createdDate": "2019-01-26T15:26:05Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\": {         \"type\": \"employees\",         \"policyID\":\"{policyID}\",         \"fileType\": \"csv\"     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 565627,
+                    "resourceId": 230089,
+                    "createdDate": "2019-01-26T15:26:05Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "Policy Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 565626,
+                    "resourceId": 230089,
+                    "createdDate": "2019-01-26T15:26:05Z",
+                    "name": "employees",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesEmployeesUpdate",
+                    "vendorDataType": "policiesEmployeesUpdate",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesEmployeesUpdateResp",
+                "transform": false,
+                "swagger": {
+                    "policiesEmployeesUpdateResp": {
+                        "properties": {
+                            "nbEmployees": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 200
+                            }
+                        },
+                        "title": "policiesEmployeesUpdateResp"
+                    }
+                },
+                "requestSwagger": {
+                    "policiesEmployeesUpdate": {
+                        "properties": {
+                            "Admin": {
+                                "type": "string",
+                                "x-samplevalue": "true"
+                            },
+                            "EmployeeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "joker+1@gs.com"
+                            },
+                            "EmployeePayrollId": {
+                                "type": "string"
+                            },
+                            "EmployeeUserId": {
+                                "type": "string"
+                            },
+                            "ForwardManagerEmail": {
+                                "type": "string"
+                            },
+                            "ManagerEmail": {
+                                "type": "string",
+                                "x-samplevalue": "comlexluthor+1@gslab.com"
+                            }
+                        },
+                        "required": [
+                            "ManagerEmail",
+                            "EmployeeEmail",
+                            "Admin"
+                        ],
+                        "title": "policiesEmployeesUpdate",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "policiesEmployeesUpdate"
+            },
+            "type": "apiNoDocumentation",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27323,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Create an employee",
+            "path": "/hubs/payment/policies/{id}/employees",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38971,
+                    "resourceId": 27323,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "employees",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesEmployees",
+                    "vendorDataType": "policiesEmployees",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38970,
+                    "resourceId": 27323,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "EmployeeEmail,ManagerEmail,Admin,ForwardManagerEmail,EmployeeUserId,EmployeePayrollId",
+                    "vendorName": "employeeHeaders",
+                    "description": "employeeHeaders",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38972,
+                    "resourceId": 27323,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "Policy Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38973,
+                    "resourceId": 27323,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\": {         \"type\": \"employees\",         \"policyID\":\"{policyID}\",         \"fileType\": \"csv\"     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesEmployeesResp",
+                "transform": false,
+                "swagger": {
+                    "policiesEmployeesResp": {
+                        "properties": {
+                            "nbEmployees": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 2
+                            },
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 200
+                            }
+                        },
+                        "title": "policiesEmployeesResp"
+                    }
+                },
+                "requestSwagger": {
+                    "policiesEmployees": {
+                        "properties": {
+                            "Admin": {
+                                "type": "string",
+                                "x-samplevalue": "true"
+                            },
+                            "EmployeeEmail": {
+                                "type": "string",
+                                "x-samplevalue": "joker+1@gs.com"
+                            },
+                            "EmployeePayrollId": {
+                                "type": "string"
+                            },
+                            "EmployeeUserId": {
+                                "type": "string"
+                            },
+                            "ForwardManagerEmail": {
+                                "type": "string"
+                            },
+                            "ManagerEmail": {
+                                "type": "string",
+                                "x-samplevalue": "comlexluthor+1@gslab.com"
+                            }
+                        },
+                        "required": [
+                            "ManagerEmail",
+                            "EmployeeEmail",
+                            "Admin"
+                        ],
+                        "title": "policiesEmployees",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "policiesEmployees"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27324,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Add reportFields to policies",
+            "path": "/hubs/payment/policies/{id}/reportFields",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38975,
+                    "resourceId": 27324,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "reportFields",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesReportFields",
+                    "vendorDataType": "reportFields",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38974,
+                    "resourceId": 27324,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "Policy Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38976,
+                    "resourceId": 27324,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\": {         \"type\": \"policy\",         \"policyID\": \"{policyID}\"     },     \"reportFields\": {         \"action\": \"merge\",         \"data\": [\"{body}\"         ]     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesReportFields",
+                "transform": false,
+                "swagger": {
+                    "policiesReportFields": {
+                        "id": "policiesReportFields",
+                        "properties": {
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "policiesReportFields": {
+                        "id": "policiesReportFields",
+                        "properties": {
+                            "values": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "policiesReportFields"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27316,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Update reportFields in policy",
+            "path": "/hubs/payment/policies/{id}/reportFields",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PUT",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38950,
+                    "resourceId": 27316,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "reportFields",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesReportFields",
+                    "vendorDataType": "policiesReportFields",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38949,
+                    "resourceId": 27316,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "Policy Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38951,
+                    "resourceId": 27316,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\": {         \"type\": \"policy\",         \"policyID\": \"{policyID}\"     },     \"reportFields\": {         \"action\": \"replace\",         \"data\": [\"{body}\"         ]     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesReportFields",
+                "transform": false,
+                "swagger": {
+                    "policiesReportFields": {
+                        "id": "policiesReportFields",
+                        "properties": {
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "policiesReportFields": {
+                        "id": "policiesReportFields",
+                        "properties": {
+                            "values": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "policiesReportFields"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27317,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Create tags in policies",
+            "path": "/hubs/payment/policies/{id}/tags",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PUT",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38953,
+                    "resourceId": 27317,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "tags",
+                    "vendorName": "body",
+                    "description": "body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "policiesTags",
+                    "vendorDataType": "policiesTags",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38952,
+                    "resourceId": 27317,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "id",
+                    "vendorName": "policyID",
+                    "description": "Policy Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38954,
+                    "resourceId": 27317,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\": {         \"type\": \"policy\",         \"policyID\": \"{policyID}\"     },     \"tags\": {         \"action\": \"replace\",         \"data\": [\"{body}\"         ]     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "policiesTags",
+                "transform": false,
+                "swagger": {
+                    "policiesTags": {
+                        "id": "policiesTags",
+                        "properties": {
+                            "responseCode": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "policiesTags": {
+                        "id": "policiesTags",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "tags"
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "id": "tags",
+                        "properties": {
+                            "glCode": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestName": "policiesTags"
+            },
+            "type": "apiNoDocumentation",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27318,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Get Reports. In case of large number of reports, the operation might error out with response code 502 from Expensify.",
+            "path": "/hubs/payment/reports",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38958,
+                    "resourceId": 27318,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example reportIDList='42208866'. Possible search fields are reportIDList, policyIDList, startDate, endDate, markedAsExported, employeeEmail, reportState",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": true
+                },
+                {
+                    "id": 95888,
+                    "resourceId": 27318,
+                    "createdDate": "2017-03-27T22:32:03Z",
+                    "name": "[   <#list reports as report>   {   \"reportId\": ${report.reportID},   <#if report.managerUserID?has_content>   \"managerUserID\": ${report.managerUserID},         <#else>             \"managerUserID\": null,         </#if>                      <#if report.managerPayrollID?has_content>             \"managerPayrollID\": ${report.managerPayrollID},         <#else>             \"managerPayrollID\": null,         </#if>          <#if report.submitterPayrollID?has_content>             \"submitterPayrollID\": ${report.submitterPayrollID},         <#else>             \"submitterPayrollID\": null,         </#if>                      <#if report.submitterUserID?has_content>             \"submitterUserID\": ${report.submitterUserID},         <#else>             \"submitterUserID\": null,         </#if>          \"policyID\": \"${report.policyID?json_string}\",         \"accountID\": ${report.accountID},         \"reportName\": \"${report.reportName?json_string}\",         \"managerEmail\": \"${report.managerEmail?json_string}\",         \"policyName\": \"${report.policyName?json_string}\",         \"status\": \"${report.status?json_string}\",         \"total\": \"${report.total?json_string}\",         \"accountEmail\": \"${report.accountEmail?json_string}\",         \"currency\": \"${report.currency?json_string}\",         \"isACHReimbursed\": \"${report.isACHReimbursed?json_string}\",         \"approved\": \"${report.approved?json_string}\",                     \"created\": \"${report.created?json_string}\",         \"reimbursed\": \"${report.reimbursed?json_string}\",         \"submitted\": \"${report.submitted?json_string}\",         \"transactions\": [         <#list report.transactionList as expense>             {                 \"amount\": \"${expense.amount?json_string}\",                 \"bank\": \"${expense.bank?json_string}\",                 \"category\": \"${expense.category?json_string}\",                 \"categoryGlCode\": \"${expense.categoryGlCode?json_string}\",                 \"categoryPayrollCode\": \"${expense.categoryPayrollCode?json_string}\",                 \"comment\": \"${expense.comment?json_string}\",                 \"convertedAmount\": \"${expense.convertedAmount?json_string}\",                 \"created\": \"${expense.created?json_string}\",                 \"currency\": \"${expense.currency?json_string}\",                 \"currencyConversionRate\": \"${expense.currencyConversionRate?json_string}\",                 \"inserted\": \"${expense.inserted?json_string}\",                 \"mcc\": \"${expense.mcc?json_string}\",                 \"merchant\": \"${expense.merchant?json_string}\",                 \"modifiedAmount\": \"${expense.modifiedAmount?json_string}\",                 \"modifiedCreated\": \"${expense.modifiedCreated?json_string}\",                 \"modifiedMCC\": \"${expense.modifiedMCC?json_string}\",                 \"modifiedMerchant\": \"${expense.modifiedMerchant?json_string}\",                 \"ntagX\": \"${expense.ntagX?json_string}\",                 \"ntagXGlCode\": \"${expense.ntagXGlCode?json_string}\",                 \"receiptFilename\": \"${expense.receiptFilename?json_string}\",                 \"tag\": \"${expense.tag?json_string}\",                 \"tagGlCode\": \"${expense.tagGlCode?json_string}\",                 \"taxAmount\": \"${expense.taxAmount?json_string}\",                 \"taxName\": \"${expense.taxName?json_string}\",                 \"taxRate\": \"${expense.taxRate?json_string}\",                 \"taxRateName\": \"${expense.taxRateName?json_string}\",                 \"type\": \"${expense.type?json_string}\",                 \"transactionID\": ${expense.transactionID},                                 \"reportID\": ${expense.reportID},                 <#if expense.receiptID?has_content>                     \"receiptID\": ${expense.receiptID},                 <#else>                     \"receiptID\": null,                 </#if>                 \"billable\": \"${expense.billable?json_string}\",                 \"hasTax\": \"${expense.hasTax?string(\"true\",\"false\")}\",                 \"reimbursable\": \"${expense.reimbursable?string(\"true\", \"false\")}\",                 \"units\" : {                     \"count\": \"${expense.units.count?json_string}\",                     \"rate\": \"${expense.units.rate?json_string}\",                     \"unit\": \"${expense.units.unit?json_string}\"                 },                                 \"receiptObject\" : {                     \"smallThumbnail\": \"${expense.receiptObject.smallThumbnail?json_string}\",                     \"thumbnail\": \"${expense.receiptObject.thumbnail?json_string}\",                     \"transactionID\": \"${expense.receiptObject.transactionID?json_string}\",                     \"type\": \"${expense.receiptObject.type?json_string}\",                     \"url\": \"${expense.receiptObject.url?json_string}\"                 }             }<#sep>,</#sep>                     </#list>         ]     }   <#sep>,</#sep></#list> ]",
+                    "vendorName": "template",
+                    "description": "template",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38959,
+                    "resourceId": 27318,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{   \"type\": \"file\",   \"credentials\": \"{credentials}\",   \"onReceive\": {     \"immediateResponse\": [       \"returnRandomFileName\"     ]   },   \"inputSettings\": {     \"type\": \"combinedReportData\",     \"reportState\": \"{reportState}\",     \"filters\": {       \"startDate\": \"{startDate}\",       \"endDate\": \"{endDate}\",       \"markedAsExported\": \"{markedAsExported}\",       \"reportIDList\": \"{reportIDList}\",       \"policyIDList\": \"{policyIDList}\"     },     \"employeeEmail\": \"{employeeEmail}\"   },   \"outputSettings\": {     \"fileExtension\": \"txt\"   } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "object",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "reportsList",
+                "transform": false,
+                "swagger": {
+                    "transactionsGetAllReportsResponse": {
+                        "id": "transactionsGetAllReportsResponse",
+                        "properties": {
+                            "amount": {
+                                "type": "string",
+                                "x-samplevalue": "10"
+                            },
+                            "bank": {
+                                "type": "string"
+                            },
+                            "billable": {
+                                "type": "string"
+                            },
+                            "category": {
+                                "type": "string",
+                                "x-samplevalue": "Other"
+                            },
+                            "categoryGlCode": {
+                                "type": "string"
+                            },
+                            "categoryPayrollCode": {
+                                "type": "string"
+                            },
+                            "comment": {
+                                "type": "string"
+                            },
+                            "convertedAmount": {
+                                "type": "string",
+                                "x-samplevalue": "10"
+                            },
+                            "created": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2016-01-01"
+                            },
+                            "currency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "currencyConversionRate": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "hasTax": {
+                                "type": "string",
+                                "x-samplevalue": "false"
+                            },
+                            "inserted": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd hh:mm:ss",
+                                "x-samplevalue": "2016-01-01 11:21:40"
+                            },
+                            "mcc": {
+                                "type": "string",
+                                "x-samplevalue": "0"
+                            },
+                            "merchant": {
+                                "type": "string"
+                            },
+                            "modifiedAmount": {
+                                "type": "string"
+                            },
+                            "modifiedCreated": {
+                                "type": "string"
+                            },
+                            "modifiedMCC": {
+                                "type": "string"
+                            },
+                            "modifiedMerchant": {
+                                "type": "string"
+                            },
+                            "ntagX": {
+                                "type": "string"
+                            },
+                            "ntagXGlCode": {
+                                "type": "string"
+                            },
+                            "receiptFilename": {
+                                "type": "string"
+                            },
+                            "receiptID": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "receiptObject": {
+                                "type": "receiptObjectGetAllReportsResponse"
+                            },
+                            "reimbursable": {
+                                "type": "string",
+                                "x-samplevalue": "true"
+                            },
+                            "reportID": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": "39672477"
+                            },
+                            "tag": {
+                                "type": "string"
+                            },
+                            "tagGlCode": {
+                                "type": "string"
+                            },
+                            "taxAmount": {
+                                "type": "string"
+                            },
+                            "taxName": {
+                                "type": "string"
+                            },
+                            "taxRate": {
+                                "type": "string"
+                            },
+                            "taxRateName": {
+                                "type": "string"
+                            },
+                            "transactionID": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": "18070864444526490"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "expenses"
+                            },
+                            "units": {
+                                "type": "unitsGetAllReportsResponse"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "reportsList": {
+                        "id": "reportsList",
+                        "items": {
+                            "$ref": "reportsListObj"
+                        },
+                        "type": "array"
+                    },
+                    "unitsGetAllReportsResponse": {
+                        "id": "unitsGetAllReportsResponse",
+                        "properties": {
+                            "count": {
+                                "type": "string"
+                            },
+                            "rate": {
+                                "type": "string"
+                            },
+                            "unit": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "receiptObjectGetAllReportsResponse": {
+                        "id": "receiptObjectGetAllReportsResponse",
+                        "properties": {
+                            "smallThumbnail": {
+                                "type": "string"
+                            },
+                            "thumbnail": {
+                                "type": "string"
+                            },
+                            "transactionID": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "reportsListObj": {
+                        "id": "reportsListObj",
+                        "properties": {
+                            "accountEmail": {
+                                "type": "string",
+                                "x-samplevalue": "developer@xyz.com"
+                            },
+                            "accountID": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": "3402261"
+                            },
+                            "approved": {
+                                "type": "string"
+                            },
+                            "created": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd hh:mm:ss",
+                                "x-samplevalue": "2019-01-07 11:21:39"
+                            },
+                            "currency": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "isACHReimbursed": {
+                                "type": "string"
+                            },
+                            "managerEmail": {
+                                "type": "string"
+                            },
+                            "managerPayrollID": {
+                                "type": "string"
+                            },
+                            "managerUserID": {
+                                "type": "string"
+                            },
+                            "policyID": {
+                                "type": "string",
+                                "x-samplevalue": "A0B53D15EA01F101"
+                            },
+                            "policyName": {
+                                "type": "string",
+                                "x-samplevalue": "xyz policy"
+                            },
+                            "reimbursed": {
+                                "type": "string"
+                            },
+                            "reportId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": "39672477"
+                            },
+                            "reportName": {
+                                "type": "string",
+                                "x-samplevalue": "report name"
+                            },
+                            "status": {
+                                "type": "string",
+                                "x-samplevalue": "open"
+                            },
+                            "submitted": {
+                                "type": "string"
+                            },
+                            "submitterPayrollID": {
+                                "type": "string"
+                            },
+                            "submitterUserID": {
+                                "type": "string"
+                            },
+                            "total": {
+                                "type": "string"
+                            },
+                            "transactions": {
+                                "items": {
+                                    "$ref": "transactionsGetAllReportsResponse"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "reportId"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 34575,
+                    "resourceId": 27318,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "var respheaders=response_headers;\ndelete respheaders['Content-Type'];\n\ndone({\n  'response_headers':respheaders\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27325,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Create a report, with transactions, in a user’s account from your external system",
+            "path": "/hubs/payment/reports",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38977,
+                    "resourceId": 27325,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "reports",
+                    "vendorName": "body",
+                    "description": "Report object to create",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "reportsPostReq",
+                    "vendorDataType": "reportsPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38978,
+                    "resourceId": 27325,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\": \"create\",     \"credentials\": \"{credentials}\",     \"inputSettings\": \"{body}\" }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "reportsPostRes",
+                "transform": false,
+                "swagger": {
+                    "reportsPostRes": {
+                        "properties": {
+                            "reportID": {
+                                "type": "string",
+                                "x-samplevalue": "39548204"
+                            },
+                            "reportName": {
+                                "type": "string",
+                                "x-samplevalue": "test report"
+                            }
+                        },
+                        "title": "reportsPostRes",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "reportID"
+                        ]
+                    }
+                },
+                "requestSwagger": {
+                    "reportsPostReq": {
+                        "properties": {
+                            "employeeEmail": {
+                                "type": "string"
+                            },
+                            "expenses": {
+                                "items": {
+                                    "$ref": "expensesPostReportsRequest"
+                                },
+                                "type": "array"
+                            },
+                            "policyID": {
+                                "type": "string"
+                            },
+                            "report": {
+                                "type": "reportPostReportsRequest"
+                            }
+                        },
+                        "required": [
+                            "employeeEmail",
+                            "expenses",
+                            "policyID",
+                            "report"
+                        ],
+                        "title": "reportsPostReq",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "reportPostReportsRequest": {
+                        "id": "reportPostReportsRequest",
+                        "properties": {
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "expensesPostReportsRequest": {
+                        "id": "expensesPostReportsRequest",
+                        "properties": {
+                            "amount": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd",
+                                "x-samplevalue": "2016-01-21"
+                            },
+                            "merchant": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "requestName": "reportsPostReq"
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 27326,
+            "createdDate": "2016-06-20T23:43:27Z",
+            "description": "Change report status to reimbursed",
+            "path": "/hubs/payment/reports/{id}/status-reimbursed",
+            "vendorPath": "/ExpensifyIntegrations",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 38979,
+                    "resourceId": 27326,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "id",
+                    "vendorName": "reportIDList",
+                    "description": "Report Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 38980,
+                    "resourceId": 27326,
+                    "createdDate": "2016-06-20T23:43:27Z",
+                    "name": "{     \"type\":\"update\",     \"credentials\": \"{credentials}\",     \"inputSettings\":{         \"type\":\"reportStatus\",         \"status\" : \"REIMBURSED\",         \"filters\":{             \"reportIDList\":\"{reportIDList}\"         }     } }",
+                    "vendorName": "requestJobDescription",
+                    "description": "Input new policy",
+                    "type": "value",
+                    "vendorType": "query",
+                    "dataType": "object",
+                    "vendorDataType": "object",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "reportsStatusReimbursed",
+                "transform": false,
+                "swagger": {
+                    "skippedReports": {
+                        "id": "skippedReports",
+                        "properties": {
+                            "reason": {
+                                "type": "string"
+                            },
+                            "reportID": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "reportsStatusReimbursed": {
+                        "id": "reportsStatusReimbursed",
+                        "properties": {
+                            "reportIDs": {
+                                "items": {
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "type": "array"
+                            },
+                            "skippedReports": {
+                                "items": {
+                                    "$ref": "skippedReports"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [
+        {
+            "elementId": 7051,
+            "id": 6688,
+            "name": "expenseRules",
+            "ownerAccountId": 1,
+            "bulkUploadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false
+        },
+        {
+            "elementId": 7051,
+            "id": 6687,
+            "name": "policies",
+            "primaryKeyName": "id",
+            "ownerAccountId": 1,
+            "bulkDownloadEnabled": true,
+            "bulkUploadEnabled": true,
+            "hulkDownloadEnabled": false,
+            "hulkUploadEnabled": false,
+            "eventsEnabled": false,
+            "metadataDiscovery": false,
+            "nativeBulkUpload": false,
+            "nativeBulkDownload": false,
+            "migrated": false
+        }
+    ],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [
+        {
+            "id": 7132,
+            "elementId": 7051,
+            "mimeType": "application/javascript",
+            "type": "postRequest",
+            "body": "const variableExists = (variable) => (variable!==undefined && variable!==null);\nconst acceptableCodes = [400, 401, 403, 404, 405, 406, 409, 415, 500, 502];\n\nlet response = {};\n\nif(variableExists(response_body)){\n  \n  if(variableExists(response_body.responseCode)){\n    //Extract the code, if the response body contains the response code\n    if(response_body.responseCode>=200 && response_body.responseCode<300){\n      response.response_status_code=200;\n    } else if(response_body.responseCode>=300 && response_body.responseCode<400){\n      response.response_status_code=300;\n    } else if(response_body.responseCode>=400 && response_body.responseCode<500){\n      if(acceptableCodes.includes(response_body.responseCode))\n        response.response_status_code=response_body.responseCode;\n      else\n        response.response_status_code=400;\n    } else if(response_body.responseCode>=500){\n      if(acceptableCodes.includes(response_body.responseCode))\n        response.response_status_code=response_body.responseCode;\n      else\n        response.response_status_code=500;\n    } else {\n      response.response_status_code=response_body.responseCode;\n    }\n    delete response_body.responseCode;\n  }\n  \n  response.response_body = response_body;\n}\n\ndone(response);",
+            "isLegacy": false
+        }
+    ],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "payment",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

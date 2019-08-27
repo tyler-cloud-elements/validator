@@ -1,0 +1,4253 @@
+{
+    "id": 144,
+    "name": "Dynamics CRM On Premise",
+    "hookName": "DynamicsCRMOnPremise",
+    "key": "dynamicscrmonpremntlm",
+    "description": "Add a Microsoft Dynamics CRM Instance to connect your existing Microsoft Dynamics CRM account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements. You will need your Microsoft Dynamics CRM account information to add an instance.",
+    "image": "elements/provider_dynamicscrm.png",
+    "logo": "dynamicscrmonpremntlm",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "Microsoft Dynamics CRM On Prem IFD with NTLM Authentication",
+    "configuration": [
+        {
+            "id": 1270,
+            "name": "User Name",
+            "key": "user.username",
+            "description": "User Name",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1271,
+            "name": "User Password",
+            "key": "user.password",
+            "description": "User Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 59583,
+            "name": "Bulk Date Format",
+            "key": "bulk.query.date_mask",
+            "description": "The date format for use by the bulk APIs",
+            "defaultValue": "milliseconds",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254023,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 59580,
+            "name": "Bulk Query Modified Time Attribute",
+            "key": "bulk.attribute.modified_time",
+            "description": "The field or attribute for the last modified time for use by the bulk APIs",
+            "defaultValue": "attributes.modifiedon",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 59577,
+            "name": "Bulk Query Create Time Attribute",
+            "key": "bulk.attribute.created_time",
+            "description": "The field or attribute for the created time for use by the bulk APIs",
+            "defaultValue": "attributes.createdon",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1272,
+            "name": "Domain",
+            "key": "user.domain",
+            "description": "Domain",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1273,
+            "name": "Dynamics CRM URL to the ODATA service",
+            "key": "dynamics.onprem.url",
+            "description": "The full url of your OrganizationData.Svc",
+            "defaultValue": "http://<hostname>/XRMServices/2011/OrganizationData.svc/",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 1274,
+            "name": "Hosname of Windows machine",
+            "key": "dynamics.onprem.windows.host",
+            "description": "Windows Hostname",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52487,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159785,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256151,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256402,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1433,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "Dynamics CRM On Premise Beta Event Notifications Enabled",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1437,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "10",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1434,
+            "name": "Event Poller URLs",
+            "key": "event.poller.urls",
+            "description": "Dynamics CRM On Premise Beta Event Poller URLs",
+            "defaultValue": "accounts|/hubs/crm/accounts?where=ModifiedOn>'${gmtDate:yyyy-MM-dd'T'hh:mm:ss}'|Id\ncontacts|/hubs/crm/contacts?where=ModifiedOn>'${gmtDate:yyyy-MM-dd'T'hh:mm:ss}'|Id\nleads|/hubs/crm/leads?where=ModifiedOn>'${gmtDate:yyyy-MM-dd'T'hh:mm:ss}'|Id\nopportunities|/hubs/crm/opportunities?where=ModifiedOn>'${gmtDate:yyyy-MM-dd'T'hh:mm:ss}'|Id\nproducts|/hubs/crm/products?where=ModifiedOn>'${gmtDate:yyyy-MM-dd'T'hh:mm:ss}'|Id",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 304,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 1436,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Dynamics CRM On Premise Beta Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9718,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 1435,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Dynamics CRM On Premise Beta Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "defaultTransformations": [
+        {
+            "name": "accounts",
+            "vendorName": "Account"
+        },
+        {
+            "name": "contacts",
+            "vendorName": "Contact"
+        },
+        {
+            "name": "opportunities",
+            "vendorName": "Opportunity"
+        },
+        {
+            "name": "leads",
+            "vendorName": "Lead"
+        },
+        {
+            "name": "users",
+            "vendorName": "SystemUser"
+        },
+        {
+            "name": "tasks",
+            "vendorName": "Task"
+        },
+        {
+            "name": "notes",
+            "vendorName": "Annotation"
+        },
+        {
+            "name": "activities",
+            "vendorName": "ActivityPointer"
+        },
+        {
+            "name": "products",
+            "vendorName": "Product"
+        }
+    ],
+    "objectMetadata": {
+        "Account": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "OpenRevenue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TerritoryCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "LastUsedInCampaign",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone2"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImageId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OwnershipCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CustomerSizeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PrimaryContactId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CreditLimit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_County"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EntityImage_Timestamp"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone3"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OpenRevenue_Date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotBulkPostalMail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_FreightTermsCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging90"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotPostalMail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ShippingMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_AddressId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredContactMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_City"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostOfficeBox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging90_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Merged"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredAppointmentDayCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PaymentTermsCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_County"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging30"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotBulkEMail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OriginatingLeadId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "WebSiteURL"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Revenue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_ShippingMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TickerSymbol"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SIC"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "MarketCap"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentAccountId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_AddressId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CreditLimit_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PreferredSystemUserId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DefaultPriceLevelId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OpenRevenue_State"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PrimaryContactName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "AccountCategoryCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotFax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostOfficeBox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_UPSZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PreferredServiceId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_UPSZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotEMail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging60"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CustomerTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OpenDeals_State"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotSendMM"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Fax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "NumberOfEmployees"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OpenDeals_Date",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_FreightTermsCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "AccountRatingCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParticipatesInWorkflow"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Revenue_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreditOnHold"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone1"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_AddressTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_StateOrProvince"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_ShippingMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line2"
+                },
+                {
+                    "type": "Edm.Binary",
+                    "vendorPath": "EntityImage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AccountNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TerritoryId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FtpSiteURL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotPhone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "AccountClassificationCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PreferredEquipmentId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImage_URL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_AddressTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Fax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BusinessTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging60_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StockExchange"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "MarketCap_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AccountId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging30_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OpenRevenue_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "SharesOutstanding"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PrimaryContactName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Latitude"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MasterId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OpenDeals"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_StateOrProvince"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredAppointmentTimeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "IndustryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone3"
+                }
+            ]
+        },
+        "Task": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RegardingObjectId"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ActualDurationMinutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Category"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ScheduledDurationMinutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SubscriptionId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsRegularActivity"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduledEnd",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PriorityCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ActualEnd",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ActivityId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PercentComplete"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ActivityTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsBilled"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subcategory"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ActualStart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CrmTaskAssignedUniqueId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsWorkflowCreated"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduledStart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ServiceId"
+                }
+            ]
+        },
+        "ActivityPointer": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RegardingObjectId"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduledStart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsBilled"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SenderMailboxId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ScheduledDurationMinutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduledEnd",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "PostponeActivityProcessingUntil",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "DeliveryPriorityCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsMapiPrivate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ActualEnd",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ActualDurationMinutes"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ServiceId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SeriesId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ActivityId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LeftVoiceMail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsWorkflowCreated"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "SentOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Community"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PriorityCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ActivityTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ActualStart",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "InstanceTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subject"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "DeliveryLastAttemptedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsRegularActivity"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                }
+            ]
+        },
+        "Opportunity": {
+            "fields": [
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduleFollowup_Prospect",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalTax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IdentifyCustomerContacts"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ActualValue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CompleteFinalProposal"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentAccountId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PresentProposal"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ResolveFeedback"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "FreightAmount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IdentifyPursuitTeam"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalAmountLessFreight"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CaptureProposalFeedback"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "FreightAmount_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "SalesStage"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ActualCloseDate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PresentFinalProposal"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ActualValue_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalLineItemAmount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DevelopProposal"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StepName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalTax_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "QuoteComments"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalLineItemDiscountAmount_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "SalesStageCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "DiscountAmount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OpportunityRatingCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PriceLevelId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BudgetAmount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalLineItemDiscountAmount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CloseProbability"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BudgetStatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalDiscountAmount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalAmountLessFreight_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EstimatedValue_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "EstimatedCloseDate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Need"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParticipatesInWorkflow"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalDiscountAmount_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalLineItemAmount_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ContactId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OriginatingLeadId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PurchaseProcess"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StepId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PricingErrorCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "DiscountPercentage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProposedSolution"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduleFollowup_Qualify",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerNeed"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CompleteInternalReview"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AccountId"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "FinalDecisionDate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DecisionMaker"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PursuitDecision"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EstimatedValue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PriorityCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CampaignId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ConfirmInterest"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalAmount"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentContactId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "DiscountAmount_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PurchaseTimeframe"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BudgetAmount_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsRevenueSystemCalculated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TotalAmount_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "QualificationComments"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EvaluateFit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CurrentSituation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IdentifyCompetitors"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SendThankYouNote"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OpportunityId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerPainPoints"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FileDebrief"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduleProposalMeeting",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "InitialCommunication"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeLine"
+                }
+            ]
+        },
+        "Lead": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_County"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostOfficeBox"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_City"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BudgetAmount_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EstimatedValue"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "LastUsedInCampaign",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BudgetStatus"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_AddressTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotBulkEMail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "EstimatedCloseDate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_AddressTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "LeadSourceCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "SalesStage"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "InitialCommunication"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EstimatedAmount_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BudgetAmount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "IndustryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MiddleName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MobilePhone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParticipatesInWorkflow"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiLastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AccountId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SIC"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Composite"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Need"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_UPSZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentContactId"
+                },
+                {
+                    "type": "Edm.Binary",
+                    "vendorPath": "EntityImage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiFirstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_StateOrProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PurchaseProcess"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostOfficeBox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImage_URL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotFax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_County"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OriginatingCaseId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ContactId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Salutation"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "NumberOfEmployees"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CompanyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FullName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "QualifyingOpportunityId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FirstName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Latitude"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduleFollowUp_Qualify",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DecisionMaker"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MasterId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_ShippingMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PurchaseTimeFrame"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredContactMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_UPSZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "WebSiteUrl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostalCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_ShippingMethodCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ScheduleFollowUp_Prospect",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "LeadQualityCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_AddressId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Pager"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotSendMM"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PriorityCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_AddressId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EntityImage_Timestamp"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CampaignId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotEMail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiMiddleName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "SalesStageCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LeadId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RelatedObjectId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "QualificationComments"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Revenue"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Merged"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotPhone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_StateOrProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EvaluateFit"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EstimatedAmount"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiFullName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotPostalMail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiCompanyName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentAccountId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "JobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ConfirmInterest"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Revenue_Base"
+                }
+            ]
+        },
+        "Product": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ProductStructure"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProductNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SubjectId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "VendorName"
+                },
+                {
+                    "type": "Edm.Binary",
+                    "vendorPath": "EntityImage"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "QuantityOnHand"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ValidToDate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ValidFromDate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "VendorPartNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "HierarchyPath"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProductId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "VendorID"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "QuantityDecimal"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ProductTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EntityImage_Timestamp"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProductUrl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CurrentCost"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Price"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentProductId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsStockItem"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StockWeight"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SupplierName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Price_Base"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CurrentCost_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DefaultUoMId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OrganizationId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImage_URL"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StandardCost"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "DMTImportState"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsKit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StockVolume"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Size"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PriceLevelId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DefaultUoMScheduleId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StandardCost_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                }
+            ]
+        },
+        "SystemUser": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "QueueId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredAddressCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "NickName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsEmailAddressApprovedByO365Admin"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_StateOrProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_County"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostOfficeBox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredPhoneCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YammerUserId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Title"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SetupUser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FirstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EmployeeId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TerritoryId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "JobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Skills"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "InternalEMailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsIntegrationUser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostalCode"
+                },
+                {
+                    "type": "Edm.Binary",
+                    "vendorPath": "EntityImage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_AddressId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "WindowsLiveID"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DisabledReason"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PersonalEMailAddress"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UserLicenseType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "BusinessUnitId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OrganizationId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiFirstName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_ShippingMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiMiddleName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DefaultFiltersPopulated"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SystemUserId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Country"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CALType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiLastName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MobilePhone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Composite"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "AccessMode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EntityImage_Timestamp"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiFullName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PhotoUrl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SiteId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsDisabled"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DomainName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PassportLo"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EmailRouterAccessApproval"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentSystemUserId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FullName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Salutation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YammerEmailAddress"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MiddleName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImageId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_AddressTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_County"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_UPSZone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PositionId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_ShippingMethodCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PassportHi"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "InviteStatusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImage_URL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsLicensed"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "GovernmentId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsSyncWithDirectory"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "HomePhone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredEmailCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Name"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_UPSZone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_AddressId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OutgoingEmailDeliveryMethod"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MobileAlertEMail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CalendarId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_AddressTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Fax"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostOfficeBox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "IncomingEmailDeliveryMethod"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DefaultMailbox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_StateOrProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DisplayInServiceViews"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                }
+            ]
+        },
+        "Incident": {
+            "fields": [
+                {
+                    "type": "number",
+                    "vendorPath": "SentimentValue"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "OnHoldTime"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "IncidentStageCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CaseTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Title"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "NumberOfChildIncidents"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SLAInvokedId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FollowUpTaskCreated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "FirstResponseSLAStatus"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ContactId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "MessageTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EntityImage_Timestamp"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Merged"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerContacted"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ResolveByKPIId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ExistingCase"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CustomerSatisfactionCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ResponsibleContactId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FirstResponseByKPIId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PrimaryContactId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "KbArticleId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SubjectId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsDecrementing"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "Edm.Binary",
+                    "vendorPath": "EntityImage"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "FollowupBy",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AccountId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ActualServiceUnits"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "EscalatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CheckEmail"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ResolveBy",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MasterId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IncidentId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntitlementId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ServiceStage"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "RouteCase"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "InfluenceScore"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ResponseBy",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProductId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CaseOriginCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FirstResponseSent"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProductSerialNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ContractId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ContractServiceLevelCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsEscalated"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "SeverityCode"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "LastOnHoldTime",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TicketNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ContractDetailId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentCaseId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "BlockedProfile"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "BilledServiceUnits"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SocialProfileId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ActivitiesComplete"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ResolveBySLAStatus"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CustomerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImage_URL"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PriorityCode"
+                }
+            ]
+        },
+        "Annotation": {
+            "fields": [
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "FileSize"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ObjectTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MimeType"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DocumentBody"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FileName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "NoteText"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StepId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AnnotationId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LangId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsDocument"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ObjectId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Subject"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                }
+            ]
+        },
+        "Contact": {
+            "fields": [
+                {
+                    "type": "string",
+                    "vendorPath": "SpousesName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EntityImage_Timestamp"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_ShippingMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PreferredServiceId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address3_ShippingMethodCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "VersionNumber"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "AnnualIncome"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "StageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredAppointmentDayCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line1"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "LastUsedInCampaign",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address3_FreightTermsCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Pager"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EmployeeId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TerritoryCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentCustomerId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ManagerName"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "BirthDate",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "NumberOfChildren"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Home2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningUser"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AssistantPhone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MasterId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreatedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "SubscriptionId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Company"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MobilePhone"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CustomerTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address3_AddressTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_FreightTermsCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_Longitude"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_AddressTypeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StatusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiFullName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging90_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AccountId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_PostalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_UPSZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_PrimaryContactName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "FamilyStatusCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_AddressId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FirstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Department"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OriginatingLeadId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging60"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TraversedPath"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "StateCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_FreightTermsCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiMiddleName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Description"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address3_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParticipatesInWorkflow"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningTeam"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone1"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "GenderCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwnerId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_AddressTypeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Composite"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_UTCOffset"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "WebSiteUrl"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging60_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_County"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "OwningBusinessUnit"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "JobTitle"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImageId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ProcessId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "TimeZoneRuleVersionNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PostOfficeBox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Line2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotPostalMail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_UTCOffset"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ExchangeRate"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "CreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ImportSequenceNumber"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ManagerPhone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_AddressId"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "OverriddenCreatedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ChildrensNames"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredContactMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiLastName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging90"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotBulkPostalMail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EMailAddress1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotBulkEMail"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CustomerSizeCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FullName"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PreferredAppointmentTimeCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address3_Latitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "TransactionCurrencyId"
+                },
+                {
+                    "type": "Edm.Binary",
+                    "vendorPath": "EntityImage"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "PaymentTermsCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Name"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging30"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "LeadSourceCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Merged"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address1_ShippingMethodCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "FtpSiteUrl"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PreferredSystemUserId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_AddressId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_StateOrProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "NickName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostOfficeBox"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "PreferredEquipmentId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "AssistantName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Country"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "ModifiedOn",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ExternalUserIdentifier"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Name"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "CreditOnHold"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address3_Longitude"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "AccountRoleCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotPhone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_UPSZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_County"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ContactId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotFax"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Aging30_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ModifiedOnBehalfBy"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Salutation"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Suffix"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PrimaryContactName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Business2"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "UTCConversionTimeZoneCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "GovernmentId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_PrimaryContactName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_StateOrProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotSendMM"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "AnnualIncome_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Country"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "LastName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_City"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DoNotEMail"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_PostOfficeBox"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "Address2_Longitude"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_StateOrProvince"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "YomiFirstName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line1"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Composite"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_County"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "ShippingMethodCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CreditLimit"
+                },
+                {
+                    "type": "date",
+                    "vendorPath": "Anniversary",
+                    "mask": "milliseconds"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Telephone2"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "ParentContactId"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "EducationCode"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "HasChildrenCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "IsBackofficeCustomer"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Fax"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "EntityImage_URL"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_Line3"
+                },
+                {
+                    "type": "number",
+                    "vendorPath": "CreditLimit_Base"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address2_UPSZone"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "DefaultPriceLevelId"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "MiddleName"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address1_PostalCode"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Address3_Line3"
+                },
+                {
+                    "type": "string",
+                    "vendorPath": "Callback"
+                }
+            ]
+        }
+    },
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": false,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": false,
+    "hub": "crm",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

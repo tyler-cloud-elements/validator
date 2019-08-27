@@ -1,0 +1,1364 @@
+{
+    "id": 520,
+    "name": "ReadyTalk",
+    "hookName": "ReadyTalk",
+    "key": "readytalk",
+    "description": "Add a ReadyTalk Instance to connect your existing ReadyTalk account to the Marketing Hub.",
+    "image": "elements/provider_readytalk.png",
+    "logo": "readytalk",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 5198,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Pagination Type",
+            "defaultValue": "offset",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254120,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 5199,
+            "name": "Pagination Max",
+            "key": "pagination.max",
+            "description": "Pagination Max",
+            "defaultValue": "200",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 5197,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "Base URL",
+            "defaultValue": "https://cc.readytalk.com/api/1.3/svc/rs",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 5201,
+            "name": "Username",
+            "key": "username",
+            "description": "Your ReadyTalk Basic Auth Username, in the form of <Dial In Number>:<Access Code>",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 5200,
+            "name": "Password",
+            "key": "password",
+            "description": "Your ReadyTalk Pass Code",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52484,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159938,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256258,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256509,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5202,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "ReadyTalk Beta Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 5203,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "ReadyTalk Beta Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9737,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 5204,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "ReadyTalk Beta Vendor Event Type",
+            "defaultValue": "webhook",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 5280,
+            "createdDate": "2015-11-25T18:10:29Z",
+            "description": "Basic Auth Validation",
+            "path": "/auth_validation",
+            "vendorPath": "/meetings",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "provisionAuthValidation",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3059,
+            "createdDate": "2015-08-31T23:12:10Z",
+            "description": "Search for meetings",
+            "path": "/hubs/marketing/meetings",
+            "vendorPath": "/meetings",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3036,
+                    "resourceId": 3059,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "page",
+                    "vendorName": "pagingCriteria.firstResultIndex",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3037,
+                    "resourceId": 3059,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "pageSize",
+                    "vendorName": "pagingCriteria.resultCount",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000. Minimum of 5",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3038,
+                    "resourceId": 3059,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. The supported fields are 'fromDate', 'toDate', 'fromModifiedDate' and 'toModifiedDate'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "meetingsList",
+                "transform": false,
+                "swagger": {
+                    "meetingsListObject": {
+                        "id": "meetingsListObject",
+                        "properties": {
+                            "hostName": {
+                                "type": "string"
+                            },
+                            "durationInSeconds": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "timeZone": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "encodedId": {
+                                "type": "string"
+                            },
+                            "startDate": {
+                                "type": "string"
+                            },
+                            "fromEmail": {
+                                "type": "string"
+                            },
+                            "startDateIso8601": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "meetingsList": {
+                        "id": "meetingsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "meetingsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "listMeetingsResult.meeting",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3060,
+            "createdDate": "2015-08-31T23:12:10Z",
+            "description": "Retrieve a meeting",
+            "path": "/hubs/marketing/meetings/{meetingId}",
+            "vendorPath": "/meetings/{meetingId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3039,
+                    "resourceId": 3060,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "meetingId",
+                    "vendorName": "meetingId",
+                    "description": "The meeting ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "meetings",
+                "transform": false,
+                "swagger": {
+                    "presenter": {
+                        "id": "presenter",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "biography": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "audioDetails": {
+                        "id": "audioDetails",
+                        "properties": {
+                            "accessCode": {
+                                "type": "string"
+                            },
+                            "dialInNumber": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "dialInNumber"
+                                }
+                            }
+                        }
+                    },
+                    "campaign": {
+                        "id": "campaign",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "encodedId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "meetings": {
+                        "id": "meetings",
+                        "properties": {
+                            "hostName": {
+                                "type": "string"
+                            },
+                            "durationInSeconds": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "timeZone": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "encodedId": {
+                                "type": "string"
+                            },
+                            "startDate": {
+                                "type": "string"
+                            },
+                            "meetingDetails": {
+                                "type": "meetingDetails"
+                            },
+                            "fromEmail": {
+                                "type": "string"
+                            },
+                            "startDateIso8601": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "dialInNumber": {
+                        "id": "dialInNumber",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "participantUrl": {
+                        "id": "participantUrl",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "meetingDetails": {
+                        "id": "meetingDetails",
+                        "properties": {
+                            "presenter": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "presenter"
+                                }
+                            },
+                            "audioDetails": {
+                                "type": "audioDetails"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "meetingDetailsPageLink": {
+                                "type": "string"
+                            },
+                            "campaign": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "campaign"
+                                }
+                            },
+                            "participantUrl": {
+                                "type": "participantUrl"
+                            },
+                            "meetingType": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "meetingDetailsResult.meeting",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3062,
+            "createdDate": "2015-08-31T23:12:10Z",
+            "description": "List chats for a meeting",
+            "path": "/hubs/marketing/meetings/{meetingId}/chats",
+            "vendorPath": "/chats",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3044,
+                    "resourceId": 3062,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "meetingId",
+                    "vendorName": "id",
+                    "description": "The meeting ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "meetingsChatsList",
+                "transform": false,
+                "swagger": {
+                    "sender": {
+                        "id": "sender",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "registrationId": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "attendanceId": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "senderRole": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "meetingsChatsListObject": {
+                        "id": "meetingsChatsListObject",
+                        "properties": {
+                            "chatDateIso8601": {
+                                "type": "string"
+                            },
+                            "conferenceId": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "sender": {
+                                "type": "sender"
+                            },
+                            "recipient": {
+                                "type": "recipient"
+                            },
+                            "message": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "recipient": {
+                        "id": "recipient",
+                        "properties": {
+                            "recipientType": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "registrationId": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "attendanceId": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "meetingsChatsList": {
+                        "id": "meetingsChatsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "meetingsChatsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "listChatsResult.chat",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3061,
+            "createdDate": "2015-08-31T23:12:10Z",
+            "description": "Search for registrations for a meeting",
+            "path": "/hubs/marketing/meetings/{meetingId}/registrations",
+            "vendorPath": "/registrations",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3040,
+                    "resourceId": 3061,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "meetingId",
+                    "vendorName": "meetingId",
+                    "description": "The meeting ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3041,
+                    "resourceId": 3061,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "page",
+                    "vendorName": "pagingCriteria.firstResultIndex",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3042,
+                    "resourceId": 3061,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "pageSize",
+                    "vendorName": "pagingCriteria.resultCount",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000. Minimum of 5",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3043,
+                    "resourceId": 3061,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. The supported fields are 'fromDate'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "meetingsRegistrationsList",
+                "transform": false,
+                "swagger": {
+                    "registrationAnswer": {
+                        "id": "registrationAnswer",
+                        "properties": {
+                            "question": {
+                                "type": "question"
+                            },
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "response"
+                                }
+                            }
+                        }
+                    },
+                    "question": {
+                        "id": "question",
+                        "properties": {
+                            "questionId": {
+                                "type": "string"
+                            },
+                            "questionText": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "response": {
+                        "id": "response",
+                        "properties": {
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "meetingsRegistrationsList": {
+                        "id": "meetingsRegistrationsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "meetingsRegistrationsListObject"
+                        }
+                    },
+                    "meetingsRegistrationsListObject": {
+                        "id": "meetingsRegistrationsListObject",
+                        "properties": {
+                            "attended": {
+                                "type": "boolean"
+                            },
+                            "lastName": {
+                                "type": "string"
+                            },
+                            "surveyId": {
+                                "type": "string"
+                            },
+                            "icsUrl": {
+                                "type": "string"
+                            },
+                            "campaignId": {
+                                "type": "string"
+                            },
+                            "joinMeetingUrl": {
+                                "type": "string"
+                            },
+                            "encodedId": {
+                                "type": "string"
+                            },
+                            "googleCalendarUrl": {
+                                "type": "string"
+                            },
+                            "firstName": {
+                                "type": "string"
+                            },
+                            "registrationAnswer": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "registrationAnswer"
+                                }
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "listRegistrationsResult.registration",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3063,
+            "createdDate": "2015-08-31T23:12:10Z",
+            "description": "List surveys for a meeting",
+            "path": "/hubs/marketing/meetings/{meetingId}/surveys",
+            "vendorPath": "/registrations/surveys",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3045,
+                    "resourceId": 3063,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "meetingId",
+                    "vendorName": "meetingId",
+                    "description": "The meeting ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3046,
+                    "resourceId": 3063,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "page",
+                    "vendorName": "pagingCriteria.firstResultIndex",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3047,
+                    "resourceId": 3063,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "pageSize",
+                    "vendorName": "pagingCriteria.resultCount",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000. Minimum of 5",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "meetingsSurveysList",
+                "transform": false,
+                "swagger": {
+                    "answer": {
+                        "id": "answer",
+                        "properties": {
+                            "question": {
+                                "type": "question"
+                            },
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "response"
+                                }
+                            }
+                        }
+                    },
+                    "question": {
+                        "id": "question",
+                        "properties": {
+                            "questionId": {
+                                "type": "string"
+                            },
+                            "questionText": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "meetingsSurveysList": {
+                        "id": "meetingsSurveysList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "meetingsSurveysListObject"
+                        }
+                    },
+                    "response": {
+                        "id": "response",
+                        "properties": {
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "meetingsSurveysListObject": {
+                        "id": "meetingsSurveysListObject",
+                        "properties": {
+                            "registrationId": {
+                                "type": "string"
+                            },
+                            "surveyAttendance": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "surveyAttendance"
+                                }
+                            }
+                        }
+                    },
+                    "surveyAttendance": {
+                        "id": "surveyAttendance",
+                        "properties": {
+                            "entryTime": {
+                                "type": "string"
+                            },
+                            "exitTime": {
+                                "type": "string"
+                            },
+                            "answer": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "answer"
+                                }
+                            },
+                            "conferenceId": {
+                                "type": "string"
+                            },
+                            "durationInMinutes": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "listPostEventSurveysResult.survey",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3064,
+            "createdDate": "2015-08-31T23:12:10Z",
+            "description": "Search for recordings",
+            "path": "/hubs/marketing/recordings",
+            "vendorPath": "/recordings",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3048,
+                    "resourceId": 3064,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "page",
+                    "vendorName": "pagingCriteria.firstResultIndex",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3049,
+                    "resourceId": 3064,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "pageSize",
+                    "vendorName": "pagingCriteria.resultCount",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000. Minimum of 5",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 3050,
+                    "resourceId": 3064,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. The supported fields are 'fromDate' and 'toDate'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "recordingsList",
+                "transform": false,
+                "swagger": {
+                    "recordingsListObject": {
+                        "id": "recordingsListObject",
+                        "properties": {
+                            "registrationEnabled": {
+                                "type": "boolean"
+                            },
+                            "endDateIso8601": {
+                                "type": "string"
+                            },
+                            "originalDurationInSeconds": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "playbackUrl": {
+                                "type": "string"
+                            },
+                            "passcodeEnabled": {
+                                "type": "boolean"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "playbackNotificationEnabled": {
+                                "type": "boolean"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "startDateIso8601": {
+                                "type": "string"
+                            },
+                            "playbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "recordingsList": {
+                        "id": "recordingsList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "recordingsListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "listRecordingsResult.recording",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3065,
+            "createdDate": "2015-08-31T23:12:10Z",
+            "description": "Retrieve a recording",
+            "path": "/hubs/marketing/recordings/{recordingId}",
+            "vendorPath": "/recordings/{recordingId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3051,
+                    "resourceId": 3065,
+                    "createdDate": "2015-08-31T23:12:10Z",
+                    "name": "recordingId",
+                    "vendorName": "recordingId",
+                    "description": "The recording ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "recordings",
+                "transform": false,
+                "swagger": {
+                    "recordings": {
+                        "id": "recordings",
+                        "properties": {
+                            "registrationEnabled": {
+                                "type": "boolean"
+                            },
+                            "endDateIso8601": {
+                                "type": "string"
+                            },
+                            "originalDurationInSeconds": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "playbackUrl": {
+                                "type": "string"
+                            },
+                            "passcodeEnabled": {
+                                "type": "boolean"
+                            },
+                            "id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "playbackNotificationEnabled": {
+                                "type": "boolean"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "startDateIso8601": {
+                                "type": "string"
+                            },
+                            "playbackCount": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "recordingDetailsResult.recording",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 127970,
+            "createdDate": "2018-01-19T00:09:48Z",
+            "description": "Returns a summary of registrations on recording",
+            "path": "/hubs/marketing/recordings/{recordingId}/registrations",
+            "vendorPath": "/recording/registrations",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 285752,
+                    "resourceId": 127970,
+                    "createdDate": "2018-01-19T00:09:48Z",
+                    "name": "recordingId",
+                    "vendorName": "recordingId",
+                    "description": "The recording ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 285751,
+                    "resourceId": 127970,
+                    "createdDate": "2018-01-19T00:09:48Z",
+                    "name": "page",
+                    "vendorName": "pagingCriteria.firstResultIndex",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 285750,
+                    "resourceId": 127970,
+                    "createdDate": "2018-01-19T00:09:48Z",
+                    "name": "pageSize",
+                    "vendorName": "pagingCriteria.resultCount",
+                    "description": "The page size. Defaults to 200 if not provided. Maximum of 5000. Minimum of 5",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "recordingsRegistrationsList",
+                "transform": false,
+                "swagger": {
+                    "answer": {
+                        "description": "The answer datatype.",
+                        "id": "answer",
+                        "properties": {
+                            "question": {
+                                "description": "The question datatype.",
+                                "type": "question"
+                            },
+                            "response": {
+                                "description": "The response datatype.",
+                                "items": {
+                                    "$ref": "response"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "question": {
+                        "id": "question",
+                        "properties": {
+                            "questionId": {
+                                "description": "The id of the question.",
+                                "type": "string"
+                            },
+                            "questionText": {
+                                "description": "The text of the question to be asked.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "recordingsRegistrationsListObject": {
+                        "description": "The listRegistrations service returns a summary of registrations on recordings.",
+                        "id": "recordingsRegistrationsListObject",
+                        "properties": {
+                            "answer": {
+                                "description": "The answer datatype.",
+                                "items": {
+                                    "$ref": "answer"
+                                },
+                                "type": "array"
+                            },
+                            "encodedId": {
+                                "description": "The base36 encoded form of the registration id.",
+                                "type": "string"
+                            },
+                            "externalId": {
+                                "description": "The id provided by the user of the API for this recording registration.",
+                                "type": "string"
+                            },
+                            "id": {
+                                "description": "The unique id of the playback registration.",
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "lastUpdatedDate": {
+                                "description": "The date and time of the last update to this recording.",
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "type": "string",
+                                "x-sub-format": "Date Time - ISO 8601 +Offset"
+                            },
+                            "playback": {
+                                "description": "The playback datatype.",
+                                "items": {
+                                    "$ref": "playback"
+                                },
+                                "type": "array"
+                            },
+                            "playbackUrl": {
+                                "description": "The url of the playback.",
+                                "type": "string",
+                                "x-sub-format": "URL"
+                            }
+                        },
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-searchable": false,
+                        "x-vendor-name": "List Recording Registrations"
+                    },
+                    "response": {
+                        "id": "response",
+                        "properties": {
+                            "value": {
+                                "description": "The value of the response given to the question asked.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "playback": {
+                        "id": "playback",
+                        "properties": {
+                            "id": {
+                                "description": "The id of the playback for that registrant.",
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "playbackDate": {
+                                "description": "The date and time the playback registrant viewed the recording.",
+                                "format": "date-time",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "type": "string",
+                                "x-sub-format": "Date Time - ISO 8601 +Offset"
+                            },
+                            "playbackDuration": {
+                                "description": "The amount of time playback registrant spent viewing the recording, in milliseconds.",
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "recordingsRegistrationsList": {
+                        "id": "recordingsRegistrationsList",
+                        "items": {
+                            "$ref": "recordingsRegistrationsListObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|listRegistrationsResult.registration",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": true,
+    "authentication": {
+        "type": "basic"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+}

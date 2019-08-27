@@ -1,0 +1,578 @@
+{
+    "id": 30090,
+    "name": "Files",
+    "hookName": "Files",
+    "key": "files",
+    "description": "Files Element",
+    "image": "elements/custom-element-default-logo.png",
+    "logo": "files",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 276969,
+            "name": "Authentication Type",
+            "key": "authentication.type",
+            "description": "Authentication Type",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 0,
+            "type": "COMBO",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 276968,
+            "name": "File Schema",
+            "key": "file.schema",
+            "description": "File Schema",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 27,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 276970,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 99,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 282445,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "Get the files list",
+            "path": "/hubs/general/files",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "filesGetRes",
+                "transform": false,
+                "swagger": {
+                    "filesGetResObject": {
+                        "properties": {
+                            "fileType": {
+                                "type": "string",
+                                "x-samplevalue": "xlsx"
+                            },
+                            "filename": {
+                                "type": "string",
+                                "x-samplevalue": "data-sample.xlsx"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "61da33d3-79f4-4679-8991-03f9b754092c"
+                            },
+                            "metadata": {
+                                "type": "string",
+                                "x-samplevalue": "[ { \"name\": \"contacts\", \"type\": \"TABLE\", \"schema\": \"crm\", \"columns\": [ { \"name\": \"id\", \"dataType\": 12, \"typeName\": \"varchar\", \"size\": \"2147483647\", \"nullable\": false, \"autoIncrement\": false, \"primaryKey\": true }, { \"name\": \"name\", \"dataType\": 12, \"typeName\": \"varchar\", \"size\": \"2147483647\", \"nullable\": true, \"autoIncrement\": false, \"primaryKey\": false } ] } ]"
+                            },
+                            "objectName": {
+                                "type": "string",
+                                "x-samplevalue": "contacts"
+                            }
+                        },
+                        "title": "filesGetRes",
+                        "type": "object",
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "filesGetRes": {
+                        "items": {
+                            "type": "filesGetResObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 282444,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "Post a file",
+            "path": "/hubs/general/files",
+            "vendorPath": "/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 696558,
+                    "resourceId": 282444,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The file",
+                    "type": "multipart",
+                    "vendorType": "no-op",
+                    "dataType": "file",
+                    "vendorDataType": "file",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 696557,
+                    "resourceId": 282444,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "Object name",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 696556,
+                    "resourceId": 282444,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "metadata",
+                    "vendorName": "metadata",
+                    "description": "Metadata of the file",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "filesPostRes",
+                "transform": false,
+                "swagger": {
+                    "filesPostRes": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "61da33d3-79f4-4679-8991-03f9b754092c"
+                            },
+                            "message": {
+                                "type": "string",
+                                "x-samplevalue": "Upload success"
+                            }
+                        },
+                        "title": "filesPostRes",
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 282447,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "Download the file",
+            "path": "/hubs/general/files/{id}",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 696560,
+                    "resourceId": 282447,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file ID",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 282449,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "Update the metadata of the file",
+            "path": "/hubs/general/files/{id}/metadata/{objectName}",
+            "vendorPath": "/",
+            "method": "PUT",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 696563,
+                    "resourceId": 282449,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The metadata of the file",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "filesMetadataPostReq",
+                    "vendorDataType": "filesMetadataPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 696562,
+                    "resourceId": 282449,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "File ID",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 696561,
+                    "resourceId": 282449,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "Object name",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "filesMetadataPostRes",
+                "transform": false,
+                "swagger": {
+                    "filesMetadataPostResObject": {
+                        "properties": {
+                            "file_location": {
+                                "type": "string",
+                                "x-samplevalue": "/Users/pradheep/Documents/fileselement/temp_location/d183ec84-619a-4db3-a2a8-4c7eda7f3dab"
+                            },
+                            "file_metadata": {
+                                "type": "string",
+                                "x-samplevalue": "[ { \"name\": \"contacts\", \"type\": \"TABLE\", \"schema\": \"crm\", \"columns\": [ { \"name\": \"id\", \"dataType\": 12, \"typeName\": \"varchar\", \"size\": \"2147483647\", \"nullable\": false, \"autoIncrement\": false, \"primaryKey\": true }, { \"name\": \"name\", \"dataType\": 12, \"typeName\": \"varchar\", \"size\": \"2147483647\", \"nullable\": true, \"autoIncrement\": false, \"primaryKey\": false } ] } ]"
+                            },
+                            "file_name": {
+                                "type": "string",
+                                "x-samplevalue": "data-sample.csv"
+                            },
+                            "file_objectname": {
+                                "type": "string",
+                                "x-samplevalue": "contacts"
+                            },
+                            "file_type": {
+                                "type": "string",
+                                "x-samplevalue": "csv"
+                            }
+                        },
+                        "title": "filesMetadataPostRes",
+                        "type": "object",
+                        "x-primary-key": [
+                            "id"
+                        ]
+                    },
+                    "filesMetadataPostRes": {
+                        "items": {
+                            "type": "filesMetadataPostResObject"
+                        },
+                        "type": "array"
+                    }
+                },
+                "requestSwagger": {
+                    "filesMetadataPostReqColumns": {
+                        "properties": {
+                            "autoIncrement": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "dataType": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 12
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "id"
+                            },
+                            "nullable": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "primaryKey": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "size": {
+                                "type": "string",
+                                "x-samplevalue": "2147483647"
+                            },
+                            "typeName": {
+                                "type": "string",
+                                "x-samplevalue": "varchar"
+                            }
+                        },
+                        "title": "columns"
+                    },
+                    "filesMetadataPostReq": {
+                        "properties": {
+                            "columns": {
+                                "items": {
+                                    "type": "filesMetadataPostReqColumns"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "contacts"
+                            },
+                            "schema": {
+                                "type": "string",
+                                "x-samplevalue": "crm"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "TABLE"
+                            }
+                        },
+                        "title": "filesMetadataPostReq"
+                    }
+                },
+                "requestName": "filesMetadataPostReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 282443,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "Search for objectName",
+            "path": "/hubs/general/{objectName}",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 696555,
+                    "resourceId": 282443,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 696554,
+                    "resourceId": 282443,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 696553,
+                    "resourceId": 282443,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "The objectName ID",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "apiNoDocumentation",
+            "rootKey": "results",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 282442,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "Create an objectName",
+            "path": "/hubs/general/{objectName}",
+            "vendorPath": "/",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 696552,
+                    "resourceId": 282442,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The object body",
+                    "type": "body",
+                    "vendorType": "no-op",
+                    "dataType": "Request",
+                    "vendorDataType": "Request",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 696551,
+                    "resourceId": 282442,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "The objectName ID",
+                    "type": "path",
+                    "vendorType": "no-op",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "apiNoDocumentation",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 282448,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "List all the objects",
+            "path": "/hubs/general/objects",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 282446,
+            "createdDate": "2019-06-12T15:16:26Z",
+            "description": "Get the metadata of the objectName",
+            "path": "/hubs/general/objects/{objectName}/metadata",
+            "vendorPath": "/",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 696559,
+                    "resourceId": 282446,
+                    "createdDate": "2019-06-12T15:16:26Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "The objectName ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "general",
+    "protocolType": "file",
+    "parameters": [],
+    "private": false
+}

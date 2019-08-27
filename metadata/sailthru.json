@@ -1,0 +1,2939 @@
+{
+    "id": 404,
+    "name": "Sailthru",
+    "hookName": "Sailthru",
+    "key": "sailthru",
+    "description": "Add a Sailthru Instance to connect your existing Sailthru account to Cloud Elements.",
+    "image": "https://media.glassdoor.com/sqll/505788/sailthru-squarelogo.png",
+    "logo": "sailthru",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 4106,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "The base URL for your Sailthru account.",
+            "defaultValue": "https://api.sailthru.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4114,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Sailthru Pagination Type",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4113,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "Sailthru Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4107,
+            "name": "Sailthru API Key",
+            "key": "sailthru.api.key",
+            "description": "The API Key for your Sailthru account.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254129,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4109,
+            "name": "Sailthru API format",
+            "key": "sailthru.format",
+            "description": "The format for the Sailthru response.",
+            "defaultValue": "json",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4108,
+            "name": "Sailthru API Secret",
+            "key": "sailthru.api.secret",
+            "description": "The API Secret for your Sailthru account.",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 52519,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 159874,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256268,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256519,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 84407,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4110,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "Sailthru Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5725,
+            "name": "Event Poller Refresh Interval",
+            "key": "event.poller.refresh_interval",
+            "description": "How Often to Poll for Events? (minutes)",
+            "defaultValue": "1440",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 5724,
+            "name": "Event Poller URLs",
+            "key": "event.poller.urls",
+            "description": "Sailthru Event Poller URLs",
+            "defaultValue": "users|/hubs/marketing/jobs",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 304,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 4111,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "Sailthru Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9738,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 4112,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "Sailthru Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 5726,
+            "name": "List to Monitor",
+            "key": "event.list",
+            "description": "Which List to monitor for events?",
+            "defaultValue": "default-list-name",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 310,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 5834,
+            "createdDate": "2016-02-04T23:42:30Z",
+            "description": "Search for lists to validate that the API keys are correct",
+            "path": "/hubs/marketing/authenticate",
+            "vendorPath": "/list",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "provisionAuthValidation",
+            "rootKey": "lists",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 221667,
+            "createdDate": "2018-12-19T01:17:38Z",
+            "description": "Search for blasts",
+            "path": "/hubs/marketing/blasts",
+            "vendorPath": "/blast",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 544543,
+                    "resourceId": 221667,
+                    "createdDate": "2018-12-19T01:17:38Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression. Required is `status`. Possible values for `status` =[`draft`, `scheduled`, `sending`, `sent`]. Other optional parameters to search are `list`, `start_date` and `end_date`. For Eg- `status='sent' and list='test_list'`.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": true
+                },
+                {
+                    "id": 544542,
+                    "resourceId": 221667,
+                    "createdDate": "2018-12-19T01:17:38Z",
+                    "name": "page",
+                    "vendorName": "skip",
+                    "description": "The page number. Defaults to 1 if not provided",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 544541,
+                    "resourceId": 221667,
+                    "createdDate": "2018-12-19T01:17:38Z",
+                    "name": "pageSize",
+                    "vendorName": "limit",
+                    "description": "The page size. Defaults to 20 if not provided.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "blastsList",
+                "transform": false,
+                "swagger": {
+                    "totalGETBlast": {
+                        "properties": {
+                            "beacon_noclick": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "open_total": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            }
+                        },
+                        "title": "totalGETBlast",
+                        "type": "object"
+                    },
+                    "statsGETBlast": {
+                        "properties": {
+                            "total": {
+                                "type": "totalGETBlast"
+                            }
+                        },
+                        "title": "statsGETBlast",
+                        "type": "object"
+                    },
+                    "blastsList": {
+                        "items": {
+                            "type": "blastsListObject"
+                        },
+                        "type": "array"
+                    },
+                    "blastsListObject": {
+                        "properties": {
+                            "blast_id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true,
+                                "x-samplevalue": 4989640
+                            },
+                            "data_feed_url": {
+                                "type": "string",
+                                "x-samplevalue": "http://feed.sailthru.com/ws/feed?id=9e8a89291c086d027c000000"
+                            },
+                            "email_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "labels": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "list": {
+                                "type": "string",
+                                "x-samplevalue": "Profile Test Users",
+                                "x-searchable": true,
+                                "x-searchable-operators": [
+                                    "="
+                                ]
+                            },
+                            "mode": {
+                                "type": "string",
+                                "x-samplevalue": "email"
+                            },
+                            "modify_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Thu, 20 Aug 2015 16:24:47 -0600"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Test Campaign1440109487"
+                            },
+                            "schedule_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Thu, 20 Aug 2015 16:24:47 -0600"
+                            },
+                            "sent_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "start_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Thu, 20 Aug 2015 16:25:02 -0600"
+                            },
+                            "stats": {
+                                "type": "statsGETBlast"
+                            },
+                            "status": {
+                                "type": "string",
+                                "x-samplevalue": "sent"
+                            },
+                            "subject": {
+                                "type": "string",
+                                "x-samplevalue": "Campaign Activity Example"
+                            }
+                        },
+                        "title": "blastsListObject",
+                        "type": "object",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "blast_id"
+                        ],
+                        "x-searchable": true,
+                        "x-searchable-joins": [
+                            "and"
+                        ],
+                        "x-vendor-objectname": "blast"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 31651,
+                    "resourceId": 221667,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "if (!response_iserror) {\n\tvar res_body = response_body[0].blasts;\n\n\tdone({\t\n\t\"response_body\" : res_body\n\t});\n}\ndone();",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 221666,
+            "createdDate": "2018-12-19T01:17:38Z",
+            "description": "Create a blast",
+            "path": "/hubs/marketing/blasts",
+            "vendorPath": "/blast",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 544540,
+                    "resourceId": 221666,
+                    "createdDate": "2018-12-19T01:17:38Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 544539,
+                    "resourceId": 221666,
+                    "createdDate": "2018-12-19T01:17:38Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The blast object",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "blastsPOST",
+                    "vendorDataType": "blastsPOST",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "blastsPOSTres",
+                "transform": false,
+                "swagger": {
+                    "blastsPOSTres": {
+                        "properties": {
+                            "blast_id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true,
+                                "x-samplevalue": 15079273
+                            },
+                            "content_html": {
+                                "type": "string",
+                                "x-samplevalue": "We wanted to bring you a holiday greeting..\n<p><small>If you believe this has been sent to you in error, please safely <a href=\"{optout_confirm_url}\">unsubscribe</a>.</small></p>"
+                            },
+                            "content_text": {
+                                "type": "string",
+                                "x-samplevalue": "We wanted to bring you a holiday greeting..\n\nIf you believe this has been sent to you in error, please click <{optout_confirm_url}> to safely unsubscribe."
+                            },
+                            "from_email": {
+                                "type": "string",
+                                "x-samplevalue": "integrations@sailthru.com",
+                                "x-sub-format": "email"
+                            },
+                            "from_name": {
+                                "type": "string",
+                                "x-samplevalue": "Daily Newsletter"
+                            },
+                            "is_google_analytics": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "is_link_tracking": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "list": {
+                                "type": "string",
+                                "x-samplevalue": "afrin_test"
+                            },
+                            "modify_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Tue, 13 Nov 2018 20:56:48 -0700"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "TEsting Campaign"
+                            },
+                            "schedule_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Tue, 15 Oct 2019 14:00:00 -0600"
+                            },
+                            "status": {
+                                "type": "string",
+                                "x-samplevalue": "scheduled"
+                            },
+                            "subject": {
+                                "type": "string",
+                                "x-samplevalue": "My Subject Line"
+                            }
+                        },
+                        "title": "blastsPOSTres",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "blast_id"
+                        ],
+                        "x-vendor-objectname": "blast"
+                    }
+                },
+                "requestSwagger": {
+                    "varsPOST": {
+                        "properties": {
+                            "daily_logo": {
+                                "type": "string",
+                                "x-samplevalue": "http://www.example.com/assets/images/dailylogo.png"
+                            }
+                        },
+                        "title": "varsPOST",
+                        "type": "object"
+                    },
+                    "labelsPOST": {
+                        "properties": {
+                            "reengagement": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            }
+                        },
+                        "title": "labelsPOST",
+                        "type": "object"
+                    },
+                    "link_paramsPOST": {
+                        "properties": {
+                            "utm_campaign": {
+                                "type": "string",
+                                "x-samplevalue": "reengagement"
+                            }
+                        },
+                        "title": "link_paramsPOST",
+                        "type": "object"
+                    },
+                    "blastsPOST": {
+                        "properties": {
+                            "ad_plan": {
+                                "type": "string",
+                                "x-samplevalue": "Los Angeles Daily Plan"
+                            },
+                            "content_html": {
+                                "type": "string",
+                                "x-samplevalue": "<htm..."
+                            },
+                            "content_text": {
+                                "type": "string",
+                                "x-samplevalue": "We Haven't seen you in awhile. We have a great new product in stock for you, check out {content[0].title} here!"
+                            },
+                            "data_feed_url": {
+                                "type": "string",
+                                "x-samplevalue": "http://feed.sailthru.com/ws/feed?id=53978fae0270838447000001"
+                            },
+                            "email_hour_range": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 8
+                            },
+                            "from_email": {
+                                "type": "string",
+                                "x-samplevalue": "example@example.com",
+                                "x-sub-format": "email"
+                            },
+                            "from_name": {
+                                "type": "string",
+                                "x-samplevalue": "Sailthru"
+                            },
+                            "is_google_analytics": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "is_link_tracking": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "labels": {
+                                "type": "labelsPOST"
+                            },
+                            "link_params": {
+                                "type": "link_paramsPOST"
+                            },
+                            "list": {
+                                "type": "string",
+                                "x-samplevalue": "Recently Disengaged Users"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Re-engagement Campaign"
+                            },
+                            "replyto": {
+                                "type": "string",
+                                "x-samplevalue": "feedback@example.com",
+                                "x-sub-format": "email"
+                            },
+                            "report_email": {
+                                "type": "string",
+                                "x-samplevalue": "marketingteam@sailthru.com",
+                                "x-sub-format": "email"
+                            },
+                            "schedule_time": {
+                                "type": "string",
+                                "x-samplevalue": "10/15/2012 3pm EST"
+                            },
+                            "setup": {
+                                "type": "string",
+                                "x-samplevalue": "{content = horizon_select(content, 10)}"
+                            },
+                            "subject": {
+                                "type": "string",
+                                "x-samplevalue": "Haven't seen you in a while!"
+                            },
+                            "suppress_list": {
+                                "type": "string",
+                                "x-samplevalue": "Optout Likely Users"
+                            },
+                            "vars": {
+                                "type": "varsPOST"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "list",
+                            "schedule_time",
+                            "from_name",
+                            "from_email",
+                            "subject",
+                            "content_html",
+                            "content_text"
+                        ],
+                        "title": "blastsPOST",
+                        "x-vendor-objectname": "blast"
+                    }
+                },
+                "requestName": "blastsPOST"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 221668,
+            "createdDate": "2018-12-19T01:17:38Z",
+            "description": "Delete a blast",
+            "path": "/hubs/marketing/blasts/{blastId}",
+            "vendorPath": "/blast",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 544544,
+                    "resourceId": 221668,
+                    "createdDate": "2018-12-19T01:17:38Z",
+                    "name": "blastId",
+                    "vendorName": "blast_id",
+                    "description": "The blast ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 221669,
+            "createdDate": "2018-12-19T01:17:38Z",
+            "description": "Retrieve a blast",
+            "path": "/hubs/marketing/blasts/{blastId}",
+            "vendorPath": "/blast",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 544545,
+                    "resourceId": 221669,
+                    "createdDate": "2018-12-19T01:17:38Z",
+                    "name": "blastId",
+                    "vendorName": "blast_id",
+                    "description": "The blast Id",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "blastsGetById",
+                "transform": false,
+                "swagger": {
+                    "blastsGetById": {
+                        "properties": {
+                            "blast_id": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true,
+                                "x-samplevalue": 15079267
+                            },
+                            "content_html": {
+                                "type": "string",
+                                "x-samplevalue": "hi  Testing it for specific purposr \n<p><small>If you believe this has been sent to you in error, please safely <a href=\"{optout_confirm_url}\">unsubscribe</a>.</small></p>"
+                            },
+                            "content_text": {
+                                "type": "string"
+                            },
+                            "data_feed_url": {
+                                "type": "string"
+                            },
+                            "email_count": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "end_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Tue, 13 Nov 2018 20:46:01 -0700"
+                            },
+                            "from_email": {
+                                "type": "string",
+                                "x-samplevalue": "integrations@sailthru.com",
+                                "x-sub-format": "email"
+                            },
+                            "from_name": {
+                                "type": "string",
+                                "x-samplevalue": "tester"
+                            },
+                            "is_google_analytics": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "is_link_tracking": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            },
+                            "labels": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "list": {
+                                "type": "string",
+                                "x-samplevalue": "afrin_test"
+                            },
+                            "modify_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Tue, 13 Nov 2018 20:45:43 -0700"
+                            },
+                            "modify_user": {
+                                "type": "string",
+                                "x-samplevalue": "salesdemo@cloud-elements.com"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Test Campaigns"
+                            },
+                            "replyto": {
+                                "type": "string",
+                                "x-samplevalue": "integrations@sailthru.com",
+                                "x-sub-format": "email"
+                            },
+                            "report_email": {
+                                "type": "string",
+                                "x-samplevalue": "integrations@sailthru.com",
+                                "x-sub-format": "email"
+                            },
+                            "schedule_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Tue, 13 Nov 2018 20:45:43 -0700"
+                            },
+                            "seed_emails": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "aa@ce.com"
+                                ]
+                            },
+                            "start_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Tue, 13 Nov 2018 20:46:01 -0700"
+                            },
+                            "status": {
+                                "type": "string",
+                                "x-samplevalue": "sent"
+                            },
+                            "stop_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Tue, 13 Nov 2018 20:46:15 -0700"
+                            },
+                            "subject": {
+                                "type": "string",
+                                "x-samplevalue": "Testing"
+                            },
+                            "suppress_list": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "aa@ce.com"
+                                ]
+                            }
+                        },
+                        "title": "blastsGetById",
+                        "x-primary-key": [
+                            "blast_id"
+                        ],
+                        "x-vendor-objectname": "blast"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2847,
+            "createdDate": "2015-08-12T19:06:09Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Create an email",
+            "path": "/hubs/marketing/emails",
+            "vendorPath": "/send",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2872,
+                    "resourceId": 2847,
+                    "createdDate": "2015-08-12T19:06:09Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The email object",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "emailsPostReq",
+                    "vendorDataType": "emailsPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 2871,
+                    "resourceId": 2847,
+                    "createdDate": "2015-08-12T19:06:09Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "emails",
+                "transform": false,
+                "swagger": {
+                    "emails": {
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "doug@gmail.com",
+                                "x-sub-format": "email"
+                            },
+                            "schedule_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Sun, 01 Jan 2017 00:00:00 -0700"
+                            },
+                            "send_id": {
+                                "type": "string",
+                                "x-samplevalue": "XQtWgJWnoV44bFCj"
+                            },
+                            "status": {
+                                "type": "string",
+                                "x-samplevalue": "scheduled"
+                            },
+                            "template": {
+                                "type": "string",
+                                "x-samplevalue": "My Template"
+                            }
+                        },
+                        "title": "emails"
+                    }
+                },
+                "requestSwagger": {
+                    "emailsPostReqOptionsHeaders": {
+                        "properties": {
+                            "Cc": {
+                                "type": "string",
+                                "x-samplevalue": "bob@example.com",
+                                "x-sub-format": "email"
+                            }
+                        },
+                        "title": "headers",
+                        "type": "object"
+                    },
+                    "emailsPostReqVars": {
+                        "properties": {
+                            "FirstName": {
+                                "type": "string",
+                                "x-samplevalue": "Douglas"
+                            },
+                            "LastName": {
+                                "type": "string",
+                                "x-samplevalue": "Crockford"
+                            }
+                        },
+                        "title": "vars",
+                        "type": "object"
+                    },
+                    "emailsPostReq": {
+                        "properties": {
+                            "data_feed_url": {
+                                "type": "string",
+                                "x-samplevalue": "https://feed.sailthru.com/ws/feed?id=908ec3891aa312f74f8b4573"
+                            },
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "doug@gmail.com",
+                                "x-sub-format": "email"
+                            },
+                            "options": {
+                                "type": "emailsPostReqOptions"
+                            },
+                            "schedule_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "yyyy-MM-dd HH:mm:ss",
+                                "x-samplevalue": "2017-01-01 00:00:00"
+                            },
+                            "template": {
+                                "type": "string",
+                                "x-samplevalue": "My Template"
+                            },
+                            "vars": {
+                                "type": "emailsPostReqVars"
+                            }
+                        },
+                        "required": [
+                            "template",
+                            "email"
+                        ],
+                        "title": "emailsPostReq",
+                        "x-vendor-objectname": "send"
+                    },
+                    "emailsPostReqOptions": {
+                        "properties": {
+                            "headers": {
+                                "type": "emailsPostReqOptionsHeaders"
+                            }
+                        },
+                        "title": "options",
+                        "type": "object"
+                    }
+                },
+                "requestName": "emailsPostReq"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3136,
+            "createdDate": "2015-09-02T19:26:20Z",
+            "description": "Create a job",
+            "path": "/hubs/marketing/jobs",
+            "vendorPath": "/job",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 3137,
+                    "resourceId": 3136,
+                    "createdDate": "2015-09-02T19:26:20Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The job object",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "jobsPostReq",
+                    "vendorDataType": "jobsPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3136,
+                    "resourceId": 3136,
+                    "createdDate": "2015-09-02T19:26:20Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "jobsPostRes",
+                "transform": false,
+                "swagger": {
+                    "jobsPostRes": {
+                        "properties": {
+                            "job_id": {
+                                "type": "string",
+                                "x-samplevalue": "5d0b5c7f4843ea67ac29fd33"
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Ad Inventory 06/20/2019 - 06/20/2019"
+                            },
+                            "status": {
+                                "type": "string",
+                                "x-samplevalue": "pending"
+                            }
+                        },
+                        "title": "jobsPostRes"
+                    }
+                },
+                "requestSwagger": {
+                    "jobsPostReq": {
+                        "properties": {
+                            "blast_id": {
+                                "type": "string",
+                                "x-samplevalue": "17259941"
+                            },
+                            "job": {
+                                "type": "string",
+                                "x-samplevalue": "ad_inventory"
+                            }
+                        },
+                        "required": [
+                            "job"
+                        ],
+                        "title": "jobsPostReq",
+                        "x-vendor-objectname": "job"
+                    }
+                },
+                "requestName": "jobsPostReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3137,
+            "createdDate": "2015-09-02T19:26:20Z",
+            "description": "Retrieve a job",
+            "path": "/hubs/marketing/jobs/{jobId}",
+            "vendorPath": "/job/integrations/user_sync",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3138,
+                    "resourceId": 3137,
+                    "createdDate": "2015-09-02T19:26:20Z",
+                    "name": "jobId",
+                    "vendorName": "job_id",
+                    "description": "The job ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "jobs",
+                "transform": false,
+                "swagger": {
+                    "jobs": {
+                        "id": "jobs",
+                        "properties": {
+                            "postback_url": {
+                                "type": "string"
+                            },
+                            "job_id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "report_email": {
+                                "type": "string"
+                            },
+                            "list": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2923,
+            "createdDate": "2015-08-25T00:26:53Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Search for lists",
+            "path": "/hubs/marketing/lists",
+            "vendorPath": "/list",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 2935,
+                    "resourceId": 2923,
+                    "createdDate": "2015-08-25T00:26:53Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression. list=my_list",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "api",
+            "rootKey": "lists",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2925,
+            "createdDate": "2015-08-25T00:26:53Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Create a list",
+            "path": "/hubs/marketing/lists",
+            "vendorPath": "/list",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2938,
+                    "resourceId": 2925,
+                    "createdDate": "2015-08-25T00:26:53Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The email object",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "listsPostReq",
+                    "vendorDataType": "listsPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 2937,
+                    "resourceId": 2925,
+                    "createdDate": "2015-08-25T00:26:53Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "listsPostRes",
+                "transform": false,
+                "swagger": {
+                    "listsPostRes": {
+                        "properties": {
+                            "list": {
+                                "type": "string",
+                                "x-samplevalue": "natural test list"
+                            },
+                            "list_id": {
+                                "type": "string",
+                                "x-samplevalue": "5840769f83ba8848008b458e"
+                            },
+                            "primary": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "public_name": {
+                                "type": "string",
+                                "x-samplevalue": "natural test list public name"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "normal"
+                            },
+                            "vars": {
+                                "type": "listsPostResVars"
+                            }
+                        },
+                        "title": "listsPostRes"
+                    },
+                    "listsPostResVars": {
+                        "properties": {
+                            "color": {
+                                "type": "string",
+                                "x-samplevalue": "blue"
+                            }
+                        },
+                        "title": "vars",
+                        "type": "object"
+                    }
+                },
+                "requestSwagger": {
+                    "listsPostReqVars": {
+                        "properties": {
+                            "color": {
+                                "type": "string",
+                                "x-samplevalue": "blue"
+                            }
+                        },
+                        "title": "vars",
+                        "type": "object"
+                    },
+                    "listsPostReq": {
+                        "properties": {
+                            "list": {
+                                "type": "string",
+                                "x-samplevalue": "natural test list"
+                            },
+                            "primary": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "public_name": {
+                                "type": "string",
+                                "x-samplevalue": "natural test list public name"
+                            },
+                            "type": {
+                                "type": "string",
+                                "x-samplevalue": "natural"
+                            },
+                            "vars": {
+                                "type": "listsPostReqVars"
+                            }
+                        },
+                        "required": [
+                            "list"
+                        ],
+                        "title": "listsPostReq",
+                        "x-vendor-objectname": "list"
+                    }
+                },
+                "requestName": "listsPostReq"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2926,
+            "createdDate": "2015-08-25T00:26:53Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Delete a list",
+            "path": "/hubs/marketing/lists/{listId}",
+            "vendorPath": "/list",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 2939,
+                    "resourceId": 2926,
+                    "createdDate": "2015-08-25T00:26:53Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "listId",
+                    "vendorName": "listId",
+                    "description": "The list ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2924,
+            "createdDate": "2015-08-25T00:26:53Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Retrieve a list",
+            "path": "/hubs/marketing/lists/{listId}",
+            "vendorPath": "/list",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 2936,
+                    "resourceId": 2924,
+                    "createdDate": "2015-08-25T00:26:53Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "listId",
+                    "vendorName": "list_id",
+                    "description": "The list ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "lists",
+                "transform": false,
+                "swagger": {
+                    "lists": {
+                        "id": "lists",
+                        "properties": {
+                            "send_time": {
+                                "type": "string"
+                            },
+                            "list_id": {
+                                "type": "string"
+                            },
+                            "create_time": {
+                                "type": "string"
+                            },
+                            "count": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "list": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "primary": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3067,
+            "createdDate": "2015-09-01T00:02:06Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Create a preview",
+            "path": "/hubs/marketing/previews",
+            "vendorPath": "/preview",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 3054,
+                    "resourceId": 3067,
+                    "createdDate": "2015-09-01T00:02:06Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The preview object",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "previewsPostReq",
+                    "vendorDataType": "previewsPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 3053,
+                    "resourceId": 3067,
+                    "createdDate": "2015-09-01T00:02:06Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "previews",
+                "transform": false,
+                "swagger": {
+                    "test_vars": {
+                        "id": "test_vars",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "previews": {
+                        "id": "previews",
+                        "properties": {
+                            "day": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "send_email": {
+                                "type": "string"
+                            },
+                            "template": {
+                                "type": "string"
+                            },
+                            "test_vars": {
+                                "type": "test_vars"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "previewsPostReq": {
+                        "properties": {
+                            "blast_id": {
+                                "type": "string",
+                                "x-samplevalue": "17259459"
+                            },
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "test@sailthru.com",
+                                "x-sub-format": "email"
+                            }
+                        },
+                        "required": [
+                            "email"
+                        ],
+                        "title": "previewsPostReq"
+                    }
+                },
+                "requestName": "previewsPostReq"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 3066,
+            "createdDate": "2015-09-01T00:02:06Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Search for templates",
+            "path": "/hubs/marketing/templates",
+            "vendorPath": "/template",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 3052,
+                    "resourceId": 3066,
+                    "createdDate": "2015-09-01T00:02:06Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression. template=my_template_name",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "template",
+                "transform": false,
+                "swagger": {
+                    "template": {
+                        "id": "template",
+                        "type": "array",
+                        "items": {
+                            "$ref": "templateObject"
+                        }
+                    },
+                    "templateObject": {
+                        "id": "templateObject",
+                        "properties": {
+                            "from_email": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "from_name": {
+                                "type": "unknown"
+                            },
+                            "type": {
+                                "type": "unknown"
+                            },
+                            "replyto_email": {
+                                "type": "unknown"
+                            },
+                            "test_vars": {
+                                "type": "unknown"
+                            },
+                            "link_params": {
+                                "type": "unknown"
+                            },
+                            "mode": {
+                                "type": "string"
+                            },
+                            "error_url": {
+                                "type": "unknown"
+                            },
+                            "ad_plan": {
+                                "type": "unknown"
+                            },
+                            "is_google_analytics": {
+                                "type": "boolean"
+                            },
+                            "success_url": {
+                                "type": "unknown"
+                            },
+                            "revision_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "is_unviewable": {
+                                "type": "boolean"
+                            },
+                            "is_invite": {
+                                "type": "boolean"
+                            },
+                            "content_text": {
+                                "type": "string"
+                            },
+                            "is_disabled": {
+                                "type": "boolean"
+                            },
+                            "revision_ids": {
+                                "type": "array",
+                                "items": {
+                                    "format": "int32",
+                                    "type": "integer"
+                                }
+                            },
+                            "is_link_tracking": {
+                                "type": "boolean"
+                            },
+                            "list": {
+                                "type": "unknown"
+                            },
+                            "sample": {
+                                "type": "unknown"
+                            },
+                            "link_domain": {
+                                "type": "unknown"
+                            },
+                            "verify_post_url": {
+                                "type": "unknown"
+                            },
+                            "is_basic": {
+                                "type": "boolean"
+                            },
+                            "data_feed_url": {
+                                "type": "unknown"
+                            },
+                            "tags": {
+                                "type": "unknown"
+                            },
+                            "is_optin": {
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "setup": {
+                                "type": "unknown"
+                            },
+                            "template_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "public_name": {
+                                "type": "unknown"
+                            },
+                            "content_html": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "templates",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14858,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Create a template",
+            "path": "/hubs/marketing/templates",
+            "vendorPath": "/template",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 19785,
+                    "resourceId": 14858,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The template",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "templatesPostReq",
+                    "vendorDataType": "templatesPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19784,
+                    "resourceId": 14858,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "templatesPostRes",
+                "transform": false,
+                "swagger": {
+                    "templatesPostRes": {
+                        "id": "templatesPostRes",
+                        "properties": {
+                            "ad_plan": {
+                                "type": "unknown"
+                            },
+                            "content_html": {
+                                "type": "unknown"
+                            },
+                            "content_text": {
+                                "type": "unknown"
+                            },
+                            "data_feed_url": {
+                                "type": "unknown"
+                            },
+                            "error_url": {
+                                "type": "unknown"
+                            },
+                            "from_email": {
+                                "type": "unknown"
+                            },
+                            "from_name": {
+                                "type": "unknown"
+                            },
+                            "is_basic": {
+                                "type": "boolean"
+                            },
+                            "is_disabled": {
+                                "type": "boolean"
+                            },
+                            "is_google_analytics": {
+                                "type": "boolean"
+                            },
+                            "is_invite": {
+                                "type": "boolean"
+                            },
+                            "is_link_tracking": {
+                                "type": "boolean"
+                            },
+                            "is_optin": {
+                                "type": "boolean"
+                            },
+                            "is_unviewable": {
+                                "type": "boolean"
+                            },
+                            "link_domain": {
+                                "type": "unknown"
+                            },
+                            "link_params": {
+                                "type": "unknown"
+                            },
+                            "list": {
+                                "type": "unknown"
+                            },
+                            "mode": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "public_name": {
+                                "type": "unknown"
+                            },
+                            "replyto_email": {
+                                "type": "unknown"
+                            },
+                            "revision_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "revision_ids": {
+                                "items": {
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "type": "array"
+                            },
+                            "sample": {
+                                "type": "unknown"
+                            },
+                            "setup": {
+                                "type": "unknown"
+                            },
+                            "subject": {
+                                "type": "unknown"
+                            },
+                            "success_url": {
+                                "type": "unknown"
+                            },
+                            "tags": {
+                                "type": "unknown"
+                            },
+                            "teams": {
+                                "type": "unknown"
+                            },
+                            "template_id": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "test_vars": {
+                                "type": "unknown"
+                            },
+                            "type": {
+                                "type": "unknown"
+                            },
+                            "verify_post_url": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "templatesPostReq": {
+                        "properties": {
+                            "data_feed_url": {
+                                "type": "string",
+                                "x-samplevalue": "https://cb.sailthru.com/ws/feed?id=1234567890123"
+                            },
+                            "subject": {
+                                "type": "string",
+                                "x-samplevalue": "Subject Line Here"
+                            },
+                            "template": {
+                                "type": "string",
+                                "x-samplevalue": "My Template"
+                            }
+                        },
+                        "required": [
+                            "template"
+                        ],
+                        "title": "templatesPostReq",
+                        "x-vendor-objectname": "template"
+                    }
+                },
+                "requestName": "templatesPostReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 8661,
+            "createdDate": "2016-03-26T17:06:27Z",
+            "description": "Fire an event",
+            "path": "/hubs/marketing/trigger-events/fire",
+            "vendorPath": "/event",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 10563,
+                    "resourceId": 8661,
+                    "createdDate": "2016-03-26T17:06:27Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The event  parameters including the name of the event and the id of the user.",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "triggerEventsFirePostReq",
+                    "vendorDataType": "triggerEventsFirePostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 10562,
+                    "resourceId": 8661,
+                    "createdDate": "2016-03-26T17:06:27Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "triggerEventsFirePostRes",
+                "transform": false,
+                "swagger": {
+                    "triggerEventsFirePostRes": {
+                        "properties": {
+                            "ok": {
+                                "type": "boolean",
+                                "x-samplevalue": true
+                            }
+                        },
+                        "title": "triggerEventsFirePostRes"
+                    }
+                },
+                "requestSwagger": {
+                    "triggerEventsFirePostReq": {
+                        "properties": {
+                            "event": {
+                                "type": "string",
+                                "x-samplevalue": "userPostedComment"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "sai@gmail.com",
+                                "x-sub-format": "email"
+                            }
+                        },
+                        "required": [
+                            "id"
+                        ],
+                        "title": "triggerEventsFirePostReq",
+                        "x-vendor-objectname": "event"
+                    }
+                },
+                "requestName": "triggerEventsFirePostReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 14859,
+            "createdDate": "2016-04-29T04:16:51Z",
+            "description": "Create a trigger",
+            "path": "/hubs/marketing/triggers",
+            "vendorPath": "/trigger",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 19787,
+                    "resourceId": 14859,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The trigger",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "triggersPostReq",
+                    "vendorDataType": "triggersPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 19786,
+                    "resourceId": 14859,
+                    "createdDate": "2016-04-29T04:16:51Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "triggersPostRes",
+                "transform": false,
+                "swagger": {
+                    "triggersPostRes": {
+                        "id": "triggersPostRes",
+                        "properties": {
+                            "event": {
+                                "type": "string"
+                            },
+                            "sample": {
+                                "type": "unknown"
+                            },
+                            "template": {
+                                "type": "string"
+                            },
+                            "time": {
+                                "type": "string"
+                            },
+                            "trigger_id": {
+                                "type": "string"
+                            },
+                            "zephyr": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "triggersPostReq": {
+                        "properties": {
+                            "event": {
+                                "type": "string",
+                                "x-samplevalue": "send"
+                            },
+                            "template": {
+                                "type": "string",
+                                "x-samplevalue": "My Template"
+                            },
+                            "time": {
+                                "type": "string",
+                                "x-samplevalue": "+1 day 6 hours"
+                            },
+                            "zephyr": {
+                                "type": "string",
+                                "x-samplevalue": "{api_send({'template':'post-purchase follow up'})}"
+                            }
+                        },
+                        "required": [
+                            "time",
+                            "template",
+                            "event"
+                        ],
+                        "title": "triggersPostReq",
+                        "x-vendor-objectname": "trigger"
+                    }
+                },
+                "requestName": "triggersPostReq"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2749,
+            "createdDate": "2015-07-29T10:59:28Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Search for users",
+            "path": "/hubs/marketing/users",
+            "vendorPath": "/user",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 2769,
+                    "resourceId": 2749,
+                    "createdDate": "2015-07-29T10:59:28Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "where",
+                    "vendorName": "where",
+                    "description": "The CEQL search expression. email=myemail@me.com",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2855,
+            "createdDate": "2015-08-19T23:35:13Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Create a user",
+            "path": "/hubs/marketing/users",
+            "vendorPath": "/user",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2883,
+                    "resourceId": 2855,
+                    "createdDate": "2015-08-19T23:35:13Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The email object",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "usersPostReq",
+                    "vendorDataType": "usersPostReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 2882,
+                    "resourceId": 2855,
+                    "createdDate": "2015-08-19T23:35:13Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "usersPostRes",
+                "transform": false,
+                "swagger": {
+                    "usersPostResKeys": {
+                        "properties": {
+                            "cookie": {
+                                "type": "string",
+                                "x-samplevalue": "467f8543eebcb979fd5222b88dee41885d0b58419c625f686a0174de0f004b30f2122fa0da427217f86f9497"
+                            },
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "sai@gmail.com",
+                                "x-sub-format": "email"
+                            },
+                            "sid": {
+                                "type": "string",
+                                "x-samplevalue": "5d0b58419c625f686a0174de"
+                            }
+                        },
+                        "title": "keys",
+                        "type": "object"
+                    },
+                    "usersPostRes": {
+                        "properties": {
+                            "activity": {
+                                "type": "usersPostResActivity"
+                            },
+                            "engagement": {
+                                "type": "string",
+                                "x-samplevalue": "new"
+                            },
+                            "keys": {
+                                "type": "usersPostResKeys"
+                            },
+                            "optout_email": {
+                                "type": "string",
+                                "x-samplevalue": "none"
+                            },
+                            "smart_lists": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "Master List",
+                                    "all_users"
+                                ]
+                            }
+                        },
+                        "title": "usersPostRes"
+                    },
+                    "usersPostResActivity": {
+                        "properties": {
+                            "create_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Thu, 20 Jun 2019 03:56:17 -0600"
+                            }
+                        },
+                        "title": "activity",
+                        "type": "object"
+                    }
+                },
+                "requestSwagger": {
+                    "usersPostReqVars": {
+                        "properties": {
+                            "FirstName": {
+                                "type": "string",
+                                "x-samplevalue": "Douglas"
+                            },
+                            "LastName": {
+                                "type": "string",
+                                "x-samplevalue": "Crockford"
+                            }
+                        },
+                        "title": "vars",
+                        "type": "object"
+                    },
+                    "usersPostReq": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "sai@gmail.com",
+                                "x-sub-format": "email"
+                            },
+                            "lists": {
+                                "type": "usersPostReqLists"
+                            },
+                            "vars": {
+                                "type": "usersPostReqVars"
+                            }
+                        },
+                        "title": "usersPostReq"
+                    },
+                    "usersPostReqLists": {
+                        "properties": {
+                            "NaturalListNameToJoin": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "NaturalListNameToLeave": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            }
+                        },
+                        "title": "lists",
+                        "type": "object"
+                    }
+                },
+                "requestName": "usersPostReq"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2386,
+            "createdDate": "2015-07-14T14:26:16Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Retrieve a user",
+            "path": "/hubs/marketing/users/{userId}",
+            "vendorPath": "/user",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 2473,
+                    "resourceId": 2386,
+                    "createdDate": "2015-07-14T14:26:16Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "userId",
+                    "vendorName": "id",
+                    "description": "The user ID",
+                    "type": "path",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "users",
+                "transform": false,
+                "swagger": {
+                    "activity": {
+                        "id": "activity",
+                        "properties": {
+                            "create_time": {
+                                "type": "string"
+                            },
+                            "signup_time": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "lists": {
+                        "id": "lists",
+                        "properties": {
+                            "sfcd_cloud_test": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "keys": {
+                        "id": "keys",
+                        "properties": {
+                            "cookie": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "sid": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "vars": {
+                        "id": "vars",
+                        "properties": {
+                            "sync_test30": {
+                                "type": "string"
+                            },
+                            "birth_date": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "sync_test9": {
+                                "type": "string"
+                            },
+                            "sync_test8": {
+                                "type": "string"
+                            },
+                            "sync_test7": {
+                                "type": "string"
+                            },
+                            "sync_test6": {
+                                "type": "string"
+                            },
+                            "children": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "household_size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "postal_address": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "education_level": {
+                                "type": "string"
+                            },
+                            "income": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "sync_test11": {
+                                "type": "string"
+                            },
+                            "sync_test12": {
+                                "type": "string"
+                            },
+                            "postal_city": {
+                                "type": "string"
+                            },
+                            "sync_test10": {
+                                "type": "string"
+                            },
+                            "gender": {
+                                "type": "string"
+                            },
+                            "ethnicity": {
+                                "type": "string"
+                            },
+                            "timezone": {
+                                "type": "string"
+                            },
+                            "sync_test19": {
+                                "type": "string"
+                            },
+                            "industry": {
+                                "type": "string"
+                            },
+                            "sync_test17": {
+                                "type": "string"
+                            },
+                            "sync_test18": {
+                                "type": "string"
+                            },
+                            "locale": {
+                                "type": "string"
+                            },
+                            "sync_test15": {
+                                "type": "string"
+                            },
+                            "sync_test16": {
+                                "type": "string"
+                            },
+                            "sync_test13": {
+                                "type": "string"
+                            },
+                            "sync_test14": {
+                                "type": "string"
+                            },
+                            "sfdc_test": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "sync_test22": {
+                                "type": "string"
+                            },
+                            "postal_state": {
+                                "type": "string"
+                            },
+                            "sync_test23": {
+                                "type": "string"
+                            },
+                            "sync_test20": {
+                                "type": "string"
+                            },
+                            "sync_test21": {
+                                "type": "string"
+                            },
+                            "last_name": {
+                                "type": "string"
+                            },
+                            "sync_test28": {
+                                "type": "string"
+                            },
+                            "sync_test29": {
+                                "type": "string"
+                            },
+                            "sex_orientation": {
+                                "type": "string"
+                            },
+                            "sync_test26": {
+                                "type": "string"
+                            },
+                            "sync_test27": {
+                                "type": "string"
+                            },
+                            "sync_test24": {
+                                "type": "string"
+                            },
+                            "sync_test25": {
+                                "type": "string"
+                            },
+                            "sync_test5": {
+                                "type": "string"
+                            },
+                            "marital": {
+                                "type": "string"
+                            },
+                            "sync_test4": {
+                                "type": "string"
+                            },
+                            "sync_test3": {
+                                "type": "string"
+                            },
+                            "sync_test2": {
+                                "type": "string"
+                            },
+                            "sync_test1": {
+                                "type": "string"
+                            },
+                            "signup_time": {
+                                "type": "string"
+                            },
+                            "postal_code": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "users": {
+                        "id": "users",
+                        "properties": {
+                            "purchase_incomplete": {
+                                "type": "unknown"
+                            },
+                            "engagement": {
+                                "type": "string"
+                            },
+                            "activity": {
+                                "type": "activity"
+                            },
+                            "purchases": {
+                                "type": "unknown"
+                            },
+                            "lists": {
+                                "type": "lists"
+                            },
+                            "keys": {
+                                "type": "keys"
+                            },
+                            "lifetime": {
+                                "type": "unknown"
+                            },
+                            "vars": {
+                                "type": "vars"
+                            },
+                            "optout_email": {
+                                "type": "string"
+                            },
+                            "device": {
+                                "type": "unknown"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 2856,
+            "createdDate": "2015-08-19T23:35:13Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "description": "Update a user",
+            "path": "/hubs/marketing/users/{userId}",
+            "vendorPath": "/user",
+            "method": "PATCH",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 2885,
+                    "resourceId": 2856,
+                    "createdDate": "2015-08-19T23:35:13Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "body",
+                    "vendorName": "json",
+                    "description": "The email object",
+                    "type": "body",
+                    "vendorType": "form",
+                    "dataType": "usersPatchReq",
+                    "vendorDataType": "usersPatchReq",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 2884,
+                    "resourceId": 2856,
+                    "createdDate": "2015-08-19T23:35:13Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "application/x-www-form-urlencoded",
+                    "vendorName": "Content-Type",
+                    "description": "The content type",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 2886,
+                    "resourceId": 2856,
+                    "createdDate": "2015-08-19T23:35:13Z",
+                    "updatedDate": "2015-09-02T18:17:02Z",
+                    "name": "userId",
+                    "vendorName": "id",
+                    "description": "The user ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "usersPatchRes",
+                "transform": false,
+                "swagger": {
+                    "usersPatchResActivity": {
+                        "properties": {
+                            "create_time": {
+                                "format": "date-time",
+                                "type": "string",
+                                "x-mask": "EEE, dd MMM yyyy HH:mm:ss Z",
+                                "x-samplevalue": "Thu, 20 Jun 2019 03:56:17 -0600"
+                            }
+                        },
+                        "title": "activity",
+                        "type": "object"
+                    },
+                    "usersPatchResKeys": {
+                        "properties": {
+                            "cookie": {
+                                "type": "string",
+                                "x-samplevalue": "467f8543eebcb979fd5222b88dee41885d0b58419c625f686a0174de0f004b30f2122fa0da427217f86f9497"
+                            },
+                            "email": {
+                                "type": "string",
+                                "x-samplevalue": "sai@gmail.com",
+                                "x-sub-format": "email"
+                            },
+                            "sid": {
+                                "type": "string",
+                                "x-samplevalue": "5d0b58419c625f686a0174de"
+                            }
+                        },
+                        "title": "keys",
+                        "type": "object"
+                    },
+                    "usersPatchRes": {
+                        "properties": {
+                            "activity": {
+                                "type": "usersPostResActivity"
+                            },
+                            "engagement": {
+                                "type": "string",
+                                "x-samplevalue": "new"
+                            },
+                            "keys": {
+                                "type": "usersPostResKeys"
+                            },
+                            "optout_email": {
+                                "type": "string",
+                                "x-samplevalue": "none"
+                            },
+                            "smart_lists": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "x-samplevalue": [
+                                    "Master List",
+                                    "all_users"
+                                ]
+                            }
+                        },
+                        "title": "usersPatchRes"
+                    }
+                },
+                "requestSwagger": {
+                    "usersPatchReq": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "sai@gmail.com",
+                                "x-sub-format": "email"
+                            },
+                            "lists": {
+                                "type": "usersPostReqLists"
+                            },
+                            "vars": {
+                                "type": "usersPostReqVars"
+                            }
+                        },
+                        "title": "usersPostReq"
+                    },
+                    "usersPatchReqLists": {
+                        "properties": {
+                            "NaturalListNameToJoin": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 1
+                            },
+                            "NaturalListNameToLeave": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 0
+                            }
+                        },
+                        "title": "lists",
+                        "type": "object"
+                    },
+                    "usersPatchReqVars": {
+                        "properties": {
+                            "FirstName": {
+                                "type": "string",
+                                "x-samplevalue": "Douglas"
+                            },
+                            "LastName": {
+                                "type": "string",
+                                "x-samplevalue": "Crockford"
+                            }
+                        },
+                        "title": "vars",
+                        "type": "object"
+                    }
+                },
+                "requestName": "usersPatchReq"
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 426,
+            "createdDate": "2015-07-14T14:26:16Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "name": "sailthru.api.key",
+            "vendorName": "api_key",
+            "type": "configuration",
+            "vendorType": "query",
+            "source": "request",
+            "elementId": 404,
+            "required": false
+        },
+        {
+            "id": 427,
+            "createdDate": "2015-07-14T14:26:16Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "name": "sailthru.api.secret",
+            "vendorName": "api_secret",
+            "type": "configuration",
+            "vendorType": "configuration",
+            "source": "request",
+            "elementId": 404,
+            "required": false
+        },
+        {
+            "id": 428,
+            "createdDate": "2015-07-14T14:26:16Z",
+            "updatedDate": "2015-09-02T18:17:02Z",
+            "name": "sailthru.format",
+            "vendorName": "format",
+            "type": "configuration",
+            "vendorType": "query",
+            "source": "request",
+            "elementId": 404,
+            "required": false
+        }
+    ],
+    "private": false
+}

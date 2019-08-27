@@ -1,0 +1,3105 @@
+{
+    "id": 313,
+    "name": "Microsoft OneDrive for Business",
+    "hookName": "OneDriveforBusiness",
+    "key": "onedrivebusiness",
+    "description": "Add a One Drive for Business Instance to connect your existing One Drive for Business account to the Cloud Storage and Documents Hub, allowing you to manage files and folders. You will need your One Drive for Business account information to add an instance.",
+    "image": "elements/provider_onedrive_logo.png",
+    "logo": "onedrive",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 3079,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "OneDrive for Business Beta Max Page Size (or limit)",
+            "defaultValue": "100",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3073,
+            "name": "OAuth Refresh Interval (s)",
+            "key": "oauth.user.refresh_interval",
+            "description": "OneDrive for Business Beta OAuth Refresh Interval (s)",
+            "defaultValue": "3300",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9325,
+            "name": "Event Metadata",
+            "key": "event.metadata",
+            "description": "Event Metadata",
+            "defaultValue": "{\"polling\": {\"file\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]},\"folder\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 254103,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3068,
+            "name": "OAuth Authorization URL",
+            "key": "oauth.authorization.url",
+            "description": "OneDrive for Business Beta OAuth Authorization URL",
+            "defaultValue": "https://login.microsoftonline.com/common/oauth2/authorize?",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 171468,
+            "name": "User Agent",
+            "key": "user.agent",
+            "description": "User Agent",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 3080,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "Onedrivebusiness Pagination Type",
+            "defaultValue": "cursor",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 9830,
+            "name": "Change Token",
+            "key": "change_token",
+            "description": "Change Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3069,
+            "name": "OAuth Token URL",
+            "key": "oauth.token.url",
+            "description": "OneDrive for Business Beta OAuth Token URL",
+            "defaultValue": "https://login.microsoftonline.com/common/oauth2/token?",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 3064,
+            "name": "Base URL",
+            "key": "base.url",
+            "description": "OneDrive for Business Beta Base URL",
+            "defaultValue": "https://{siteAddress}/_api/v2.0/me",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3067,
+            "name": "OAuth Callback URL",
+            "key": "oauth.callback.url",
+            "description": "OneDrive for Business Beta OAuth Callback URL",
+            "defaultValue": "https://snapshot.cloud-elements.com/elements/jsp/home.jsp",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 3070,
+            "name": "OAuth Scope",
+            "key": "oauth.scope",
+            "description": "OneDrive for Business Beta OAuth Scope",
+            "defaultValue": "wl.signin wl.offline_access onedrive.readwrite",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3071,
+            "name": "Your OneDrive for Business Site Address",
+            "key": "onedrivebusiness.site.address",
+            "description": "Your individual site address in the form of {yourTenant}-my.sharepoint.com",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 3072,
+            "name": "OAuth Access Token",
+            "key": "oauth.user.token",
+            "description": "OneDrive for Business Beta OAuth Access Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3074,
+            "name": "OAuth Refresh Token",
+            "key": "oauth.user.refresh_token",
+            "description": "OneDrive for Business Beta OAuth Refresh Token",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3075,
+            "name": "OAuth Refresh Time",
+            "key": "oauth.user.refresh_time",
+            "description": "OneDrive for Business Beta OAuth Refresh Time",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3065,
+            "name": "OAuth API Key",
+            "key": "oauth.api.key",
+            "description": "OneDrive for Business Beta OAuth API Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 3066,
+            "name": "OAuth API Secret",
+            "key": "oauth.api.secret",
+            "description": "OneDrive for Business Beta OAuth API Secret",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 3081,
+            "name": "Document Hub Tagging",
+            "key": "document.tagging",
+            "description": "Enable Tagging of Documents",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "BOOLEAN_YESNO",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 52586,
+            "name": "Filter null values from the response",
+            "key": "filter.response.nulls",
+            "description": "Used to enable/disable filtering of null values from the responses.",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 51,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 160010,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256240,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256491,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 84435,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3076,
+            "name": "Enabled/Disable Event Notifications",
+            "key": "event.notification.enabled",
+            "description": "OneDrive for Business Beta Enabled/Disable Event Notifications",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 300,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9829,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "Used for how often to poll the application (in minutes)",
+            "defaultValue": "10",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 301,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9828,
+            "name": "Event Poller Configuration",
+            "key": "event.poller.configuration",
+            "description": "Event Poller Resources Configuration. The configuration is defined via JSON, an example of which is as follows - { \"contacts\": { \"url\": \"/hubs/helpdesk/contacts\", “idField”: “user.id”, “datesConfiguration”: { \"updatedDateField\": \"user.updated_at\", \"updatedDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\", “createdDateField”: “user.created_at”, “createdDateFormat\": \"yyyy-MM-dd'T'HH:mm:ssX\" }, \"pageSize\": 10000 } }",
+            "defaultValue": "{\n      \"documents\": {\n          \"url\": \"/hubs/documents/changes\",\n          \"idField\": \"id\",\n          \"filterByUpdatedDate\": true,\n          \"datesConfiguration\": {\n              \"updatedDateField\": \"modifiedDate\",\n              \"updatedDateFormat\": \"milliseconds\",\n              \"createdDateField\": \"createdDate\",\n              \"createdDateFormat\": \"milliseconds\"\n          }\n      }\n    }",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 304,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 3077,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "OneDrive for Business Beta Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 305,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 9722,
+            "name": "Callback Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "A key used to generate a validation hash header of the event/bulk notification webhook callback payload",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 306,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 3078,
+            "name": "Vendor Event Type",
+            "key": "event.vendor.type",
+            "description": "OneDrive for Business Beta Vendor Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 309,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 6123,
+            "createdDate": "2016-02-23T00:16:04Z",
+            "description": "Get a list of CloudFiles that are contained in a specified folder on your cloud service specified by a path.",
+            "path": "/hubs/documents/changes",
+            "vendorPath": "/drive/root:/:/view.delta",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 6687,
+                    "resourceId": 6123,
+                    "createdDate": "2016-02-23T00:16:04Z",
+                    "name": "change_token",
+                    "vendorName": "token",
+                    "description": "Change Token",
+                    "type": "configuration",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "changes",
+                "transform": false,
+                "swagger": {
+                    "changes": {
+                        "id": "changes",
+                        "items": {
+                            "$ref": "changesListObject"
+                        },
+                        "type": "array"
+                    },
+                    "changesListObject": {
+                        "id": "changesListObject",
+                        "properties": {
+                            "createdDate": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "parentFolderId": {
+                                "type": "string"
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "|value",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1706,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Deletes a file from your cloud service by its specified path.",
+            "path": "/hubs/documents/files",
+            "vendorPath": "/drive/root:{path}:",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 1921,
+                    "resourceId": 1706,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1705,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves a single file from your cloud service from a specified path. The file is directly streamed from the cloud storage provider through Cloud Elements, and is not buffered to disk.",
+            "path": "/hubs/documents/files",
+            "vendorPath": "/drive/root:{path}:/content",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 1919,
+                    "resourceId": 1705,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 1920,
+                    "resourceId": 1705,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "true",
+                    "vendorName": "Elements-Stream",
+                    "description": "Turns on streaming for this API",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "file",
+                "transform": false
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1718,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Uploads a file to your endpoint cloud service.",
+            "path": "/hubs/documents/files",
+            "vendorPath": "/drive/root:{path}:/content",
+            "method": "POST",
+            "vendorMethod": "PUT",
+            "parameters": [
+                {
+                    "id": 1937,
+                    "resourceId": 1718,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 1938,
+                    "resourceId": 1718,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "tags[]",
+                    "vendorName": "tags[]",
+                    "description": "The tags to apply to this file",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "array[string]",
+                    "vendorDataType": "array[string]",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 175253,
+                    "resourceId": 1718,
+                    "createdDate": "2017-08-02T16:56:43Z",
+                    "name": "overwrite",
+                    "vendorName": "overwrite",
+                    "description": "If true, the file will be over written if it exists.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 1936,
+                    "resourceId": 1718,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "file",
+                    "vendorName": "file",
+                    "description": "The file to be uploaded",
+                    "type": "multipart",
+                    "vendorType": "multipart",
+                    "dataType": "file",
+                    "vendorDataType": "File",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 33504,
+            "createdDate": "2016-11-20T03:32:15Z",
+            "description": "Copy's a File to a destination location ",
+            "path": "/hubs/documents/files/copy",
+            "vendorPath": "/drive/root:{path}:/action.copy",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 51171,
+                    "resourceId": 33504,
+                    "createdDate": "2016-11-20T03:32:15Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The Path of the File you want to copy",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 51172,
+                    "resourceId": 33504,
+                    "createdDate": "2016-11-20T03:32:15Z",
+                    "name": "overwrite",
+                    "vendorName": "overwrite",
+                    "description": "If true, the file will be over written if it exists.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 51173,
+                    "resourceId": 33504,
+                    "createdDate": "2016-11-20T03:32:15Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The path value should be the full path of the file including the name",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "copyFiles",
+                    "vendorDataType": "copyFiles",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "copyFiles",
+                "transform": false,
+                "swagger": {
+                    "copyFiles": {
+                        "id": "copyFiles",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                },
+                "requestName": ""
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1702,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Deletes a specific file associated with an ID from your cloud service.",
+            "path": "/hubs/documents/files/{id}",
+            "vendorPath": "/drive/items/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 1915,
+                    "resourceId": 1702,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1701,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves a specific file associated with an ID from your cloud service from a specified path. The file is directly streamed from the cloud storage provider through Cloud Elements, and is not buffered to disk.",
+            "path": "/hubs/documents/files/{id}",
+            "vendorPath": "/drive/items/{id}/content",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 1913,
+                    "resourceId": 1701,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 1914,
+                    "resourceId": 1701,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "true",
+                    "vendorName": "Elements-Stream",
+                    "description": "Turns on streaming for this API.",
+                    "type": "value",
+                    "vendorType": "header",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "file",
+                "transform": false
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 33505,
+            "createdDate": "2016-11-20T03:32:15Z",
+            "description": "Copy's a File to a destination location ",
+            "path": "/hubs/documents/files/{id}/copy",
+            "vendorPath": "/drive/items/{id}/action.copy",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 51174,
+                    "resourceId": 33505,
+                    "createdDate": "2016-11-20T03:32:15Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The Source File Id that you wish to copy",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 51175,
+                    "resourceId": 33505,
+                    "createdDate": "2016-11-20T03:32:15Z",
+                    "name": "overwrite",
+                    "vendorName": "overwrite",
+                    "description": "If true, the File will be overwriten.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 51176,
+                    "resourceId": 33505,
+                    "createdDate": "2016-11-20T03:32:15Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The path should be the full path of the file to be copied",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "copyFiles",
+                    "vendorDataType": "copyFiles",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "copyFiles",
+                "transform": false,
+                "swagger": {
+                    "copyFiles": {
+                        "id": "copyFiles",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                },
+                "requestName": ""
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 45675,
+            "createdDate": "2017-02-24T07:30:41Z",
+            "description": "Create and return a shareable link to the file with the given ID.",
+            "path": "/hubs/documents/files/{id}/links",
+            "vendorPath": "/drive/items/{id}/action.createLink",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 73066,
+                    "resourceId": 45675,
+                    "createdDate": "2017-02-24T07:30:41Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The ID of the file for which a link needs to be created and returned.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudLink",
+                "transform": false,
+                "swagger": {
+                    "CloudLink": {
+                        "id": "CloudLink",
+                        "properties": {
+                            "cloudElementsLink": {
+                                "type": "string"
+                            },
+                            "expires": {
+                                "type": "string"
+                            },
+                            "providerLinkExpires": {
+                                "type": "string"
+                            },
+                            "providerViewLinkExpires": {
+                                "type": "string"
+                            },
+                            "providerLink": {
+                                "type": "string"
+                            },
+                            "providerViewLink": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 4749,
+                    "resourceId": 45675,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var body = {\n\t\"type\": \"view\"\n}\n\ndone({\n\t\"request_vendor_body\": JSON.stringify(body),\n\t\"continue\": true\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1703,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves specific metadata on a file associated with an ID from your cloud service.",
+            "path": "/hubs/documents/files/{id}/metadata",
+            "vendorPath": "/drive/items/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 1916,
+                    "resourceId": 1703,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 49707,
+                    "resourceId": 1703,
+                    "createdDate": "2016-11-15T19:51:02Z",
+                    "name": "isoDates",
+                    "vendorName": "isoDates",
+                    "description": "Optional query parameter to return the created and modified date/time in ISO8601 format.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1704,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Update a file's metadata associated with an ID.",
+            "path": "/hubs/documents/files/{id}/metadata",
+            "vendorPath": "/drive/items/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 1917,
+                    "resourceId": 1704,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A Metadata object with the fields to update. Valid values include path and tags.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "CloudFile",
+                    "vendorDataType": "CloudFile",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 1918,
+                    "resourceId": 1704,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 121303,
+            "createdDate": "2017-12-27T00:09:20Z",
+            "description": "List all revisions for a file.",
+            "path": "/hubs/documents/files/{id}/revisions",
+            "vendorPath": "/drive/items/{id}/versions",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 265850,
+                    "resourceId": 121303,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 265849,
+                    "resourceId": 121303,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 265848,
+                    "resourceId": 121303,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file ID.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "filesRevisionsListByID",
+                "transform": false,
+                "swagger": {
+                    "filesRevisionsListByID": {
+                        "id": "filesRevisionsListByID",
+                        "items": {
+                            "$ref": "filesRevisionsListByIDObject"
+                        },
+                        "type": "array"
+                    },
+                    "filesRevisionsListByIDObject": {
+                        "id": "filesRevisionsListByIDObject",
+                        "properties": {
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "fileName": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-has-customfields": true,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Versions"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 121304,
+            "createdDate": "2017-12-27T00:09:20Z",
+            "description": "Retrieve a Revision of a File.",
+            "path": "/hubs/documents/files/{id}/revisions/{revisionId}",
+            "vendorPath": "/drive/items/{id}/versions/{revisionId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 265852,
+                    "resourceId": 121304,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The file ID.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 265851,
+                    "resourceId": 121304,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "revisionId",
+                    "vendorName": "revisionId",
+                    "description": "The revision ID.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "filesRevisionById",
+                "transform": false,
+                "swagger": {
+                    "filesRevisionByIdObject": {
+                        "id": "filesRevisionByIdObject",
+                        "properties": {
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "fileName": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-has-customfields": true,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Versions"
+                    },
+                    "filesRevisionById": {
+                        "id": "filesRevisionById",
+                        "items": {
+                            "$ref": "filesRevisionByIdObject"
+                        },
+                        "type": "array"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 16601,
+                    "resourceId": 121304,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "done({\n\t\"response_body\":response_body[0],\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 45674,
+            "createdDate": "2017-02-24T07:30:41Z",
+            "description": "Create and return a shareable link to the file with the given path.",
+            "path": "/hubs/documents/files/links",
+            "vendorPath": "/drive/root:{path}:/action.createLink",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 73067,
+                    "resourceId": 45674,
+                    "createdDate": "2017-02-24T07:30:41Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudLink",
+                "transform": false,
+                "swagger": {
+                    "CloudLink": {
+                        "id": "CloudLink",
+                        "properties": {
+                            "cloudElementsLink": {
+                                "type": "string"
+                            },
+                            "expires": {
+                                "type": "string"
+                            },
+                            "providerLinkExpires": {
+                                "type": "string"
+                            },
+                            "providerViewLinkExpires": {
+                                "type": "string"
+                            },
+                            "providerLink": {
+                                "type": "string"
+                            },
+                            "providerViewLink": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 4748,
+                    "resourceId": 45674,
+                    "mimeType": "application/javascript",
+                    "type": "preRequest",
+                    "body": "var body = {\n\t\"type\": \"view\"\n}\n\ndone({\n\t\"request_vendor_body\": JSON.stringify(body),\n\t\"continue\": true\n});\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1707,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves the metadata from a single file on your cloud service from a specified path.",
+            "path": "/hubs/documents/files/metadata",
+            "vendorPath": "/drive/root:{path}:",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 1922,
+                    "resourceId": 1707,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 49706,
+                    "resourceId": 1707,
+                    "createdDate": "2016-11-15T19:51:02Z",
+                    "name": "isoDates",
+                    "vendorName": "isoDates",
+                    "description": "Optional query parameter to return the created and modified date/time in ISO8601 format.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1700,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Update a file's metadata associated with a path.",
+            "path": "/hubs/documents/files/metadata",
+            "vendorPath": "/drive/root:{path}:",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 1911,
+                    "resourceId": 1700,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A Metadata object with the fields to update. Valid values include path and tags.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "CloudFile",
+                    "vendorDataType": "CloudFile",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 1912,
+                    "resourceId": 1700,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 121305,
+            "createdDate": "2017-12-27T00:09:20Z",
+            "description": "List all revisions for a file.",
+            "path": "/hubs/documents/files/revisions",
+            "vendorPath": "/drive/root:{path}:/versions",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 265855,
+                    "resourceId": 121305,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 265854,
+                    "resourceId": 121305,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 265853,
+                    "resourceId": 121305,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "filesRevisionsListByPath",
+                "transform": false,
+                "swagger": {
+                    "filesRevisionsListByPath": {
+                        "id": "filesRevisionsListByPath",
+                        "items": {
+                            "$ref": "filesRevisionsListByPathObject"
+                        },
+                        "type": "array"
+                    },
+                    "filesRevisionsListByPathObject": {
+                        "id": "filesRevisionsListByPathObject",
+                        "properties": {
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "fileName": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-has-customfields": true,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Versions"
+                    }
+                }
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 121306,
+            "createdDate": "2017-12-27T00:09:20Z",
+            "description": "Retrieve a Revision for a File.",
+            "path": "/hubs/documents/files/revisions/{revisionId}",
+            "vendorPath": "/drive/root:{path}:/versions/{revisionId}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 265857,
+                    "resourceId": 121306,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the file (e.g. /myDirectory/myFile.txt)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 265856,
+                    "resourceId": 121306,
+                    "createdDate": "2017-12-27T00:09:20Z",
+                    "name": "revisionId",
+                    "vendorName": "revisionId",
+                    "description": "The revision ID.",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "filesRevisionByPath",
+                "transform": false,
+                "swagger": {
+                    "filesRevisionByPath": {
+                        "id": "filesRevisionByPath",
+                        "items": {
+                            "$ref": "filesRevisionByPathObject"
+                        },
+                        "type": "array"
+                    },
+                    "filesRevisionByPathObject": {
+                        "id": "filesRevisionByPathObject",
+                        "properties": {
+                            "fileSize": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-readOnly": true
+                            },
+                            "fileName": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-readOnly": true
+                            },
+                            "modifiedDate": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-readOnly": true
+                            }
+                        },
+                        "x-has-customfields": true,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "Versions"
+                    }
+                }
+            },
+            "type": "api",
+            "nextPageKey": "",
+            "hooks": [
+                {
+                    "id": 16602,
+                    "resourceId": 121306,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "done({\n\t\"response_body\":response_body[0],\n\t\"continue\":true\n})",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_NOT_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1712,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Deletes an entire folder from your cloud service by its specified path.",
+            "path": "/hubs/documents/folders",
+            "vendorPath": "/drive/root:{path}:",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 1929,
+                    "resourceId": 1712,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1708,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Creates a new folder on your cloud service using its specified path.",
+            "path": "/hubs/documents/folders",
+            "vendorPath": "/drive/root:{path}:/children",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 1923,
+                    "resourceId": 1708,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object representing the destination file. Path is required and no other fields are supported.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "folderspost",
+                    "vendorDataType": "folderspost",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                },
+                "requestSwagger": {
+                    "folderspost": {
+                        "id": "CloudFolders",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "x-vendor-objectname": "folder"
+                    }
+                },
+                "requestName": "folderspost"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1709,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Get a list of CloudFiles that are contained in a specified folder on your cloud service specified by a path.",
+            "path": "/hubs/documents/folders/contents",
+            "vendorPath": "/drive/root:{path}:/children",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 456066,
+                    "resourceId": 1709,
+                    "createdDate": "2018-09-03T23:50:15Z",
+                    "name": "pageSize",
+                    "vendorName": "$top",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 456065,
+                    "resourceId": 1709,
+                    "createdDate": "2018-09-03T23:50:15Z",
+                    "name": "nextPage",
+                    "vendorName": "$skipToken",
+                    "description": "The next page token, taken from the response headers 'elements-next-page-token'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 1924,
+                    "resourceId": 1709,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "fetchTags",
+                    "vendorName": "fetchTags",
+                    "description": "Return the tags for each file in the response?",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 1925,
+                    "resourceId": 1709,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 49703,
+                    "resourceId": 1709,
+                    "createdDate": "2016-11-15T19:51:02Z",
+                    "name": "isoDates",
+                    "vendorName": "isoDates",
+                    "description": "Optional query parameter to return the created and modified date/time in ISO8601 format.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CloudFileList",
+                "transform": false,
+                "swagger": {
+                    "CloudFileListObject": {
+                        "id": "CloudFileListObject",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "CloudFileList": {
+                        "id": "CloudFileList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "CloudFileListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "value",
+            "nextPageKey": "header.od-page-token",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1716,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Deletes an entire folder associated with an ID from your cloud service.",
+            "path": "/hubs/documents/folders/{id}",
+            "vendorPath": "/drive/items/{id}",
+            "method": "DELETE",
+            "vendorMethod": "DELETE",
+            "parameters": [
+                {
+                    "id": 1935,
+                    "resourceId": 1716,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1713,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves a list of CloudFiles that are contained in a specified folder associated with an ID.",
+            "path": "/hubs/documents/folders/{id}/contents",
+            "vendorPath": "/drive/items/{id}/children",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 456064,
+                    "resourceId": 1713,
+                    "createdDate": "2018-09-03T23:50:15Z",
+                    "name": "nextPage",
+                    "vendorName": "$skipToken",
+                    "description": "The next page token, taken from the response headers 'elements-next-page-token'",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 456063,
+                    "resourceId": 1713,
+                    "createdDate": "2018-09-03T23:50:15Z",
+                    "name": "pageSize",
+                    "vendorName": "$top",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 1930,
+                    "resourceId": 1713,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "fetchTags",
+                    "vendorName": "fetchTags",
+                    "description": "Return the tags for each file in the response?",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 1931,
+                    "resourceId": 1713,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 49704,
+                    "resourceId": 1713,
+                    "createdDate": "2016-11-15T19:51:02Z",
+                    "name": "isoDates",
+                    "vendorName": "isoDates",
+                    "description": "Optional query parameter to return the created and modified date/time in ISO8601 format.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CloudFileList",
+                "transform": false,
+                "swagger": {
+                    "CloudFileListObject": {
+                        "id": "CloudFileListObject",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "CloudFileList": {
+                        "id": "CloudFileList",
+                        "type": "array",
+                        "items": {
+                            "$ref": "CloudFileListObject"
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "value",
+            "nextPageKey": "header.od-page-token",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1714,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves specific metadata on a folder associated with an ID.",
+            "path": "/hubs/documents/folders/{id}/metadata",
+            "vendorPath": "/drive/items/{id}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 1932,
+                    "resourceId": 1714,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 49708,
+                    "resourceId": 1714,
+                    "createdDate": "2016-11-15T19:51:02Z",
+                    "name": "isoDates",
+                    "vendorName": "isoDates",
+                    "description": "Optional query parameter to return the created and modified date/time in ISO8601 format.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1715,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Update a folder's metadata associated with an ID.",
+            "path": "/hubs/documents/folders/{id}/metadata",
+            "vendorPath": "/drive/items/{id}",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 1933,
+                    "resourceId": 1715,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object representing the destination file. Path is required and no other fields are supported.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "CloudFile",
+                    "vendorDataType": "CloudFile",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 1934,
+                    "resourceId": 1715,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "id",
+                    "vendorName": "id",
+                    "description": "The folder ID",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1710,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves specific metadata on a folder from your cloud service using its specified path.",
+            "path": "/hubs/documents/folders/metadata",
+            "vendorPath": "/drive/root:{path}:",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 1926,
+                    "resourceId": 1710,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 49705,
+                    "resourceId": 1710,
+                    "createdDate": "2016-11-15T19:51:02Z",
+                    "name": "isoDates",
+                    "vendorName": "isoDates",
+                    "description": "Optional query parameter to return the created and modified date/time in ISO8601 format.",
+                    "type": "query",
+                    "vendorType": "no-op",
+                    "dataType": "boolean",
+                    "vendorDataType": "boolean",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1711,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Update a folder's metadata associated with its path.",
+            "path": "/hubs/documents/folders/metadata",
+            "vendorPath": "/drive/root:{path}:",
+            "method": "PATCH",
+            "vendorMethod": "PATCH",
+            "parameters": [
+                {
+                    "id": 1927,
+                    "resourceId": 1711,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "A CloudFile object representing the destination file. Path is required and no other fields are supported.",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "CloudFile",
+                    "vendorDataType": "CloudFile",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 1928,
+                    "resourceId": 1711,
+                    "createdDate": "2015-06-18T15:44:40Z",
+                    "name": "path",
+                    "vendorName": "path",
+                    "description": "The full path to the existing folder (e.g. /myDirectory)",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "CloudFile",
+                "transform": false,
+                "swagger": {
+                    "CloudFile": {
+                        "id": "CloudFile",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "tags": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "string"
+                                }
+                            },
+                            "createdDate": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "modifiedDate": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "directory": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 150908,
+            "createdDate": "2018-03-28T00:12:21Z",
+            "description": "Get information about the user who is currently logged in",
+            "path": "/hubs/documents/me",
+            "vendorPath": "/drive",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "ItsMe",
+                "transform": false,
+                "swagger": {
+                    "ItsMe": {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "184738506",
+                                "x-readOnly": true,
+                                "description": "The id of the current user."
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "Test Name",
+                                "x-name": true,
+                                "description": "The name of the current user."
+                            },
+                            "login": {
+                                "type": "string",
+                                "x-samplevalue": "myemail@cloud-elements.com",
+                                "x-readOnly": true,
+                                "description": "The email of the current user."
+                            },
+                            "createdDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-readOnly": true,
+                                "x-sub-format": "Date Time - ISO 8601",
+                                "x-samplevalue": "2018-01-09T20:36:28Z",
+                                "description": "The time this user was created"
+                            },
+                            "modifiedDate": {
+                                "format": "date-time",
+                                "type": "string",
+                                "mask": "yyyy-MM-dd'T'HH:mm:ssZ",
+                                "x-readOnly": true,
+                                "x-sub-format": "Date Time - ISO 8601",
+                                "x-samplevalue": "2018-01-09T20:36:28Z",
+                                "description": "The time this user was last modified"
+                            }
+                        },
+                        "title": "ItsMe",
+                        "x-has-customfields": false,
+                        "x-primary-key": [
+                            "id"
+                        ],
+                        "x-vendor-objectname": "drive"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 139891,
+            "createdDate": "2018-02-27T05:00:12Z",
+            "description": "Ping the Element to confirm that the Hub element has a heartbeat. If the Element does not have a heartbeat, an error message will be returned.\\n",
+            "path": "/hubs/documents/ping",
+            "vendorPath": "/drive",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "pingResponse",
+                "transform": false,
+                "swagger": {
+                    "pingResponse": {
+                        "properties": {
+                            "dateTime": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "endpoint": {
+                                "type": "string"
+                            },
+                            "valid": {
+                                "type": "boolean"
+                            }
+                        },
+                        "title": "pingResponse",
+                        "x-has-customfields": false,
+                        "x-vendor-objectname": "ping"
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [
+                {
+                    "id": 20025,
+                    "resourceId": 139891,
+                    "mimeType": "application/javascript",
+                    "type": "postRequest",
+                    "body": "\nif (response_iserror) {\n\tdone();\n}\n\nlet body = response_body;\nlet resp_body = {};\nif (body['id']) {\n  var response = {};\n  response['endpoint'] = 'onedrivebusiness';\n  response['dateTime'] = new Date();\n  response['valid'] = true;\n  done({\n  \t\"response_body\": response\n  });\n}\n\nelse{\ndone();\n}\n\n\n\n",
+                    "isLegacy": false
+                }
+            ],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 265362,
+            "createdDate": "2019-05-09T06:23:24Z",
+            "description": "Search the hierarchy of items for items matching a query. You can search the current user's OneDrive.",
+            "path": "/hubs/documents/search",
+            "vendorPath": "/drive/root/search(q='{search-text}')",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 655968,
+                    "resourceId": 265362,
+                    "createdDate": "2019-05-10T10:17:55Z",
+                    "name": "pageSize",
+                    "vendorName": "$top",
+                    "description": "The number of items to return in a result set. The OneDrive API may have a hard limit that prevents you from asking for more items per response.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "integer",
+                    "vendorDataType": "integer",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 653796,
+                    "resourceId": 265362,
+                    "createdDate": "2019-05-09T06:23:24Z",
+                    "name": "expand",
+                    "vendorName": "$expand",
+                    "description": "You can use the expand query string parameter to instruct the OneDrive API to expand a children collection and include those results.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 653795,
+                    "resourceId": 265362,
+                    "createdDate": "2019-05-09T06:23:24Z",
+                    "name": "orderby",
+                    "vendorName": "$orderby",
+                    "description": "Comma-separated list of properties that are used to sort the order of items in the response collection. Works for name, size, and lastModifiedDateTime fields.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 653793,
+                    "resourceId": 265362,
+                    "createdDate": "2019-05-09T06:23:24Z",
+                    "name": "nextPage",
+                    "vendorName": "$skipToken",
+                    "description": "You can use the Paging token query string parameter to get the next set of results.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 653792,
+                    "resourceId": 265362,
+                    "createdDate": "2019-05-09T06:23:24Z",
+                    "name": "fields",
+                    "vendorName": "$select",
+                    "description": "You can use the select query string parameter to provide a comma-separated list of properties to return on Items.",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 653791,
+                    "resourceId": 265362,
+                    "createdDate": "2019-05-09T06:23:24Z",
+                    "name": "text",
+                    "vendorName": "search-text",
+                    "description": "The search string used to search for items. Values may be matched across several fields including filename, metadata, and file content.",
+                    "type": "query",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "searchResponse",
+                "transform": false,
+                "swagger": {
+                    "searchResponseProperties": {
+                        "properties": {
+                            "mimeType": {
+                                "type": "string",
+                                "x-samplevalue": "text/plain"
+                            }
+                        },
+                        "title": "properties",
+                        "type": "object"
+                    },
+                    "searchResponseObject": {
+                        "properties": {
+                            "createdDate": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1556206802000
+                            },
+                            "directory": {
+                                "type": "boolean",
+                                "x-samplevalue": false
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "017SK53R6BBCK7N6VU5VBIHXIWQFA5K6R3"
+                            },
+                            "modifiedDate": {
+                                "format": "int64",
+                                "type": "integer",
+                                "x-samplevalue": 1556206802000
+                            },
+                            "name": {
+                                "type": "string",
+                                "x-samplevalue": "abcda.txt"
+                            },
+                            "parentFolderId": {
+                                "type": "string",
+                                "x-samplevalue": "017SK53R56Y2GOVW7725BZO354PWSELRRZ"
+                            },
+                            "parentReference": {
+                                "type": "searchResponseParentReference"
+                            },
+                            "path": {
+                                "type": "string",
+                                "x-samplevalue": "null/abcda.txt"
+                            },
+                            "properties": {
+                                "type": "searchResponseProperties"
+                            },
+                            "size": {
+                                "format": "int32",
+                                "type": "integer",
+                                "x-samplevalue": 8
+                            },
+                            "webUrl": {
+                                "type": "string",
+                                "x-samplevalue": "https://cloudelements1-my.sharepoint.com/personal/cloudelements_cloudelements1_onmicrosoft_com/Documents/abcda.txt"
+                            }
+                        },
+                        "title": "searchResponse",
+                        "type": "object"
+                    },
+                    "searchResponse": {
+                        "items": {
+                            "type": "searchResponseObject"
+                        },
+                        "type": "array"
+                    },
+                    "searchResponseParentReference": {
+                        "properties": {
+                            "driveId": {
+                                "type": "string",
+                                "x-samplevalue": "b!V98BQKlNEUCMJgMNuOgn-WQOEg48RA1LsON0MElC3k0ReihGpfHkQIgePl7c1qRp"
+                            },
+                            "driveType": {
+                                "type": "string",
+                                "x-samplevalue": "business"
+                            },
+                            "id": {
+                                "type": "string",
+                                "x-samplevalue": "017SK53R56Y2GOVW7725BZO354PWSELRRZ"
+                            }
+                        },
+                        "title": "parentReference",
+                        "type": "object"
+                    }
+                }
+            },
+            "type": "api",
+            "rootKey": "value",
+            "nextPageKey": "header.od-page-token",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "paginationType": "VENDOR_SUPPORTED",
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 1717,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "description": "Retrieves the amount of storage available on your cloud service account.",
+            "path": "/hubs/documents/storage",
+            "vendorPath": "/drive",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "model": {
+                "name": "storage",
+                "transform": false,
+                "swagger": {
+                    "storage": {
+                        "id": "storage",
+                        "properties": {
+                            "shared": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "total": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "used": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": true,
+    "authentication": {
+        "type": "oauth2"
+    },
+    "hooks": [],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "documents",
+    "protocolType": "http",
+    "parameters": [
+        {
+            "id": 283,
+            "createdDate": "2015-06-18T15:44:40Z",
+            "name": "onedrivebusiness.site.address",
+            "vendorName": "siteAddress",
+            "type": "configuration",
+            "vendorType": "path",
+            "source": "request",
+            "elementId": 313,
+            "required": false
+        },
+        {
+            "id": 10195,
+            "createdDate": "2018-11-16T05:17:24Z",
+            "name": "user.agent",
+            "vendorName": "User-Agent",
+            "type": "configuration",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 313,
+            "required": false
+        }
+    ],
+    "private": false
+}

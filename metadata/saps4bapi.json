@@ -1,0 +1,1672 @@
+{
+    "id": 19028,
+    "name": "SAP S/4 BAPI",
+    "hookName": "SapBapi",
+    "key": "saps4bapi",
+    "description": "Add a SAP Element to connect your existing S4 to the ERP Hub, allowing you to manage all of your ERP activities across multiple ERP Elements. You will need your SAP account information to add an instance.",
+    "image": "elements/custom-element-default-logo.png",
+    "logo": "sap",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "configuration": [
+        {
+            "id": 148411,
+            "name": "Base Url",
+            "key": "base.url",
+            "description": "SAP Base Url",
+            "defaultValue": "baseurl",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": true
+        },
+        {
+            "id": 148408,
+            "name": "Host Name",
+            "key": "sap.host.name",
+            "description": "SAP Host Name or IP",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 254140,
+            "name": "Allow Select Fields parameter",
+            "key": "allow.select.fields",
+            "description": "Enables use of global fields query parameter to filter response to only specified fields. This will override any existing vendor functionality on the connector",
+            "defaultValue": "true",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "BOOLEAN",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 148409,
+            "name": "Pagination Type",
+            "key": "pagination.type",
+            "description": "SAP Pagination Type",
+            "defaultValue": "cursor",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 148412,
+            "name": "Max Page Size (or limit)",
+            "key": "pagination.max",
+            "description": "SAP Max Page Size (or limit)",
+            "defaultValue": "200",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 1,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 148407,
+            "name": "Username",
+            "key": "username",
+            "description": "Username",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 2,
+            "type": "TEXTFIELD_64",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 148406,
+            "name": "Password",
+            "key": "password",
+            "description": "Password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 3,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 148405,
+            "name": "Instance Number",
+            "key": "sap.instance.number",
+            "description": "SAP Instance Number",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 4,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 148404,
+            "name": "System ID",
+            "key": "sap.system.id",
+            "description": "SAP System ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 5,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": false,
+            "required": true
+        },
+        {
+            "id": 148410,
+            "name": "Jco Server Url",
+            "key": "jcoserver.url",
+            "description": "Url for the changes endpoint, this is used for getting the Idocs from JCO server",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 10,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 148403,
+            "name": "Event Notification Signature Key",
+            "key": "event.notification.signature.key",
+            "description": "SAP Bapi Event Notification Signature Key",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 11,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 159781,
+            "name": "Default select fields",
+            "key": "default.select.fields.map",
+            "description": "Generic map used to specify default fields for bulk download and GET /all requests. Each key should be the canonical objectName and values may be specified as a comma-delimited string or a list of strings",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 98,
+            "type": "TEXTAREA",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 148401,
+            "name": "Event Type",
+            "key": "event.vendor.type",
+            "description": "SAP Bapi Event Type",
+            "defaultValue": "polling",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 148402,
+            "name": "Time of Getting Token or Performing Authentication",
+            "key": "authentication.time",
+            "description": "SAP Time of Getting Token or Performing Authentication",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": true,
+            "groupControl": false,
+            "displayOrder": 100,
+            "type": "TEXTFIELD_32",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 148400,
+            "name": "Event poller refresh interval",
+            "key": "event.poller.refresh_interval",
+            "description": "SAP Bapi Set time interval for polling application (in minutes)",
+            "defaultValue": "10",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 101,
+            "type": "TEXTFIELD_128",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 148398,
+            "name": "Event Notification Callback URL",
+            "key": "event.notification.callback.url",
+            "description": "SAP Bapi Event Notification Callback URL",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 148399,
+            "name": "Event Notifications Enabled",
+            "key": "event.notification.enabled",
+            "description": "SAP Bapi Enable/Disable Event Notification",
+            "defaultValue": "false",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 102,
+            "type": "BOOLEAN",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 148396,
+            "name": "Event Poller Resources Configuration",
+            "key": "event.poller.configuration",
+            "description": "SAP Bapi Event Poller Resources Configuration",
+            "defaultValue": "{\"changes\":{\"url\":\"/hubs/erp/changes?where=fromDate='${gmtDate:yyyy-MM-dd HH:mm:ss}'\",\"idField\":\"\",\"datesConfiguration\":{\"updatedDateField\":\"\",\"updatedDateFormat\":\"\",\"updatedDateTimezone\":\"\",\"createdDateField\":\"createdDate\",\"createdDateFormat\":\"yyyy-MM-dd'T'HH:mm:ssXXX\",\"createdDateTimezone\":\"GMT\"}}}",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTAREA",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 148397,
+            "name": "Event Notification Subscription ID",
+            "key": "event.notification.subscription.id",
+            "description": "SAP Bapi Event Notification Subscription ID",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 104,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": true,
+            "required": false
+        },
+        {
+            "id": 256280,
+            "name": "Event Notification Basic Authentication UserName",
+            "key": "event.notification.basic.username",
+            "description": "Event Notification basic authentication username",
+            "defaultValue": "",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 110,
+            "type": "TEXTFIELD_1000",
+            "hideFromConsole": false,
+            "required": false
+        },
+        {
+            "id": 256531,
+            "name": "Event Notification Basic Authentication Password",
+            "key": "event.notification.basic.password",
+            "description": "Event Notification basic authentication password",
+            "resellerConfig": false,
+            "companyConfig": false,
+            "active": true,
+            "internal": false,
+            "groupControl": false,
+            "displayOrder": 112,
+            "type": "PASSWORD",
+            "hideFromConsole": false,
+            "required": false
+        }
+    ],
+    "resources": [
+        {
+            "id": 171494,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "description": "Generic API to call any BAPI with standard payload",
+            "path": "/hubs/erp/bapi/{bapiName}/execute",
+            "vendorPath": "{bapiName}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 406320,
+                    "resourceId": 171494,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The BAPI body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "bapiExecute",
+                    "vendorDataType": "bapiExecute",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 406319,
+                    "resourceId": 171494,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "bapiName",
+                    "vendorName": "bapiName",
+                    "description": "The BAPI name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "bapiExecute",
+                "transform": false,
+                "swagger": {
+                    "IDRANGE": {
+                        "properties": {
+                            "HIGH": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "LOW": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "OPTION": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "SIGN": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "IDRANGE",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "bapiExecute": {
+                        "properties": {
+                            "EXPORT": {
+                                "type": "EXPORT"
+                            },
+                            "IMPORT": {
+                                "type": "IMPORT"
+                            },
+                            "TABLES": {
+                                "type": "TABLES"
+                            }
+                        },
+                        "title": "bapiExecute",
+                        "x-has-customfields": false
+                    },
+                    "IMPORT": {
+                        "properties": {
+                            "CPDONLY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MAXROWS": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            }
+                        },
+                        "title": "IMPORT",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "RETURN": {
+                        "properties": {
+                            "ID": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "LOG_MSG_NO": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            },
+                            "LOG_NO": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V2": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V3": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V4": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "NUMBER": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            },
+                            "TYPE": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "RETURN",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "EXPORT": {
+                        "properties": {
+                            "RETURN": {
+                                "type": "RETURN"
+                            }
+                        },
+                        "title": "EXPORT",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "SPECIALDATA": {
+                        "properties": {
+                            "ACC_1_TIME": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CUSTOMER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "SPECIALDATA",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "ADDRESSDATA": {
+                        "properties": {
+                            "ADDRESS": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CITY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "COUNTRY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "COUNTRYISO": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CUSTOMER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "FAX_NUMBER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "NAME": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "POSTL_COD1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "REGION": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "SORT1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "STREET": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "TEL1_NUMBR": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "ADDRESSDATA",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "TABLES": {
+                        "properties": {
+                            "ADDRESSDATA": {
+                                "type": "ADDRESSDATA"
+                            },
+                            "IDRANGE": {
+                                "type": "IDRANGE"
+                            },
+                            "SPECIALDATA": {
+                                "type": "SPECIALDATA"
+                            }
+                        },
+                        "title": "TABLES",
+                        "type": "object",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestSwagger": {
+                    "IDRANGE": {
+                        "properties": {
+                            "HIGH": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "LOW": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "OPTION": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "SIGN": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "IDRANGE",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "bapiExecute": {
+                        "properties": {
+                            "EXPORT": {
+                                "type": "EXPORT"
+                            },
+                            "IMPORT": {
+                                "type": "IMPORT"
+                            },
+                            "TABLES": {
+                                "type": "TABLES"
+                            }
+                        },
+                        "title": "bapiExecute",
+                        "x-has-customfields": false
+                    },
+                    "IMPORT": {
+                        "properties": {
+                            "CPDONLY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MAXROWS": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            }
+                        },
+                        "title": "IMPORT",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "RETURN": {
+                        "properties": {
+                            "ID": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "LOG_MSG_NO": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            },
+                            "LOG_NO": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V2": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V3": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V4": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "NUMBER": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            },
+                            "TYPE": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "RETURN",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "EXPORT": {
+                        "properties": {
+                            "RETURN": {
+                                "type": "RETURN"
+                            }
+                        },
+                        "title": "EXPORT",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "SPECIALDATA": {
+                        "properties": {
+                            "ACC_1_TIME": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CUSTOMER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "SPECIALDATA",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "ADDRESSDATA": {
+                        "properties": {
+                            "ADDRESS": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CITY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "COUNTRY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "COUNTRYISO": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CUSTOMER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "FAX_NUMBER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "NAME": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "POSTL_COD1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "REGION": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "SORT1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "STREET": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "TEL1_NUMBR": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "ADDRESSDATA",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "TABLES": {
+                        "properties": {
+                            "ADDRESSDATA": {
+                                "type": "ADDRESSDATA"
+                            },
+                            "IDRANGE": {
+                                "type": "IDRANGE"
+                            },
+                            "SPECIALDATA": {
+                                "type": "SPECIALDATA"
+                            }
+                        },
+                        "title": "TABLES",
+                        "type": "object",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "bapiExecute"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 171495,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "description": "Generic API to call to any BAPI schema",
+            "path": "/hubs/erp/bapi/{bapiName}/schema",
+            "vendorPath": "{bapiName}",
+            "method": "GET",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 406321,
+                    "resourceId": 171495,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "bapiName",
+                    "vendorName": "bapiName",
+                    "description": "The BAPI name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "bapiSchema",
+                "transform": false,
+                "swagger": {
+                    "IDRANGE": {
+                        "properties": {
+                            "HIGH": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "LOW": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "OPTION": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "SIGN": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "IDRANGE",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "IMPORT": {
+                        "properties": {
+                            "CPDONLY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MAXROWS": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            }
+                        },
+                        "title": "IMPORT",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "RETURN": {
+                        "properties": {
+                            "ID": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "LOG_MSG_NO": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            },
+                            "LOG_NO": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V2": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V3": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "MESSAGE_V4": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "NUMBER": {
+                                "type": "string",
+                                "x-samplevalue": "number"
+                            },
+                            "TYPE": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "RETURN",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "EXPORT": {
+                        "properties": {
+                            "RETURN": {
+                                "type": "RETURN"
+                            }
+                        },
+                        "title": "EXPORT",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "SPECIALDATA": {
+                        "properties": {
+                            "ACC_1_TIME": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CUSTOMER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "SPECIALDATA",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "bapiSchema": {
+                        "properties": {
+                            "EXPORT": {
+                                "type": "EXPORT"
+                            },
+                            "IMPORT": {
+                                "type": "IMPORT"
+                            },
+                            "TABLES": {
+                                "type": "TABLES"
+                            }
+                        },
+                        "title": "bapiSchema",
+                        "x-has-customfields": false
+                    },
+                    "ADDRESSDATA": {
+                        "properties": {
+                            "ADDRESS": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CITY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "COUNTRY": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "COUNTRYISO": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "CUSTOMER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "FAX_NUMBER": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "NAME": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "POSTL_COD1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "REGION": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "SORT1": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "STREET": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            },
+                            "TEL1_NUMBR": {
+                                "type": "string",
+                                "x-samplevalue": "string"
+                            }
+                        },
+                        "title": "ADDRESSDATA",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "TABLES": {
+                        "properties": {
+                            "ADDRESSDATA": {
+                                "type": "ADDRESSDATA"
+                            },
+                            "IDRANGE": {
+                                "type": "IDRANGE"
+                            },
+                            "SPECIALDATA": {
+                                "type": "SPECIALDATA"
+                            }
+                        },
+                        "title": "TABLES",
+                        "type": "object",
+                        "x-has-customfields": false
+                    }
+                }
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 171496,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "description": "Search for /changes",
+            "path": "/hubs/erp/changes",
+            "vendorPath": "CHANGES",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 406324,
+                    "resourceId": 171496,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "where",
+                    "vendorName": "converter:toQueryParameters",
+                    "description": "The CEQL search expression",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "converter": "toQueryParameters",
+                    "required": false
+                },
+                {
+                    "id": 406323,
+                    "resourceId": 171496,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "page",
+                    "vendorName": "page",
+                    "description": "The page number of resources to retrieve",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                },
+                {
+                    "id": 406322,
+                    "resourceId": 171496,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "pageSize",
+                    "vendorName": "pageSize",
+                    "description": "The number of resources to return in a given page",
+                    "type": "query",
+                    "vendorType": "query",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": false
+                }
+            ],
+            "type": "apiNoDocumentation",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 171497,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "description": "Generic API to call any IDoc with IDoc payload",
+            "path": "/hubs/erp/idocs/{idocName}/execute",
+            "vendorPath": "{idocName}",
+            "method": "POST",
+            "vendorMethod": "POST",
+            "parameters": [
+                {
+                    "id": 406326,
+                    "resourceId": 171497,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "body",
+                    "vendorName": "body",
+                    "description": "The Idoc body",
+                    "type": "body",
+                    "vendorType": "body",
+                    "dataType": "idocsExecute",
+                    "vendorDataType": "idocsExecute",
+                    "source": "request",
+                    "required": true
+                },
+                {
+                    "id": 406325,
+                    "resourceId": 171497,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "idocName",
+                    "vendorName": "idocName",
+                    "description": "The Idoc name",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "model": {
+                "name": "idocsExecute",
+                "transform": false,
+                "swagger": {
+                    "idocsExecute": {
+                        "properties": {
+                            "tid": {
+                                "type": "string",
+                                "x-samplevalue": "tidvalu99287373u8383"
+                            }
+                        },
+                        "title": "idocsExecute",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestSwagger": {
+                    "E1EDK18": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "PRZNT": {
+                                "type": "string",
+                                "x-samplevalue": "0.000"
+                            },
+                            "QUALF": {
+                                "type": "string",
+                                "x-samplevalue": "001"
+                            },
+                            "TAGE": {
+                                "type": "string",
+                                "x-samplevalue": "30"
+                            },
+                            "ZTERM_TXT": {
+                                "type": "string",
+                                "x-samplevalue": "Up to 01/08/2014 without deduction"
+                            }
+                        },
+                        "title": "E1EDK18",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "E1EDK17": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "LKOND": {
+                                "type": "string",
+                                "x-samplevalue": "CIF"
+                            },
+                            "LKTEXT": {
+                                "type": "string",
+                                "x-samplevalue": "Costs, insurance & freight"
+                            },
+                            "QUALF": {
+                                "type": "string",
+                                "x-samplevalue": "001"
+                            }
+                        },
+                        "title": "E1EDK17",
+                        "x-has-customfields": false
+                    },
+                    "E1EDK04": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "MSATZ": {
+                                "type": "string",
+                                "x-samplevalue": "100.000"
+                            },
+                            "MWSBT": {
+                                "type": "string",
+                                "x-samplevalue": "0.00"
+                            },
+                            "MWSKZ": {
+                                "type": "string",
+                                "x-samplevalue": "S1"
+                            }
+                        },
+                        "title": "E1EDK04",
+                        "x-has-customfields": false
+                    },
+                    "E1EDK03": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "DATUM": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyyMMdd",
+                                "x-samplevalue": "20131209"
+                            },
+                            "IDDAT": {
+                                "type": "string",
+                                "x-samplevalue": "002"
+                            },
+                            "UZEIT": {
+                                "type": "string",
+                                "x-samplevalue": "091323"
+                            }
+                        },
+                        "title": "E1EDK03",
+                        "x-has-customfields": false
+                    },
+                    "E1EDK14": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "ORGID": {
+                                "type": "string",
+                                "x-samplevalue": "00"
+                            },
+                            "QUALF": {
+                                "type": "string",
+                                "x-samplevalue": "006"
+                            }
+                        },
+                        "title": "E1EDK14",
+                        "x-has-customfields": false
+                    },
+                    "E1EDK02": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "BELNR": {
+                                "type": "string",
+                                "x-samplevalue": "0000015419"
+                            },
+                            "DATUM": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyyMMdd",
+                                "x-samplevalue": "20131126"
+                            },
+                            "QUALF": {
+                                "type": "string",
+                                "x-samplevalue": "002"
+                            }
+                        },
+                        "title": "E1EDK02",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "EDI_DC40": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "CREDAT": {
+                                "format": "date",
+                                "type": "string",
+                                "x-mask": "yyyyMMdd",
+                                "x-samplevalue": "20180501"
+                            },
+                            "CRETIM": {
+                                "type": "string",
+                                "x-samplevalue": "203821"
+                            },
+                            "DIRECT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "DOCREL": {
+                                "type": "string",
+                                "x-samplevalue": "740"
+                            },
+                            "IDOCTYP": {
+                                "type": "string",
+                                "x-samplevalue": "ORDERS05"
+                            },
+                            "MANDT": {
+                                "type": "string",
+                                "x-samplevalue": "800"
+                            },
+                            "MESTYP": {
+                                "type": "string",
+                                "x-samplevalue": "ORDERS"
+                            },
+                            "OUTMOD": {
+                                "type": "string",
+                                "x-samplevalue": "2"
+                            },
+                            "RCVPOR": {
+                                "type": "string",
+                                "x-samplevalue": "SAPABA"
+                            },
+                            "RCVPRN": {
+                                "type": "string",
+                                "x-samplevalue": "ECW_00_800"
+                            },
+                            "RCVPRT": {
+                                "type": "string",
+                                "x-samplevalue": "LS"
+                            },
+                            "SERIAL": {
+                                "type": "string",
+                                "x-samplevalue": "20131126091335"
+                            },
+                            "SNDPOR": {
+                                "type": "string",
+                                "x-samplevalue": "YRICONPORT"
+                            },
+                            "SNDPRN": {
+                                "type": "string",
+                                "x-samplevalue": "ICONLS01"
+                            },
+                            "SNDPRT": {
+                                "type": "string",
+                                "x-samplevalue": "LS"
+                            },
+                            "STATUS": {
+                                "type": "string",
+                                "x-samplevalue": "30"
+                            },
+                            "STDMES": {
+                                "type": "string",
+                                "x-samplevalue": "ORDERS"
+                            },
+                            "TABNAM": {
+                                "type": "string",
+                                "x-samplevalue": "EDI_DC40"
+                            }
+                        },
+                        "title": "EDI_DC40",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "E1EDK01": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "ACTION": {
+                                "type": "string",
+                                "x-samplevalue": "000"
+                            },
+                            "BELNR": {
+                                "type": "string",
+                                "x-samplevalue": "0000015419"
+                            },
+                            "CURCY": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            },
+                            "KZAZU": {
+                                "type": "string",
+                                "x-samplevalue": "X"
+                            },
+                            "RECIPNT_NO": {
+                                "type": "string",
+                                "x-samplevalue": "0000003000"
+                            },
+                            "VSART": {
+                                "type": "string",
+                                "x-samplevalue": "02"
+                            },
+                            "VSART_BEZ": {
+                                "type": "string",
+                                "x-samplevalue": "Standard"
+                            },
+                            "WKURS": {
+                                "type": "string",
+                                "x-samplevalue": "1.00000"
+                            },
+                            "ZTERM": {
+                                "type": "string",
+                                "x-samplevalue": "NT30"
+                            }
+                        },
+                        "title": "E1EDK01",
+                        "type": "object",
+                        "x-has-customfields": false
+                    },
+                    "E1EDKA1": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "ABLAD": {
+                                "type": "string",
+                                "x-samplevalue": "Dock 1"
+                            },
+                            "HAUSN": {
+                                "type": "string",
+                                "x-samplevalue": "000000"
+                            },
+                            "LAND1": {
+                                "type": "string",
+                                "x-samplevalue": "US"
+                            },
+                            "NAME1": {
+                                "type": "string",
+                                "x-samplevalue": "Thomas Bush Inc."
+                            },
+                            "ORT01": {
+                                "type": "string",
+                                "x-samplevalue": "MAYWOOD"
+                            },
+                            "ORT02": {
+                                "type": "string",
+                                "x-samplevalue": "COOK"
+                            },
+                            "PARTN": {
+                                "type": "string",
+                                "x-samplevalue": "0000003000"
+                            },
+                            "PARVW": {
+                                "type": "string",
+                                "x-samplevalue": "AG"
+                            },
+                            "PSTLZ": {
+                                "type": "string",
+                                "x-samplevalue": "60153"
+                            },
+                            "REGIO": {
+                                "type": "string",
+                                "x-samplevalue": "IL"
+                            },
+                            "SPRAS": {
+                                "type": "string",
+                                "x-samplevalue": "E"
+                            },
+                            "SPRAS_ISO": {
+                                "type": "string",
+                                "x-samplevalue": "EN"
+                            },
+                            "STRAS": {
+                                "type": "string",
+                                "x-samplevalue": "1 1 2800 South 25th Ave"
+                            },
+                            "TELF1": {
+                                "type": "string",
+                                "x-samplevalue": "(312)450-BUSH"
+                            },
+                            "TELFX": {
+                                "type": "string",
+                                "x-samplevalue": "(312)450-8516"
+                            }
+                        },
+                        "title": "E1EDKA1",
+                        "x-has-customfields": false
+                    },
+                    "idocsExecute": {
+                        "properties": {
+                            "@BEGIN": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "E1EDK01": {
+                                "type": "E1EDK01"
+                            },
+                            "E1EDK02": {
+                                "type": "E1EDK02"
+                            },
+                            "E1EDK03": {
+                                "items": {
+                                    "type": "E1EDK03"
+                                },
+                                "type": "array"
+                            },
+                            "E1EDK04": {
+                                "items": {
+                                    "type": "E1EDK04"
+                                },
+                                "type": "array"
+                            },
+                            "E1EDK14": {
+                                "items": {
+                                    "type": "E1EDK14"
+                                },
+                                "type": "array"
+                            },
+                            "E1EDK17": {
+                                "items": {
+                                    "type": "E1EDK17"
+                                },
+                                "type": "array"
+                            },
+                            "E1EDK18": {
+                                "type": "E1EDK18"
+                            },
+                            "E1EDKA1": {
+                                "items": {
+                                    "type": "E1EDKA1"
+                                },
+                                "type": "array"
+                            },
+                            "E1EDS01": {
+                                "items": {
+                                    "type": "E1EDS01"
+                                },
+                                "type": "array"
+                            },
+                            "EDI_DC40": {
+                                "type": "EDI_DC40"
+                            }
+                        },
+                        "title": "idocsExecute",
+                        "x-has-customfields": false
+                    },
+                    "E1EDS01": {
+                        "properties": {
+                            "@SEGMENT": {
+                                "type": "string",
+                                "x-samplevalue": "1"
+                            },
+                            "SUMID": {
+                                "type": "string",
+                                "x-samplevalue": "001"
+                            },
+                            "SUMME": {
+                                "type": "string",
+                                "x-samplevalue": "0.00"
+                            },
+                            "SUNIT": {
+                                "type": "string",
+                                "x-samplevalue": "USD"
+                            }
+                        },
+                        "title": "E1EDS01",
+                        "x-has-customfields": false
+                    }
+                },
+                "requestName": "idocsExecuteRequest"
+            },
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 171498,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "description": "Search for /login",
+            "path": "/hubs/erp/login",
+            "vendorPath": "RFC_SYSTEM_INFO",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "type": "provisionAuthValidation",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        },
+        {
+            "id": 171499,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "description": "Get a list of all the fields for an object.",
+            "path": "/hubs/erp/objects/{objectName}/metadata",
+            "vendorPath": "{objectName}",
+            "method": "GET",
+            "vendorMethod": "GET",
+            "parameters": [
+                {
+                    "id": 406327,
+                    "resourceId": 171499,
+                    "createdDate": "2018-05-25T00:12:29Z",
+                    "name": "objectName",
+                    "vendorName": "objectName",
+                    "description": "The name of the object or BAPI",
+                    "type": "path",
+                    "vendorType": "path",
+                    "dataType": "string",
+                    "vendorDataType": "string",
+                    "source": "request",
+                    "required": true
+                }
+            ],
+            "type": "api",
+            "hooks": [],
+            "response": {
+                "contentType": "application/json"
+            },
+            "ownerAccountId": 1,
+            "kind": "eb",
+            "modelMigrated": false
+        }
+    ],
+    "objects": [],
+    "models": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+        "type": "custom"
+    },
+    "hooks": [
+        {
+            "id": 6324,
+            "elementId": 19028,
+            "mimeType": "application/javascript",
+            "type": "event",
+            "body": "let idocs = events.changes;\n\nlet status = {\n  \"003\" : \"DELETED\",\n  \"004\" : \"UPDATED\",\n  \"005\" : \"UPDATED\",\n  \"009\" : \"CREATED\",\n  \"023\" : \"UPDATED\",\n  \"018\" : \"UPDATED\"\n}\n\nlet processedEvents = [];\n\nidocs.forEach(i => {\n  let debmasKey = null;\n  let objectKey = null;\n\tObject.keys(i).forEach(k => {\n    \tif(k.indexOf('DEBMAS') > -1) {\n         debmasKey = k;\n      } else if(!(k.indexOf('DEBMAS') > -1 || k.indexOf('createdDate') > -1 || k.indexOf('tid') > -1)) {\n         objectKey = k;\n      }\n  });\n  \n  let event = null;\n  if(debmasKey) {\n    let E1KNA1M = i[debmasKey].IDOC.E1KNA1M\n    event = {\n      \"event_date\" : i.createdDate,\n      \"event_type\" : status[E1KNA1M.MSGFN],\n      \"event_object_id\" : E1KNA1M.KUNNR,\n      \"event_object_type\" : \"customers\",\n    }\n  } else if(objectKey) {\n    event = {\n      \"event_date\" : i.createdDate,\n      \"event_type\" : \"UNKNOWN\",\n      \"event_object_id\" : i.tid,\n      \"event_object_type\" : objectKey,\n    }    \n  }\n  \n  if(event) {\n    processedEvents.push(event)\n  }\n  \n})\n\ndone({\n  \"events\": processedEvents\n});\n",
+            "isLegacy": false
+        }
+    ],
+    "extended": false,
+    "useModelsForMetadata": true,
+    "hub": "erp",
+    "protocolType": "sapbapi",
+    "parameters": [
+        {
+            "id": 8998,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "name": "application/json",
+            "vendorName": "Accept",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 19028,
+            "required": false
+        },
+        {
+            "id": 8999,
+            "createdDate": "2018-05-25T00:12:29Z",
+            "name": "application/json",
+            "vendorName": "Content-Type",
+            "type": "value",
+            "vendorType": "header",
+            "source": "request",
+            "elementId": 19028,
+            "required": false
+        }
+    ],
+    "private": false
+}
