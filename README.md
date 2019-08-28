@@ -43,22 +43,27 @@ Options:
   {
     "default": {
         "url": "https://api.cloud-elements.com",
+        "origin": "https://my.cloudelements.io",        
         "auth": "User <<USER_AUTH>>, Organization <<ORG_AUTH>>"
     },
     "snp": {
         "url": "https://snapshot.cloud-elements.com",
+        "origin": "https://my-snapshot.cloudelements.io",        
         "auth": "User <<USER_AUTH>>, Organization <<ORG_AUTH>>"
     },
     "stg": {
         "url": "https://staging.cloud-elements.com",
+        "origin": "https://my-staging.cloudelements.io",        
         "auth": "User <<USER_AUTH>>, Organization <<ORG_AUTH>>"
     },
     "usprd": {
         "url": "https://api.cloud-elements.com",
+        "origin": "https://my.cloudelements.io",
         "auth": "User <<USER_AUTH>>, Organization <<ORG_AUTH>>"
     },
     "euprd": {
         "url": "https://api.cloud-elements.co.uk",
+        "origin": "https://my.cloudelements.co.uk",        
         "auth": "User <<USER_AUTH>>, Organization <<ORG_AUTH>>"
     }
 }
