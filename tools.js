@@ -1,18 +1,19 @@
 const fs = require('fs');
 const config = require('./config').default;
 
-const buildHeaders = () => ({
+const buildHeaders = (extraHeaders) => ({
   Authorization: config.auth,
   Accept: 'application/json',
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
+  ...extraHeaders
 });
 
-exports.buildOptions = (method, uri, query, body) => ({
+exports.buildOptions = (method, uri, query, body, extraHeaders = {}) => ({
   method,
   uri,
   qs: query,
   body,
-  headers: buildHeaders(),
+  headers: buildHeaders(extraHeaders),
   json: true,
 });
 

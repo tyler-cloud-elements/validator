@@ -23,20 +23,21 @@ const validateSwagger = (swaggerPath) => {
 }
 
 const validateElement = (elementPath) => {
+  const elementKey = elementPath.split('.')[0];
   return promiseRead(`skips/elementSkipList.json`)
     .then(skipList => skipList.includes(elementPath))
     .then(r => r 
       ? Promise.reject()
       : promiseRead(`metadata/${elementPath}`)
     )
-    .then(element => rp(buildOptions('POST', `${config.url}/irs/validate/element`, null, element)))
-    .then(body => promiseWrite(body, `irs/${elementPath.split('.')[0]}`))
+    .then(element => rp(buildOptions('POST', `${config.url}/irs/validate/element`, null, element, { 'X-Element-Key': elementKey, Origin: config.origin })))
+    .then(body => promiseWrite(body, `irs/${elementKey}`))
     .catch(e => {
       if (!e) {
         return Promise.resolve();
       }
 
-      console.log(`Element validation failed for ${elementPath}`);
+      console.log(`Element validation failed for ${elementKey}`);
       throw e;
     });
 }
