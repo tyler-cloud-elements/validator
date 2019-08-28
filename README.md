@@ -2,7 +2,23 @@
 
 CLI tool to invoke full validation against CE IRS and ESV validation services
 
+## Installation
+If you don't have `node` and `npm` installed, do [that](https://docs.npmjs.com/getting-started/installing-node) first.
+
+Install the node dependencies, link validator and setup `config.json` file.
+
+```bash
+# Install all necessary npm packages:
+$ npm install
+
+# Puts validator CLI on your $PATH:
+$ npm link
+
 ```
+
+## Usage
+
+```bash
 $ validator -h
 Usage: validator [options]
 
