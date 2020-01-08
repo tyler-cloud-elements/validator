@@ -1,6 +1,7 @@
 const rp = require('request-promise');
-const {buildOptions, promiseFilter, promiseWrite, promiseRead, getElementNames} = require('./tools');
+const {buildOptions, promiseFilter, promiseWrite, promiseRead, printAnalytics, getElementKeyFromPath, getElementNames} = require('./tools');
 const config = require('./config').default;
+const timingMaps = {};
 
 const retrieveElement = (id) => {
   return rp(buildOptions('GET', `${config.url}/elements/api-v2/elements/${id}`))
@@ -12,18 +13,22 @@ const retrieveSwagger = (id, key) => {
     .then(body => promiseWrite(body, `swagger/${key}`));
 }
 
-const validateSwagger = (swaggerPath) => {
+const validateSwagger = (swaggerPath, elementKey) => {
+  const currentTime = new Date();
   return promiseRead(`swagger/${swaggerPath}`)
-    .then(swagger => rp(buildOptions('POST', `${config.url}/esv/api/swagger/validate`, null, swagger)))
-    .then(body => promiseWrite(body, `esv/${swaggerPath.split('.')[0]}`))
+    .then(swagger => rp(buildOptions('POST', `${config.url}/esv/api/swagger/validate`, null, swagger, { 'X-Element-Key': elementKey })))
+    .then(body => {
+      timingMaps[elementKey].esv = (new Date() - currentTime) / 1000;
+      return promiseWrite(body, `esv/${swaggerPath.split('.')[0]}`);
+    })
     .catch(e => {
       console.log(`Swagger validation failed for ${swaggerPath}`);
       throw e;
     });
 }
 
-const validateElement = (elementPath) => {
-  const elementKey = elementPath.split('.')[0];
+const validateElement = (elementPath, elementKey) => {
+  const currentTime = new Date();
   return promiseRead(`skips/elementSkipList.json`)
     .then(skipList => skipList.includes(elementPath))
     .then(r => r 
@@ -31,7 +36,10 @@ const validateElement = (elementPath) => {
       : promiseRead(`metadata/${elementPath}`)
     )
     .then(element => rp(buildOptions('POST', `${config.url}/irs/validate/element`, null, element, { 'X-Element-Key': elementKey, Origin: config.origin })))
-    .then(body => promiseWrite(body, `irs/${elementKey}`))
+    .then(body => {
+      timingMaps[elementKey].irs = (new Date() - currentTime) / 1000;
+      return promiseWrite(body, `irs/${elementKey}`);
+    })
     .catch(e => {
       if (!e) {
         return Promise.resolve();
@@ -58,9 +66,10 @@ const hitElementsAPI = () => {
       console.log(e);
     });
 };
+
 // SWAGGER(TOO BIG???)        NOT AN ELEMENT
 //'amazonmarketplace.json', 'googleoauth.json'];
-const hitValidationApi = () => {
+const hitValidationApi = (analyticsAmount) => {
   return getElementNames('metadata')
     // Skip any that have already been validated...
     .then(elements => 
@@ -72,11 +81,23 @@ const hitValidationApi = () => {
     .then(elementNames => {
       elementNames
         .reduce((acc, element) => acc.then(() => {
-          console.log(`Validating ${element}`);
-          return Promise.all([validateElement(element), validateSwagger(element)])
-            .then(r => console.log(`-> Validated ${element}`))
+          const elementKey = getElementKeyFromPath(element);
+          const currentTime = new Date();
+          timingMaps[elementKey] = {};
+          console.log(`Validating ${element} @ ${currentTime.toISOString()}`);
+          return Promise.all([validateElement(element, elementKey), validateSwagger(element, elementKey)])
+            .then(r => {
+              const timing = (new Date() - currentTime) / 1000;
+              timingMaps[elementKey].total = timing;
+              console.log(`-> Validated ${element} took ${timing} seconds`);
+            })
         }), Promise.resolve(null))
-        .then(r => console.log(`done`));
+        .then(r => {
+          console.log(`done`);
+          if (analyticsAmount) {
+            printAnalytics(timingMaps, analyticsAmount);
+          }
+        });
     });
 }
 

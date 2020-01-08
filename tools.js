@@ -44,6 +44,36 @@ exports.getElementNames = (path = 'elements') => new Promise((res, rej) => {
   });
 });
 
+exports.getElementKeyFromPath = path => path.split('.')[0];
+
+const getFormattedName = (str) =>
+  str.length < 8 
+    ? `${str}\t\t\t`
+    : str.length < 16
+      ? `${str}\t\t`
+      : `${str}\t`;
+
+const getFormattedValue = (val) =>
+  val && val.toString().length > 7
+    ? `${val.toString().slice(8)}\t`
+    : val && val.toString().length < 5
+      ? `${val}\t\t`
+      : `${val}\t`;
+
+exports.printAnalytics = (timingMap, analyticsAmount) => {
+  console.log('\n---------------------------------------------------------------------------------');
+  console.log('|\tElement\t\t\t|  Total(s)\t|  ESV(s)\t|  IRS(s)\t|');
+  console.log(' -------------------------------------------------------------------------------');
+  
+  Object.keys(timingMap)
+  .sort((a, b) => timingMap[b].total - timingMap[a].total)
+  .slice(0, parseInt(analyticsAmount, 10))
+  .forEach(elementKey => {
+    console.log(`|\t${getFormattedName(elementKey)}|  ${getFormattedValue(timingMap[elementKey].total)}|  ${getFormattedValue(timingMap[elementKey].esv)}|  ${getFormattedValue(timingMap[elementKey].irs)}|`);
+  });
+  console.log('---------------------------------------------------------------------------------');
+}
+
 // IDK what's up here... https://stackoverflow.com/a/46842181
 async function filter(arr, callback) {
   const fail = Symbol();

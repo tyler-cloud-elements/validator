@@ -10,6 +10,7 @@ validator
   .version('0.1.0')
   .option('-g, --getall', 'get element and swaggers')
   .option('-v, --validate', 'run ESV and IRS validation on existing validations')
+  .option('-n, --analyticsAmount <number>', 'add analytics amount to ESV/IRS validation')
   .option('-t, --validateType <type>', 'run specific validation on existing validations')
   .option('-a, --skipAll <element>', 'add element to skip list for IRS and ESV')
   .option('-e, --skipElement <element>', 'add element to skip list for IRS')
@@ -25,7 +26,7 @@ if (validator.getall) {
 }
 
 if (validator.validate) {
-  runValidation();
+  runValidation(validator.analyticsAmount);
 }
 
 if (validator.validateType) {

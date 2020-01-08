@@ -4,7 +4,11 @@
   "description": "",
   "main": "validator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "createDirectories": "mkdir -p irs && mkdir -p esv",
+    "postinstall": "npm run createDirectories",
+    "cleanup": "rm -rf irs && rm -rf esv && npm run createDirectories",
+    "preserve": "mkdir -p old-outputs && mv irs old-outputs/irs-$(date '+%Y%m%d-%H%M%S') && mv esv old-outputs/esv-$(date '+%Y%m%d-%H%M%S') && npm run createDirectories"
   },
   "author": "",
   "license": "ISC",
